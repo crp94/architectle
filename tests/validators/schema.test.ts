@@ -1,10 +1,33 @@
 import { describe, it, expect } from 'vitest';
 import { validateSchema } from '@/scripts/validators/schema';
-import { validPool, withBuilding } from '../fixtures/pool';
+import { validPool, withBuilding, withArchitect } from '../fixtures/pool';
 
 describe('validateSchema', () => {
   it('accepts a valid pool', () => {
     expect(validateSchema(validPool())).toEqual([]);
+  });
+
+  it('rejects a building with no tier', () => {
+    const v = validateSchema(withBuilding(validPool(), { tier: undefined as never }));
+    expect(v.map((x) => x.rule)).toContain('enum-membership');
+    const violation = v.find((x) => x.rule === 'enum-membership' && x.subject === 'b1')!;
+    expect(violation.detail).toContain('tier');
+    expect(violation.detail.toLowerCase()).toContain('missing');
+  });
+
+  it('rejects a building with an invalid tier value', () => {
+    const v = validateSchema(withBuilding(validPool(), { tier: 'legendary' as never }));
+    expect(v.map((x) => x.rule)).toContain('enum-membership');
+    const violation = v.find((x) => x.rule === 'enum-membership' && x.subject === 'b1')!;
+    expect(violation.detail).toContain('legendary');
+  });
+
+  it('rejects an architect with no tier', () => {
+    const v = validateSchema(withArchitect(validPool(), { tier: undefined as never }));
+    expect(v.map((x) => x.rule)).toContain('enum-membership');
+    const violation = v.find((x) => x.rule === 'enum-membership' && x.subject === 'a1')!;
+    expect(violation.detail).toContain('tier');
+    expect(violation.detail.toLowerCase()).toContain('missing');
   });
 
   it('rejects completion before inception', () => {

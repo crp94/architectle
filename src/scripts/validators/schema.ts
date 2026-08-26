@@ -1,6 +1,6 @@
 import type { Building, HeritageStatus } from '@/types/building';
 import type { Architect } from '@/types/architect';
-import type { LocalizedString, Material, Typology } from '@/types/common';
+import type { LocalizedString, Material, Tier, Typology } from '@/types/common';
 
 // The pool a validator operates on: every curated building and architect,
 // composed by Task 8's `data:curate` script before any validator runs.
@@ -22,6 +22,8 @@ const MATERIALS: Material[] = [
 ];
 
 const HERITAGE_STATUSES: HeritageStatus[] = ['unesco', 'national', 'regional', 'none'];
+
+const TIERS: Tier[] = ['canon', 'deep'];
 
 const MIN_YEAR = 1;
 const MAX_YEAR = 2100;
@@ -63,6 +65,22 @@ function checkYear(
       rule: 'plausible-years',
       subject,
       detail: `${fieldLabel} ${year} is outside the plausible range ${MIN_YEAR}-${MAX_YEAR}`,
+    });
+  }
+}
+
+function checkTier(tier: Tier | undefined, subject: string, out: Violation[]): void {
+  if (tier === undefined || tier === null) {
+    out.push({
+      rule: 'enum-membership',
+      subject,
+      detail: 'tier is missing (must be "canon" or "deep")',
+    });
+  } else if (!TIERS.includes(tier)) {
+    out.push({
+      rule: 'enum-membership',
+      subject,
+      detail: `tier "${tier}" is not a recognized Tier`,
     });
   }
 }
@@ -131,6 +149,8 @@ function checkBuildingSchema(b: Building, out: Violation[]): void {
       detail: `heritage "${b.heritage}" is not a recognized HeritageStatus`,
     });
   }
+
+  checkTier(b.tier, b.id, out);
 }
 
 function checkArchitectSchema(a: Architect, out: Violation[]): void {
@@ -156,6 +176,8 @@ function checkArchitectSchema(a: Architect, out: Violation[]): void {
       detail: `signatureMaterial "${a.signatureMaterial}" is not a recognized Material`,
     });
   }
+
+  checkTier(a.tier, a.id, out);
 }
 
 export function validateSchema(pool: Pool): Violation[] {
