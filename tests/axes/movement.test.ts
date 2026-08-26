@@ -38,6 +38,12 @@ describe('compareMovement', () => {
     expect(compareMovement(guess, target)).toBe('NONE');
   });
 
+  it('reports NONE when the target is unaffiliated and the guess has a movement (reverse direction)', () => {
+    const guess = architect({ movements: [{ id: 'brutalism', primary: true }] });
+    const target = architect({ movements: 'unaffiliated' });
+    expect(compareMovement(guess, target)).toBe('NONE');
+  });
+
   it('reports NONE when both are unaffiliated — absence of a label is not evidence', () => {
     const guess = architect({ movements: 'unaffiliated' });
     const target = architect({ movements: 'unaffiliated' });

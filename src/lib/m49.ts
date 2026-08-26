@@ -147,6 +147,6 @@ export function m49For(countryCode: string): M49Entry | undefined {
 // A subregion string that isn't a key here (e.g. bad or missing source data)
 // simply fails to contribute a region-level match — it does not throw, in
 // keeping with `m49For`'s own policy of returning `undefined` for gaps.
-export const REGION_OF_SUBREGION: Record<string, string> = Object.fromEntries(
+export const REGION_OF_SUBREGION: Record<string, string | undefined> = Object.fromEntries(
   Object.values(M49).map((entry) => [entry.subregion, entry.region]),
 );

@@ -14,6 +14,8 @@ function midpoint(a: Architect): number {
 
 export function compareEra(guess: Architect, target: Architect): EraResult {
   // Positive deltaYears means the target built later than the guess.
+  // Deliberately left unrounded: correct for bucketing as-is — don't fold
+  // presentation-layer rounding (Tasks 11-12) into this arithmetic.
   const deltaYears = midpoint(target) - midpoint(guess);
   const abs = Math.abs(deltaYears);
   const bucket = abs <= 15 ? 'CONTEMPORARY' : abs <= 40 ? 'NEAR' : 'FAR';
