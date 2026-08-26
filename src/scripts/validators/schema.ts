@@ -1,5 +1,5 @@
 import type { Building, HeritageStatus } from '@/types/building';
-import type { Architect } from '@/types/architect';
+import type { Architect, Gender } from '@/types/architect';
 import type { LocalizedString, Material, Tier, Typology } from '@/types/common';
 
 // The pool a validator operates on: every curated building and architect,
@@ -24,6 +24,8 @@ const MATERIALS: Material[] = [
 const HERITAGE_STATUSES: HeritageStatus[] = ['unesco', 'national', 'regional', 'none'];
 
 const TIERS: Tier[] = ['canon', 'deep'];
+
+const GENDERS: Gender[] = ['woman', 'man', 'non-binary', 'unknown'];
 
 const MIN_YEAR = 1;
 const MAX_YEAR = 2100;
@@ -81,6 +83,22 @@ function checkTier(tier: Tier | undefined, subject: string, out: Violation[]): v
       rule: 'enum-membership',
       subject,
       detail: `tier "${tier}" is not a recognized Tier`,
+    });
+  }
+}
+
+function checkGender(gender: Gender | undefined, subject: string, out: Violation[]): void {
+  if (gender === undefined || gender === null) {
+    out.push({
+      rule: 'enum-membership',
+      subject,
+      detail: 'gender is missing (must be "woman", "man", "non-binary", or "unknown")',
+    });
+  } else if (!GENDERS.includes(gender)) {
+    out.push({
+      rule: 'enum-membership',
+      subject,
+      detail: `gender "${gender}" is not a recognized Gender`,
     });
   }
 }
@@ -154,6 +172,7 @@ function checkBuildingSchema(b: Building, out: Violation[]): void {
 }
 
 function checkArchitectSchema(a: Architect, out: Violation[]): void {
+  checkGender(a.gender, a.id, out);
   checkLocalized(a.portrait, 'architect.portrait', a.id, out);
   if (a.context) checkLocalized(a.context.body, 'architect.context.body', a.id, out);
 
