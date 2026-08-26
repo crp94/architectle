@@ -142,3 +142,11 @@ export const M49: Readonly<Record<string, Readonly<M49Entry>>> = {
 export function m49For(countryCode: string): M49Entry | undefined {
   return Object.hasOwn(M49, countryCode) ? M49[countryCode] : undefined;
 }
+
+// M49 sub-region name → parent region name, derived from the entries above.
+// A subregion string that isn't a key here (e.g. bad or missing source data)
+// simply fails to contribute a region-level match — it does not throw, in
+// keeping with `m49For`'s own policy of returning `undefined` for gaps.
+export const REGION_OF_SUBREGION: Record<string, string | undefined> = Object.fromEntries(
+  Object.values(M49).map((entry) => [entry.subregion, entry.region]),
+);
