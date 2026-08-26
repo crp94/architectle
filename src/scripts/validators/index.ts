@@ -10,7 +10,12 @@ export { validateSchema } from './schema';
 export { validateCrossRefs } from './crossRefs';
 export { validateImages } from './images';
 export { validateProvenance } from './provenance';
-export { validateCoverage } from './coverage';
+export {
+  validateCoverage,
+  ERA_MIN, GEOGRAPHY_MAX, GEOGRAPHY_MIN, GENDER_MIN, MAX_BUILDINGS_PER_ARCHITECT, CANON_TIER_MIN,
+  yearOf, eraOf, geographyBucketOf,
+} from './coverage';
+export type { Era, GeographyBucket } from './coverage';
 
 export const ALL_VALIDATORS = [
   validateSchema, validateCrossRefs, validateImages, validateProvenance, validateCoverage,

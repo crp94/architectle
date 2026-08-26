@@ -6,6 +6,7 @@
     "node": ">=22.0.0"
   },
   "scripts": {
+    "postinstall": "npm run data:curate",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

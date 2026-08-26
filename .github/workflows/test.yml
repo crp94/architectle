@@ -8,6 +8,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version-file: '.nvmrc', cache: npm }
       - run: npm ci --ignore-scripts
+      - run: npm run data:curate
       - run: npm run typecheck
       - run: npm run lint
       - run: npm test
