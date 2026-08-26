@@ -1,8 +1,8 @@
 // `npm run data:curate` — the single gate between hand-authored curated
 // source (src/scripts/curated/) and the JSON the running game imports
 // (src/lib/pool.ts). It does not re-implement validation: every rule lives
-// in src/scripts/validators/ (Task 3) and is composed here via
-// `validatePool`. Its own job is narrower:
+// in src/scripts/validators/ (Task 3) and is composed here. Its own job is
+// narrower:
 //   1. run the validators and report violations in a form Task 9's curator
 //      agents can act on directly;
 //   2. derive `architect.workRegions` / `architect.workCentroid` from the
@@ -11,7 +11,7 @@
 //   3. write the two JSON files `src/lib/pool.ts` imports, and print a
 //      coverage summary so a curator can see how close to the edge the pool
 //      sits before adding the next building.
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync, realpathSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { Building } from '@/types/building';
@@ -19,7 +19,7 @@ import type { Architect } from '@/types/architect';
 import { m49For } from '@/lib/m49';
 import { centroid } from '@/lib/geo';
 import {
-  validatePool,
+  validateSchema, validateCrossRefs, validateImages, validateProvenance, validateCoverage,
   ERA_MIN, GEOGRAPHY_MAX, GEOGRAPHY_MIN, GENDER_MIN, MAX_BUILDINGS_PER_ARCHITECT, CANON_TIER_MIN,
   yearOf, eraOf, geographyBucketOf,
 } from './validators';
@@ -30,6 +30,12 @@ const DIMENSIONS_RULE = 'image-dimensions-recorded';
 // M49 spec §4.4: "keep every subregion holding ≥15% of an architect's output."
 const WORK_REGION_THRESHOLD = 0.15;
 const EPSILON = 1e-9;
+
+// The per-item validators (each violation is about one building or
+// architect in isolation) vs. the one pool-global validator (every
+// violation is about the shape of the whole pool). `--skip-coverage` runs
+// only the former — see `main` below.
+const PER_ITEM_VALIDATORS = [validateSchema, validateCrossRefs, validateImages, validateProvenance] as const;
 
 // --- Derivation -----------------------------------------------------------
 // The reason this script exists rather than the two fields being hand-typed:
@@ -80,10 +86,13 @@ export function deriveArchitectGeography(architectId: string, buildings: Buildin
 }
 
 // --- CLI args ---------------------------------------------------------------
-type Args = { allowMissingDimensions: boolean };
+type Args = { allowMissingDimensions: boolean; skipCoverage: boolean };
 
 function parseArgs(argv: string[]): Args {
-  return { allowMissingDimensions: argv.includes('--allow-missing-dimensions') };
+  return {
+    allowMissingDimensions: argv.includes('--allow-missing-dimensions'),
+    skipCoverage: argv.includes('--skip-coverage'),
+  };
 }
 
 // --- Violation reporting -----------------------------------------------------
@@ -157,6 +166,17 @@ function buildCoverageSummary(buildings: Building[], architects: Architect[]): S
   }
   const maxHeldByOneArchitect = buildingCountByArchitect.size === 0 ? 0 : Math.max(...buildingCountByArchitect.values());
 
+  // `geoCounts` has seven buckets; only five (europe/north-america/asia/
+  // africa-west-asia/latin-america) are gated by a rule and rendered as a
+  // row above. `other` (Oceania, Central Asia) and `unmapped` still count
+  // toward `total` in every era/geography `minRow` denominator above, so a
+  // building added in either silently shrinks every one of those margins.
+  // This row is purely informational — not gated by data:curate at all —
+  // and exists so a curator watching the other rows move can see where the
+  // "missing" share of the denominator went.
+  const otherUnmapped = geoCounts.other + geoCounts.unmapped;
+  const otherUnmappedRatio = total > 0 ? otherUnmapped / total : 0;
+
   return [
     minRow('era-pre-1800-min', 'pre-1800 buildings', eraCounts['pre-1800'], total, ERA_MIN['pre-1800']),
     minRow('era-1800-1945-min', '1800–1945 buildings', eraCounts['1800-1945'], total, ERA_MIN['1800-1945']),
@@ -176,6 +196,13 @@ function buildCoverageSummary(buildings: Building[], architects: Architect[]): S
       threshold: `≤${MAX_BUILDINGS_PER_ARCHITECT}`,
       margin: `${MAX_BUILDINGS_PER_ARCHITECT - maxHeldByOneArchitect}`,
     },
+    {
+      rule: '(info) geography-other-unmapped',
+      label: 'Oceania + Central Asia + unmapped countries — not gated by any rule',
+      measured: `${pct(otherUnmappedRatio)} (${otherUnmapped}/${total}) [other: ${geoCounts.other}, unmapped: ${geoCounts.unmapped}]`,
+      threshold: 'n/a — informational only',
+      margin: 'n/a',
+    },
   ];
 }
 
@@ -192,10 +219,17 @@ function printCoverageSummary(buildings: Building[], architects: Architect[]): v
 
 // --- Main --------------------------------------------------------------------
 function main(): void {
-  const { allowMissingDimensions } = parseArgs(process.argv.slice(2));
+  const { allowMissingDimensions, skipCoverage } = parseArgs(process.argv.slice(2));
 
   const pool = { buildings: CURATED_BUILDINGS, architects: CURATED_ARCHITECTS };
-  const allViolations = validatePool(pool);
+
+  const perItemViolations = PER_ITEM_VALIDATORS.flatMap((v) => v(pool));
+  const allViolations = skipCoverage ? perItemViolations : [...perItemViolations, ...validateCoverage(pool)];
+
+  if (skipCoverage) {
+    console.warn('\n*** --skip-coverage is active: pool-global coverage rules (era/geography/gender/canon-tier/max-buildings-per-architect) were NOT checked. ***');
+    console.warn('*** This is only valid for validating one curator\'s own slice in isolation (Wave 5). The full gate — data:curate with no flags — MUST pass before the wave is complete. ***\n');
+  }
 
   let hardViolations = allViolations;
   if (allowMissingDimensions) {
@@ -231,5 +265,27 @@ function main(): void {
 // — e.g. by a unit test importing `deriveArchitectGeography` — where
 // running the full I/O path (reading curated/, writing JSON, calling
 // process.exit) would be an unwanted side effect.
-const isDirectRun = process.argv[1] !== undefined && fileURLToPath(import.meta.url) === path.resolve(process.argv[1]);
-if (isDirectRun) main();
+//
+// Compares realpaths, not raw resolved paths: every Wave 5 worktree reaches
+// node_modules (and tsx) through a symlink, and a naive `path.resolve`
+// comparison can disagree with `import.meta.url` across a symlink boundary
+// — which would make this script a silent no-op that exits 0 having
+// written nothing. If argv[1] names this file but the identity check still
+// doesn't match (e.g. an unresolvable path), that's surfaced with a
+// console.error rather than swallowed, since a silent skip here is exactly
+// the failure mode this check exists to prevent.
+function isDirectRun(): boolean {
+  if (process.argv[1] === undefined) return false;
+  try {
+    return realpathSync(fileURLToPath(import.meta.url)) === realpathSync(path.resolve(process.argv[1]));
+  } catch (err) {
+    console.error(`buildCuratedPool: could not resolve realpath for direct-run check (${(err as Error).message}); treating as not a direct run.`);
+    return false;
+  }
+}
+
+if (isDirectRun()) {
+  main();
+} else if (process.argv[1] !== undefined && path.basename(process.argv[1]) === 'buildCuratedPool.ts') {
+  console.error('buildCuratedPool: process.argv[1] names this script, but the direct-run identity check did not match — main() was NOT run, no files were written. This usually means a symlink broke the realpath comparison above; investigate before trusting this a no-op is intentional.');
+}

@@ -33,10 +33,34 @@ const REAL_ARCHITECTS: Architect[] = [
 // `REAL_BUILDINGS.length === 0` check below stops being true and this
 // import is bypassed. Deleting the block once all five files are filled in
 // is tidy but not load-bearing — nothing breaks if it's left in place.
+//
+// Fallback is keyed on buildings only, not architects, and deliberately so:
+// see the loud check below this block for why an agent landing architects
+// before buildings must never silently fall through to here.
 import { validPool } from '../../../tests/fixtures/pool';
 
 const FALLBACK = REAL_BUILDINGS.length === 0 ? validPool() : null;
 // --------------------------------------------------------------------------
+
+// An agent that commits `architects/<region>.ts` before `buildings/<region>.ts`
+// (or ships one without the other by mistake) must never lose those
+// architect entries silently. If we keyed FALLBACK on
+// `REAL_BUILDINGS.length === 0` alone and used REAL_ARCHITECTS whenever
+// REAL_BUILDINGS is non-empty, an architect written into a still-empty
+// region would vanish from CURATED_ARCHITECTS with no diagnostic the moment
+// any OTHER region's buildings landed. Fail loudly instead: this can only
+// mean an out-of-order commit, and the fix is always "add the matching
+// buildings," never "silently substitute fixture architects."
+if (REAL_ARCHITECTS.length > 0 && REAL_BUILDINGS.length === 0) {
+  throw new Error(
+    'src/scripts/curated/index.ts: at least one architects/<region>.ts file has '
+    + 'real entries, but every buildings/<region>.ts file is still an empty stub. '
+    + 'workRegions/workCentroid are derived from an architect\'s buildings, and an '
+    + 'architect with no buildings fails the architect-orphan rule — so architect '
+    + 'entries with no buildings yet are not useful on their own. Add the matching '
+    + 'building entries in buildings/<region>.ts before running data:curate again.',
+  );
+}
 
 export const CURATED_BUILDINGS: Building[] = FALLBACK ? FALLBACK.buildings : REAL_BUILDINGS;
 export const CURATED_ARCHITECTS: Architect[] = FALLBACK ? FALLBACK.architects : REAL_ARCHITECTS;

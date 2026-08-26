@@ -9,8 +9,17 @@ import architectsData from '@/data/curated-architects.json';
 import type { Building } from '@/types/building';
 import type { Architect } from '@/types/architect';
 
-export const BUILDINGS: Building[] = buildingsData as Building[];
-export const ARCHITECTS: Architect[] = architectsData as Architect[];
+// Double assertion (`as unknown as X`), not a single `as Building[]`: the
+// JSON's inferred literal type is derived from whatever pool is on disk at
+// typecheck time (the Task 3 fixture today, Wave 5's real ~40 buildings
+// once curated). A single assertion typechecks only by structural luck —
+// an optional field absent from every current entry, or a union-typed
+// field the JSON literal widens to plain `string`, makes a direct
+// `as Building[]` illegal and breaks `npm run typecheck` in CI for what
+// is purely a data change. Widening through `unknown` first keeps that
+// class of failure from ever reaching CI on a data-only commit.
+export const BUILDINGS: Building[] = buildingsData as unknown as Building[];
+export const ARCHITECTS: Architect[] = architectsData as unknown as Architect[];
 
 export class ArchitectNotFoundError extends Error {
   constructor(id: string) {
