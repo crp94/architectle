@@ -2,7 +2,53 @@ import { MOVEMENTS } from '@/data/movements';
 import type { Pool, Violation } from './schema';
 
 const EARTH_RADIUS_KM = 6371;
-const DUPLICATE_SITE_RADIUS_KM = 25;
+// `possible-duplicate-site` targets a curation mistake — the same building
+// entered twice, possibly under two ids and two slightly different names —
+// not mere proximity. At the ~40-building scale a same-metro pair was
+// almost certainly a mistake, so a 25 km radius alone was a fine proxy; at
+// ~200 buildings a metro can legitimately hold several distinct entries
+// (multiple Gaudí buildings in Barcelona, several Wright buildings in
+// Chicago, etc.), so radius alone can no longer carry the rule. The radius
+// is tightened to a "same site" scale, and a name-similarity check is
+// required alongside it: even closely-sited, genuinely distinct landmarks
+// by the same architect (Gaudí's Casa Batlló and Casa Milà are ~0.5 km
+// apart on Barcelona's Passeig de Gràcia) sit inside almost any radius
+// tight enough to also catch same-building coordinate drift, so distance
+// alone still isn't a safe signal even at this scale.
+const DUPLICATE_SITE_RADIUS_KM = 0.5;
+// Below this name-token containment ratio, two buildings are treated as
+// distinct even if they sit within the radius above.
+const NAME_SIMILARITY_THRESHOLD = 0.7;
+
+// Small, purely grammatical words in the languages this pool draws names
+// from — excluded so they don't inflate the containment ratio between two
+// otherwise-unrelated names.
+const NAME_STOPWORDS = new Set([
+  'the', 'a', 'an', 'of', 'and', 'de', 'del', 'la', 'le', 'lo', 'el', 'los', 'las', 'di', 'da',
+]);
+
+function normalizedNameTokens(name: string): Set<string> {
+  const cleaned = name
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // strip combining accents (NFD diacritics)
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ');
+  return new Set(cleaned.split(/\s+/).filter((t) => t.length > 0 && !NAME_STOPWORDS.has(t)));
+}
+
+// A containment ratio (shared tokens over the *smaller* name's token count)
+// rather than a symmetric similarity: it's built to recognize one name as a
+// fuller form of the other — e.g. "Sagrada Família" is entirely contained in
+// "Temple Expiatori de la Sagrada Família" — which is exactly the shape a
+// duplicate-entered-under-a-different-name mistake takes.
+function namesLikelySameBuilding(a: string, b: string): boolean {
+  const tokensA = normalizedNameTokens(a);
+  const tokensB = normalizedNameTokens(b);
+  if (tokensA.size === 0 || tokensB.size === 0) return false;
+  let shared = 0;
+  for (const t of tokensA) if (tokensB.has(t)) shared += 1;
+  return shared / Math.min(tokensA.size, tokensB.size) >= NAME_SIMILARITY_THRESHOLD;
+}
 
 function toRad(deg: number): number {
   return (deg * Math.PI) / 180;
@@ -133,18 +179,22 @@ export function validateCrossRefs(pool: Pool): Violation[] {
   }
 
   // --- possible-duplicate-site ---
+  // Flags a likely curation mistake, not proximity: both a tight coordinate
+  // match AND a name-similarity match are required, so two distinct,
+  // differently-named buildings that merely share a city (or even a block)
+  // never trip this.
   for (let i = 0; i < pool.buildings.length; i += 1) {
     for (let j = i + 1; j < pool.buildings.length; j += 1) {
       const bi = pool.buildings[i];
       const bj = pool.buildings[j];
       const distance = haversineKm(bi.location, bj.location);
-      if (distance <= DUPLICATE_SITE_RADIUS_KM) {
-        out.push({
-          rule: 'possible-duplicate-site',
-          subject: `${bi.id},${bj.id}`,
-          detail: `${bi.id} and ${bj.id} are ${distance.toFixed(1)} km apart (within ${DUPLICATE_SITE_RADIUS_KM} km)`,
-        });
-      }
+      if (distance > DUPLICATE_SITE_RADIUS_KM) continue;
+      if (!namesLikelySameBuilding(bi.name.en, bj.name.en)) continue;
+      out.push({
+        rule: 'possible-duplicate-site',
+        subject: `${bi.id},${bj.id}`,
+        detail: `${bi.id} ("${bi.name.en}") and ${bj.id} ("${bj.name.en}") are ${distance.toFixed(3)} km apart with near-identical names — likely the same building entered twice (within ${DUPLICATE_SITE_RADIUS_KM} km, name-similarity ≥ ${NAME_SIMILARITY_THRESHOLD})`,
+      });
     }
   }
 
