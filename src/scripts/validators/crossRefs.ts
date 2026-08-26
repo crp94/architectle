@@ -111,8 +111,64 @@ export function validateCrossRefs(pool: Pool): Violation[] {
     }
   }
 
+  // --- co-architect-exists ---
+  // Same referential-integrity check as `architect-exists` above, applied to
+  // the display-only `coArchitects` list rather than the answer-key
+  // `architectId`. Kept as a sibling rule (not folded into `architect-exists`)
+  // so a curator can tell from the rule name alone whether the broken
+  // reference is the building's answer or a co-credit.
+  for (const b of pool.buildings) {
+    for (const coId of b.coArchitects ?? []) {
+      if (!architectsById.has(coId)) {
+        out.push({
+          rule: 'co-architect-exists',
+          subject: b.id,
+          detail: `${b.id} references coArchitects id "${coId}", which is not in the pool`,
+        });
+      }
+    }
+  }
+
+  // --- co-architect-duplicate ---
+  // Two distinct ways a `coArchitects` list can duplicate a credit rather
+  // than add a genuine second author: (1) it re-lists the building's own
+  // `architectId`, or (2) it lists the same co-architect more than once.
+  // Both are curation mistakes, not partnerships, so both are hard failures.
+  for (const b of pool.buildings) {
+    const coArchitects = b.coArchitects ?? [];
+    if (coArchitects.includes(b.architectId)) {
+      out.push({
+        rule: 'co-architect-duplicate',
+        subject: b.id,
+        detail: `${b.id} lists its own architectId "${b.architectId}" in coArchitects — a co-credit must name a different architect`,
+      });
+    }
+    const seen = new Set<string>();
+    const repeated = new Set<string>();
+    for (const coId of coArchitects) {
+      if (seen.has(coId)) repeated.add(coId);
+      seen.add(coId);
+    }
+    if (repeated.size > 0) {
+      out.push({
+        rule: 'co-architect-duplicate',
+        subject: b.id,
+        detail: `${b.id} lists coArchitects id(s) [${[...repeated].join(', ')}] more than once`,
+      });
+    }
+  }
+
   // --- architect-orphan ---
-  const architectIdsWithBuildings = new Set(pool.buildings.map((b) => b.architectId));
+  // An architect co-credited on a building — never the answer, but a
+  // legitimate second author — is enough to keep them out of this rule:
+  // they genuinely worked on something in the pool, so they belong in it
+  // even though they'll never be the day's target (see `roster()` in
+  // src/lib/pool.ts, which still keys strictly off `architectId`).
+  const architectIdsWithBuildings = new Set<string>();
+  for (const b of pool.buildings) {
+    architectIdsWithBuildings.add(b.architectId);
+    for (const coId of b.coArchitects ?? []) architectIdsWithBuildings.add(coId);
+  }
   for (const a of pool.architects) {
     if (!architectIdsWithBuildings.has(a.id)) {
       out.push({
