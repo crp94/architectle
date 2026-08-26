@@ -25,6 +25,22 @@ describe('validateCoverage', () => {
     expect(validateCoverage(p).map((x) => x.rule)).toContain('max-buildings-per-architect');
   });
 
+  it('does not count a co-credit toward max-buildings-per-architect', () => {
+    // Decision (see coverage.ts): the ≤3 cap exists to stop one architect
+    // dominating the game's *answers* (architectId). A co-credit is never
+    // the answer, so an architect co-credited on many buildings while
+    // holding <=3 as primary architectId must not trip this rule.
+    const p = validPool();
+    // a1 already holds 2 buildings as primary (b6, b7) — within the cap.
+    // Co-credit a1 on every other building too; if coArchitects counted
+    // toward the cap, a1 would now sit at 2 + 8 = 10, well over 3.
+    const buildings = p.buildings.map((b) => (
+      b.architectId === 'a1' ? { ...b } : { ...b, coArchitects: ['a1'] }
+    ));
+    expect(validateCoverage({ buildings, architects: p.architects }).map((x) => x.rule))
+      .not.toContain('max-buildings-per-architect');
+  });
+
   it('rejects a pool with no pre-1800 buildings', () => {
     const p = validPool();
     p.buildings.forEach((b) => { b.inception = 1960; b.completed = 1965; });
