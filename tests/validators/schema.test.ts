@@ -30,6 +30,20 @@ describe('validateSchema', () => {
     expect(violation.detail.toLowerCase()).toContain('missing');
   });
 
+  it('rejects an architect with no gender', () => {
+    const v = validateSchema(withArchitect(validPool(), { gender: undefined as never }));
+    expect(v.map((x) => x.rule)).toContain('enum-membership');
+    const violation = v.find((x) => x.rule === 'enum-membership' && x.subject === 'a1' && x.detail.includes('gender'))!;
+    expect(violation.detail.toLowerCase()).toContain('missing');
+  });
+
+  it('rejects an architect with an invalid gender value', () => {
+    const v = validateSchema(withArchitect(validPool(), { gender: 'other' as never }));
+    expect(v.map((x) => x.rule)).toContain('enum-membership');
+    const violation = v.find((x) => x.rule === 'enum-membership' && x.subject === 'a1' && x.detail.includes('gender'))!;
+    expect(violation.detail).toContain('other');
+  });
+
   it('rejects completion before inception', () => {
     const v = validateSchema(withBuilding(validPool(), { inception: 1990, completed: 1980 }));
     expect(v.map((x) => x.rule)).toContain('inception-before-completion');
