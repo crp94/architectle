@@ -12,8 +12,10 @@ export const WESTASIA_ARCHITECTS: Architect[] = [
     gender: 'man',
     born: 1490,
     died: 1588,
-    // Appointed chief court architect in 1538; held the office until his death.
-    floruit: { start: 1538, end: 1588, override: false },
+    // Span of completed works, not of office: the Hüsrev Pasha Mosque and its
+    // double madrasa in Aleppo were built in the winter of 1536-37, before his
+    // appointment as chief court architect; he was still building at his death.
+    floruit: { start: 1537, end: 1588, override: false },
     movements: [{ id: 'ottoman-classical', primary: true }],
     workRegions: [],
     workCentroid: { lat: 0, lon: 0 },
@@ -45,9 +47,10 @@ export const WESTASIA_ARCHITECTS: Architect[] = [
     gender: 'man',
     born: 1866,
     died: 1952,
-    // Documented completions run from the Hamidiyyeh Fountain (1900) to the
-    // Barakat Building in its final, extended form (1932).
-    floruit: { start: 1900, end: 1932, override: false },
+    // Documented completions run from the Persian Palace, Turkish Village and
+    // Cairo Street pavilions at the 1893 Chicago exposition to the Barakat
+    // Building in its final, extended form (1932).
+    floruit: { start: 1893, end: 1932, override: false },
     // No movement label fits: his idiom is an Ottoman and Moorish revivalism
     // that the closed MOVEMENTS vocabulary does not carry, and inventing one
     // would misdescribe him.
@@ -93,9 +96,9 @@ export const WESTASIA_ARCHITECTS: Architect[] = [
     primaryTypology: 'civic',
     signatureMaterial: 'stone',
     portrait: {
-      en: "Onat entered Istanbul Technical University in 1926 and was sent on to the technical university in Zurich, where he studied under Otto Rudolf Salvisberg and absorbed a disciplined Swiss modernism. He returned to Turkey in 1934 to teach, became the first dean of Istanbul Technical University's new Faculty of Architecture in 1944, and served as its rector from 1951 to 1953. With Orhan Arda he won the 1942 international competition for Atatürk's mausoleum, and that building occupied him for the rest of his working life. His architecture belongs to what Turkish historians call the Second National Architectural Movement: symmetrical, monumental, faced in cut stone, drawing on Seljuk and Ottoman precedent without copying it. He also built the Istanbul Justice Palace and the presidential secretariat at Çankaya. In October 1960 he was dismissed from the university with 147 other academics; he died the following year.",
-      es: 'Onat ingresó en la Universidad Técnica de Estambul en 1926 y fue enviado después a la universidad técnica de Zúrich, donde estudió con Otto Rudolf Salvisberg y asimiló un modernismo suizo disciplinado. Volvió a Turquía en 1934 para enseñar, fue el primer decano de la nueva Facultad de Arquitectura de la Universidad Técnica de Estambul en 1944 y su rector entre 1951 y 1953. Con Orhan Arda ganó en 1942 el concurso internacional para el mausoleo de Atatürk, obra que le ocupó el resto de su vida profesional. Su arquitectura pertenece a lo que la historiografía turca llama el Segundo Movimiento Arquitectónico Nacional: simétrica, monumental, revestida de piedra labrada, apoyada en el precedente selyúcida y otomano sin copiarlo. Construyó también el Palacio de Justicia de Estambul y la secretaría presidencial de Çankaya. En octubre de 1960 fue expulsado de la universidad junto a otros 147 académicos; murió al año siguiente.',
-      it: "Onat entrò all'Università tecnica di Istanbul nel 1926 e fu poi inviato al politecnico di Zurigo, dove studiò con Otto Rudolf Salvisberg e assimilò un modernismo svizzero rigoroso. Tornò in Turchia nel 1934 per insegnare, fu il primo preside della nuova Facoltà di Architettura dell'Università tecnica di Istanbul nel 1944 e ne fu rettore dal 1951 al 1953. Con Orhan Arda vinse nel 1942 il concorso internazionale per il mausoleo di Atatürk, opera che lo impegnò per tutto il resto della carriera. La sua architettura appartiene a quello che gli storici turchi chiamano Secondo Movimento Architettonico Nazionale: simmetrica, monumentale, rivestita in pietra da taglio, fondata sul precedente selgiuchide e ottomano senza copiarlo. Costruì anche il Palazzo di Giustizia di Istanbul e la segreteria presidenziale di Çankaya. Nell'ottobre 1960 fu espulso dall'università insieme ad altri 147 accademici; morì l'anno seguente.",
+      en: "Onat entered Istanbul Technical University in 1926 and was sent on to the technical university in Zurich, where he studied under Otto Rudolf Salvisberg and absorbed a disciplined Swiss modernism. He returned to Turkey in 1934 to teach, became the first dean of Istanbul Technical University's new Faculty of Architecture in 1944, and served as its rector from 1951 to 1953. With Orhan Arda he won the 1942 international competition for Atatürk's mausoleum, and that building occupied him for the rest of his working life. His architecture belongs to what Turkish historians call the Second National Architectural Movement: symmetrical, monumental, faced in cut stone, drawing on Seljuk and Ottoman precedent without copying it. He also built the Istanbul Justice Palace and the presidential secretariat at Çankaya. In October 1960 he was among the 147 academics dismissed from Turkey's universities; he died the following year.",
+      es: 'Onat ingresó en la Universidad Técnica de Estambul en 1926 y fue enviado después a la universidad técnica de Zúrich, donde estudió con Otto Rudolf Salvisberg y asimiló un modernismo suizo disciplinado. Volvió a Turquía en 1934 para enseñar, fue el primer decano de la nueva Facultad de Arquitectura de la Universidad Técnica de Estambul en 1944 y su rector entre 1951 y 1953. Con Orhan Arda ganó en 1942 el concurso internacional para el mausoleo de Atatürk, obra que le ocupó el resto de su vida profesional. Su arquitectura pertenece a lo que la historiografía turca llama el Segundo Movimiento Arquitectónico Nacional: simétrica, monumental, revestida de piedra labrada, apoyada en el precedente selyúcida y otomano sin copiarlo. Construyó también el Palacio de Justicia de Estambul y la secretaría presidencial de Çankaya. En octubre de 1960 figuró entre los 147 académicos expulsados de las universidades turcas; murió al año siguiente.',
+      it: "Onat entrò all'Università tecnica di Istanbul nel 1926 e fu poi inviato al politecnico di Zurigo, dove studiò con Otto Rudolf Salvisberg e assimilò un modernismo svizzero rigoroso. Tornò in Turchia nel 1934 per insegnare, fu il primo preside della nuova Facoltà di Architettura dell'Università tecnica di Istanbul nel 1944 e ne fu rettore dal 1951 al 1953. Con Orhan Arda vinse nel 1942 il concorso internazionale per il mausoleo di Atatürk, opera che lo impegnò per tutto il resto della carriera. La sua architettura appartiene a quello che gli storici turchi chiamano Secondo Movimento Architettonico Nazionale: simmetrica, monumentale, rivestita in pietra da taglio, fondata sul precedente selgiuchide e ottomano senza copiarlo. Costruì anche il Palazzo di Giustizia di Istanbul e la segreteria presidenziale di Çankaya. Nell'ottobre 1960 fu tra i 147 accademici espulsi dalle università turche; morì l'anno seguente.",
     },
     awards: [
       'First prize, Anıtkabir international competition (1942, with Orhan Arda)',
@@ -131,9 +134,9 @@ export const WESTASIA_ARCHITECTS: Architect[] = [
     primaryTypology: 'civic',
     signatureMaterial: 'concrete',
     portrait: {
-      en: 'Chakhava graduated in architecture from Georgian Technical University in 1949 and made his career inside the Soviet Georgian state apparatus, rising to deputy minister of highway construction in the 1970s. That post made him, unusually, both the client and the lead architect of his ministry’s own headquarters in Tbilisi, designed with Zurab Jalaghania and the engineer Teimuraz Skhilava and finished in 1975. The building states his central idea, the "Space City" method: hang the accommodation in horizontal two-storey slabs stacked and crossed over a few vertical cores, and let the hillside run on underneath, unbuilt. He used the same logic at the Café Fantasy in Batumi, also 1975, and worked on the Russia–Georgia Friendship Monument in 1983. He received the USSR State Prize that year.',
-      es: 'Chakhava se licenció en arquitectura por la Universidad Técnica de Georgia en 1949 e hizo carrera dentro del aparato estatal de la Georgia soviética, hasta llegar a viceministro de construcción de carreteras en los años setenta. Ese cargo lo convirtió, insólitamente, en cliente y arquitecto jefe a la vez de la sede de su propio ministerio en Tiflis, proyectada con Zurab Jalaghania y el ingeniero Teimuraz Skhilava y terminada en 1975. El edificio enuncia su idea central, el método de la «ciudad espacial»: colgar los locales en bandas horizontales de dos plantas, apiladas y cruzadas sobre unos pocos núcleos verticales, y dejar que la ladera siga corriendo por debajo sin edificar. Aplicó la misma lógica en el Café Fantasy de Batumi, también de 1975, y participó en el Monumento a la Amistad ruso-georgiana en 1983. Ese año recibió el Premio Estatal de la URSS.',
-      it: 'Chakhava si laureò in architettura alla Università tecnica georgiana nel 1949 e fece carriera dentro l’apparato statale della Georgia sovietica, fino a diventare viceministro della costruzione stradale negli anni settanta. Quell’incarico lo rese, cosa insolita, insieme committente e architetto capo della sede del suo stesso ministero a Tbilisi, progettata con Zurab Jalaghania e l’ingegnere Teimuraz Skhilava e conclusa nel 1975. L’edificio enuncia la sua idea centrale, il metodo della «città spaziale»: sospendere gli ambienti in fasce orizzontali di due piani, impilate e incrociate su pochi nuclei verticali, lasciando che il pendio prosegua sotto, non costruito. Applicò la stessa logica al Café Fantasy di Batumi, anch’esso del 1975, e lavorò al Monumento all’amicizia russo-georgiana nel 1983. In quell’anno ricevette il Premio di Stato dell’URSS.',
+      en: 'Chakhava graduated in architecture from Georgian Technical University in 1949 and made his career inside the Soviet Georgian state apparatus, rising to deputy minister of highway construction in the 1970s. That post made him, unusually, both the client and the lead architect of his ministry’s own headquarters in Tbilisi, designed with Zurab Jalaghania and finished in 1975. The building states his central idea, the "Space City" method: hang the accommodation in horizontal two-storey slabs stacked and crossed over a few vertical cores, and let the hillside run on underneath, unbuilt. He used the same logic at the Café Fantasy in Batumi, also 1975, and worked on the Russia–Georgia Friendship Monument in 1983. He received the USSR State Prize that year.',
+      es: 'Chakhava se licenció en arquitectura por la Universidad Técnica de Georgia en 1949 e hizo carrera dentro del aparato estatal de la Georgia soviética, hasta llegar a viceministro de construcción de carreteras en los años setenta. Ese cargo lo convirtió, insólitamente, en cliente y arquitecto jefe a la vez de la sede de su propio ministerio en Tiflis, proyectada con Zurab Jalaghania y terminada en 1975. El edificio enuncia su idea central, el método de la «ciudad espacial»: colgar los locales en bandas horizontales de dos plantas, apiladas y cruzadas sobre unos pocos núcleos verticales, y dejar que la ladera siga corriendo por debajo sin edificar. Aplicó la misma lógica en el Café Fantasy de Batumi, también de 1975, y participó en el Monumento a la Amistad ruso-georgiana en 1983. Ese año recibió el Premio Estatal de la URSS.',
+      it: 'Chakhava si laureò in architettura alla Università tecnica georgiana nel 1949 e fece carriera dentro l’apparato statale della Georgia sovietica, fino a diventare viceministro della costruzione stradale negli anni settanta. Quell’incarico lo rese, cosa insolita, insieme committente e architetto capo della sede del suo stesso ministero a Tbilisi, progettata con Zurab Jalaghania e conclusa nel 1975. L’edificio enuncia la sua idea centrale, il metodo della «città spaziale»: sospendere gli ambienti in fasce orizzontali di due piani, impilate e incrociate su pochi nuclei verticali, lasciando che il pendio prosegua sotto, non costruito. Applicò la stessa logica al Café Fantasy di Batumi, anch’esso del 1975, e lavorò al Monumento all’amicizia russo-georgiana nel 1983. In quell’anno ricevette il Premio di Stato dell’URSS.',
     },
     awards: ['USSR State Prize (1983)'],
     tier: 'deep',
@@ -155,46 +158,56 @@ export const WESTASIA_ARCHITECTS: Architect[] = [
     ],
   },
   {
-    id: 'zeynep-fadillioglu',
-    wikidataId: 'Q8069949',
-    name: 'Zeynep Fadıllıoğlu',
-    alternativeNames: ['Zeynep Fadıllıoglu'],
+    id: 'melike-altinisik',
+    wikidataId: 'Q116856797',
+    name: 'Melike Altınışık',
+    alternativeNames: ['Melike Altinisik', 'Мелике Алтынышик'],
     gender: 'woman',
-    born: 1955,
+    born: 1980,
     died: null,
-    // From the founding of Zeynep Fadıllıoğlu Design in Istanbul in 1995;
-    // the practice is still active.
-    floruit: { start: 1995, end: 2025, override: false },
-    movements: 'unaffiliated',
+    // Span of completed works: Melike Altınışık Architects was founded in 2013,
+    // its first building finished in 2020, and the practice is still active.
+    floruit: { start: 2020, end: 2025, override: false },
+    // Trained at the AA Design Research Laboratory and formed at Zaha Hadid
+    // Architects, the practice she left to found her own; the label is a
+    // curatorial judgement about lineage and method, not a self-description.
+    movements: [{ id: 'parametricism', primary: true }],
     workRegions: [],
     workCentroid: { lat: 0, lon: 0 },
-    primaryTypology: 'commercial',
-    signatureMaterial: 'mixed',
+    primaryTypology: 'tower',
+    signatureMaterial: 'concrete',
     portrait: {
-      en: "Fadıllıoğlu read computer science at the University of Sussex before turning to design, completing a course in art history and design at London's Inchbald School of Design in 1978. She designed some twenty restaurants and clubs before founding Zeynep Fadıllıoğlu Design in Istanbul in 1995; the practice has since completed more than 140 projects and is licensed in Turkey, Qatar, the Netherlands and India. Most of that work is interior architecture — restaurants, hotels, retail and private houses — in which Ottoman craft traditions and contemporary detailing are made to sit in the same room. Her best-known commission is the interior of the Şakirin Mosque in Istanbul, completed in 2009, for which she is credited as the first woman to design a mosque in modern Turkey. She teaches at Istanbul Bilgi University.",
-      es: 'Fadıllıoğlu estudió informática en la Universidad de Sussex antes de dedicarse al diseño, y en 1978 completó un curso de historia del arte y diseño en la Inchbald School of Design de Londres. Proyectó una veintena de restaurantes y clubes antes de fundar Zeynep Fadıllıoğlu Design en Estambul en 1995; el estudio ha completado desde entonces más de 140 encargos y está colegiado en Turquía, Catar, los Países Bajos y la India. Casi todo ese trabajo es arquitectura de interiores —restaurantes, hoteles, comercio y casas particulares— donde la tradición artesanal otomana y el detalle contemporáneo conviven en la misma sala. Su encargo más conocido es el interior de la mezquita Şakirin de Estambul, terminado en 2009, por el que se la reconoce como la primera mujer que diseña una mezquita en la Turquía moderna. Enseña en la Universidad Bilgi de Estambul.',
-      it: "Fadıllıoğlu studiò informatica all'Università del Sussex prima di dedicarsi al progetto, e nel 1978 completò un corso di storia dell'arte e design alla Inchbald School of Design di Londra. Firmò una ventina di ristoranti e locali notturni prima di fondare Zeynep Fadıllıoğlu Design a Istanbul nel 1995; da allora lo studio ha portato a termine oltre 140 incarichi ed è abilitato in Turchia, Qatar, Paesi Bassi e India. Quasi tutto quel lavoro è architettura d'interni — ristoranti, alberghi, negozi e case private — in cui la tradizione artigianale ottomana e il dettaglio contemporaneo stanno nella stessa stanza. L'incarico più noto è l'interno della moschea Şakirin di Istanbul, concluso nel 2009, per il quale le viene riconosciuto di essere la prima donna a progettare una moschea nella Turchia moderna. Insegna alla Università Bilgi di Istanbul.",
+      en: "Altınışık was born in Sakarya in 1980 and finished top of her class at the Faculty of Architecture of Istanbul Technical University in 2003, then took a master's at the Architectural Association's Design Research Laboratory in London, completing it in 2006. Her thesis, Urban Lobby, won the FEIDAD award that year and a Swiss Arts Award in 2007. Zaha Hadid and Patrik Schumacher, who sat on her final jury, offered her a job on the spot; she spent 2006 to 2013 at Zaha Hadid Architects as a project leader, working on the Kartal-Pendik masterplan for Istanbul and on schemes in twelve countries. She returned to Turkey in 2012 to teach on the architecture master's at Istanbul Bilgi University and founded Melike Altınışık Architects in Istanbul in 2013. The Çamlıca Tower is the practice's first building; in 2019 it won the competition for the Robot Science Museum in Seoul.",
+      es: 'Altınışık nació en Sakarya en 1980 y terminó la carrera como número uno de su promoción en la Facultad de Arquitectura de la Universidad Técnica de Estambul, en 2003. Cursó después un máster en el Design Research Laboratory de la Architectural Association de Londres, concluido en 2006; su tesis, Urban Lobby, obtuvo ese año el premio FEIDAD y en 2007 un Swiss Arts Award. Zaha Hadid y Patrik Schumacher, que formaban su tribunal final, la contrataron: entre 2006 y 2013 fue jefa de proyecto en Zaha Hadid Architects, donde trabajó en el plan de Kartal-Pendik para Estambul y en encargos de doce países. Volvió a Turquía en 2012 para enseñar en el máster de arquitectura de la Universidad Bilgi de Estambul y fundó Melike Altınışık Architects en 2013. La torre de Çamlıca es su primer edificio; en 2019 ganó el concurso del Museo de la Ciencia Robótica de Seúl.',
+      it: "Altınışık nacque a Sakarya nel 1980 e si laureò prima del suo corso alla Facoltà di Architettura dell'Università tecnica di Istanbul nel 2003; proseguì con un master al Design Research Laboratory della Architectural Association di Londra, concluso nel 2006. La sua tesi, Urban Lobby, vinse quell'anno il premio FEIDAD e nel 2007 uno Swiss Arts Award. Zaha Hadid e Patrik Schumacher, che sedevano nella commissione finale, le offrirono subito un impiego: dal 2006 al 2013 fu capoprogetto da Zaha Hadid Architects, dove lavorò al piano di Kartal-Pendik per Istanbul e a incarichi in dodici paesi. Tornò in Turchia nel 2012 per insegnare nel master di architettura dell'Università Bilgi di Istanbul e fondò Melike Altınışık Architects a Istanbul nel 2013. La torre di Çamlıca è il primo edificio dello studio; nel 2019 ha vinto il concorso per il Museo della scienza robotica di Seul.",
     },
     awards: [
-      'Andrew Martin International Designer of the Year (2002)',
-      'House & Garden International Interior Designer of the Year (2002)',
-      'Modern Designer of the Year, Design and Decoration Awards, London (2005)',
-      'WIFTS Foundation International Visionary Award (2011)',
+      'FEIDAD Award (2006, for the thesis Urban Lobby)',
+      'Swiss Arts Award (2007)',
+      'DOM-ACXT International Award for Architecture Diploma (2008)',
+      'Europe 40 under 40 (2018)',
+      'First prize, Robot Science Museum competition, Seoul (2019)',
     ],
     tier: 'deep',
     context: null,
     sources: [
-      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q8069949', title: 'Zeynep Fadıllıoğlu (Q8069949)', license: null },
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q116856797', title: 'Melike Altınışık (Q116856797)', license: null },
       {
         kind: 'wikipedia',
-        url: 'https://en.wikipedia.org/wiki/Zeynep_Fad%C4%B1ll%C4%B1o%C4%9Flu',
-        title: 'Zeynep Fadıllıoğlu',
+        url: 'https://tr.wikipedia.org/wiki/Melike_Alt%C4%B1n%C4%B1%C5%9F%C4%B1k',
+        title: 'Melike Altınışık',
+        license: 'CC BY-SA 4.0',
+      },
+      {
+        kind: 'wikipedia',
+        url: 'https://en.wikipedia.org/wiki/%C3%87aml%C4%B1ca_Tower',
+        title: 'Çamlıca Tower',
         license: 'CC BY-SA 4.0',
       },
       {
         kind: 'institution',
-        url: 'https://zfdesign.com/',
-        title: 'Zeynep Fadıllıoğlu Design — studio site',
+        url: 'https://www.melikealtinisik.com/',
+        title: 'Melike Altınışık Architects — studio site',
         license: null,
       },
     ],
