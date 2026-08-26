@@ -1,0 +1,42 @@
+export const EPOCH = Date.UTC(2026, 8, 1); // 2026-09-01, launch day
+const DAY_MS = 86_400_000;
+
+export function mulberry32(seed: number): () => number {
+  let a = seed >>> 0;
+  return () => {
+    a = (a + 0x6d2b79f5) >>> 0;
+    let t = a;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+export function shuffledCycle(n: number, cycleIndex: number): number[] {
+  const rng = mulberry32(0x9e3779b9 ^ (cycleIndex * 2654435761));
+  const a = Array.from({ length: n }, (_, i) => i);
+  for (let i = n - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// Uses the LOCAL calendar date, normalised through Date.UTC, so the puzzle turns
+// over at the player's midnight and is immune to DST shifts.
+export function localDayIndex(now: Date): number {
+  const utcOfLocalDate = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+  return Math.floor((utcOfLocalDate - EPOCH) / DAY_MS);
+}
+
+export function puzzleNumber(now: Date): number {
+  return localDayIndex(now) + 1;
+}
+
+export function dailyIndex(now: Date, poolSize: number): number {
+  if (poolSize <= 0) throw new Error('poolSize must be positive');
+  const d = localDayIndex(now);
+  const cycle = Math.floor(d / poolSize);
+  const pos = ((d % poolSize) + poolSize) % poolSize;
+  return shuffledCycle(poolSize, cycle)[pos];
+}
