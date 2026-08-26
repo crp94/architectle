@@ -109,6 +109,46 @@ describe('validateCrossRefs', () => {
     expect(violation.subject).toBe('b1,b1-dup');
   });
 
+  it('flags the same building entered twice with realistic geocoding drift', () => {
+    const p = validPool();
+    const buildings = p.buildings.map((b) => ({ ...b }));
+    // Same building, same name, but geocoded ~0.8 km apart (e.g. one entry
+    // pinned to a street address, the other to the building/complex
+    // centroid) — comfortably outside a naively-tightened "coordinate
+    // collision" radius (0.5 km), but still the same site. The rule must
+    // still catch this via the wider radius + name match, not just an
+    // exact-coordinate clone.
+    const drifted = {
+      ...buildings[0],
+      id: 'b1-drift',
+      location: { ...buildings[0].location, lat: buildings[0].location.lat + 0.0072 },
+    };
+    const v = validateCrossRefs({ buildings: [...buildings, drifted], architects: p.architects });
+    expect(v.map((x) => x.rule)).toContain('possible-duplicate-site');
+  });
+
+  it('flags a Turkish building name across a dotless-ı transliteration difference', () => {
+    const p = validPool();
+    const buildings = p.buildings.map((b) => ({ ...b }));
+    // Same building, same coordinates, entered once with correct Turkish
+    // orthography and once with a plain-ASCII anglicized transliteration —
+    // exactly the shape a Mimar Sinan-era entry can take across two
+    // sources. Regression guard for dotless ı/İ, which have no NFD
+    // decomposition and would otherwise fragment "Kızılkule" into
+    // meaningless single-letter tokens that no longer match "Kizilkule".
+    buildings[0] = {
+      ...buildings[0],
+      name: { en: 'Kızılkule', es: 'Kızılkule', it: 'Kızılkule' },
+    };
+    const dup = {
+      ...buildings[0],
+      id: 'b1-dup',
+      name: { en: 'Kizilkule', es: 'Kizilkule', it: 'Kizilkule' },
+    };
+    const v = validateCrossRefs({ buildings: [...buildings, dup], architects: p.architects });
+    expect(v.map((x) => x.rule)).toContain('possible-duplicate-site');
+  });
+
   it('flags the same building entered twice under a different but overlapping name', () => {
     const p = validPool();
     const buildings = p.buildings.map((b) => ({ ...b }));
