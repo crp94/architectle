@@ -28,4 +28,10 @@ describe('movement taxonomy', () => {
     const fams = new Set(Object.values(MOVEMENTS).map((m) => m.family));
     for (const id of Object.keys(MOVEMENTS)) expect(fams.has(id as never)).toBe(false);
   });
+
+  it('returns undefined for Object.prototype keys rather than inherited members', () => {
+    expect(familyOf('constructor')).toBeUndefined();
+    expect(familyOf('toString')).toBeUndefined();
+    expect(familyOf('__proto__')).toBeUndefined();
+  });
 });

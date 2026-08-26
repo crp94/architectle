@@ -99,7 +99,7 @@ export const MOVEMENTS: Record<MovementId, Movement> = {
     blurb: {
       en: 'Red sandstone and white marble are inlaid and carved into symmetrical garden pavilions, their bulbous domes and iwans balancing Persian, Indian and Islamic craft.',
       es: 'La arenisca roja y el mármol blanco se tallan e incrustan en pabellones de jardín simétricos, cuyas cúpulas bulbosas e iwanes equilibran la artesanía persa, india e islámica.',
-      it: "L'arenaria rossa e il marmo bianco vengono intarsiati e scolpiti in padiglioni da giardino simmetrici, le cui cupole rigonfie e i iwan bilanciano l'artigianato persiano, indiano e islamico.",
+      it: "L'arenaria rossa e il marmo bianco vengono intarsiati e scolpiti in padiglioni da giardino simmetrici, le cui cupole bulbose e gli iwan bilanciano l'artigianato persiano, indiano e islamico.",
     },
     approxSpan: { start: 1526, end: 1720 },
     sources: [{ kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Mughal_architecture',
@@ -397,7 +397,7 @@ export const MOVEMENTS: Record<MovementId, Movement> = {
     name: 'Postmodern Classicism',
     blurb: {
       en: 'Classical columns, pediments and keystones return oversized, cartoonish or in the wrong material, quoted ironically rather than built as structural truth.',
-      es: 'Columnas, frontones y dovelas clásicas vuelven de tamaño exagerado, casi caricaturesco o en un material impropio, citadas con ironía en lugar de construirse como verdad estructural.',
+      es: 'Columnas, frontones y claves clásicos vuelven de tamaño exagerado, casi caricaturesco o en un material impropio, citados con ironía en lugar de construirse como verdad estructural.',
       it: 'Colonne, frontoni e chiavi di volta classiche tornano sovradimensionati, quasi caricaturali o in un materiale improprio, citati con ironia anziché costruiti come verità strutturale.',
     },
     approxSpan: { start: 1975, end: 1995 },
@@ -409,11 +409,11 @@ export const MOVEMENTS: Record<MovementId, Movement> = {
     family: 'postmodernism',
     name: 'Deconstructivism',
     blurb: {
-      en: 'Walls, floors and volumes are deliberately fractured, tilted and collided, using computer-aided geometry to make a building look structurally unresolved.',
-      es: 'Muros, forjados y volúmenes se fracturan, inclinan y hacen colisionar deliberadamente, usando geometría asistida por ordenador para que el edificio parezca estructuralmente sin resolver.',
-      it: "Muri, solai e volumi vengono deliberatamente fratturati, inclinati e fatti collidere, usando una geometria assistita dal computer per far apparire l'edificio strutturalmente irrisolto.",
+      en: 'Refusing the modernist assumption that form must express structure, it lets walls, floors and volumes read as deliberately fractured, tilted and unresolved.',
+      es: 'Al rechazar el supuesto moderno de que la forma debe expresar la estructura, permite que muros, forjados y volúmenes se lean como fracturados, inclinados y deliberadamente sin resolver.',
+      it: "Rifiutando l'assunto modernista secondo cui la forma deve esprimere la struttura, lascia che muri, solai e volumi si leggano come fratturati, inclinati e deliberatamente irrisolti.",
     },
-    approxSpan: { start: 1985, end: 2000 },
+    approxSpan: { start: 1985, end: null },
     sources: [{ kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Deconstructivism',
                 title: 'Deconstructivism', license: 'CC BY-SA 4.0' }],
   },
@@ -549,10 +549,11 @@ export const MOVEMENTS: Record<MovementId, Movement> = {
   },
 };
 
-const FAMILY_BY_ID: Record<MovementId, FamilyId> = Object.fromEntries(
-  Object.values(MOVEMENTS).map((m) => [m.id, m.family]),
+const FAMILY_BY_ID: Record<MovementId, FamilyId> = Object.assign(
+  Object.create(null),
+  Object.fromEntries(Object.values(MOVEMENTS).map((m) => [m.id, m.family])),
 );
 
 export function familyOf(id: MovementId): FamilyId | undefined {
-  return FAMILY_BY_ID[id];
+  return Object.hasOwn(FAMILY_BY_ID, id) ? FAMILY_BY_ID[id] : undefined;
 }

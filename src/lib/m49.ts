@@ -9,7 +9,7 @@
 // M49 region assignment and are intentionally omitted; `m49For` returns
 // `undefined` for any code not present here.
 
-export type M49Entry = { region: string; subregion: string };
+export type M49Entry = { readonly region: string; readonly subregion: string };
 
 const NORTHERN_AFRICA = { region: 'Africa', subregion: 'Northern Africa' };
 const SUB_SAHARAN_AFRICA = { region: 'Africa', subregion: 'Sub-Saharan Africa' };
@@ -33,7 +33,7 @@ const MELANESIA = { region: 'Oceania', subregion: 'Melanesia' };
 const MICRONESIA = { region: 'Oceania', subregion: 'Micronesia' };
 const POLYNESIA = { region: 'Oceania', subregion: 'Polynesia' };
 
-export const M49: Record<string, M49Entry> = {
+export const M49: Readonly<Record<string, Readonly<M49Entry>>> = {
   // --- Africa: Northern Africa ---
   DZ: NORTHERN_AFRICA, EG: NORTHERN_AFRICA, LY: NORTHERN_AFRICA, MA: NORTHERN_AFRICA,
   SD: NORTHERN_AFRICA, TN: NORTHERN_AFRICA, EH: NORTHERN_AFRICA,
@@ -140,5 +140,5 @@ export const M49: Record<string, M49Entry> = {
 };
 
 export function m49For(countryCode: string): M49Entry | undefined {
-  return M49[countryCode];
+  return Object.hasOwn(M49, countryCode) ? M49[countryCode] : undefined;
 }

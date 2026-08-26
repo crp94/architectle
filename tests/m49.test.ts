@@ -12,4 +12,10 @@ describe('m49For', () => {
   it('returns undefined for an unknown code rather than throwing', () => {
     expect(m49For('ZZ')).toBeUndefined();
   });
+
+  it('returns undefined for Object.prototype keys rather than inherited members', () => {
+    expect(m49For('constructor')).toBeUndefined();
+    expect(m49For('toString')).toBeUndefined();
+    expect(m49For('__proto__')).toBeUndefined();
+  });
 });
