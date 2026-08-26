@@ -86,6 +86,43 @@ describe('validateCoverage', () => {
     expect(v.map((x) => x.rule)).toContain('geography-country-unmapped');
   });
 
+  it('rejects an empty pool instead of silently passing (division-by-zero guard)', () => {
+    const v = validateCoverage({ buildings: [], architects: [] });
+    expect(v).not.toEqual([]);
+    expect(v.map((x) => x.rule)).toContain('coverage-empty-pool');
+  });
+
+  it('rejects a pool with buildings but no architects instead of silently passing gender-min', () => {
+    const p = validPool();
+    p.architects = [];
+    const v = validateCoverage(p);
+    expect(v.map((x) => x.rule)).toContain('coverage-empty-pool');
+  });
+
+  it('buckets the 1800 seam year into 1800-1945, not pre-1800', () => {
+    const p = validPool();
+    p.buildings.forEach((b) => { b.inception = 1800; b.completed = 1800; });
+    const rules = validateCoverage(p).map((x) => x.rule);
+    expect(rules).not.toContain('era-1800-1945-min');
+    expect(rules).toContain('era-pre-1800-min');
+  });
+
+  it('buckets the 1945 seam year into 1800-1945, not 1945-2000', () => {
+    const p = validPool();
+    p.buildings.forEach((b) => { b.inception = 1945; b.completed = 1945; });
+    const rules = validateCoverage(p).map((x) => x.rule);
+    expect(rules).not.toContain('era-1800-1945-min');
+    expect(rules).toContain('era-1945-2000-min');
+  });
+
+  it('buckets the 2000 seam year into 1945-2000, not post-2000', () => {
+    const p = validPool();
+    p.buildings.forEach((b) => { b.inception = 2000; b.completed = 2000; });
+    const rules = validateCoverage(p).map((x) => x.rule);
+    expect(rules).not.toContain('era-1945-2000-min');
+    expect(rules).toContain('era-post-2000-min');
+  });
+
   it('states the measured percentage and threshold in the detail', () => {
     const p = validPool();
     p.buildings.forEach((b) => { b.location.countryCode = 'FR'; });

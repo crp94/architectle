@@ -7,9 +7,22 @@ const ALLOWED_LICENSES: ImageRecord['license'][] = [
 ];
 
 // Commons hosts an original either at commons.wikimedia.org/wiki/File:... or
-// as a raw asset under upload.wikimedia.org/.../commons/...
+// as a raw asset under upload.wikimedia.org/wikipedia/commons/... . Compare
+// the parsed hostname (and, for the upload host, the path prefix) rather
+// than doing a substring match on the whole URL, which a non-Commons URL
+// could satisfy merely by mentioning the string in a query parameter. A
+// malformed sourceUrl falls through to `false`, which surfaces as the
+// existing image-source-url violation instead of throwing.
 function isCommonsUrl(url: string): boolean {
-  return url.includes('commons.wikimedia.org') || url.includes('upload.wikimedia.org/wikipedia/commons');
+  let parsed: URL;
+  try {
+    parsed = new URL(url);
+  } catch {
+    return false;
+  }
+  if (parsed.hostname === 'commons.wikimedia.org') return true;
+  if (parsed.hostname === 'upload.wikimedia.org' && parsed.pathname.startsWith('/wikipedia/commons/')) return true;
+  return false;
 }
 
 export function validateImages(pool: Pool): Violation[] {

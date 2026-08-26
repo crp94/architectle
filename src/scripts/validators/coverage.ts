@@ -95,6 +95,20 @@ export function validateCoverage(pool: Pool): Violation[] {
   const totalBuildings = pool.buildings.length;
   const totalArchitects = pool.architects.length;
 
+  // Every rule below is a ratio over totalBuildings or totalArchitects. In
+  // JavaScript, `NaN < x` and `NaN > x` are both false, so dividing by zero
+  // would make every pushMin/pushMax a silent no-op — an empty pool would
+  // pass every coverage rule with zero violations, exactly the failure this
+  // validator exists to catch. Short-circuit instead of ever computing 0/0.
+  if (totalBuildings === 0) {
+    out.push({
+      rule: 'coverage-empty-pool',
+      subject: 'pool',
+      detail: 'pool has 0 buildings; every building-based coverage rule (era, geography, canon-tier, max-buildings-per-architect) is unverifiable',
+    });
+    return out;
+  }
+
   // --- Era ---
   const eraCounts: Record<Era, number> = { 'pre-1800': 0, '1800-1945': 0, '1945-2000': 0, 'post-2000': 0 };
   for (const b of pool.buildings) eraCounts[eraOf(yearOf(b))] += 1;
@@ -125,8 +139,16 @@ export function validateCoverage(pool: Pool): Violation[] {
   pushMin(out, 'geography-latin-america-min', 'Latin America and the Caribbean', geoCounts['latin-america'], totalBuildings, GEOGRAPHY_MIN['latin-america']);
 
   // --- Gender ---
-  const womenOrNonBinary = pool.architects.filter((a) => a.gender === 'woman' || a.gender === 'non-binary').length;
-  pushMin(out, 'gender-min', 'woman or non-binary architects', womenOrNonBinary, totalArchitects, GENDER_MIN);
+  if (totalArchitects === 0) {
+    out.push({
+      rule: 'coverage-empty-pool',
+      subject: 'pool',
+      detail: 'pool has 0 architects; gender-min is unverifiable',
+    });
+  } else {
+    const womenOrNonBinary = pool.architects.filter((a) => a.gender === 'woman' || a.gender === 'non-binary').length;
+    pushMin(out, 'gender-min', 'woman or non-binary architects', womenOrNonBinary, totalArchitects, GENDER_MIN);
+  }
 
   // --- Max buildings per architect ---
   const buildingCountByArchitect = new Map<string, number>();

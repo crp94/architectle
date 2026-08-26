@@ -37,6 +37,20 @@ describe('validateImages', () => {
     expect(v.map((x) => x.rule)).toContain('image-dimensions-recorded');
   });
 
+  it('rejects a non-Commons URL that merely contains "commons.wikimedia.org" in a query string', () => {
+    const p = validPool();
+    const v = validateImages(withBuilding(p, {
+      image: { ...p.buildings[0].image, sourceUrl: 'https://evil.example.com/?ref=commons.wikimedia.org' },
+    }));
+    expect(v.map((x) => x.rule)).toContain('image-source-url');
+  });
+
+  it('rejects a malformed sourceUrl instead of throwing', () => {
+    const p = validPool();
+    const v = validateImages(withBuilding(p, { image: { ...p.buildings[0].image, sourceUrl: 'not a url' } }));
+    expect(v.map((x) => x.rule)).toContain('image-source-url');
+  });
+
   it('names the offending building and the bad value in the detail', () => {
     const p = validPool();
     const v = validateImages(withBuilding(p, { image: { ...p.buildings[0].image, photographer: '' } }));
