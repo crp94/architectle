@@ -3,6 +3,12 @@ import type { Architect } from '@/types/architect';
 // Wave 5, agent 9d — Northern Africa (UN M49 "Northern Africa": DZ, EG, LY, MA,
 // SD, TN). Six architects, one per building in buildings/africa.ts.
 //
+// Two of these six have their practice base outside the slice and are defined
+// here because no other slice owns them: Fernand Pouillon (French) and KSP
+// Jürgen Engel Architekten (German). If agent 9a or 9d-germanic also defines
+// them, keep one definition and repoint the architectId. Both ids are plain
+// kebab-case slugs.
+//
 // workRegions / workCentroid are deliberately left empty here: buildCuratedPool
 // derives both from each architect's buildings and discards whatever this file
 // supplies. See src/scripts/buildCuratedPool.ts.
@@ -27,35 +33,35 @@ export const AFRICA_ARCHITECTS: Architect[] = [
     signatureMaterial: 'stone',
     portrait: {
       en: 'Mohamed Ben Ali — in the Arabic sources Abu Abdallah Muhammad ibn Ali ibn Muhammad ibn '
-        + 'Abdallah ibn al-Hajj al-Ishbili — was born in Seville and died at Fes in 1314. He belongs '
-        + 'to the small number of pre-modern Maghrebi builders whose name survived attached to '
-        + 'specific works rather than dissolving into the guild that raised them. After a Castilian '
-        + 'raiding fleet sacked Salé in 1260, the Marinid sultan Abu Yusuf Yaqub ibn Abd al-Haqq set '
-        + 'out to rebuild the town as the chief shipyard and commercial port of the kingdom of Fes, '
-        + 'and called on Ben Ali to do it. He built the arsenal and its two monumental gates, Bab Dar '
-        + 'Assinaa and Bab el-Mrissa, cut in ashlar; the second of them was vaulted over a canal so '
-        + 'that galleys could pass inside the walls. Almost nothing else of his life is documented; '
-        + 'the gates are the record.',
+        + 'Abdallah ibn al-Hajj al-Ishbili — was born in Seville and died at Fes in 1314. He is one '
+        + 'of the very few pre-modern Maghrebi builders named in the record at all, rather than '
+        + 'dissolved into the guild that raised the work. After a Castilian fleet sacked Salé in '
+        + '1260, the Marinid sultan Abu Yusuf Yaqub ibn Abd al-Haqq set out to rebuild the town as '
+        + 'the chief shipyard of the kingdom of Fes, and called on Ben Ali. French and Arabic '
+        + 'accounts credit him with the arsenal and both of its monumental ashlar gates, citing '
+        + 'Henri Terrasse’s 1922 study of them; the attestation is firmest at Bab el-Mrissa, vaulted '
+        + 'over a canal so that galleys could pass inside the walls. Nothing else of his life is '
+        + 'documented.',
       es: 'Mohamed Ben Ali —en las fuentes árabes Abu Abdallah Muhammad ibn Ali ibn Muhammad ibn '
-        + 'Abdallah ibn al-Hajj al-Ishbili— nació en Sevilla y murió en Fez en 1314. Pertenece al '
-        + 'reducido grupo de constructores premodernos del Magreb cuyo nombre ha llegado hasta '
-        + 'nosotros unido a obras concretas, en vez de disolverse en el gremio que las levantó. '
-        + 'Después de que una flota castellana saqueara Salé en 1260, el sultán meriní Abu Yusuf '
-        + 'Yaqub ibn Abd al-Haqq decidió rehacer la ciudad como principal astillero y puerto '
-        + 'comercial del reino de Fez, y encargó la obra a Ben Ali. Levantó las atarazanas y sus dos '
-        + 'puertas monumentales, Bab Dar Assinaa y Bab el-Mrissa, labradas en sillería; la segunda se '
-        + 'abovedó sobre un canal que permitía a las galeras entrar dentro de la muralla. De su vida '
-        + 'apenas se documenta nada más: las puertas son el testimonio.',
+        + 'Abdallah ibn al-Hajj al-Ishbili— nació en Sevilla y murió en Fez en 1314. Es uno de los '
+        + 'poquísimos constructores premodernos del Magreb cuyo nombre consta, en vez de disolverse '
+        + 'en el gremio que levantó la obra. Después de que una flota castellana saqueara Salé en '
+        + '1260, el sultán meriní Abu Yusuf Yaqub ibn Abd al-Haqq decidió rehacer la ciudad como '
+        + 'principal astillero del reino de Fez y recurrió a Ben Ali. Las fuentes francesas y árabes '
+        + 'le atribuyen las atarazanas y sus dos puertas monumentales de sillería, remitiéndose al '
+        + 'estudio que Henri Terrasse les dedicó en 1922; la atribución es más firme en Bab '
+        + 'el-Mrissa, abovedada sobre un canal para que las galeras entraran dentro de la muralla. '
+        + 'De su vida no se documenta nada más.',
       it: 'Mohamed Ben Ali — nelle fonti arabe Abu Abdallah Muhammad ibn Ali ibn Muhammad ibn '
-        + "Abdallah ibn al-Hajj al-Ishbili — nacque a Siviglia e morì a Fes nel 1314. Appartiene al "
-        + 'ristretto numero di costruttori premoderni del Maghreb il cui nome è sopravvissuto legato '
-        + 'a opere precise, invece di dissolversi nella corporazione che le innalzò. Dopo il '
-        + 'saccheggio castigliano di Salé nel 1260, il sultano merinide Abu Yusuf Yaqub ibn Abd '
-        + "al-Haqq decise di rifondare la città come principale cantiere navale e porto commerciale "
-        + 'del regno di Fes, e ne affidò l’incarico a Ben Ali. Questi costruì l’arsenale e le sue due '
-        + 'monumentali porte, Bab Dar Assinaa e Bab el-Mrissa, tagliate in conci; la seconda fu '
-        + 'voltata su un canale che permetteva alle galee di entrare dentro le mura. Della sua vita '
-        + 'non si documenta quasi altro: le porte sono la testimonianza.',
+        + 'Abdallah ibn al-Hajj al-Ishbili — nacque a Siviglia e morì a Fes nel 1314. È uno dei '
+        + 'pochissimi costruttori premoderni del Maghreb di cui resti il nome, invece di dissolversi '
+        + 'nella corporazione che innalzò l’opera. Dopo il saccheggio castigliano di Salé nel 1260, '
+        + 'il sultano merinide Abu Yusuf Yaqub ibn Abd al-Haqq decise di rifondare la città come '
+        + 'principale cantiere navale del regno di Fes e ne affidò l’incarico a Ben Ali. Le fonti '
+        + 'francesi e arabe gli attribuiscono l’arsenale e le sue due monumentali porte in conci, '
+        + 'rimandando allo studio che Henri Terrasse dedicò loro nel 1922; l’attestazione è più '
+        + 'solida per Bab el-Mrissa, voltata su un canale perché le galee entrassero dentro le mura. '
+        + 'Della sua vita non si documenta altro.',
     },
     awards: [],
     tier: 'deep',
@@ -79,172 +85,144 @@ export const AFRICA_ARCHITECTS: Architect[] = [
         title: 'باب دار الصناعة — ويكيبيديا',
         license: 'CC BY-SA 4.0',
       },
+      {
+        kind: 'publication',
+        url: 'https://gallica.bnf.fr/ark:/12148/cb34349223d/date',
+        title: 'Henri Terrasse, "Les portes de l\'Arsenal de Salé", Hespéris IV (1922), 357-371',
+        license: null,
+      },
     ],
   },
   {
-    id: 'florestano-di-fausto',
-    wikidataId: 'Q472250',
-    name: 'Florestano Di Fausto',
-    alternativeNames: ['Florestano di Fausto'],
+    id: 'ernesto-verrucci',
+    wikidataId: 'Q3732342',
+    name: 'Ernesto Verrucci',
+    alternativeNames: [
+      'Ernesto Verrucci-Bey',
+      'Ernesto Verrucci Bey',
+      'Verrucci Bey',
+      'إرنستو فيروتشي',
+    ],
     gender: 'man',
-    born: 1890,
-    died: 1965,
-    floruit: { start: 1923, end: 1940, override: false },
-    movements: [{ id: 'mediterranean-vernacular', primary: true }],
+    born: 1874,
+    died: 1945,
+    floruit: { start: 1910, end: 1936, override: false },
+    movements: 'unaffiliated',
     workRegions: [],
     workCentroid: { lat: 0, lon: 0 },
-    primaryTypology: 'commercial',
-    signatureMaterial: 'mixed',
+    primaryTypology: 'domestic',
+    signatureMaterial: 'stone',
     portrait: {
-      en: 'Florestano Di Fausto (1890–1965) built almost nothing in Italy and almost everything for '
-        + 'Italy abroad. Trained as both architect and engineer, he became the dominant designer '
-        + 'first in the Italian Dodecanese, from 1923, and then in Italian Libya, where he worked for '
-        + 'the colonial administration through the 1930s. He was fluent to the point of promiscuity '
-        + 'in style — neo-Moorish, neo-Renaissance, stripped classicism, rationalism — and chose '
-        + 'between them according to site and audience, which earned him the label "architect of the '
-        + 'Mediterranean" and, for decades afterwards, critical neglect. His Libyan corpus is '
-        + 'dominated by hotels: the Uaddan in Tripoli, the desert alberghi at Nalut and Ghadames, the '
-        + 'Grand Hotel. Serious reassessment of that work began only in the 1990s.',
-      es: 'Florestano Di Fausto (1890-1965) construyó casi nada en Italia y casi todo para Italia '
-        + 'fuera de ella. Arquitecto e ingeniero de formación, fue el proyectista dominante primero '
-        + 'en el Dodecaneso italiano, desde 1923, y después en la Libia italiana, donde trabajó para '
-        + 'la administración colonial a lo largo de los años treinta. Manejaba los estilos con una '
-        + 'soltura casi promiscua —neomorisco, neorrenacentista, clasicismo despojado, racionalismo— '
-        + 'y elegía entre ellos según el lugar y el destinatario, lo que le valió la etiqueta de '
-        + '«arquitecto del Mediterráneo» y, durante décadas, el olvido de la crítica. Su corpus libio '
-        + 'está dominado por los hoteles: el Uaddan de Trípoli, los albergues del desierto en Nalut y '
-        + 'Gadamés, el Grand Hotel. La revisión seria de esa obra no empezó hasta los años noventa.',
-      it: 'Florestano Di Fausto (1890-1965) costruì quasi nulla in Italia e quasi tutto per l’Italia '
-        + 'fuori dall’Italia. Architetto e ingegnere di formazione, fu il progettista dominante prima '
-        + 'nel Dodecaneso italiano, dal 1923, e poi nella Libia italiana, dove lavorò per '
-        + 'l’amministrazione coloniale per tutti gli anni Trenta. Padroneggiava gli stili con '
-        + 'disinvoltura quasi promiscua — neomoresco, neorinascimentale, classicismo semplificato, '
-        + 'razionalismo — e sceglieva fra essi secondo il luogo e il destinatario, il che gli valse '
-        + 'l’etichetta di «architetto del Mediterraneo» e, per decenni, l’oblio della critica. Il suo '
-        + 'corpus libico è dominato dagli alberghi: l’Uaddan di Tripoli, gli alberghi sahariani di '
-        + 'Nalut e Ghadames, il Grand Hotel. La revisione seria di quell’opera è cominciata soltanto '
-        + 'negli anni Novanta.',
+      en: 'Ernesto Verrucci (1874–1945) was born and died at Force in the Marches, and spent the '
+        + 'working life between those two dates in Egypt. Sultan — later King — Fuad I appointed him '
+        + 'chief architect of the royal charitable works in 1917 and granted him the Ottoman title '
+        + 'Bey in 1919, and for the next two decades he was the architect of the Egyptian crown: '
+        + 'palaces at Cairo and Alexandria, the mausoleums of the sultan and of the queen mother, the '
+        + 'long remodelling of Abdeen Palace between 1919 and 1936, the Haramlik at Montaza, a '
+        + 'theatre, a library and a civic museum at Damanhur, the Oriental Music Institute in Cairo. '
+        + 'He worked mostly in a heavy revivalist manner that quoted Mamluk and Ottoman Cairo, and '
+        + 'his Egyptian corpus is far larger than his Italian reputation.',
+      es: 'Ernesto Verrucci (1874-1945) nació y murió en Force, en las Marcas, y pasó en Egipto toda '
+        + 'la vida profesional que media entre ambas fechas. El sultán —luego rey— Fuad I lo nombró '
+        + 'en 1917 arquitecto jefe de las obras pías reales y le concedió en 1919 el título otomano '
+        + 'de bey, y durante las dos décadas siguientes fue el arquitecto de la corona egipcia: '
+        + 'palacios en El Cairo y Alejandría, los mausoleos del sultán y de la reina madre, la larga '
+        + 'reforma del palacio de Abdín entre 1919 y 1936, el haramlik de Montaza, un teatro, una '
+        + 'biblioteca y un museo cívico en Damanhur, el Instituto de Música Oriental de El Cairo. '
+        + 'Trabajó sobre todo en un historicismo pesado que citaba el Cairo mameluco y otomano, y su '
+        + 'obra egipcia es mucho mayor que su fama italiana.',
+      it: 'Ernesto Verrucci (1874-1945) nacque e morì a Force, nelle Marche, e passò in Egitto tutta '
+        + 'la vita professionale che sta fra le due date. Il sultano — poi re — Fuad I lo nominò nel '
+        + '1917 architetto capo delle opere pie sultanali e gli concesse nel 1919 il titolo ottomano '
+        + 'di bey, e per i due decenni successivi fu l’architetto della corona egiziana: palazzi al '
+        + 'Cairo e ad Alessandria, i mausolei del sultano e della regina madre, la lunga '
+        + 'ristrutturazione del palazzo di Abdin fra il 1919 e il 1936, l’haramlik di Montaza, un '
+        + 'teatro, una biblioteca e un museo civico a Damanhur, l’Istituto di musica orientale del '
+        + 'Cairo. Lavorò soprattutto in un revival pesante che citava il Cairo mamelucco e ottomano, '
+        + 'e il suo corpus egiziano è assai più vasto della sua fama italiana.',
     },
     awards: [],
     tier: 'deep',
-    context: {
-      body: {
-        en: 'Di Fausto was an architect, engineer and politician whose practice was almost entirely '
-          + 'a commission of the Italian state in its overseas territories: the Dodecanese from 1923, '
-          + 'Albania, and Italian Libya, where his patron was the Fascist governor Italo Balbo. '
-          + 'English Wikipedia describes him as "the most important colonial architect of the Fascist '
-          + 'age in Italy". Brian L. McLaren\'s study of the period reads his Libyan hotels as '
-          + 'instruments of a tourist system built to represent the colony to Italian visitors. His '
-          + 'work was largely ignored after 1943 and has been reassessed since the 1990s.',
-        es: 'Di Fausto fue arquitecto, ingeniero y político, y su práctica fue casi enteramente un '
-          + 'encargo del Estado italiano en sus territorios de ultramar: el Dodecaneso desde 1923, '
-          + 'Albania y la Libia italiana, donde su patrón fue el gobernador fascista Italo Balbo. La '
-          + 'Wikipedia en inglés lo describe como «el arquitecto colonial más importante de la época '
-          + 'fascista en Italia». El estudio de Brian L. McLaren sobre el periodo lee sus hoteles '
-          + 'libios como instrumentos de un sistema turístico construido para representar la colonia '
-          + 'ante el visitante italiano. Su obra fue ignorada después de 1943 y se ha revisado desde '
-          + 'los años noventa.',
-        it: 'Di Fausto fu architetto, ingegnere e politico, e la sua attività fu quasi interamente '
-          + 'una commessa dello Stato italiano nei territori d’oltremare: il Dodecaneso dal 1923, '
-          + 'l’Albania e la Libia italiana, dove il suo committente fu il governatore fascista Italo '
-          + 'Balbo. La Wikipedia in inglese lo definisce «il più importante architetto coloniale '
-          + 'dell’età fascista in Italia». Lo studio di Brian L. McLaren su quel periodo legge i suoi '
-          + 'alberghi libici come strumenti di un sistema turistico costruito per rappresentare la '
-          + 'colonia al visitatore italiano. La sua opera fu ignorata dopo il 1943 ed è stata '
-          + 'riesaminata a partire dagli anni Novanta.',
-      },
-      sources: [
-        {
-          kind: 'wikipedia',
-          url: 'https://en.wikipedia.org/wiki/Florestano_Di_Fausto',
-          title: 'Florestano Di Fausto — Wikipedia',
-          license: 'CC BY-SA 4.0',
-        },
-        {
-          kind: 'publication',
-          url: 'https://www.hfsbooks.com/books/architecture-and-tourism-in-italian-colonial-libya-mclaren/',
-          title: 'Brian L. McLaren, Architecture and Tourism in Italian Colonial Libya: An Ambivalent Modernism (University of Washington Press, 2006)',
-          license: null,
-        },
-      ],
-    },
+    context: null,
     sources: [
       {
         kind: 'wikidata',
-        url: 'https://www.wikidata.org/wiki/Q472250',
-        title: 'Florestano Di Fausto (Q472250)',
+        url: 'https://www.wikidata.org/wiki/Q3732342',
+        title: 'Ernesto Verrucci (Q3732342)',
         license: null,
       },
       {
         kind: 'wikipedia',
-        url: 'https://en.wikipedia.org/wiki/Florestano_Di_Fausto',
-        title: 'Florestano Di Fausto — Wikipedia',
+        url: 'https://it.wikipedia.org/wiki/Ernesto_Verrucci',
+        title: 'Ernesto Verrucci — Wikipedia',
         license: 'CC BY-SA 4.0',
       },
     ],
   },
   {
-    id: 'hassan-fathy',
-    wikidataId: 'Q560101',
-    name: 'Hassan Fathy',
-    alternativeNames: ['Hassan Fathi', 'حسن فتحي'],
+    id: 'antonio-lasciac',
+    wikidataId: 'Q602794',
+    name: 'Antonio Lasciac',
+    alternativeNames: [
+      'Anton Lasciac',
+      'Antonio Lasciac Bey',
+      'Anton Laščak',
+      'أنطونيو لاشياك',
+    ],
     gender: 'man',
-    born: 1900,
-    died: 1989,
-    floruit: { start: 1937, end: 1984, override: false },
-    movements: [{ id: 'earthen-vernacular', primary: true }],
+    born: 1856,
+    died: 1946,
+    floruit: { start: 1883, end: 1930, override: false },
+    movements: 'unaffiliated',
     workRegions: [],
     workCentroid: { lat: 0, lon: 0 },
-    primaryTypology: 'housing',
-    signatureMaterial: 'earth',
+    primaryTypology: 'domestic',
+    signatureMaterial: 'stone',
     portrait: {
-      en: 'Hassan Fathy (1900–1989) trained at what is now Cairo University and spent sixty years '
-        + 'arguing that Egypt could not afford to build the way Europe built. From a 1941 journey '
-        + 'into Nubia he brought back the mud-brick vault laid without centring — a roof a village '
-        + 'could raise for itself out of the ground it stood on — and made it the basis of some 160 '
-        + 'projects, from single houses to fully serviced settlements with markets, schools and '
-        + 'theatres. New Gourna, begun in 1946, made his name internationally and, by his own account '
-        + 'in Architecture for the Poor, failed. He worked with Constantinos Doxiadis in Athens from '
-        + '1957, returned to Cairo in 1963, and in 1980 received the Aga Khan Chairman\'s Award for '
-        + 'Architecture and the Balzan Prize.',
-      es: 'Hassan Fathy (1900-1989) se formó en la actual Universidad de El Cairo y dedicó sesenta '
-        + 'años a sostener que Egipto no podía permitirse construir como construía Europa. De un '
-        + 'viaje a Nubia en 1941 trajo la bóveda de adobe levantada sin cimbra —una cubierta que una '
-        + 'aldea podía alzar por sí misma con la tierra que pisaba— y la convirtió en la base de unos '
-        + '160 proyectos, desde casas aisladas hasta poblados completos con mercado, escuela y '
-        + 'teatro. Nueva Gurna, iniciada en 1946, le dio renombre internacional y, según su propio '
-        + 'relato en Arquitectura para los pobres, fracasó. Trabajó con Constantinos Doxiadis en '
-        + 'Atenas desde 1957, regresó a El Cairo en 1963 y en 1980 recibió el Premio del Presidente '
-        + 'del Aga Khan y el Premio Balzan.',
-      it: 'Hassan Fathy (1900-1989) si formò nell’attuale Università del Cairo e passò sessant’anni '
-        + 'a sostenere che l’Egitto non poteva permettersi di costruire come costruiva l’Europa. Da '
-        + 'un viaggio in Nubia nel 1941 riportò la volta in mattoni crudi eretta senza centine — una '
-        + 'copertura che un villaggio poteva alzare da sé con la terra che calpestava — e ne fece la '
-        + 'base di circa 160 progetti, dalle case isolate agli insediamenti completi di mercato, '
-        + 'scuola e teatro. Nuova Gurna, avviata nel 1946, gli diede fama internazionale e, per sua '
-        + 'stessa ammissione in Architettura per i poveri, fallì. Lavorò con Constantinos Doxiadis ad '
-        + 'Atene dal 1957, tornò al Cairo nel 1963 e nel 1980 ricevette il Chairman’s Award dell’Aga '
-        + 'Khan e il Premio Balzan.',
+      en: 'Antonio Lasciac (1856–1946) was born in Gorizia, then Austria-Hungary, trained as '
+        + 'architect and engineer at the Vienna Polytechnic, and sailed for Egypt to help rebuild '
+        + 'Alexandria after the British bombardment of 1882. He stayed sixty years and died in Cairo. '
+        + 'Khedive Abbas II made him court architect in 1907; he lost the post in the First World War '
+        + 'because of his Austro-Hungarian passport, then came back and worked on, wintering in Egypt '
+        + 'and summering in Gorizia. His Alexandrian work is European and eclectic — the Menasce '
+        + 'okelle, the Ramleh station, villas for the merchant families. His Cairo work turns '
+        + 'increasingly to the Mamluk and Ottoman vocabularies of the old city: the Said Halim Pasha '
+        + 'and Tahra palaces, the Aisha Fahmy palace, and the Banque Misr headquarters of 1927.',
+      es: 'Antonio Lasciac (1856-1946) nació en Gorizia, entonces Austria-Hungría, se formó como '
+        + 'arquitecto e ingeniero en el Politécnico de Viena y embarcó hacia Egipto para ayudar a '
+        + 'reconstruir Alejandría tras el bombardeo británico de 1882. Se quedó sesenta años y murió '
+        + 'en El Cairo. El jedive Abbas II lo nombró arquitecto de la corte en 1907; perdió el puesto '
+        + 'en la Primera Guerra Mundial por su pasaporte austrohúngaro, y luego volvió y siguió '
+        + 'trabajando, invernando en Egipto y veraneando en Gorizia. Su obra alejandrina es europea y '
+        + 'ecléctica: la okelle Menasce, la estación de Ramleh, villas para las familias de '
+        + 'comerciantes. La cairota se vuelca cada vez más en el vocabulario mameluco y otomano de la '
+        + 'ciudad vieja: los palacios de Said Halim Pachá y Tahra, el de Aisha Fahmy y la sede del '
+        + 'Banque Misr de 1927.',
+      it: 'Antonio Lasciac (1856-1946) nacque a Gorizia, allora Austria-Ungheria, si formò come '
+        + 'architetto e ingegnere al Politecnico di Vienna e partì per l’Egitto per contribuire alla '
+        + 'ricostruzione di Alessandria dopo il bombardamento britannico del 1882. Vi rimase '
+        + 'sessant’anni e morì al Cairo. Il chedivè Abbas II lo nominò architetto di corte nel 1907; '
+        + 'perse l’incarico durante la Prima guerra mondiale per il suo passaporto austro-ungarico, '
+        + 'poi tornò e continuò a lavorare, svernando in Egitto ed estivando a Gorizia. L’opera '
+        + 'alessandrina è europea ed eclettica: l’okelle Menasce, la stazione di Ramleh, ville per le '
+        + 'famiglie mercantili. Quella cairota si rivolge sempre più al lessico mamelucco e ottomano '
+        + 'della città vecchia: i palazzi di Said Halim Pascià e Tahra, quello di Aisha Fahmy e la '
+        + 'sede della Banque Misr del 1927.',
     },
-    awards: [
-      "Aga Khan Chairman's Award for Architecture (1980)",
-      'Balzan Prize for Architecture and Urban Planning (1980)',
-      'Right Livelihood Award',
-      'UIA Sir Robert Matthew Prize',
-    ],
-    tier: 'canon',
+    awards: [],
+    tier: 'deep',
     context: null,
     sources: [
       {
         kind: 'wikidata',
-        url: 'https://www.wikidata.org/wiki/Q560101',
-        title: 'Hassan Fathi (Q560101)',
+        url: 'https://www.wikidata.org/wiki/Q602794',
+        title: 'Antonio Lasciac (Q602794)',
         license: null,
       },
       {
         kind: 'wikipedia',
-        url: 'https://en.wikipedia.org/wiki/Hassan_Fathy',
-        title: 'Hassan Fathy — Wikipedia',
+        url: 'https://en.wikipedia.org/wiki/Antonio_Lasciac',
+        title: 'Antonio Lasciac — Wikipedia',
         license: 'CC BY-SA 4.0',
       },
     ],
@@ -428,71 +406,70 @@ export const AFRICA_ARCHITECTS: Architect[] = [
     ],
   },
   {
-    id: 'roisin-heneghan',
-    wikidataId: 'Q21689250',
-    name: 'Róisín Heneghan',
-    alternativeNames: ['Roisin Heneghan'],
-    gender: 'woman',
+    id: 'ksp-juergen-engel-architekten',
+    wikidataId: 'Q1718995',
+    name: 'KSP Jürgen Engel Architekten',
+    alternativeNames: [
+      'KSP Engel',
+      'KSP Jürgen Engel',
+      'Jürgen Engel',
+      'KSP Engel und Zimmermann',
+      'Kraemer Sieverts & Partner',
+      'KSP Architekten',
+    ],
+    gender: 'unknown',
     born: null,
     died: null,
-    floruit: { start: 2005, end: 2025, override: false },
+    floruit: { start: 1998, end: 2024, override: false },
     movements: 'unaffiliated',
     workRegions: [],
     workCentroid: { lat: 0, lon: 0 },
-    primaryTypology: 'cultural',
+    primaryTypology: 'civic',
     signatureMaterial: 'concrete',
     portrait: {
-      en: 'Róisín Heneghan is an Irish architect who founded heneghan peng architects in New York in '
-        + '1999 with Shih-Fu Peng and moved the office to Dublin in 2001. Two years later, and with a '
-        + 'practice barely four years old, they won the competition for the Grand Egyptian Museum '
-        + 'against 1,556 other entries — a result that still stands as one of the largest open '
-        + 'competition upsets on record. The office\'s buildings tend to begin as a reading of '
-        + 'topography: the Giant\'s Causeway visitor centre folded into its basalt headland in Northern '
-        + 'Ireland, the Palestinian Museum at Birzeit terraced down a hillside, the Giza museum '
-        + 'pressed into the desert escarpment. She was '
-        + 'shortlisted for the AJ Woman Architect of the Year in 2014 and elected to Aosdána in 2024.',
-      es: 'Róisín Heneghan es una arquitecta irlandesa que fundó heneghan peng architects en Nueva '
-        + 'York en 1999 junto a Shih-Fu Peng y trasladó el estudio a Dublín en 2001. Dos años '
-        + 'después, con un despacho que apenas tenía cuatro años de vida, ganaron el concurso del '
-        + 'Gran Museo Egipcio frente a otras 1.556 propuestas, uno de los vuelcos más sonados que se '
-        + 'recuerdan en un concurso abierto. Sus edificios suelen partir de una lectura del terreno: '
-        + 'el centro de visitantes de la Calzada del Gigante, en Irlanda del Norte, plegado en su '
-        + 'promontorio de basalto; el Museo Palestino de Birzeit aterrazado en la ladera; el museo de '
-        + 'Guiza hincado en el escarpe del desierto. Fue '
-        + 'finalista del AJ Woman Architect of the Year en 2014 y entró en Aosdána en 2024.',
-      it: 'Róisín Heneghan è un’architetta irlandese che nel 1999 fondò a New York, con Shih-Fu '
-        + 'Peng, lo studio heneghan peng architects, trasferito a Dublino nel 2001. Due anni dopo, '
-        + 'con uno studio nato da appena quattro anni, i due vinsero il concorso per il Grande museo '
-        + 'egizio battendo altre 1.556 proposte: resta uno dei ribaltamenti più clamorosi mai '
-        + 'registrati in un concorso aperto. I loro edifici nascono di solito da una lettura del '
-        + 'terreno: il centro visitatori del Giant’s Causeway piegato dentro il promontorio '
-        + 'basaltico, in Irlanda del Nord; il Museo palestinese di Birzeit terrazzato sul pendio; il '
-        + 'museo di Giza conficcato nella scarpata del deserto. È '
-        + 'stata finalista dell’AJ Woman Architect of the Year nel 2014 ed è entrata in Aosdána nel 2024.',
+      en: 'KSP is a German practice with a long institutional memory: the office was opened at '
+        + 'Braunschweig in 1935 by Friedrich Wilhelm Kraemer, became Prof. Kraemer Sieverts & Partner '
+        + '— which is where the initials come from — and was renamed KSP Engel und Zimmermann in '
+        + '1998 and KSP Engel in 2021. Jürgen Engel, an architect from Düsseldorf, joined as a '
+        + 'partner in 1990, opened the Frankfurt office and has led the firm since 2009. The practice '
+        + 'works at the scale of the public institution and increasingly outside Germany: the '
+        + 'documentation centre at Bergen-Belsen, the National Library of China in Beijing, corporate '
+        + 'headquarters, museums, and the state mosque of Algeria, won in competition with the '
+        + 'engineers Krebs und Kiefer in 2008. It is a firm rather than an individual, and this pool '
+        + 'records it as one.',
+      es: 'KSP es un estudio alemán con una memoria institucional larga: la oficina la abrió en '
+        + 'Brunswick en 1935 Friedrich Wilhelm Kraemer, pasó a llamarse Prof. Kraemer Sieverts & '
+        + 'Partner —de ahí las siglas— y se renombró KSP Engel und Zimmermann en 1998 y KSP Engel en '
+        + '2021. Jürgen Engel, arquitecto de Düsseldorf, entró como socio en 1990, abrió la oficina '
+        + 'de Fráncfort y dirige la casa desde 2009. El estudio trabaja a la escala de la institución '
+        + 'pública y cada vez más fuera de Alemania: el centro de documentación de Bergen-Belsen, la '
+        + 'Biblioteca Nacional de China en Pekín, sedes corporativas, museos y la mezquita de Estado '
+        + 'de Argelia, ganada en concurso junto a los ingenieros Krebs und Kiefer en 2008. Es un '
+        + 'estudio y no una persona, y así consta aquí.',
+      it: 'KSP è uno studio tedesco con una lunga memoria istituzionale: l’ufficio fu aperto a '
+        + 'Braunschweig nel 1935 da Friedrich Wilhelm Kraemer, divenne Prof. Kraemer Sieverts & '
+        + 'Partner — da cui la sigla — e fu rinominato KSP Engel und Zimmermann nel 1998 e KSP Engel '
+        + 'nel 2021. Jürgen Engel, architetto di Düsseldorf, entrò come socio nel 1990, aprì la sede '
+        + 'di Francoforte e guida lo studio dal 2009. La pratica lavora alla scala dell’istituzione '
+        + 'pubblica e sempre più fuori dalla Germania: il centro di documentazione di Bergen-Belsen, '
+        + 'la Biblioteca nazionale cinese a Pechino, sedi aziendali, musei e la moschea di Stato '
+        + 'algerina, vinta in concorso con gli ingegneri Krebs und Kiefer nel 2008. È uno studio e '
+        + 'non una persona, e qui è registrato come tale.',
     },
-    awards: [
-      'First prize, Grand Egyptian Museum international competition (2003)',
-      'Elected to Aosdána (2024)',
-    ],
-    tier: 'canon',
+    awards: [],
+    tier: 'deep',
     context: null,
     sources: [
       {
         kind: 'wikidata',
-        url: 'https://www.wikidata.org/wiki/Q21689250',
-        title: 'Roisin Heneghan (Q21689250)',
+        url: 'https://www.wikidata.org/wiki/Q1718995',
+        title: 'KSP Jürgen Engel Architekten (Q1718995)',
         license: null,
       },
       {
         kind: 'wikipedia',
-        url: 'https://en.wikipedia.org/wiki/R%C3%B3is%C3%ADn_Heneghan',
-        title: 'Róisín Heneghan — Wikipedia',
-        license: 'CC BY-SA 4.0',
-      },
-      {
-        kind: 'wikipedia',
-        url: 'https://en.wikipedia.org/wiki/Grand_Egyptian_Museum',
-        title: 'Grand Egyptian Museum — Wikipedia',
+        url: 'https://de.wikipedia.org/wiki/KSP_J%C3%BCrgen_Engel_Architekten',
+        title: 'KSP Jürgen Engel Architekten — Wikipedia',
         license: 'CC BY-SA 4.0',
       },
     ],

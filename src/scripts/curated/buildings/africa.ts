@@ -1,12 +1,21 @@
 import type { Building } from '@/types/building';
 
 // Wave 5, agent 9d — Northern Africa (UN M49 "Northern Africa": DZ, EG, LY, MA,
-// SD, TN). Six buildings: one pre-1800, one 1800–1945, three 1945–2000, one
+// SD, TN). Six buildings: one pre-1800, two 1800–1945, two 1945–2000, one
 // post-2000.
 //
 // Every image licence below was read from the live Commons file page, not
 // inferred from the file being hosted on Commons. image.width/height are left
 // at 0 for Task 10 to record.
+//
+// Freedom of panorama governs which countries can carry an in-copyright
+// building here. Per Commons COM:CRT, Algeria and Tunisia have usable FoP;
+// Egypt, Morocco, Libya and Sudan do not. The two Egyptian entries below are
+// therefore by architects who are themselves out of copyright in Egypt
+// (life + 50): Antonio Lasciac died 1946, Ernesto Verrucci 1945, so their work
+// has been public domain there since 1997 and 1996 respectively and freedom of
+// panorama does not arise. Al-Merrikh Stadium in Sudan is cleared differently:
+// the photographer is the architect. See the task 9d report for the full trail.
 export const AFRICA_BUILDINGS: Building[] = [
   {
     id: 'bab-dar-assinaa',
@@ -21,7 +30,7 @@ export const AFRICA_BUILDINGS: Building[] = [
       city: 'Salé', countryCode: 'MA', lat: 34.03329, lon: -6.82161,
     },
     inception: 1260,
-    completed: 1261,
+    completed: null,
     demolished: null,
     typology: 'infrastructure',
     materials: ['stone'],
@@ -62,8 +71,10 @@ export const AFRICA_BUILDINGS: Building[] = [
       en: 'In 1260 a Castilian fleet took Salé and sacked it. The Marinid sultan Abu Yusuf Yaqub ibn '
         + 'Abd al-Haqq retook the town and decided to rebuild it as the principal shipyard and '
         + 'commercial port of the kingdom of Fes, from which the war in al-Andalus could be '
-        + 'resupplied. He gave the work to an Andalusi architect from Seville, Mohamed Ben Ali, and '
-        + 'Arabic sources date the gate precisely: 658 AH, 1261 CE. Bab Dar Assinaa — the Gate of the '
+        + 'resupplied. He gave the work to an Andalusi architect from Seville, Mohamed Ben Ali. '
+        + 'Arabic sources put the gate at 658 AH — a Hijri year that ran from December 1259 to '
+        + 'December 1260, not 1261 as it is usually glossed — while the arsenal as a whole is dated '
+        + 'between 1260 and 1270. Bab Dar Assinaa — the Gate of the '
         + 'Arsenal, known locally also as Bab al-Farran and Bab Antar — opened onto the yard where '
         + 'ships and weapons were made and stored, which is what its name says. Its companion, the '
         + 'far larger Bab el-Mrissa, was vaulted over a canal so that galleys could be brought inside '
@@ -72,8 +83,10 @@ export const AFRICA_BUILDINGS: Building[] = [
       es: 'En 1260 una flota castellana tomó Salé y la saqueó. El sultán meriní Abu Yusuf Yaqub ibn '
         + 'Abd al-Haqq recuperó la ciudad y decidió rehacerla como principal astillero y puerto '
         + 'comercial del reino de Fez, desde el que podría abastecerse la guerra en al-Ándalus. '
-        + 'Encargó la obra a un arquitecto andalusí de Sevilla, Mohamed Ben Ali, y las fuentes árabes '
-        + 'fechan la puerta con precisión: 658 de la Hégira, 1261. Bab Dar Assinaa —la puerta de las '
+        + 'Encargó la obra a un arquitecto andalusí de Sevilla, Mohamed Ben Ali. Las fuentes árabes '
+        + 'sitúan la puerta en 658 de la Hégira, año que corrió de diciembre de 1259 a diciembre de '
+        + '1260 y no 1261, como suele traducirse; las atarazanas en conjunto se fechan entre 1260 y '
+        + '1270. Bab Dar Assinaa —la puerta de las '
         + 'atarazanas, conocida también como Bab al-Farran y Bab Antar— se abría al recinto donde se '
         + 'fabricaban y guardaban naves y armas, que es exactamente lo que dice su nombre. Su '
         + 'compañera, la mucho mayor Bab el-Mrissa, se abovedó sobre un canal para que las galeras '
@@ -82,8 +95,10 @@ export const AFRICA_BUILDINGS: Building[] = [
       it: 'Nel 1260 una flotta castigliana prese Salé e la saccheggiò. Il sultano merinide Abu Yusuf '
         + 'Yaqub ibn Abd al-Haqq riconquistò la città e decise di rifarla come principale cantiere '
         + 'navale e porto commerciale del regno di Fes, da cui rifornire la guerra in al-Andalus. '
-        + 'Affidò l’opera a un architetto andaluso di Siviglia, Mohamed Ben Ali, e le fonti arabe '
-        + 'datano la porta con precisione: 658 dell’Egira, 1261. Bab Dar Assinaa — la porta '
+        + 'Affidò l’opera a un architetto andaluso di Siviglia, Mohamed Ben Ali. Le fonti arabe '
+        + 'collocano la porta nel 658 dell’Egira, anno corso dal dicembre 1259 al dicembre 1260 e '
+        + 'non nel 1261, come di solito si traduce; l’arsenale nel suo insieme è datato fra il 1260 '
+        + 'e il 1270. Bab Dar Assinaa — la porta '
         + 'dell’arsenale, nota localmente anche come Bab al-Farran e Bab Antar — si apriva sul '
         + 'recinto dove si costruivano e si custodivano navi e armi, che è esattamente ciò che dice '
         + 'il suo nome. La sua compagna, la ben più grande Bab el-Mrissa, fu voltata su un canale '
@@ -117,312 +132,243 @@ export const AFRICA_BUILDINGS: Building[] = [
         title: 'Bab el-Mrissa — Wikipedia',
         license: 'CC BY-SA 4.0',
       },
+      {
+        kind: 'publication',
+        url: 'https://gallica.bnf.fr/ark:/12148/cb34349223d/date',
+        title: 'Henri Terrasse, "Les portes de l\'Arsenal de Salé", Hespéris IV (1922), 357-371',
+        license: null,
+      },
+      {
+        kind: 'institution',
+        url: 'https://www.qantara-med.org/public/show_document.php?do_id=1010',
+        title: 'Qantara — Mediterranean Heritage, dossier on the Dar Sina\'a (arsenal) of Salé',
+        license: null,
+      },
     ],
     tier: 'canon',
   },
   {
-    id: 'uaddan-hotel',
-    wikidataId: 'Q4704929',
+    id: 'institute-for-arabic-music',
+    wikidataId: 'Q126918163',
     name: {
-      en: 'Uaddan Hotel and Casino',
-      es: 'Hotel y Casino Uaddan',
-      it: 'Hotel e Casinò Uaddan',
+      en: 'Institute for Arabic Music',
+      es: 'Instituto de Música Árabe',
+      it: 'Istituto di Musica Araba',
     },
-    architectId: 'florestano-di-fausto',
+    architectId: 'ernesto-verrucci',
     location: {
-      city: 'Tripoli', countryCode: 'LY', lat: 32.89333, lon: 13.19111,
+      city: 'Cairo', countryCode: 'EG', lat: 30.0545, lon: 31.2394,
     },
-    inception: 1935,
-    completed: 1936,
+    inception: 1923,
+    completed: 1929,
     demolished: null,
-    typology: 'commercial',
-    materials: ['mixed'],
+    typology: 'cultural',
+    materials: ['stone'],
     structure: {
-      en: 'Rendered load-bearing walls stepped around an open court, with a ground-floor arcade of '
-        + 'round arches carrying a pierced balustrade and shallow domes over the low wings.',
-      es: 'Muros de carga revocados que escalonan un patio abierto, con una arcada de medio punto en '
-        + 'planta baja que sostiene una balaustrada calada y cúpulas rebajadas sobre las alas bajas.',
-      it: 'Murature portanti intonacate che digradano attorno a una corte aperta, con un’arcata a '
-        + 'tutto sesto al piano terra che sostiene una balaustra traforata e cupole ribassate sulle ali basse.',
+      en: 'A masonry block fronted by a deep pointed iwan recess set in a rectangular frame, its '
+        + 'parapet stepped in crenellations and a ribbed stone dome raised on a drum over the hall behind.',
+      es: 'Un volumen de fábrica presidido por un profundo nicho apuntado a modo de iwán inscrito en '
+        + 'un marco rectangular, con el pretil escalonado en almenas y una cúpula gallonada de piedra '
+        + 'sobre tambor cubriendo la sala trasera.',
+      it: 'Un volume in muratura dominato da una profonda nicchia acuta a iwan inscritta in una '
+        + 'cornice rettangolare, con il parapetto scalettato in merli e una cupola costolonata in '
+        + 'pietra su tamburo a coprire la sala retrostante.',
     },
     program: {
-      en: 'A luxury hotel with a casino and a 500-seat theatre, built for the colonial administration '
-        + 'of Italian Libya as the flagship of its tourist system.',
-      es: 'Hotel de lujo con casino y teatro de 500 localidades, construido para la administración '
-        + 'colonial de la Libia italiana como buque insignia de su sistema turístico.',
-      it: 'Albergo di lusso con casinò e teatro da 500 posti, costruito per l’amministrazione '
-        + 'coloniale della Libia italiana come ammiraglia del suo sistema turistico.',
+      en: 'A conservatory and concert hall for Arab music, built for King Fuad I on Malika Nazli '
+        + 'Street — now Ramses Street — in the Azbakeya district.',
+      es: 'Conservatorio y sala de conciertos de música árabe, construido para el rey Fuad I en la '
+        + 'calle Malika Nazli —hoy calle Ramsés— del barrio de Azbakeya.',
+      it: 'Conservatorio e sala da concerto per la musica araba, costruito per re Fuad I nella via '
+        + 'Malika Nazli — oggi via Ramses — nel quartiere di Azbakeya.',
     },
     heritage: null,
     currentUse: {
-      en: 'A hotel again since a restoration completed in 2009; no national heritage designation is on record.',
-      es: 'De nuevo hotel desde una restauración terminada en 2009; no consta ninguna declaración de '
-        + 'patrimonio nacional.',
-      it: 'Di nuovo albergo dopo un restauro concluso nel 2009; non risulta alcuna dichiarazione di '
-        + 'tutela nazionale.',
+      en: 'Still a teaching institute and concert hall, run under the Cairo Opera House; no heritage '
+        + 'designation is on record here.',
+      es: 'Sigue siendo instituto docente y sala de conciertos, dependiente de la Ópera de El Cairo; '
+        + 'no consta ninguna figura de protección patrimonial.',
+      it: 'È ancora istituto di insegnamento e sala da concerto, gestito dall’Opera del Cairo; non '
+        + 'risulta alcun vincolo di tutela.',
     },
     detailRect: {
-      x: 0.24, y: 0.62, w: 0.30, h: 0.21,
+      x: 0.32, y: 0.14, w: 0.34, h: 0.34,
     },
     image: {
-      commonsFile: 'Waddan Hotel Tripoli Libya Internal Courtyard.JPG',
-      photographer: 'Abdul-Jawad Elhusuni (عبدالجواد الحسوني)',
+      commonsFile: 'Arab Music Institute-Cairo.JPG',
+      photographer: 'Faris El-Gwely (Faris knight)',
       license: 'CC BY-SA 3.0',
-      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Waddan_Hotel_Tripoli_Libya_Internal_Courtyard.JPG',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Arab_Music_Institute-Cairo.JPG',
       width: 0,
       height: 0,
     },
     dossier: {
-      en: 'The Uaddan — named after the Barbary sheep of the Libyan mountains — went up on the '
-        + 'Tripoli seafront in 1935 and opened as the grandest hotel in the colony, with a casino and '
-        + 'a five-hundred-seat theatre attached. Florestano Di Fausto designed it, working with '
-        + 'Stefano Gatti-Casazza, one year after Italo Balbo had unified Tripolitania and Cyrenaica '
-        + 'into a single colony and begun turning it into a destination for Italian tourists. The '
-        + 'building is Di Fausto at his most characteristic: ochre-pink render, round-arched arcades, '
-        + 'shallow domes and a timber mashrabiya balcony, an Italian hotel wearing a North African '
-        + 'vocabulary for visitors who had come to see North Africa. Brian McLaren reads it as the '
-        + 'most significant of Di Fausto\'s African buildings and as an instrument of that tourist '
-        + 'system rather than a neutral piece of hospitality architecture. It was restored between '
-        + '2007 and 2009 and reopened as a luxury hotel.',
-      es: 'El Uaddan —llamado así por el arruí de las montañas libias— se levantó en el frente '
-        + 'marítimo de Trípoli en 1935 y abrió como el hotel más señorial de la colonia, con casino y '
-        + 'un teatro de quinientas localidades anexos. Lo proyectó Florestano Di Fausto, con Stefano '
-        + 'Gatti-Casazza, un año después de que Italo Balbo unificara Tripolitania y Cirenaica en una '
-        + 'sola colonia y empezara a convertirla en destino para el turismo italiano. El edificio es '
-        + 'Di Fausto en estado puro: revoco de un rosa ocre, arcadas de medio punto, cúpulas '
-        + 'rebajadas y un mirador de celosía de madera; un hotel italiano vestido con vocabulario '
-        + 'norteafricano para visitantes que venían a ver el norte de África. Brian McLaren lo lee '
-        + 'como la más importante de sus obras africanas y como instrumento de aquel sistema '
-        + 'turístico, no como arquitectura hotelera neutral. Fue restaurado entre 2007 y 2009 y '
-        + 'reabrió como hotel de lujo.',
-      it: 'L’Uaddan — chiamato come il muflone delle montagne libiche — sorse sul lungomare di '
-        + 'Tripoli nel 1935 e aprì come l’albergo più signorile della colonia, con annessi un casinò '
-        + 'e un teatro da cinquecento posti. Lo progettò Florestano Di Fausto, con Stefano '
-        + 'Gatti-Casazza, un anno dopo che Italo Balbo aveva unificato Tripolitania e Cirenaica in '
-        + 'un’unica colonia e cominciato a trasformarla in meta del turismo italiano. L’edificio è Di '
-        + 'Fausto allo stato puro: intonaco rosa ocra, arcate a tutto sesto, cupole ribassate e una '
-        + 'moucharabieh lignea; un albergo italiano che indossa un lessico nordafricano per visitatori '
-        + 'venuti a vedere il Nordafrica. Brian McLaren lo legge come la più importante delle sue '
-        + 'opere africane e come strumento di quel sistema turistico, non come architettura '
-        + 'alberghiera neutrale. È stato restaurato fra il 2007 e il 2009 e ha riaperto come albergo di lusso.',
+      en: 'King Fuad I replaced the old Oriental Music Club with an institute of his own in 1929, on '
+        + 'Malika Nazli Street in Azbakeya, and the building was drawn by Ernesto Verrucci, the '
+        + 'architect from the Marches who had been chief architect to the royal household since 1917 '
+        + 'and carried the Ottoman title Bey. Wikidata puts the start of work at 1923; the Italian '
+        + 'record of Verrucci’s practice dates the finished Oriental Music Institute to 1928, and '
+        + 'the facade itself carries the Hijri year 1346, which ran from June 1927 to June 1928. '
+        + 'Verrucci built it neo-Mamluk: a deep pointed iwan recess in a rectangular frame, an '
+        + 'inscription band across the head, stepped crenellations along the parapet, a hanging lamp '
+        + 'in the shadow of the arch and a ribbed stone dome behind. In 1932 the building housed the '
+        + 'Cairo Congress of Arab Music, where European composers and Arab musicians spent a fortnight '
+        + 'disagreeing about what Arab music was. It teaches music still.',
+      es: 'El rey Fuad I sustituyó en 1929 el viejo Club de Música Oriental por un instituto propio, '
+        + 'en la calle Malika Nazli de Azbakeya, y el edificio lo dibujó Ernesto Verrucci, el '
+        + 'arquitecto marquesano que desde 1917 era arquitecto jefe de la casa real y llevaba el '
+        + 'título otomano de bey. Wikidata sitúa el inicio de las obras en 1923; el registro italiano '
+        + 'de la obra de Verrucci fecha el Instituto de Música Oriental terminado en 1928, y la propia '
+        + 'fachada lleva el año 1346 de la Hégira, que corrió de junio de 1927 a junio de 1928. '
+        + 'Verrucci lo construyó a la manera mameluca: un profundo nicho apuntado a modo de iwán '
+        + 'inscrito en un marco rectangular, una banda epigráfica en la cabecera, almenas escalonadas '
+        + 'en el pretil, una lámpara colgada en la sombra del arco y una cúpula gallonada de piedra '
+        + 'detrás. En 1932 el edificio acogió el Congreso de Música Árabe de El Cairo, donde '
+        + 'compositores europeos y músicos árabes discutieron dos semanas qué era la música árabe. '
+        + 'Sigue enseñando música.',
+      it: 'Nel 1929 re Fuad I sostituì il vecchio Circolo di Musica Orientale con un istituto suo, in '
+        + 'via Malika Nazli ad Azbakeya, e l’edificio fu disegnato da Ernesto Verrucci, '
+        + 'l’architetto marchigiano che dal 1917 era architetto capo della casa reale e portava il '
+        + 'titolo ottomano di bey. Wikidata colloca l’inizio dei lavori nel 1923; il repertorio '
+        + 'italiano delle opere di Verrucci data al 1928 l’Istituto di musica orientale finito, e '
+        + 'la facciata stessa reca l’anno 1346 dell’Egira, corso dal giugno 1927 al giugno '
+        + '1928. Verrucci lo costruì alla maniera mamelucca: una profonda nicchia acuta a iwan '
+        + 'inscritta in una cornice rettangolare, una fascia epigrafica in testa, merli scalettati sul '
+        + 'parapetto, una lampada sospesa nell’ombra dell’arco e una cupola costolonata in '
+        + 'pietra dietro. Nel 1932 l’edificio ospitò il Congresso di musica araba del Cairo, dove '
+        + 'compositori europei e musicisti arabi litigarono per due settimane su che cosa fosse la '
+        + 'musica araba. Vi si insegna musica ancora oggi.',
     },
-    context: {
-      body: {
-        en: 'Italy took Tripolitania and Cyrenaica from the Ottoman Empire in the war of 1911–12. '
-          + 'From 1923 the Senussi order led an armed resistance in Cyrenaica; the Italian pacification '
-          + 'campaign that suppressed it, completed in 1932, resulted in the deaths of a quarter of '
-          + "Cyrenaica's population. In 1934 the governor Italo Balbo unified the two colonies as "
-          + 'Italian Libya with Tripoli as its capital, and the colony came to hold some 150,000 '
-          + 'Italian settlers. The Uaddan was commissioned in that immediate aftermath and formed part '
-          + "of Balbo's programme of tourist and settlement building. Italy was defeated in Libya in "
-          + '1943 and relinquished its claim under the 1947 Paris Peace Treaty; Libya became '
-          + 'independent in 1951.',
-        es: 'Italia arrebató Tripolitania y Cirenaica al Imperio otomano en la guerra de 1911-1912. '
-          + 'Desde 1923 la orden senusí encabezó una resistencia armada en Cirenaica; la campaña '
-          + 'italiana de «pacificación» que la aplastó, concluida en 1932, causó la muerte de la cuarta '
-          + 'parte de la población de Cirenaica. En 1934 el gobernador Italo Balbo unificó ambas '
-          + 'colonias como Libia italiana con capital en Trípoli, y la colonia llegó a albergar unos '
-          + '150.000 colonos italianos. El Uaddan se encargó justo después y formó parte del programa '
-          + 'de construcción turística y colonizadora de Balbo. Italia fue derrotada en Libia en 1943 y '
-          + 'renunció a sus reclamaciones en el Tratado de París de 1947; Libia fue independiente en 1951.',
-        it: 'L’Italia tolse Tripolitania e Cirenaica all’Impero ottomano nella guerra del 1911-1912. '
-          + 'Dal 1923 la confraternita senussita guidò una resistenza armata in Cirenaica; la campagna '
-          + 'italiana di «pacificazione» che la stroncò, conclusa nel 1932, causò la morte di un quarto '
-          + 'della popolazione della Cirenaica. Nel 1934 il governatore Italo Balbo unificò le due '
-          + 'colonie in Libia italiana con capitale Tripoli, e la colonia arrivò a contare circa '
-          + '150.000 coloni italiani. L’Uaddan fu commissionato in quell’immediato dopoguerra coloniale '
-          + 'e fece parte del programma di edilizia turistica e di colonizzazione di Balbo. L’Italia fu '
-          + 'sconfitta in Libia nel 1943 e rinunciò alle sue rivendicazioni con il Trattato di Parigi '
-          + 'del 1947; la Libia divenne indipendente nel 1951.',
-      },
-      sources: [
-        {
-          kind: 'wikipedia',
-          url: 'https://en.wikipedia.org/wiki/Italian_Libya',
-          title: 'Italian Libya — Wikipedia',
-          license: 'CC BY-SA 4.0',
-        },
-        {
-          kind: 'publication',
-          url: 'https://www.hfsbooks.com/books/architecture-and-tourism-in-italian-colonial-libya-mclaren/',
-          title: 'Brian L. McLaren, Architecture and Tourism in Italian Colonial Libya: An Ambivalent Modernism (University of Washington Press, 2006)',
-          license: null,
-        },
-      ],
-    },
+    context: null,
     sources: [
       {
         kind: 'wikidata',
-        url: 'https://www.wikidata.org/wiki/Q4704929',
-        title: 'Al Waddan Hotel (Q4704929)',
+        url: 'https://www.wikidata.org/wiki/Q126918163',
+        title: 'Institute for Arabic Music building (Q126918163)',
         license: null,
       },
       {
         kind: 'wikipedia',
-        url: 'https://en.wikipedia.org/wiki/Al_Waddan_Hotel',
-        title: 'Al Waddan Hotel — Wikipedia',
+        url: 'https://it.wikipedia.org/wiki/Ernesto_Verrucci',
+        title: 'Ernesto Verrucci — Wikipedia',
         license: 'CC BY-SA 4.0',
       },
       {
-        kind: 'publication',
-        url: 'https://www.hfsbooks.com/books/architecture-and-tourism-in-italian-colonial-libya-mclaren/',
-        title: 'Brian L. McLaren, Architecture and Tourism in Italian Colonial Libya: An Ambivalent Modernism (University of Washington Press, 2006)',
-        license: null,
+        kind: 'wikipedia',
+        url: 'https://en.wikipedia.org/wiki/Cairo_Congress_of_Arab_Music',
+        title: 'Cairo Congress of Arab Music — Wikipedia',
+        license: 'CC BY-SA 4.0',
       },
     ],
     tier: 'deep',
   },
   {
-    id: 'new-gourna-village',
-    wikidataId: 'Q14218502',
+    id: 'banque-misr-building',
+    wikidataId: 'Q126913803',
     name: {
-      en: 'New Gourna Village',
-      es: 'Poblado de Nueva Gurna',
-      it: 'Villaggio di Nuova Gurna',
+      en: 'Banque Misr Headquarters',
+      es: 'Sede del Banque Misr',
+      it: 'Sede della Banque Misr',
     },
-    architectId: 'hassan-fathy',
+    architectId: 'antonio-lasciac',
     location: {
-      city: 'Luxor', countryCode: 'EG', lat: 25.71482, lon: 32.62281,
+      city: 'Cairo', countryCode: 'EG', lat: 30.048, lon: 31.2444,
     },
-    inception: 1946,
-    completed: 1952,
+    inception: 1927,
+    completed: 1927,
     demolished: null,
-    typology: 'housing',
-    materials: ['earth'],
+    typology: 'commercial',
+    materials: ['brick', 'stone'],
     structure: {
-      en: 'Sun-dried mud brick throughout, roofed by Nubian barrel vaults and pendentive domes laid '
-        + 'in leaning courses without centring, so that no timber formwork was needed.',
-      es: 'Adobe secado al sol en toda la obra, cubierto con bóvedas de cañón nubias y cúpulas sobre '
-        + 'pechinas ejecutadas por hiladas inclinadas sin cimbra, de modo que no hizo falta encofrado de madera.',
-      it: 'Mattoni crudi essiccati al sole in tutta l’opera, coperti da volte a botte nubiane e '
-        + 'cupole su pennacchi eseguite per corsi inclinati senza centine, così da non richiedere casseforme lignee.',
+      en: 'Load-bearing walls of banded brick and pale limestone rising through a tier of pointed '
+        + 'arches on stone colonnettes, with timber mashrabiya oriels bracketed out over the street '
+        + 'and a clock turret at the corner.',
+      es: 'Muros de carga de ladrillo y caliza clara alternados, que suben a través de un cuerpo de '
+        + 'arcos apuntados sobre columnillas de piedra, con miradores de celosía de madera volados '
+        + 'sobre la calle y una torrecilla de reloj en la esquina.',
+      it: 'Murature portanti a fasce di mattoni e calcare chiaro che salgono attraverso un ordine di '
+        + 'archi acuti su colonnine di pietra, con bovindi in moucharabieh lignea aggettanti sulla '
+        + 'strada e una torretta dell’orologio all’angolo.',
     },
     program: {
-      en: 'A village with mosque, market, theatre and school, commissioned by the Egyptian '
-        + 'Department of Antiquities to rehouse the community of Old Gourna off the Theban necropolis.',
-      es: 'Un poblado con mezquita, mercado, teatro y escuela, encargado por el Servicio de '
-        + 'Antigüedades egipcio para realojar a la comunidad de la vieja Gurna fuera de la necrópolis tebana.',
-      it: 'Un villaggio con moschea, mercato, teatro e scuola, commissionato dal Servizio delle '
-        + 'antichità egiziano per trasferire la comunità della vecchia Gurna fuori dalla necropoli tebana.',
+      en: 'The head office of Banque Misr, the first bank in Egypt founded on Egyptian capital, built '
+        + 'on Mohamed Farid Street in the new commercial quarter of Cairo.',
+      es: 'Sede central del Banque Misr, el primer banco de Egipto fundado con capital egipcio, '
+        + 'levantada en la calle Mohamed Farid del nuevo barrio comercial de El Cairo.',
+      it: 'Sede centrale della Banque Misr, la prima banca egiziana fondata con capitale egiziano, '
+        + 'costruita in via Mohamed Farid nel nuovo quartiere commerciale del Cairo.',
     },
-    heritage: 'unesco',
+    heritage: null,
     currentUse: {
-      en: 'A living village inside the World Heritage property of Ancient Thebes; roughly 40 per cent '
-        + 'of the original fabric has been lost and UNESCO has run a safeguarding project since 2009.',
-      es: 'Poblado habitado dentro del bien Patrimonio Mundial de la antigua Tebas; se ha perdido en '
-        + 'torno al 40 % del tejido original y la UNESCO mantiene desde 2009 un proyecto de salvaguarda.',
-      it: 'Villaggio abitato all’interno del sito Patrimonio Mondiale dell’antica Tebe; circa il 40 '
-        + 'per cento del tessuto originario è andato perduto e dal 2009 l’UNESCO conduce un progetto '
-        + 'di salvaguardia.',
+      en: 'Still in use as bank offices in downtown Cairo; no heritage designation is on record here.',
+      es: 'Sigue en uso como oficinas bancarias en el centro de El Cairo; no consta ninguna figura de '
+        + 'protección patrimonial.',
+      it: 'Ancora in uso come uffici bancari nel centro del Cairo; non risulta alcun vincolo di tutela.',
     },
     detailRect: {
-      x: 0.60, y: 0.38, w: 0.25, h: 0.25,
+      x: 0.30, y: 0.36, w: 0.42, h: 0.26,
     },
     image: {
-      commonsFile: 'Gurna Mosque R01.jpg',
-      photographer: 'Marc Ryckaert',
-      license: 'CC BY 3.0',
-      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Gurna_Mosque_R01.jpg',
+      commonsFile: 'Banque Misr building Cairo.jpg',
+      photographer: 'Boubloub',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Banque_Misr_building_Cairo.jpg',
       width: 0,
       height: 0,
     },
     dossier: {
-      en: 'The people of Old Gourna lived on the Theban necropolis, above the tombs, and traded in '
-        + 'what came out of them. In 1946 the Department of Antiquities decided to move them, and '
-        + 'gave Hassan Fathy the village. He built it in mud brick, roofed with the Nubian vault he '
-        + 'had learned in 1941 — laid in leaning courses, no centring, no imported timber — because '
-        + 'steel, cement and glass made no economic sense for a poor country. He tried to consult '
-        + 'every family and argued for ethnographers in the planning team. The Gournis did not want '
-        + 'to go: relocation cut them off from their livelihood, work halted, and only a fraction of '
-        + 'the plan was ever built. Fathy called the experiment a failure in Architecture for the '
-        + 'Poor. It made his international reputation anyway. The mosque, market and theatre survive; '
-        + 'about 40 per cent of the fabric does not, and UNESCO has been trying to save the rest since 2009.',
-      es: 'Los habitantes de la vieja Gurna vivían sobre la necrópolis tebana, encima de las tumbas, '
-        + 'y comerciaban con lo que salía de ellas. En 1946 el Servicio de Antigüedades decidió '
-        + 'trasladarlos y entregó el poblado a Hassan Fathy. Lo construyó en adobe, cubierto con la '
-        + 'bóveda nubia que había aprendido en 1941 —hiladas inclinadas, sin cimbra, sin madera '
-        + 'importada—, porque el acero, el cemento y el vidrio no tenían sentido económico en un país '
-        + 'pobre. Intentó consultar a cada familia y defendió que hubiera etnógrafos en el equipo de '
-        + 'planeamiento. Los gurnauíes no querían irse: el traslado los apartaba de su medio de vida, '
-        + 'la obra se detuvo y del plan se levantó solo una fracción. Fathy llamó fracaso '
-        + 'al experimento en Arquitectura para los pobres. Aun así le dio renombre internacional. La '
-        + 'mezquita, el mercado y el teatro siguen en pie; cerca del 40 % del tejido no, y la UNESCO '
-        + 'intenta salvar el resto desde 2009.',
-      it: 'Gli abitanti della vecchia Gurna vivevano sulla necropoli tebana, sopra le tombe, e '
-        + 'commerciavano ciò che ne usciva. Nel 1946 il Servizio delle antichità decise di '
-        + 'trasferirli e affidò il villaggio a Hassan Fathy. Lo costruì in mattoni crudi, coperto con '
-        + 'la volta nubiana che aveva imparato nel 1941 — corsi inclinati, niente centine, niente '
-        + 'legname importato — perché acciaio, cemento e vetro non avevano senso economico in un '
-        + 'paese povero. Cercò di consultare ogni famiglia e sostenne che nella squadra di '
-        + 'pianificazione servissero etnografi. I gurnawi non volevano andarsene: il trasferimento li '
-        + 'tagliava fuori dalla loro fonte di reddito, il cantiere si fermò e del piano fu costruita '
-        + 'solo una frazione. Fathy definì l’esperimento un fallimento in Architettura per '
-        + 'i poveri. Gli diede comunque fama internazionale. Moschea, mercato e teatro sopravvivono; '
-        + 'circa il 40 per cento del tessuto no, e dal 2009 l’UNESCO cerca di salvare il resto.',
+      en: 'Banque Misr was founded on 13 April 1920 by Talaat Harb with Joseph Cattaui and Joseph '
+        + 'Cicurel, on the rule that its capital, its management and its shareholders would all be '
+        + 'Egyptian and that it would keep its books in Arabic. Every other bank in the country was '
+        + 'foreign-owned; the National Bank of Egypt was British. When the bank built itself a head '
+        + 'office on Mohamed Farid Street, finished in 1927, it went to Antonio Lasciac, an '
+        + 'Austro-Italian from Gorizia who had by then spent four decades in Egypt and had served as '
+        + 'court architect to the Khedive. He gave it a front in the Mamluk manner: banded brick and '
+        + 'pale stone, a tier of pointed arches on colonnettes, carved medallions and inscription '
+        + 'panels, timber mashrabiya oriels hung out over the pavement, a clock turret on the corner. '
+        + 'The bank of Egyptian economic nationalism announced itself in the architectural language of '
+        + 'medieval Cairo, drawn by a European. It holds bank offices still.',
+      es: 'El Banque Misr se fundó el 13 de abril de 1920 por Talaat Harb junto a Joseph Cattaui y '
+        + 'Joseph Cicurel, con la regla de que su capital, su dirección y su accionariado fueran '
+        + 'enteramente egipcios y de que llevara sus libros en árabe. Todos los demás bancos del país '
+        + 'eran extranjeros; el National Bank of Egypt, británico. Cuando el banco se construyó una '
+        + 'sede en la calle Mohamed Farid, terminada en 1927, recurrió a Antonio Lasciac, un '
+        + 'austroitaliano de Gorizia que llevaba ya cuatro décadas en Egipto y había sido arquitecto '
+        + 'de la corte jedival. Le dio una fachada a la manera mameluca: fajas de ladrillo y piedra '
+        + 'clara, un cuerpo de arcos apuntados sobre columnillas, medallones tallados y tableros '
+        + 'epigráficos, miradores de celosía de madera volados sobre la acera, una torrecilla de reloj '
+        + 'en la esquina. El banco del nacionalismo económico egipcio se anunció en el lenguaje del '
+        + 'Cairo medieval, dibujado por un europeo. Sigue albergando oficinas bancarias.',
+      it: 'La Banque Misr fu fondata il 13 aprile 1920 da Talaat Harb con Joseph Cattaui e Joseph '
+        + 'Cicurel, con la regola che il capitale, la direzione e gli azionisti fossero tutti egiziani '
+        + 'e che i libri contabili fossero tenuti in arabo. Ogni altra banca del paese era in mani '
+        + 'straniere; la National Bank of Egypt era britannica. Quando la banca si costruì una sede in '
+        + 'via Mohamed Farid, finita nel 1927, si rivolse ad Antonio Lasciac, un austro-italiano di '
+        + 'Gorizia che aveva ormai passato quarant’anni in Egitto ed era stato architetto di corte del '
+        + 'chedivè. Le diede un fronte alla maniera mamelucca: fasce di mattoni e pietra chiara, un '
+        + 'ordine di archi acuti su colonnine, medaglioni scolpiti e tavole epigrafiche, bovindi in '
+        + 'moucharabieh lignea sporgenti sul marciapiede, una torretta dell’orologio all’angolo. La '
+        + 'banca del nazionalismo economico egiziano si annunciò nella lingua architettonica del Cairo '
+        + 'medievale, disegnata da un europeo. Ospita ancora uffici bancari.',
     },
-    context: {
-      body: {
-        en: 'New Gourna was a resettlement scheme, not a housing programme its inhabitants had asked '
-          + 'for. The community of Old Gourna lived within the World Heritage area of Ancient Thebes '
-          + 'with its Necropolis, and its relocation was pursued as a way of reducing damage to the '
-          + 'pharaonic tombs. English Wikipedia records that the villagers were not enthusiastic about '
-          + 'moving, because it cut them off from their existing livelihood of trading in '
-          + 'archaeological finds; Fathy himself wrote that the Gourna experiment failed and that '
-          + 'construction was halted before the village was complete. UNESCO began a safeguarding '
-          + 'project for what remains in 2009, after the World Heritage Committee and an international '
-          + "petition of specialists raised the alarm over the village's condition.",
-        es: 'Nueva Gurna fue un plan de realojo, no un programa de vivienda que sus habitantes '
-          + 'hubieran pedido. La comunidad de la vieja Gurna vivía dentro del área Patrimonio Mundial '
-          + 'de la antigua Tebas y su necrópolis, y su traslado se impulsó como forma de reducir los '
-          + 'daños a las tumbas faraónicas. La Wikipedia en inglés recoge que los vecinos no acogieron '
-          + 'con entusiasmo la mudanza, porque los separaba de su medio de vida, el comercio de '
-          + 'hallazgos arqueológicos; el propio Fathy escribió que el experimento de Gurna fracasó y '
-          + 'que la obra se detuvo antes de terminar el poblado. La UNESCO inició en 2009 un proyecto '
-          + 'de salvaguarda de lo que queda, después de que el Comité del Patrimonio Mundial y una '
-          + 'petición internacional de especialistas alertaran del estado del conjunto.',
-        it: 'Nuova Gurna fu un piano di trasferimento, non un programma abitativo che i suoi abitanti '
-          + 'avessero chiesto. La comunità della vecchia Gurna viveva dentro l’area Patrimonio '
-          + 'Mondiale dell’antica Tebe e della sua necropoli, e il suo spostamento fu perseguito come '
-          + 'modo per ridurre i danni alle tombe faraoniche. La Wikipedia in inglese registra che gli '
-          + 'abitanti non accolsero con entusiasmo il trasloco, perché li tagliava fuori dalla loro '
-          + 'fonte di reddito, il commercio dei reperti archeologici; lo stesso Fathy scrisse che '
-          + 'l’esperimento di Gurna fallì e che i lavori furono interrotti prima del completamento. '
-          + 'Nel 2009 l’UNESCO ha avviato un progetto di salvaguardia di ciò che resta, dopo che il '
-          + 'Comitato del Patrimonio Mondiale e una petizione internazionale di specialisti avevano '
-          + 'segnalato lo stato del villaggio.',
-      },
-      sources: [
-        {
-          kind: 'institution',
-          url: 'https://whc.unesco.org/en/activities/637/',
-          title: "UNESCO World Heritage Centre, Safeguarding project of Hassan Fathy's New Gourna Village",
-          license: null,
-        },
-        {
-          kind: 'wikipedia',
-          url: 'https://en.wikipedia.org/wiki/Hassan_Fathy',
-          title: 'Hassan Fathy — Wikipedia',
-          license: 'CC BY-SA 4.0',
-        },
-      ],
-    },
+    context: null,
     sources: [
       {
         kind: 'wikidata',
-        url: 'https://www.wikidata.org/wiki/Q14218502',
-        title: 'Hassan Fathy Village / New Gourna (Q14218502)',
-        license: null,
-      },
-      {
-        kind: 'institution',
-        url: 'https://whc.unesco.org/en/activities/637/',
-        title: "UNESCO World Heritage Centre, Safeguarding project of Hassan Fathy's New Gourna Village",
+        url: 'https://www.wikidata.org/wiki/Q126913803',
+        title: 'Banque Misr building (Q126913803)',
         license: null,
       },
       {
         kind: 'wikipedia',
-        url: 'https://en.wikipedia.org/wiki/Hassan_Fathy',
-        title: 'Hassan Fathy — Wikipedia',
+        url: 'https://en.wikipedia.org/wiki/Antonio_Lasciac',
+        title: 'Antonio Lasciac — Wikipedia',
+        license: 'CC BY-SA 4.0',
+      },
+      {
+        kind: 'wikipedia',
+        url: 'https://en.wikipedia.org/wiki/Banque_Misr',
+        title: 'Banque Misr — Wikipedia',
         license: 'CC BY-SA 4.0',
       },
     ],
@@ -464,17 +410,17 @@ export const AFRICA_BUILDINGS: Building[] = [
       it: 'Quartiere municipale di circa 1.500 alloggi commissionato da Jacques Chevallier, sindaco '
         + 'di Algeri, per trasferire famiglie dalle bidonvilles della città.',
     },
-    heritage: 'none',
+    heritage: null,
     currentUse: {
       en: 'Occupied housing and a district of Algiers, split between the quarters of Belouizdad and '
-        + 'El Madania; it carries no heritage listing.',
-      es: 'Viviendas ocupadas y barrio de Argel, repartido entre Belouizdad y El Madania; no cuenta '
-        + 'con ninguna figura de protección patrimonial.',
-      it: 'Alloggi abitati e quartiere di Algeri, diviso fra Belouizdad ed El Madania; non ha alcun '
-        + 'vincolo di tutela.',
+        + 'El Madania; no heritage designation is on record here.',
+      es: 'Viviendas ocupadas y barrio de Argel, repartido entre Belouizdad y El Madania; no consta '
+        + 'ninguna figura de protección patrimonial.',
+      it: 'Alloggi abitati e quartiere di Algeri, diviso fra Belouizdad ed El Madania; non risulta '
+        + 'alcun vincolo di tutela.',
     },
     detailRect: {
-      x: 0.68, y: 0.22, w: 0.28, h: 0.28,
+      x: 0.62, y: 0.22, w: 0.28, h: 0.28,
     },
     image: {
       commonsFile: 'Alger Diar-El-Mahcoul IMG 1147.JPG',
@@ -525,9 +471,9 @@ export const AFRICA_BUILDINGS: Building[] = [
           + '650 for Europeans — with the two districts divided from one another by roads. Its '
           + 'companions were segregated outright: Diar es-Saada housed Europeans only, Climat de '
           + 'France an exclusively Muslim population. Pouillon was working for a mayor who described '
-          + 'this programme as symbiosis. Algeria became independent in 1962; Pouillon, barred from '
-          + 'practice in France after his 1961 conviction, returned to work for the independent state '
-          + 'from 1966.',
+          + 'this programme as symbiosis. Algeria became independent in 1962; Pouillon, expelled from '
+          + 'the French Order of Architects in September 1961 for a breach of professional ethics and '
+          + 'so barred from practice there, returned to work for the independent state from 1966.',
         es: 'Diar el-Mahçoul lo construyó el municipio colonial de Argel a caballo del estallido de '
           + 'la guerra de independencia argelina, en noviembre de 1954, y su planta estaba segregada. La investigación '
           + 'publicada sobre las tres barriadas argelinas recoge que Diar el-Mahçoul combinaba tipos '
@@ -536,8 +482,9 @@ export const AFRICA_BUILDINGS: Building[] = [
           + 'por viales. Sus vecinas estaban segregadas sin matices: Diar es-Saada alojaba solo a '
           + 'europeos y Climat de France a población exclusivamente musulmana. Pouillon trabajaba para '
           + 'un alcalde que llamaba simbiosis a este programa. Argelia fue independiente en 1962; '
-          + 'Pouillon, inhabilitado en Francia tras su condena de 1961, volvió a trabajar para el '
-          + 'Estado independiente desde 1966.',
+          + 'Pouillon, expulsado en septiembre de 1961 del Colegio de Arquitectos francés por una '
+          + 'falta deontológica y por ello inhabilitado allí, volvió a trabajar para el Estado '
+          + 'independiente desde 1966.',
         it: 'Diar el-Mahçoul fu costruito dal municipio coloniale di Algeri a cavallo dello scoppio della '
           + 'guerra d’indipendenza algerina, nel novembre 1954, e la sua pianta era segregata. La ricerca pubblicata '
           + 'sui tre quartieri algerini registra che Diar el-Mahçoul combinava tipi abitativi europei '
@@ -545,8 +492,9 @@ export const AFRICA_BUILDINGS: Building[] = [
           + '650 per europei — con i due settori divisi tra loro da strade. I quartieri vicini erano '
           + 'segregati senza sfumature: Diar es-Saada ospitava solo europei, Climat de France una '
           + 'popolazione esclusivamente musulmana. Pouillon lavorava per un sindaco che chiamava '
-          + 'simbiosi questo programma. L’Algeria divenne indipendente nel 1962; Pouillon, interdetto '
-          + 'in Francia dopo la condanna del 1961, tornò a lavorare per lo Stato indipendente dal 1966.',
+          + 'simbiosi questo programma. L’Algeria divenne indipendente nel 1962; Pouillon, espulso '
+          + 'dall’Ordine degli architetti francese nel settembre 1961 per una violazione deontologica '
+          + 'e perciò interdetto in Francia, tornò a lavorare per lo Stato indipendente dal 1966.',
       },
       sources: [
         {
@@ -583,7 +531,7 @@ export const AFRICA_BUILDINGS: Building[] = [
         license: null,
       },
     ],
-    tier: 'deep',
+    tier: 'canon',
   },
   {
     id: 'al-merrikh-stadium',
@@ -619,14 +567,14 @@ export const AFRICA_BUILDINGS: Building[] = [
       it: 'Impianto per calcio e atletica da 43.000 posti costruito per l’Al-Merrikh SC, che è anche '
         + 'il campo di casa della nazionale sudanese.',
     },
-    heritage: 'none',
+    heritage: null,
     currentUse: {
-      en: 'Still the home ground of Al-Merrikh SC and known in Omdurman as the Red Castle; it carries '
-        + 'no heritage designation.',
+      en: 'Still the home ground of Al-Merrikh SC and known in Omdurman as the Red Castle; no '
+        + 'heritage designation is on record here.',
       es: 'Sigue siendo el campo del Al-Merrikh SC y en Omdurmán se lo conoce como el Castillo Rojo; '
-        + 'no tiene declaración patrimonial alguna.',
-      it: 'È ancora il campo dell’Al-Merrikh SC e a Omdurman lo chiamano il Castello Rosso; non ha '
-        + 'alcuna dichiarazione di tutela.',
+        + 'no consta ninguna declaración patrimonial.',
+      it: 'È ancora il campo dell’Al-Merrikh SC e a Omdurman lo chiamano il Castello Rosso; non '
+        + 'risulta alcuna dichiarazione di tutela.',
     },
     detailRect: {
       x: 0.28, y: 0.58, w: 0.30, h: 0.20,
@@ -642,7 +590,8 @@ export const AFRICA_BUILDINGS: Building[] = [
     dossier: {
       en: 'Sudan became independent in 1956; Abdel-Moneim Mustafa came home from Leicester with an '
         + 'architecture degree in 1958, and by 1962 was building the stadium for Omdurman\'s Al-Merrikh '
-        + 'club. It was established in 1962 and opened on 30 November 1964, the same year he became '
+        + 'club. Work on the ground began in 1962 and it opened on 30 November 1964, the same year '
+        + 'he became '
         + 'the first Sudanese lecturer in the new architecture department at the University of '
         + 'Khartoum. The ground is a plain, economical piece of civil engineering — an oval of raked '
         + 'concrete terracing banked into the ground, a covered tribune, a ring of small units let '
@@ -653,7 +602,8 @@ export const AFRICA_BUILDINGS: Building[] = [
         + 'photograph here is his own, released through the Canadian Centre for Architecture.',
       es: 'Sudán fue independiente en 1956; Abdel-Moneim Mustafa volvió de Leicester con el título de '
         + 'arquitecto en 1958 y en 1962 ya estaba construyendo el estadio del club Al-Merrikh de '
-        + 'Omdurmán. Se estableció en 1962 y se inauguró el 30 de noviembre de 1964, el mismo año en '
+        + 'Omdurmán. Las obras del recinto empezaron en 1962 y se inauguró el 30 de noviembre de '
+        + '1964, el mismo año en '
         + 'que él se convirtió en el primer profesor sudanés del nuevo departamento de arquitectura '
         + 'de la Universidad de Jartum. El recinto es una pieza de ingeniería civil escueta y '
         + 'económica —un óvalo de gradas de hormigón apoyadas en terraplén, una tribuna cubierta, una '
@@ -665,7 +615,8 @@ export const AFRICA_BUILDINGS: Building[] = [
         + 'del Centro Canadiense de Arquitectura.',
       it: 'Il Sudan divenne indipendente nel 1956; Abdel-Moneim Mustafa tornò da Leicester con la '
         + 'laurea in architettura nel 1958 e già nel 1962 costruiva lo stadio del club Al-Merrikh di '
-        + 'Omdurman. Fu istituito nel 1962 e inaugurato il 30 novembre 1964, lo stesso anno in cui '
+        + 'Omdurman. I lavori dell’impianto iniziarono nel 1962 e fu inaugurato il 30 novembre 1964, '
+        + 'lo stesso anno in cui '
         + 'divenne il primo docente sudanese del nuovo dipartimento di architettura dell’Università '
         + 'di Khartoum. L’impianto è un pezzo di ingegneria civile asciutto ed economico — un ovale '
         + 'di gradinate in cemento poggiate su terrapieno, una tribuna coperta, una corona di piccoli '
@@ -705,105 +656,117 @@ export const AFRICA_BUILDINGS: Building[] = [
     tier: 'deep',
   },
   {
-    id: 'grand-egyptian-museum',
-    wikidataId: 'Q2583681',
+    id: 'djamaa-el-djazair',
+    wikidataId: 'Q23012984',
     name: {
-      en: 'Grand Egyptian Museum',
-      es: 'Gran Museo Egipcio',
-      it: 'Grande Museo Egizio',
+      en: 'Djamaa el Djazaïr',
+      es: 'Gran Mezquita de Argel',
+      it: 'Grande Moschea di Algeri',
     },
-    architectId: 'roisin-heneghan',
+    architectId: 'ksp-juergen-engel-architekten',
     location: {
-      city: 'Giza', countryCode: 'EG', lat: 29.99361, lon: 31.11972,
+      city: 'Algiers', countryCode: 'DZ', lat: 36.7358, lon: 3.1381,
     },
-    inception: 2005,
-    completed: 2023,
+    inception: 2012,
+    completed: 2019,
     demolished: null,
-    typology: 'cultural',
-    materials: ['concrete', 'stone', 'steel-and-glass'],
+    typology: 'sacral',
+    materials: ['concrete', 'stone'],
     structure: {
-      en: 'A chamfered triangular plan in reinforced concrete, its two long walls aimed at the '
-        + 'pyramids of Khufu and Menkaure and clad in a lattice of nested triangles in stone and '
-        + 'translucent alabaster.',
-      es: 'Planta triangular achaflanada en hormigón armado, con sus dos muros largos dirigidos a las '
-        + 'pirámides de Keops y Micerinos y revestidos con una retícula de triángulos anidados de '
-        + 'piedra y alabastro translúcido.',
-      it: 'Pianta triangolare smussata in cemento armato, con i due muri lunghi puntati sulle piramidi '
-        + 'di Cheope e Micerino e rivestiti da un reticolo di triangoli annidati in pietra e '
-        + 'alabastro traslucido.',
+      en: 'A reinforced-concrete prayer hall on 618 octagonal columns under a dome fifty metres '
+        + 'across, wrapped by a stone-faced courtyard arcade of pointed arches and flanked by a '
+        + 'square 265-metre minaret, the whole detailed to resist a magnitude-nine earthquake.',
+      es: 'Sala de oración de hormigón armado sobre 618 columnas octogonales bajo una cúpula de '
+        + 'cincuenta metros de luz, envuelta por una arcada de patio de arcos apuntados chapada en '
+        + 'piedra y flanqueada por un alminar cuadrado de 265 metros, todo ello calculado para '
+        + 'resistir un terremoto de magnitud nueve.',
+      it: 'Sala di preghiera in cemento armato su 618 colonne ottagonali sotto una cupola di '
+        + 'cinquanta metri di luce, avvolta da un’arcata di corte ad archi acuti rivestita in '
+        + 'pietra e affiancata da un minareto quadrato di 265 metri, il tutto calcolato per resistere '
+        + 'a un terremoto di magnitudo nove.',
     },
     program: {
-      en: 'A national archaeological museum for the Egyptian Ministry of Antiquities, holding over '
-        + '100,000 objects including the complete Tutankhamun collection.',
-      es: 'Museo arqueológico nacional para el Ministerio de Antigüedades egipcio, con más de 100.000 '
-        + 'piezas, entre ellas la colección completa de Tutankamón.',
-      it: 'Museo archeologico nazionale per il Ministero delle antichità egiziano, con oltre 100.000 '
-        + 'reperti, fra cui la collezione completa di Tutankhamon.',
+      en: 'A state mosque and religious complex for the Algerian Ministry of Religious Affairs, with '
+        + 'room for 120,000 people on a site of 27.75 hectares.',
+      es: 'Mezquita de Estado y complejo religioso para el Ministerio de Asuntos Religiosos argelino, '
+        + 'con capacidad para 120.000 personas en un recinto de 27,75 hectáreas.',
+      it: 'Moschea di Stato e complesso religioso per il Ministero degli Affari religiosi algerino, '
+        + 'con capienza di 120.000 persone su un’area di 27,75 ettari.',
     },
-    heritage: 'none',
+    heritage: null,
     currentUse: {
-      en: 'In use as a museum since its official opening on 1 November 2025; as a new building it '
-        + 'carries no heritage designation.',
-      es: 'En funcionamiento como museo desde su inauguración oficial el 1 de noviembre de 2025; por '
-        + 'ser obra nueva no tiene ninguna figura de protección.',
-      it: 'In funzione come museo dall’inaugurazione ufficiale del 1º novembre 2025; trattandosi di '
+      en: 'In use as a mosque since 2020 and officially inaugurated in February 2024; as a new '
+        + 'building it carries no heritage designation.',
+      es: 'En uso como mezquita desde 2020 e inaugurada oficialmente en febrero de 2024; por ser obra '
+        + 'nueva no tiene ninguna figura de protección.',
+      it: 'In uso come moschea dal 2020 e inaugurata ufficialmente nel febbraio 2024; trattandosi di '
         + 'un edificio nuovo non ha alcun vincolo di tutela.',
     },
     detailRect: {
-      x: 0.62, y: 0.30, w: 0.28, h: 0.28,
+      x: 0.30, y: 0.45, w: 0.36, h: 0.25,
     },
     image: {
-      commonsFile: 'Grand Egyptian Museum - EGWUG Trip (2).jpg',
-      photographer: 'Ibrahim.ID',
-      license: 'CC BY 4.0',
-      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Grand_Egyptian_Museum_-_EGWUG_Trip_(2).jpg',
+      commonsFile: "Grande Mosquée d'Alger.jpg",
+      photographer: 'Askelaadden',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Grande_Mosqu%C3%A9e_d%27Alger.jpg',
       width: 0,
       height: 0,
     },
     dossier: {
-      en: 'The competition was announced on 7 January 2002 and drew 1,557 entries from 82 countries, '
-        + 'the second largest in the history of the profession. Judging finished on 2 June 2003 and '
-        + 'the winners were Róisín Heneghan and Shih-Fu Peng, whose Dublin office was then four years '
-        + 'old. Their answer to a site two kilometres from the pyramids was to refuse to compete with '
-        + 'them: the museum is a chamfered triangle pressed into the desert escarpment, its two long '
-        + 'walls surveyed to point at Khufu and Menkaure, its skin a recursive lattice of triangles '
-        + 'in stone and translucent alabaster that lets daylight bleed through the entrance portal. '
-        + 'Construction began in 2005, the building was finished in 2023 at a cost of about $1.2 '
-        + 'billion, and it opened officially on 1 November 2025 as the largest museum in the world '
-        + 'devoted to a single civilisation.',
-      es: 'El concurso se convocó el 7 de enero de 2002 y recibió 1.557 propuestas de 82 países, el '
-        + 'segundo mayor de la historia de la profesión. El fallo se cerró el 2 de junio de 2003 y '
-        + 'los ganadores fueron Róisín Heneghan y Shih-Fu Peng, cuyo estudio de Dublín tenía entonces '
-        + 'cuatro años. Su respuesta a un solar a dos kilómetros de las pirámides fue negarse a '
-        + 'competir con ellas: el museo es un triángulo achaflanado hincado en el escarpe del '
-        + 'desierto, con sus dos muros largos replanteados para apuntar a Keops y a Micerinos, y una '
-        + 'piel de retícula recursiva de triángulos de piedra y alabastro translúcido que deja pasar '
-        + 'la luz por el portal de entrada. Las obras empezaron en 2005, el edificio se terminó en '
-        + '2023 con un coste próximo a los 1.200 millones de dólares y se inauguró oficialmente el 1 '
-        + 'de noviembre de 2025 como el mayor museo del mundo dedicado a una sola civilización.',
-      it: 'Il concorso fu bandito il 7 gennaio 2002 e raccolse 1.557 proposte da 82 paesi, il secondo '
-        + 'più grande nella storia della professione. Il giudizio si chiuse il 2 giugno 2003 e i '
-        + 'vincitori furono Róisín Heneghan e Shih-Fu Peng, il cui studio di Dublino aveva allora '
-        + 'quattro anni. La loro risposta a un sito a due chilometri dalle piramidi fu rifiutare di '
-        + 'competere con esse: il museo è un triangolo smussato conficcato nella scarpata del '
-        + 'deserto, con i due muri lunghi tracciati per puntare su Cheope e Micerino e una pelle a '
-        + 'reticolo ricorsivo di triangoli in pietra e alabastro traslucido che lascia filtrare la '
-        + 'luce dal portale d’ingresso. I lavori iniziarono nel 2005, l’edificio fu completato nel '
-        + '2023 con un costo di circa 1,2 miliardi di dollari e ha aperto ufficialmente il 1º '
-        + 'novembre 2025 come il più grande museo al mondo dedicato a una sola civiltà.',
+      en: 'In January 2008 a German consortium — KSP Jürgen Engel Architekten with the engineers Krebs '
+        + 'und Kiefer — won the international competition for a state mosque on the bay east of '
+        + 'Algiers. Ground was broken on 16 August 2012, China State Construction Engineering built '
+        + 'it, and the works were finished in 2019 at an official cost of about $898 million against '
+        + 'an early budget nearer $1.5 billion. It is the third-largest mosque in the world after '
+        + 'Mecca and Medina: 27.75 hectares, room for 120,000 people, a prayer hall for 37,000 on 618 '
+        + 'octagonal columns under a dome fifty metres across and seventy high, and a square minaret '
+        + 'of 265 metres, the tallest on earth, which also holds a museum and offices. The structure '
+        + 'is engineered for a magnitude-nine earthquake, on a coast that lost much of Boumerdès in '
+        + '2003. The project was criticised for its monumentality and its cost before it opened, and '
+        + 'drew enormous crowds once it had.',
+      es: 'En enero de 2008 un consorcio alemán —KSP Jürgen Engel Architekten con los ingenieros Krebs '
+        + 'und Kiefer— ganó el concurso internacional para una mezquita de Estado en la bahía al este '
+        + 'de Argel. La primera piedra se puso el 16 de agosto de 2012, la construyó la China State '
+        + 'Construction Engineering y las obras acabaron en 2019 con un coste oficial de unos 898 '
+        + 'millones de dólares frente a un presupuesto inicial cercano a los 1.500 millones. Es la '
+        + 'tercera mezquita del mundo tras las de La Meca y Medina: 27,75 hectáreas, aforo para '
+        + '120.000 personas, una sala de oración para 37.000 sobre 618 columnas octogonales bajo una '
+        + 'cúpula de cincuenta metros de luz y setenta de altura, y un alminar cuadrado de 265 metros, '
+        + 'el más alto del mundo, que aloja además un museo y oficinas. La estructura está calculada '
+        + 'para un seísmo de magnitud nueve, en una costa que perdió buena parte de Boumerdés en 2003. '
+        + 'Se criticó su monumentalidad y su coste antes de abrir, y al abrir atrajo multitudes.',
+      it: 'Nel gennaio 2008 un consorzio tedesco — KSP Jürgen Engel Architekten con gli ingegneri '
+        + 'Krebs und Kiefer — vinse il concorso internazionale per una moschea di Stato sulla baia a '
+        + 'est di Algeri. La prima pietra fu posata il 16 agosto 2012, la costruì la China State '
+        + 'Construction Engineering e i lavori finirono nel 2019 con un costo ufficiale di circa 898 '
+        + 'milioni di dollari a fronte di un preventivo iniziale vicino a 1,5 miliardi. È la terza '
+        + 'moschea del mondo dopo quelle della Mecca e di Medina: 27,75 ettari, capienza di 120.000 '
+        + 'persone, una sala di preghiera per 37.000 su 618 colonne ottagonali sotto una cupola di '
+        + 'cinquanta metri di luce e settanta di altezza, e un minareto quadrato di 265 metri, il più '
+        + 'alto al mondo, che ospita anche un museo e uffici. La struttura è calcolata per un sisma di '
+        + 'magnitudo nove, su una costa che nel 2003 perse buona parte di Boumerdès. Il progetto fu '
+        + 'criticato per la monumentalità e per il costo prima di aprire, e attirò folle enormi una '
+        + 'volta aperto.',
     },
     context: null,
     sources: [
       {
         kind: 'wikidata',
-        url: 'https://www.wikidata.org/wiki/Q2583681',
-        title: 'Grand Egyptian Museum (Q2583681)',
+        url: 'https://www.wikidata.org/wiki/Q23012984',
+        title: 'Djamaa El Djazaïr (Q23012984)',
         license: null,
       },
       {
         kind: 'wikipedia',
-        url: 'https://en.wikipedia.org/wiki/Grand_Egyptian_Museum',
-        title: 'Grand Egyptian Museum — Wikipedia',
+        url: 'https://en.wikipedia.org/wiki/Djamaa_el_Djaza%C3%AFr',
+        title: 'Djamaa el Djazaïr — Wikipedia',
+        license: 'CC BY-SA 4.0',
+      },
+      {
+        kind: 'wikipedia',
+        url: 'https://de.wikipedia.org/wiki/KSP_J%C3%BCrgen_Engel_Architekten',
+        title: 'KSP Jürgen Engel Architekten — Wikipedia',
         license: 'CC BY-SA 4.0',
       },
     ],
