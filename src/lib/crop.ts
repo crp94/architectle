@@ -22,6 +22,14 @@ function lerp(a: number, b: number, t: number): number {
  * Aspect ratios are width/height. `rect` is normalised to the image, so its
  * width and height must be scaled by `imageAspect` to compare against the
  * stage's own width/height ratio.
+ *
+ * Caveat: this only grows `rect`, it never shrinks it, and the caller's later
+ * clamp step may shrink one dimension back down if the grown rect overflows
+ * `[0,1]`. When that happens the returned rect no longer satisfies
+ * `stageAspect` exactly — an image simply may not contain enough room, at
+ * this rect's position and size, to carve out the requested stage aspect.
+ * Callers must treat the aspect match as best-effort and letterbox/contain
+ * the result rather than assume it exactly fills the stage.
  */
 export function fitRectToAspect(rect: Rect, imageAspect: number, stageAspect: number): Rect {
   const cx = rect.x + rect.w / 2;
@@ -74,6 +82,15 @@ function clampToUnitSquare(rect: Rect): Rect {
  * by the detail and the easing), then fit to aspect (which may grow the
  * rect), then clamp (which only ever shifts, and shrinks only if the fitted
  * rect is still too big after shifting).
+ *
+ * Caveat: the returned rect is not guaranteed to satisfy `stageAspect`
+ * exactly. The final clamp can shrink a dimension that `fitRectToAspect`
+ * grew past the image bounds, and there is no general way to carve an
+ * arbitrary stage aspect out of a fixed-size image at an arbitrary position
+ * — some combinations of `detail`, `imageAspect`, and `stageAspect` are
+ * geometrically impossible to satisfy exactly. Consumers (e.g. `CropStage`)
+ * must contain/letterbox the returned rect within the stage rather than
+ * assume it exactly fills it.
  */
 export function cropAt(
   detail: Rect,

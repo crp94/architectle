@@ -48,6 +48,28 @@ describe('cropAt', () => {
       expect(r.y + r.h).toBeLessThanOrEqual(1 + 1e-9);
     }
   });
+
+  it('shifts an overrunning fit right/bottom instead of shrinking it', () => {
+    // corner detail + a wide stage forces fitRectToAspect to grow past x+w=1;
+    // the clamp must slide it back rather than cut it down to fit.
+    const corner = { x: 0.9, y: 0.9, w: 0.1, h: 0.1 };
+    const r = cropAt(corner, 1, SQUARE, 2);
+    expect(r.w).toBeCloseTo(0.2, 10); // unchanged from the fit -> shift, not shrink
+    expect(r.h).toBeCloseTo(0.1, 10);
+    expect(r.x).toBeCloseTo(0.8, 10);
+    expect(r.y).toBeCloseTo(0.9, 10);
+  });
+
+  it('shifts a fit that runs past the left/top edge', () => {
+    // a detail near the left edge, widened by a wide stage, pushes x below 0;
+    // the clamp must slide it back to x=0 without shrinking w.
+    const nearEdge = { x: 0.05, y: 0.4, w: 0.1, h: 0.2 };
+    const r = cropAt(nearEdge, 1, SQUARE, 2);
+    expect(r.w).toBeCloseTo(0.4, 10); // unchanged from the fit -> shift, not shrink
+    expect(r.h).toBeCloseTo(0.2, 10);
+    expect(r.x).toBeCloseTo(0, 10);
+    expect(r.y).toBeCloseTo(0.4, 10);
+  });
 });
 
 describe('fitRectToAspect', () => {
@@ -61,5 +83,11 @@ describe('fitRectToAspect', () => {
   it('keeps the rect centred on its original centre where bounds allow', () => {
     const r = fitRectToAspect({ x: 0.4, y: 0.4, w: 0.2, h: 0.2 }, 1, 2);
     expect(r.x + r.w / 2).toBeCloseTo(0.5, 5);
+  });
+
+  it('heightens a wide rect to fit a narrower stage without distorting', () => {
+    // image 2:1, stage 1:1, rect 0.2x0.2 -> must become 0.4 tall, centre preserved
+    const r = fitRectToAspect({ x: 0.4, y: 0.4, w: 0.2, h: 0.2 }, 2, 1);
+    expect(r).toEqual({ x: 0.4, y: 0.3, w: 0.2, h: 0.4 });
   });
 });
