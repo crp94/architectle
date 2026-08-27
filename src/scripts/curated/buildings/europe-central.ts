@@ -44,12 +44,25 @@ export const EUROPE_CENTRAL_BUILDINGS: Building[] = [
       es: 'Iglesia parroquial y lugar de peregrinación, inscrita en la Lista del Patrimonio Mundial de la UNESCO en 1994.',
       it: 'Chiesa parrocchiale e luogo di pellegrinaggio, iscritta nella Lista del Patrimonio Mondiale UNESCO nel 1994.',
     },
-    detailRect: { x: 0.36, y: 0.40, w: 0.30, h: 0.28 },
+    detailRect: { x: 0.35, y: 0.56, w: 0.30, h: 0.28 },
     image: {
-      commonsFile: 'File:Kostel svatého Jana Nepomuckého (3).jpg',
-      photographer: 'Aqalexor',
-      license: 'CC BY-SA 4.0',
-      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Kostel_svat%C3%A9ho_Jana_Nepomuck%C3%A9ho_(3).jpg',
+      // Re-verified on the live Commons page during this pass: the file
+      // originally recorded here (Kostel svatého Jana Nepomuckého (3).jpg)
+      // is filed under "Interior of Pilgrimage Church of Saint John of
+      // Nepomuk" — an interior shot, contradicting this file's own header
+      // comment that every image in the slice is an exterior. Santini has
+      // been dead since 1723, so the architecture itself carries no
+      // copyright risk either way, but swapped to a genuine exterior for
+      // consistency with the rest of the slice and with the game's crop
+      // mechanic (a player should be able to recognise the building's
+      // silhouette by the final guess). Portrait-orientation wide shot of
+      // the whole church from the approach, dome and tower dominant with
+      // sky above; the rect below sits on the lower two-thirds of the
+      // frame, over the chapel/rotunda roofline rather than the sky.
+      commonsFile: 'File:Zelená hora - poutní kostel.jpg',
+      photographer: 'Prazak',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Zelen%C3%A1_hora_-_poutn%C3%AD_kostel.jpg',
       width: 0,
       height: 0,
     },
@@ -138,6 +151,11 @@ export const EUROPE_CENTRAL_BUILDINGS: Building[] = [
       it: 'Museo delle Arti Applicate di Budapest',
     },
     architectId: 'odon-lechner',
+    // Wikipedia credits this jointly: "designed by Ödön Lechner and Gyula
+    // Pártos". architectId stays Lechner (he led the artistic side per both
+    // architects' own account, and is the name the building is known by),
+    // with Pártos credited honestly via coArchitects rather than dropped.
+    coArchitects: ['gyula-partos'],
     location: { city: 'Budapest', countryCode: 'HU', lat: 47.48611, lon: 19.06833 },
     inception: 1893,
     completed: 1896,
@@ -348,6 +366,14 @@ export const EUROPE_CENTRAL_BUILDINGS: Building[] = [
       it: 'Museo d\'arte contemporanea di Belgrado',
     },
     architectId: 'ivanka-raspopovic',
+    // Wikipedia and every secondary source name this a joint work — "Ivan
+    // Antić and Ivanka Raspopović" — with Antić conventionally named first
+    // and neither treated as senior. architectId stays hers (this slice's
+    // gender quota already clears its floor without leaning on this choice;
+    // see Ruling 25 in progress.md — the choice must not correlate with the
+    // quota either way), and Antić is credited honestly via coArchitects
+    // rather than erased.
+    coArchitects: ['ivan-antic'],
     location: { city: 'Belgrade', countryCode: 'RS', lat: 44.819444, lon: 20.442222 },
     inception: 1960,
     completed: 1965,

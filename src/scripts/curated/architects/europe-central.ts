@@ -93,6 +93,39 @@ export const EUROPE_CENTRAL_ARCHITECTS: Architect[] = [
     ],
   },
   {
+    // Co-architect of the Museum of Applied Arts, Budapest (see coArchitects
+    // on that building). Wikipedia's own text credits the museum jointly as
+    // "designed by Ödön Lechner and Gyula Pártos" with neither named senior;
+    // Pártos's own biography records the two dividing artistic and
+    // organisational leadership rather than one simply assisting the other.
+    id: 'gyula-partos',
+    wikidataId: 'Q713731',
+    name: 'Gyula Pártos',
+    alternativeNames: ['Julius Puntzmann'],
+    gender: 'man',
+    born: 1845,
+    died: 1916,
+    floruit: { start: 1871, end: 1912, override: false },
+    movements: [{ id: 'art-nouveau', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'brick',
+    portrait: {
+      en: 'Pártos, born Julius Puntzmann at Apatin, trained under Antal Szkalnitzky in Pest and took an architecture degree in Berlin in 1870, then formed a Budapest partnership with Ödön Lechner that lasted a quarter-century. Their own account of the division of labour has Lechner leading the artistic side and Pártos running the practice\'s organisational side, though the buildings they produced — culminating in the Museum of Applied Arts, opened for the Hungarian millennial celebrations of 1896 — carry both their names jointly in the record. The partnership dissolved that year. Pártos then worked independently for sixteen years, mostly on churches, chapels and municipal buildings across Hungary, Slovakia and Serbia, in a manner closer to conventional historicism than to the Hungarian Art Nouveau he had helped Lechner build.',
+      es: 'Pártos, nacido Julius Puntzmann en Apatin, se formó con Antal Szkalnitzky en Pest y se tituló en arquitectura en Berlín en 1870; formó después en Budapest una sociedad con Ödön Lechner que duró un cuarto de siglo. Según su propio relato del reparto de tareas, Lechner llevaba la parte artística y Pártos la organización del estudio, aunque los edificios que produjeron juntos —culminados en el Museo de Artes Aplicadas, inaugurado para las celebraciones del milenario húngaro de 1896— figuran en el registro con ambos nombres. La sociedad se disolvió ese año. Pártos trabajó después dieciséis años en solitario, sobre todo en iglesias, capillas y edificios municipales de Hungría, Eslovaquia y Serbia, en un estilo más cercano al historicismo convencional que al modernismo húngaro que había ayudado a construir junto a Lechner.',
+      it: 'Pártos, nato Julius Puntzmann ad Apatin, si formò con Antal Szkalnitzky a Pest e si laureò in architettura a Berlino nel 1870; costituì poi a Budapest una società con Ödön Lechner durata un quarto di secolo. Secondo il loro stesso resoconto della divisione dei compiti, Lechner guidava la parte artistica e Pártos l\'organizzazione dello studio, sebbene gli edifici realizzati insieme — culminati nel Museo delle Arti Applicate, inaugurato per le celebrazioni del millenario ungherese del 1896 — rechino nel registro entrambi i nomi. La società si sciolse quell\'anno. Pártos lavorò poi per sedici anni da solo, soprattutto su chiese, cappelle ed edifici municipali in Ungheria, Slovacchia e Serbia, in uno stile più vicino allo storicismo convenzionale che al modernismo ungherese che aveva contribuito a costruire accanto a Lechner.',
+    },
+    awards: [],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q713731', title: 'Gyula Pártos (Q713731)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Gyula_P%C3%A1rtos', title: 'Gyula Pártos', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Museum_of_Applied_Arts_(Budapest)', title: 'Museum of Applied Arts (Budapest)', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
     id: 'joze-plecnik',
     wikidataId: 'Q314886',
     name: 'Jože Plečnik',
@@ -202,6 +235,39 @@ export const EUROPE_CENTRAL_ARCHITECTS: Architect[] = [
       { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q3156244', title: 'Ivanka Raspopović (Q3156244)', license: null },
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Ivanka_Raspopovi%C4%87', title: 'Ivanka Raspopović', license: 'CC BY-SA 4.0' },
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Museum_of_Contemporary_Art,_Belgrade', title: 'Museum of Contemporary Art, Belgrade', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    // Co-architect of the Museum of Contemporary Art, Belgrade (see coArchitects
+    // on that building). Wikipedia and the museum's own record name Antić
+    // first in the conventional credit; he is defined here in full — not left
+    // as a bare id — precisely so that crediting him does not erase Raspopović
+    // (architectId stays hers) while still naming her equal partner honestly.
+    id: 'ivan-antic',
+    wikidataId: 'Q3156060',
+    name: 'Ivan Antić',
+    alternativeNames: ['Иван Антић'],
+    gender: 'man',
+    born: 1923,
+    died: 2005,
+    floruit: { start: 1957, end: 1965, override: true },
+    movements: [{ id: 'brutalism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: 'Antić graduated from the Belgrade faculty of architecture in 1950, after years split between study and a post at the Ministry of Transportation, and worked at the state Jugoprojekt office until 1953 before starting independent practice in 1957. His reputation rests chiefly on a partnership with Ivanka Raspopović, with whom he designed the Museum of Contemporary Art in New Belgrade and, in the same years, the 21 October Museum at the Šumarice memorial park in Kragujevac — both built from repeated geometric cells resolved with an engineer\'s plainness rather than a monument\'s rhetoric. He later taught at the Belgrade faculty, becoming a full professor in 1973, and was elected to the Serbian Academy of Sciences and Arts, first as a corresponding member in 1976 and a full member in 1983.',
+      es: 'Antić se licenció en la facultad de arquitectura de Belgrado en 1950, tras años repartidos entre el estudio y un puesto en el Ministerio de Transporte, y trabajó en la oficina estatal Jugoprojekt hasta 1953 antes de iniciar el ejercicio independiente en 1957. Su reputación descansa sobre todo en una sociedad con Ivanka Raspopović, con quien proyectó el Museo de Arte Contemporáneo de Nuevo Belgrado y, en los mismos años, el Museo del 21 de Octubre en el parque conmemorativo de Šumarice, en Kragujevac —ambos construidos a partir de células geométricas repetidas y resueltos con la sobriedad de un ingeniero antes que con la retórica de un monumento. Enseñó después en la facultad de Belgrado, llegando a catedrático en 1973, y fue elegido para la Academia Serbia de Ciencias y Artes, primero como miembro correspondiente en 1976 y como miembro de número en 1983.',
+      it: 'Antić si laureò alla facoltà di architettura di Belgrado nel 1950, dopo anni divisi fra lo studio e un incarico al Ministero dei Trasporti, e lavorò presso l\'ufficio statale Jugoprojekt fino al 1953 prima di avviare la pratica indipendente nel 1957. La sua fama poggia soprattutto su un sodalizio con Ivanka Raspopović, con cui progettò il Museo d\'arte contemporanea di Nuova Belgrado e, negli stessi anni, il Museo del 21 ottobre nel parco commemorativo di Šumarice, a Kragujevac — entrambi costruiti a partire da cellule geometriche ripetute e risolti con la sobrietà di un ingegnere piuttosto che con la retorica di un monumento. Insegnò poi alla facoltà di Belgrado, diventando professore ordinario nel 1973, e fu eletto all\'Accademia serba delle scienze e delle arti, dapprima come membro corrispondente nel 1976 e poi come membro effettivo nel 1983.',
+    },
+    awards: ['October Prize of the City of Belgrade (1965, with Ivanka Raspopović)'],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q3156060', title: 'Ivan Antić (Q3156060)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Ivan_Anti%C4%87', title: 'Ivan Antić', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://sr.wikipedia.org/wiki/%D0%98%D0%B2%D0%B0%D0%BD_%D0%90%D0%BD%D1%82%D0%B8%D1%9B', title: 'Иван Антић (Serbian Wikipedia)', license: 'CC BY-SA 4.0' },
     ],
   },
   {
