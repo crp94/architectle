@@ -80,7 +80,11 @@ export const ASIA_SOUTHEAST_ARCHITECTS: Architect[] = [
   },
   {
     id: 'ewout-verhagen',
-    wikidataId: 'Q133870895',
+    // Q133870895 labels itself "Ewout Verhagen" but is a VOC surveyor/map
+    // drawer per the Repertorium van Nederlandse kaartmakers, with no link to
+    // Batavia's ambachtskwartier or Gereja Sion; the church architect of the
+    // same name has no verified Wikidata item.
+    wikidataId: '',
     name: 'Ewout Verhagen',
     alternativeNames: ['E. Verhagen', 'Ewout Verhagen van Rotterdam'],
     gender: 'man',
@@ -102,7 +106,6 @@ export const ASIA_SOUTHEAST_ARCHITECTS: Architect[] = [
     context: null,
     sources: [
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Gereja_Sion', title: 'Gereja Sion', license: 'CC BY-SA 4.0' },
-      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q133870895', title: 'Ewout Verhagen (Q133870895)', license: null },
     ],
   },
 
@@ -352,6 +355,37 @@ export const ASIA_SOUTHEAST_ARCHITECTS: Architect[] = [
     sources: [
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/WOHA', title: 'WOHA', license: 'CC BY-SA 4.0' },
       { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q115592346', title: 'Wong Mun Summ (Q115592346)', license: null },
+    ],
+  },
+  {
+    id: 'richard-hassell',
+    // No standalone Wikidata item for the contemporary architect; the only
+    // "Richard Hassell" on Wikidata (Q21165472) is an 18th-century Royal
+    // Society member and unrelated. Practice-based in Singapore since 1989,
+    // so owned by this slice under contract §3, not by his native Australia.
+    wikidataId: '',
+    name: 'Richard Hassell',
+    alternativeNames: ['Richard Hassell (WOHA)'],
+    gender: 'man',
+    born: 1966,
+    died: null,
+    floruit: { start: 1994, end: 2020, override: false },
+    movements: [{ id: 'sustainable-architecture', primary: true }, { id: 'tropical-modernism', primary: false }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'commercial',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: 'Richard Hassell is the Australian-born half of WOHA, the Singapore practice he founded in 1994 with Wong Mun Summ, whom he met while both were working for Kerry Hill Architects. Born in 1966, he trained at the University of Western Australia and later took a master’s degree at RMIT in Melbourne, then settled in Singapore in 1989 and has practised there since. WOHA credits every project to the office rather than to either founder, and Hassell has been as much the firm’s public voice on its central argument — that tropical density and greenery are not opposed — as its designer, sitting on the boards of the DesignSingapore Council and the Building and Construction Authority and holding the Seidler Chair in architectural practice at the University of New South Wales.',
+      es: 'Richard Hassell es la mitad australiana de WOHA, el estudio de Singapur que fundó en 1994 con Wong Mun Summ, a quien conoció mientras ambos trabajaban para Kerry Hill Architects. Nacido en 1966, se formó en la Universidad de Australia Occidental y cursó después un máster en la RMIT de Melbourne; se instaló en Singapur en 1989 y ejerce allí desde entonces. WOHA atribuye cada proyecto a la oficina y no a ninguno de sus fundadores, y Hassell ha sido tanto la voz pública del estudio en torno a su argumento central —que densidad tropical y vegetación no se oponen— como su proyectista, además de formar parte de los consejos del DesignSingapore Council y de la Building and Construction Authority y ocupar la cátedra Seidler de práctica arquitectónica en la Universidad de Nueva Gales del Sur.',
+      it: "Richard Hassell è la metà australiana di WOHA, lo studio di Singapore che fondò nel 1994 con Wong Mun Summ, conosciuto mentre entrambi lavoravano per Kerry Hill Architects. Nato nel 1966, si è formato all'Università dell'Australia Occidentale e ha poi conseguito un master alla RMIT di Melbourne; si è stabilito a Singapore nel 1989 e vi esercita da allora. WOHA attribuisce ogni progetto allo studio e non a uno dei due fondatori, e Hassell ne è stato tanto la voce pubblica sull'argomento centrale — che densità tropicale e verde non si oppongono — quanto il progettista, facendo parte dei consigli del DesignSingapore Council e della Building and Construction Authority e occupando la cattedra Seidler di pratica architettonica all'Università del Nuovo Galles del Sud.",
+    },
+    awards: ['Aga Khan Award for Architecture (2007, with WOHA)'],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/WOHA', title: 'WOHA', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.ctbuh.org/people-profile/richard-hassell', title: 'Council on Tall Buildings and Urban Habitat — Richard Hassell', license: null },
     ],
   },
 ];
