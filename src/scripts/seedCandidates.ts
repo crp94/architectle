@@ -4,7 +4,7 @@
 // exists and what's missing; it is never read by any other script and its
 // output is gitignored. Curated data (src/scripts/curated/) is hand-authored
 // TS, not generated from this report — see design spec §7.1/§7.2.
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync, realpathSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { M49 } from '@/lib/m49';
@@ -116,10 +116,28 @@ async function main(): Promise<void> {
 }
 
 // Only run when executed directly (`npm run data:seed`), not when imported.
-const isDirectRun = process.argv[1] !== undefined && fileURLToPath(import.meta.url) === path.resolve(process.argv[1]);
-if (isDirectRun) {
+//
+// Compares realpaths, not raw resolved paths — matching buildCuratedPool.ts
+// and fetchImages.ts, and for the same reason: every Wave 5 worktree
+// reaches node_modules (and tsx) through a symlink, and a naive
+// `path.resolve` comparison can disagree with `import.meta.url` across a
+// symlink boundary, which would make `npm run data:seed` a silent no-op
+// that exits 0 having done nothing.
+function isDirectRun(): boolean {
+  if (process.argv[1] === undefined) return false;
+  try {
+    return realpathSync(fileURLToPath(import.meta.url)) === realpathSync(path.resolve(process.argv[1]));
+  } catch (err) {
+    console.error(`seedCandidates: could not resolve realpath for direct-run check (${(err as Error).message}); treating as not a direct run.`);
+    return false;
+  }
+}
+
+if (isDirectRun()) {
   main().catch((err: unknown) => {
     console.error('seedCandidates failed:', err);
     process.exit(1);
   });
+} else if (process.argv[1] !== undefined && path.basename(process.argv[1]) === 'seedCandidates.ts') {
+  console.error('seedCandidates: process.argv[1] names this script, but the direct-run identity check did not match — main() was NOT run, no files were written. This usually means a symlink broke the realpath comparison above; investigate before trusting this a no-op is intentional.');
 }
