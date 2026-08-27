@@ -2,14 +2,26 @@ import type { Architect } from '@/types/architect';
 
 // Wave 5 curator agent (Andean states and the Caribbean): real, sourced Architect entries for this slice.
 //
-// Two architects below carry an empty `wikidataId`: Esteban Rodríguez Castells
-// and Claudia Uccelli. Neither has a Wikidata entity as of 2026-08-26 (checked
-// against wbsearchentities in es/en and against a SPARQL enumeration of every
-// architect with Cuban or Peruvian citizenship). Every other field for those
-// two is hand-authored from the published sources listed on each record. The
-// alternative — inventing a Q-number — is not acceptable, and dropping them
-// would have removed the Caribbean's best Art Deco building and one of only
-// two women in this slice with an attributed, freely-licensed building.
+// Four architects below carry an empty `wikidataId`: Esteban Rodríguez
+// Castells, Claudia Uccelli, Daniel Hahn and Charles P. Lazarus. None has a
+// Wikidata entity as of 2026-08-27 (checked against wbsearchentities in
+// es/en, and by direct search for the two Caribbean names). Every other
+// field for these four is hand-authored from the published sources listed
+// on each record. The alternative — inventing a Q-number — is not
+// acceptable, and dropping them would have removed the Caribbean's best Art
+// Deco building, Trinidad and Jamaica's only entries in this slice, and one
+// of only three women here with an attributed, freely-licensed building.
+//
+// Milton Barragán (Ecuador) was researched, drafted, and then dropped from
+// this file: the building he would have anchored, Templo de la Dolorosa
+// (Quito, 1967), sits on real legal risk rather than an easy win. Ecuador's
+// 2016 copyright code (Organic Code of Social Economy of Knowledge,
+// Creativity and Innovation, Art. 212(7)) limits free reproduction of
+// architectural works in public places to scientific or educational
+// purposes, and Barragán died in 2024 — his buildings are unambiguously
+// still in copyright, and a CC0-tagged photographer credit does not clear
+// that gap on its own. Ecuador is an honest gap in this slice, not a
+// fabricated one; see the task report for the full reasoning.
 export const AMERICAS_ANDEAN_ARCHITECTS: Architect[] = [
   {
     id: 'constantino-de-vasconcelos',
@@ -235,6 +247,121 @@ export const AMERICAS_ANDEAN_ARCHITECTS: Architect[] = [
     sources: [
       { kind: 'publication', url: 'https://arqa.com/arquitectura/museo-cao.html', title: 'Museo Cao — ARQA (project sheet, Claudia Uccelli Romero)', license: null },
       { kind: 'institution', url: 'https://www.mchap.co/mchap-2014-projects/cao-museum', title: 'Cao Museum — Mies Crown Hall Americas Prize 2014 nominated projects', license: null },
+    ],
+  },
+  {
+    id: 'rafael-carmoega',
+    wikidataId: 'Q16006361',
+    name: 'Rafael Carmoega',
+    alternativeNames: ['Rafael Carmoega Morales'],
+    gender: 'man',
+    born: 1894,
+    died: 1968,
+    floruit: { start: 1921, end: 1960, override: true },
+    movements: [
+      { id: 'beaux-arts', primary: true },
+      { id: 'neoclassicism', primary: false },
+    ],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'stone',
+    portrait: {
+      en: "Born in Río Piedras and trained at Cornell, from which he graduated in 1918, Carmoega was the first Puerto Rican to hold the post of State Architect, which he occupied inside the Department of the Interior from 1921 to 1936. Those fifteen years placed him in charge of the island's public building at the moment when a United States territorial administration was writing its own institutions into stone. He inherited the half-built Capitol from the earlier schemes of Frank Perkins and Adrian Finlayson and finished it in marble, opening in 1929. Away from that neoclassical commission his preference ran to Spanish Baroque and neo-Mudéjar vocabularies and to glazed mosaic tile, a deliberate insistence on Hispanic inheritance under American sovereignty. After 1936 he worked for the Puerto Rico Reconstruction Administration on the campus of the Universidad de Puerto Rico, and from 1937 in private practice. His archive of 144 projects is held by that university.",
+      es: "Nacido en Río Piedras y formado en Cornell, donde se graduó en 1918, Carmoega fue el primer puertorriqueño en ocupar el cargo de Arquitecto del Estado, que desempeñó dentro del Departamento del Interior entre 1921 y 1936. Esos quince años lo pusieron al frente de la obra pública de la isla justo cuando una administración territorial estadounidense inscribía en piedra sus propias instituciones. Heredó el Capitolio a medio construir de los proyectos previos de Frank Perkins y Adrian Finlayson y lo remató en mármol, inaugurándose en 1929. Fuera de ese encargo neoclásico, su preferencia iba hacia los repertorios del barroco español y el neomudéjar y hacia el azulejo vidriado: una insistencia deliberada en la herencia hispánica bajo soberanía norteamericana. Desde 1936 trabajó para la Puerto Rico Reconstruction Administration en el recinto de la Universidad de Puerto Rico, y desde 1937 por cuenta propia. Esa universidad conserva su archivo de 144 proyectos.",
+      it: "Nato a Río Piedras e formatosi alla Cornell, dove si laureò nel 1918, Carmoega fu il primo portoricano a ricoprire la carica di Architetto di Stato, che occupò all'interno del Dipartimento degli Interni dal 1921 al 1936. Quei quindici anni lo misero a capo dell'edilizia pubblica dell'isola proprio mentre un'amministrazione territoriale statunitense fissava nella pietra le proprie istituzioni. Ereditò il Campidoglio a metà costruzione dai progetti precedenti di Frank Perkins e Adrian Finlayson e lo portò a termine in marmo, con l'inaugurazione del 1929. Al di fuori di quella commissione neoclassica la sua preferenza andava ai repertori del barocco spagnolo e del neomudéjar e alla piastrella invetriata: un'insistenza deliberata sull'eredità ispanica sotto sovranità statunitense. Dal 1936 lavorò per la Puerto Rico Reconstruction Administration al campus della Universidad de Puerto Rico, e dal 1937 in proprio. Quella università conserva il suo archivio di 144 progetti.",
+    },
+    awards: [],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q16006361', title: 'Rafael Carmoega (Q16006361)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Rafael_Carmoega', title: 'Rafael Carmoega', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Puerto_Rico_Capitol', title: 'Puerto Rico Capitol', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    id: 'libia-yusti',
+    wikidataId: 'Q37331206',
+    name: 'Libia Yusti',
+    alternativeNames: [],
+    gender: 'woman',
+    born: null,
+    died: null,
+    floruit: { start: 1965, end: 1975, override: true },
+    movements: 'unaffiliated',
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: "Yusti belonged to the first cohort to graduate in architecture from the Universidad del Valle, in 1958, and spent her career in Cali, in the practice Richardson y Yusti that she ran with Enrique Richardson. The commissions she is remembered for came together: the venues Cali needed for the sixth Pan American Games of 1971, among them the Coliseo El Pueblo and the Alcides Nieto Patiño velodrome, both built inside the sports precinct laid out on the western edge of the city. She also built the Palacio de San Francisco. Spanish Wikipedia describes her as one of the architects who carried modern architecture into Cali and shaped its urban expansion, and gives no birth date beyond the twentieth century; Wikidata records 1901, which the published account does not support, so no year is asserted here.",
+      es: "Yusti formó parte de la primera promoción de arquitectos egresados de la Universidad del Valle, en 1958, y desarrolló su carrera en Cali, en la firma Richardson y Yusti que dirigió junto a Enrique Richardson. Los encargos por los que se la recuerda llegaron juntos: los escenarios que Cali necesitaba para los VI Juegos Panamericanos de 1971, entre ellos el Coliseo El Pueblo y el velódromo Alcides Nieto Patiño, ambos levantados dentro de la unidad deportiva trazada en el borde occidental de la ciudad. Construyó además el Palacio de San Francisco. La Wikipedia en español la describe como una de las arquitectas que introdujeron la arquitectura moderna en Cali y que orientaron su desarrollo urbano, y no da más fecha de nacimiento que el siglo XX; Wikidata registra 1901, que la fuente publicada no respalda, de modo que aquí no se afirma ningún año.",
+      it: "Yusti fece parte della prima leva di architetti laureati alla Universidad del Valle, nel 1958, e svolse la carriera a Cali, nello studio Richardson y Yusti che diresse con Enrique Richardson. Le commissioni per cui è ricordata arrivarono insieme: gli impianti di cui Cali aveva bisogno per i VI Giochi Panamericani del 1971, fra cui il Coliseo El Pueblo e il velodromo Alcides Nieto Patiño, entrambi costruiti dentro il comparto sportivo tracciato sul margine occidentale della città. Realizzò inoltre il Palacio de San Francisco. La Wikipedia in spagnolo la descrive come una delle architette che portarono l'architettura moderna a Cali e ne indirizzarono lo sviluppo urbano, e non indica altra data di nascita che il XX secolo; Wikidata riporta il 1901, che la fonte pubblicata non conferma, perciò qui non si afferma alcun anno.",
+    },
+    awards: [],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q37331206', title: 'Libia Yusti (Q37331206)', license: null },
+      { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Libia_Yusti', title: 'Libia Yusti', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Coliseo_El_Pueblo', title: 'Coliseo El Pueblo', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    id: 'charles-p-lazarus',
+    wikidataId: '',
+    name: 'Charles P. Lazarus',
+    alternativeNames: [],
+    gender: 'man',
+    born: null,
+    died: null,
+    floruit: { start: 1881, end: 1881, override: true },
+    movements: 'unaffiliated',
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'domestic',
+    signatureMaterial: 'brick',
+    portrait: {
+      en: "Lazarus was not a trained architect by profession — he worked as an iron founder and as engineer to the Kingston and Liguanea Water Works Company, and sat as a local political leader in colonial Jamaica — but he is the name attached to the one commission he is remembered for: Devon House, built in 1881 at Half Way Tree, Kingston, for George Stiebel, reputed to be Jamaica's first Black millionaire, made rich by mining and shipping ventures in Venezuela. The house follows the symmetrical massing of Jamaican Georgian planning, with wraparound verandahs and jalousied windows judged against the island's heat, built of brick, timber and iron gates shipped in for the purpose. The property faced demolition in 1965 before the Jamaican government intervened to preserve it as a heritage site. No birth or death date for Lazarus has been established in the sources consulted.",
+      es: "Lazarus no era arquitecto de formación —trabajó como fundidor de hierro y como ingeniero de la Kingston and Liguanea Water Works Company, y ejerció como dirigente político local en la Jamaica colonial—, pero su nombre queda unido al único encargo por el que se le recuerda: Devon House, levantada en 1881 en Half Way Tree, Kingston, para George Stiebel, considerado el primer millonario negro de Jamaica, enriquecido con la minería y el transporte marítimo en Venezuela. La casa sigue la composición simétrica del estilo georgiano jamaicano, con galerías perimetrales y ventanas de celosía pensadas contra el calor de la isla, construida en ladrillo, madera y verjas de hierro traídas para la obra. La propiedad estuvo a punto de ser demolida en 1965 antes de que el gobierno de Jamaica interviniera para conservarla como sitio patrimonial. Las fuentes consultadas no registran fecha de nacimiento ni de muerte para Lazarus.",
+      it: "Lazarus non era un architetto di formazione — lavorò come fonditore di ferro e come ingegnere della Kingston and Liguanea Water Works Company, ed ebbe un ruolo di dirigente politico locale nella Giamaica coloniale —, ma il suo nome resta legato all'unica commissione per cui è ricordato: Devon House, costruita nel 1881 a Half Way Tree, Kingston, per George Stiebel, ritenuto il primo milionario nero della Giamaica, arricchitosi con l'attività mineraria e marittima in Venezuela. La casa segue la composizione simmetrica dello stile georgiano giamaicano, con verande perimetrali e persiane pensate contro il caldo dell'isola, costruita in mattone, legno e cancelli in ferro fatti arrivare per l'occasione. La proprietà rischiò la demolizione nel 1965 prima che il governo giamaicano intervenisse per conservarla come sito patrimoniale. Le fonti consultate non riportano data di nascita né di morte per Lazarus.",
+    },
+    awards: [],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Devon_House', title: 'Devon House', license: 'CC BY-SA 4.0' },
+      { kind: 'publication', url: 'https://averyreview.com/issues/59/devon-house', title: 'Devon House — The Avery Review', license: null },
+      { kind: 'institution', url: 'https://www.ksamc.gov.jm/attractions/devon-house', title: 'Devon House — Kingston and St. Andrew Municipal Corporation', license: null },
+    ],
+  },
+  {
+    id: 'daniel-hahn',
+    wikidataId: '',
+    name: 'Daniel Meinerts Hahn',
+    alternativeNames: ['Daniel Hahn', 'D. M. Hahn'],
+    gender: 'man',
+    born: 1867,
+    died: null,
+    floruit: { start: 1902, end: 1907, override: true },
+    movements: [{ id: 'beaux-arts', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'stone',
+    portrait: {
+      en: "Born in Carúpano, Venezuela, in 1867 and raised in Trinidad, Hahn was educated at Queen's Royal College in Port of Spain before continuing his studies in Hamburg and at the Polytechnic School of Engineering in Berlin. He returned to the colony to become chief draughtsman of the Public Works Department, the post from which he designed Trinidad's two most conspicuous public buildings of the early twentieth century. The Water Riots of March 1903 gutted the old Red House; Hahn rebuilt it in dressed stone, adding the central cupola, the Legislative Council's Wedgwood-blue gesso ceiling and the fortified parapet that give the rebuilt Parliament its present silhouette, reopened in 1907. In between, on 11 November 1902, he laid the foundation stone of his own old school, Queen's Royal College, choosing a German Renaissance vocabulary of twin towers and steep gables over the Beaux-Arts idiom of the Red House. No death date for Hahn has been established in the sources consulted.",
+      es: "Nacido en Carúpano, Venezuela, en 1867 y criado en Trinidad, Hahn se formó en el Queen's Royal College de Puerto España antes de proseguir estudios en Hamburgo y en la Escuela Politécnica de Ingeniería de Berlín. Volvió a la colonia para ser delineante jefe del Departamento de Obras Públicas, el cargo desde el que proyectó los dos edificios públicos más visibles de la Trinidad de comienzos del siglo XX. Los disturbios del agua de marzo de 1903 arrasaron el antiguo Red House; Hahn lo reconstruyó en piedra labrada, añadiendo la cúpula central, el techo de yesería azul Wedgwood del Consejo Legislativo y el parapeto fortificado que aún definen la silueta del Parlamento reabierto en 1907. Entretanto, el 11 de noviembre de 1902, colocó la primera piedra de su propio colegio, el Queen's Royal College, con un vocabulario de renacimiento alemán —torres gemelas y frontones empinados— distinto del repertorio beaux-arts del Red House. Las fuentes consultadas no registran fecha de muerte para Hahn.",
+      it: "Nato a Carúpano, in Venezuela, nel 1867 e cresciuto a Trinidad, Hahn si formò al Queen's Royal College di Port of Spain prima di proseguire gli studi ad Amburgo e alla Scuola Politecnica di Ingegneria di Berlino. Tornò nella colonia per diventare disegnatore capo del Dipartimento dei Lavori Pubblici, incarico dal quale progettò i due edifici pubblici più in vista della Trinidad di inizio Novecento. I moti dell'acqua del marzo 1903 devastarono il vecchio Red House; Hahn lo ricostruì in pietra squadrata, aggiungendo la cupola centrale, il soffitto in stucco blu Wedgwood del Consiglio Legislativo e il parapetto fortificato che ancora definiscono la sagoma del Parlamento riaperto nel 1907. Nel frattempo, l'11 novembre 1902, posò la prima pietra della propria vecchia scuola, il Queen's Royal College, scegliendo un vocabolario di rinascimento tedesco — torri gemelle e frontoni ripidi — diverso dal repertorio beaux-arts del Red House. Le fonti consultate non registrano una data di morte per Hahn.",
+    },
+    awards: [],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Red_House_(Trinidad_and_Tobago)', title: 'Red House (Trinidad and Tobago)', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: "https://en.wikipedia.org/wiki/Queen's_Royal_College,_Trinidad", title: "Queen's Royal College, Trinidad", license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://nationaltrust.tt/location/the-red-house/', title: 'The Red House — National Trust of Trinidad and Tobago', license: null },
     ],
   },
 ];
