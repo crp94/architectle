@@ -51,8 +51,26 @@ const PER_ITEM_VALIDATORS = [validateSchema, validateCrossRefs, validateImages, 
 // and REGION match silently collapse to NONE for every real architect.
 export type ArchitectGeography = { workRegions: string[]; workCentroid: { lat: number; lon: number } };
 
+// Decision: a building co-credited to this architect (via `coArchitects`)
+// DOES contribute here, on equal footing with a building where they hold
+// `architectId`. `workRegions`/`workCentroid` describe where an architect
+// actually worked, not who a game answer credits them as — a co-authored
+// building is real, sourced practice geography, not a curatorial claim
+// about sole authorship. This is the one place `coArchitects` feeds the
+// live game: it feeds compareRegion (src/lib/axes/region.ts) for whichever
+// architect's row this is, on both sides of a guess (whether that
+// architect is today's target or the player's guess). Concretely: an
+// architect who is only ever a co-credit (e.g. Lu Wenyu, if her only pool
+// building is Ningbo Museum under Wang Shu's architectId) still gets a real
+// `workRegions`/`workCentroid` instead of `[]`/`{lat:0,lon:0}` — she is
+// never `roster()`-eligible (that stays keyed strictly to `architectId`, so
+// she can never be the day's target or a guessable answer), but if she is
+// ever curated as a primary architect on a *different* building later, her
+// region axis will already correctly include this co-authored work.
 export function deriveArchitectGeography(architectId: string, buildings: Building[]): ArchitectGeography {
-  const own = buildings.filter((b) => b.architectId === architectId);
+  const own = buildings.filter(
+    (b) => b.architectId === architectId || (b.coArchitects?.includes(architectId) ?? false),
+  );
   if (own.length === 0) {
     // Every architect referenced by no building is already a hard failure
     // (`architect-orphan`, Task 3) that exits the process before this runs.
