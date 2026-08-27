@@ -199,6 +199,38 @@ describe('Reveal', () => {
     expect(await screen.findByText(/copied/i)).toBeTruthy();
   });
 
+  it('silently does nothing when the user cancels the native share sheet (AbortError)', async () => {
+    const abortError = Object.assign(new Error('cancelled'), { name: 'AbortError' });
+    const shareMock = vi.fn().mockRejectedValue(abortError);
+    Object.defineProperty(navigator, 'share', { value: shareMock, configurable: true });
+    const writeText = vi.fn().mockResolvedValue(undefined);
+    Object.defineProperty(navigator, 'clipboard', { value: { writeText }, configurable: true });
+    renderReveal();
+
+    fireEvent.click(screen.getByTestId('reveal-share'));
+
+    await waitFor(() => expect(shareMock).toHaveBeenCalledTimes(1));
+    // A user-cancelled share is not a failure: no clipboard fallback, no
+    // "Copied!" feedback, no unhandled rejection.
+    expect(writeText).not.toHaveBeenCalled();
+    expect(screen.queryByText(/copied/i)).toBeNull();
+  });
+
+  it('falls back to the clipboard when navigator.share rejects with a real error', async () => {
+    const realError = new Error('no share targets available');
+    const shareMock = vi.fn().mockRejectedValue(realError);
+    Object.defineProperty(navigator, 'share', { value: shareMock, configurable: true });
+    const writeText = vi.fn().mockResolvedValue(undefined);
+    Object.defineProperty(navigator, 'clipboard', { value: { writeText }, configurable: true });
+    renderReveal();
+
+    fireEvent.click(screen.getByTestId('reveal-share'));
+
+    await waitFor(() => expect(shareMock).toHaveBeenCalledTimes(1));
+    await waitFor(() => expect(writeText).toHaveBeenCalledTimes(1));
+    expect(await screen.findByText(/copied/i)).toBeTruthy();
+  });
+
   it('never lets the architect name reach the share payload, for a win or a loss', async () => {
     const shareMock = vi.fn().mockResolvedValue(undefined);
     Object.defineProperty(navigator, 'share', { value: shareMock, configurable: true });

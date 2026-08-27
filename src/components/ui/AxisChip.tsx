@@ -60,7 +60,8 @@ function regionView(result: RegionResult, locale: Locale): ChipView {
   const aria = result.bearing
     ? t(locale, 'regionChipAriaBearing', { axis, result: label, bearing: t(locale, COMPASS_KEY[result.bearing]) })
     : t(locale, 'regionChipAria', { axis, result: label });
-  return { tone, label: result.bearing ? `${label} · ${result.bearing}` : label, glyph: '◈', aria };
+  const bearingLabel = result.bearing ? t(locale, COMPASS_KEY[result.bearing]) : null;
+  return { tone, label: bearingLabel ? `${label} · ${bearingLabel}` : label, glyph: '◈', aria };
 }
 
 function typologyView(result: TypologyResult, locale: Locale): ChipView {

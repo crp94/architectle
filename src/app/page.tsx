@@ -4,7 +4,11 @@ import { GameBoard } from "@/components/game/GameBoard";
 import { LocaleSwitcher } from "@/components/game/LocaleSwitcher";
 import { buildingBySlug } from "@/lib/pool";
 
-type SearchParams = { lang?: string; e2eBuilding?: string };
+// The index signature (beyond the two named fields this page itself reads)
+// keeps this type assignable to LocaleSwitcher's `searchParams` prop, which
+// must preserve whatever OTHER params the current URL happens to carry
+// (e.g. `?e2eBuilding=`) rather than knowing their names up front.
+type SearchParams = { lang?: string; e2eBuilding?: string; [key: string]: string | string[] | undefined };
 
 function resolveLocale(raw: string | undefined): Locale {
   return (LOCALES as readonly string[]).includes(raw ?? "") ? (raw as Locale) : "en";
@@ -47,7 +51,7 @@ export default async function Home({
         >
           {t(locale, "appTagline")}
         </p>
-        <LocaleSwitcher locale={locale} />
+        <LocaleSwitcher locale={locale} searchParams={params} />
       </div>
       <GameBoard mode="daily" locale={locale} building={building} />
     </main>

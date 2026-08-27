@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { roster } from '@/lib/pool';
 import type { Architect } from '@/types/architect';
@@ -52,6 +52,7 @@ export function GuessField({ locale, onGuess, disabled = false }: GuessFieldProp
   const [value, setValue] = useState('');
   const [rejected, setRejected] = useState<string | null>(null);
   const architects = roster();
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const suggestions = useMemo(() => {
     const query = fold(value);
@@ -63,6 +64,12 @@ export function GuessField({ locale, onGuess, disabled = false }: GuessFieldProp
     onGuess(architect);
     setValue('');
     setRejected(null);
+    // Clearing `value` above unmounts the suggestion list (guarded by
+    // `value.trim().length > 0` below), removing the just-activated
+    // suggestion button from the DOM. Without an explicit refocus, a
+    // keyboard/screen-reader user who activated that button would have
+    // focus silently dropped to `document.body`.
+    inputRef.current?.focus();
   }
 
   function handleSubmit(input: string) {
@@ -90,6 +97,7 @@ export function GuessField({ locale, onGuess, disabled = false }: GuessFieldProp
       <div className="flex gap-2">
         <input
           id="architect-guess"
+          ref={inputRef}
           type="text"
           value={value}
           disabled={disabled}

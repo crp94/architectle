@@ -51,8 +51,20 @@ export function Reveal({
     });
 
     if (typeof navigator !== 'undefined' && typeof navigator.share === 'function') {
-      await navigator.share({ text });
-      return;
+      try {
+        await navigator.share({ text });
+        return;
+      } catch (err) {
+        // A user dismissing the native share sheet rejects with an
+        // AbortError — that's a deliberate cancellation, not a failure, so
+        // it degrades silently (no fallback, no error state). Any other
+        // rejection is a genuine failure (no share targets configured,
+        // permission denied, etc.) and must not be swallowed silently —
+        // fall through to the clipboard path below, same as when
+        // `navigator.share` doesn't exist at all, so the player still gets
+        // a working share action and its "Copied!" feedback.
+        if (err instanceof Error && err.name === 'AbortError') return;
+      }
     }
     if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
       await navigator.clipboard.writeText(text);
