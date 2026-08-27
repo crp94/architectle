@@ -5,11 +5,11 @@ export type Gender = 'woman' | 'man' | 'non-binary' | 'unknown';
 
 export type Architect = {
   id: string;
-  // A verified Wikidata Q-id, or `null` when a curator genuinely checked
-  // and found no matching item — never an empty string. `undefined` (the
-  // field omitted) is a schema failure (`wikidata-id-present` in
-  // schema.ts): it means the field was never checked at all, which must
-  // not look the same as a checked, confirmed absence.
+  // null when this architect has no Wikidata item at all. See the
+  // parallel note on Building.wikidataId in src/types/building.ts: a
+  // record with a null wikidataId must carry at least 2 non-Wikidata/
+  // Wikipedia sources (`wikidata-null-needs-sources` in
+  // src/scripts/validators/provenance.ts).
   wikidataId: string | null;
   name: string;
   alternativeNames: string[];

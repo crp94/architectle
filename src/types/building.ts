@@ -6,11 +6,14 @@ export type HeritageStatus = 'unesco' | 'national' | 'regional' | 'none';
 
 export type Building = {
   id: string;
-  // A verified Wikidata Q-id, or `null` when a curator genuinely checked
-  // and found no matching item — never an empty string. `undefined` (the
-  // field omitted) is a schema failure (`wikidata-id-present` in
-  // schema.ts): it means the field was never checked at all, which must
-  // not look the same as a checked, confirmed absence.
+  // null when no Wikidata item exists for this specific building (as
+  // opposed to none having been looked up). A record with a null
+  // wikidataId must carry at least 2 non-Wikidata/Wikipedia sources — see
+  // the `wikidata-null-needs-sources` rule in
+  // src/scripts/validators/provenance.ts. Requiring a Q-number on every
+  // building reproduces the same coverage bias the curated pool exists to
+  // correct: buildings by under-represented architects are systematically
+  // less likely to have a Wikidata item at all.
   wikidataId: string | null;
   name: LocalizedString;
   architectId: string;

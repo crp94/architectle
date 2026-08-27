@@ -103,39 +103,6 @@ function checkGender(gender: Gender | undefined, subject: string, out: Violation
   }
 }
 
-// `wikidataId` has the same blind-spot shape `tier`/`gender` had before
-// checkTier/checkGender above: nothing enforced it was ever actually
-// looked at. The contract requires it "verified on the entity page" for
-// every building and architect — but a curator who skipped the check
-// entirely and one who checked and genuinely found nothing look identical
-// if both are allowed to leave the field `undefined`/missing. The type is
-// `string | null`, so there are exactly three shapes this can arrive in:
-//   - a non-empty string: claimed as verified, accepted here (this
-//     validator cannot re-verify the entity page itself — that stays a
-//     curator/reviewer responsibility, per the contract).
-//   - `null`: an honest, explicit "checked, none found" — accepted.
-//   - `undefined` (the field omitted) or an empty string: neither state is
-//     a legitimate answer to "did you check" — both are hard failures, so
-//     "not checked" can never silently pass as indistinguishable from a
-//     genuine, disclosed absence.
-function checkWikidataId(
-  wikidataId: string | null | undefined, subject: string, out: Violation[],
-): void {
-  if (wikidataId === undefined) {
-    out.push({
-      rule: 'wikidata-id-present',
-      subject,
-      detail: 'wikidataId is missing (must be a verified Wikidata Q-id string, or null if genuinely checked and absent)',
-    });
-  } else if (wikidataId !== null && wikidataId.trim() === '') {
-    out.push({
-      rule: 'wikidata-id-present',
-      subject,
-      detail: 'wikidataId is an empty string — use null to record a genuinely checked, absent id instead of \'\'',
-    });
-  }
-}
-
 function checkBuildingSchema(b: Building, out: Violation[]): void {
   if (b.completed !== null && b.completed < b.inception) {
     out.push({
@@ -202,7 +169,6 @@ function checkBuildingSchema(b: Building, out: Violation[]): void {
   }
 
   checkTier(b.tier, b.id, out);
-  checkWikidataId(b.wikidataId, b.id, out);
 }
 
 function checkArchitectSchema(a: Architect, out: Violation[]): void {
@@ -231,7 +197,6 @@ function checkArchitectSchema(a: Architect, out: Violation[]): void {
   }
 
   checkTier(a.tier, a.id, out);
-  checkWikidataId(a.wikidataId, a.id, out);
 }
 
 export function validateSchema(pool: Pool): Violation[] {

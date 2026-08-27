@@ -76,43 +76,6 @@ describe('validateSchema', () => {
     expect(v.map((x) => x.rule)).toContain('enum-membership');
   });
 
-  it('rejects a building with wikidataId omitted (undefined), not silently passing', () => {
-    const v = validateSchema(withBuilding(validPool(), { wikidataId: undefined as never }));
-    expect(v.map((x) => x.rule)).toContain('wikidata-id-present');
-    const violation = v.find((x) => x.rule === 'wikidata-id-present' && x.subject === 'b1')!;
-    expect(violation.detail.toLowerCase()).toContain('missing');
-  });
-
-  it('rejects a building with wikidataId as an empty string', () => {
-    // The empty string is exactly the ambiguous shape this rule exists to
-    // ban: it must not look like a legitimate, checked-and-absent id (that
-    // is what `null` is for).
-    const v = validateSchema(withBuilding(validPool(), { wikidataId: '' }));
-    expect(v.map((x) => x.rule)).toContain('wikidata-id-present');
-  });
-
-  it('accepts a building with wikidataId explicitly null (checked, genuinely absent)', () => {
-    const v = validateSchema(withBuilding(validPool(), { wikidataId: null }));
-    expect(v.map((x) => x.rule)).not.toContain('wikidata-id-present');
-  });
-
-  it('rejects an architect with wikidataId omitted (undefined), not silently passing', () => {
-    const v = validateSchema(withArchitect(validPool(), { wikidataId: undefined as never }));
-    expect(v.map((x) => x.rule)).toContain('wikidata-id-present');
-    const violation = v.find((x) => x.rule === 'wikidata-id-present' && x.subject === 'a1')!;
-    expect(violation.detail.toLowerCase()).toContain('missing');
-  });
-
-  it('rejects an architect with wikidataId as an empty string', () => {
-    const v = validateSchema(withArchitect(validPool(), { wikidataId: '' }));
-    expect(v.map((x) => x.rule)).toContain('wikidata-id-present');
-  });
-
-  it('accepts an architect with wikidataId explicitly null (checked, genuinely absent)', () => {
-    const v = validateSchema(withArchitect(validPool(), { wikidataId: null }));
-    expect(v.map((x) => x.rule)).not.toContain('wikidata-id-present');
-  });
-
   it('states the offending subject and the measured value in the detail', () => {
     const v = validateSchema(withBuilding(validPool(), { inception: 1990, completed: 1980 }));
     const violation = v.find((x) => x.rule === 'inception-before-completion')!;

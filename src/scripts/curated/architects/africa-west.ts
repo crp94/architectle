@@ -83,6 +83,12 @@ export const AFRICA_WEST_ARCHITECTS: Architect[] = [
         title: "Maison des esclaves, Île de Gorée — Fondation pour la mémoire de l'esclavage",
         license: null,
       },
+      {
+        kind: 'institution',
+        url: 'https://whc.unesco.org/en/list/26',
+        title: 'Island of Gorée — UNESCO World Heritage Centre',
+        license: null,
+      },
     ],
   },
   {
@@ -157,6 +163,18 @@ export const AFRICA_WEST_ARCHITECTS: Architect[] = [
         title: 'Shitta-Bey Mosque (Q48791511)',
         license: null,
       },
+      {
+        kind: 'publication',
+        url: 'https://books.google.com/books?id=uz09BAAAQBAJ&q=mohammed+shitta+bey&pg=PA75',
+        title: 'Islam in Victorian Britain: The Life and Times of Abdullah Quilliam — Ron Geaves (Kube Publishing, 2010), p. 75',
+        license: null,
+      },
+      {
+        kind: 'publication',
+        url: 'https://doi.org/10.1163/157006012X627904',
+        title: 'Legal Pluralism in Colonial Lagos: The 1894 Petition of the Lagos Muslims to their British Colonial Masters — Ostien & Makinde, Die Welt des Islams 52(1) (2012)',
+        license: null,
+      },
     ],
   },
   {
@@ -192,6 +210,12 @@ export const AFRICA_WEST_ARCHITECTS: Architect[] = [
         kind: 'institution',
         url: 'https://whc.unesco.org/en/list/116/',
         title: 'Old Towns of Djenné — UNESCO World Heritage Centre',
+        license: null,
+      },
+      {
+        kind: 'publication',
+        url: 'https://doi.org/10.2307/3336477',
+        title: 'The History of the Great Mosques of Djenné — Jean-Louis Bourgeois, African Arts 20(3) (1987)',
         license: null,
       },
     ],
@@ -378,6 +402,18 @@ export const AFRICA_WEST_ARCHITECTS: Architect[] = [
         url: 'https://en.wikipedia.org/wiki/Larabanga_Mosque',
         title: 'Larabanga Mosque',
         license: 'CC BY-SA 4.0',
+      },
+      {
+        kind: 'publication',
+        url: 'https://www.ghanaweb.com/GhanaHomePage/NewsArchive/Restoration-works-begin-on-partly-collapsed-400-year-old-Mosque-in-Bole-1870700',
+        title: 'Restoration works begin on partly collapsed 400-year-old Mosque in Bole — GhanaWeb',
+        license: null,
+      },
+      {
+        kind: 'publication',
+        url: 'https://doi.org/10.2307/3334324',
+        title: 'The Architecture of Islam in West Africa — Labelle Prussin, African Arts 1(2) (1968)',
+        license: null,
       },
     ],
   },
