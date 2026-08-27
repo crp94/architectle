@@ -11,6 +11,11 @@ import type { Architect } from '@/types/architect';
 // `workRegions` and `workCentroid` are deliberately left empty here:
 // buildCuratedPool derives both from the architect's buildings and discards
 // whatever this file supplies.
+//
+// Fix round (post-review): added `enric-miralles` and `enrique-sobejano` so
+// Igualada and C3A can carry their real co-authors via the `coArchitects`
+// field (display-only; `architectId` is unchanged and remains the answer
+// key) — see the comments on those two buildings in europe.ts (buildings).
 export const EUROPE_ARCHITECTS: Architect[] = [
   {
     id: 'filippo-brunelleschi',
@@ -308,6 +313,41 @@ export const EUROPE_ARCHITECTS: Architect[] = [
     ],
   },
   {
+    // Added in the fix round for the New Cemetery of Igualada's
+    // `coArchitects` — Wikidata's own P84 for Igualada (Q5994387) lists
+    // both Miralles and Pinós. Not owned by any slice on the contract's
+    // ownership table and confirmed undefined anywhere else in the pool.
+    id: 'enric-miralles',
+    wikidataId: 'Q723669',
+    name: 'Enric Miralles',
+    alternativeNames: ['Enric Miralles Moya', 'Enric Miralles i Moya'],
+    gender: 'man',
+    born: 1955,
+    died: 2000,
+    // Olympic Archery Range (1992) to his death; he was still actively
+    // designing (Scottish Parliament, Santa Caterina market) when he died,
+    // so no override is needed even though some of that later work was
+    // only completed posthumously.
+    floruit: { start: 1992, end: 2000, override: false },
+    movements: 'unaffiliated',
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: 'Miralles trained at the Barcelona school (ETSAB, graduating 1978) after working through his studies in the office of Viaplana and Piñón. From 1983 to 1991 he ran a joint practice with his first wife, Carme Pinós, in which the two were equal authors of the Igualada cemetery and the La Llauna school; the credit line for those years is Miralles–Pinós. In 1993, with his second wife, Benedetta Tagliabue, he founded EMBT, and spent his last years on the Scottish Parliament in Edinburgh and the renovated Santa Caterina market in Barcelona, both completed after his death from a brain tumour in 2000, aged 45. His buildings favour irregular, faceted geometries and mixed concrete, steel and timber worked as if improvised on site. The Scottish Parliament won the Stirling Prize in 2005, five years after his death.',
+      es: 'Miralles se formó en la escuela de Barcelona (ETSAB, licenciado en 1978) tras trabajar durante sus estudios en el despacho de Viaplana y Piñón. Entre 1983 y 1991 llevó un estudio conjunto con su primera esposa, Carme Pinós, en el que ambos fueron autores en pie de igualdad del cementerio de Igualada y la escuela La Llauna; la firma de aquellos años es Miralles-Pinós. En 1993, junto a su segunda esposa, Benedetta Tagliabue, fundó EMBT, y pasó sus últimos años en el Parlamento escocés de Edimburgo y en la reforma del mercado de Santa Caterina en Barcelona, ambos terminados tras su muerte por un tumor cerebral en 2000, a los 45 años. Sus edificios prefieren geometrías irregulares y facetadas, y una mezcla de hormigón, acero y madera trabajada como si se improvisara en obra. El Parlamento escocés ganó el Stirling Prize en 2005, cinco años después de su muerte.',
+      it: "Miralles si formò alla scuola di Barcellona (ETSAB, laureato nel 1978) dopo aver lavorato durante gli studi nello studio di Viaplana e Piñón. Fra il 1983 e il 1991 tenne uno studio comune con la prima moglie, Carme Pinós, nel quale i due furono autori in egual misura del cimitero di Igualada e della scuola La Llauna; la firma di quegli anni è Miralles-Pinós. Nel 1993, insieme alla seconda moglie, Benedetta Tagliabue, fondò EMBT, e trascorse gli ultimi anni sul Parlamento scozzese di Edimburgo e sul rinnovo del mercato di Santa Caterina a Barcellona, entrambi completati dopo la sua morte per un tumore al cervello nel 2000, a 45 anni. I suoi edifici prediligono geometrie irregolari e sfaccettate, con calcestruzzo, acciaio e legno mescolati come se fossero improvvisati in cantiere. Il Parlamento scozzese vinse lo Stirling Prize nel 2005, cinque anni dopo la sua morte.",
+    },
+    awards: ['Golden Lion (Venice Biennale)', 'Stirling Prize'],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q723669', title: 'Enric Miralles (Q723669)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Enric_Miralles', title: 'Enric Miralles — Wikipedia', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
     id: 'fuensanta-nieto',
     wikidataId: 'Q19902909',
     name: 'Fuensanta Nieto',
@@ -332,6 +372,40 @@ export const EUROPE_ARCHITECTS: Architect[] = [
     sources: [
       { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q19902909', title: 'Fuensanta Nieto (Q19902909)', license: null },
       { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Fuensanta_Nieto', title: 'Fuensanta Nieto — Wikipedia (es)', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    // Added in the fix round for C3A's `coArchitects` — Wikidata's own P84
+    // for C3A (Q5839725) credits only the firm, Nieto Sobejano Arquitectos,
+    // not either partner individually. Not owned by any slice on the
+    // contract's ownership table and confirmed undefined anywhere else in
+    // the pool. floruit, movements, primaryTypology and signatureMaterial
+    // mirror Nieto's own entry deliberately: the two are joint authors of
+    // every project the practice has built since 1985.
+    id: 'enrique-sobejano',
+    wikidataId: 'Q15808152',
+    name: 'Enrique Sobejano',
+    alternativeNames: ['Enrique Sobejano García'],
+    gender: 'man',
+    born: 1957,
+    died: null,
+    floruit: { start: 1990, end: 2025, override: false },
+    movements: 'unaffiliated',
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: "Sobejano studied at Madrid's ETSAM and took a master's at Columbia, then worked in New York for SOM before returning to Spain. In 1985 he founded Nieto Sobejano Arquitectos with Fuensanta Nieto, with whom he has shared authorship of every project since, from the Madinat al-Zahra museum outside Córdoba to the Moritzburg museum extension in Halle and the C3A in Córdoba itself. He has taught in Madrid and, since 2008, has held a chair in architectural design at the Berlin University of the Arts, where he is also a full member of the Academy of Arts. The practice's recurring device is a cast or carved surface — concrete, stone or brick — pierced with a deep geometric relief that doubles as structure, shading or ornament. He and Nieto received the Aga Khan Award for Architecture in 2010 and the Alvar Aalto Medal in 2015.",
+      es: 'Sobejano estudió en la ETSAM de Madrid y cursó un máster en Columbia, y trabajó en Nueva York para SOM antes de volver a España. En 1985 fundó Nieto Sobejano Arquitectos con Fuensanta Nieto, con quien comparte la autoría de todos los proyectos desde entonces, desde el museo de Madinat al-Zahra junto a Córdoba hasta la ampliación del museo Moritzburg en Halle y el propio C3A cordobés. Ha enseñado en Madrid y, desde 2008, ocupa una cátedra de proyectos en la Universidad de las Artes de Berlín, donde es además miembro de número de la Academia de las Artes. El recurso constante del estudio es una superficie moldeada o labrada —hormigón, piedra o ladrillo— perforada por un relieve geométrico profundo que funciona a la vez como estructura, protección solar u ornamento. Junto con Nieto recibió el Premio Aga Khan de Arquitectura en 2010 y la Medalla Alvar Aalto en 2015.',
+      it: "Sobejano studiò alla ETSAM di Madrid e conseguì un master alla Columbia, e lavorò a New York per SOM prima di tornare in Spagna. Nel 1985 fondò Nieto Sobejano Arquitectos con Fuensanta Nieto, con la quale condivide la firma di ogni progetto da allora, dal museo di Madinat al-Zahra presso Cordova all'ampliamento del museo Moritzburg a Halle e allo stesso C3A cordovese. Ha insegnato a Madrid e, dal 2008, tiene una cattedra di progettazione alla Universität der Künste di Berlino, dove è anche membro effettivo dell'Accademia delle Arti. L'espediente ricorrente dello studio è una superficie gettata o scolpita — calcestruzzo, pietra o mattone — forata da un rilievo geometrico profondo che funziona insieme come struttura, schermatura solare o ornamento. Insieme a Nieto ha ricevuto il Premio Aga Khan per l'Architettura nel 2010 e la Medaglia Alvar Aalto nel 2015.",
+    },
+    awards: ['Aga Khan Award for Architecture', 'Alvar Aalto Medal', 'Gold Medal of Merit in the Fine Arts (Spain)', 'National Prize for Conservation and Restoration of Cultural Heritage (Spain)'],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q15808152', title: 'Enrique Sobejano (Q15808152)', license: null },
+      { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Enrique_Sobejano', title: 'Enrique Sobejano — Wikipedia (es)', license: 'CC BY-SA 4.0' },
     ],
   },
   {

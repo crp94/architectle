@@ -461,6 +461,12 @@ export const EUROPE_BUILDINGS: Building[] = [
       it: 'Nuovo cimitero di Igualada',
     },
     architectId: 'carme-pinos',
+    // Wikidata's own P84 for this building (Q5994387) lists both Miralles
+    // and Pinós; the dossier below already states the joint authorship and
+    // warns that crediting Miralles alone is a common error. `architectId`
+    // stays the pre-existing answer key (Pinós); Miralles is credited here
+    // via the display-only co-credit rather than left off entirely.
+    coArchitects: ['enric-miralles'],
     location: { city: 'Igualada', countryCode: 'ES', lat: 41.59194, lon: 1.63722 },
     inception: 1985,
     completed: 1994,
@@ -567,6 +573,12 @@ export const EUROPE_BUILDINGS: Building[] = [
       it: 'Centro di Creazione Contemporanea di Andalusia (C3A)',
     },
     architectId: 'fuensanta-nieto',
+    // Wikidata's P84 for this building (Q5839725) credits only the firm,
+    // Nieto Sobejano Arquitectos, not either partner individually — the
+    // dossier already states they are joint authors of everything the
+    // office builds. `architectId` stays the pre-existing answer key
+    // (Nieto); Sobejano is credited via the display-only co-credit.
+    coArchitects: ['enrique-sobejano'],
     location: { city: 'Córdoba', countryCode: 'ES', lat: 37.87578, lon: -4.77186 },
     inception: 2008,
     completed: 2013,
@@ -589,7 +601,13 @@ export const EUROPE_BUILDINGS: Building[] = [
       es: 'Centro de arte contemporáneo gestionado por la Junta de Andalucía, abierto al público en diciembre de 2016.',
       it: 'Centro di arte contemporanea gestito dal governo regionale dell’Andalusia, aperto al pubblico nel dicembre 2016.',
     },
-    detailRect: { x: 0.16, y: 0.12, w: 0.30, h: 0.24 },
+    // Fix round: the previous rect ({x:0.16,y:0.12,w:0.30,h:0.24}) framed
+    // mostly sky — re-downloaded the full-resolution file (5472x3648) and
+    // re-cropped by hand. This rect sits over the dense band of hexagonal
+    // precast-concrete relief on the near facade, including several
+    // perforated cells revealing the glazing behind, which is the
+    // diagnostic detail described in the dossier.
+    detailRect: { x: 0.02, y: 0.27, w: 0.27, h: 0.25 },
     image: {
       commonsFile: 'File:Centro de Creación Contemporánea de Andalucía (52019071256).jpg',
       photographer: 'Kent Wang',
