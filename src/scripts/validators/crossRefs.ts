@@ -67,16 +67,32 @@ function normalizedNameTokens(name: string): Set<string> {
 // "Temple Expiatori de la Sagrada Família" — which is exactly the shape a
 // duplicate-entered-under-a-different-name mistake takes.
 //
-// Assumes `name.en` is a Latin-script (transliterated, where needed) form —
-// the only script this tokenizer folds/strips correctly. If a curated `en`
-// name ever holds Arabic, Japanese, Cyrillic or Greek characters, both
-// token sets would collapse to empty here and the size===0 guard below
-// would silently skip the pair — a genuine duplicate missed with no error,
-// distinct from the empty-string case `localized-complete` already catches.
+// `normalizedNameTokens` assumes `name.en` is a Latin-script (transliterated,
+// where needed) form — the only script it folds/strips correctly. If a
+// curated `en` name holds Arabic, Japanese, Cyrillic or Greek characters, its
+// token set collapses to empty (every character gets replaced by a space and
+// then filtered out as an empty token). Rather than let that silently mean
+// "assume not a duplicate" — this pool explicitly curates non-Latin-heritage
+// buildings, so the gap is real, not theoretical — `namesLikelySameBuilding`
+// below falls back to comparing case-folded raw strings directly whenever
+// either side tokenizes to empty. This is deliberately less precise than the
+// token-containment ratio (no stopword stripping, no partial-name
+// containment reasoning), but it still gives the distance-based radius check
+// above a real chance to catch an exact or near-exact duplicate name, instead
+// of the name gate unconditionally vetoing the pair.
+function rawNormalized(name: string): string {
+  return name.normalize('NFC').toLowerCase().trim().replace(/\s+/g, ' ');
+}
+
 function namesLikelySameBuilding(a: string, b: string): boolean {
   const tokensA = normalizedNameTokens(a);
   const tokensB = normalizedNameTokens(b);
-  if (tokensA.size === 0 || tokensB.size === 0) return false;
+  if (tokensA.size === 0 || tokensB.size === 0) {
+    const rawA = rawNormalized(a);
+    const rawB = rawNormalized(b);
+    if (rawA.length === 0 || rawB.length === 0) return false;
+    return rawA === rawB || rawA.includes(rawB) || rawB.includes(rawA);
+  }
   let shared = 0;
   for (const t of tokensA) if (tokensB.has(t)) shared += 1;
   return shared / Math.min(tokensA.size, tokensB.size) >= NAME_SIMILARITY_THRESHOLD;
@@ -96,9 +112,54 @@ function haversineKm(a: { lat: number; lon: number }, b: { lat: number; lon: num
   return 2 * EARTH_RADIUS_KM * Math.asin(Math.min(1, Math.sqrt(h)));
 }
 
+// `src/lib/pool.ts`'s `architectById`/`buildingBySlug` are `.find()`-based
+// lookups, and `architectsById` just below is a `new Map(...)` keyed on
+// `id` — both silently collapse a duplicate id to whichever entry wins the
+// collision, permanently hiding the other with zero error. 221 buildings /
+// 237 architects are hand-authored across 18 independently-authored files
+// (src/scripts/curated/{architects,buildings}/*.ts), concatenated with no
+// dedup in src/scripts/curated/index.ts, so a duplicate id anywhere is a
+// real risk, not a theoretical one. This is the only rule that catches it.
+function duplicateIds<T extends { id: string; wikidataId: string | null }>(
+  items: T[],
+): Map<string, T[]> {
+  const byId = new Map<string, T[]>();
+  for (const item of items) {
+    const bucket = byId.get(item.id);
+    if (bucket) bucket.push(item); else byId.set(item.id, [item]);
+  }
+  const dupes = new Map<string, T[]>();
+  for (const [id, bucket] of byId) {
+    if (bucket.length > 1) dupes.set(id, bucket);
+  }
+  return dupes;
+}
+
 export function validateCrossRefs(pool: Pool): Violation[] {
   const out: Violation[] = [];
   const architectsById = new Map(pool.architects.map((a) => [a.id, a]));
+
+  // --- unique-id ---
+  for (const [id, dupes] of duplicateIds(pool.buildings)) {
+    out.push({
+      rule: 'unique-id',
+      subject: id,
+      detail: `Building id "${id}" is used by ${dupes.length} entries `
+        + `(wikidataId(s): ${dupes.map((d) => d.wikidataId ?? 'null').join(', ')}) — `
+        + 'all but one are permanently unreachable via buildingBySlug()\'s .find()-based '
+        + `lookup. Search src/scripts/curated/buildings/*.ts for id: '${id}' to find both files.`,
+    });
+  }
+  for (const [id, dupes] of duplicateIds(pool.architects)) {
+    out.push({
+      rule: 'unique-id',
+      subject: id,
+      detail: `Architect id "${id}" is used by ${dupes.length} entries `
+        + `(wikidataId(s): ${dupes.map((d) => d.wikidataId ?? 'null').join(', ')}) — `
+        + 'all but one are permanently unreachable via architectById()\'s .find()-based '
+        + `lookup. Search src/scripts/curated/architects/*.ts for id: '${id}' to find both files.`,
+    });
+  }
 
   // --- architect-exists ---
   for (const b of pool.buildings) {

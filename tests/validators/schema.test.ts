@@ -83,4 +83,42 @@ describe('validateSchema', () => {
     expect(violation.detail).toContain('1990');
     expect(violation.detail).toContain('1980');
   });
+
+  it('rejects an architect who died before they were born', () => {
+    const v = validateSchema(withArchitect(validPool(), { born: 1950, died: 1900 }));
+    expect(v.map((x) => x.rule)).toContain('born-before-died');
+  });
+
+  it('accepts an architect who is still alive (died null)', () => {
+    const v = validateSchema(withArchitect(validPool(), { born: 1950, died: null }));
+    expect(v.map((x) => x.rule)).not.toContain('born-before-died');
+  });
+
+  it('rejects a floruit whose start is after its end, even with override true', () => {
+    const v = validateSchema(withArchitect(validPool(), {
+      floruit: { start: 1990, end: 1950, override: true },
+    }));
+    expect(v.map((x) => x.rule)).toContain('floruit-start-before-end');
+  });
+
+  it('rejects a building demolished before it was completed', () => {
+    const v = validateSchema(withBuilding(validPool(), {
+      inception: 1900, completed: 1910, demolished: 1905,
+    }));
+    expect(v.map((x) => x.rule)).toContain('demolished-after-completion');
+  });
+
+  it('falls back to inception when checking demolished and completed is null', () => {
+    const v = validateSchema(withBuilding(validPool(), {
+      inception: 1900, completed: null, demolished: 1895,
+    }));
+    expect(v.map((x) => x.rule)).toContain('demolished-after-completion');
+  });
+
+  it('accepts a building demolished after its completion', () => {
+    const v = validateSchema(withBuilding(validPool(), {
+      inception: 1900, completed: 1910, demolished: 1990,
+    }));
+    expect(v.map((x) => x.rule)).not.toContain('demolished-after-completion');
+  });
 });

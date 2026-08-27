@@ -144,6 +144,23 @@ function checkBuildingSchema(b: Building, out: Violation[]): void {
   checkYear(b.completed, 'completed', b.id, out);
   checkYear(b.demolished, 'demolished', b.id, out);
 
+  // `demolished` must not precede whichever of `completed`/`inception` is
+  // the best-known completion year (falls back to `inception` when
+  // `completed` is null, same fallback `floruit-consistent` in crossRefs.ts
+  // already uses for a building's effective year). Same class of bug as
+  // `inception-before-completion` above — a basic internal-consistency
+  // check on this building's own fields, unrelated to any override.
+  if (b.demolished !== null) {
+    const completionYear = b.completed ?? b.inception;
+    if (b.demolished < completionYear) {
+      out.push({
+        rule: 'demolished-after-completion',
+        subject: b.id,
+        detail: `demolished ${b.demolished} is before ${b.completed !== null ? 'completed' : 'inception'} ${completionYear}`,
+      });
+    }
+  }
+
   if (!TYPOLOGIES.includes(b.typology)) {
     out.push({
       rule: 'enum-membership',
@@ -180,6 +197,36 @@ function checkArchitectSchema(a: Architect, out: Violation[]): void {
   checkYear(a.died, 'died', a.id, out);
   checkYear(a.floruit.start, 'floruit.start', a.id, out);
   checkYear(a.floruit.end, 'floruit.end', a.id, out);
+
+  // `born`/`died` internal consistency. Same class of bug this project has
+  // already had to fix twice for `tier` and `gender` (validated in one
+  // place — coverage.ts — but not the analogous place — schema.ts): a check
+  // that only lives in crossRefs.ts (or nowhere) misses a hand-authored
+  // typo that never gets cross-checked against anything else.
+  if (a.born !== null && a.died !== null && a.born > a.died) {
+    out.push({
+      rule: 'born-before-died',
+      subject: a.id,
+      detail: `born ${a.born} is after died ${a.died}`,
+    });
+  }
+
+  // `floruit.start` <= `floruit.end`, checked here — unconditionally, even
+  // when `floruit.override` is true. `override` exempts a floruit from
+  // being cross-checked against this architect's OWN buildings
+  // (crossRefs.ts's `floruit-consistent` rule skips it deliberately, since
+  // an override is often used precisely because the buildings-derived
+  // window is wrong) — it was never meant to exempt the floruit from basic
+  // internal consistency. A hand-authored `{start: 1990, end: 1950,
+  // override: true}` must still fail loudly: an inverted window like that
+  // corrupts src/lib/axes/era.ts's midpoint math during live gameplay.
+  if (a.floruit.start > a.floruit.end) {
+    out.push({
+      rule: 'floruit-start-before-end',
+      subject: a.id,
+      detail: `floruit.start ${a.floruit.start} is after floruit.end ${a.floruit.end}`,
+    });
+  }
 
   if (!TYPOLOGIES.includes(a.primaryTypology)) {
     out.push({
