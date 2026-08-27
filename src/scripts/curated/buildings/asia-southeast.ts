@@ -921,4 +921,128 @@ export const ASIA_SOUTHEAST_BUILDINGS: Building[] = [
     ],
     tier: 'canon',
   },
+  {
+    id: 'independence-palace-ho-chi-minh-city',
+    wikidataId: 'Q933384',
+    name: {
+      en: 'Independence Palace, Ho Chi Minh City',
+      es: 'Palacio de la Independencia, Ho Chi Minh City',
+      it: 'Palazzo dell\'Indipendenza, Ho Chi Minh City',
+    },
+    architectId: 'ngo-viet-thu',
+    location: { city: 'Ho Chi Minh City', countryCode: 'VN', lat: 10.77705, lon: 106.69537 },
+    inception: 1962,
+    completed: 1966,
+    demolished: null,
+    typology: 'civic',
+    materials: ['concrete', 'steel-and-glass'],
+    structure: {
+      en: 'A reinforced-concrete frame wrapped in precast concrete sunscreen fins stylised after traditional bamboo lattice-blinds, arranged over four principal floors around a central hall.',
+      es: 'Una estructura de hormigón armado envuelta en aletas parasol de hormigón prefabricado estilizadas a partir de las persianas tradicionales de bambú, dispuesta en cuatro plantas principales en torno a un salón central.',
+      it: 'Una struttura in cemento armato avvolta in alette frangisole di cemento prefabbricato stilizzate sulle tradizionali persiane di bambù, disposta su quattro piani principali attorno a una sala centrale.',
+    },
+    program: {
+      en: 'Commissioned by President Ngô Đình Diệm\'s government to replace the bombed Norodom Palace as the residence and workplace of South Vietnam\'s head of state.',
+      es: 'Encargado por el gobierno del presidente Ngô Đình Diệm para sustituir el bombardeado Palacio Norodom como residencia y sede de trabajo del jefe de Estado survietnamita.',
+      it: 'Commissionato dal governo del presidente Ngô Đình Diệm per sostituire il bombardato Palazzo Norodom come residenza e sede di lavoro del capo di Stato sudvietnamita.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'A state guesthouse and public history museum in Ho Chi Minh City, its 1966 interiors preserved largely as they stood on 30 April 1975.',
+      es: 'Residencia de Estado y museo público de historia en Ho Chi Minh City, con sus interiores de 1966 conservados en gran parte tal como estaban el 30 de abril de 1975.',
+      it: 'Foresteria di Stato e museo pubblico di storia a Ho Chi Minh City, con gli interni del 1966 conservati in gran parte come si trovavano il 30 aprile 1975.',
+    },
+    detailRect: { x: 0.34, y: 0.40, w: 0.32, h: 0.30 },
+    image: {
+      // Exterior daytime front view, CC0-dedicated. Ngô Viết Thụ d.2000
+      // (26 years, well inside the 70-year window), so exterior-only
+      // applies; this is an exterior facade shot. Rect sits on the
+      // precast concrete sunscreen fin grid of the main facade, away
+      // from sky and forecourt.
+      commonsFile: 'File:20190923 Independence Palace-1.jpg',
+      photographer: 'Balon Greyjoy',
+      license: 'CC0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:20190923_Independence_Palace-1.jpg',
+      width: 0,
+      height: 0,
+    },
+    dossier: {
+      en: 'The palace Ngô Viết Thụ was asked to design in 1962 replaced one that no longer existed: two dissident air force pilots had bombed the previous Norodom Palace that February, trying and failing to kill President Ngô Đình Diệm. Thụ, the first Vietnamese architect to win the Grand Prix de Rome, in 1955, and later the first Asian architect named an honorary fellow of the American Institute of Architects, set a reinforced concrete frame behind a screen of precast concrete fins stylised after traditional bamboo lattice-blinds and the ornament of old Vietnamese pagodas, wrapping every south-facing room in shade without closing off the view. Diệm was assassinated in November 1963 and never occupied the finished building; it was inaugurated on 31 October 1966 by General Nguyễn Văn Thiệu, then chairman of the ruling military junta, three years before he became president in his own right. Less than nine years later, on 30 April 1975, a North Vietnamese tank broke through its main gate, the moment now generally treated as the end of the Vietnam War. The palace has stood since as a state guesthouse and public museum, its 1966 interiors largely unaltered.',
+      es: 'El palacio que en 1962 se encargó a Ngô Viết Thụ sustituía a otro que ya no existía: dos pilotos disidentes de las fuerzas aéreas habían bombardeado el antiguo Palacio Norodom aquel febrero, en un intento fallido de matar al presidente Ngô Đình Diệm. Thụ, primer arquitecto vietnamita en ganar el Gran Premio de Roma en 1955 y luego primer asiático nombrado miembro honorario del Instituto Americano de Arquitectos, dispuso una estructura de hormigón armado tras una celosía de aletas de hormigón prefabricado estilizadas a partir de las persianas tradicionales de bambú y la ornamentación de las antiguas pagodas vietnamitas, que envuelve en sombra cada estancia orientada al sur sin cerrar la vista. Diệm fue asesinado en noviembre de 1963 y nunca llegó a ocupar el edificio terminado; lo inauguró el 31 de octubre de 1966 el general Nguyễn Văn Thiệu, entonces jefe de la junta militar, tres años antes de ser presidente. Menos de nueve años después, el 30 de abril de 1975, un tanque norvietnamita derribó su puerta principal, momento que se considera generalmente el fin de la guerra de Vietnam. Desde entonces el palacio sirve de residencia de Estado y museo público, con sus interiores de 1966 en gran parte intactos.',
+      it: 'Il palazzo che nel 1962 fu affidato a Ngô Viết Thụ sostituiva uno che non esisteva più: due piloti dissidenti dell\'aeronautica avevano bombardato il precedente Palazzo Norodom quel febbraio, in un tentativo fallito di uccidere il presidente Ngô Đình Diệm. Thụ, primo architetto vietnamita a vincere il Grand Prix de Rome, nel 1955, e in seguito primo architetto asiatico nominato membro onorario dell\'American Institute of Architects, impostò una struttura in cemento armato dietro una schermatura di alette in cemento prefabbricato stilizzate sulle tradizionali persiane di bambù e sull\'ornato delle antiche pagode vietnamite, che avvolge d\'ombra ogni ambiente esposto a sud senza chiudere la vista. Diệm fu assassinato nel novembre 1963 e non abitò mai l\'edificio finito; fu inaugurato il 31 ottobre 1966 dal generale Nguyễn Văn Thiệu, allora presidente del comitato di direzione militare, tre anni prima di diventare egli stesso presidente. Meno di nove anni dopo, il 30 aprile 1975, un carro armato nordvietnamita sfondò il cancello principale, momento generalmente considerato la fine della guerra del Vietnam. Da allora il palazzo funge da residenza di Stato e museo pubblico, con gli interni del 1966 rimasti in gran parte intatti.',
+    },
+    context: {
+      body: {
+      en: 'Ngô Đình Diệm\'s government, the palace\'s intended first occupant, was a US-backed administration whose favouritism toward the Catholic minority over South Vietnam\'s Buddhist majority helped provoke the 1963 Buddhist crisis and the coup that killed him that November, before construction was even finished. The palace built in his name instead became the seat of the successive South Vietnamese governments the United States backed through the war that followed, and its grounds had already been bombed once, in February 1962, by its own air force specifically because of what the previous building on the site stood for politically. Its meaning reversed completely on 30 April 1975, when North Vietnamese and Viet Cong forces broke through its gate and raised their flag from its balcony, an image reproduced ever since as the visual shorthand for the war\'s end. Vietnam\'s government has preserved the interiors largely as they stood that morning, and frames the site publicly today as a monument to national reunification rather than to any government that built or occupied it.',
+      es: 'El gobierno de Ngô Đình Diệm, primer ocupante previsto del palacio, era una administración respaldada por Estados Unidos cuyo favoritismo hacia la minoría católica frente a la mayoría budista de Vietnam del Sur contribuyó a provocar la crisis budista de 1963 y el golpe que lo mató aquel noviembre, antes incluso de que terminaran las obras. El palacio construido en su nombre pasó a ser la sede de los sucesivos gobiernos survietnamitas respaldados por Estados Unidos durante la guerra que siguió, y sus terrenos ya habían sido bombardeados una vez, en febrero de 1962, por su propia fuerza aérea, precisamente por lo que representaba políticamente el edificio anterior en ese solar. Su significado se invirtió por completo el 30 de abril de 1975, cuando fuerzas norvietnamitas y del Vietcong atravesaron su verja e izaron su bandera desde el balcón, imagen reproducida desde entonces como el resumen visual del fin de la guerra. El gobierno de Vietnam ha conservado los interiores en gran parte tal como estaban aquella mañana, y presenta hoy el lugar públicamente como un monumento a la reunificación nacional y no a ninguno de los gobiernos que lo construyeron u ocuparon.',
+      it: 'Il governo di Ngô Đình Diệm, primo occupante previsto del palazzo, era un\'amministrazione sostenuta dagli Stati Uniti il cui favoritismo verso la minoranza cattolica rispetto alla maggioranza buddista del Vietnam del Sud contribuì a provocare la crisi buddista del 1963 e il colpo di stato che lo uccise quel novembre, prima ancora che i lavori fossero terminati. Il palazzo costruito a suo nome divenne invece la sede dei successivi governi sudvietnamiti sostenuti dagli Stati Uniti durante la guerra che seguì, e i suoi terreni erano già stati bombardati una volta, nel febbraio 1962, dalla propria aeronautica, proprio per ciò che rappresentava politicamente l\'edificio precedente su quel sito. Il suo significato si capovolse completamente il 30 aprile 1975, quando le forze nordvietnamite e del Viet Cong sfondarono il cancello e issarono la propria bandiera dal balcone, immagine riprodotta da allora come sintesi visiva della fine della guerra. Il governo del Vietnam ha conservato gli interni in gran parte come si trovavano quella mattina, e presenta oggi pubblicamente il sito come un monumento alla riunificazione nazionale e non a nessuno dei governi che lo costruirono o lo occuparono.',
+    },
+      sources: [
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Independence_Palace', title: 'Independence Palace', license: 'CC BY-SA 4.0' },
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Fall_of_Saigon', title: 'Fall of Saigon', license: 'CC BY-SA 4.0' },
+      ],
+    },
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q933384', title: 'Independence Palace (Q933384)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Independence_Palace', title: 'Independence Palace', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://vi.wikipedia.org/wiki/Dinh_%C4%90%E1%BB%99c_L%E1%BA%ADp', title: 'Dinh Độc Lập (Vietnamese Wikipedia)', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'independence-monument-phnom-penh',
+    wikidataId: 'Q1108673',
+    name: {
+      en: 'Independence Monument, Phnom Penh',
+      es: 'Monumento a la Independencia de Phnom Penh',
+      it: 'Monumento all\'Indipendenza di Phnom Penh',
+    },
+    architectId: 'vann-molyvann',
+    location: { city: 'Phnom Penh', countryCode: 'KH', lat: 11.5564, lon: 104.9281 },
+    inception: 1958,
+    completed: 1962,
+    demolished: null,
+    typology: 'civic',
+    materials: ['concrete'],
+    structure: {
+      en: 'A reinforced-concrete tower of five receding, lotus-bud-finialled tiers over a stepped public plinth, its form translated directly from Angkorian temple towers rather than merely decorated with their motifs.',
+      es: 'Una torre de hormigón armado de cinco niveles decrecientes rematados en capullo de loto sobre un pedestal público escalonado, cuya forma traslada directamente las torres de los templos angkorianos en vez de limitarse a decorarse con sus motivos.',
+      it: 'Una torre in cemento armato di cinque livelli digradanti coronati da un bocciolo di loto su un basamento pubblico a gradoni, la cui forma traspone direttamente le torri dei templi angkoriani anziché limitarsi a decorarsi con i loro motivi.',
+    },
+    program: {
+      en: 'Commissioned by King Norodom Sihanouk to commemorate Cambodia\'s 1953 independence from France, at the centre of a traffic circle on Phnom Penh\'s Boulevard Norodom.',
+      es: 'Encargado por el rey Norodom Sihanouk para conmemorar la independencia de Camboya de Francia en 1953, en el centro de una rotonda del bulevar Norodom de Phnom Penh.',
+      it: 'Commissionato dal re Norodom Sihanouk per commemorare l\'indipendenza della Cambogia dalla Francia nel 1953, al centro di una rotonda sul boulevard Norodom di Phnom Penh.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Cambodia\'s national independence monument and the site of official ceremonies on national holidays, when a flame is lit at its base.',
+      es: 'Monumento nacional a la independencia de Camboya y escenario de las ceremonias oficiales en las fiestas nacionales, cuando se enciende una llama en su base.',
+      it: 'Monumento nazionale all\'indipendenza della Cambogia e sede delle cerimonie ufficiali nelle festività nazionali, quando alla sua base viene accesa una fiamma.',
+    },
+    detailRect: { x: 0.36, y: 0.28, w: 0.28, h: 0.34 },
+    image: {
+      // Exterior daytime view of the tiered concrete tower. Vann Molyvann
+      // d.2017 (9 years, well inside the 70-year window), so exterior-only
+      // applies; this is an exterior. Rect sits on the tiered lotus-bud
+      // tower itself, away from open sky.
+      commonsFile: 'File:02-Independence Monument Phnom Penh-nX-3.jpg',
+      photographer: 'PsamatheM',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:02-Independence_Monument_Phnom_Penh-nX-3.jpg',
+      width: 0,
+      height: 0,
+    },
+    dossier: {
+      en: 'Cambodia\'s independence from France in November 1953 had no monument until Norodom Sihanouk personally commissioned one from Vann Molyvann, newly returned from six years of architectural training in Paris under, among others, Le Corbusier. Molyvann set a reinforced-concrete tower of five receding tiers at the centre of a traffic circle on Phnom Penh\'s Boulevard Norodom, its outline drawn from the lotus-bud finials and radiating naga hoods of Angkorian temple towers, most directly the tenth-century sanctuary at Banteay Srei, translated whole into modern construction rather than quoted in decoration. It stands 37 metres over a stepped base used for public assembly and was completed in 1962, after four years of work. On national holidays a flame is lit at its base by a member of the royal family or a senior official, and floral tributes are laid on its steps. It is the founding built statement of what architectural historians call New Khmer Architecture, Molyvann\'s synthesis of modernist construction with historic Khmer form, made before the civil war and Khmer Rouge years drove him into a second, twenty-one-year exile.',
+      es: 'La independencia de Camboya respecto de Francia, en noviembre de 1953, no tuvo monumento hasta que Norodom Sihanouk encargó personalmente uno a Vann Molyvann, recién vuelto de una formación de seis años en París, entre otros con Le Corbusier. Molyvann dispuso una torre de hormigón armado de cinco niveles decrecientes en el centro de una rotonda del bulevar Norodom de Phnom Penh, cuyo perfil deriva de los remates en capullo de loto y las capuchas de naga radiantes de las torres de los templos angkorianos, sobre todo del santuario del siglo X de Banteay Srei, trasladado entero y no solo citado como decoración. Se alza 37 metros sobre una base escalonada usada para actos públicos y se terminó en 1962, tras cuatro años de obra. En las fiestas nacionales, un miembro de la familia real o un alto cargo enciende una llama en su base, y se depositan ofrendas florales en sus escalones. Es la primera afirmación construida de lo que los historiadores de la arquitectura llaman Nueva Arquitectura Jemer, la síntesis de Molyvann entre construcción moderna y forma jemer histórica, hecha antes de que la guerra civil y los años de los jemeres rojos lo empujaran a un segundo exilio de veintiún años.',
+      it: 'L\'indipendenza della Cambogia dalla Francia, nel novembre 1953, non ebbe alcun monumento finché Norodom Sihanouk non ne commissionò personalmente uno a Vann Molyvann, appena tornato da sei anni di formazione come architetto a Parigi, tra gli altri, con Le Corbusier. Molyvann impostò una torre in cemento armato di cinque livelli digradanti al centro di una rotonda sul boulevard Norodom di Phnom Penh, il cui profilo deriva dai pinnacoli a bocciolo di loto e dai cappucci di naga irradianti delle torri dei templi angkoriani, soprattutto dal santuario del X secolo di Banteay Srei, trasferito per intero nella costruzione moderna anziché citato come decorazione. Si eleva per 37 metri sopra una base a gradoni usata per le adunate pubbliche e fu completato nel 1962, dopo quattro anni di lavori. Nelle festività nazionali un membro della famiglia reale o un alto funzionario accende una fiamma alla sua base, e offerte floreali vengono deposte sui suoi gradini. È la prima affermazione costruita di ciò che gli storici dell\'architettura chiamano Nuova Architettura Khmer, la sintesi di Molyvann tra costruzione modernista e forma khmer storica, realizzata prima che la guerra civile e gli anni dei khmer rossi lo spingessero in un secondo esilio di ventun anni.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1108673', title: 'Independence Monument (Q1108673)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Independence_Monument_(Cambodia)', title: 'Independence Monument (Cambodia)', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
 ];
