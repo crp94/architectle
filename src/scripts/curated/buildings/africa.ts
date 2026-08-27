@@ -70,8 +70,8 @@ export const AFRICA_BUILDINGS: Building[] = [
       photographer: 'Rachidourkia',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Bab_Dar_Assinaa.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1200,
     },
     dossier: {
       en: 'In 1260 a Castilian fleet took Salé and sacked it. The Marinid sultan Abu Yusuf Yaqub ibn '
@@ -205,8 +205,8 @@ export const AFRICA_BUILDINGS: Building[] = [
       photographer: 'Faris El-Gwely (Faris knight)',
       license: 'CC BY-SA 3.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Arab_Music_Institute-Cairo.JPG',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1200,
     },
     dossier: {
       en: 'King Fuad I replaced the old Oriental Music Club with an institute of his own in 1929, on '
@@ -319,8 +319,8 @@ export const AFRICA_BUILDINGS: Building[] = [
       photographer: 'Boubloub',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Banque_Misr_building_Cairo.jpg',
-      width: 0,
-      height: 0,
+      width: 1200,
+      height: 1600,
     },
     dossier: {
       en: 'Banque Misr was founded on 13 April 1920 by Talaat Harb with Joseph Cattaui and Joseph '
@@ -433,8 +433,8 @@ export const AFRICA_BUILDINGS: Building[] = [
       photographer: 'Poudou99',
       license: 'CC BY 3.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Alger_Diar-El-Mahcoul_IMG_1147.JPG',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1200,
     },
     dossier: {
       en: 'Jacques Chevallier became mayor of Algiers in 1953 on a promise of "symbiosis" between the '
@@ -590,8 +590,8 @@ export const AFRICA_BUILDINGS: Building[] = [
       photographer: 'Abdel-Moneim Mustafa',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Al-Marekh_Stadium_Omdurman_Sudan_1964_Designed_by_Abdel-Moneim_Mustafa_8.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 900,
     },
     dossier: {
       en: 'Sudan became independent in 1956; Abdel-Moneim Mustafa came home from Leicester with an '
@@ -716,8 +716,8 @@ export const AFRICA_BUILDINGS: Building[] = [
       photographer: 'Askelaadden',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Grande_Mosqu%C3%A9e_d%27Alger.jpg',
-      width: 0,
-      height: 0,
+      width: 960,
+      height: 1280,
     },
     dossier: {
       en: 'In January 2008 a German consortium — KSP Jürgen Engel Architekten with the engineers Krebs '
@@ -831,8 +831,8 @@ export const AFRICA_BUILDINGS: Building[] = [
       photographer: 'SamirAmiri',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:%C3%89difice_de_la_Wilaya_de_Tizi_Ouzou.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 900,
     },
     dossier: {
       en: 'Georgette Cottin-Euziol, a French-born architect who took Algerian nationality in 1964, '
