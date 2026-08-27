@@ -287,6 +287,11 @@ export const ASIA_SOUTH_BUILDINGS: Building[] = [
     wikidataId: 'Q902222',
     name: { en: 'Darul Aman Palace', es: 'Palacio Darul Aman', it: 'Palazzo Darul Aman' },
     architectId: 'walter-harten',
+    // task-9 review, Important finding 1: the portrait already on file for
+    // walter-harten says authorship "is shared rather than single" with
+    // the French architects the record names as A. and M. Godard, but this
+    // field stayed sole walter-harten until now.
+    coArchitects: ['a-godard', 'm-godard'],
     location: { city: 'Kabul', countryCode: 'AF', lat: 34.46480, lon: 69.10894 },
     inception: 1925,
     completed: 1927,
@@ -625,7 +630,17 @@ export const ASIA_SOUTH_BUILDINGS: Building[] = [
       es: 'Costó veintitrés años y cuatro proyectos abandonados enterrar como es debido al fundador de Pakistán. Jinnah murió en 1948; en 1949 se creó un fondo conmemorativo, en 1954 se nombró y destituyó a un arquitecto indio, en 1955 se contrató y rechazó a uno turco, y en 1957 se convocó un concurso internacional que ganó el británico William Whitfield. Fatima Jinnah vetó ese resultado, tomó el control del fondo y encargó la obra a Yahya Merchant, arquitecto bombayeño y amigo personal de su hermano. La primera piedra se puso el 31 de julio de 1960 y el mausoleo se inauguró el 18 de enero de 1971. Merchant construyó un cubo de mármol con un arco parabólico en cada cara y una cúpula rebajada: geometría funeraria tradicional despojada de ornamento sobre una estructura moderna, con el aparejo a espiga del mármol y una banda de celosías en el arranque de la cúpula como único adorno. Los jardines no se terminaron hasta 2000.',
       it: 'Ci vollero ventitré anni e quattro progetti abbandonati per seppellire come si deve il fondatore del Pakistan. Jinnah morì nel 1948; nel 1949 nacque un fondo commemorativo, nel 1954 fu nominato e poi congedato un architetto indiano, nel 1955 assunto e respinto un turco, e nel 1957 si tenne un concorso internazionale vinto dal britannico William Whitfield. Fatima Jinnah pose il veto su quell’esito, prese il controllo del fondo e affidò l’incarico a Yahya Merchant, architetto di Bombay e amico personale del fratello. La prima pietra fu posata il 31 luglio 1960 e il mausoleo inaugurato il 18 gennaio 1971. Merchant costruì un cubo di marmo con un arco parabolico su ciascuna faccia e una cupola ribassata: geometria funeraria tradizionale spogliata d’ornato su un’ossatura moderna, con l’apparecchio a spina di pesce del marmo e una fascia di grate all’imposta della cupola come unica decorazione. I giardini furono ultimati solo nel 2000.',
     },
-    context: null,
+    context: {
+      body: {
+        en: 'The mausoleum’s completion was entangled with the country it commemorates. President Ayub Khan, who had seized power in a 1958 coup, laid its foundation stone in 1960; five years later Fatima Jinnah, who had personally chosen the architect and controlled the memorial fund, ran against Ayub in the 1965 presidential election on a platform opposing military rule, and lost amid opposition claims of vote-rigging. She died in 1967, four years before the building she had commissioned was finished, her death itself clouded by unresolved rumours of foul play. General Yahya Khan, who had by then replaced Ayub, inaugurated the completed mausoleum on 18 January 1971 as a monument to the founder’s vision of a unified Pakistan; ten weeks later his own government’s crackdown in East Pakistan began the war that ended that unity, and Bangladesh became independent before the year was out.',
+        es: 'La terminación del mausoleo quedó enredada con el propio país que conmemora. El presidente Ayub Khan, que había tomado el poder en un golpe de 1958, puso la primera piedra en 1960; cinco años después, Fatima Jinnah, que había elegido personalmente al arquitecto y controlaba el fondo del monumento, se presentó contra Ayub en las elecciones presidenciales de 1965 con un programa opuesto al régimen militar, y perdió entre denuncias opositoras de fraude electoral. Murió en 1967, cuatro años antes de que se terminara el edificio que había encargado, su propia muerte envuelta en rumores nunca resueltos de juego sucio. El general Yahya Khan, que para entonces había sustituido a Ayub, inauguró el mausoleo terminado el 18 de enero de 1971 como monumento a la visión de un Pakistán unido de su fundador; diez semanas después, la represión de su propio gobierno en Pakistán Oriental dio inicio a la guerra que acabó con esa unidad, y Bangladesh se independizó antes de que terminara el año.',
+        it: 'Il completamento del mausoleo si intrecciò con la storia stessa del paese che commemora. Il presidente Ayub Khan, che aveva preso il potere con un colpo di stato nel 1958, ne posò la prima pietra nel 1960; cinque anni dopo Fatima Jinnah, che aveva scelto personalmente l’architetto e controllava il fondo commemorativo, si candidò contro Ayub alle elezioni presidenziali del 1965 con un programma contrario al regime militare, e perse fra le accuse dell’opposizione di brogli elettorali. Morì nel 1967, quattro anni prima che l’edificio da lei commissionato fosse ultimato, la sua stessa morte avvolta in voci mai chiarite di gioco sporco. Il generale Yahya Khan, che nel frattempo aveva sostituito Ayub, inaugurò il mausoleo completato il 18 gennaio 1971 come monumento alla visione di un Pakistan unito del fondatore; dieci settimane dopo, la repressione del suo stesso governo nel Pakistan orientale diede avvio alla guerra che pose fine a quell’unità, e il Bangladesh divenne indipendente prima della fine dell’anno.',
+      },
+      sources: [
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Mazar-e-Quaid', title: 'Mazar-e-Quaid', license: 'CC BY-SA 4.0' },
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Fatima_Jinnah', title: 'Fatima Jinnah', license: 'CC BY-SA 4.0' },
+      ],
+    },
     sources: [
       { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q2571455', title: 'Mazar-e-Quaid (Q2571455)', license: null },
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Mazar-e-Quaid', title: 'Mazar-e-Quaid', license: 'CC BY-SA 4.0' },
@@ -688,6 +703,12 @@ export const ASIA_SOUTH_BUILDINGS: Building[] = [
     wikidataId: 'Q25587621',
     name: { en: 'Swadhinata Stambha (Independence Monument)', es: 'Swadhinata Stambha (Monumento a la Independencia)', it: 'Swadhinata Stambha (Monumento all’Indipendenza)' },
     architectId: 'marina-tabassum',
+    // task-9 review, Important finding 1: the dossier below already says
+    // "Marina Tabassum and Kashef Mahboob Chowdhury won the competition...
+    // and carried it for sixteen years," confirmed via the same Wikipedia
+    // source already cited below, but this field stayed sole
+    // marina-tabassum until now.
+    coArchitects: ['kashef-mahboob-chowdhury'],
     location: { city: 'Dhaka', countryCode: 'BD', lat: 23.73344, lon: 90.39860 },
     inception: 1999,
     completed: 2013,
@@ -900,5 +921,65 @@ export const ASIA_SOUTH_BUILDINGS: Building[] = [
       { kind: 'institution', url: 'https://whc.unesco.org/en/list/1321/', title: 'The Architectural Work of Le Corbusier, an Outstanding Contribution to the Modern Movement — UNESCO World Heritage Centre', license: null },
     ],
     tier: 'canon',
+  },
+  {
+    // Fixes the task-9 review's Important finding 2: Nepal, one of this
+    // slice's seven assigned countries, had zero buildings and this was
+    // never disclosed. What was actually checked: the great Kathmandu/
+    // Patan/Bhaktapur Durbar Square monuments and the Boudhanath and
+    // Swayambhunath stupas are Newar guild-built or legendary-founder work
+    // with no individually named, source-attributable architect — the
+    // same attribution gap this pool documents honestly elsewhere (de
+    // Silva, Lari) rather than papering over. The Garden of Dreams is the
+    // genuine exception: its own Wikipedia article names a specific
+    // architect, its Commons photograph carries a verified open licence,
+    // and it happens to close this slice's 1800–1945 era shortfall (4/17
+    // against a local floor of 5) at the same time.
+    id: 'garden-of-dreams',
+    wikidataId: 'Q5522383',
+    name: { en: 'Garden of Dreams (Swapna Bagaicha)', es: 'Garden of Dreams (Swapna Bagaicha)', it: 'Garden of Dreams (Swapna Bagaicha)' },
+    architectId: 'kishore-narsingh-rana',
+    location: { city: 'Kathmandu', countryCode: 'NP', lat: 27.71417, lon: 85.31472 },
+    inception: 1920,
+    completed: 1920,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['brick', 'stone'],
+    structure: {
+      en: 'Load-bearing brick pavilions finished in painted stucco and dressed stone trim, set on an axial plan of terraces, a colonnaded amphitheatre and a long reflecting pool, with pergolas and balustraded steps carrying the geometry between levels.',
+      es: 'Pabellones de ladrillo portante acabados en estuco pintado y remates de piedra labrada, dispuestos en una planta axial de terrazas, un anfiteatro con columnata y un estanque reflectante alargado, con pérgolas y escalinatas balaustradas que llevan la geometría entre niveles.',
+      it: 'Padiglioni portanti in mattoni finiti a stucco dipinto e cornici in pietra lavorata, disposti su una pianta assiale di terrazze, un anfiteatro colonnato e un lungo specchio d’acqua, con pergole e scalinate a balaustra che portano la geometria fra i livelli.',
+    },
+    program: {
+      en: 'A private pleasure garden built for the Rana aristocrat Kaiser Shamsher Jang Bahadur Rana within his Kaiser Mahal estate, reopened to the public in 1998 as an urban park after a demolition threat.',
+      es: 'Un jardín de recreo privado construido para el aristócrata rana Kaiser Shamsher Jang Bahadur Rana dentro de su finca de Kaiser Mahal, reabierto al público en 1998 como parque urbano tras una amenaza de demolición.',
+      it: 'Un giardino di piacere privato costruito per l’aristocratico rana Kaiser Shamsher Jang Bahadur Rana entro la sua tenuta di Kaiser Mahal, riaperto al pubblico nel 1998 come parco urbano dopo una minaccia di demolizione.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Public garden, café and event venue; the most visited garden in Kathmandu.',
+      es: 'Jardín público, cafetería y espacio para eventos; el jardín más visitado de Katmandú.',
+      it: 'Giardino pubblico, caffetteria e spazio per eventi; il giardino più visitato di Kathmandu.',
+    },
+    detailRect: { x: 0.47, y: 0.24, w: 0.22, h: 0.24 },
+    image: {
+      commonsFile: 'Kaiser Mahal (17209853514).jpg',
+      photographer: 'Jorge Láscar',
+      license: 'CC BY 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Kaiser_Mahal_(17209853514).jpg',
+      width: 0,
+      height: 0,
+    },
+    dossier: {
+      en: 'In 1920, the Rana aristocrat Kaiser Shamsher Jang Bahadur Rana had six pavilions, a reflecting pool, pergolas and terraced parterres built inside his Kaiser Mahal estate in Kathmandu, calling it the Garden of Six Seasons. It is a private Edwardian garden set down whole in the Himalayan foothills: axial paths, a colonnaded amphitheatre, urns and balustrades in a neoclassical vocabulary the Rana elite had absorbed on visits to Britain and then had built at home, in brick and painted stucco rather than stone. Kaiser Shamsher’s death in 1964 left the garden to decades of neglect, and in 1998 the government of Nepal moved to demolish what survived for a shopping centre; Minister of Education Arjun Narsingha KC halted the demolition and reopened the site to the public under a new name, the Garden of Dreams. An Austrian-funded restoration led by the architect Götz Hagmüller reconstructed the garden between 2000 and 2007, recovering three of the original six pavilions and the amphitheatre. It is now the most visited public garden in Kathmandu.',
+      es: 'En 1920, el aristócrata rana Kaiser Shamsher Jang Bahadur Rana mandó construir seis pabellones, un estanque reflectante, pérgolas y parterres escalonados dentro de su finca de Kaiser Mahal en Katmandú, y lo llamó el Jardín de las Seis Estaciones. Es un jardín eduardiano privado trasplantado entero al piedemonte del Himalaya: sendas axiales, un anfiteatro con columnata, urnas y balaustradas en un vocabulario neoclásico que la elite rana había absorbido en sus viajes a Gran Bretaña y luego mandó construir en casa, en ladrillo y estuco pintado en vez de piedra. La muerte de Kaiser Shamsher en 1964 dejó el jardín décadas en el abandono, y en 1998 el gobierno de Nepal se disponía a demoler lo que quedaba para un centro comercial; el ministro de Educación Arjun Narsingha KC detuvo la demolición y reabrió el recinto al público con un nuevo nombre, el Garden of Dreams. Una restauración financiada por Austria y dirigida por el arquitecto Götz Hagmüller reconstruyó el jardín entre 2000 y 2007, recuperando tres de los seis pabellones originales y el anfiteatro. Hoy es el jardín público más visitado de Katmandú.',
+      it: 'Nel 1920 l’aristocratico rana Kaiser Shamsher Jang Bahadur Rana fece costruire sei padiglioni, uno specchio d’acqua, pergole e parterre terrazzati dentro la sua tenuta di Kaiser Mahal a Kathmandu, chiamandolo il Giardino delle Sei Stagioni. È un giardino edoardiano privato trapiantato di peso ai piedi dell’Himalaya: viali assiali, un anfiteatro colonnato, urne e balaustre in un vocabolario neoclassico che l’elite rana aveva assorbito nei viaggi in Gran Bretagna e poi fatto costruire in patria, in mattoni e stucco dipinto anziché in pietra. La morte di Kaiser Shamsher nel 1964 lasciò il giardino decenni in abbandono, e nel 1998 il governo del Nepal si accingeva a demolire ciò che restava per farne un centro commerciale; il ministro dell’Istruzione Arjun Narsingha KC fermò la demolizione e riaprì il sito al pubblico con un nuovo nome, il Garden of Dreams. Un restauro finanziato dall’Austria e diretto dall’architetto Götz Hagmüller ricostruì il giardino fra il 2000 e il 2007, recuperando tre dei sei padiglioni originari e l’anfiteatro. Oggi è il giardino pubblico più visitato di Kathmandu.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q5522383', title: 'Garden of Dreams (Q5522383)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Garden_of_Dreams', title: 'Garden of Dreams', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'deep',
   },
 ];

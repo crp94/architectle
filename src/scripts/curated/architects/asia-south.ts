@@ -173,6 +173,69 @@ export const ASIA_SOUTH_ARCHITECTS: Architect[] = [
     ],
   },
   {
+    // Recovered joint credit (task-9 review, Important finding 1): the
+    // portrait above already stated that authorship of Darul Aman Palace
+    // "is shared rather than single" with two French architects named only
+    // by initial, but the building's architectId stayed sole walter-harten
+    // until this fix. Both Godards get coArchitects on that building now.
+    // The cited Darul Aman Palace Wikipedia article — its infobox and body
+    // text both — gives no more than these two initials and surnames; no
+    // Wikidata entity, birth/death date or other attributed building has
+    // surfaced for either, so nothing further is invented here.
+    id: 'a-godard',
+    wikidataId: '',
+    name: 'A. Godard',
+    alternativeNames: [],
+    gender: 'unknown',
+    born: null,
+    died: null,
+    floruit: { start: 1925, end: 1927, override: false },
+    movements: [{ id: 'neoclassicism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'stone',
+    portrait: {
+      en: 'One of two French architects named in the record only by a first initial — A. Godard — credited alongside the German engineer Walter Harten on the Darul Aman Palace at Kabul, raised for Amanullah Khan between 1925 and 1927. Amanullah invited twenty-two German and French architects to the site; almost all of them, this one included, are otherwise undocumented in any source consulted for this pool, and no birth date, death date or other attributed building has surfaced. What the credit line does establish is that the palace’s design was not Harten’s alone: the surviving record names a Godard as a co-designer, not an assistant, of a three-storey neoclassical block of arcaded wings and a curved central bay that was, briefly, the most technically advanced building in Afghanistan.',
+      es: 'Uno de los dos arquitectos franceses que la documentación nombra solo por la inicial —A. Godard—, acreditado junto al ingeniero alemán Walter Harten en el Palacio Darul Aman de Kabul, levantado para Amanullah Khan entre 1925 y 1927. Amanullah invitó a veintidós arquitectos alemanes y franceses a la obra; casi todos ellos, este incluido, carecen de todo rastro documental fuera de las fuentes consultadas para este repertorio, y no ha aparecido fecha de nacimiento ni de muerte ni otra obra atribuida. Lo que sí establece la documentación es que el proyecto no fue solo de Harten: acredita a un Godard como codiseñador, no como ayudante, de un bloque neoclásico de tres plantas con alas porticadas y un cuerpo central curvo que fue, brevemente, el edificio técnicamente más avanzado de Afganistán.',
+      it: "Uno dei due architetti francesi che la documentazione nomina solo con l'iniziale — A. Godard —, accreditato accanto all'ingegnere tedesco Walter Harten nel Palazzo Darul Aman di Kabul, eretto per Amanullah Khan fra il 1925 e il 1927. Amanullah invitò ventidue architetti tedeschi e francesi al cantiere; quasi tutti loro, questo compreso, non lasciano alcuna traccia oltre le fonti consultate per questo repertorio, e non è emersa alcuna data di nascita o di morte né altra opera attribuita. Ciò che la documentazione stabilisce è che il progetto non fu solo di Harten: accredita un Godard come co-progettista, non come assistente, di un blocco neoclassico di tre piani con ali porticate e un corpo centrale curvo che fu, per breve tempo, l'edificio tecnicamente più avanzato dell'Afghanistan.",
+    },
+    awards: [],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Darul_Aman_Palace', title: 'Darul Aman Palace', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.archnet.org/sites/2735', title: 'Darulaman Palace — Archnet, Aga Khan Documentation Center', license: null },
+    ],
+  },
+  {
+    id: 'm-godard',
+    wikidataId: '',
+    name: 'M. Godard',
+    alternativeNames: [],
+    gender: 'unknown',
+    born: null,
+    died: null,
+    floruit: { start: 1925, end: 1927, override: false },
+    movements: [{ id: 'neoclassicism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'stone',
+    portrait: {
+      en: 'The second of two French architects credited only by initial — M. Godard — for the Darul Aman Palace at Kabul, built for Amanullah Khan between 1925 and 1927 as the seat of a parliament he never got to convene. Amanullah’s invitation drew twenty-two German and French architects to the site, and almost none of them, this one included, left any further trace in the sources available to this pool: no dates, no other credited work, not even a first name. What survives is the credit itself, naming a Godard alongside another Godard as co-designers of a three-storey neoclassical shell of arcades and a curved bay — proof that the authorship the record does preserve was shared, even where the biography behind it was not.',
+      es: 'El segundo de los dos arquitectos franceses acreditados solo por inicial —M. Godard— en el Palacio Darul Aman de Kabul, construido para Amanullah Khan entre 1925 y 1927 como sede de un parlamento que nunca llegó a convocar. La invitación de Amanullah atrajo a Kabul a veintidós arquitectos alemanes y franceses, y casi ninguno de ellos, este incluido, dejó más huella en las fuentes disponibles para este repertorio: ni fechas, ni otra obra acreditada, ni siquiera un nombre de pila. Lo que queda es el propio crédito, que nombra a un Godard junto a otro Godard como codiseñadores de un cascarón neoclásico de tres plantas con arcadas y cuerpo curvo: prueba de que la autoría que la documentación sí conserva fue compartida, aunque la biografía detrás no lo fuera.',
+      it: "Il secondo dei due architetti francesi accreditati solo con l'iniziale — M. Godard — per il Palazzo Darul Aman di Kabul, costruito per Amanullah Khan fra il 1925 e il 1927 come sede di un parlamento che non riuscì mai a convocare. L'invito di Amanullah portò a Kabul ventidue architetti tedeschi e francesi, e quasi nessuno di loro, questo compreso, lasciò altra traccia nelle fonti disponibili per questo repertorio: né date, né altre opere accreditate, nemmeno un nome di battesimo. Ciò che resta è il credito stesso, che nomina un Godard accanto a un altro Godard come co-progettisti di un guscio neoclassico di tre piani con arcate e corpo curvo: prova che la paternità conservata dalla documentazione fu condivisa, anche se la biografia dietro non lo fu.",
+    },
+    awards: [],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Darul_Aman_Palace', title: 'Darul Aman Palace', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.archnet.org/sites/2735', title: 'Darulaman Palace — Archnet, Aga Khan Documentation Center', license: null },
+    ],
+  },
+  {
     id: 'edith-langridge',
     wikidataId: 'Q18671015',
     name: 'Edith Langridge',
@@ -370,6 +433,44 @@ export const ASIA_SOUTH_ARCHITECTS: Architect[] = [
     ],
   },
   {
+    // Recovered joint credit (task-9 review, Important finding 1): the
+    // swadhinata-stambha dossier already said "Marina Tabassum and Kashef
+    // Mahboob Chowdhury won the competition... and carried it for sixteen
+    // years," and Tabassum's own portrait above names him too, but the
+    // building's architectId stayed sole marina-tabassum until this fix.
+    // Confirmed via the same English Wikipedia article already cited in
+    // that building's sources, and independently via Wikidata (Q6374223:
+    // P21 male, P569 birth year 1970, no death — a living architect with
+    // no contested-allegation profile, so the living-architect rule is
+    // satisfied).
+    id: 'kashef-mahboob-chowdhury',
+    wikidataId: 'Q6374223',
+    name: 'Kashef Mahboob Chowdhury',
+    alternativeNames: ['Kashef Chowdhury'],
+    gender: 'man',
+    born: 1970,
+    died: null,
+    floruit: { start: 1997, end: 2017, override: false },
+    movements: [{ id: 'critical-regionalism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'sacral',
+    signatureMaterial: 'brick',
+    portrait: {
+      en: 'Chowdhury graduated from BUET in 1995 and, the same year, co-founded the practice URBANA with his classmate Marina Tabassum; two years later the pair won the open competition for Dhaka’s Independence Monument and Museum of Independence and spent sixteen years building it together before going their separate ways in 2005. His own subsequent work — the Friendship Centre at Gaibandha, the Chandgaon and Gulshan Society mosques — stays close to that first project’s premises: handmade brick, deep research time before design starts, and buildings that treat Bangladesh’s climate and flood-prone ground as the brief rather than an obstacle to it. The Friendship Centre won the Aga Khan Award for Architecture in the 2014–2016 cycle; he has been an Aga Khan finalist twice more and took a RIBA International Award in 2021.',
+      es: 'Chowdhury se graduó en la BUET en 1995 y, ese mismo año, cofundó el estudio URBANA con su compañero de promoción Marina Tabassum; dos años después, la pareja ganó el concurso abierto del Monumento a la Independencia y Museo de la Independencia de Dacca y pasaron dieciséis años construyéndolo juntos antes de separar sus caminos en 2005. Su obra posterior —el Friendship Centre de Gaibandha, las mezquitas de Chandgaon y de Gulshan Society— se mantiene fiel a las premisas de aquel primer proyecto: ladrillo artesanal, un tiempo de investigación largo antes de proyectar, y edificios que tratan el clima y el suelo inundable de Bangladés como parte del encargo y no como un obstáculo. El Friendship Centre ganó el Premio Aga Khan de Arquitectura en el ciclo 2014-2016; ha sido finalista del Aga Khan otras dos veces y obtuvo un RIBA International Award en 2021.',
+      it: "Chowdhury si laureò alla BUET nel 1995 e, lo stesso anno, cofondò lo studio URBANA con la compagna di corso Marina Tabassum; due anni dopo la coppia vinse il concorso aperto per il Monumento all'Indipendenza e il Museo dell'Indipendenza di Dacca e trascorse sedici anni a costruirlo insieme prima di separare le proprie strade nel 2005. Il suo lavoro successivo — il Friendship Centre a Gaibandha, le moschee di Chandgaon e di Gulshan Society — resta fedele alle premesse di quel primo progetto: mattone artigianale, un lungo tempo di ricerca prima di progettare, ed edifici che trattano il clima e il terreno alluvionale del Bangladesh come parte dell'incarico e non come un ostacolo. Il Friendship Centre vinse il Premio Aga Khan per l'Architettura nel ciclo 2014-2016; è stato finalista Aga Khan altre due volte e ha ottenuto un RIBA International Award nel 2021.",
+    },
+    awards: ['Aga Khan Award for Architecture (2014–2016 cycle, Friendship Centre)', 'AR+D Emerging Architecture Award (2012)', 'RIBA International Award (2021)'],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q6374223', title: 'Kashef Mahboob Chowdhury (Q6374223)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Kashef_Mahboob_Chowdhury', title: 'Kashef Mahboob Chowdhury', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Swadhinata_Stambha', title: 'Swadhinata Stambha', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
     id: 'leila-araghian',
     wikidataId: 'Q19830052',
     name: 'Leila Araghian',
@@ -457,6 +558,43 @@ export const ASIA_SOUTH_ARCHITECTS: Architect[] = [
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Le_Corbusier', title: 'Le Corbusier', license: 'CC BY-SA 4.0' },
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Chandigarh_Capitol_Complex', title: 'Chandigarh Capitol Complex', license: 'CC BY-SA 4.0' },
       { kind: 'institution', url: 'https://whc.unesco.org/en/list/1321/', title: 'The Architectural Work of Le Corbusier, an Outstanding Contribution to the Modern Movement — UNESCO World Heritage Centre', license: null },
+    ],
+  },
+  {
+    // Fixes the task-9 review's Important finding 2: Nepal, one of this
+    // slice's seven assigned countries, had zero buildings and zero
+    // architects, and the original report never disclosed the gap. Real
+    // research (Kathmandu Durbar Square-era Newar guild architecture,
+    // Boudhanath/Swayambhunath) turned up only anonymous or legendary
+    // builders, exactly the attribution problem this pool already
+    // documents for other entries — but the Garden of Dreams (Q5522383)
+    // is a genuine, individually attributed exception: its own Wikipedia
+    // article names a specific architect and licenses a clean exterior
+    // photograph.
+    id: 'kishore-narsingh-rana',
+    wikidataId: '',
+    name: 'Kishore Narsingh Rana',
+    alternativeNames: ['Kishore Narsingh', 'Kishor Narsingh Rana', 'Kishore Narshingh'],
+    gender: 'man',
+    born: null,
+    died: null,
+    floruit: { start: 1920, end: 1920, override: false },
+    movements: [{ id: 'neoclassicism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'brick',
+    portrait: {
+      en: 'A landscape architect and engineer of the Rana court, credited with designing the Garden of Dreams for Kaiser Shamsher Jang Bahadur Rana in 1920 and, according to the same source, with Singha Durbar itself, the seat of the Rana government, where he is named alongside Kumar Narsingh Rana. He served as architect to Kaiser’s father, the Maharaja Chandra Shamsher, within an aristocracy that sent its sons to Britain and then had them build Edwardian gardens and Palladian ministries at home in brick rather than stone. No birth date, death date or training record survives for him outside these two credit lines, and no Wikidata entity exists; what stands is the work itself, since restored, rather than the biography behind it.',
+      es: 'Arquitecto paisajista e ingeniero de la corte rana, al que se acredita el diseño del Garden of Dreams para Kaiser Shamsher Jang Bahadur Rana en 1920 y, según la misma fuente, el del propio Singha Durbar, sede del gobierno rana, donde figura junto a Kumar Narsingh Rana. Fue arquitecto del padre de Kaiser, el maharajá Chandra Shamsher, dentro de una aristocracia que enviaba a sus hijos a Gran Bretaña y luego les hacía construir en casa jardines eduardianos y ministerios palladianos, en ladrillo y no en piedra. No se conserva fecha de nacimiento, de muerte ni historial de formación fuera de estas dos menciones, ni existe entidad en Wikidata; lo que queda en pie es la obra misma, ya restaurada, más que la biografía que hay detrás.',
+      it: "Architetto paesaggista e ingegnere della corte rana, cui si attribuisce il progetto del Garden of Dreams per Kaiser Shamsher Jang Bahadur Rana nel 1920 e, secondo la stessa fonte, quello dello stesso Singha Durbar, sede del governo rana, dove compare accanto a Kumar Narsingh Rana. Fu architetto del padre di Kaiser, il maharaja Chandra Shamsher, entro un'aristocrazia che mandava i figli in Gran Bretagna e poi faceva costruire loro in patria giardini edoardiani e ministeri palladiani, in mattoni anziché in pietra. Non si conserva data di nascita, di morte né percorso di formazione oltre queste due citazioni, né esiste una scheda Wikidata; ciò che resta in piedi è l'opera stessa, ormai restaurata, più che la biografia dietro di essa.",
+    },
+    awards: [],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Garden_of_Dreams', title: 'Garden of Dreams', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Singha_Durbar', title: 'Singha Durbar', license: 'CC BY-SA 4.0' },
     ],
   },
 ];
