@@ -6,7 +6,15 @@ export type HeritageStatus = 'unesco' | 'national' | 'regional' | 'none';
 
 export type Building = {
   id: string;
-  wikidataId: string;
+  // null when no Wikidata item exists for this specific building (as
+  // opposed to none having been looked up). A record with a null
+  // wikidataId must carry at least 2 non-Wikidata/Wikipedia sources — see
+  // the `wikidata-null-needs-sources` rule in
+  // src/scripts/validators/provenance.ts. Requiring a Q-number on every
+  // building reproduces the same coverage bias the curated pool exists to
+  // correct: buildings by under-represented architects are systematically
+  // less likely to have a Wikidata item at all.
+  wikidataId: string | null;
   name: LocalizedString;
   architectId: string;
   location: { city: string; countryCode: string; lat: number; lon: number };

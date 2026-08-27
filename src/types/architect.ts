@@ -5,7 +5,12 @@ export type Gender = 'woman' | 'man' | 'non-binary' | 'unknown';
 
 export type Architect = {
   id: string;
-  wikidataId: string;
+  // null when this architect has no Wikidata item at all. See the
+  // parallel note on Building.wikidataId in src/types/building.ts: a
+  // record with a null wikidataId must carry at least 2 non-Wikidata/
+  // Wikipedia sources (`wikidata-null-needs-sources` in
+  // src/scripts/validators/provenance.ts).
+  wikidataId: string | null;
   name: string;
   alternativeNames: string[];
   gender: Gender;

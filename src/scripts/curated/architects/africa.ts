@@ -1,13 +1,20 @@
 import type { Architect } from '@/types/architect';
 
 // Wave 5, agent 9d — Northern Africa (UN M49 "Northern Africa": DZ, EG, LY, MA,
-// SD, TN). Six architects, one per building in buildings/africa.ts.
+// SD, TN). Seven architects, one per building in buildings/africa.ts.
 //
-// Two of these six have their practice base outside the slice and are defined
+// Two of these seven have their practice base outside the slice and are defined
 // here because no other slice owns them: Fernand Pouillon (French) and KSP
 // Jürgen Engel Architekten (German). If agent 9a or 9d-germanic also defines
 // them, keep one definition and repoint the architectId. Both ids are plain
 // kebab-case slugs.
+//
+// Georgette Cottin-Euziol (added in the wikidataId-nullable fix round): her
+// own Wikidata item (Q62032779) exists and is used, but her Tizi-Ouzou
+// prefecture building has no Wikidata item of its own — see the matching
+// entry in buildings/africa.ts, which carries wikidataId: null plus 2+
+// non-Wikidata/Wikipedia sources as the new `wikidata-null-needs-sources`
+// rule requires.
 //
 // workRegions / workCentroid are deliberately left empty here: buildCuratedPool
 // derives both from each architect's buildings and discards whatever this file
@@ -401,6 +408,124 @@ export const AFRICA_ARCHITECTS: Architect[] = [
         kind: 'publication',
         url: 'https://www.architectural-review.com/essays/reputations/abdel-moneim-mustafa-1930',
         title: 'Ezra Akcan, "Abdel Moneim Mustafa (1930–)", The Architectural Review, 28 May 2024',
+        license: null,
+      },
+    ],
+  },
+  {
+    id: 'georgette-cottin-euziol',
+    wikidataId: 'Q62032779',
+    name: 'Georgette Cottin-Euziol',
+    alternativeNames: ['Georgette Cottin'],
+    gender: 'woman',
+    born: 1926,
+    died: 2004,
+    floruit: { start: 1956, end: 1994, override: false },
+    movements: 'unaffiliated',
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: 'Georgette Cottin-Euziol (1926-2004) was born at El Affroun, in French Algeria, and '
+        + 'trained at the École des Beaux-Arts in Paris under Georges Gromort, Louis Arretche and '
+        + 'Pierre Vivien, graduating in 1956. She returned to Algeria as an architect that year, left '
+        + 'in 1961 under threat from the OAS for her support of independence, and came back in 1963; '
+        + 'she took Algerian nationality in 1964 and joined the Algerian Communist Party. Between '
+        + '1968 and 1975 she ran a major construction programme for the new wilaya of Tizi-Ouzou in '
+        + 'Kabylia: the provincial prefecture, schools, lycées, a theatre, a cinema and a '
+        + 'teacher-training college. She later practised in southern France and, in the 1990s, worked '
+        + 'on unbuilt reconstruction projects in Russia and Chechnya.',
+      es: 'Georgette Cottin-Euziol (1926-2004) nació en El Affroun, en la Argelia francesa, y se '
+        + 'formó en la École des Beaux-Arts de París con Georges Gromort, Louis Arretche y Pierre '
+        + 'Vivien, licenciándose en 1956. Ese mismo año regresó a Argelia como arquitecta, salió en '
+        + '1961 amenazada por la OAS por su apoyo a la independencia y volvió en 1963; obtuvo la '
+        + 'nacionalidad argelina en 1964 y se afilió al Partido Comunista Argelino. Entre 1968 y 1975 '
+        + 'dirigió un amplio programa de construcción para la nueva wilaya de Tizi-Ouzou, en Cabilia: '
+        + 'la prefectura provincial, escuelas, institutos, un teatro, un cine y una escuela normal de '
+        + 'magisterio. Más tarde ejerció en el sur de Francia y, en los años noventa, trabajó en '
+        + 'proyectos de reconstrucción no realizados en Rusia y Chechenia.',
+      it: 'Georgette Cottin-Euziol (1926-2004) nacque a El Affroun, nell\'Algeria francese, e si '
+        + 'formò all\'École des Beaux-Arts di Parigi con Georges Gromort, Louis Arretche e Pierre '
+        + 'Vivien, laureandosi nel 1956. Quello stesso anno tornò in Algeria come architetta, ne uscì '
+        + 'nel 1961 minacciata dall\'OAS per il suo sostegno all\'indipendenza e vi rientrò nel 1963; '
+        + 'ottenne la cittadinanza algerina nel 1964 e aderì al Partito Comunista Algerino. Tra il '
+        + '1968 e il 1975 diresse un vasto programma edilizio per la nuova wilaya di Tizi-Ouzou, in '
+        + 'Cabilia: la prefettura provinciale, scuole, licei, un teatro, un cinema e una scuola '
+        + 'normale per maestri. Lavorò poi nel sud della Francia e, negli anni Novanta, a progetti di '
+        + 'ricostruzione mai realizzati in Russia e in Cecenia.',
+    },
+    awards: [],
+    tier: 'deep',
+    context: {
+      body: {
+        en: 'As a student at the École des Beaux-Arts in Algiers during the Second World War, '
+          + 'Cottin-Euziol took part in Resistance actions against the Vichy government. Practising '
+          + 'in Algeria through the war of independence, she left the country in 1961 under threat '
+          + 'from the OAS for her support of Algerian independence and returned in 1963; she took '
+          + 'Algerian nationality in 1964 and joined the Algerian Communist Party. The prefecture she '
+          + 'built for Tizi-Ouzou between 1968 and 1975 was a commission of the state whose '
+          + 'independence she had backed against her own colonial community.',
+        es: 'Cuando era alumna de la École des Beaux-Arts de Argel durante la Segunda Guerra '
+          + 'Mundial, Cottin-Euziol participó en acciones de resistencia contra el gobierno de Vichy. '
+          + 'Ejerció en Argelia durante la guerra de independencia, salió del país en 1961 amenazada '
+          + 'por la OAS por su apoyo a la independencia argelina y volvió en 1963; obtuvo la '
+          + 'nacionalidad argelina en 1964 y se afilió al Partido Comunista Argelino. La prefectura '
+          + 'que construyó para Tizi-Ouzou entre 1968 y 1975 fue un encargo del Estado cuya '
+          + 'independencia ella había respaldado en contra de su propia comunidad colonial.',
+        it: 'Quando era allieva dell\'École des Beaux-Arts di Algeri durante la Seconda guerra '
+          + 'mondiale, Cottin-Euziol prese parte ad azioni di Resistenza contro il governo di Vichy. '
+          + 'Esercitò in Algeria durante la guerra d\'indipendenza, lasciò il paese nel 1961 '
+          + 'minacciata dall\'OAS per il suo sostegno all\'indipendenza algerina e vi tornò nel 1963; '
+          + 'ottenne la cittadinanza algerina nel 1964 e aderì al Partito Comunista Algerino. La '
+          + 'prefettura che costruì per Tizi-Ouzou tra il 1968 e il 1975 fu una commissione dello '
+          + 'Stato la cui indipendenza lei aveva sostenuto contro la propria comunità coloniale.',
+      },
+      sources: [
+        {
+          kind: 'wikipedia',
+          url: 'https://en.wikipedia.org/wiki/Georgette_Cottin-Euziol',
+          title: 'Georgette Cottin-Euziol — Wikipedia',
+          license: 'CC BY-SA 4.0',
+        },
+        {
+          kind: 'wikipedia',
+          url: 'https://fr.wikipedia.org/wiki/Georgette_Cottin-Euziol',
+          title: 'Georgette Cottin-Euziol — Wikipédia',
+          license: 'CC BY-SA 4.0',
+        },
+      ],
+    },
+    sources: [
+      {
+        kind: 'wikidata',
+        url: 'https://www.wikidata.org/wiki/Q62032779',
+        title: 'Georgette Cottin-Euziol (Q62032779)',
+        license: null,
+      },
+      {
+        kind: 'wikipedia',
+        url: 'https://en.wikipedia.org/wiki/Georgette_Cottin-Euziol',
+        title: 'Georgette Cottin-Euziol — Wikipedia',
+        license: 'CC BY-SA 4.0',
+      },
+      {
+        kind: 'wikipedia',
+        url: 'https://fr.wikipedia.org/wiki/Georgette_Cottin-Euziol',
+        title: 'Georgette Cottin-Euziol — Wikipédia',
+        license: 'CC BY-SA 4.0',
+      },
+      {
+        kind: 'publication',
+        url: 'https://journals.openedition.org/abe/6979',
+        title: 'Assia Samaï-Bouadjadja, "Le fonds d\'archives Georgette Cottin-Euziol : archive de '
+          + 'toute une vie", ABE Journal 16 (2019), DOI 10.4000/abe.6979',
+        license: null,
+      },
+      {
+        kind: 'institution',
+        url: 'https://www.dictionnaire-creatrices.com/fiche-georgette-cottin-euziol',
+        title: 'AWARE (Archives of Women Artists, Research and Exhibitions) — "Georgette Cottin-Euziol"',
         license: null,
       },
     ],

@@ -1,7 +1,7 @@
 import type { Building } from '@/types/building';
 
 // Wave 5, agent 9d — Northern Africa (UN M49 "Northern Africa": DZ, EG, LY, MA,
-// SD, TN). Six buildings: one pre-1800, two 1800–1945, two 1945–2000, one
+// SD, TN). Seven buildings: one pre-1800, two 1800–1945, three 1945–2000, one
 // post-2000.
 //
 // Every image licence below was read from the live Commons file page, not
@@ -16,6 +16,12 @@ import type { Building } from '@/types/building';
 // has been public domain there since 1997 and 1996 respectively and freedom of
 // panorama does not arise. Al-Merrikh Stadium in Sudan is cleared differently:
 // the photographer is the architect. See the task 9d report for the full trail.
+//
+// wilaya-de-tizi-ouzou (added in the wikidataId-nullable fix round) has no
+// Wikidata item — neither the building nor a P84 claim on its architect's
+// item names it — so wikidataId is null and the entry carries 3 sources that
+// are not Wikidata/Wikipedia, clearing the new wikidata-null-needs-sources
+// rule's 2-source minimum with margin.
 export const AFRICA_BUILDINGS: Building[] = [
   {
     id: 'bab-dar-assinaa',
@@ -771,5 +777,137 @@ export const AFRICA_BUILDINGS: Building[] = [
       },
     ],
     tier: 'canon',
+  },
+  {
+    id: 'wilaya-de-tizi-ouzou',
+    wikidataId: null,
+    name: {
+      en: 'Wilaya of Tizi-Ouzou Headquarters',
+      es: 'Sede de la Wilaya de Tizi-Ouzou',
+      it: 'Sede della Wilaya di Tizi-Ouzou',
+    },
+    architectId: 'georgette-cottin-euziol',
+    location: {
+      city: 'Tizi-Ouzou', countryCode: 'DZ', lat: 36.7152, lon: 4.0544,
+    },
+    inception: 1968,
+    completed: null,
+    demolished: null,
+    typology: 'civic',
+    materials: ['concrete'],
+    structure: {
+      en: 'A reinforced-concrete-framed office block faced in banded orange-and-cream render, its '
+        + 'window bays set in a regular grid behind a projecting stair-tower volume.',
+      es: 'Bloque de oficinas de estructura de hormigón armado revestido de enlucido a bandas '
+        + 'naranja y crema, con vanos dispuestos en una retícula regular tras un volumen de '
+        + 'escalera saliente.',
+      it: 'Blocco per uffici a struttura in cemento armato rivestito di intonaco a fasce arancioni '
+        + 'e crema, con le finestre disposte in una griglia regolare dietro un volume aggettante '
+        + 'del vano scale.',
+    },
+    program: {
+      en: 'Built as the seat of the newly created wilaya (province) of Tizi-Ouzou, commissioned by '
+        + "the Algerian state as part of Cottin-Euziol's 1968-1975 construction programme for Kabylia.",
+      es: 'Construida como sede de la wilaya (provincia) de Tizi-Ouzou, recién creada, encargada '
+        + 'por el Estado argelino dentro del programa de construcción que Cottin-Euziol dirigió en '
+        + 'Cabilia entre 1968 y 1975.',
+      it: 'Costruita come sede della wilaya (provincia) di Tizi-Ouzou, appena creata, commissionata '
+        + "dallo Stato algerino nell'ambito del programma edilizio che Cottin-Euziol diresse in "
+        + 'Cabilia tra il 1968 e il 1975.',
+    },
+    heritage: null,
+    currentUse: {
+      en: 'Still in use as the headquarters of the wilaya of Tizi-Ouzou; no heritage designation '
+        + 'is on record here.',
+      es: 'Sigue en uso como sede de la wilaya de Tizi-Ouzou; no consta ninguna figura de '
+        + 'protección patrimonial.',
+      it: 'È ancora in uso come sede della wilaya di Tizi-Ouzou; non risulta alcun vincolo di tutela.',
+    },
+    detailRect: {
+      x: 0.39, y: 0.25, w: 0.26, h: 0.33,
+    },
+    image: {
+      commonsFile: 'Édifice de la Wilaya de Tizi Ouzou.jpg',
+      photographer: 'SamirAmiri',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:%C3%89difice_de_la_Wilaya_de_Tizi_Ouzou.jpg',
+      width: 0,
+      height: 0,
+    },
+    dossier: {
+      en: 'Georgette Cottin-Euziol, a French-born architect who took Algerian nationality in 1964, '
+        + 'led a large state construction programme in Kabylia between 1968 and 1975, building '
+        + 'schools, a theatre, a teacher-training college and this prefecture — the administrative '
+        + 'seat of the newly created wilaya of Tizi-Ouzou — among some fifteen commissions in the '
+        + "province. The published finding aid for her papers names the prefecture directly but "
+        + "does not fix a completion year within that span; only the programme's overall 1968–1975 "
+        + 'window is attested. The building is a reinforced-concrete office block faced in banded '
+        + 'orange-and-cream render, its window bays set in a regular grid behind a projecting '
+        + 'stair-tower volume, standing on Avenue de la Victoire in central Tizi-Ouzou. It remains '
+        + "in use as the wilaya's headquarters. No Wikidata item exists for the building itself, and "
+        + "Cottin-Euziol's own item carries no linked works — this entry is assembled instead from "
+        + 'the finding aid for her archive and from biographical dictionaries.',
+      es: 'Georgette Cottin-Euziol, arquitecta nacida en Francia que obtuvo la nacionalidad argelina '
+        + 'en 1964, dirigió entre 1968 y 1975 un amplio programa estatal de construcción en Cabilia: '
+        + 'escuelas, un teatro, una escuela normal de magisterio y esta prefectura —sede '
+        + 'administrativa de la wilaya de Tizi-Ouzou, recién creada entonces— entre alrededor de '
+        + 'quince encargos en la provincia. El inventario publicado de su archivo nombra la '
+        + 'prefectura de forma directa, pero no fija un año de finalización dentro de ese periodo; '
+        + 'solo consta el marco general de 1968-1975 del programa. El edificio es un bloque de '
+        + 'oficinas de hormigón armado revestido de enlucido a bandas naranja y crema, con vanos '
+        + 'dispuestos en una retícula regular tras un volumen de escalera saliente, situado en la '
+        + 'Avenue de la Victoire, en el centro de Tizi-Ouzou. Sigue en uso como sede de la wilaya. '
+        + 'No existe ficha de Wikidata para el edificio, y la propia ficha de Cottin-Euziol no '
+        + 'enlaza ninguna obra; esta entrada se ha reconstruido a partir del inventario de su '
+        + 'archivo y de diccionarios biográficos.',
+      it: 'Georgette Cottin-Euziol, architetta nata in Francia che ottenne la cittadinanza algerina '
+        + 'nel 1964, diresse tra il 1968 e il 1975 un vasto programma statale di costruzione in '
+        + 'Cabilia: scuole, un teatro, una scuola normale per maestri e questa prefettura — sede '
+        + 'amministrativa della wilaya di Tizi-Ouzou, allora appena creata — fra una quindicina di '
+        + "incarichi nella provincia. L'inventario pubblicato del suo fondo archivistico nomina "
+        + 'direttamente la prefettura, ma non fissa un anno di completamento entro quell\'arco; è '
+        + 'attestato solo il periodo complessivo 1968-1975 del programma. L\'edificio è un blocco '
+        + 'per uffici in cemento armato rivestito di intonaco a fasce arancioni e crema, con le '
+        + 'finestre disposte in una griglia regolare dietro un volume aggettante del vano scale, '
+        + 'situato in Avenue de la Victoire, nel centro di Tizi-Ouzou. È tuttora in uso come sede '
+        + "della wilaya. Non esiste una voce Wikidata per l'edificio, e la scheda di Cottin-Euziol "
+        + 'non collega alcuna opera; questa voce è stata ricostruita a partire dall\'inventario del '
+        + 'suo fondo archivistico e da dizionari biografici.',
+    },
+    context: null,
+    sources: [
+      {
+        kind: 'wikipedia',
+        url: 'https://en.wikipedia.org/wiki/Georgette_Cottin-Euziol',
+        title: 'Georgette Cottin-Euziol — Wikipedia',
+        license: 'CC BY-SA 4.0',
+      },
+      {
+        kind: 'wikipedia',
+        url: 'https://fr.wikipedia.org/wiki/Georgette_Cottin-Euziol',
+        title: 'Georgette Cottin-Euziol — Wikipédia',
+        license: 'CC BY-SA 4.0',
+      },
+      {
+        kind: 'publication',
+        url: 'https://journals.openedition.org/abe/6979',
+        title: 'Assia Samaï-Bouadjadja, "Le fonds d\'archives Georgette Cottin-Euziol : archive de '
+          + 'toute une vie", ABE Journal 16 (2019), DOI 10.4000/abe.6979',
+        license: null,
+      },
+      {
+        kind: 'institution',
+        url: 'https://www.openstreetmap.org/way/294949014',
+        title: 'OpenStreetMap — "Siège de la wilaya", Avenue de la Victoire, Tizi Ouzou',
+        license: 'ODbL 1.0',
+      },
+      {
+        kind: 'institution',
+        url: 'https://www.dictionnaire-creatrices.com/fiche-georgette-cottin-euziol',
+        title: 'AWARE (Archives of Women Artists, Research and Exhibitions) — "Georgette Cottin-Euziol"',
+        license: null,
+      },
+    ],
+    tier: 'deep',
   },
 ];
