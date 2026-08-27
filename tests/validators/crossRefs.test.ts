@@ -93,16 +93,103 @@ describe('validateCrossRefs', () => {
     expect(v.map((x) => x.rule)).not.toContain('floruit-consistent');
   });
 
-  it('flags two buildings within 25 km of each other', () => {
+  it('flags the same building entered twice under two ids', () => {
     const p = validPool();
-    const v = validateCrossRefs(withBuilding(p, { location: { ...p.buildings[1].location } }));
+    // A duplicate curation entry: identical name and coordinates, new id.
+    const dup = { ...p.buildings[0], id: 'b1-dup' };
+    const v = validateCrossRefs({ buildings: [...p.buildings, dup], architects: p.architects });
     expect(v.map((x) => x.rule)).toContain('possible-duplicate-site');
   });
 
   it('names both buildings in the subject of a duplicate-site violation', () => {
     const p = validPool();
-    const v = validateCrossRefs(withBuilding(p, { location: { ...p.buildings[1].location } }));
+    const dup = { ...p.buildings[0], id: 'b1-dup' };
+    const v = validateCrossRefs({ buildings: [...p.buildings, dup], architects: p.architects });
     const violation = v.find((x) => x.rule === 'possible-duplicate-site')!;
-    expect(violation.subject).toBe('b1,b2');
+    expect(violation.subject).toBe('b1,b1-dup');
+  });
+
+  it('flags the same building entered twice with realistic geocoding drift', () => {
+    const p = validPool();
+    const buildings = p.buildings.map((b) => ({ ...b }));
+    // Same building, same name, but geocoded ~0.8 km apart (e.g. one entry
+    // pinned to a street address, the other to the building/complex
+    // centroid) — comfortably outside a naively-tightened "coordinate
+    // collision" radius (0.5 km), but still the same site. The rule must
+    // still catch this via the wider radius + name match, not just an
+    // exact-coordinate clone.
+    const drifted = {
+      ...buildings[0],
+      id: 'b1-drift',
+      location: { ...buildings[0].location, lat: buildings[0].location.lat + 0.0072 },
+    };
+    const v = validateCrossRefs({ buildings: [...buildings, drifted], architects: p.architects });
+    expect(v.map((x) => x.rule)).toContain('possible-duplicate-site');
+  });
+
+  it('flags a Turkish building name across a dotless-ı transliteration difference', () => {
+    const p = validPool();
+    const buildings = p.buildings.map((b) => ({ ...b }));
+    // Same building, same coordinates, entered once with correct Turkish
+    // orthography and once with a plain-ASCII anglicized transliteration —
+    // exactly the shape a Mimar Sinan-era entry can take across two
+    // sources. Regression guard for dotless ı/İ, which have no NFD
+    // decomposition and would otherwise fragment "Kızılkule" into
+    // meaningless single-letter tokens that no longer match "Kizilkule".
+    buildings[0] = {
+      ...buildings[0],
+      name: { en: 'Kızılkule', es: 'Kızılkule', it: 'Kızılkule' },
+    };
+    const dup = {
+      ...buildings[0],
+      id: 'b1-dup',
+      name: { en: 'Kizilkule', es: 'Kizilkule', it: 'Kizilkule' },
+    };
+    const v = validateCrossRefs({ buildings: [...buildings, dup], architects: p.architects });
+    expect(v.map((x) => x.rule)).toContain('possible-duplicate-site');
+  });
+
+  it('flags the same building entered twice under a different but overlapping name', () => {
+    const p = validPool();
+    const buildings = p.buildings.map((b) => ({ ...b }));
+    buildings[0] = {
+      ...buildings[0],
+      name: { en: 'Sagrada Família', es: 'Sagrada Família', it: 'Sagrada Família' },
+    };
+    const dup = {
+      ...buildings[0],
+      id: 'b1-dup',
+      name: {
+        en: 'Temple Expiatori de la Sagrada Família',
+        es: 'Templo Expiatorio de la Sagrada Família',
+        it: 'Tempio Espiatorio della Sagrada Família',
+      },
+    };
+    const v = validateCrossRefs({ buildings: [...buildings, dup], architects: p.architects });
+    expect(v.map((x) => x.rule)).toContain('possible-duplicate-site');
+  });
+
+  it('does not flag two distinct, differently-named buildings that share a city', () => {
+    const p = validPool();
+    const buildings = p.buildings.map((b) => ({ ...b }));
+    // Real coordinates: Casa Batlló and Casa Milà, two distinct Gaudí
+    // buildings on Barcelona's Passeig de Gràcia, ~480 m apart — well
+    // within the old 25 km radius, and even within a naively-tightened
+    // few-hundred-metre radius. Only the name/architect mismatch should
+    // save this pair from being flagged.
+    buildings[0] = {
+      ...buildings[0],
+      architectId: 'a4',
+      name: { en: 'Casa Batlló', es: 'Casa Batlló', it: 'Casa Batlló' },
+      location: { city: 'Barcelona', countryCode: 'ES', lat: 41.3916, lon: 2.1649 },
+    };
+    buildings[1] = {
+      ...buildings[1],
+      architectId: 'a5',
+      name: { en: 'Casa Milà', es: 'Casa Milà', it: 'Casa Milà' },
+      location: { city: 'Barcelona', countryCode: 'ES', lat: 41.3953, lon: 2.1619 },
+    };
+    const v = validateCrossRefs({ buildings, architects: p.architects });
+    expect(v.map((x) => x.rule)).not.toContain('possible-duplicate-site');
   });
 });

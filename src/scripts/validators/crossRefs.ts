@@ -2,7 +2,85 @@ import { MOVEMENTS } from '@/data/movements';
 import type { Pool, Violation } from './schema';
 
 const EARTH_RADIUS_KM = 6371;
-const DUPLICATE_SITE_RADIUS_KM = 25;
+// `possible-duplicate-site` targets a curation mistake — the same building
+// entered twice, possibly under two ids and two slightly different names —
+// not mere proximity. At the ~40-building scale a same-metro pair was
+// almost certainly a mistake, so a 25 km radius alone was a fine proxy; at
+// ~200 buildings a metro can legitimately hold several distinct entries
+// (multiple Gaudí buildings in Barcelona, several Wright buildings in
+// Chicago, etc.), so radius alone can no longer carry the rule.
+//
+// The radius below is deliberately NOT razor-thin, and the name-similarity
+// check below it is what actually carries precision:
+//   - Precision (rejecting distinct buildings): closely-sited, genuinely
+//     distinct landmarks by the same architect (Gaudí's Casa Batlló and
+//     Casa Milà are ~0.48 km apart on Barcelona's Passeig de Gràcia) sit
+//     inside almost any radius tight enough to matter, so distance alone
+//     was never going to carry precision — that job belongs to the name
+//     gate below, which rejects that pair on name alone.
+//   - Recall (still catching real duplicates): two entries for the same
+//     building routinely sit more than a trivial "coordinate collision"
+//     distance apart when one is geocoded to a street address and the
+//     other to a building centroid — and this pool includes palace,
+//     temple and mosque *complexes* (footprints of several hundred metres)
+//     where that drift is entirely plausible. A radius tightened only far
+//     enough to defeat Casa Batlló/Milà (~0.5 km) would silently miss that
+//     realistic drift. 1.5 km stays well below "same city/metro" (the
+//     property that made the old 25 km value wrong) while comfortably
+//     covering plausible geocoding drift across one building's own site.
+const DUPLICATE_SITE_RADIUS_KM = 1.5;
+// Below this name-token containment ratio, two buildings are treated as
+// distinct even if they sit within the radius above.
+const NAME_SIMILARITY_THRESHOLD = 0.7;
+
+// Small, purely grammatical words in the languages this pool draws names
+// from — excluded so they don't inflate the containment ratio between two
+// otherwise-unrelated names.
+const NAME_STOPWORDS = new Set([
+  'the', 'a', 'an', 'of', 'and', 'de', 'del', 'la', 'le', 'lo', 'el', 'los', 'las', 'di', 'da',
+]);
+
+// Turkish letters whose lowercase/uppercase forms don't round-trip through
+// NFD + accent-stripping the way other Latin diacritics do (dotless ı/İ
+// have no NFD decomposition at all, so they'd otherwise survive into the
+// ASCII strip below and get replaced by a space, fragmenting one word into
+// several meaningless tokens — e.g. "Kızılkule" -> "k", "z", "lkule").
+// Folded to their plain-ASCII base letter before normalization so Turkish
+// names (this pool curates Mimar Sinan's work) tokenize as whole words.
+const TURKISH_FOLD: Record<string, string> = {
+  İ: 'I', ı: 'i', Ğ: 'G', ğ: 'g', Ş: 'S', ş: 's', Ç: 'C', ç: 'c', Ö: 'O', ö: 'o', Ü: 'U', ü: 'u',
+};
+
+function normalizedNameTokens(name: string): Set<string> {
+  const cleaned = name
+    .replace(/[İıĞğŞşÇçÖöÜü]/g, (ch) => TURKISH_FOLD[ch])
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // strip combining accents (NFD diacritics)
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ');
+  return new Set(cleaned.split(/\s+/).filter((t) => t.length > 0 && !NAME_STOPWORDS.has(t)));
+}
+
+// A containment ratio (shared tokens over the *smaller* name's token count)
+// rather than a symmetric similarity: it's built to recognize one name as a
+// fuller form of the other — e.g. "Sagrada Família" is entirely contained in
+// "Temple Expiatori de la Sagrada Família" — which is exactly the shape a
+// duplicate-entered-under-a-different-name mistake takes.
+//
+// Assumes `name.en` is a Latin-script (transliterated, where needed) form —
+// the only script this tokenizer folds/strips correctly. If a curated `en`
+// name ever holds Arabic, Japanese, Cyrillic or Greek characters, both
+// token sets would collapse to empty here and the size===0 guard below
+// would silently skip the pair — a genuine duplicate missed with no error,
+// distinct from the empty-string case `localized-complete` already catches.
+function namesLikelySameBuilding(a: string, b: string): boolean {
+  const tokensA = normalizedNameTokens(a);
+  const tokensB = normalizedNameTokens(b);
+  if (tokensA.size === 0 || tokensB.size === 0) return false;
+  let shared = 0;
+  for (const t of tokensA) if (tokensB.has(t)) shared += 1;
+  return shared / Math.min(tokensA.size, tokensB.size) >= NAME_SIMILARITY_THRESHOLD;
+}
 
 function toRad(deg: number): number {
   return (deg * Math.PI) / 180;
@@ -133,18 +211,22 @@ export function validateCrossRefs(pool: Pool): Violation[] {
   }
 
   // --- possible-duplicate-site ---
+  // Flags a likely curation mistake, not proximity: both a tight coordinate
+  // match AND a name-similarity match are required, so two distinct,
+  // differently-named buildings that merely share a city (or even a block)
+  // never trip this.
   for (let i = 0; i < pool.buildings.length; i += 1) {
     for (let j = i + 1; j < pool.buildings.length; j += 1) {
       const bi = pool.buildings[i];
       const bj = pool.buildings[j];
       const distance = haversineKm(bi.location, bj.location);
-      if (distance <= DUPLICATE_SITE_RADIUS_KM) {
-        out.push({
-          rule: 'possible-duplicate-site',
-          subject: `${bi.id},${bj.id}`,
-          detail: `${bi.id} and ${bj.id} are ${distance.toFixed(1)} km apart (within ${DUPLICATE_SITE_RADIUS_KM} km)`,
-        });
-      }
+      if (distance > DUPLICATE_SITE_RADIUS_KM) continue;
+      if (!namesLikelySameBuilding(bi.name.en, bj.name.en)) continue;
+      out.push({
+        rule: 'possible-duplicate-site',
+        subject: `${bi.id},${bj.id}`,
+        detail: `${bi.id} ("${bi.name.en}") and ${bj.id} ("${bj.name.en}") are ${distance.toFixed(3)} km apart with near-identical names — likely the same building entered twice (within ${DUPLICATE_SITE_RADIUS_KM} km, name-similarity ≥ ${NAME_SIMILARITY_THRESHOLD})`,
+      });
     }
   }
 
