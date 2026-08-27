@@ -6,13 +6,22 @@ import type { Architect } from '@/types/architect';
 // curation script (src/scripts/buildCuratedPool.ts) derives both from each
 // architect's buildings and overwrites whatever is typed here.
 //
-// Three of the twelve practices below are partnerships in which the woman
-// named here worked jointly with a male partner (Alison Smithson with Peter
-// Smithson, Eldred Evans with David Shalev, Amanda Levete with Jan Kaplický).
-// The schema carries one architect per building, and §3 of the Wave 5
-// contract allows a practice's principals to be defined as architects; the
-// joint authorship is stated explicitly in every portrait and dossier rather
-// than quietly dropped.
+// Several of the practices below are genuine partnerships, recorded per
+// Ruling 25 (progress.md): `architectId` on the building carries the
+// conventional/canonical credit and `coArchitects` carries the rest, so the
+// joint authorship is a schema fact rather than only prose. Alison Smithson
+// (building architectId) with Peter Smithson (coArchitects) — a genuinely
+// symmetric partnership per Wikidata P84 order and the firm's own "Alison
+// and Peter Smithson" convention. Eldred Evans (architectId) with David
+// Shalev (coArchitects) — the firm's own name, "Evans & Shalev", already
+// orders them this way. Jan Kaplický (architectId) with Amanda Levete
+// (coArchitects) on Selfridges Birmingham — Kaplický is listed first in
+// both the Wikipedia infobox and body text, the conventional credit for
+// that building; Levete is owned and fully defined by the `europe` slice
+// (MAAT Lisbon) and is referenced here by id only, not redefined. Yvonne
+// Farrell (architectId) with Shelley McNamara (coArchitects) on the Loreto
+// Community School — both women, so no Ruling 25 concern; order follows
+// the practice's own conventional citation order ("Farrell and McNamara").
 export const EUROPE_BRITISH_ARCHITECTS: Architect[] = [
   {
     id: 'christopher-wren',
@@ -312,30 +321,138 @@ export const EUROPE_BRITISH_ARCHITECTS: Architect[] = [
     ],
   },
   {
-    id: 'amanda-levete',
-    wikidataId: 'Q440786',
-    name: 'Amanda Levete',
-    alternativeNames: ['Amanda Jane Levete'],
-    gender: 'woman',
-    born: 1955,
-    died: null,
-    floruit: { start: 1994, end: 2026, override: false },
+    id: 'jan-kaplicky',
+    wikidataId: 'Q555682',
+    name: 'Jan Kaplický',
+    alternativeNames: ['Jan Kaplicky'],
+    gender: 'man',
+    born: 1937,
+    died: 2009,
+    floruit: { start: 1979, end: 2003, override: false },
     movements: [{ id: 'neo-futurism', primary: true }, { id: 'high-tech', primary: false }],
     workRegions: [],
     workCentroid: { lat: 0, lon: 0 },
     primaryTypology: 'commercial',
     signatureMaterial: 'mixed',
     portrait: {
-      en: "Amanda Levete was born in Bridgend in south Wales and trained at the Architectural Association, working first for Alsop & Lyall and then in Richard Rogers's office. In 1989 she became a partner at Future Systems alongside Jan Kaplický, and for twenty years the two produced the most frankly curvilinear buildings in Britain — the Lord's Media Centre, built like a boat hull in welded aluminium and winner of the 1999 Stirling Prize, and the Selfridges store at Birmingham, whose skin of aluminium discs made a department store into a civic landmark. Computer-aided design let them build shapes British practice had only drawn. Since founding AL_A in 2009 she has completed the Victoria and Albert Museum's Exhibition Road courtyard, the MAAT in Lisbon and Central Embassy in Bangkok. She won the Jane Drew Prize in 2017.",
-      es: "Amanda Levete nació en Bridgend, en el sur de Gales, y se formó en la Architectural Association; trabajó primero en Alsop & Lyall y después en el estudio de Richard Rogers. En 1989 entró como socia en Future Systems junto a Jan Kaplický, y durante veinte años ambos produjeron los edificios más abiertamente curvilíneos de Gran Bretaña: el Media Centre de Lord's, construido como un casco de barco en aluminio soldado y ganador del Stirling Prize de 1999, y los almacenes Selfridges de Birmingham, cuya piel de discos de aluminio convirtió unos grandes almacenes en un hito cívico. El diseño asistido por ordenador les permitió construir formas que la profesión británica solo había dibujado. Desde que fundó AL_A en 2009 ha terminado el patio de Exhibition Road del Victoria and Albert Museum, el MAAT de Lisboa y Central Embassy en Bangkok. Ganó el Jane Drew Prize en 2017.",
-      it: "Amanda Levete nacque a Bridgend, nel Galles meridionale, e si formò all'Architectural Association; lavorò prima da Alsop & Lyall e poi nello studio di Richard Rogers. Nel 1989 divenne socia di Future Systems accanto a Jan Kaplický, e per vent'anni i due realizzarono gli edifici più apertamente curvilinei della Gran Bretagna: il Media Centre di Lord's, costruito come uno scafo in alluminio saldato e vincitore dello Stirling Prize 1999, e il negozio Selfridges di Birmingham, la cui pelle di dischi di alluminio ha trasformato un grande magazzino in un monumento urbano. La progettazione assistita dal calcolatore permise loro di costruire forme che la professione britannica aveva soltanto disegnato. Dalla fondazione di AL_A nel 2009 ha completato la corte di Exhibition Road al Victoria and Albert Museum, il MAAT di Lisbona e Central Embassy a Bangkok. Ha vinto il Jane Drew Prize nel 2017.",
+      en: "Jan Kaplický was born in Prague in 1937 to a sculptor and a botanical illustrator, trained at the city's College of Applied Arts, and left for London in September 1968 rather than live under the Soviet occupation that followed the Prague Spring. He worked successively for Denys Lasdun, for Piano & Rogers on the Centre Pompidou team, and for Foster Associates before founding Future Systems in 1979 with David Nixon, joined from 1989 by Amanda Levete as partner. Kaplický distrusted the rectangular room on principle — he liked to ask where it was written that buildings had to be boxes — and pursued organic, aerodynamic forms through the Lord's Media Centre and the Selfridges store in Birmingham. A late commission to rebuild Prague's National Library collapsed in 2008 under fierce local opposition to its bulging form; he died in his native city in January 2009.",
+      es: "Jan Kaplický nació en Praga en 1937, hijo de un escultor y una ilustradora botánica, se formó en la Escuela de Artes Aplicadas de la ciudad y se marchó a Londres en 1968 antes que vivir bajo la ocupación soviética. Trabajó para Denys Lasdun, para Piano & Rogers en el equipo del Centro Pompidou y para Foster Associates antes de fundar Future Systems en 1979 junto a David Nixon, a quienes se unió desde 1989 Amanda Levete como socia. Desconfiaba por principio de la habitación rectangular —le gustaba preguntar dónde estaba escrito que los edificios debían ser cajas— y persiguió formas orgánicas y aerodinámicas en el Media Centre de Lord's y en los almacenes Selfridges de Birmingham. Un encargo tardío para reconstruir la Biblioteca Nacional de Praga se hundió en 2008 ante la oposición local a su forma abultada; murió en su ciudad natal en enero de 2009.",
+      it: "Jan Kaplický nacque a Praga nel 1937, figlio di uno scultore e di un'illustratrice botanica, si formò alla Scuola di Arti Applicate della città e partì per Londra nel settembre 1968 piuttosto che vivere sotto l'occupazione sovietica seguita alla Primavera di Praga. Lavorò successivamente per Denys Lasdun, per Piano & Rogers nel gruppo del Centre Pompidou e per Foster Associates prima di fondare Future Systems nel 1979 insieme a David Nixon, cui si unì dal 1989 Amanda Levete come socia. Kaplický diffidava per principio della stanza rettangolare — amava chiedere dove fosse scritto che gli edifici dovessero essere scatole — e inseguì forme organiche e aerodinamiche nel Media Centre di Lord's e nel negozio Selfridges di Birmingham. Un tardo incarico per ricostruire la Biblioteca Nazionale di Praga naufragò nel 2008 di fronte a una forte opposizione locale alla sua forma rigonfia; morì nella sua città natale nel gennaio 2009.",
     },
-    awards: ['Stirling Prize', 'Jane Drew Prize', 'Commander of the Order of the British Empire'],
+    awards: ['Stirling Prize', 'RIBA Award for Architecture'],
     tier: 'canon',
     context: null,
     sources: [
-      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q440786', title: 'Amanda Levete (Q440786)', license: null },
-      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Amanda_Levete', title: 'Amanda Levete', license: 'CC BY-SA 4.0' },
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q555682', title: 'Jan Kaplický (Q555682)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Jan_Kaplick%C3%BD', title: 'Jan Kaplický', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    id: 'peter-smithson',
+    wikidataId: 'Q15056051',
+    name: 'Peter Smithson',
+    alternativeNames: ['Peter Denham Smithson'],
+    gender: 'man',
+    born: 1923,
+    died: 2003,
+    floruit: { start: 1954, end: 1993, override: false },
+    movements: 'unaffiliated',
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'housing',
+    signatureMaterial: 'brick',
+    portrait: {
+      en: "Peter Smithson was born in Stockton-on-Tees in 1923 and studied architecture and town planning at King's College, Durham, his training interrupted by wartime service with the Madras Sappers and Miners in India and Burma. He met Alison Gill at Durham; they married in 1949 and opened a joint practice the following year, working together until her death in 1993 with every commission published under both names. Winning the competition for Hunstanton School in 1949 gave the pair, and the term New Brutalism, their first public identity; the Economist Building and Robin Hood Gardens followed, alongside a large body of writing and teaching that carried their arguments further than their small built output could. Peter was the more active theorist of Team 10's 1953 revolt against orthodox CIAM planning, and later taught at Bath and the Architectural Association.",
+      es: "Peter Smithson nació en Stockton-on-Tees en 1923 y estudió arquitectura y urbanismo en el King's College de Durham, formación interrumpida por el servicio con los zapadores de Madrás en la India y Birmania. Conoció a Alison Gill en Durham; se casaron en 1949 y abrieron un estudio conjunto al año siguiente, y trabajaron juntos hasta la muerte de ella en 1993, con cada encargo publicado bajo ambos nombres. Ganar el concurso de Hunstanton en 1949 dio a la pareja, y al término nuevo brutalismo, su primera identidad pública; siguieron el edificio del Economist y Robin Hood Gardens, junto a una obra escrita y docente que llevó sus argumentos más lejos de lo que pudo su reducida obra construida. Peter fue el teórico más activo en la revuelta del Team 10 de 1953 contra el planeamiento ortodoxo del CIAM, y después enseñó en Bath y en la Architectural Association.",
+      it: "Peter Smithson nacque a Stockton-on-Tees nel 1923 e studiò architettura e urbanistica al King's College di Durham, formazione interrotta dal servizio bellico con gli zappatori di Madras in India e Birmania. Conobbe Alison Gill a Durham; si sposarono nel 1949 e aprirono uno studio comune l'anno seguente, lavorando insieme fino alla morte di lei nel 1993, con ogni incarico pubblicato a nome di entrambi. Vincere il concorso per la scuola di Hunstanton nel 1949 diede alla coppia, e al termine New Brutalism, la loro prima identità pubblica; seguirono l'Economist Building e Robin Hood Gardens, insieme a una vasta opera scritta e didattica che portò le loro tesi più lontano di quanto potesse la loro esigua opera costruita. Peter fu il teorico più attivo nella rivolta del Team 10 del 1953 contro la pianificazione ortodossa del CIAM, e insegnò poi a Bath e all'Architectural Association.",
+    },
+    awards: [],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q15056051', title: 'Peter Smithson (Q15056051)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Peter_Smithson', title: 'Peter Smithson', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    id: 'david-shalev',
+    wikidataId: 'Q20965915',
+    name: 'David Shalev',
+    alternativeNames: [],
+    gender: 'man',
+    born: 1934,
+    died: 2018,
+    floruit: { start: 1964, end: 2008, override: false },
+    movements: 'unaffiliated',
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: "David Shalev was born in Jerusalem in 1934 and trained in Haifa, in a school he later described as an outpost of the Bauhaus set down beside an ancient landscape. He moved to London and met Eldred Evans in 1963; from 1964 until 2008 they lived and worked together as Evans & Shalev, producing some hundred and fifty projects credited to both partners. Newport High School, won in open competition in 1967, gave the practice its first major public commission; the Crown Courts at Truro and the Quincentenary Library at Jesus College, Cambridge, followed, and Tate St Ives, built into a cliff on the site of a demolished gasholder, became its best-known work. Shalev also taught at the Architectural Association and later at Bath, and died in London in January 2018.",
+      es: "David Shalev nació en Jerusalén en 1934 y se formó en Haifa, en una escuela que más tarde describió como un puesto avanzado de la Bauhaus asentado junto a un paisaje milenario. Se trasladó a Londres y conoció a Eldred Evans en 1963; desde 1964 hasta 2008 vivieron y trabajaron juntos como Evans & Shalev, produciendo un centenar y medio de proyectos firmados por ambos socios. La escuela secundaria de Newport, ganada en concurso abierto en 1967, dio al estudio su primer gran encargo público; siguieron los juzgados de Truro y la Quincentenary Library del Jesus College de Cambridge, y la Tate St Ives, construida en un acantilado sobre el solar de un gasómetro demolido, se convirtió en su obra más conocida. Shalev enseñó también en la Architectural Association y después en Bath, y murió en Londres en enero de 2018.",
+      it: "David Shalev nacque a Gerusalemme nel 1934 e si formò a Haifa, in una scuola che in seguito descrisse come un avamposto del Bauhaus posato accanto a un paesaggio millenario. Si trasferì a Londra e conobbe Eldred Evans nel 1963; dal 1964 al 2008 vissero e lavorarono insieme come Evans & Shalev, producendo circa centocinquanta progetti firmati da entrambi i soci. La scuola secondaria di Newport, vinta in concorso aperto nel 1967, diede allo studio il suo primo grande incarico pubblico; seguirono il tribunale di Truro e la Quincentenary Library del Jesus College a Cambridge, e la Tate St Ives, costruita in una scogliera sul sito di un gasometro demolito, ne divenne l'opera più nota. Shalev insegnò anche all'Architectural Association e poi a Bath, e morì a Londra nel gennaio 2018.",
+    },
+    awards: [],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q20965915', title: 'David Shalev (Q20965915)', license: null },
+      { kind: 'publication', url: 'https://www.architectsjournal.co.uk/news/obituary-tate-st-ives-architect-david-shalev', title: 'Obituary: Tate St Ives architect David Shalev', license: null },
+    ],
+  },
+  {
+    id: 'yvonne-farrell',
+    wikidataId: 'Q16151248',
+    name: 'Yvonne Farrell',
+    alternativeNames: [],
+    gender: 'woman',
+    born: 1951,
+    died: null,
+    floruit: { start: 1985, end: 2026, override: false },
+    movements: 'unaffiliated',
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'educational',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: "Yvonne Farrell was born in Tullamore, County Offaly, in 1951 and trained at University College Dublin, where she has taught since 1976. In 1978 she and Shelley McNamara founded Grafton Architects, naming the practice after the Dublin street of their first office rather than after themselves. Ireland's building programme in the 1980s and 1990s gave the young practice little to build, and its reputation grew instead through teaching and through small, exacting commissions — schools, a library, a health centre — before the Milan economics university Bocconi and the engineering campus UTEC in Lima brought international recognition for a manner of building in raw concrete, section and light rather than surface. Farrell and McNamara shared the 2020 Pritzker Prize, the first won by an Irish practice, and the RIBA Royal Gold Medal the same year.",
+      es: "Yvonne Farrell nació en Tullamore, condado de Offaly, en 1951 y se formó en el University College de Dublín, donde enseña desde 1976. En 1978 fundó junto a Shelley McNamara el estudio Grafton Architects, con un nombre tomado de la calle dublinesa de su primer despacho y no de ellas mismas. El programa constructivo de Irlanda en los ochenta y noventa dio poco trabajo al joven estudio, y su prestigio creció más bien por la docencia y por encargos pequeños y exigentes —escuelas, una biblioteca, un centro de salud— antes de que la universidad Bocconi de Milán y el campus de ingeniería UTEC de Lima trajeran reconocimiento internacional a una manera de construir en hormigón crudo, sección y luz antes que en superficie. Farrell y McNamara compartieron el Pritzker de 2020, el primero ganado por un estudio irlandés, y la Royal Gold Medal del RIBA el mismo año.",
+      it: "Yvonne Farrell nacque a Tullamore, contea di Offaly, nel 1951 e si formò allo University College di Dublino, dove insegna dal 1976. Nel 1978 fondò con Shelley McNamara lo studio Grafton Architects, chiamato non da loro stesse ma dalla via dublinese del loro primo ufficio. Il programma edilizio irlandese degli anni Ottanta e Novanta diede poco lavoro al giovane studio, e la sua fama crebbe piuttosto attraverso l'insegnamento e commesse piccole ed esigenti — scuole, una biblioteca, un centro sanitario — prima che l'università economica Bocconi di Milano e il campus di ingegneria UTEC di Lima portassero un riconoscimento internazionale a un modo di costruire fondato sul cemento grezzo, sulla sezione e sulla luce più che sulla superficie. Farrell e McNamara condivisero il Pritzker 2020, il primo vinto da uno studio irlandese, e la Royal Gold Medal del RIBA lo stesso anno.",
+    },
+    awards: ['Pritzker Architecture Prize', 'RIBA Royal Gold Medal'],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q16151248', title: 'Yvonne Farrell (Q16151248)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Yvonne_Farrell', title: 'Yvonne Farrell', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    id: 'shelley-mcnamara',
+    wikidataId: 'Q21132821',
+    name: 'Shelley McNamara',
+    alternativeNames: [],
+    gender: 'woman',
+    born: 1952,
+    died: null,
+    floruit: { start: 1985, end: 2026, override: false },
+    movements: 'unaffiliated',
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'educational',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: "Shelley McNamara was born in Lisdoonvarna, County Clare, in 1952 and studied architecture at University College Dublin, where she began teaching in 1976 alongside her studio partner Yvonne Farrell. The two founded Grafton Architects in 1978 and spent two quiet decades on modest Irish commissions — the Urban Institute at UCD, a community school at Milford in Donegal, an arts centre at Navan — while building an international teaching career that took McNamara to Yale's Louis Kahn chair and to visiting posts in Switzerland. She has described the practice's method as building the structure first and letting the space follow from it rather than the reverse, a principle legible in the terraced, top-lit halls of the Bocconi University extension in Milan. She and Farrell received the Pritzker Prize and the RIBA Royal Gold Medal in 2020.",
+      es: "Shelley McNamara nació en Lisdoonvarna, condado de Clare, en 1952 y estudió arquitectura en el University College de Dublín, donde empezó a enseñar en 1976 junto a su socia de estudio Yvonne Farrell. Ambas fundaron Grafton Architects en 1978 y pasaron dos décadas discretas en encargos irlandeses modestos —el Urban Institute del UCD, una escuela comunitaria en Milford, condado de Donegal, un centro de arte en Navan— mientras construían una carrera docente internacional que llevó a McNamara a la cátedra Louis Kahn de Yale y a estancias en Suiza. Ha descrito el método del estudio como levantar primero la estructura y dejar que el espacio nazca de ella, y no al revés, un principio legible en las salas escalonadas e iluminadas cenitalmente de la ampliación de la Universidad Bocconi en Milán. Ella y Farrell recibieron el Pritzker y la Royal Gold Medal del RIBA en 2020.",
+      it: "Shelley McNamara nacque a Lisdoonvarna, contea di Clare, nel 1952 e studiò architettura allo University College di Dublino, dove iniziò a insegnare nel 1976 accanto alla socia di studio Yvonne Farrell. Le due fondarono Grafton Architects nel 1978 e trascorsero due decenni discreti in commesse irlandesi modeste — l'Urban Institute dello UCD, una scuola comunitaria a Milford, contea di Donegal, un centro d'arte a Navan — costruendo intanto una carriera didattica internazionale che portò McNamara alla cattedra Louis Kahn di Yale e a incarichi in Svizzera. Ha descritto il metodo dello studio come costruire prima la struttura e lasciare che lo spazio ne nasca, e non il contrario, principio leggibile nelle sale digradanti e illuminate dall'alto dell'ampliamento dell'Università Bocconi a Milano. Lei e Farrell hanno ricevuto il Pritzker e la Royal Gold Medal del RIBA nel 2020.",
+    },
+    awards: ['Pritzker Architecture Prize', 'RIBA Royal Gold Medal'],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q21132821', title: 'Shelley McNamara (Q21132821)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Shelley_McNamara', title: 'Shelley McNamara', license: 'CC BY-SA 4.0' },
     ],
   },
 ];

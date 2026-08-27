@@ -7,9 +7,12 @@ import type { Building } from '@/types/building';
 // files with a named author are used. `image.width` / `image.height` are
 // left at 0 for the later dimension-recording pass.
 //
-// The twelve sites are deliberately spread across the two countries and no
-// two are within 25 km of each other, so the pool's `possible-duplicate-site`
-// rule stays silent on this slice.
+// The thirteen sites (a Task 9 fix pass added Loreto Community School,
+// Milford, Co. Donegal, to strengthen Irish representation and to carry
+// the slice's previously-undefined Grafton Architects) are deliberately
+// spread across the two countries and no two are within 25 km of each
+// other, so the pool's `possible-duplicate-site` rule stays silent on this
+// slice.
 export const EUROPE_BRITISH_BUILDINGS: Building[] = [
   {
     id: 'st-pauls-cathedral',
@@ -365,9 +368,9 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
       it: "Una torre in cemento con uffici e laboratori, coronata da un serbatoio d'acqua rialzato e con due aule a sbalzo su una grande mensola, si erge contro officine basse coperte da prismi in vetratura brevettata ruotati di quarantacinque gradi rispetto alla pianta.",
     },
     program: {
-      en: 'Commissioned in 1957 by the University of Leicester for its engineering department, the building had to hold offices, laboratories, two lecture theatres and heavy machine workshops on a cramped site, with a water tank raised high enough to serve the hydraulics laboratory.',
-      es: 'Encargado en 1957 por la Universidad de Leicester para su departamento de ingeniería, el edificio debía reunir despachos, laboratorios, dos aulas y talleres de maquinaria pesada en un solar angosto, con un depósito de agua elevado lo bastante para alimentar el laboratorio de hidráulica.',
-      it: "Commissionato nel 1957 dall'Università di Leicester per il dipartimento di ingegneria, l'edificio doveva riunire uffici, laboratori, due aule e officine con macchinari pesanti su un lotto angusto, con un serbatoio d'acqua abbastanza alto da servire il laboratorio di idraulica.",
+      en: 'The University of Leicester, newly chartered in 1957, commissioned Stirling and Gowan that year for its engineering department; the executed design is dated to 1959 and construction ran until completion in 1963. The building had to hold offices, laboratories, two lecture theatres and heavy machine workshops on a cramped site, with a water tank raised high enough to serve the hydraulics laboratory.',
+      es: 'La Universidad de Leicester, recién constituida por carta real en 1957, encargó ese mismo año a Stirling y Gowan el edificio de su departamento de ingeniería; el proyecto ejecutado data de 1959 y las obras se prolongaron hasta su conclusión en 1963. Debía reunir despachos, laboratorios, dos aulas y talleres de maquinaria pesada en un solar angosto, con un depósito de agua elevado lo bastante para alimentar el laboratorio de hidráulica.',
+      it: "L'Università di Leicester, costituita per statuto regio nel 1957, commissionò quello stesso anno a Stirling e Gowan l'edificio per il proprio dipartimento di ingegneria; il progetto esecutivo risale al 1959 e i lavori proseguirono fino al completamento nel 1963. Doveva riunire uffici, laboratori, due aule e officine con macchinari pesanti su un lotto angusto, con un serbatoio d'acqua abbastanza alto da servire il laboratorio di idraulica.",
     },
     heritage: 'national',
     currentUse: {
@@ -405,6 +408,7 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
       it: "Garden Building, St Hilda's College",
     },
     architectId: 'alison-smithson',
+    coArchitects: ['peter-smithson'],
     location: { city: 'Oxford', countryCode: 'GB', lat: 51.74799, lon: -1.24556 },
     inception: 1968,
     completed: 1970,
@@ -512,6 +516,7 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
       it: 'Tate St Ives',
     },
     architectId: 'eldred-evans',
+    coArchitects: ['david-shalev'],
     location: { city: 'St Ives', countryCode: 'GB', lat: 50.21472, lon: -5.48472 },
     inception: 1988,
     completed: 1993,
@@ -616,7 +621,8 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
       es: 'Edificio Selfridges de Birmingham',
       it: 'Edificio Selfridges di Birmingham',
     },
-    architectId: 'amanda-levete',
+    architectId: 'jan-kaplicky',
+    coArchitects: ['amanda-levete'],
     location: { city: 'Birmingham', countryCode: 'GB', lat: 52.47780, lon: -1.89226 },
     inception: 2001,
     completed: 2003,
@@ -649,16 +655,71 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
       height: 0,
     },
     dossier: {
-      en: "Birmingham demolished its 1960s Bull Ring and, in rebuilding it, Selfridges' chief executive Vittorio Radice asked Future Systems for a store worth travelling to. Amanda Levete and Jan Kaplický gave him a building with no façade, no windows and no straight lines: a soft bulging mass that leans over the pavement, drops to meet the churchyard of St Martin's, and is skinned in some fifteen thousand anodised aluminium discs mounted proud of a blue-rendered surface, so that the whole thing shifts and glitters as the light changes. The form was buildable only because computer-aided design allowed a steel frame to be wrapped in sprayed concrete, a technique closer to tunnelling than to retail. Inside, the interest is a pair of atria crossed by escalators; outside is deliberately blank, a shop that sells itself as an object on the skyline instead of through a window display. It was completed in 2003 at a cost of about £60 million, and it turned the tail end of Birmingham's city centre into a destination.",
-      es: 'Birmingham demolió su Bull Ring de los años sesenta y, al reconstruirlo, el consejero delegado de Selfridges, Vittorio Radice, pidió a Future Systems una tienda por la que mereciera la pena viajar. Amanda Levete y Jan Kaplický le dieron un edificio sin fachada, sin ventanas y sin una sola línea recta: una masa blanda y abombada que se inclina sobre la acera, baja a encontrarse con el cementerio de St Martin y va forrada con unos quince mil discos de aluminio anodizado montados separados de un fondo revocado en azul, de manera que el conjunto se mueve y destella según cambia la luz. La forma solo fue construible porque el diseño asistido por ordenador permitió envolver un esqueleto de acero en hormigón proyectado, una técnica más próxima a la obra de túneles que al comercio. Se terminó en 2003 con un coste de unos sesenta millones de libras. Dentro, lo interesante son dos atrios cruzados por escaleras mecánicas; fuera, la ciega deliberación de un comercio que se vende como objeto en el perfil de la ciudad.',
-      it: "Birmingham demolì il suo Bull Ring degli anni Sessanta e, nel ricostruirlo, l'amministratore delegato di Selfridges Vittorio Radice chiese a Future Systems un negozio per cui valesse la pena viaggiare. Amanda Levete e Jan Kaplický gli diedero un edificio senza facciata, senza finestre e senza una sola linea retta: una massa morbida e rigonfia che si sporge sul marciapiede, scende a incontrare il sagrato di St Martin ed è rivestita da circa quindicimila dischi di alluminio anodizzato montati staccati da un fondo intonacato di blu, sicché l'insieme si muove e scintilla al variare della luce. La forma fu costruibile solo perché la progettazione assistita permise di avvolgere uno scheletro d'acciaio in calcestruzzo spruzzato, tecnica più vicina allo scavo di gallerie che al commercio. Fu completato nel 2003 con una spesa di circa sessanta milioni di sterline. Dentro, l'interesse sta in due atri attraversati da scale mobili; fuori, la cecità voluta di un negozio che si vende come oggetto nel profilo della città.",
+      en: "Birmingham demolished its 1960s Bull Ring and, in rebuilding it, Selfridges' chief executive Vittorio Radice asked Future Systems for a store worth travelling to. Jan Kaplický and Amanda Levete gave him a building with no façade, no windows and no straight lines: a soft bulging mass that leans over the pavement, drops to meet the churchyard of St Martin's, and is skinned in some fifteen thousand anodised aluminium discs mounted proud of a blue-rendered surface, so that the whole thing shifts and glitters as the light changes. The form was buildable only because computer-aided design allowed a steel frame to be wrapped in sprayed concrete, a technique closer to tunnelling than to retail. Inside, the interest is a pair of atria crossed by escalators; outside is deliberately blank, a shop that sells itself as an object on the skyline instead of through a window display. It was completed in 2003 at a cost of about £60 million, and it turned the tail end of Birmingham's city centre into a destination.",
+      es: 'Birmingham demolió su Bull Ring de los años sesenta y, al reconstruirlo, el consejero delegado de Selfridges, Vittorio Radice, pidió a Future Systems una tienda por la que mereciera la pena viajar. Jan Kaplický y Amanda Levete le dieron un edificio sin fachada, sin ventanas y sin una sola línea recta: una masa blanda y abombada que se inclina sobre la acera, baja a encontrarse con el cementerio de St Martin y va forrada con unos quince mil discos de aluminio anodizado montados separados de un fondo revocado en azul, de manera que el conjunto se mueve y destella según cambia la luz. La forma solo fue construible porque el diseño asistido por ordenador permitió envolver un esqueleto de acero en hormigón proyectado, una técnica más próxima a la obra de túneles que al comercio. Se terminó en 2003 con un coste de unos sesenta millones de libras. Dentro, lo interesante son dos atrios cruzados por escaleras mecánicas; fuera, la ciega deliberación de un comercio que se vende como objeto en el perfil de la ciudad.',
+      it: "Birmingham demolì il suo Bull Ring degli anni Sessanta e, nel ricostruirlo, l'amministratore delegato di Selfridges Vittorio Radice chiese a Future Systems un negozio per cui valesse la pena viaggiare. Jan Kaplický e Amanda Levete gli diedero un edificio senza facciata, senza finestre e senza una sola linea retta: una massa morbida e rigonfia che si sporge sul marciapiede, scende a incontrare il sagrato di St Martin ed è rivestita da circa quindicimila dischi di alluminio anodizzato montati staccati da un fondo intonacato di blu, sicché l'insieme si muove e scintilla al variare della luce. La forma fu costruibile solo perché la progettazione assistita permise di avvolgere uno scheletro d'acciaio in calcestruzzo spruzzato, tecnica più vicina allo scavo di gallerie che al commercio. Fu completato nel 2003 con una spesa di circa sessanta milioni di sterline. Dentro, l'interesse sta in due atri attraversati da scale mobili; fuori, la cecità voluta di un negozio che si vende come oggetto nel profilo della città.",
     },
     context: null,
     sources: [
       { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q7448350', title: 'Selfridges Building, Birmingham (Q7448350)', license: null },
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Selfridges_Birmingham', title: 'Selfridges Birmingham', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Jan_Kaplick%C3%BD', title: 'Jan Kaplický', license: 'CC BY-SA 4.0' },
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Amanda_Levete', title: 'Amanda Levete', license: 'CC BY-SA 4.0' },
     ],
     tier: 'canon',
+  },
+  {
+    id: 'loreto-community-school-milford',
+    wikidataId: 'Q42174114',
+    name: {
+      en: 'Loreto Community School',
+      es: 'Loreto Community School',
+      it: 'Loreto Community School',
+    },
+    architectId: 'yvonne-farrell',
+    coArchitects: ['shelley-mcnamara'],
+    location: { city: 'Milford', countryCode: 'IE', lat: 55.08894, lon: -7.70901 },
+    inception: 2004,
+    completed: 2006,
+    demolished: null,
+    typology: 'educational',
+    materials: ['concrete', 'mixed'],
+    structure: {
+      en: 'A concrete-blockwork frame is folded into four linked wings stepped down the hillside, roofed by a single undulating zinc standing-seam skin that rises and falls with the sloping site.',
+      es: 'Un armazón de bloque de hormigón se pliega en cuatro alas enlazadas escalonadas por la ladera, cubiertas por una sola piel ondulada de zinc a junta alzada que sube y baja con el terreno en pendiente.',
+      it: "Un'ossatura in blocchi di cemento si piega in quattro ali collegate degradanti lungo il pendio, coperte da un'unica pelle ondulata in zinco a giunti rialzati che sale e scende con il terreno in pendenza.",
+    },
+    program: {
+      en: 'Commissioned by the Department of Education and Science to replace a 1970s boarding school for the Loreto Sisters while the existing school stayed open, it now serves as a coeducational community school for roughly seven hundred pupils.',
+      es: 'Encargado por el Department of Education and Science para sustituir un internado de las hermanas de Loreto de los años setenta mientras el colegio existente seguía abierto, funciona hoy como escuela comunitaria mixta para unos setecientos alumnos.',
+      it: 'Commissionato dal Department of Education and Science per sostituire un collegio delle suore di Loreto degli anni Settanta mentre la scuola esistente restava aperta, funziona oggi come scuola comunitaria mista per circa settecento alunni.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Coeducational community secondary school in regular use.',
+      es: 'Escuela comunitaria de secundaria mixta en uso regular.',
+      it: 'Scuola comunitaria secondaria mista in uso regolare.',
+    },
+    detailRect: { x: 0.35, y: 0.45, w: 0.3, h: 0.3 },
+    image: {
+      commonsFile: 'Loreto Community School - geograph.org.uk - 1194054.jpg',
+      photographer: 'sarah gallagher',
+      license: 'CC BY-SA 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Loreto_Community_School_-_geograph.org.uk_-_1194054.jpg',
+      width: 0,
+      height: 0,
+    },
+    dossier: {
+      en: "Milford tucks into a steep valley in north Donegal, and Grafton Architects turned the slope into the plan. The new school steps down the hillside in four linked parts — a single-storey technology wing, a two-storey classroom block, a central dining and assembly hall, and a sports hall — arranged like a pinwheel around sheltered outdoor courts, so the building reads less as one block than as a small settlement. Its roof is the clearest response to the site: a folded zinc standing-seam skin that rises and falls with the ground rather than sitting level above it. The Department of Education and Science commissioned the €11 million building to replace a 1970s boarding school for the Loreto Sisters, and the brief required construction in three phases so the existing school could stay open throughout; Phase 1 alone ran fifty-two weeks. The new building opened for some seven hundred pupils in September 2006 and won the RIAI Opus award for architecture and construction.",
+      es: 'Milford se encaja en un valle empinado del norte de Donegal, y Grafton Architects convirtió la pendiente en el proyecto. La nueva escuela desciende la ladera en cuatro cuerpos enlazados —un ala de tecnología de una planta, un bloque de aulas de dos plantas, un comedor y salón de actos central y un pabellón deportivo— dispuestos como una hélice en torno a patios exteriores resguardados, de modo que el edificio se lee menos como un bloque que como un pequeño asentamiento. Su cubierta es la respuesta más clara al lugar: una piel plegada de zinc a junta alzada que sube y baja con el terreno en lugar de asentarse nivelada sobre él. El Department of Education and Science encargó el edificio, de once millones de euros, para sustituir un internado de los años setenta de las hermanas de Loreto, y el programa exigió construirlo en tres fases para que el colegio existente siguiera abierto; solo la primera fase duró cincuenta y dos semanas. El nuevo edificio abrió para unos setecientos alumnos en septiembre de 2006 y ganó el premio Opus del RIAI a la arquitectura y la construcción.',
+      it: "Milford si incunea in una valle ripida del Donegal settentrionale, e Grafton Architects ha trasformato il pendio nel progetto. La nuova scuola scende lungo il versante in quattro corpi collegati — un'ala tecnologica a un piano, un blocco aule a due piani, una sala mensa e assemblee centrale e una palestra — disposti a pinwheel attorno a cortili esterni riparati, così che l'edificio si legga meno come un blocco unico che come un piccolo insediamento. La copertura è la risposta più chiara al sito: una pelle piegata in zinco a giunti rialzati che sale e scende con il terreno anziché posarvisi in piano. Il Department of Education and Science commissionò l'edificio, da undici milioni di euro, per sostituire un collegio degli anni Settanta delle suore di Loreto, e il programma richiese la costruzione in tre fasi perché la scuola esistente restasse aperta; la sola prima fase durò cinquantadue settimane. Il nuovo edificio aprì per circa settecento alunni nel settembre 2006 e vinse il premio Opus della RIAI per l'architettura e la costruzione.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q42174114', title: 'Loreto Community School (Q42174114)', license: null },
+      { kind: 'institution', url: 'https://www.graftonarchitects.ie/Loreto-Community-School-Milford', title: 'Loreto Community School — Milford — Grafton Architects', license: null },
+      { kind: 'institution', url: 'https://woodvaleconstruction.co.uk/projects/loreto_community_school_milford/', title: 'Loreto Community School, Milford — Woodvale Construction', license: null },
+    ],
+    tier: 'deep',
   },
 ];
