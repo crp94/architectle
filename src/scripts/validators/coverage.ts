@@ -155,6 +155,15 @@ export function validateCoverage(pool: Pool): Violation[] {
   }
 
   // --- Max buildings per architect ---
+  // Decision: `coArchitects` does NOT count toward this cap — deliberately,
+  // not by omission. This rule exists to stop one architect dominating the
+  // game's *answers* (a pool where Frank Lloyd Wright's architectId sits on
+  // 20 buildings makes the day's target predictable); a co-credit is never
+  // an answer, so counting it here would penalize precisely the joint
+  // credits (Wang Shu + Lu Wenyu, Sejima + Nishizawa, Emin Onat + Orhan
+  // Arda) this field exists to stop erasing, for a cap whose rationale
+  // doesn't apply to them. Counting only `b.architectId` below is that
+  // decision, not an oversight.
   const buildingCountByArchitect = new Map<string, number>();
   for (const b of pool.buildings) {
     buildingCountByArchitect.set(b.architectId, (buildingCountByArchitect.get(b.architectId) ?? 0) + 1);

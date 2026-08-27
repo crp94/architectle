@@ -9,6 +9,21 @@ export type Building = {
   wikidataId: string;
   name: LocalizedString;
   architectId: string;
+  // Other architects credited alongside `architectId` on this building (ids
+  // into the architect pool; excludes `architectId` itself — no duplicate
+  // credit). Exists so genuine partnerships and joint credits (Wang Shu +
+  // Lu Wenyu on Ningbo Museum, Kazuyo Sejima + Ryue Nishizawa/SANAA on the
+  // Kanazawa 21st Century Museum, joint competition wins like Emin Onat +
+  // Orhan Arda on Anıtkabir) don't force sole authorship onto a building
+  // that had more than one author.
+  //
+  // Display-only: this field is NOT part of the game's answer key. The game
+  // asks the player to name one architect, and `architectId` alone is that
+  // answer — nothing in src/lib/axes/, src/lib/daily.ts, or any comparison/
+  // selection code may read `coArchitects`. It exists purely for the
+  // post-game reveal and archive pages, so a co-credited architect can be
+  // shown and correctly attributed without becoming a guessable target.
+  coArchitects?: string[];
   location: { city: string; countryCode: string; lat: number; lon: number };
   inception: number;
   completed: number | null;
