@@ -22,6 +22,11 @@ import type { Architect } from '@/types/architect';
 // Farrell (architectId) with Shelley McNamara (coArchitects) on the Loreto
 // Community School — both women, so no Ruling 25 concern; order follows
 // the practice's own conventional citation order ("Farrell and McNamara").
+//
+// A Task 9 re-review fix pass added Zaha Hadid, owned by this slice per
+// wave5-contract-v2.md §3, on the strength of her individual P84 credit on
+// the London Aquatics Centre (Q308874) — the candidate the prior fix round's
+// search missed.
 export const EUROPE_BRITISH_ARCHITECTS: Architect[] = [
   {
     id: 'christopher-wren',
@@ -453,6 +458,38 @@ export const EUROPE_BRITISH_ARCHITECTS: Architect[] = [
     sources: [
       { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q21132821', title: 'Shelley McNamara (Q21132821)', license: null },
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Shelley_McNamara', title: 'Shelley McNamara', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    // Task 9 re-review Important finding: this slice is pre-assigned ownership
+    // of Zaha Hadid (wave5-contract-v2.md §3) and the prior fix round's search
+    // stopped one candidate short. London Aquatics Centre (Q308874) carries an
+    // individual P84 credit to Hadid, independently re-confirmed here via the
+    // live Wikidata entity JSON, closing the slice's Hadid gap.
+    id: 'zaha-hadid',
+    wikidataId: 'Q47780',
+    name: 'Zaha Hadid',
+    alternativeNames: ['Dame Zaha Hadid'],
+    gender: 'woman',
+    born: 1950,
+    died: 2016,
+    floruit: { start: 1993, end: 2016, override: false },
+    movements: [{ id: 'deconstructivism', primary: true }, { id: 'parametricism', primary: false }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: "Zaha Hadid was born in Baghdad in 1950 to a prominent Iraqi family, studied mathematics at the American University of Beirut, and moved to London in 1972 to train at the Architectural Association under Rem Koolhaas and Elia Zenghelis. She worked briefly at Koolhaas's Office for Metropolitan Architecture before opening her own practice in 1980, spending nearly two decades known chiefly through fractured, exploded drawings shown at MoMA's 1988 Deconstructivist Architecture exhibition while almost nothing of hers got built. The Vitra Fire Station of 1993 was her first completed building. Parametric software later let her practice realise at scale the continuously curved geometry she had drawn for years, at the MAXXI in Rome and the Heydar Aliyev Center in Baku. In 2004 she became the first woman to win the Pritzker Prize alone. She died suddenly in Miami in March 2016, mid-career.",
+      es: 'Zaha Hadid nació en Bagdad en 1950, en una familia iraquí destacada, estudió matemáticas en la Universidad Americana de Beirut y se trasladó a Londres en 1972 para formarse en la Architectural Association con Rem Koolhaas y Elia Zenghelis. Trabajó brevemente en la Office for Metropolitan Architecture de Koolhaas antes de abrir su propio estudio en 1980, y pasó casi dos décadas conocida sobre todo por dibujos fracturados y estallados, expuestos en la muestra Deconstructivist Architecture del MoMA en 1988, mientras apenas nada suyo se construía. La estación de bomberos de Vitra, de 1993, fue su primer edificio terminado. El software paramétrico permitió después realizar a gran escala la geometría de curva continua que llevaba años dibujando, en el MAXXI de Roma y el Centro Heydar Aliyev de Bakú. En 2004 fue la primera mujer en ganar el Pritzker en solitario. Murió repentinamente en Miami en marzo de 2016.',
+      it: "Zaha Hadid nacque a Baghdad nel 1950 in una famiglia irachena in vista, studiò matematica all'Università Americana di Beirut e si trasferì a Londra nel 1972 per formarsi alla Architectural Association con Rem Koolhaas ed Elia Zenghelis. Lavorò brevemente nell'Office for Metropolitan Architecture di Koolhaas prima di aprire nel 1980 un proprio studio, e trascorse quasi due decenni conosciuta soprattutto per disegni frammentati ed esplosi, esposti nella mostra Deconstructivist Architecture del MoMA nel 1988, mentre quasi nulla di suo veniva costruito. La stazione dei vigili del fuoco di Vitra, del 1993, fu il suo primo edificio realizzato. Il software parametrico permise poi di realizzare su grande scala la geometria a curva continua che disegnava da anni, al MAXXI di Roma e al Centro Heydar Aliyev di Baku. Nel 2004 fu la prima donna a vincere da sola il Pritzker. Morì improvvisamente a Miami nel marzo 2016.",
+    },
+    awards: ['Pritzker Architecture Prize', 'RIBA Royal Gold Medal', 'Praemium Imperiale', 'Stirling Prize', 'Dame Commander of the Order of the British Empire'],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q47780', title: 'Zaha Hadid (Q47780)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Zaha_Hadid', title: 'Zaha Hadid', license: 'CC BY-SA 4.0' },
     ],
   },
 ];

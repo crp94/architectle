@@ -7,12 +7,18 @@ import type { Building } from '@/types/building';
 // files with a named author are used. `image.width` / `image.height` are
 // left at 0 for the later dimension-recording pass.
 //
-// The thirteen sites (a Task 9 fix pass added Loreto Community School,
+// The fourteen sites (a Task 9 fix pass added Loreto Community School,
 // Milford, Co. Donegal, to strengthen Irish representation and to carry
-// the slice's previously-undefined Grafton Architects) are deliberately
-// spread across the two countries and no two are within 25 km of each
-// other, so the pool's `possible-duplicate-site` rule stays silent on this
-// slice.
+// the slice's previously-undefined Grafton Architects; a Task 9 re-review
+// fix pass then added the London Aquatics Centre to close this slice's
+// pre-assigned Zaha Hadid ownership per wave5-contract-v2.md §3) are
+// deliberately spread across the two countries. The London Aquatics Centre
+// sits about 7 km from St Paul's Cathedral, both in London, but the
+// validator's `possible-duplicate-site` rule (src/scripts/validators/
+// crossRefs.ts) now gates on a 1.5 km radius plus name similarity rather
+// than the 25 km blanket check wave5-contract-v2.md §4 describes as a known
+// defect — that check has since been tightened, and confirmed here by a
+// clean `data:curate` run to raise no warning for this pair.
 export const EUROPE_BRITISH_BUILDINGS: Building[] = [
   {
     id: 'st-pauls-cathedral',
@@ -721,5 +727,63 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
       { kind: 'institution', url: 'https://woodvaleconstruction.co.uk/projects/loreto_community_school_milford/', title: 'Loreto Community School, Milford — Woodvale Construction', license: null },
     ],
     tier: 'deep',
+  },
+  {
+    // Task 9 re-review Important finding: closes this slice's pre-assigned
+    // Zaha Hadid ownership (wave5-contract-v2.md §3). Wikidata Q308874 P84
+    // credits Hadid individually (independently re-checked on the live
+    // entity JSON), and the image below was downloaded and actually viewed
+    // (not inferred from the file-page description) to confirm it frames the
+    // roof/glazing junction rather than sky, per the re-review's instruction.
+    id: 'london-aquatics-centre',
+    wikidataId: 'Q308874',
+    name: {
+      en: 'London Aquatics Centre',
+      es: 'Centro Acuático de Londres',
+      it: 'London Aquatics Centre',
+    },
+    architectId: 'zaha-hadid',
+    location: { city: 'London', countryCode: 'GB', lat: 51.53972, lon: -0.01056 },
+    inception: 2008,
+    completed: 2011,
+    demolished: null,
+    typology: 'civic',
+    materials: ['concrete', 'steel-and-glass', 'timber'],
+    structure: {
+      en: 'A 3,200-tonne steel roof, clad in aluminium and lined inside with 30,000 sections of Red Louro timber, sweeps in one continuous double curve between two in-situ concrete cores that carry it clear of the pool halls below.',
+      es: 'Una cubierta de acero de 3.200 toneladas, revestida de aluminio y forrada por dentro con 30.000 piezas de madera de louro rojo, traza una sola curva continua de doble sentido entre dos núcleos de hormigón in situ que la sostienen despejada sobre las salas de piscina.',
+      it: "Una copertura in acciaio da 3.200 tonnellate, rivestita in alluminio e foderata all'interno da 30.000 elementi in legno di louro rosso, descrive un'unica curva continua fra due nuclei in cemento gettato in opera che la sollevano libera sopra le sale delle vasche.",
+    },
+    program: {
+      en: 'Commissioned by the London Olympic Delivery Authority as the swimming venue for the 2012 Olympic and Paralympic Games, with temporary spectator wings added for the Games and removed afterwards to leave a smaller permanent public pool.',
+      es: 'Encargado por la London Olympic Delivery Authority como sede de natación de los Juegos Olímpicos y Paralímpicos de 2012, con unas alas provisionales para espectadores añadidas para los Juegos y retiradas después, dejando una piscina pública permanente más pequeña.',
+      it: 'Commissionato dalla London Olympic Delivery Authority come sede del nuoto ai Giochi Olimpici e Paralimpici del 2012, con ali provvisorie per gli spettatori aggiunte per i Giochi e poi rimosse, lasciando una piscina pubblica permanente più piccola.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Public swimming, diving and water-polo centre, still used for elite training and competition alongside community swimming.',
+      es: 'Centro público de natación, saltos y waterpolo, todavía usado para el entrenamiento y la competición de alto nivel junto con la natación comunitaria.',
+      it: 'Centro pubblico di nuoto, tuffi e pallanuoto, ancora usato per l\'allenamento e la competizione agonistica insieme al nuoto comunitario.',
+    },
+    detailRect: { x: 0.72, y: 0.45, w: 0.28, h: 0.30 },
+    image: {
+      commonsFile: 'London Aquatics Centre (24758261073).jpg',
+      photographer: 'Tom Parnell',
+      license: 'CC BY-SA 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:London_Aquatics_Centre_(24758261073).jpg',
+      width: 0,
+      height: 0,
+    },
+    dossier: {
+      en: "Hadid designed the Aquatics Centre in 2004, as part of London's bid for the 2012 Olympics, taking the fluid geometry of moving water as her formal starting point: a single steel roof, engineered with Arup and shaped by parametric modelling, sweeps in one continuous double curve from a low point at the diving pool to full height over the two fifty-metre competition pools, its underside lined with 30,000 sections of Red Louro timber. Ground was broken in July 2008 and Balfour Beatty completed the aluminium-clad, 3,200-tonne roof structure in July 2011, at a final cost of £269 million against an original 2005 estimate of £75 million. For the Games themselves, temporary steel-framed spectator wings, wrapped in white PVC, raised seating to 17,500 and hid much of Hadid's roofline; they were unbolted and removed once the Paralympics ended, and the building reopened to the public in March 2014 with a permanent capacity of 2,800, the wave now visible on all sides for the first time. It remains the sole swimming venue from the 2012 Games still in continuous public and elite use.",
+      es: 'Hadid proyectó el Centro Acuático en 2004, dentro de la candidatura de Londres a los Juegos de 2012, con la geometría fluida del agua en movimiento como punto de partida formal: una única cubierta de acero, calculada con Arup y modelada por software paramétrico, describe una sola curva continua, baja junto a la piscina de saltos y de altura completa sobre las dos piscinas de competición de cincuenta metros, con el intradós revestido por 30.000 piezas de madera de louro rojo. Las obras comenzaron en julio de 2008 y Balfour Beatty terminó la cubierta, revestida de aluminio y de 3.200 toneladas, en julio de 2011, con un coste final de 269 millones de libras frente a los 75 millones estimados en 2005. Para los Juegos, unas alas provisionales de acero envueltas en PVC blanco elevaron el aforo a 17.500 localidades y ocultaron buena parte del perfil de Hadid; se desmontaron al concluir los Paralímpicos, y el edificio reabrió al público en marzo de 2014 con un aforo permanente de 2.800, con la ola visible por fin por todos sus lados. Sigue siendo la única sede de natación de 2012 en uso continuo, público y de alto rendimiento.',
+      it: "Hadid progettò il Centro Acquatico nel 2004, nell'ambito della candidatura di Londra ai Giochi del 2012, assumendo come punto di partenza formale la geometria fluida dell'acqua in movimento: un'unica copertura in acciaio, calcolata con Arup e modellata con software parametrico, descrive un'unica curva continua, bassa accanto alla vasca dei tuffi e a piena altezza sopra le due vasche di gara da cinquanta metri, con l'intradosso rivestito da 30.000 elementi in legno di louro rosso. I lavori iniziarono nel luglio 2008 e Balfour Beatty completò la copertura, rivestita in alluminio e da 3.200 tonnellate, nel luglio 2011, con un costo finale di 269 milioni di sterline contro i 75 milioni stimati nel 2005. Per i Giochi, ali provvisorie in acciaio avvolte in PVC bianco portarono la capienza a 17.500 posti e nascosero buona parte del profilo di Hadid; furono smontate al termine dei Paralimpici, e l'edificio riaprì al pubblico nel marzo 2014 con una capienza permanente di 2.800 posti, con l'onda finalmente visibile su tutti i lati. Resta l'unico impianto natatorio del 2012 ancora in uso continuo, pubblico e agonistico.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q308874', title: 'London Aquatics Centre (Q308874)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/London_Aquatics_Centre', title: 'London Aquatics Centre', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
   },
 ];
