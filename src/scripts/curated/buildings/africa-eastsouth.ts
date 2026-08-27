@@ -29,10 +29,14 @@ import type { Building } from '@/types/building';
 // file page does not state. `image.width` and `image.height` are left at 0
 // for the later dimensions pass, as the contract requires.
 //
-// One pair sits inside the validator's 25 km `possible-duplicate-site` radius:
-// the two central Nairobi buildings, ~0.3 km apart. They are distinct buildings
-// ten years and two architects apart, neighbours on City Square — a 1963
-// cathedral and a 1973 conference tower; see the task report.
+// One pair of buildings sits close together in central Nairobi, ~0.3 km
+// apart: a 1963 cathedral and a 1973 conference tower, distinct buildings a
+// decade and a different set of architects apart, neighbours on City Square.
+// `crossRefs.ts`'s `possible-duplicate-site` check now gates its 1.5 km
+// radius on a name-token-similarity threshold, and "Cathedral Basilica of the
+// Holy Family" shares no tokens with "Kenyatta International Convention
+// Centre", so this pair does not fire; see the task report for the history
+// (an earlier, wider 25 km unconditional radius did flag it).
 //
 // Every architect who died within the last seventy years, or is living, is
 // represented by an EXTERIOR photograph with `detailRect` on exterior fabric,
@@ -372,8 +376,8 @@ export const AFRICA_EASTSOUTH_BUILDINGS: Building[] = [
       es: 'Centro Internacional de Convenciones Kenyatta',
       it: 'Kenyatta International Convention Centre',
     },
-    architectId: 'karl-henrik-nostvik',
-    coArchitects: ['david-mutiso'],
+    architectId: 'david-mutiso',
+    coArchitects: ['karl-henrik-nostvik'],
     location: { city: 'Nairobi', countryCode: 'KE', lat: -1.28861, lon: 36.82306 },
     inception: 1967,
     completed: 1973,
@@ -406,9 +410,9 @@ export const AFRICA_EASTSOUTH_BUILDINGS: Building[] = [
       height: 0,
     },
     dossier: {
-      en: 'Jomo Kenyatta commissioned the building in 1967, four years after independence, as a headquarters for KANU, and it went up in three phases — podium, tower, plenary hall — finishing in 1973. Karl Henrik Nøstvik, a Norwegian who had arrived with an aid mission in 1965 and stayed to open a Nairobi practice, designed it with the Kenyan architect David Mutiso. The composition is deliberately elementary: cuboids for the plenary hall, a cylinder of stacked cuboid bays for the thirty-two-storey tower, cones for the amphitheatre and the helipad, the whole faced in a light terracotta chosen to refer to earlier African building. At 105 metres it was the tallest structure in Kenya for twenty-six years. The revolving restaurant at the top, which turns once in seventy-six minutes, stood still for years through neglect. The tower is still the image by which Nairobi is recognised.',
-      es: 'Jomo Kenyatta encargó el edificio en 1967, cuatro años después de la independencia, como sede de la KANU, y se levantó en tres fases —podio, torre, sala plenaria— hasta terminarse en 1973. Lo proyectó Karl Henrik Nøstvik, un noruego llegado en 1965 con una misión de cooperación que se quedó en Nairobi para abrir estudio propio, junto con el arquitecto keniano David Mutiso. La composición es deliberadamente elemental: cuerpos cúbicos para la sala plenaria, un cilindro formado por tramos cúbicos apilados para la torre de treinta y dos plantas, conos para el anfiteatro y el helipuerto, y todo revestido de una terracota clara elegida para remitir a la construcción africana anterior. Con 105 metros fue la estructura más alta de Kenia durante veintiséis años. El restaurante giratorio de la cúspide, que da una vuelta en setenta y seis minutos, estuvo parado años por abandono. La torre sigue siendo la imagen por la que se reconoce Nairobi.',
-      it: 'Jomo Kenyatta commissionò l’edificio nel 1967, quattro anni dopo l’indipendenza, come sede della KANU, e fu costruito in tre fasi — basamento, torre, aula plenaria — fino al completamento nel 1973. Lo progettò Karl Henrik Nøstvik, un norvegese arrivato nel 1965 con una missione di cooperazione e rimasto a Nairobi ad aprire uno studio proprio, insieme all’architetto keniano David Mutiso. La composizione è volutamente elementare: volumi cuboidi per l’aula plenaria, un cilindro di campate cuboidi sovrapposte per la torre di trentadue piani, coni per l’anfiteatro e per l’eliporto, il tutto rivestito di una terracotta chiara scelta per richiamare la costruzione africana precedente. Con i suoi 105 metri fu la struttura più alta del Kenya per ventisei anni. Il ristorante girevole in sommità, che compie un giro in settantasei minuti, restò fermo per anni per incuria. La torre è ancora l’immagine per cui Nairobi viene riconosciuta.',
+      en: 'Jomo Kenyatta commissioned the building in 1967, four years after independence, as a headquarters for KANU, and it went up in three phases — podium, tower, plenary hall — finishing in 1973. David Mutiso, Kenya’s first African government Chief Architect, developed the design in weekly meetings with Kenyatta after KANU secretary-general Tom Mboya brought him the brief in 1968, expanding an initial four-storey scheme into the finished tower. Karl Henrik Nøstvik, a Norwegian then serving as Mutiso’s junior in the same ministry, joined the project and continued as a private consultant once his government contract lapsed; international catalogues have long credited Nøstvik alone, a framing Mutiso disputed for the rest of his life. The composition is deliberately elementary: cuboids for the plenary hall, a cylinder of stacked cuboid bays for the thirty-two-storey tower, cones for the amphitheatre and the helipad, faced in pale terracotta chosen to recall earlier African building. At 105 metres it was Kenya’s tallest structure for twenty-six years and remains the image by which Nairobi is recognised.',
+      es: 'Jomo Kenyatta encargó el edificio en 1967, cuatro años después de la independencia, como sede de la KANU, y se levantó en tres fases —podio, torre, sala plenaria— hasta terminarse en 1973. David Mutiso, primer africano arquitecto jefe del gobierno keniano, desarrolló el diseño en reuniones semanales con Kenyatta tras recibir el encargo del secretario general de la KANU, Tom Mboya, en 1968, y amplió un esquema inicial de cuatro plantas hasta la torre construida. Karl Henrik Nøstvik, noruego entonces subordinado suyo en el ministerio, se incorporó al proyecto y siguió como consultor privado tras vencer su contrato con el gobierno; los catálogos internacionales atribuyen la obra solo a Nøstvik desde hace tiempo, un relato que Mutiso rebatió toda su vida. La composición es deliberadamente elemental: cuerpos cúbicos para la sala plenaria, un cilindro de tramos cúbicos apilados para la torre de treinta y dos plantas, conos para el anfiteatro y el helipuerto, todo revestido de terracota clara para remitir a la construcción africana anterior. Con 105 metros fue la estructura más alta de Kenia veintiséis años y sigue siendo la imagen de Nairobi.',
+      it: 'Jomo Kenyatta commissionò l’edificio nel 1967, quattro anni dopo l’indipendenza, come sede della KANU, e fu costruito in tre fasi — basamento, torre, aula plenaria — fino al completamento nel 1973. David Mutiso, primo africano a ricoprire il ruolo di architetto capo del governo keniano, sviluppò il progetto in incontri settimanali con Kenyatta dopo che il segretario generale della KANU, Tom Mboya, gli affidò l’incarico nel 1968, ampliando uno schema iniziale di quattro piani fino alla torre realizzata. Karl Henrik Nøstvik, un norvegese allora suo subordinato nello stesso ministero, si unì al progetto e vi proseguì come consulente privato una volta scaduto il proprio contratto con il governo; i cataloghi internazionali attribuiscono da tempo l’opera al solo Nøstvik, una versione che Mutiso contestò per il resto della vita. La composizione è volutamente elementare: volumi cuboidi per l’aula plenaria, un cilindro di campate cuboidi sovrapposte per la torre di trentadue piani, coni per l’anfiteatro e per l’eliporto, il tutto rivestito di una terracotta chiara scelta per richiamare la costruzione africana precedente. Con i suoi 105 metri fu la struttura più alta del Kenya per ventisei anni e resta l’immagine per cui Nairobi viene riconosciuta.',
     },
     context: {
       body: {
@@ -425,6 +429,8 @@ export const AFRICA_EASTSOUTH_BUILDINGS: Building[] = [
       { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q3272625', title: 'Kenyatta International Convention Centre (Q3272625)', license: null },
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Kenyatta_International_Convention_Centre', title: 'Kenyatta International Convention Centre', license: 'CC BY-SA 4.0' },
       { kind: 'wikipedia', url: 'https://no.wikipedia.org/wiki/Karl_Henrik_N%C3%B8stvik', title: 'Karl Henrik Nøstvik (Norwegian Wikipedia)', license: 'CC BY-SA 4.0' },
+      { kind: 'publication', url: 'https://buildesign.co.ke/david-mutiso-the-architect-who-designed-kicc/', title: 'David Mutiso, the architect who designed KICC — BUILDesign', license: null },
+      { kind: 'publication', url: 'https://www.constructionkenya.com/12954/architect-david-mutiso/', title: 'Legendary Kenyan architect David Mutiso dies at 93 — Construction Kenya', license: null },
     ],
     tier: 'canon',
   },
