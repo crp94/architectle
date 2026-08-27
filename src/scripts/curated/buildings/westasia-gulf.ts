@@ -458,7 +458,7 @@ export const WESTASIA_GULF_BUILDINGS: Building[] = [
       es: 'Una mezquita congregacional en el centro de Bagdad.',
       it: 'Una moschea congregazionale nel centro di Baghdad.',
     },
-    detailRect: { x: 0.32, y: 0.25, w: 0.36, h: 0.36 },
+    detailRect: { x: 0.55, y: 0.35, w: 0.16, h: 0.28 },
     image: {
       commonsFile: 'File:مسجد الخلفاء في بغداد.jpg',
       photographer: 'Osamah Ibrahim',
@@ -614,7 +614,7 @@ export const WESTASIA_GULF_BUILDINGS: Building[] = [
       es: 'Depósito de agua, restaurante y mirador público; reabiertas en marzo de 2016 tras cuatro años de reforma.',
       it: 'Riserva idrica, ristorante e terrazza panoramica pubblica; riaperte nel marzo 2016 dopo quattro anni di lavori.',
     },
-    detailRect: { x: 0.32, y: 0.22, w: 0.36, h: 0.34 },
+    detailRect: { x: 0.17, y: 0.28, w: 0.18, h: 0.29 },
     image: {
       commonsFile: 'File:Kuwait tower at dusk.jpg',
       photographer: 'Samarstha45',
