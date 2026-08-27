@@ -1,8 +1,5 @@
 import type { Comparison } from '@/lib/axes';
-
-// Re-pointed to `src/lib/i18n.ts` by Task 11; declared here as a placeholder so
-// share.ts has somewhere to import it from until that module exists.
-export type Locale = 'en' | 'es' | 'it';
+import type { Locale } from '@/lib/i18n';
 
 const SHARE_URL = 'architectle.carlosrodriguezpardo.es';
 
