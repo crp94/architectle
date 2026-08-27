@@ -1,0 +1,110 @@
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { architectsByMovement, buildingsByMovement, movementById, referencedMovementIds } from '@/lib/archive';
+import { movementJsonLd } from '@/lib/jsonld';
+import { SITE_URL } from '@/lib/site';
+import { t } from '@/lib/i18n';
+import { theme } from '@/lib/theme';
+import { familyLabel } from '@/lib/facts';
+import { ArchiveNav } from '@/components/archive/ArchiveNav';
+import { BuildingCard } from '@/components/archive/BuildingCard';
+import { LinkList } from '@/components/archive/LinkList';
+
+const LOCALE = 'en' as const;
+
+type Params = { slug: string };
+
+// Only movements actually referenced by an architect in the pool get a
+// page (src/lib/archive.ts's `referencedMovementIds`) — src/data/movements.ts
+// defines more ids than the current pool uses, and an empty movement page
+// (no architects, no buildings) has nothing to show a reader.
+export function generateStaticParams() {
+  return referencedMovementIds().map((id) => ({ slug: id }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
+  const { slug } = await params;
+  const movement = movementById(slug);
+  if (!movement) return {};
+
+  const title = t(LOCALE, 'metaArchiveTitle', { name: movement.name });
+  const description = movement.blurb.en.slice(0, 155);
+  const url = `${SITE_URL}/movement/${movement.id}`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url },
+  };
+}
+
+export default async function MovementPage({ params }: { params: Promise<Params> }) {
+  const { slug } = await params;
+  const movement = movementById(slug);
+  if (!movement) notFound();
+
+  const architects = architectsByMovement(movement.id);
+  const buildings = buildingsByMovement(movement.id);
+  const span = `${movement.approxSpan.start}–${movement.approxSpan.end ?? t(LOCALE, 'archiveOngoing')}`;
+
+  return (
+    <main className="flex flex-1 flex-col bg-paper">
+      <ArchiveNav locale={LOCALE} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(movementJsonLd(movement)) }}
+      />
+      <article className="flex flex-col gap-6 p-4 md:p-8">
+        <div className="flex flex-col gap-1">
+          <p className="text-xs uppercase tracking-wide text-warn" style={{ fontFamily: theme.type.mono }}>
+            {t(LOCALE, 'navMovementsLink')}
+          </p>
+          <h1
+            data-testid="archive-headline"
+            className="text-3xl uppercase leading-none md:text-4xl"
+            style={{ fontFamily: theme.type.display }}
+          >
+            {movement.name}
+          </h1>
+          <p className="text-xs uppercase tracking-wide opacity-70" style={{ fontFamily: theme.type.mono }}>
+            {t(LOCALE, 'archiveFamily')}: {familyLabel(movement.family, LOCALE)} · {t(LOCALE, 'archiveApproxSpan')}: {span}
+          </p>
+        </div>
+
+        <p className="text-sm leading-relaxed" style={{ fontFamily: theme.type.body }}>
+          {movement.blurb[LOCALE] ?? movement.blurb.en}
+        </p>
+
+        <section className="flex flex-col gap-2 border-t-2 border-ink pt-3">
+          <h2 className="text-xs uppercase tracking-wide" style={{ fontFamily: theme.type.mono }}>
+            {t(LOCALE, 'navArchitectsLink')}
+          </h2>
+          {architects.length > 0 ? (
+            <LinkList
+              testId="archive-movement-architects"
+              items={architects.map((a) => ({ href: `/architect/${a.id}`, label: a.name }))}
+            />
+          ) : (
+            <p className="text-sm">{t(LOCALE, 'archiveNoContemporaries')}</p>
+          )}
+        </section>
+
+        <section className="flex flex-col gap-2 border-t-2 border-ink pt-3">
+          <h2 className="text-xs uppercase tracking-wide" style={{ fontFamily: theme.type.mono }}>
+            {t(LOCALE, 'navBuildingsLink')}
+          </h2>
+          {buildings.length > 0 ? (
+            <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {buildings.map((b) => (
+                <BuildingCard key={b.id} building={b} locale={LOCALE} />
+              ))}
+            </ul>
+          ) : (
+            <p className="text-sm">{t(LOCALE, 'archiveNoBuildings')}</p>
+          )}
+        </section>
+      </article>
+    </main>
+  );
+}

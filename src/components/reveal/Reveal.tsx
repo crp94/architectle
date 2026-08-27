@@ -4,13 +4,12 @@ import { useState } from 'react';
 import Image from 'next/image';
 import type { Building } from '@/types/building';
 import type { Architect } from '@/types/architect';
-import type { Material, Typology } from '@/types/common';
 import type { Comparison } from '@/lib/axes';
 import { t, type Locale } from '@/lib/i18n';
 import { theme } from '@/lib/theme';
 import { shareText } from '@/lib/share';
 import { puzzleNumber } from '@/lib/daily';
-import { MOVEMENTS } from '@/data/movements';
+import { architectMovementLabel, architectSpan, buildFacts, provenanceLine } from '@/lib/facts';
 
 const MAX_GUESSES = 6;
 
@@ -22,76 +21,6 @@ export type RevealProps = {
   comparisons: Comparison[];
   locale?: Locale;
 };
-
-const TYPOLOGY_KEY: Record<Typology, string> = {
-  housing: 'typologyHousing',
-  civic: 'typologyCivic',
-  sacral: 'typologySacral',
-  cultural: 'typologyCultural',
-  commercial: 'typologyCommercial',
-  industrial: 'typologyIndustrial',
-  educational: 'typologyEducational',
-  infrastructure: 'typologyInfrastructure',
-  tower: 'typologyTower',
-  domestic: 'typologyDomestic',
-};
-
-const MATERIAL_KEY: Record<Material, string> = {
-  concrete: 'materialConcrete',
-  brick: 'materialBrick',
-  'steel-and-glass': 'materialSteelGlass',
-  timber: 'materialTimber',
-  stone: 'materialStone',
-  earth: 'materialEarth',
-  mixed: 'materialMixed',
-};
-
-/** Best-effort human label for the architect's dominant movement (design
- * spec §4.4's "unaffiliated never matches anything" carries over here: an
- * unaffiliated architect gets a plain label, never an invented one).
- * Movement names (`Movement.name` in src/data/movements.ts) are not
- * localized in the data — they're proper nouns treated the same across
- * locales, the same way "Brutalism" reads unchanged in en/es/it prose. */
-function architectMovementLabel(architect: Architect, locale: Locale): string {
-  if (architect.movements === 'unaffiliated') return t(locale, 'architectUnaffiliated');
-  const primary = architect.movements.find((m) => m.primary) ?? architect.movements[0];
-  if (!primary) return t(locale, 'architectUnaffiliated');
-  return MOVEMENTS[primary.id]?.name ?? primary.id;
-}
-
-function architectSpan(architect: Architect): string {
-  const born = architect.born ?? '?';
-  const died = architect.died ?? '—';
-  return `${born}–${died}`;
-}
-
-type FactCell = { key: string; label: string; value: string };
-
-function buildFacts(building: Building, locale: Locale): FactCell[] {
-  const completed = building.completed !== null ? String(building.completed) : '—';
-  const location = `${building.location.city}, ${building.location.countryCode}`;
-  const typology = t(locale, TYPOLOGY_KEY[building.typology]);
-  const material = building.materials.map((m) => t(locale, MATERIAL_KEY[m])).join(' / ');
-  return [
-    { key: 'completed', label: t(locale, 'factCompleted'), value: completed },
-    { key: 'location', label: t(locale, 'factLocation'), value: location },
-    { key: 'typology', label: t(locale, 'factTypology'), value: typology },
-    { key: 'material', label: t(locale, 'factMaterial'), value: material },
-  ];
-}
-
-function provenanceLine(building: Building, locale: Locale): string {
-  const wikidata = building.wikidataId
-    ? `${t(locale, 'provenanceWikidataLabel')} ${building.wikidataId}`
-    : t(locale, 'provenanceNoWikidata');
-  const parts = [
-    wikidata,
-    `${t(locale, 'provenanceCommonsLabel')}: ${building.image.commonsFile}`,
-    `${t(locale, 'provenancePhotographerLabel')}: ${building.image.photographer}`,
-    `${t(locale, 'provenanceLicenseLabel')}: ${building.image.license}`,
-  ];
-  return parts.join(' · ');
-}
 
 /**
  * The post-game reveal (design spec §4.6 / task-12-brief.md): the full

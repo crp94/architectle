@@ -129,9 +129,7 @@ export function GuessField({ locale, onGuess, disabled = false }: GuessFieldProp
       {rejected && (
         <p role="alert" data-testid="roster-rejection" className="text-sm">
           {t(locale, 'rosterRejection', { name: rejected })}{' '}
-          {/* TODO(Task 13): /architects doesn't exist yet — point this at
-              the real roster page once that route ships instead of "#". */}
-          <Link href="#" className="underline">
+          <Link href="/architects" className="underline">
             {t(locale, 'rosterRejectionLink')}
           </Link>
         </p>

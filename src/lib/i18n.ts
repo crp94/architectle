@@ -128,6 +128,45 @@ const en = {
   materialStone: 'Stone',
   materialEarth: 'Earth',
   materialMixed: 'Mixed',
+
+  // Archive nav / index headings
+  navBuildingsLink: 'Buildings',
+  navMovementsLink: 'Movements',
+
+  // Archive cross-link section headings
+  archiveWorksHeading: 'Works in the pool',
+  archiveContemporariesHeading: 'Contemporaries',
+  archiveFloruit: 'Active',
+  archiveApproxSpan: 'Approx. span',
+  archiveOngoing: 'ongoing',
+  archiveFamily: 'Family',
+  archiveWithCoArchitects: 'With',
+  archiveViewOnMap: 'View on map',
+  archiveAllBuildings: 'All buildings',
+  archiveAllArchitects: 'All architects',
+  archiveAllMovements: 'All movements',
+  archiveNoBuildings: 'No buildings documented yet.',
+  archiveNoContemporaries: 'No documented contemporaries yet.',
+  archiveBuildingsCount: '{count} buildings',
+  archiveArchitectsCount: '{count} architects',
+  archiveMovementsCount: '{count} movements',
+
+  // Archive <title>/<meta description>
+  metaArchiveTitle: '{name} — Architectle Archive',
+  metaBuildingsIndexDescription: 'Every building in the Architectle pool — {count} landmarks, illustrated and sourced.',
+  metaArchitectsIndexDescription: 'Every architect in the Architectle pool — {count} names, with their works, movements and provenance.',
+  metaMovementsIndexDescription: 'Every architecture movement referenced in the Architectle pool — {count} movements, with their architects and buildings.',
+
+  // Movement family labels (Movement.family, src/types/movement.ts)
+  familyClassical: 'Classical',
+  familyMedieval: 'Medieval',
+  familyIslamic: 'Islamic',
+  familyRenaissanceBaroque: 'Renaissance & Baroque',
+  familyRevivalist: 'Revivalist',
+  familyModernism: 'Modernism',
+  familyPostmodernism: 'Postmodernism',
+  familyContemporary: 'Contemporary',
+  familyVernacular: 'Vernacular',
 };
 
 type Strings = typeof en;
@@ -238,6 +277,41 @@ const es: Strings = {
   materialStone: 'Piedra',
   materialEarth: 'Tierra',
   materialMixed: 'Mixto',
+
+  navBuildingsLink: 'Edificios',
+  navMovementsLink: 'Movimientos',
+
+  archiveWorksHeading: 'Obras en el juego',
+  archiveContemporariesHeading: 'Contemporáneos',
+  archiveFloruit: 'Activo',
+  archiveApproxSpan: 'Período aproximado',
+  archiveOngoing: 'en curso',
+  archiveFamily: 'Familia',
+  archiveWithCoArchitects: 'Con',
+  archiveViewOnMap: 'Ver en el mapa',
+  archiveAllBuildings: 'Todos los edificios',
+  archiveAllArchitects: 'Todos los arquitectos',
+  archiveAllMovements: 'Todos los movimientos',
+  archiveNoBuildings: 'Aún no hay edificios documentados.',
+  archiveNoContemporaries: 'Aún no hay contemporáneos documentados.',
+  archiveBuildingsCount: '{count} edificios',
+  archiveArchitectsCount: '{count} arquitectos',
+  archiveMovementsCount: '{count} movimientos',
+
+  metaArchiveTitle: '{name} — Archivo de Architectle',
+  metaBuildingsIndexDescription: 'Todos los edificios del listado de Architectle — {count} monumentos, ilustrados y documentados.',
+  metaArchitectsIndexDescription: 'Todos los arquitectos del listado de Architectle — {count} nombres, con sus obras, movimientos y procedencia.',
+  metaMovementsIndexDescription: 'Todos los movimientos arquitectónicos presentes en el listado de Architectle — {count} movimientos, con sus arquitectos y edificios.',
+
+  familyClassical: 'Clásica',
+  familyMedieval: 'Medieval',
+  familyIslamic: 'Islámica',
+  familyRenaissanceBaroque: 'Renacimiento y Barroco',
+  familyRevivalist: 'Revivalista',
+  familyModernism: 'Modernismo',
+  familyPostmodernism: 'Posmodernismo',
+  familyContemporary: 'Contemporánea',
+  familyVernacular: 'Vernácula',
 };
 
 const it: Strings = {
@@ -346,6 +420,41 @@ const it: Strings = {
   materialStone: 'Pietra',
   materialEarth: 'Terra',
   materialMixed: 'Misto',
+
+  navBuildingsLink: 'Edifici',
+  navMovementsLink: 'Movimenti',
+
+  archiveWorksHeading: 'Opere nel gioco',
+  archiveContemporariesHeading: 'Contemporanei',
+  archiveFloruit: 'Attivo',
+  archiveApproxSpan: 'Periodo approssimativo',
+  archiveOngoing: 'in corso',
+  archiveFamily: 'Famiglia',
+  archiveWithCoArchitects: 'Con',
+  archiveViewOnMap: 'Vedi sulla mappa',
+  archiveAllBuildings: 'Tutti gli edifici',
+  archiveAllArchitects: 'Tutti gli architetti',
+  archiveAllMovements: 'Tutti i movimenti',
+  archiveNoBuildings: 'Nessun edificio ancora documentato.',
+  archiveNoContemporaries: 'Nessun contemporaneo ancora documentato.',
+  archiveBuildingsCount: '{count} edifici',
+  archiveArchitectsCount: '{count} architetti',
+  archiveMovementsCount: '{count} movimenti',
+
+  metaArchiveTitle: '{name} — Archivio di Architectle',
+  metaBuildingsIndexDescription: "Tutti gli edifici del catalogo di Architectle — {count} monumenti, illustrati e documentati.",
+  metaArchitectsIndexDescription: 'Tutti gli architetti del catalogo di Architectle — {count} nomi, con le loro opere, i movimenti e la provenienza.',
+  metaMovementsIndexDescription: 'Tutti i movimenti architettonici presenti nel catalogo di Architectle — {count} movimenti, con i loro architetti ed edifici.',
+
+  familyClassical: 'Classica',
+  familyMedieval: 'Medievale',
+  familyIslamic: 'Islamica',
+  familyRenaissanceBaroque: 'Rinascimento e Barocco',
+  familyRevivalist: 'Revivalista',
+  familyModernism: 'Modernismo',
+  familyPostmodernism: 'Postmodernismo',
+  familyContemporary: 'Contemporanea',
+  familyVernacular: 'Vernacolare',
 };
 
 export const STRINGS: Record<Locale, Strings> = { en, es, it };
