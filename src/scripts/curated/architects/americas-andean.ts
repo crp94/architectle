@@ -2,15 +2,17 @@ import type { Architect } from '@/types/architect';
 
 // Wave 5 curator agent (Andean states and the Caribbean): real, sourced Architect entries for this slice.
 //
-// Four architects below carry an empty `wikidataId`: Esteban Rodríguez
-// Castells, Claudia Uccelli, Daniel Hahn and Charles P. Lazarus. None has a
-// Wikidata entity as of 2026-08-27 (checked against wbsearchentities in
-// es/en, and by direct search for the two Caribbean names). Every other
-// field for these four is hand-authored from the published sources listed
-// on each record. The alternative — inventing a Q-number — is not
-// acceptable, and dropping them would have removed the Caribbean's best Art
-// Deco building, Trinidad and Jamaica's only entries in this slice, and one
-// of only three women here with an attributed, freely-licensed building.
+// Six architects below carry an empty `wikidataId`: Esteban Rodríguez
+// Castells, Rafael Fernández Ruenes, José Menéndez, Claudia Uccelli, Daniel
+// Hahn and Charles P. Lazarus. None has a Wikidata entity as of 2026-08-27
+// (checked against wbsearchentities in es/en, and by direct search for each
+// name). Every other field for these six is hand-authored from the
+// published sources listed on each record. The alternative — inventing a
+// Q-number — is not acceptable, and dropping them would have removed the
+// Caribbean's best Art Deco building, Trinidad and Jamaica's only entries
+// in this slice, one of only three women here with an attributed,
+// freely-licensed building, and two documented co-architects of the
+// Bacardí Building (see the coArchitects comment on that building entry).
 //
 // Milton Barragán (Ecuador) was researched, drafted, and then dropped from
 // this file: the building he would have anchored, Templo de la Dolorosa
@@ -96,6 +98,70 @@ export const AMERICAS_ANDEAN_ARCHITECTS: Architect[] = [
       en: "Cuban architect, one of the three authors — with Rafael Fernández Ruenes and José Menéndez — of the Bacardí Building in Havana, the commission for which he is remembered. Bacardí S.A. wanted a headquarters that would read as a corporate emblem, and the team delivered Cuba's fullest statement of Art Deco: a steel-framed tower on reinforced concrete slabs, twelve levels stepped back to a belvedere carrying the company's bronze bat. The cladding catalogues imported material — Bavarian granite, glazed terracotta, pressed brick, polychrome tile — its glazed ceramic panels echoing Catalan modernisme reworked into Deco geometry. Wikidata carries no entity for him; the attribution here follows the Spanish Wikipedia article on the Edificio Bacardí, and his dates are not established in the sources consulted.",
       es: "Arquitecto cubano, uno de los tres autores —junto a Rafael Fernández Ruenes y José Menéndez— del edificio Bacardí de La Habana, el encargo por el que se le recuerda. Bacardí S.A. quería una sede que funcionara como emblema corporativo, y el equipo entregó la formulación más completa del art déco en Cuba: una torre de pórticos de acero con losas de hormigón armado, doce niveles escalonados hasta un templete que sostiene el murciélago de bronce de la compañía. El revestimiento cataloga material importado —granito de Baviera, terracota esmaltada, ladrillo prensado, azulejo policromo—, con paneles cerámicos que evocan el modernismo catalán en clave geométrica. Wikidata no registra ninguna entidad suya; la atribución sigue aquí el artículo de Wikipedia en español, y sus fechas no constan en las fuentes consultadas.",
       it: "Architetto cubano, uno dei tre autori — con Rafael Fernández Ruenes e José Menéndez — dell'edificio Bacardí dell'Avana, la commissione per cui è ricordato. La Bacardí S.A. voleva una sede che funzionasse da emblema aziendale, e il gruppo consegnò la formulazione più compiuta dell'Art Déco a Cuba: una torre a telaio d'acciaio con solai in cemento armato, dodici livelli e circa 44 metri, arretrata per gradi fino a un belvedere che regge il pipistrello di bronzo della casa. Il rivestimento è un catalogo voluto di materiali d'importazione — granito rosso di Baviera, terracotta smaltata, mattone pressato, piastrella policroma — e i pannelli in ceramica invetriata conservano un'eco del modernismo catalano riscritta in geometria déco. Wikidata non registra alcuna entità su di lui; l'attribuzione e i dati dell'edificio seguono qui la voce di Wikipedia in spagnolo, e le sue date non risultano dalle fonti consultate.",
+    },
+    awards: [],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Edificio_Bacard%C3%AD_(La_Habana)', title: 'Edificio Bacardí (La Habana)', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Bacardi_Building_(Havana)', title: 'Bacardi Building (Havana)', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    // Co-architect on edificio-bacardi-havana, added alongside Esteban
+    // Rodríguez Castells rather than left invisible: the EN Wikipedia body
+    // text states the two of them jointly won Bacardí S.A.'s design
+    // competition and shared its prize, and the ES infobox names him first
+    // among the building's three credited architects.
+    id: 'rafael-fernandez-ruenes',
+    wikidataId: '',
+    name: 'Rafael Fernández Ruenes',
+    alternativeNames: [],
+    gender: 'man',
+    born: null,
+    died: null,
+    floruit: { start: 1929, end: 1930, override: true },
+    movements: [{ id: 'art-deco', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'commercial',
+    signatureMaterial: 'mixed',
+    portrait: {
+      en: "Cuban architect who, together with Esteban Rodríguez Castells, won the design competition Bacardí S.A. held for its new Havana headquarters, the two sharing the firm's prize; José Menéndez then carried the winning scheme through construction as the project's architect-engineer. The finished building, completed in 1930, is read as Cuba's fullest statement of Art Deco: a riveted steel frame carries twelve stepped-back storeys to a belvedere crowned by the company's bronze bat, its walls faced in Bavarian granite, glazed terracotta and polychrome tile. Wikidata carries no entity for him; the attribution here follows the Spanish and English Wikipedia articles on the Edificio Bacardí, and his dates are not established in the sources consulted.",
+      es: "Arquitecto cubano que, junto con Esteban Rodríguez Castells, ganó el concurso de diseño que Bacardí S.A. convocó para su nueva sede en La Habana, compartiendo con él el premio de la firma; José Menéndez llevó después el proyecto ganador hasta su construcción como arquitecto-ingeniero de la obra. El edificio terminado, concluido en 1930, se considera la formulación más completa del art déco en Cuba: un pórtico de acero remachado sostiene doce plantas escalonadas en retranqueo hasta un templete coronado por el murciélago de bronce de la compañía, con muros revestidos en granito de Baviera, terracota vidriada y azulejo policromo. Wikidata no registra ninguna entidad suya; la atribución sigue aquí los artículos de Wikipedia en español e inglés sobre el Edificio Bacardí, y sus fechas no constan en las fuentes consultadas.",
+      it: "Architetto cubano che, insieme a Esteban Rodríguez Castells, vinse il concorso di progettazione bandito dalla Bacardí S.A. per la nuova sede dell'Avana, condividendo con lui il premio della ditta; José Menéndez portò poi il progetto vincitore fino alla costruzione come architetto-ingegnere dell'opera. L'edificio finito, completato nel 1930, è letto come la formulazione più compiuta dell'Art Déco a Cuba: un telaio d'acciaio chiodato regge dodici piani arretrati a gradoni fino a un tempietto coronato dal pipistrello di bronzo dell'azienda, con muri rivestiti in granito di Baviera, terracotta invetriata e piastrella policroma. Wikidata non registra alcuna entità su di lui; l'attribuzione segue qui gli articoli di Wikipedia in spagnolo e inglese sull'Edificio Bacardí, e le sue date non risultano dalle fonti consultate.",
+    },
+    awards: [],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Edificio_Bacard%C3%AD_(La_Habana)', title: 'Edificio Bacardí (La Habana)', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Bacardi_Building_(Havana)', title: 'Bacardi Building (Havana)', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    // Co-architect on edificio-bacardi-havana. English Wikipedia body text
+    // distinguishes his role from the competition-winning pair above: "José
+    // Menéndez Menéndez was the architect-engineer in the project" — a
+    // documented, sourced third author, named in both language infoboxes,
+    // not folded silently into "Rodríguez Castells and Fernández Ruenes."
+    id: 'jose-menendez',
+    wikidataId: '',
+    name: 'José Menéndez Menéndez',
+    alternativeNames: ['José Menéndez'],
+    gender: 'man',
+    born: null,
+    died: null,
+    floruit: { start: 1929, end: 1930, override: true },
+    movements: [{ id: 'art-deco', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'commercial',
+    signatureMaterial: 'mixed',
+    portrait: {
+      en: "Cuban architect-engineer credited, alongside the competition winners Esteban Rodríguez Castells and Rafael Fernández Ruenes, as a co-author of the Bacardí Building in Havana — the one building for which he is documented. Rodríguez Castells and Fernández Ruenes won Bacardí S.A.'s design competition for the headquarters and shared its prize; Menéndez is named in the sources as the project's architect-engineer, the role credited with carrying the winning scheme through construction. The finished tower, completed in 1930, steps back through twelve storeys of riveted steel frame and reinforced-concrete slabs to a belvedere holding the company's bronze bat, faced throughout in imported Bavarian granite, glazed terracotta and polychrome tile — Cuba's fullest built statement of Art Deco. Wikidata carries no entity for him; the attribution here follows the Spanish and English Wikipedia articles on the Edificio Bacardí, and his dates are not established in the sources consulted.",
+      es: "Arquitecto-ingeniero cubano acreditado, junto a los ganadores del concurso Esteban Rodríguez Castells y Rafael Fernández Ruenes, como coautor del edificio Bacardí de La Habana. Rodríguez Castells y Fernández Ruenes ganaron el concurso de diseño de Bacardí S.A. y compartieron su premio; las fuentes nombran a Menéndez arquitecto-ingeniero del proyecto, cargo desde el que llevó el esquema ganador hasta su construcción. La torre terminada, concluida en 1930, se escalona en doce plantas de pórtico de acero remachado y losas de hormigón armado hasta un templete que sostiene el murciélago de bronce de la compañía, revestida en granito de Baviera, terracota vidriada y azulejo policromo —la formulación más completa del art déco en Cuba—. Wikidata no registra ninguna entidad suya; la atribución sigue los artículos de Wikipedia en español e inglés sobre el Edificio Bacardí, y sus fechas no constan en las fuentes consultadas.",
+      it: "Architetto-ingegnere cubano accreditato, insieme ai vincitori del concorso Esteban Rodríguez Castells e Rafael Fernández Ruenes, come coautore dell'edificio Bacardí dell'Avana — l'unico edificio di cui si ha notizia di lui. Rodríguez Castells e Fernández Ruenes vinsero il concorso di progettazione di Bacardí S.A. e ne condivisero il premio; le fonti indicano Menéndez architetto-ingegnere del progetto, ruolo cui si attribuisce l'aver portato lo schema vincitore fino alla costruzione. La torre finita, completata nel 1930, si arretra su dodici piani di telaio d'acciaio chiodato e solai in cemento armato fino a un tempietto che regge il pipistrello di bronzo dell'azienda, rivestita in granito di Baviera, terracotta invetriata e piastrella policroma — la formulazione più compiuta dell'Art Déco a Cuba. Wikidata non registra alcuna entità su di lui; l'attribuzione segue gli articoli di Wikipedia in spagnolo e inglese sull'Edificio Bacardí, e le sue date non risultano dalle fonti consultate.",
     },
     awards: [],
     tier: 'deep',

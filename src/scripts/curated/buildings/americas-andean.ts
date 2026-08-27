@@ -132,7 +132,17 @@ export const AMERICAS_ANDEAN_BUILDINGS: Building[] = [
       es: 'Edificio Bacardí',
       it: 'Edificio Bacardí',
     },
+    // Both Wikipedia infoboxes cited below (EN and ES) name multiple
+    // architects for this building, and the dossier and architect portraits
+    // already state this is a three-person credit in all three languages;
+    // omitting coArchitects here would be exactly the attribution-erasure
+    // Ruling 25 exists to prevent. Esteban Rodríguez Castells stays as
+    // architectId (he's named first in the EN infobox, and EN body text
+    // confirms he and Fernández Ruenes jointly won the design competition
+    // and its prize); Fernández Ruenes and Menéndez are added here rather
+    // than left invisible, per the ES infobox naming all three.
     architectId: 'esteban-rodriguez-castells',
+    coArchitects: ['rafael-fernandez-ruenes', 'jose-menendez'],
     location: { city: 'Havana', countryCode: 'CU', lat: 23.1389, lon: -82.3571 },
     inception: 1929,
     completed: 1930,
@@ -222,7 +232,16 @@ export const AMERICAS_ANDEAN_BUILDINGS: Building[] = [
       es: 'Un concurso internacional de 1907 dio el encargo al arquitecto neoyorquino Frank Perkins, cuyo proyecto, revisado con Adrian Finlayson, resultó problemático y lento; cuando Rafael Carmoega se convirtió en 1921 en el primer arquitecto del Estado nacido en Puerto Rico, heredó un Capitolio a medio construir y se dispuso a rematarlo como una declaración neoclásica en mármol blanco traído de Georgia. El edificio se inauguró el 11 de febrero de 1929, con una cúpula de doble cascarón alzada sobre una base octogonal de pechinas —un recurso constructivo tomado de Santa Sofía para sostener una silueta inspirada en el Panteón—, aunque la linterna de la cúpula y buena parte de la ornamentación interior no se completaron hasta 1961. Veintiuna variedades de mármol, de Italia, Estados Unidos continental y España, revisten un interior cuyos murales y mosaicos de Rafael Ríos Rey, José Oliver, Jorge Rechani y Rafael Tufiño narran la historia puertorriqueña bajo una administración territorial estadounidense que, por esos mismos años, inscribía sus propias instituciones en la piedra de la isla. Declarado en el Registro Nacional de Lugares Históricos en 1977, el Capitolio sigue siendo la sede en funciones del Senado y la Cámara de Representantes.',
       it: 'Un concorso internazionale del 1907 assegnò l’incarico all’architetto newyorkese Frank Perkins, il cui progetto, rivisto con Adrian Finlayson, si rivelò problematico e lento; quando nel 1921 Rafael Carmoega divenne il primo architetto di Stato nato a Porto Rico, ereditò un Campidoglio a metà costruzione e si mise a completarlo come dichiarazione neoclassica in marmo bianco importato dalla Georgia. L’edificio fu inaugurato l’11 febbraio 1929, con una cupola a doppio guscio innalzata su una base ottagonale a pennacchi — un espediente costruttivo mutuato da Santa Sofia per sostenere una sagoma ispirata al Pantheon — sebbene la lanterna della cupola e buona parte della decorazione interna non furono completate fino al 1961. Ventuno varietà di marmo, provenienti da Italia, Stati Uniti continentali e Spagna, rivestono un interno i cui murales e mosaici di Rafael Ríos Rey, José Oliver, Jorge Rechani e Rafael Tufiño narrano la storia portoricana sotto un’amministrazione territoriale statunitense che, in quegli stessi anni, iscriveva le proprie istituzioni nella pietra dell’isola. Dichiarato nel Registro Nazionale dei Luoghi Storici nel 1977, il Campidoglio resta la sede in funzione del Senato e della Camera dei Rappresentanti.',
     },
-    context: null,
+    context: {
+      body: {
+        en: "Puerto Rico has been an unincorporated territory of the United States since 1898, a status the Supreme Court's Insular Cases (1901–1905) held meant the Constitution applied only in part. The Capitol was commissioned in 1921 and completed in 1929 under the Foraker Act's insular government of elected Puerto Rican delegates and appointed American officials — Rafael Carmoega's first years as State Architect. Puerto Ricans had held US citizenship since the Jones–Shafroth Act of 1917, but neither then nor since have the island's residents held a vote in US presidential elections or voting representation in Congress; Puerto Rico sends one non-voting Resident Commissioner to the House of Representatives. That status — unincorporated territory rather than state — has remained unchanged through Puerto Rico's 1952 constitution and to the present day.",
+        es: 'Puerto Rico es territorio no incorporado de los Estados Unidos desde 1898, condición que los llamados Insular Cases del Tribunal Supremo (1901-1905) interpretaron en el sentido de que la Constitución solo se aplicaba parcialmente. El Capitolio se encargó en 1921 y se terminó en 1929 bajo el gobierno insular de la Ley Foraker, con delegados puertorriqueños electos y funcionarios estadounidenses designados —los primeros años de Rafael Carmoega como Arquitecto del Estado—. Los puertorriqueños tenían la ciudadanía estadounidense desde la Ley Jones-Shafroth de 1917, pero ni entonces ni después han tenido voto en las elecciones presidenciales de Estados Unidos ni representación con voto en el Congreso; la isla envía un Comisionado Residente sin voto a la Cámara de Representantes. Esa condición de territorio no incorporado, y no de estado, se ha mantenido sin cambios a través de la constitución de 1952 de Puerto Rico y hasta hoy.',
+        it: "Porto Rico è territorio non incorporato degli Stati Uniti dal 1898, condizione che i cosiddetti Insular Cases della Corte Suprema (1901-1905) interpretarono nel senso che la Costituzione si applicasse solo in parte. Il Campidoglio fu commissionato nel 1921 e completato nel 1929 sotto il governo insulare della Foraker Act, con delegati portoricani eletti e funzionari statunitensi nominati — i primi anni di Rafael Carmoega come Architetto di Stato. I portoricani avevano la cittadinanza statunitense dal Jones-Shafroth Act del 1917, ma né allora né in seguito i residenti dell'isola hanno avuto voto alle elezioni presidenziali statunitensi né rappresentanza con diritto di voto al Congresso; Porto Rico invia alla Camera dei Rappresentanti un Commissario Residente senza diritto di voto. Questa condizione di territorio non incorporato, anziché di stato, è rimasta invariata attraverso la costituzione portoricana del 1952 e fino a oggi.",
+      },
+      sources: [
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Political_status_of_Puerto_Rico', title: 'Political status of Puerto Rico', license: 'CC BY-SA 4.0' },
+      ],
+    },
     sources: [
       { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q4212987', title: 'Capitol of Puerto Rico (Q4212987)', license: null },
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Capitol_of_Puerto_Rico', title: 'Capitol of Puerto Rico', license: 'CC BY-SA 4.0' },
