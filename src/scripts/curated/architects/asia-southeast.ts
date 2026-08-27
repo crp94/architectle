@@ -7,6 +7,18 @@ import type { Architect } from '@/types/architect';
 // `workRegions` and `workCentroid` are deliberately left as [] / {0,0}:
 // `npm run data:curate` derives both from each architect's buildings and
 // overwrites whatever is typed here.
+// REMOVED BY THE SECOND CURATOR (buildings pass), with their full entries
+// recoverable from commit 26122ec:
+//   henri-maclaine-pont, vann-molyvann, tep-vattho, rizal-muslimin
+// Each is a real, correctly researched architect, but no photograph of any of
+// their buildings can be licensed for this pool. Indonesia and Cambodia have
+// no freedom of panorama (Commons:Copyright rules by territory), and their
+// architectural copyright terms are life + 70 and life + 50 respectively, so
+// a freely-licensed photograph of an in-copyright building by Maclaine Pont
+// (d. 1971), Rizal Muslimin (living), Vann Molyvann (d. 2017) or Tep Vattho
+// (d. 2016) is a derivative work that no photographer's CC licence can clear.
+// `architect-orphan` in crossRefs.ts fails on any architect with no building,
+// so they could not simply be left in place.
 export const ASIA_SOUTHEAST_ARCHITECTS: Architect[] = [
   // --- pre-1800 -----------------------------------------------------------
   {
@@ -96,33 +108,6 @@ export const ASIA_SOUTHEAST_ARCHITECTS: Architect[] = [
 
   // --- 1800-1945 ----------------------------------------------------------
   {
-    id: 'henri-maclaine-pont',
-    wikidataId: 'Q2079131',
-    name: 'Henri Maclaine Pont',
-    alternativeNames: ['Henri Maclaine-Pont', 'H. Maclaine Pont'],
-    gender: 'man',
-    born: 1884,
-    died: 1971,
-    floruit: { start: 1911, end: 1937, override: false },
-    movements: [{ id: 'timber-vernacular', primary: true }, { id: 'expressionism', primary: false }],
-    workRegions: [],
-    workCentroid: { lat: 0, lon: 0 },
-    primaryTypology: 'educational',
-    signatureMaterial: 'timber',
-    portrait: {
-      en: 'Born in Batavia and trained as a civil engineer at Delft, Henri Maclaine Pont spent most of his working life in Java and is generally credited as the father of a modern Indonesian vernacular. His first commission was the headquarters of the Semarang–Cheribon steam tram company in 1911; he later excavated and studied the pre-Islamic architecture of Majapahit at Trowulan, and argued in print with his Bandung rival Wolff Schoemaker about how much of Java a European architect was entitled to borrow. His answer, built rather than written, was the ceremonial halls of the Technische Hoogeschool at Bandung, where a Javanese roof profile is carried on an engineered hybrid truss. He was interned by the Japanese in 1943 and left Indonesia in 1947, dying in The Hague.',
-      es: 'Nacido en Batavia y formado como ingeniero civil en Delft, Henri Maclaine Pont pasó casi toda su vida profesional en Java y suele considerarse el padre de un vernáculo indonesio moderno. Su primer encargo fue la sede de la compañía de tranvías de vapor Semarang-Cheribon en 1911; más tarde excavó y estudió la arquitectura preislámica de Majapahit en Trowulan y polemizó por escrito con su rival de Bandung, Wolff Schoemaker, sobre cuánto de Java podía tomar prestado un arquitecto europeo. Su respuesta, construida y no escrita, fueron las aulas ceremoniales de la Technische Hoogeschool de Bandung, donde un perfil de cubierta javanés descansa sobre una cercha híbrida calculada. Internado por los japoneses en 1943, abandonó Indonesia en 1947 y murió en La Haya.',
-      it: "Nato a Batavia e formatosi come ingegnere civile a Delft, Henri Maclaine Pont trascorse quasi tutta la vita professionale a Giava ed è generalmente considerato il padre di un vernacolo indonesiano moderno. Il primo incarico fu la sede della compagnia tranviaria a vapore Semarang-Cheribon nel 1911; scavò e studiò poi l'architettura preislamica di Majapahit a Trowulan e polemizzò a stampa con il rivale di Bandung, Wolff Schoemaker, su quanto di Giava un architetto europeo avesse diritto di prendere in prestito. La sua risposta, costruita anziché scritta, furono le aule cerimoniali della Technische Hoogeschool di Bandung, dove un profilo di tetto giavanese poggia su una capriata ibrida calcolata. Internato dai giapponesi nel 1943, lasciò l'Indonesia nel 1947 e morì all'Aia.",
-    },
-    awards: [],
-    tier: 'canon',
-    context: null,
-    sources: [
-      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Henri_Maclaine_Pont', title: 'Henri Maclaine Pont', license: 'CC BY-SA 4.0' },
-      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Bandung_Institute_of_Technology', title: 'Bandung Institute of Technology', license: 'CC BY-SA 4.0' },
-    ],
-  },
-  {
     id: 'u-tin',
     wikidataId: 'Q7876246',
     name: 'U Tin',
@@ -206,33 +191,6 @@ export const ASIA_SOUTHEAST_ARCHITECTS: Architect[] = [
 
   // --- 1945-2000 ----------------------------------------------------------
   {
-    id: 'vann-molyvann',
-    wikidataId: 'Q379178',
-    name: 'Vann Molyvann',
-    alternativeNames: ['វណ្ណ ម៉ូលីវណ្ណ', 'Van Molyvann'],
-    gender: 'man',
-    born: 1926,
-    died: 2017,
-    floruit: { start: 1957, end: 1972, override: false },
-    movements: [{ id: 'tropical-modernism', primary: true }, { id: 'brutalism', primary: false }],
-    workRegions: [],
-    workCentroid: { lat: 0, lon: 0 },
-    primaryTypology: 'civic',
-    signatureMaterial: 'concrete',
-    portrait: {
-      en: 'Vann Molyvann studied at the École des Beaux-Arts in Paris, where Le Corbusier was among his teachers, and returned to Cambodia in 1956 as one of a handful of trained Cambodian architects. Norodom Sihanouk made him State Architect and Head of Public Works, and in fourteen years he built more than a hundred structures — the Independence Monument, the Chaktomuk Conference Hall, the National Sports Complex, the Institute of Foreign Languages — in a manner now called New Khmer Architecture: raised concrete floors, vast shading canopies, ponds and channels drawn from Angkorian water management. He spent the Khmer Rouge years and the civil war in exile in Switzerland, returned in 1991, and headed the Angkor conservation authority APSARA until he was dismissed in 2001 after disputes with the government. Much of his built work has since been demolished or left to decay.',
-      es: 'Vann Molyvann estudió en la École des Beaux-Arts de París, donde Le Corbusier fue uno de sus maestros, y regresó a Camboya en 1956 como uno de los poquísimos arquitectos camboyanos titulados. Norodom Sihanouk lo nombró arquitecto del Estado y jefe de Obras Públicas, y en catorce años construyó más de un centenar de obras —el Monumento a la Independencia, la sala de conferencias Chaktomuk, el Complejo Deportivo Nacional, el Instituto de Lenguas Extranjeras— en lo que hoy se llama Nueva Arquitectura Jemer: forjados elevados de hormigón, grandes parasoles, estanques y canales tomados de la hidráulica angkoriana. Pasó los años del Jemer Rojo y la guerra civil exiliado en Suiza, volvió en 1991 y dirigió la autoridad de conservación de Angkor, APSARA, hasta su destitución en 2001 tras enfrentarse al gobierno. Buena parte de su obra ha sido derribada o abandonada desde entonces.',
-      it: "Vann Molyvann studiò all'École des Beaux-Arts di Parigi, dove ebbe fra i maestri Le Corbusier, e tornò in Cambogia nel 1956 come uno dei pochissimi architetti cambogiani con una formazione completa. Norodom Sihanouk lo nominò architetto di Stato e capo dei Lavori Pubblici, e in quattordici anni realizzò oltre cento opere — il Monumento all'Indipendenza, la sala congressi Chaktomuk, il Complesso Sportivo Nazionale, l'Istituto di Lingue Straniere — in quella che oggi si chiama Nuova Architettura Khmer: solai rialzati in calcestruzzo, grandi coperture ombreggianti, vasche e canali ripresi dall'idraulica angkoriana. Trascorse gli anni dei Khmer rossi e la guerra civile in esilio in Svizzera, rientrò nel 1991 e diresse l'ente di tutela di Angkor, APSARA, fino alla destituzione nel 2001 dopo contrasti con il governo. Gran parte delle sue opere è stata da allora demolita o lasciata degradare.",
-    },
-    awards: [],
-    tier: 'canon',
-    context: null,
-    sources: [
-      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Vann_Molyvann', title: 'Vann Molyvann', license: 'CC BY-SA 4.0' },
-      { kind: 'publication', url: 'https://www.nytimes.com/2017/09/28/obituaries/vann-molyvann-dead-architect-who-shaped-cambodias-capital.html', title: 'Vann Molyvann, Architect Who Shaped Cambodia’s Capital, Dies at 90 (The New York Times, 28 September 2017)', license: null },
-    ],
-  },
-  {
     id: 'leandro-locsin',
     wikidataId: 'Q2196637',
     name: 'Leandro Locsin',
@@ -284,33 +242,6 @@ export const ASIA_SOUTHEAST_ARCHITECTS: Architect[] = [
     sources: [
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Ken_Yeang', title: 'Ken Yeang', license: 'CC BY-SA 4.0' },
       { kind: 'institution', url: 'https://www.akdn.org/architecture/project/menara-mesiniaga', title: 'Aga Khan Development Network — Menara Mesiniaga', license: null },
-    ],
-  },
-  {
-    id: 'tep-vattho',
-    wikidataId: 'Q123899786',
-    name: 'Tep Vattho',
-    alternativeNames: ['ទេព វត្ថូ', 'Vattho Tep'],
-    gender: 'woman',
-    born: 1963,
-    died: 2016,
-    floruit: { start: 1994, end: 2010, override: false },
-    movements: [{ id: 'timber-vernacular', primary: true }],
-    workRegions: [],
-    workCentroid: { lat: 0, lon: 0 },
-    primaryTypology: 'cultural',
-    signatureMaterial: 'timber',
-    portrait: {
-      en: 'Tep Vattho was twelve when her family, headed by the justice minister Tep Hun, left Cambodia for France in 1975; the Khmer Rouge took Phnom Penh a fortnight later. She began medicine in France, changed to architecture, and met her husband and partner Olivier Piot in the school. The two returned to Siem Reap in the early 1990s, when the town had almost no tourist infrastructure and almost no architects, and built the Angkor Village Hotel in 1994, the Angkor Village Resort, and in 1997 the Apsara Theatre — a Khmer timber pavilion built for classical dance, the town’s oldest theatre. She later directed the urban planning department of the APSARA Authority, which regulates building across the Angkor region. She died in Siem Reap in 2016; a street beside the river there carries her name.',
-      es: 'Tep Vattho tenía doce años cuando su familia, encabezada por el ministro de Justicia Tep Hun, salió de Camboya rumbo a Francia en 1975; los Jemeres Rojos tomaron Nom Pen quince días después. Empezó Medicina en Francia, se pasó a Arquitectura y allí conoció a su marido y socio, Olivier Piot. Ambos regresaron a Siem Reap a principios de los noventa, cuando la ciudad casi no tenía infraestructura turística ni arquitectos, y construyeron el Angkor Village Hotel en 1994, el Angkor Village Resort y, en 1997, el Teatro Apsara: un pabellón jemer de madera concebido para la danza clásica y el teatro más antiguo de la ciudad. Dirigió después el departamento de urbanismo de la Autoridad APSARA, que regula la edificación en toda la región de Angkor. Murió en Siem Reap en 2016; una calle junto al río lleva su nombre.',
-      it: "Tep Vattho aveva dodici anni quando la sua famiglia, guidata dal ministro della Giustizia Tep Hun, lasciò la Cambogia per la Francia nel 1975; i Khmer rossi presero Phnom Penh due settimane dopo. Iniziò Medicina in Francia, passò ad Architettura e lì conobbe il marito e socio Olivier Piot. I due tornarono a Siem Reap all'inizio degli anni Novanta, quando la città non aveva quasi infrastrutture turistiche né architetti, e costruirono l'Angkor Village Hotel nel 1994, l'Angkor Village Resort e, nel 1997, l'Apsara Theatre: un padiglione khmer in legno pensato per la danza classica e il più antico teatro della città. Diresse poi il dipartimento di urbanistica dell'Autorità APSARA, che regola l'edificazione in tutta la regione di Angkor. Morì a Siem Reap nel 2016; una via lungo il fiume porta il suo nome.",
-    },
-    awards: [],
-    tier: 'deep',
-    context: null,
-    sources: [
-      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Tep_Vattho', title: 'Tep Vattho', license: 'CC BY-SA 4.0' },
-      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q123899786', title: 'Tep Vattho (Q123899786)', license: null },
     ],
   },
   {
@@ -421,33 +352,6 @@ export const ASIA_SOUTHEAST_ARCHITECTS: Architect[] = [
     sources: [
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/WOHA', title: 'WOHA', license: 'CC BY-SA 4.0' },
       { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q115592346', title: 'Wong Mun Summ (Q115592346)', license: null },
-    ],
-  },
-  {
-    id: 'rizal-muslimin',
-    wikidataId: 'Q126689352',
-    name: 'Rizal Muslimin',
-    alternativeNames: ['Muhammad Rizal Muslimin'],
-    gender: 'man',
-    born: null,
-    died: null,
-    floruit: { start: 2007, end: 2014, override: false },
-    movements: 'unaffiliated',
-    workRegions: [],
-    workCentroid: { lat: 0, lon: 0 },
-    primaryTypology: 'sacral',
-    signatureMaterial: 'concrete',
-    portrait: {
-      en: 'Rizal Muslimin is an Indonesian architect from Makassar who took his first degree at Universitas Katolik Parahyangan in 1999 and a master’s at the Bandung Institute of Technology in 2002, taught at Institut Teknologi Nasional in Bandung, and later completed a doctorate at MIT with a thesis on computational weaving grammars for architectural design. He now teaches at the University of Sydney. He is known in Indonesia for a single competition win: in 2007 his entry beat 322 others to become the Grand Mosque of West Sumatra in Padang. The design fuses two images — the outward-curving gonjong roof of the Minangkabau rumah gadang and the cloth on which, in Islamic tradition, four quarrelling Quraysh clans carried the Black Stone together — into one roof that reads as both.',
-      es: 'Rizal Muslimin es un arquitecto indonesio originario de Makassar que se licenció en la Universitas Katolik Parahyangan en 1999, obtuvo el máster en el Instituto Tecnológico de Bandung en 2002, enseñó en el Institut Teknologi Nasional de Bandung y se doctoró después en el MIT con una tesis sobre gramáticas computacionales de tejido aplicadas al proyecto arquitectónico. Hoy es profesor en la Universidad de Sídney. En Indonesia se le conoce por un único concurso ganado: en 2007 su propuesta se impuso a otras 322 y se convirtió en la Gran Mezquita de Sumatra Occidental, en Padang. El proyecto funde dos imágenes —la cubierta de cuernos gonjong de la casa minangkabau rumah gadang y el paño sobre el que, según la tradición islámica, cuatro clanes enfrentados de los Quraish llevaron juntos la Piedra Negra— en un solo tejado que se lee como ambas.',
-      it: "Rizal Muslimin è un architetto indonesiano originario di Makassar: si è laureato all'Universitas Katolik Parahyangan nel 1999, ha conseguito il master all'Istituto di Tecnologia di Bandung nel 2002, ha insegnato all'Institut Teknologi Nasional di Bandung e ha poi ottenuto il dottorato al MIT con una tesi sulle grammatiche computazionali dell'intreccio applicate al progetto architettonico. Oggi insegna all'Università di Sydney. In Indonesia è noto per un unico concorso vinto: nel 2007 la sua proposta superò altre 322 e divenne la Grande Moschea di Sumatra Occidentale, a Padang. Il progetto fonde due immagini — la copertura a corna gonjong della casa minangkabau rumah gadang e il telo su cui, secondo la tradizione islamica, quattro clan rivali dei Quraysh portarono insieme la Pietra Nera — in un solo tetto che si legge come entrambe.",
-    },
-    awards: [],
-    tier: 'deep',
-    context: null,
-    sources: [
-      { kind: 'wikipedia', url: 'https://id.wikipedia.org/wiki/Rizal_Muslimin', title: 'Rizal Muslimin (Indonesian Wikipedia)', license: 'CC BY-SA 4.0' },
-      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Grand_Mosque_of_West_Sumatra', title: 'Grand Mosque of West Sumatra', license: 'CC BY-SA 4.0' },
     ],
   },
 ];
