@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { BUILDINGS, architectById, canonBuildings } from '@/lib/pool';
 import { dailyIndex, puzzleNumber } from '@/lib/daily';
 import { compareArchitects, type Comparison } from '@/lib/axes';
-import { loadState, saveState, type GameState } from '@/lib/storage';
+import { clearState, loadState, saveState, type GameState } from '@/lib/storage';
 import { t, type Locale } from '@/lib/i18n';
 import { theme } from '@/lib/theme';
 import type { Building } from '@/types/building';
@@ -62,17 +62,36 @@ function pickDailyBuilding(): Building {
  * win or loss.
  */
 export function GameBoard({ mode = 'daily', building, locale = 'en' }: GameBoardProps) {
-  // Unlimited mode has no deterministic index to SSR safely (§4.5 draws
-  // from the whole pool, not a date-seeded slot), so its target is picked
-  // client-side only, after mount, to avoid a hydration mismatch.
+  // Neither the daily nor the unlimited target can be resolved during SSR.
+  // Unlimited mode has no deterministic index at all (§4.5 draws from the
+  // whole pool via a bare `Math.random()`, not a date-seeded slot). Daily
+  // mode DOES have a deterministic index (`dailyIndex` in src/lib/daily.ts)
+  // — but it's a function of `new Date()`, read in THIS RUNTIME's own local
+  // timezone. `pickDailyBuilding()` used to be called directly from
+  // `useMemo` during render, which runs once on the server (the server's
+  // timezone) and again on the client during hydration (the browser's
+  // timezone) — for any player whose timezone differs from the server's,
+  // there is a daily window (the size of the offset) where those two
+  // computations disagree, corrupting hydration and/or silently showing the
+  // wrong day's puzzle. So, like unlimited mode, the daily target is now
+  // resolved exactly once, client-side only, in a `useEffect` after mount:
+  // the render that happens before that effect fires returns `null` (see
+  // the early return below), which matches between the server's render and
+  // the client's pre-effect render, so hydration never disagrees.
+  const [dailyBuilding, setDailyBuilding] = useState<Building | null>(null);
   const [unlimitedBuilding, setUnlimitedBuilding] = useState<Building | null>(null);
 
-  /* eslint-disable react-hooks/set-state-in-effect -- reading Math.random()
-   * during render (rather than after mount) would produce a different pick
-   * on the server than on the client and hydration would fail. This is the
-   * one-time "read an external, non-React source of truth on mount" case
-   * the rule's own description carves out, not an accidental derived-state
-   * effect. */
+  /* eslint-disable react-hooks/set-state-in-effect -- reading Date()/
+   * Math.random() during render (rather than after mount) would produce a
+   * different pick on the server than on the client and hydration would
+   * fail. This is the one-time "read an external, non-React source of
+   * truth on mount" case the rule's own description carves out, not an
+   * accidental derived-state effect. */
+  useEffect(() => {
+    if (building || mode !== 'daily') return;
+    setDailyBuilding(pickDailyBuilding());
+  }, [building, mode]);
+
   useEffect(() => {
     if (building || mode !== 'unlimited') return;
     setUnlimitedBuilding(BUILDINGS[Math.floor(Math.random() * BUILDINGS.length)]);
@@ -81,9 +100,9 @@ export function GameBoard({ mode = 'daily', building, locale = 'en' }: GameBoard
 
   const target = useMemo<Building | null>(() => {
     if (building) return building;
-    if (mode === 'daily') return pickDailyBuilding();
+    if (mode === 'daily') return dailyBuilding;
     return unlimitedBuilding;
-  }, [building, mode, unlimitedBuilding]);
+  }, [building, mode, dailyBuilding, unlimitedBuilding]);
 
   const targetArchitect = useMemo(
     () => (target ? architectById(target.architectId) : null),
@@ -98,6 +117,12 @@ export function GameBoard({ mode = 'daily', building, locale = 'en' }: GameBoard
   // Restores an in-progress daily round exactly once. Guarded with a ref
   // (rather than an empty dependency array) so the effect still declares
   // every value it reads, without re-running when they happen to change.
+  // The ref is only latched once `target`/`targetArchitect` are actually
+  // available: daily mode's target now resolves asynchronously (see the
+  // `dailyBuilding` effect above), so this effect can legitimately run once
+  // with `target` still null before the daily pick lands — latching
+  // `restoredRef.current` on that first, premature run would permanently
+  // skip the real restore once the target shows up on the next render.
   const restoredRef = useRef(false);
   /* eslint-disable react-hooks/set-state-in-effect -- localStorage is an
    * external, non-React store read once after mount (never during SSR,
@@ -105,8 +130,8 @@ export function GameBoard({ mode = 'daily', building, locale = 'en' }: GameBoard
    * documented escape hatch, not an accidental derived-state effect. */
   useEffect(() => {
     if (restoredRef.current) return;
-    restoredRef.current = true;
     if (mode !== 'daily' || !target || !targetArchitect) return;
+    restoredRef.current = true;
 
     const saved = loadState();
     if (!saved) return;
@@ -117,11 +142,27 @@ export function GameBoard({ mode = 'daily', building, locale = 'en' }: GameBoard
     // building shares today's puzzle number with the real daily building.
     if (saved.buildingId !== target.id) return;
 
+    // `saved.guesses` ids are only ever validated as an array of strings
+    // (`isGameState` in storage.ts) — never that each one still resolves to
+    // a CURRENT architect. If an architect id is ever renamed/removed in a
+    // later curation pass while an old same-day save is still sitting in a
+    // returning player's localStorage, `architectById` throws
+    // `ArchitectNotFoundError`. storage.ts documents a "never crash the
+    // game" guarantee for exactly this kind of stale/corrupt save, so a
+    // failure here must degrade the same way `loadState()` returning
+    // something unusable already does: drop the save and start fresh,
+    // rather than let the throw escape the effect and crash the page.
+    let restored: GuessEntry[];
+    try {
+      restored = saved.guesses.map((id) => {
+        const architect = architectById(id);
+        return { architect, comparison: compareArchitects(architect, targetArchitect) };
+      });
+    } catch {
+      clearState();
+      return;
+    }
     setStats(saved.stats);
-    const restored = saved.guesses.map((id) => {
-      const architect = architectById(id);
-      return { architect, comparison: compareArchitects(architect, targetArchitect) };
-    });
     setGuesses(restored);
     setSolved(saved.solved);
     setFinished(saved.finished);
@@ -129,7 +170,9 @@ export function GameBoard({ mode = 'daily', building, locale = 'en' }: GameBoard
   /* eslint-enable react-hooks/set-state-in-effect */
 
   if (!target || !targetArchitect) {
-    // Unlimited mode still picking its target client-side.
+    // Still picking the target client-side (daily and unlimited modes
+    // both resolve after mount — see the two effects above); the `building`
+    // override path never hits this branch.
     return null;
   }
 

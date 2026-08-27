@@ -4,6 +4,7 @@ import {
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import type { Building } from '@/types/building';
 import type { Architect } from '@/types/architect';
+import { puzzleNumber } from '@/lib/daily';
 
 function ls(en: string, es: string, it: string) {
   return { en, es, it };
@@ -190,5 +191,45 @@ describe('GameBoard', () => {
 
     expect(screen.getByTestId('reveal')).toBeTruthy();
     expect(screen.getByTestId('reveal-message').textContent).toContain('Target Architect');
+  });
+
+  it('resolves the daily target client-side (no building override) without crashing', async () => {
+    // Regression guard: the daily target used to be picked synchronously
+    // during render via `pickDailyBuilding()`, which reads `new Date()` in
+    // whichever timezone the CURRENT render happens to run in — different
+    // between an SSR pass and client hydration for a player whose timezone
+    // differs from the server's. It must now resolve after mount, client-
+    // side only, exactly like unlimited mode already did.
+    render(<GameBoard mode="daily" locale="en" />);
+    expect(await screen.findByTestId('game-board')).toBeTruthy();
+    expect(screen.getByTestId('crop-stage')).toBeTruthy();
+  });
+
+  it('recovers gracefully from a stale save referencing a since-removed architect id', () => {
+    // Regression guard: `isGameState` (storage.ts) only checks that
+    // `guesses` is an array of strings, never that each id still resolves
+    // to a CURRENT architect. A same-day save left over from before an
+    // architect id was renamed/removed must degrade to "start fresh," not
+    // crash the restore effect with an uncaught ArchitectNotFoundError.
+    localStorage.setItem('architectle:v1', JSON.stringify({
+      puzzleNumber: puzzleNumber(new Date()),
+      buildingId: targetBuilding.id,
+      guesses: ['ghost-architect-id'],
+      solved: false,
+      finished: false,
+      stats: {
+        played: 3, wins: 2, streak: 1, maxStreak: 2, distribution: [0, 1, 1, 0, 0, 0],
+      },
+    }));
+
+    render(<GameBoard building={targetBuilding} mode="daily" locale="en" />);
+
+    expect(screen.getByTestId('game-board')).toBeTruthy();
+    expect(screen.queryAllByTestId('guess-row')).toHaveLength(0);
+    expect(screen.getByText('Guess 1 of 6')).toBeTruthy();
+    // The stale save itself must be cleared, not just ignored in memory —
+    // otherwise the very next render would try (and fail) to restore it
+    // again.
+    expect(localStorage.getItem('architectle:v1')).toBeNull();
   });
 });
