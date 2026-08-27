@@ -80,11 +80,24 @@ export const ASIA_SOUTHEAST_ARCHITECTS: Architect[] = [
   },
   {
     id: 'ewout-verhagen',
-    // Q133870895 labels itself "Ewout Verhagen" but is a VOC surveyor/map
-    // drawer per the Repertorium van Nederlandse kaartmakers, with no link to
-    // Batavia's ambachtskwartier or Gereja Sion; the church architect of the
-    // same name has no verified Wikidata item.
-    wikidataId: '',
+    // C2 fix (task-9 review): a prior pass discarded Q133870895 ("Ewout
+    // Verhagen," VOC surveyor/map drawer, died 1694, sourced to the
+    // Repertorium van Nederlandse kaartmakers) as an unrelated person, on the
+    // grounds that the entity carries no direct link to Gereja Sion. Re-
+    // examined and reversed: the Gereja Sion Wikipedia article's own
+    // footnote 18 — citing Xu, Guanmian, "The 'Perfect Map' of Widow
+    // Hiamtse: A Micro-Spatial History of Sugar Plantations in Early Modern
+    // Southeast Asia, 1685-1710," International Review of Social History
+    // 67:1 (2022), 97-126 — states that the same Ewout Verhagen who designed
+    // the church "was also noted to have worked as land surveyor for
+    // College van Heemraden." Xu's article itself independently places a
+    // Heemraden land surveyor of that exact name active in Batavia as early
+    // as 2 June 1685 (surveying widow Hiamtse's plantation claim). Name,
+    // employer (VOC), occupation (land surveyor / map drawer), and Batavia
+    // location and period all converge on one individual: the prior
+    // "unrelated person" call over-corrected. wikidataId restored; died:
+    // 1694 is now sourced, not inherited residue.
+    wikidataId: 'Q133870895',
     name: 'Ewout Verhagen',
     alternativeNames: ['E. Verhagen', 'Ewout Verhagen van Rotterdam'],
     gender: 'man',
@@ -106,6 +119,8 @@ export const ASIA_SOUTHEAST_ARCHITECTS: Architect[] = [
     context: null,
     sources: [
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Gereja_Sion', title: 'Gereja Sion', license: 'CC BY-SA 4.0' },
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q133870895', title: 'Ewout Verhagen (Q133870895)', license: null },
+      { kind: 'publication', url: 'https://doi.org/10.1017/S002085902100050X', title: 'Xu, Guanmian, "The \'Perfect Map\' of Widow Hiamtse: A Micro-Spatial History of Sugar Plantations in Early Modern Southeast Asia, 1685-1710," International Review of Social History 67:1 (2022), 97-126', license: null },
     ],
   },
 

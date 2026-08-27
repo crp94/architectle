@@ -577,9 +577,9 @@ export const ASIA_SOUTHEAST_BUILDINGS: Building[] = [
     },
     context: {
       body: {
-        en: 'The Cultural Center was established by executive order of President Ferdinand Marcos in 1966 and its construction and programme were driven by Imelda Marcos, who chaired the centre; the complex became the template for a series of state cultural projects of the Marcos period. The building was inaugurated in 1969, before the declaration of martial law in 1972. It is a government-owned and controlled corporation and receives an annual state subsidy, and it is now placed under the National Commission for Culture and the Arts for policy coordination.',
-        es: 'El Centro Cultural se creó por orden ejecutiva del presidente Ferdinand Marcos en 1966 y su construcción y programación fueron impulsadas por Imelda Marcos, que presidía la institución; el complejo se convirtió en el modelo de una serie de proyectos culturales estatales del periodo Marcos. El edificio se inauguró en 1969, antes de la declaración de la ley marcial en 1972. Es una corporación de propiedad y control estatales, recibe una subvención pública anual y hoy queda adscrito a la Comisión Nacional de Cultura y las Artes a efectos de coordinación de políticas.',
-        it: "Il Centro culturale fu istituito con ordine esecutivo del presidente Ferdinand Marcos nel 1966 e la sua costruzione e programmazione furono guidate da Imelda Marcos, che ne era presidente; il complesso divenne il modello di una serie di progetti culturali statali del periodo Marcos. L'edificio fu inaugurato nel 1969, prima della proclamazione della legge marziale nel 1972. È una società di proprietà e controllo pubblici, riceve un contributo statale annuo ed è oggi posto sotto la Commissione nazionale per la cultura e le arti ai fini del coordinamento delle politiche.",
+        en: 'The Cultural Center was established by executive order of President Ferdinand Marcos in 1966 and its construction and programme were driven by Imelda Marcos, who chaired the centre; the complex became the template for a series of state cultural projects of the Marcos period. Senator Ninoy Aquino objected on the Senate floor to public funding for the project without congressional appropriation, calling it an institution for the elite and arguing "you do not develop culture by putting up a 50-million building on the bay." Construction costs rose to nearly ₱50 million against an original ₱15 million estimate, and the project has been cited, alongside others of the period, as symptomatic of what critics called Imelda Marcos\'s "edifice complex," undertaken amid widespread poverty. The building was inaugurated in 1969, before the declaration of martial law in 1972. It is a government-owned and controlled corporation and receives an annual state subsidy, and it is now placed under the National Commission for Culture and the Arts for policy coordination.',
+        es: 'El Centro Cultural se creó por orden ejecutiva del presidente Ferdinand Marcos en 1966 y su construcción y programación fueron impulsadas por Imelda Marcos, que presidía la institución; el complejo se convirtió en el modelo de una serie de proyectos culturales estatales del periodo Marcos. El senador Ninoy Aquino se opuso en el pleno del Senado a financiar el proyecto con fondos públicos sin partida aprobada por el Congreso, calificándolo de institución para las élites y argumentando que "no se desarrolla la cultura levantando un edificio de 50 millones en la bahía". El coste de las obras subió a casi 50 millones de pesos frente a la estimación inicial de 15 millones, y el proyecto se ha citado, junto con otros del periodo, como síntoma de lo que sus críticos llamaron el "complejo del edificio" de Imelda Marcos, emprendido en medio de una pobreza generalizada. El edificio se inauguró en 1969, antes de la declaración de la ley marcial en 1972. Es una corporación de propiedad y control estatales, recibe una subvención pública anual y hoy queda adscrito a la Comisión Nacional de Cultura y las Artes a efectos de coordinación de políticas.',
+        it: 'Il Centro culturale fu istituito con ordine esecutivo del presidente Ferdinand Marcos nel 1966 e la sua costruzione e programmazione furono guidate da Imelda Marcos, che ne era presidente; il complesso divenne il modello di una serie di progetti culturali statali del periodo Marcos. Il senatore Ninoy Aquino si oppose in aula all\'uso di fondi pubblici per il progetto senza uno stanziamento approvato dal Congresso, definendolo un\'istituzione per l\'élite e sostenendo che "non si sviluppa la cultura innalzando un edificio da 50 milioni sulla baia." Il costo dei lavori salì a quasi 50 milioni di pesos rispetto alla stima iniziale di 15 milioni, e il progetto è stato citato, insieme ad altri dello stesso periodo, come sintomo di quello che i critici chiamarono il "complesso dell\'edificio" di Imelda Marcos, portato avanti in un contesto di povertà diffusa. L\'edificio fu inaugurato nel 1969, prima della proclamazione della legge marziale nel 1972. È una società di proprietà e controllo pubblici, riceve un contributo statale annuo ed è oggi posto sotto la Commissione nazionale per la cultura e le arti ai fini del coordinamento delle politiche.',
       },
       sources: [
         { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Cultural_Center_of_the_Philippines', title: 'Cultural Center of the Philippines', license: 'CC BY-SA 4.0' },
@@ -676,12 +676,23 @@ export const ASIA_SOUTHEAST_BUILDINGS: Building[] = [
       es: 'Campus de la Nanyang Girls’ High School, que imparte un programa integrado de seis años en Bukit Timah.',
       it: 'Campus della Nanyang Girls’ High School, che eroga un programma integrato di sei anni a Bukit Timah.',
     },
-    detailRect: { x: 0.34, y: 0.32, w: 0.32, h: 0.36 },
+    // C1 fix (task-9 review): the previously recorded file, NYGH_2000x1333px.jpg
+    // (credited to Nyghccpa, CC BY-SA 4.0), is genuinely licensed as described
+    // but is a photo of North York General Hospital in Toronto — an "NYGH"
+    // acronym collision, not this school. Replaced with File:NYGH-SG.JPG
+    // (uploaded by mailer_diablo, 2006), independently re-verified live on
+    // Commons: description "Campus building of Nanyang Girls' High School,
+    // Singapore," category Nanyang Girls' High School, and visually confirmed
+    // — the facade signage reads "...NG GIRLS' HIGH SCHOOL" over the entrance
+    // arch. Embedded GPS (1.329528, 103.802667) sits ~85 m from the recorded
+    // building location. Dual-licensed GFDL / CC BY-SA 3.0; CC BY-SA 3.0 is
+    // recorded as the allowed licence actually used.
+    detailRect: { x: 0.29, y: 0.08, w: 0.24, h: 0.38 },
     image: {
-      commonsFile: 'NYGH 2000x1333px.jpg',
-      photographer: 'Nyghccpa',
-      license: 'CC BY-SA 4.0',
-      sourceUrl: 'https://commons.wikimedia.org/wiki/File:NYGH_2000x1333px.jpg',
+      commonsFile: 'NYGH-SG.JPG',
+      photographer: 'mailer_diablo',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:NYGH-SG.JPG',
       width: 0,
       height: 0,
     },
