@@ -400,7 +400,18 @@ export const AMERICAS_ANDEAN_BUILDINGS: Building[] = [
       es: 'Coliseo El Pueblo',
       it: 'Coliseo El Pueblo',
     },
+    // architectId keeps Yusti — the record is genuinely symmetric (she and
+    // Richardson co-founded and jointly ran Richardson y Yusti, and es.wiki's
+    // own Libia Yusti article treats them as equal partners with no stated
+    // hierarchy), so either name is defensible and this is not a quota call.
+    // Richardson is added via coArchitects rather than left invisible: the
+    // Coliseo El Pueblo article itself names him first ("Diseñado por el
+    // arquitecto colombiano Pedro Enrique Richardson Saravia, del estudio
+    // Richardson y Yusti (junto con Libia Yusti)"), so omitting him here
+    // would be the exact attribution-erasure this project's own Ruling 25
+    // exists to avoid.
     architectId: 'libia-yusti',
+    coArchitects: ['enrique-richardson'],
     location: { city: 'Cali', countryCode: 'CO', lat: 3.4134, lon: -76.5519 },
     inception: 1969,
     completed: 1971,

@@ -364,4 +364,38 @@ export const AMERICAS_ANDEAN_ARCHITECTS: Architect[] = [
       { kind: 'institution', url: 'https://nationaltrust.tt/location/the-red-house/', title: 'The Red House — National Trust of Trinidad and Tobago', license: null },
     ],
   },
+  {
+    // Added as a coArchitects entry on coliseo-el-pueblo-cali, not as an
+    // answer-key architect of his own: Richardson co-founded and jointly ran
+    // Richardson y Yusti with Libia Yusti, and the Coliseo El Pueblo article
+    // itself names him specifically as the project's architect. Leaving him
+    // undefined would erase a documented co-author of a building this pool
+    // already credits to his partner — see the coArchitects comment on that
+    // building entry for the fuller reasoning.
+    id: 'enrique-richardson',
+    wikidataId: '',
+    name: 'Pedro Enrique Richardson Saravia',
+    alternativeNames: ['Enrique Richardson'],
+    gender: 'man',
+    born: null,
+    died: null,
+    floruit: { start: 1958, end: 1971, override: true },
+    movements: 'unaffiliated',
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: "Pedro Enrique Richardson Saravia co-founded the Cali firm Richardson y Yusti together with Libia Yusti, and Spanish-language sources credit the partnership jointly for several of the venues Cali built for the VI Pan American Games of 1971 — above all the Coliseo El Pueblo, whose own encyclopedia entry names Richardson specifically as the project's architect, working alongside Yusti. Beyond that late-1960s and early-1970s run of sports commissions, which helped shape the sports precinct the city laid out on its western edge, little else about his career has been established: no dedicated biographical account of him has been found, and no birth or death date is recorded in the sources consulted. He appears here as Yusti's documented professional partner, credited by name rather than folded silently into the firm.",
+      es: 'Pedro Enrique Richardson Saravia cofundó en Cali el estudio Richardson y Yusti junto con Libia Yusti, y las fuentes en español atribuyen a la sociedad, de forma conjunta, varios de los escenarios que Cali construyó para los VI Juegos Panamericanos de 1971 —sobre todo el Coliseo El Pueblo, cuya propia entrada enciclopédica nombra a Richardson específicamente como el arquitecto del proyecto, trabajando junto a Yusti—. Más allá de esa serie de encargos deportivos de finales de los sesenta y comienzos de los setenta, que ayudó a configurar la unidad deportiva trazada en el borde occidental de la ciudad, poco más se ha establecido sobre su carrera: no se ha hallado un relato biográfico dedicado a él, y las fuentes consultadas no registran fecha de nacimiento ni de muerte. Aparece aquí como el socio profesional documentado de Yusti, nombrado en lugar de disolverse en silencio dentro de la firma.',
+      it: "Pedro Enrique Richardson Saravia cofondò a Cali lo studio Richardson y Yusti insieme a Libia Yusti, e le fonti in lingua spagnola attribuiscono alla società, congiuntamente, diversi degli impianti che Cali costruì per i VI Giochi Panamericani del 1971 — soprattutto il Coliseo El Pueblo, la cui stessa voce enciclopedica indica Richardson specificamente come l'architetto del progetto, al fianco di Yusti. Al di là di quella serie di incarichi sportivi di fine anni Sessanta e inizio Settanta, che contribuì a definire il comparto sportivo tracciato sul margine occidentale della città, poco altro si è potuto stabilire sulla sua carriera: non è stato trovato alcun resoconto biografico dedicato a lui, e le fonti consultate non registrano data di nascita né di morte. Compare qui come il socio professionale documentato di Yusti, nominato anziché dissolto in silenzio all'interno dello studio.",
+    },
+    awards: [],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Coliseo_El_Pueblo', title: 'Coliseo El Pueblo', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Libia_Yusti', title: 'Libia Yusti', license: 'CC BY-SA 4.0' },
+    ],
+  },
 ];
