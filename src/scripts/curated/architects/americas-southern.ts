@@ -330,4 +330,33 @@ export const AMERICAS_SOUTHERN_ARCHITECTS: Architect[] = [
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Smiljan_Radi%C4%87_Clarke', title: 'Smiljan Radić Clarke', license: 'CC BY-SA 4.0' },
     ],
   },
+
+  {
+    id: 'gabriela-medrano',
+    wikidataId: 'Q133448370',
+    name: 'Gabriela Medrano',
+    alternativeNames: ['Gabriela Medrano Viteri'],
+    gender: 'woman',
+    born: 1982,
+    died: null,
+    floruit: { start: 2018, end: 2018, override: false },
+    movements: 'unaffiliated',
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'mixed',
+    portrait: {
+      en: 'Gabriela Medrano was born in Quito, Ecuador, in 1982 and later took Chilean citizenship. She trained as an architect at the Universidad Andrés Bello in Santiago, graduating in 2008, and began working with Smiljan Radić that same year. In 2011 she won, with Radić and Eduardo Castillo, the open competition for the Biobío Regional Theatre in Concepción, completed in 2018 and awarded the grand prize at the 2022 Pan-American Architecture Biennial in Quito; the Design Museum in London shortlisted it for its Beazley Designs of the Year in 2018. In 2014 she and Radić won a second competition, with Ricardo Serpell, for a telecommunications tower on Santiago\'s Cerro San Cristóbal, which was never built. Since 2013 she has taught at the Pontifical Catholic University of Chile, the University of Chile and the University of Talca, and since 2018 has made temporary civic interventions in public space.',
+      es: 'Gabriela Medrano nació en Quito, Ecuador, en 1982 y más tarde se nacionalizó chilena. Se tituló de arquitecta en la Universidad Andrés Bello de Santiago en 2008 y ese mismo año empezó a trabajar con Smiljan Radić. En 2011 ganó, junto a Radić y Eduardo Castillo, el concurso abierto del Teatro Regional del Biobío en Concepción, terminado en 2018 y premiado con el Gran Premio de la Bienal Panamericana de Arquitectura de Quito de 2022; el Design Museum la preseleccionó para sus Beazley Designs of the Year de 2018. En 2014 ella y Radić ganaron, con Ricardo Serpell, un segundo concurso para una torre de telecomunicaciones en el Cerro San Cristóbal, que nunca se construyó. Desde 2013 enseña en la Pontificia Universidad Católica de Chile, la Universidad de Chile y la Universidad de Talca, y desde 2018 realiza intervenciones cívicas temporales en el espacio público.',
+      it: 'Gabriela Medrano nacque a Quito, in Ecuador, nel 1982, e in seguito ottenne la cittadinanza cilena. Si formò come architetta all\'Universidad Andrés Bello di Santiago, dove si laureò nel 2008, e quello stesso anno iniziò a lavorare con Smiljan Radić. Nel 2011 vinse, insieme a Radić e Eduardo Castillo, il concorso aperto per il Teatro Regionale del Biobío a Concepción, completato nel 2018 e premiato con il Gran Premio della Biennale Panamericana di Architettura di Quito del 2022; il Design Museum di Londra lo selezionò per i suoi Beazley Designs of the Year del 2018. Nel 2014 lei e Radić vinsero, con Ricardo Serpell, un secondo concorso per una torre delle telecomunicazioni sul Cerro San Cristóbal di Santiago, mai realizzata. Dal 2013 insegna alla Pontificia Università Cattolica del Cile, all\'Università del Cile e all\'Università di Talca, e dal 2018 realizza interventi civici temporanei nello spazio pubblico.',
+    },
+    awards: ['Beazley Designs of the Year shortlist, Design Museum London (2018)', 'Grand Prize, Pan-American Architecture Biennial, Quito (2022)'],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q133448370', title: 'Gabriela Medrano (Q133448370)', license: null },
+      { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Gabriela_Medrano_Viteri', title: 'Gabriela Medrano Viteri', license: 'CC BY-SA 4.0' },
+      { kind: 'publication', url: 'https://www.designboom.com/architecture/smiljan-radic-eduardo-castillo-gabriela-medrano-teatro-biobio-concepcion-chile-03-14-2019/', title: 'Teatro Biobío: trio of architects design landmark theater for the city of Concepción — designboom', license: null },
+    ],
+  },
 ];
