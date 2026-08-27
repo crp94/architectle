@@ -760,4 +760,121 @@ export const AMERICAS_MEXICO_BUILDINGS: Building[] = [
     ],
     tier: 'deep',
   },
+  {
+    id: 'museo-nacional-antropologia-mexico',
+    wikidataId: 'Q524249',
+    name: {
+      en: 'National Museum of Anthropology, Mexico City',
+      es: 'Museo Nacional de Antropología, Ciudad de México',
+      it: 'Museo Nazionale di Antropologia, Città del Messico',
+    },
+    architectId: 'pedro-ramirez-vazquez',
+    coArchitects: ['rafael-mijares'],
+    location: { city: 'Mexico City', countryCode: 'MX', lat: 19.426111, lon: -99.186111 },
+    inception: 1963,
+    completed: 1964,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['concrete', 'stone', 'steel-and-glass'],
+    structure: {
+      en: 'A ring of reinforced-concrete and marble galleries around a single courtyard roofed by El Paraguas, a concrete-and-aluminium canopy cantilevered from one sculpted, bronze-clad column.',
+      es: 'Un anillo de salas de hormigón armado y mármol en torno a un único patio cubierto por El Paraguas, una marquesina de hormigón y aluminio en voladizo sobre una sola columna esculpida y revestida de bronce.',
+      it: 'Un anello di sale in cemento armato e marmo attorno a un unico cortile coperto da El Paraguas, una pensilina di cemento e alluminio a sbalzo su un\'unica colonna scolpita e rivestita di bronzo.',
+    },
+    program: {
+      en: 'Commissioned by President Adolfo López Mateos to give Mexico\'s national anthropology and archaeology collections their first purpose-built home, in Chapultepec Park.',
+      es: 'Encargado por el presidente Adolfo López Mateos para dar a las colecciones nacionales de antropología y arqueología de México su primera sede construida expresamente, en el Bosque de Chapultepec.',
+      it: 'Commissionato dal presidente Adolfo López Mateos per dare alle collezioni nazionali di antropologia e archeologia del Messico la loro prima sede costruita appositamente, nel Bosco di Chapultepec.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Mexico\'s national anthropology museum, run by the National Institute of Anthropology and History and among the most-visited museums in the Americas; awarded the 2025 Princess of Asturias Award for Concord.',
+      es: 'Museo nacional de antropología de México, gestionado por el Instituto Nacional de Antropología e Historia y uno de los museos más visitados de América; galardonado en 2025 con el Premio Princesa de Asturias de la Concordia.',
+      it: 'Museo nazionale di antropologia del Messico, gestito dall\'Istituto Nazionale di Antropologia e Storia e tra i musei più visitati delle Americhe; insignito nel 2025 del Premio Principessa delle Asturie per la Concordia.',
+    },
+    detailRect: { x: 0.30, y: 0.40, w: 0.34, h: 0.32 },
+    image: {
+      // Exterior courtyard view of El Paraguas (the umbrella column), part
+      // of a dated series of exterior photos of the museum. Ramírez
+      // Vázquez d.2013 and Mijares d.2015 are both well inside the
+      // 70-year window, so exterior-only applies; this is an exterior
+      // courtyard shot, not an interior gallery. Rect sits on the column
+      // and canopy underside, away from open sky.
+      commonsFile: 'File:2019-02-24 - Museo Nacional de Antropología - 001.jpg',
+      photographer: 'Oleg Yunakov',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:2019-02-24_-_Museo_Nacional_de_Antropolog%C3%ADa_-_001.jpg',
+      width: 0,
+      height: 0,
+    },
+    dossier: {
+      en: 'President López Mateos gave Pedro Ramírez Vázquez nineteen months to move the national anthropology collection out of a cramped colonial-era building and into purpose-built galleries in Chapultepec Park, and construction ran from February 1963 to the opening on 17 September 1964. Ramírez Vázquez, working with Rafael Mijares Alcérreca and Jorge Campuzano, organised the whole museum as a ring of galleries around a single courtyard, closed overhead by El Paraguas, "the umbrella": a vast concrete and aluminium canopy carried on one sculpted bronze-clad column, from which water sheets down in a ring during the rainy season. Grey Santo Tomás marble paves the courtyard; white marble, aluminium and glass line the surrounding halls, which run chronologically from the pre-Hispanic civilisations through the ethnography of Mexico\'s living indigenous peoples. Twelve archaeology rooms and eleven ethnography rooms open off the single continuous route, so a visitor can walk the whole of Mexican prehistory without doubling back. It remains one of the most visited museums in the Americas and, in 2025, received the Princess of Asturias Award for Concord.',
+      es: 'El presidente López Mateos dio a Pedro Ramírez Vázquez diecinueve meses para trasladar la colección nacional de antropología de un edificio colonial hacinado a unas galerías construidas expresamente en el Bosque de Chapultepec, y las obras corrieron de febrero de 1963 a la inauguración, el 17 de septiembre de 1964. Ramírez Vázquez, junto con Rafael Mijares Alcérreca y Jorge Campuzano, organizó todo el museo como un anillo de salas en torno a un único patio, cubierto por El Paraguas: una vasta marquesina de hormigón y aluminio sostenida por una sola columna esculpida y revestida de bronce, de la que cae una cortina de agua durante la temporada de lluvias. Mármol gris de Santo Tomás pavimenta el patio; mármol blanco, aluminio y vidrio recorren las salas circundantes, que avanzan cronológicamente desde las civilizaciones prehispánicas hasta la etnografía de los pueblos indígenas vivos de México. Doce salas de arqueología y once de etnografía se abren sobre un único recorrido continuo, de modo que el visitante puede recorrer toda la prehistoria mexicana sin retroceder. Sigue siendo uno de los museos más visitados de América y, en 2025, recibió el Premio Princesa de Asturias de la Concordia.',
+      it: 'Il presidente López Mateos concesse a Pedro Ramírez Vázquez diciannove mesi per trasferire la collezione nazionale di antropologia da un edificio coloniale angusto a gallerie costruite appositamente nel Bosco di Chapultepec, e i lavori corsero da febbraio 1963 all\'inaugurazione, il 17 settembre 1964. Ramírez Vázquez, insieme a Rafael Mijares Alcérreca e Jorge Campuzano, organizzò l\'intero museo come un anello di sale attorno a un unico cortile, coperto da El Paraguas, "l\'ombrello": un\'immensa pensilina di cemento e alluminio sorretta da un\'unica colonna scolpita e rivestita in bronzo, da cui durante la stagione delle piogge scende una cortina d\'acqua. Il cortile è pavimentato in marmo grigio di Santo Tomás; marmo bianco, alluminio e vetro percorrono le sale circostanti, che procedono cronologicamente dalle civiltà precolombiane fino all\'etnografia dei popoli indigeni viventi del Messico. Dodici sale di archeologia e undici di etnografia si aprono su un unico percorso continuo, così che il visitatore possa attraversare l\'intera preistoria messicana senza tornare sui propri passi. Resta uno dei musei più visitati delle Americhe e, nel 2025, ha ricevuto il Premio Principessa delle Asturie per la Concordia.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q524249', title: 'National Museum of Anthropology (Q524249)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/National_Museum_of_Anthropology_(Mexico)', title: 'National Museum of Anthropology (Mexico)', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'museo-rufino-tamayo-mexico',
+    wikidataId: 'Q3330551',
+    name: {
+      en: 'Rufino Tamayo Museum, Mexico City',
+      es: 'Museo Rufino Tamayo, Ciudad de México',
+      it: 'Museo Rufino Tamayo, Città del Messico',
+    },
+    architectId: 'teodoro-gonzalez-de-leon',
+    coArchitects: ['abraham-zabludovsky'],
+    location: { city: 'Mexico City', countryCode: 'MX', lat: 19.42552, lon: -99.18173 },
+    inception: 1979,
+    completed: 1981,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['concrete'],
+    structure: {
+      en: 'A sequence of cantilevered reinforced-concrete volumes in board-marked, bush-hammered finish, stepping down the sloped site with no applied cladding, so the raw structure is also the facade.',
+      es: 'Una sucesión de volúmenes de hormigón armado en voladizo, con acabado encofrado y abujardado, que descienden por el terreno inclinado sin revestimiento alguno, de modo que la estructura desnuda es también la fachada.',
+      it: 'Una sequenza di volumi in cemento armato a sbalzo, con finitura a casseratura a vista e bocciardata, che scendono lungo il terreno in pendenza senza alcun rivestimento, cosicché la struttura nuda è anche la facciata.',
+    },
+    program: {
+      en: 'Built by the Mexican state to house the modern art collection Rufino and Olga Tamayo donated to the nation on condition that a public gallery be built for it.',
+      es: 'Construido por el Estado mexicano para albergar la colección de arte moderno que Rufino y Olga Tamayo donaron a la nación a condición de que se construyera una galería pública para exhibirla.',
+      it: 'Costruito dallo Stato messicano per ospitare la collezione d\'arte moderna che Rufino e Olga Tamayo donarono alla nazione a condizione che vi si costruisse una galleria pubblica.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'A contemporary art museum in Chapultepec Park showing the Tamayos\' modern collection alongside works acquired since the 1990s, part of Mexico\'s national institute of fine arts.',
+      es: 'Museo de arte contemporáneo en el Bosque de Chapultepec que exhibe el fondo moderno de los Tamayo junto a obras adquiridas desde los años noventa, integrado en el instituto nacional de bellas artes de México.',
+      it: 'Museo d\'arte contemporanea nel Bosco di Chapultepec che espone il fondo moderno dei Tamayo accanto a opere acquisite dagli anni Novanta, parte dell\'istituto nazionale delle belle arti del Messico.',
+    },
+    detailRect: { x: 0.30, y: 0.34, w: 0.32, h: 0.30 },
+    image: {
+      // Exterior 2024 photo of the board-marked concrete volumes,
+      // Commons-categorised "Exterior". González de León d.2016 and
+      // Zabludovsky d.2003 are both inside the 70-year window, so
+      // exterior-only applies; confirmed exterior. Rect sits on the
+      // cantilevered concrete volume junctions, away from sky.
+      commonsFile: 'File:Museo Rufino Tamayo - Mexico 2024.jpg',
+      photographer: 'José Luiz (Jbribeiro1)',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Museo_Rufino_Tamayo_-_Mexico_2024.jpg',
+      width: 0,
+      height: 0,
+    },
+    dossier: {
+      en: 'Rufino and Olga Tamayo gave the state a substantial part of their own art collection on the condition that Mexico City build somewhere to show it, and the government answered with a site inside Chapultepec Park, a short walk from Ramírez Vázquez\'s anthropology museum. Teodoro González de León and Abraham Zabludovsky, partners who had already built the Colegio de México and would go on to the National Auditorium together, designed a sequence of cantilevered concrete volumes stepping down the sloped ground, cast in the same board-marked, bush-hammered concrete the two used throughout their joint practice and left entirely unclad, so that the museum\'s structure is also its finish. Terraces and stepped platforms outside continue the section of the galleries into the park, blurring where the building ends and the landscape begins. It opened on 29 May 1981, and the two architects shared Mexico\'s National Award of Science and Arts in Fine Arts the following year for the design. The museum still shows the Tamayos\' modern holdings alongside a contemporary collection built from artists\' donations since the 1990s.',
+      es: 'Rufino y Olga Tamayo cedieron al Estado una parte sustancial de su propia colección de arte a condición de que la Ciudad de México construyera un lugar donde exhibirla, y el gobierno respondió con un solar dentro del Bosque de Chapultepec, a poca distancia del museo de antropología de Ramírez Vázquez. Teodoro González de León y Abraham Zabludovsky, socios que ya habían construido El Colegio de México y que más tarde levantarían el Auditorio Nacional, proyectaron una sucesión de volúmenes de hormigón en voladizo que descienden por el terreno inclinado, vaciados en el mismo hormigón encofrado y abujardado que ambos empleaban en toda su obra conjunta y dejados por completo sin revestir, de modo que la estructura del museo es también su acabado. Terrazas y plataformas escalonadas en el exterior prolongan la sección de las salas hacia el parque, difuminando dónde termina el edificio y dónde empieza el paisaje. Se inauguró el 29 de mayo de 1981, y al año siguiente ambos compartieron el Premio Nacional de Ciencias y Artes de México en Bellas Artes. El museo sigue mostrando el fondo moderno de los Tamayo junto a una colección contemporánea formada con donaciones de artistas desde los años noventa.',
+      it: 'Rufino e Olga Tamayo cedettero allo Stato una parte sostanziale della propria collezione d\'arte a condizione che Città del Messico costruisse un luogo dove esporla, e il governo rispose con un\'area all\'interno del Bosco di Chapultepec, a breve distanza dal museo di antropologia di Ramírez Vázquez. Teodoro González de León e Abraham Zabludovsky, soci che avevano già costruito il Colegio de México e che in seguito avrebbero realizzato insieme l\'Auditorio Nacional, progettarono una sequenza di volumi di cemento a sbalzo che scendono lungo il terreno in pendenza, gettati nello stesso calcestruzzo con casseratura a vista e bocciardato che i due impiegavano in tutta la loro opera comune e lasciati del tutto privi di rivestimento, cosicché la struttura del museo ne è anche la finitura. Terrazze e piattaforme digradanti all\'esterno prolungano la sezione delle sale nel parco, sfumando dove finisce l\'edificio e dove inizia il paesaggio. Fu inaugurato il 29 maggio 1981, e l\'anno seguente i due architetti condivisero il Premio Nazionale di Scienze e Arti del Messico per le Belle Arti per il progetto. Il museo espone tuttora il fondo moderno dei Tamayo accanto a una collezione contemporanea formata dalle donazioni degli artisti a partire dagli anni Novanta.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q3330551', title: 'Museo Tamayo (Q3330551)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Museo_Rufino_Tamayo,_Mexico_City', title: 'Museo Rufino Tamayo, Mexico City', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
 ];
