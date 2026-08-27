@@ -22,6 +22,9 @@ export const EUROPE_GERMANIC_BUILDINGS: Building[] = [
       it: 'Chiesa di San Carlo Borromeo',
     },
     architectId: 'johann-bernhard-fischer-von-erlach',
+    // Wikidata P84 (Q408847) lists both father and son: Joseph Emanuel
+    // completed the church after his father's 1723 death, per the dossier.
+    coArchitects: ['joseph-emanuel-fischer-von-erlach'],
     location: { city: 'Vienna', countryCode: 'AT', lat: 48.19828, lon: 16.37188 },
     inception: 1716,
     completed: 1737,
@@ -104,7 +107,15 @@ export const EUROPE_GERMANIC_BUILDINGS: Building[] = [
     // place of the original exterior photo (File:Bad Staffelstein Basilika
     // Vierzehnheiligen 001.jpg, still a valid CC BY-SA 4.0 candidate if this
     // building ever needs a second image).
-    detailRect: { x: 0.28, y: 0.12, w: 0.32, h: 0.30 },
+    //
+    // detailRect re-verified against the actual downloaded image (task-9
+    // review, Minor #2): the original {x:0.28, y:0.12, w:0.32, h:0.30} mostly
+    // framed the gilded Rococo altar canopy, not the vault. Moved up and left
+    // to {x:0.08, y:0.02, w:0.32, h:0.28} (area 0.0896), which frames the
+    // diagonal rib where two vault ovals interpenetrate, the fresco medallion
+    // in its scalloped border, and a window for scale — the actual
+    // interpenetrating-oval geometry the dossier describes.
+    detailRect: { x: 0.08, y: 0.02, w: 0.32, h: 0.28 },
     image: {
       commonsFile: 'File:Vierzehnheiligen Gnadenaltar P3RM0723-HDR.jpg',
       photographer: 'Ermell',
@@ -474,6 +485,11 @@ export const EUROPE_GERMANIC_BUILDINGS: Building[] = [
       it: 'Stadio Olimpico di Monaco di Baviera',
     },
     architectId: 'guenter-behnisch',
+    // Wikidata P84 (Q131610) credits three architects: Frei Otto, Behnisch &
+    // Partner (Günter Behnisch, architectId above) and Carlo Weber — not
+    // Behnisch alone. Jörg Schlaich is separately, correctly, credited as
+    // structural engineer (P631), a distinct role.
+    coArchitects: ['frei-otto', 'carlo-weber'],
     location: { city: 'Munich', countryCode: 'DE', lat: 48.17306, lon: 11.54667 },
     inception: 1967,
     completed: 1972,
@@ -734,8 +750,8 @@ export const EUROPE_GERMANIC_BUILDINGS: Building[] = [
     },
     dossier: {
       en: 'Schinkel had studied under Friedrich Gilly and began as a painter before Prussia\'s post-Napoleonic reconstruction gave him architecture as his real practice. King Frederick William III approved his design for a public museum on the Lustgarten in 1823; the cornerstone was laid on 9 July 1825 and the museum opened on 3 August 1830, the first in Prussia built expressly to display art to the public rather than a royal household. The plan sets a two-storey block, containing picture galleries above and antiquities below, behind a screen of eighteen fluted Ionic columns spanning the entire width of the façade — the portico is not an entrance porch but an open loggia, a place to stand and look back across the Lustgarten before entering. A broad open staircase rises between the columns to a terrace, and at its centre a top-lit rotunda twenty-three metres high, ringed by twenty Corinthian columns, quotes the Pantheon directly. Eighteen sandstone eagles crown the entablature. American bombing and a 1945 ammunition explosion gutted the building; it was rebuilt in stages from 1951 to 1966, and the rotunda\'s murals were restored in 1982. Museum Island became a UNESCO World Heritage Site in 1999.',
-      es: 'Schinkel se había formado con Friedrich Gilly y comenzó como pintor antes de que la reconstrucción prusiana tras las guerras napoleónicas le diera la arquitectura como oficio real. El rey Federico Guillermo III aprobó en 1823 su proyecto de un museo público en el Lustgarten; la primera piedra se colocó el 9 de julio de 1825 y el museo se inauguró el 3 de agosto de 1830, el primero en Prusia construido expresamente para mostrar arte al público y no a una casa real. La planta dispone un bloque de dos alturas, con las pinacotecas arriba y las antigüedades abajo, tras una pantalla de dieciocho columnas jónicas acanaladas que recorren todo el ancho de la fachada: el pórtico no es un simple zaguán de entrada, sino una logia abierta, un lugar donde detenerse y mirar hacia atrás, al Lustgarten, antes de entrar. Una amplia escalinata abierta sube entre las columnas hasta una terraza, y en el centro una rotonda cenital de veintitrés metros de altura, rodeada de veinte columnas corintias, cita directamente el Panteón. Dieciocho águilas de arenisca coronan el entablamento. El bombardeo estadounidense y una explosión de munición en 1945 arrasaron el edificio; se reconstruyó por fases entre 1951 y 1966, y los murales de la rotonda se restauraron en 1982. La Isla de los Museos fue declarada Patrimonio Mundial de la UNESCO en 1999.',
-      it: 'Schinkel si era formato con Friedrich Gilly e cominciò come pittore prima che la ricostruzione prussiana del dopo-Napoleone gli desse l\'architettura come mestiere vero e proprio. Il re Federico Guglielmo III approvò nel 1823 il suo progetto per un museo pubblico sul Lustgarten; la prima pietra fu posata il 9 luglio 1825 e il museo aprì il 3 agosto 1830, il primo in Prussia costruito appositamente per mostrare l\'arte al pubblico e non a una casa reale. La pianta dispone un blocco di due piani, con le gallerie di pittura sopra e le antichità sotto, dietro uno schermo di diciotto colonne ioniche scanalate che percorrono l\'intera larghezza della facciata: il portico non è un semplice ingresso coperto, ma una loggia aperta, un luogo dove fermarsi e guardare indietro verso il Lustgarten prima di entrare. Un\'ampia scalinata aperta sale tra le colonne fino a una terrazza, e al centro una rotonda a lucernario alta ventitré metri, cinta da venti colonne corinzie, cita direttamente il Pantheon. Diciotto aquile in arenaria coronano la trabeazione. Il bombardamento americano e un\'esplosione di munizioni nel 1945 devastarono l\'edificio; fu ricostruito per fasi fra il 1951 e il 1966, e gli affreschi della rotonda furono restaurati nel 1982. L\'Isola dei Musei è divenuta Patrimonio mondiale UNESCO nel 1999.',
+      es: 'Schinkel se formó con Friedrich Gilly y empezó como pintor antes de que la reconstrucción prusiana tras las guerras napoleónicas le diera la arquitectura como oficio. Federico Guillermo III aprobó en 1823 el proyecto de museo público en el Lustgarten; la primera piedra se colocó el 9 de julio de 1825 y el museo abrió el 3 de agosto de 1830, el primero en Prusia concebido para mostrar arte al público y no a una casa real. La planta dispone un bloque de dos alturas, con pinacotecas arriba y antigüedades abajo, tras una pantalla de dieciocho columnas jónicas acanaladas que recorren todo el ancho de la fachada: el pórtico es una logia abierta para mirar el Lustgarten antes de entrar. Una escalinata sube entre las columnas hasta una terraza, y en el centro una rotonda cenital de veintitrés metros, rodeada de veinte columnas corintias, cita el Panteón. Dieciocho águilas de arenisca coronan el entablamento. El bombardeo estadounidense y una explosión de munición en 1945 arrasaron el edificio; se reconstruyó por fases entre 1951 y 1966, y los murales de la rotonda se restauraron en 1982. La Isla de los Museos es Patrimonio Mundial de la UNESCO desde 1999.',
+      it: 'Schinkel si formò con Friedrich Gilly e cominciò come pittore prima che la ricostruzione prussiana del dopo-Napoleone gli desse l\'architettura come mestiere. Il re Federico Guglielmo III approvò nel 1823 il progetto per un museo pubblico sul Lustgarten; la prima pietra fu posata il 9 luglio 1825 e il museo aprì il 3 agosto 1830, il primo in Prussia concepito per mostrare l\'arte al pubblico e non a una casa reale. La pianta dispone un blocco di due piani, con le gallerie di pittura sopra e le antichità sotto, dietro uno schermo di diciotto colonne ioniche scanalate che percorrono l\'intera larghezza della facciata: il portico è una loggia aperta da cui guardare il Lustgarten prima di entrare. Una scalinata sale tra le colonne fino a una terrazza, e al centro una rotonda a lucernario alta ventitré metri, cinta da venti colonne corinzie, cita il Pantheon. Diciotto aquile in arenaria coronano la trabeazione. Il bombardamento americano e un\'esplosione di munizioni nel 1945 devastarono l\'edificio; fu ricostruito per fasi fra il 1951 e il 1966, e gli affreschi della rotonda furono restaurati nel 1982. L\'Isola dei Musei è Patrimonio mondiale UNESCO dal 1999.',
     },
     context: null,
     sources: [

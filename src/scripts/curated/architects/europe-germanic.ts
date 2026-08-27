@@ -372,4 +372,98 @@ export const EUROPE_GERMANIC_ARCHITECTS: Architect[] = [
       { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Karl_Friedrich_Schinkel', title: 'Karl Friedrich Schinkel', license: 'CC BY-SA 4.0' },
     ],
   },
+  {
+    // Added in the fix round: Wikidata P84 on the Munich Olympic Stadium
+    // (Q131610) credits Frei Otto, Behnisch & Partner, and Carlo Weber as
+    // architects — not Behnisch alone. Otto is defined here as a coArchitects
+    // entry on olympiastadion-muenchen; confirmed absent from the rest of the
+    // 18-slice pool (grep for frei-otto returns nothing elsewhere), and his
+    // practice base (Berlin, then Stuttgart) sits squarely in this slice.
+    id: 'frei-otto',
+    wikidataId: 'Q64412',
+    name: 'Frei Otto',
+    alternativeNames: ['Frei Paul Otto'],
+    gender: 'man',
+    born: 1925,
+    died: 2015,
+    floruit: { start: 1955, end: 2000, override: false },
+    movements: [{ id: 'high-tech', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'mixed',
+    portrait: {
+      en: 'Otto trained as an architect in Berlin, was drafted as a Luftwaffe pilot and spent 1945 to 1947 as a prisoner of war near Chartres, where a shortage of materials pushed him toward the tent structures he built for fellow prisoners — the accidental origin of a lifelong subject. He opened his own Berlin practice in 1952 and completed a doctorate on tensioned structures in 1954, the same year he began finding form for cable nets and membranes through soap-film and hanging-chain models rather than calculation alone. He founded the Institute for Lightweight Structures at Stuttgart in 1964. His West German pavilion for Expo 67 in Montreal, with Rolf Gutbrod, led directly to the Munich Olympic roof; the Multihalle at Mannheim followed in 1975. He died in Leonberg in March 2015, a day before the Pritzker jury announced his prize.',
+      es: 'Otto se formó como arquitecto en Berlín, fue reclutado como piloto de la Luftwaffe y pasó de 1945 a 1947 como prisionero de guerra cerca de Chartres, donde la escasez de materiales lo empujó hacia las estructuras de tienda que construyó para sus compañeros de cautiverio: origen accidental de un tema que lo ocupó toda la vida. Abrió despacho propio en Berlín en 1952 y completó en 1954 un doctorado sobre estructuras traccionadas, buscando la forma de redes y membranas con películas de jabón y modelos de cadena, más que por cálculo. Fundó el Instituto de Estructuras Ligeras de Stuttgart en 1964. Su pabellón de Alemania Occidental en la Expo 67 de Montreal, con Rolf Gutbrod, llevó a la cubierta olímpica de Múnich; le siguió la Multihalle de Mannheim en 1975. Murió en Leonberg en marzo de 2015, un día antes de que el jurado del Pritzker anunciara su premio.',
+      it: 'Otto si formò come architetto a Berlino, fu arruolato come pilota della Luftwaffe e trascorse dal 1945 al 1947 come prigioniero di guerra vicino a Chartres, dove la scarsità di materiali lo spinse verso le strutture a tenda costruite per i compagni di prigionia: origine casuale di un tema che lo avrebbe occupato per tutta la vita. Aprì studio proprio a Berlino nel 1952 e completò nel 1954 un dottorato sulle strutture tese, cercando la forma di reti e membrane con pellicole di sapone e modelli a catenaria, più che per calcolo. Fondò l\'Istituto per le strutture leggere di Stoccarda nel 1964. Il suo padiglione della Germania Ovest all\'Expo 67 di Montreal, con Rolf Gutbrod, portò alla copertura olimpica di Monaco; seguì la Multihalle di Mannheim nel 1975. Morì a Leonberg nel marzo 2015, un giorno prima che la giuria del Pritzker annunciasse il suo premio.',
+    },
+    awards: ['RIBA Royal Gold Medal (2005)', 'Pritzker Architecture Prize (2015, posthumous)'],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q64412', title: 'Frei Otto (Q64412)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Frei_Otto', title: 'Frei Otto', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    // Added in the fix round alongside frei-otto: the same Wikidata P84 credit
+    // on the Munich Olympic Stadium names Carlo Weber as a third architect.
+    id: 'carlo-weber',
+    wikidataId: 'Q121251',
+    name: 'Carlo Weber',
+    alternativeNames: ['Karlheinz Weber'],
+    gender: 'man',
+    born: 1934,
+    died: 2014,
+    floruit: { start: 1966, end: 2013, override: false },
+    movements: [{ id: 'high-tech', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'mixed',
+    portrait: {
+      en: 'Born Karlheinz Weber in Saarbrücken in 1934, he studied architecture at the Technical University of Stuttgart from 1954, breaking off for a DAAD scholarship at the École des Beaux-Arts in Paris in 1959–60. From 1957 he worked alongside Günter Behnisch and Bruno Lambart, and became a partner at Behnisch & Partner in 1966. It was Weber who, with Frei Otto and Heinz Isler, built the Munich Olympic Stadium competition model from wooden rods and a lady\'s stocking after a colleague proposed draping one canopy over the whole site — the sketch that became the tent roof. He left the partnership in 1979 and ran his own Stuttgart and Munich office with Fritz Auer from 1980 until his death, building the Recklinghausen Festival House and Theater Hof, and taught at Stuttgart and Dresden. He died in Stuttgart in May 2014.',
+      es: 'Nacido Karlheinz Weber en Saarbrücken en 1934, estudió arquitectura en la Universidad Técnica de Stuttgart desde 1954, con una interrupción gracias a una beca del DAAD en la École des Beaux-Arts de París en 1959-60. Desde 1957 trabajó junto a Günter Behnisch y Bruno Lambart, y en 1966 fue socio de Behnisch & Partner. Fue Weber quien, con Frei Otto y Heinz Isler, construyó la maqueta de concurso del Estadio Olímpico de Múnich con varillas de madera y una media de señora, tras proponer un colega tender un solo toldo sobre todo el recinto: el boceto que dio la cubierta de lona. Dejó la sociedad en 1979 y dirigió su propio despacho en Stuttgart y Múnich con Fritz Auer desde 1980 hasta su muerte, construyendo la Casa de Festivales de Recklinghausen y el Teatro de Hof, y enseñó en Stuttgart y Dresde. Murió en Stuttgart en mayo de 2014.',
+      it: 'Nato Karlheinz Weber a Saarbrücken nel 1934, studiò architettura all\'Università Tecnica di Stoccarda dal 1954, con un\'interruzione per una borsa DAAD all\'École des Beaux-Arts di Parigi nel 1959-60. Dal 1957 lavorò accanto a Günter Behnisch e Bruno Lambart, e nel 1966 divenne socio di Behnisch & Partner. Fu Weber a costruire, con Frei Otto e Heinz Isler, il modello di concorso dello Stadio Olimpico di Monaco con bacchette di legno e una calza da donna, dopo che un collega propose di stendere un unico velario su tutta l\'area: lo schizzo da cui nacque la copertura a tenda. Lasciò la società nel 1979 e diresse un proprio studio a Stoccarda e Monaco con Fritz Auer dal 1980 fino alla morte, costruendo la Casa dei Festival di Recklinghausen e il Teatro di Hof, e insegnò a Stoccarda e Dresda. Morì a Stoccarda nel maggio 2014.',
+    },
+    awards: ['Auguste Perret Prize (1981)', 'UIA Architecture Prize (1981)', 'German Architecture Prize (2001)'],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q121251', title: 'Carlo Weber (Q121251)', license: null },
+      { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Carlo_Weber_(Architekt)', title: 'Carlo Weber (Architekt)', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    // Added in the fix round: Wikidata P84 on the Karlskirche (Q408847) lists
+    // both Johann Bernhard Fischer von Erlach and his son Joseph Emanuel, who
+    // completed the church after his father's 1723 death — the dossier itself
+    // already narrates this. Defined as a coArchitects entry on
+    // karlskirche-vienna.
+    id: 'joseph-emanuel-fischer-von-erlach',
+    wikidataId: 'Q84588',
+    name: 'Joseph Emanuel Fischer von Erlach',
+    alternativeNames: ['Fischer von Erlach der Jüngere'],
+    gender: 'man',
+    born: 1693,
+    died: 1742,
+    floruit: { start: 1723, end: 1742, override: false },
+    movements: [{ id: 'baroque', primary: true }, { id: 'neoclassicism', primary: false }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'sacral',
+    signatureMaterial: 'stone',
+    portrait: {
+      en: 'Baptised in Vienna in September 1693, the second son of Johann Bernhard Fischer von Erlach, Joseph Emanuel trained in his father\'s workshop, drafting projects and helping finish his father\'s engraved survey of world architecture. When the elder Fischer died in 1723 with the Karlskirche barely begun above its foundations, Joseph Emanuel took over the site and carried it to completion in 1737, along with several other paternal commissions left unfinished. He became imperial court architect in 1722 and first court architect in 1725, and was raised to Freiherr in 1735, largely for his engineering work rather than his buildings. Where his father built for tectonic effect, Joseph Emanuel favoured flatter, more rational facades, seen at the Hofburg\'s Winter Riding School, the Court Library and the Michaelertrakt. He died in Vienna in June 1742.',
+      es: 'Bautizado en Viena en septiembre de 1693, segundo hijo de Johann Bernhard Fischer von Erlach, Joseph Emanuel se formó en el taller de su padre, redactando proyectos y ayudando a terminar su tratado grabado sobre la arquitectura universal. Cuando su padre murió en 1723 con la Karlskirche apenas levantada sobre sus cimientos, Joseph Emanuel se hizo cargo de la obra y la llevó a término en 1737, junto con otros encargos paternos inacabados. Fue nombrado arquitecto de la corte imperial en 1722 y primer arquitecto de la corte en 1725, y en 1735 fue elevado a Freiherr, sobre todo por sus méritos como ingeniero más que como constructor. Donde su padre buscaba el efecto tectónico, Joseph Emanuel prefirió fachadas más planas y racionales, visibles en la Escuela de Equitación Española de la Hofburg, la Biblioteca de la Corte y el Michaelertrakt. Murió en Viena en junio de 1742.',
+      it: 'Battezzato a Vienna nel settembre 1693, secondo figlio di Johann Bernhard Fischer von Erlach, Joseph Emanuel si formò nella bottega paterna, redigendo progetti e aiutando a completare il trattato inciso del padre sull\'architettura universale. Quando il padre morì nel 1723 con la Karlskirche appena impostata sulle fondamenta, Joseph Emanuel prese in mano il cantiere e lo portò a termine nel 1737, insieme ad altri incarichi paterni rimasti incompiuti. Divenne architetto di corte imperiale nel 1722 e primo architetto di corte nel 1725, e nel 1735 fu elevato a Freiherr, soprattutto per i suoi meriti di ingegnere più che di costruttore. Dove il padre cercava l\'effetto tettonico, Joseph Emanuel preferì facciate più piatte e razionali, visibili nella Scuola di Equitazione Spagnola della Hofburg, nella Biblioteca di Corte e nel Michaelertrakt. Morì a Vienna nel giugno 1742.',
+    },
+    awards: ['Freiherr (1735)', 'Imperial court architect (from 1722)', 'First court architect (from 1725)'],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q84588', title: 'Joseph Emanuel Fischer von Erlach (Q84588)', license: null },
+      { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Joseph_Emanuel_Fischer_von_Erlach', title: 'Joseph Emanuel Fischer von Erlach', license: 'CC BY-SA 4.0' },
+    ],
+  },
 ];
