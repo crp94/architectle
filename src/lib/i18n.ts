@@ -90,6 +90,44 @@ const en = {
   revealProvenance: 'Provenance',
   revealSources: 'Sources',
   revealArchitect: 'Architect',
+  revealContext: 'Context',
+
+  // Reveal fact-strip labels
+  factCompleted: 'Completed',
+  factLocation: 'Location',
+  factTypology: 'Typology',
+  factMaterial: 'Material',
+
+  // Provenance line labels
+  provenanceNoWikidata: 'No Wikidata item',
+  provenanceWikidataLabel: 'Wikidata',
+  provenanceCommonsLabel: 'Commons',
+  provenancePhotographerLabel: 'Photo',
+  provenanceLicenseLabel: 'Licence',
+
+  // Architect movement, when unaffiliated (reveal subtitle)
+  architectUnaffiliated: 'Unaffiliated',
+
+  // Typology display labels (fact strip / archive)
+  typologyHousing: 'Housing',
+  typologyCivic: 'Civic',
+  typologySacral: 'Sacral',
+  typologyCultural: 'Cultural',
+  typologyCommercial: 'Commercial',
+  typologyIndustrial: 'Industrial',
+  typologyEducational: 'Educational',
+  typologyInfrastructure: 'Infrastructure',
+  typologyTower: 'Tower',
+  typologyDomestic: 'Domestic',
+
+  // Material display labels (fact strip / archive)
+  materialConcrete: 'Concrete',
+  materialBrick: 'Brick',
+  materialSteelGlass: 'Steel and glass',
+  materialTimber: 'Timber',
+  materialStone: 'Stone',
+  materialEarth: 'Earth',
+  materialMixed: 'Mixed',
 };
 
 type Strings = typeof en;
@@ -167,6 +205,39 @@ const es: Strings = {
   revealProvenance: 'Procedencia',
   revealSources: 'Fuentes',
   revealArchitect: 'Arquitecto',
+  revealContext: 'Contexto',
+
+  factCompleted: 'Finalización',
+  factLocation: 'Ubicación',
+  factTypology: 'Tipología',
+  factMaterial: 'Material',
+
+  provenanceNoWikidata: 'Sin elemento de Wikidata',
+  provenanceWikidataLabel: 'Wikidata',
+  provenanceCommonsLabel: 'Commons',
+  provenancePhotographerLabel: 'Foto',
+  provenanceLicenseLabel: 'Licencia',
+
+  architectUnaffiliated: 'Sin afiliación',
+
+  typologyHousing: 'Vivienda',
+  typologyCivic: 'Cívico',
+  typologySacral: 'Sacro',
+  typologyCultural: 'Cultural',
+  typologyCommercial: 'Comercial',
+  typologyIndustrial: 'Industrial',
+  typologyEducational: 'Educativo',
+  typologyInfrastructure: 'Infraestructura',
+  typologyTower: 'Torre',
+  typologyDomestic: 'Doméstico',
+
+  materialConcrete: 'Hormigón',
+  materialBrick: 'Ladrillo',
+  materialSteelGlass: 'Acero y vidrio',
+  materialTimber: 'Madera',
+  materialStone: 'Piedra',
+  materialEarth: 'Tierra',
+  materialMixed: 'Mixto',
 };
 
 const it: Strings = {
@@ -242,6 +313,39 @@ const it: Strings = {
   revealProvenance: 'Provenienza',
   revealSources: 'Fonti',
   revealArchitect: 'Architetto',
+  revealContext: 'Contesto',
+
+  factCompleted: 'Completamento',
+  factLocation: 'Posizione',
+  factTypology: 'Tipologia',
+  factMaterial: 'Materiale',
+
+  provenanceNoWikidata: 'Nessuna voce Wikidata',
+  provenanceWikidataLabel: 'Wikidata',
+  provenanceCommonsLabel: 'Commons',
+  provenancePhotographerLabel: 'Foto',
+  provenanceLicenseLabel: 'Licenza',
+
+  architectUnaffiliated: 'Non affiliato',
+
+  typologyHousing: 'Residenziale',
+  typologyCivic: 'Civile',
+  typologySacral: 'Sacro',
+  typologyCultural: 'Culturale',
+  typologyCommercial: 'Commerciale',
+  typologyIndustrial: 'Industriale',
+  typologyEducational: 'Educativo',
+  typologyInfrastructure: 'Infrastruttura',
+  typologyTower: 'Torre',
+  typologyDomestic: 'Domestico',
+
+  materialConcrete: 'Cemento',
+  materialBrick: 'Mattone',
+  materialSteelGlass: 'Acciaio e vetro',
+  materialTimber: 'Legno',
+  materialStone: 'Pietra',
+  materialEarth: 'Terra',
+  materialMixed: 'Misto',
 };
 
 export const STRINGS: Record<Locale, Strings> = { en, es, it };
