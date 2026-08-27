@@ -341,4 +341,35 @@ export const EUROPE_GERMANIC_ARCHITECTS: Architect[] = [
       { kind: 'institution', url: 'https://www.sauerbruchhutton.de/de/project/uba', title: 'Sauerbruch Hutton — Umweltbundesamt, Dessau (project data)', license: null },
     ],
   },
+  {
+    // Added in the fix round for the Altes Museum (13th building): d. 1841,
+    // long out of copyright, no FoP question, and lifts the slice's tight
+    // 1800-1945 era bucket from 3 to 4 per contract v2 §2.
+    id: 'karl-friedrich-schinkel',
+    wikidataId: 'Q151759',
+    name: 'Karl Friedrich Schinkel',
+    alternativeNames: ['K. F. Schinkel'],
+    gender: 'man',
+    born: 1781,
+    died: 1841,
+    floruit: { start: 1816, end: 1840, override: false },
+    movements: [{ id: 'neoclassicism', primary: true }, { id: 'gothic-revival', primary: false }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'stone',
+    portrait: {
+      en: 'Schinkel trained under Friedrich Gilly in Berlin from 1798 and began his career as a painter and stage designer, touring Italy in 1803–1805 before Prussia\'s defeat by Napoleon left little architectural work to be had. Appointed to the Prussian Building Commission in 1810 through Wilhelm von Humboldt\'s mediation, he became Geheimer Oberbaurat in 1815 and rose in 1830 to head the state\'s entire building administration, reaching the rank of Oberlandesbaudirektor in 1838. His practice ran two vocabularies at once: a Greek Doric and Ionic neoclassicism for the Neue Wache and the Altes Museum, and an English-influenced Gothic brick manner for the Friedrichswerder Church and the Bauakademie. He also designed stage sets, furniture and medals, and shaped Prussian public building for a generation of successors. He died in Berlin in 1841 after a stroke.',
+      es: 'Schinkel se formó con Friedrich Gilly en Berlín desde 1798 y comenzó su carrera como pintor y escenógrafo, viajando por Italia entre 1803 y 1805 antes de que la derrota prusiana ante Napoleón dejara poco trabajo de arquitectura disponible. Incorporado a la Comisión de Obras prusiana en 1810 por mediación de Wilhelm von Humboldt, llegó a Geheimer Oberbaurat en 1815 y en 1830 asumió la dirección de toda la administración estatal de obras, alcanzando en 1838 el rango de Oberlandesbaudirektor. Su obra manejó a la vez dos lenguajes: un neoclasicismo dórico y jónico griego para la Neue Wache y el Altes Museum, y una manera gótica de ladrillo de inspiración inglesa para la Friedrichswerdersche Kirche y la Bauakademie. Diseñó también escenografías, mobiliario y medallas, y marcó la construcción pública prusiana para toda una generación de sucesores. Murió en Berlín en 1841 tras sufrir un ictus.',
+      it: 'Schinkel si formò con Friedrich Gilly a Berlino dal 1798 e cominciò la carriera come pittore e scenografo, viaggiando in Italia fra il 1803 e il 1805 prima che la sconfitta prussiana contro Napoleone lasciasse pochissimo lavoro architettonico disponibile. Entrato nella Commissione edilizia prussiana nel 1810 per mediazione di Wilhelm von Humboldt, divenne Geheimer Oberbaurat nel 1815 e nel 1830 assunse la direzione dell\'intera amministrazione edilizia statale, raggiungendo nel 1838 il grado di Oberlandesbaudirektor. La sua opera tenne insieme due linguaggi: un neoclassicismo dorico e ionico di ispirazione greca per la Neue Wache e l\'Altes Museum, e una maniera gotica in laterizio di ispirazione inglese per la Friedrichswerdersche Kirche e la Bauakademie. Disegnò anche scenografie, mobili e medaglie, e orientò l\'edilizia pubblica prussiana per un\'intera generazione di successori. Morì a Berlino nel 1841 in seguito a un ictus.',
+    },
+    awards: ['Member of the Prussian Academy of Arts (1811)', 'Geheimer Oberbaudirektor, head of the Prussian Oberbaudeputation (from 1830)', 'Oberlandesbaudirektor — chief royal architect of Prussia (1838)'],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q151759', title: 'Karl Friedrich Schinkel (Q151759)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Karl_Friedrich_Schinkel', title: 'Karl Friedrich Schinkel', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Karl_Friedrich_Schinkel', title: 'Karl Friedrich Schinkel', license: 'CC BY-SA 4.0' },
+    ],
+  },
 ];

@@ -97,12 +97,19 @@ export const EUROPE_GERMANIC_BUILDINGS: Building[] = [
       es: 'Iglesia de peregrinación en activo y basílica menor de la archidiócesis de Bamberg, con cerca de medio millón de visitantes al año.',
       it: 'Chiesa di pellegrinaggio ancora attiva e basilica minore dell\'arcidiocesi di Bamberga, con circa mezzo milione di visitatori l\'anno.',
     },
-    detailRect: { x: 0.32, y: 0.30, w: 0.25, h: 0.32 },
+    // Deliberate exception to the slice's exterior-only default: Neumann died in
+    // 1753, so there is no copyright question at all for an interior view, and
+    // the interpenetrating ovals of the vault ARE the argument of the building
+    // in a way the exterior alone cannot make. Swapped in for the fix round in
+    // place of the original exterior photo (File:Bad Staffelstein Basilika
+    // Vierzehnheiligen 001.jpg, still a valid CC BY-SA 4.0 candidate if this
+    // building ever needs a second image).
+    detailRect: { x: 0.28, y: 0.12, w: 0.32, h: 0.30 },
     image: {
-      commonsFile: 'File:Bad Staffelstein Basilika Vierzehnheiligen 001.jpg',
-      photographer: 'Mattis',
+      commonsFile: 'File:Vierzehnheiligen Gnadenaltar P3RM0723-HDR.jpg',
+      photographer: 'Ermell',
       license: 'CC BY-SA 4.0',
-      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Bad_Staffelstein_Basilika_Vierzehnheiligen_001.jpg',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Vierzehnheiligen_Gnadenaltar_P3RM0723-HDR.jpg',
       width: 0,
       height: 0,
     },
@@ -678,5 +685,64 @@ export const EUROPE_GERMANIC_BUILDINGS: Building[] = [
       { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Umweltbundesamt_(Deutschland)', title: 'Umweltbundesamt (Deutschland)', license: 'CC BY-SA 4.0' },
     ],
     tier: 'deep',
+  },
+  {
+    // 13th building, added in the fix round: Schinkel died in 1841, long out of
+    // copyright with no FoP question, and lifts this slice's 1800-1945 era
+    // count from 3 to 4 (contract v2 §2 — that bucket is pool-tight). Chosen
+    // over the Konzerthaus for a cleanly re-verified Commons licence and a
+    // stronger detailRect candidate (the 18-column Ionic screen facade, framed
+    // frontally with roughly a third sky above and the staircase below).
+    id: 'altes-museum-berlin',
+    wikidataId: 'Q156722',
+    name: {
+      en: 'Altes Museum',
+      es: 'Altes Museum (Museo Antiguo de Berlín)',
+      it: 'Altes Museum di Berlino',
+    },
+    architectId: 'karl-friedrich-schinkel',
+    location: { city: 'Berlin', countryCode: 'DE', lat: 52.51944, lon: 13.39889 },
+    inception: 1825,
+    completed: 1830,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['stone'],
+    structure: {
+      en: 'A two-storey masonry block wraps a domed rotunda modelled on the Pantheon, screened from the Lustgarten by a continuous portico of eighteen fluted Ionic sandstone columns that masks the building\'s internal room divisions behind one unbroken colonnade.',
+      es: 'Un bloque de fábrica de dos plantas envuelve una rotonda abovedada inspirada en el Panteón, apantallada hacia el Lustgarten por un pórtico continuo de dieciocho columnas jónicas acanaladas de arenisca que oculta tras una sola columnata ininterrumpida la división interior en salas.',
+      it: 'Un blocco murario di due piani avvolge una rotonda a cupola ispirata al Pantheon, schermato verso il Lustgarten da un portico continuo di diciotto colonne ioniche scanalate in arenaria che nasconde dietro un unico colonnato ininterrotto la suddivisione interna in sale.',
+    },
+    program: {
+      en: 'The first purpose-built public art museum in Prussia, commissioned by King Frederick William III to house the royal collections of paintings and antiquities for public education and to complete the Lustgarten ensemble facing the royal palace.',
+      es: 'El primer museo de arte público construido ex profeso en Prusia, encargado por el rey Federico Guillermo III para albergar las colecciones reales de pintura y antigüedades destinadas a la educación pública, y para completar el conjunto del Lustgarten frente al palacio real.',
+      it: 'Il primo museo d\'arte pubblico appositamente costruito in Prussia, commissionato dal re Federico Guglielmo III per ospitare le collezioni reali di pittura e antichità destinate all\'istruzione pubblica, e per completare l\'insieme del Lustgarten di fronte al palazzo reale.',
+    },
+    heritage: 'unesco',
+    currentUse: {
+      en: 'Home of the Antikensammlung, the Berlin state collection of Greek and Roman antiquities, with the upper floor used for temporary exhibitions; part of the Museum Island ensemble.',
+      es: 'Sede de la Antikensammlung, la colección estatal berlinesa de antigüedades griegas y romanas, con la planta superior dedicada a exposiciones temporales; forma parte del conjunto de la Isla de los Museos.',
+      it: 'Sede dell\'Antikensammlung, la collezione statale berlinese di antichità greche e romane, con il piano superiore destinato a mostre temporanee; fa parte del complesso dell\'Isola dei Musei.',
+    },
+    detailRect: { x: 0.32, y: 0.30, w: 0.36, h: 0.28 },
+    image: {
+      commonsFile: 'File:Altes Museum in Berlin, Germany.jpg',
+      photographer: 'Osama Shukir Muhammed Amin FRCP(Glasg)',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Altes_Museum_in_Berlin,_Germany.jpg',
+      width: 0,
+      height: 0,
+    },
+    dossier: {
+      en: 'Schinkel had studied under Friedrich Gilly and began as a painter before Prussia\'s post-Napoleonic reconstruction gave him architecture as his real practice. King Frederick William III approved his design for a public museum on the Lustgarten in 1823; the cornerstone was laid on 9 July 1825 and the museum opened on 3 August 1830, the first in Prussia built expressly to display art to the public rather than a royal household. The plan sets a two-storey block, containing picture galleries above and antiquities below, behind a screen of eighteen fluted Ionic columns spanning the entire width of the façade — the portico is not an entrance porch but an open loggia, a place to stand and look back across the Lustgarten before entering. A broad open staircase rises between the columns to a terrace, and at its centre a top-lit rotunda twenty-three metres high, ringed by twenty Corinthian columns, quotes the Pantheon directly. Eighteen sandstone eagles crown the entablature. American bombing and a 1945 ammunition explosion gutted the building; it was rebuilt in stages from 1951 to 1966, and the rotunda\'s murals were restored in 1982. Museum Island became a UNESCO World Heritage Site in 1999.',
+      es: 'Schinkel se había formado con Friedrich Gilly y comenzó como pintor antes de que la reconstrucción prusiana tras las guerras napoleónicas le diera la arquitectura como oficio real. El rey Federico Guillermo III aprobó en 1823 su proyecto de un museo público en el Lustgarten; la primera piedra se colocó el 9 de julio de 1825 y el museo se inauguró el 3 de agosto de 1830, el primero en Prusia construido expresamente para mostrar arte al público y no a una casa real. La planta dispone un bloque de dos alturas, con las pinacotecas arriba y las antigüedades abajo, tras una pantalla de dieciocho columnas jónicas acanaladas que recorren todo el ancho de la fachada: el pórtico no es un simple zaguán de entrada, sino una logia abierta, un lugar donde detenerse y mirar hacia atrás, al Lustgarten, antes de entrar. Una amplia escalinata abierta sube entre las columnas hasta una terraza, y en el centro una rotonda cenital de veintitrés metros de altura, rodeada de veinte columnas corintias, cita directamente el Panteón. Dieciocho águilas de arenisca coronan el entablamento. El bombardeo estadounidense y una explosión de munición en 1945 arrasaron el edificio; se reconstruyó por fases entre 1951 y 1966, y los murales de la rotonda se restauraron en 1982. La Isla de los Museos fue declarada Patrimonio Mundial de la UNESCO en 1999.',
+      it: 'Schinkel si era formato con Friedrich Gilly e cominciò come pittore prima che la ricostruzione prussiana del dopo-Napoleone gli desse l\'architettura come mestiere vero e proprio. Il re Federico Guglielmo III approvò nel 1823 il suo progetto per un museo pubblico sul Lustgarten; la prima pietra fu posata il 9 luglio 1825 e il museo aprì il 3 agosto 1830, il primo in Prussia costruito appositamente per mostrare l\'arte al pubblico e non a una casa reale. La pianta dispone un blocco di due piani, con le gallerie di pittura sopra e le antichità sotto, dietro uno schermo di diciotto colonne ioniche scanalate che percorrono l\'intera larghezza della facciata: il portico non è un semplice ingresso coperto, ma una loggia aperta, un luogo dove fermarsi e guardare indietro verso il Lustgarten prima di entrare. Un\'ampia scalinata aperta sale tra le colonne fino a una terrazza, e al centro una rotonda a lucernario alta ventitré metri, cinta da venti colonne corinzie, cita direttamente il Pantheon. Diciotto aquile in arenaria coronano la trabeazione. Il bombardamento americano e un\'esplosione di munizioni nel 1945 devastarono l\'edificio; fu ricostruito per fasi fra il 1951 e il 1966, e gli affreschi della rotonda furono restaurati nel 1982. L\'Isola dei Musei è divenuta Patrimonio mondiale UNESCO nel 1999.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q156722', title: 'Altes Museum (Q156722)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Altes_Museum', title: 'Altes Museum', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Altes_Museum', title: 'Altes Museum', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
   },
 ];
