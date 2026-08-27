@@ -14,6 +14,16 @@ import type { Building } from '@/types/building';
 // copyright, so a cloister view is unproblematic there.
 //
 // `image.width`/`image.height` are left at 0 for a later pass, per contract.
+//
+// Fix round (task-9-americas-mexico review, Important #1 — country spread):
+// added one building in El Salvador (Iglesia El Rosario, San Salvador,
+// architect Rubén Martínez Bulnes) after genuine research turned up a real,
+// licence-clean, single-architect-attributed candidate there. Costa Rica,
+// Panama, Nicaragua, Honduras and Belize remain disclosed gaps — see the
+// task report for what was checked in each and why nothing qualified
+// (thin/no named architect, no Wikidata entity for an otherwise
+// well-sourced candidate, or FoP too restrictive for a commercially
+// licensed photo of an in-copyright building).
 export const AMERICAS_MEXICO_BUILDINGS: Building[] = [
   // ---------------------------------------------------------------- pre-1800
   {
@@ -649,6 +659,11 @@ export const AMERICAS_MEXICO_BUILDINGS: Building[] = [
       it: 'Centro accademico e culturale San Pablo',
     },
     architectId: 'gabriela-carrillo',
+    // Equal "+" credit per the building's own cited ArchDaily source
+    // ("Mauricio Rocha + Gabriela Carrillo") — added via coArchitects
+    // rather than swapping architectId, which would drop this slice's
+    // gender ratio below its floor (task-9 review, Important #2 / Minor #1).
+    coArchitects: ['mauricio-rocha'],
     location: { city: 'Oaxaca de Juárez', countryCode: 'MX', lat: 17.0612528, lon: -96.7221694 },
     inception: 2008,
     completed: 2011,
@@ -690,6 +705,58 @@ export const AMERICAS_MEXICO_BUILDINGS: Building[] = [
       { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q16545613', title: 'Centro Académico y Cultural San Pablo (Q16545613)', license: null },
       { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Centro_Acad%C3%A9mico_y_Cultural_San_Pablo', title: 'Centro Académico y Cultural San Pablo — Wikipedia en español', license: 'CC BY-SA 4.0' },
       { kind: 'publication', url: 'https://www.archdaily.com/785414/san-pablo-academic-and-cultural-center-taller-de-arquitectura-mauricio-rocha-plus-gabriela-carrillo', title: 'San Pablo Academic and Cultural Center / Taller de Arquitectura Mauricio Rocha + Gabriela Carrillo — ArchDaily', license: null },
+    ],
+    tier: 'deep',
+  },
+  {
+    id: 'iglesia-el-rosario-san-salvador',
+    wikidataId: 'Q42808859',
+    name: {
+      en: 'Church of the Rosary, San Salvador',
+      es: 'Iglesia El Rosario',
+      it: 'Chiesa del Rosario di San Salvador',
+    },
+    architectId: 'ruben-martinez-bulnes',
+    location: { city: 'San Salvador', countryCode: 'SV', lat: 13.697372, lon: -89.188511 },
+    inception: 1964,
+    completed: 1971,
+    demolished: null,
+    typology: 'sacral',
+    materials: ['concrete'],
+    structure: {
+      en: 'A single unpillared nave under a folded, arch-shaped concrete roof rising from a low rear wall to a tall street front, its flanks perforated by a grid of deep concrete coffers filled with fragments of coloured glass set directly into cement rather than leaded stained glass.',
+      es: 'Una sola nave sin pilares bajo una cubierta de concreto plegada en forma de arco, que se eleva desde un muro trasero bajo hasta un frente alto sobre la calle, con los costados horadados por una retícula de profundos casetones de concreto rellenos de fragmentos de vidrio de color engastados directamente en cemento en vez de vidrieras emplomadas.',
+      it: 'Un\'unica navata priva di pilastri sotto una copertura di calcestruzzo piegata a arco, che sale da un muro posteriore basso fino a un fronte alto sulla strada, con i fianchi forati da una griglia di profondi cassettoni di calcestruzzo riempiti di frammenti di vetro colorato inglobati direttamente nel cemento anziché da vetrate piombate.',
+    },
+    program: {
+      en: 'Commissioned in 1962 by the Dominican parish to replace an outgrown wooden church on the site of San Salvador\'s original parish and first cathedral.',
+      es: 'Encargada en 1962 por la parroquia dominica para sustituir una iglesia de madera ya insuficiente, en el sitio de la parroquia original y primera catedral de San Salvador.',
+      it: 'Commissionata nel 1962 dalla parrocchia domenicana per sostituire una chiesa di legno ormai insufficiente, nel sito della parrocchia originaria e prima cattedrale di San Salvador.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'An active Catholic parish church in San Salvador\'s historic centre, and one of the city\'s most-photographed modern landmarks.',
+      es: 'Iglesia parroquial católica activa en el centro histórico de San Salvador, y uno de los hitos modernos más fotografiados de la ciudad.',
+      it: 'Chiesa parrocchiale cattolica attiva nel centro storico di San Salvador, e uno dei simboli moderni più fotografati della città.',
+    },
+    detailRect: { x: 0.34, y: 0.2, w: 0.3, h: 0.3 },
+    image: {
+      commonsFile: 'File:Iglesia El Rosario, San Salvador.JPG',
+      photographer: 'BelenM',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Iglesia_El_Rosario,_San_Salvador.JPG',
+      width: 0,
+      height: 0,
+    },
+    dossier: {
+      en: 'In 1962 the Dominican friar Alejandro Peinador asked the architect and sculptor Rubén Martínez Bulnes to replace the wooden parish church standing on the site of San Salvador\'s original parish, later its first cathedral. Martínez broke deliberately with the Latin- and Greek-cross plans customary in the city: a single unpillared nave, arched like a folded wing, puts every worshipper in sight of the altar, answering the Second Vatican Council\'s call for a church that faces the people rather than fleeing from God, in his own words. Local church authorities balked at the plans; approval came instead from the Vatican. Construction ran from 1964 to June 1971. The exposed-concrete walls are perforated by a grid of deep coffers that the Spanish Dominican Domingo Iturgaiz filled with fragments of coloured glass set directly into cement, and a Way of the Cross in black iron over concrete and pumice ends at a spiralling risen Christ. The church holds the remains of the priest José Matías Delgado, a leader of Central American independence. It was declared a Historic Site of the Republic in 1972 and a Cultural Property of El Salvador in 2015.',
+      es: 'En 1962 el fraile dominico Alejandro Peinador encargó al arquitecto y escultor Rubén Martínez Bulnes sustituir la iglesia parroquial de madera situada en el sitio de la parroquia original de San Salvador, luego su primera catedral. Martínez rompió deliberadamente con las plantas de cruz latina y griega habituales en la ciudad: una sola nave sin pilares, arqueada como un ala plegada, pone a todos los fieles a la vista del altar, respondiendo al llamado del Concilio Vaticano II a una iglesia de cara al pueblo y no en fuga de Dios. Las autoridades eclesiales locales rechazaron en un principio los planos; la aprobación llegó desde el Vaticano. La obra corrió de 1964 a junio de 1971. Los muros de concreto aparente están horadados por una retícula de casetones profundos que el dominico español Domingo Iturgaiz llenó de fragmentos de vidrio de color engastados directamente en cemento, y un vía crucis de hierro negro sobre concreto y piedra pómez termina en un Cristo resucitado en espiral. La iglesia guarda los restos del presbítero José Matías Delgado, prócer de la independencia centroamericana. Fue declarada Lugar Histórico de la República en 1972 y Bien Cultural de El Salvador en 2015.',
+      it: 'Nel 1962 il frate domenicano Alejandro Peinador affidò all\'architetto e scultore Rubén Martínez Bulnes il compito di sostituire la chiesa parrocchiale di legno situata nel sito della parrocchia originaria di San Salvador, poi sua prima cattedrale. Martínez ruppe deliberatamente con le piante a croce latina e greca consuete in città: un\'unica navata priva di pilastri, ad arco come un\'ala piegata, mette ogni fedele a vista dell\'altare, rispondendo all\'invito del Concilio Vaticano II a una chiesa rivolta verso il popolo e non in fuga da Dio, con le sue stesse parole. Le autorità ecclesiastiche locali respinsero dapprima i disegni; l\'approvazione arrivò invece dal Vaticano. I lavori durarono dal 1964 al giugno 1971. Le pareti in calcestruzzo a vista sono forate da una griglia di cassettoni profondi che il domenicano spagnolo Domingo Iturgaiz riempì di frammenti di vetro colorato inglobati direttamente nel cemento, e una via crucis in ferro nero su calcestruzzo e pomice termina in un Cristo risorto a spirale. La chiesa custodisce le spoglie del sacerdote José Matías Delgado, protagonista dell\'indipendenza centroamericana. Fu dichiarata Luogo Storico della Repubblica nel 1972 e Bene Culturale di El Salvador nel 2015.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q42808859', title: 'Iglesia del Rosario, San Salvador (Q42808859)', license: null },
+      { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Iglesia_del_Rosario_(San_Salvador)', title: 'Iglesia del Rosario (San Salvador) — Wikipedia en español', license: 'CC BY-SA 4.0' },
     ],
     tier: 'deep',
   },

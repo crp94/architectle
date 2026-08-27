@@ -11,6 +11,17 @@ import type { Architect } from '@/types/architect';
 //
 // `workRegions` and `workCentroid` are derived by data:curate from the
 // buildings below and are intentionally left empty/zeroed here.
+//
+// Fix round (task-9-americas-mexico review, Important #2 and the country-
+// spread finding): added Mauricio Rocha (San Pablo's equal co-architect,
+// via coArchitects on that building) and Rubén Martínez Bulnes (architect
+// of record for a new El Salvador building, Iglesia El Rosario). The
+// review's OTHER coArchitects catch — Gustavo María Saavedra and Juan
+// Martínez de Velasco on Biblioteca Central UNAM — is NOT implemented here;
+// see the task report for why (neither has a Wikidata entity under any
+// spelling tried, and Architect.wikidataId in this branch is still a
+// required, non-nullable string, so a real fix needs either a located
+// Wikidata item or the wikidataId-nullable infrastructure to land here).
 export const AMERICAS_MEXICO_ARCHITECTS: Architect[] = [
   {
     id: 'pedro-de-arrieta',
@@ -256,6 +267,77 @@ export const AMERICAS_MEXICO_ARCHITECTS: Architect[] = [
     sources: [
       { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q50325056', title: 'Gabriela Carrillo (Q50325056)', license: null },
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Gabriela_Carrillo', title: 'Gabriela Carrillo — English Wikipedia', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    // coArchitect on San Pablo (task-9 fix round, Important #2): the
+    // building's own cited ArchDaily source credits "Mauricio Rocha +
+    // Gabriela Carrillo" as an equal "+" partnership, not a lead-plus-
+    // assistant credit, so architectId stays gabriela-carrillo (load-bearing
+    // for this slice's gender floor per the review's Minor #1) and Rocha is
+    // added here as a full record, credited via coArchitects instead.
+    id: 'mauricio-rocha',
+    wikidataId: 'Q2840228',
+    name: 'Mauricio Rocha',
+    alternativeNames: ['Mauricio Rocha Iturbide', 'Rocha'],
+    gender: 'man',
+    born: 1965,
+    died: null,
+    floruit: { start: 1990, end: 2024, override: false },
+    movements: [{ id: 'critical-regionalism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: "Mauricio Rocha was born in Mexico City in 1965, son of the photographer Graciela Iturbide and the architect Manuel Rocha Díaz. He studied architecture at the UNAM and opened his own Taller de Arquitectura in 1990 with a house built for his mother, continuing to collaborate with his father until Rocha Díaz's death in 1996. From 2001 Gabriela Carrillo directed the office's projects alongside him, and since 2012 the practice has carried both their names. His public buildings — the Centro de Atención a Gente Invidente (2000), the Mercado de San Pablo Oztotepec (2003), the Escuela de Artes Plásticas UABJO in Oaxaca (2008) — work by subtraction and exposed structure rather than ornament, seeking, in his own words, an architecture that ages with dignity. He has taught at the UNAM's Facultad de Arquitectura since 1992 and belongs to Mexico's Sistema Nacional de Creadores.",
+      es: "Mauricio Rocha nació en la Ciudad de México en 1965, hijo de la fotógrafa Graciela Iturbide y del arquitecto Manuel Rocha Díaz. Estudió arquitectura en la UNAM y en 1990 abrió su propio Taller de Arquitectura con una casa construida para su madre, sin dejar de colaborar con su padre hasta la muerte de éste en 1996. Desde 2001 Gabriela Carrillo dirigió junto con él los proyectos del despacho, y desde 2012 la práctica lleva los dos nombres. Sus obras públicas —el Centro de Atención a Gente Invidente (2000), el Mercado de San Pablo Oztotepec (2003), la Escuela de Artes Plásticas UABJO en Oaxaca (2008)— trabajan por sustracción y con la estructura vista antes que con el ornamento, buscando, en sus propias palabras, una arquitectura que envejezca con dignidad. Da clases en la Facultad de Arquitectura de la UNAM desde 1992 y pertenece al Sistema Nacional de Creadores de México.",
+      it: "Mauricio Rocha nacque a Città del Messico nel 1965, figlio della fotografa Graciela Iturbide e dell'architetto Manuel Rocha Díaz. Studiò architettura all'UNAM e nel 1990 aprì il proprio Taller de Arquitectura con una casa costruita per la madre, continuando a collaborare con il padre fino alla morte di quest'ultimo nel 1996. Dal 2001 Gabriela Carrillo diresse insieme a lui i progetti dello studio, e dal 2012 la pratica porta entrambi i nomi. Le sue opere pubbliche — il Centro de Atención a Gente Invidente (2000), il Mercado de San Pablo Oztotepec (2003), la Escuela de Artes Plásticas UABJO a Oaxaca (2008) — lavorano per sottrazione e con la struttura a vista invece che con l'ornamento, cercando, con le sue stesse parole, un'architettura che invecchi con dignità. Insegna alla Facultad de Arquitectura dell'UNAM dal 1992 e appartiene al Sistema Nacional de Creadores messicano.",
+    },
+    awards: [
+      'Premio Covarrubias a la Mejor Museografía Nacional (2002)',
+      'Medalla de Plata, VII Bienal de Arquitectura Mexicana (2002)',
+      'Medalla de Oro, VIII Bienal de Arquitectura Mexicana (2004)',
+    ],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q2840228', title: 'Mauricio Rocha Iturbide (Q2840228)', license: null },
+      { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Mauricio_Rocha_Iturbide', title: 'Mauricio Rocha Iturbide — Wikipedia en español', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    // Country-spread fix (task-9 review, Important #1): the one new
+    // building added for the six previously-unrepresented countries in this
+    // slice (El Salvador). architectId here — no coArchitects issue.
+    id: 'ruben-martinez-bulnes',
+    wikidataId: 'Q14838817',
+    name: 'Rubén Martínez Bulnes',
+    alternativeNames: ['Rubén Martínez', 'Martínez Bulnes'],
+    gender: 'man',
+    born: 1929,
+    died: 2023,
+    floruit: { start: 1962, end: 2018, override: false },
+    movements: [{ id: 'brutalism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'sacral',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: "Rubén Martínez Bulnes was born in San Salvador on 7 July 1929 and died in the same city on 17 July 2023. He set out to study engineering like his father, but taught himself sculpture by working scrap metal alongside welders, and became El Salvador's most prolific sculptor, with more than 180 works to his name — the Monumento a la Constitución and the Monumento a la Paz among them. In 1962 the Dominican friar Alejandro Peinador asked him to design a new parish church for San Salvador's historic centre, to replace an outgrown wooden one; Salvadoran church authorities balked at his plans, and approval came instead from the Vatican. He completed the church, El Rosario, in 1971. He was named Notable Sculptor of El Salvador by the Legislative Assembly in 2012 and Hijo Meritísimo of San Salvador in 2018.",
+      es: "Rubén Martínez Bulnes nació en San Salvador el 7 de julio de 1929 y murió en la misma ciudad el 17 de julio de 2023. Pensaba estudiar ingeniería como su padre, pero se formó él mismo como escultor trabajando chatarra metálica junto a soldadores, y llegó a ser el escultor más prolífico de El Salvador, con más de 180 obras, entre ellas el Monumento a la Constitución y el Monumento a la Paz. En 1962 el fraile dominico Alejandro Peinador le encargó proyectar una nueva iglesia parroquial para el centro histórico de San Salvador, en sustitución de una de madera ya insuficiente; las autoridades eclesiales salvadoreñas rechazaron en un principio sus planos, y la aprobación llegó desde el Vaticano. Terminó la iglesia, El Rosario, en 1971. La Asamblea Legislativa lo nombró Notable Escultor de El Salvador en 2012 y la Alcaldía de San Salvador lo declaró Hijo Meritísimo en 2018.",
+      it: "Rubén Martínez Bulnes nacque a San Salvador il 7 luglio 1929 e morì nella stessa città il 17 luglio 2023. Pensava di studiare ingegneria come il padre, ma si formò da autodidatta come scultore lavorando rottami metallici insieme a saldatori, diventando lo scultore più prolifico di El Salvador con oltre 180 opere, fra cui il Monumento a la Constitución e il Monumento a la Paz. Nel 1962 il frate domenicano Alejandro Peinador gli affidò il progetto di una nuova chiesa parrocchiale per il centro storico di San Salvador, in sostituzione di una chiesa di legno ormai insufficiente; le autorità ecclesiastiche salvadoregne respinsero dapprima i suoi disegni, e l'approvazione arrivò invece dal Vaticano. Completò la chiesa, El Rosario, nel 1971. Nel 2012 l'Assemblea Legislativa lo nominò Scultore Notevole di El Salvador e nel 2018 il Comune di San Salvador lo dichiarò Hijo Meritísimo.",
+    },
+    awards: [
+      'Valor Cultural, CONCULTURA (2003)',
+      'Notable Escultor de El Salvador, Asamblea Legislativa (2012)',
+      'Hijo Meritísimo de San Salvador (2018)',
+    ],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q14838817', title: 'Rubén Martínez Bulnes (Q14838817)', license: null },
+      { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Rub%C3%A9n_Mart%C3%ADnez_Bulnes', title: 'Rubén Martínez Bulnes — Wikipedia en español', license: 'CC BY-SA 4.0' },
     ],
   },
 ];
