@@ -106,10 +106,16 @@ export function GameBoard({ mode = 'daily', building, locale = 'en' }: GameBoard
   useEffect(() => {
     if (restoredRef.current) return;
     restoredRef.current = true;
-    if (mode !== 'daily' || building || !targetArchitect) return;
+    if (mode !== 'daily' || !target || !targetArchitect) return;
 
     const saved = loadState();
     if (!saved) return;
+    // A save recorded against a different building (a fixed `building`
+    // override differing from whatever was last played, or today's real
+    // daily building differing from an override) must never restore —
+    // `puzzleNumber` alone can't distinguish those, since an override
+    // building shares today's puzzle number with the real daily building.
+    if (saved.buildingId !== target.id) return;
 
     setStats(saved.stats);
     const restored = saved.guesses.map((id) => {
@@ -119,7 +125,7 @@ export function GameBoard({ mode = 'daily', building, locale = 'en' }: GameBoard
     setGuesses(restored);
     setSolved(saved.solved);
     setFinished(saved.finished);
-  }, [mode, building, targetArchitect]);
+  }, [mode, target, targetArchitect]);
   /* eslint-enable react-hooks/set-state-in-effect */
 
   if (!target || !targetArchitect) {
@@ -144,6 +150,7 @@ export function GameBoard({ mode = 'daily', building, locale = 'en' }: GameBoard
       if (isFinished) setStats(updatedStats);
       saveState({
         puzzleNumber: puzzleNumber(new Date()),
+        buildingId: target.id,
         guesses: nextGuesses.map((g) => g.architect.id),
         solved: isSolved,
         finished: isFinished,

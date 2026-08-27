@@ -7,6 +7,7 @@ const KEY = 'architectle:v1';
 function makeState(overrides: Partial<GameState> = {}): GameState {
   return {
     puzzleNumber: puzzleNumber(new Date()),
+    buildingId: 'fallingwater',
     guesses: ['frank-lloyd-wright', 'zaha-hadid'],
     solved: true,
     finished: true,

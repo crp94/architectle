@@ -6,7 +6,10 @@ describe('theme', () => {
     expect(theme.color.ink).toBe('#141414');
     expect(theme.color.paper).toBe('#d9d6d0');
     expect(theme.color.accent).toBe('#e8dc50');
-    expect(theme.color.warn).toBe('#d4321e');
+    // #a3271a, not the spec's original #d4321e — that was only 3.38:1
+    // against `paper`, below WCAG AA's 4.5:1 text minimum (every use is
+    // small text, never a background). See e2e/a11y.spec.ts.
+    expect(theme.color.warn).toBe('#a3271a');
   });
 
   it('has no soft shadows', () => {

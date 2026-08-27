@@ -21,14 +21,14 @@ function GateRow({ row }: { row: CoverageGateRow }) {
   return (
     <div className="flex flex-col gap-1 bg-paper p-3">
       <dt
-        className="text-[10px] uppercase tracking-wide opacity-60"
+        className="text-[10px] uppercase tracking-wide opacity-70"
         style={{ fontFamily: theme.type.mono }}
       >
         {row.label[LOCALE] ?? row.label.en}
       </dt>
       <dd className="flex items-baseline gap-2 text-sm uppercase" style={{ fontFamily: theme.type.display }}>
         <span>{row.target}</span>
-        <span className="text-xs opacity-60" style={{ fontFamily: theme.type.mono }}>
+        <span className="text-xs opacity-70" style={{ fontFamily: theme.type.mono }}>
           / {row.actual}
         </span>
       </dd>

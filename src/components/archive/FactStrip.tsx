@@ -13,7 +13,7 @@ export function FactStrip({ building, locale }: { building: Building; locale: Lo
       {facts.map((fact) => (
         <div key={fact.key} data-testid={`archive-fact-${fact.key}`} className="bg-paper p-2">
           <dt
-            className="text-[10px] uppercase tracking-wide opacity-60"
+            className="text-[10px] uppercase tracking-wide opacity-70"
             style={{ fontFamily: theme.type.mono }}
           >
             {fact.label}

@@ -15,7 +15,7 @@ export function LinkList({ items, testId }: { items: LinkItem[]; testId?: string
             {item.label}
           </Link>
           {item.sub && (
-            <span className="ml-2 text-xs opacity-60" style={{ fontFamily: theme.type.mono }}>
+            <span className="ml-2 text-xs opacity-70" style={{ fontFamily: theme.type.mono }}>
               {item.sub}
             </span>
           )}

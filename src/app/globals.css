@@ -5,7 +5,12 @@
   --color-paper: #d9d6d0;
   --color-paper-alt: #c8c4bc;
   --color-accent: #e8dc50;
-  --color-warn: #d4321e;
+  /* #d4321e (the spec's original brutalist red) is only 3.38:1 against
+     --color-paper — every current use is small mono-spaced kicker text
+     (building/architect/movement archive pages, Reveal), which needs the
+     WCAG AA text minimum of 4.5:1. Darkened to #a3271a (5.06:1 against
+     paper) rather than dropped: see e2e/a11y.spec.ts and tests/theme.test.ts. */
+  --color-warn: #a3271a;
 }
 
 body {

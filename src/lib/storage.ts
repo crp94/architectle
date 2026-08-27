@@ -4,6 +4,14 @@ const STORAGE_KEY = 'architectle:v1';
 
 export type GameState = {
   puzzleNumber: number;
+  /**
+   * The target building's id. Checked on restore alongside `puzzleNumber`
+   * so a fixed `building` override (used by tests and e2e/game.spec.ts's
+   * `?e2eBuilding=` escape hatch) can never restore guesses that were
+   * recorded against a *different* building sharing today's puzzle
+   * number — see GameBoard.tsx's restore effect.
+   */
+  buildingId: string;
   guesses: string[];
   solved: boolean;
   finished: boolean;
@@ -21,6 +29,7 @@ function isGameState(value: unknown): value is GameState {
   const v = value as Record<string, unknown>;
   return (
     typeof v.puzzleNumber === 'number' &&
+    typeof v.buildingId === 'string' &&
     Array.isArray(v.guesses) &&
     typeof v.solved === 'boolean' &&
     typeof v.finished === 'boolean' &&
