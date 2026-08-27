@@ -425,4 +425,38 @@ export const ASIA_SOUTH_ARCHITECTS: Architect[] = [
       { kind: 'publication', url: 'https://www.dezeen.com/2020/11/20/anupama-kundoo-architecture-projects/', title: 'Ten key projects by Indian architect Anupama Kundoo — Dezeen, 20 November 2020', license: null },
     ],
   },
+  {
+    // Ownership handover from europe-west, recorded in the wave 5 progress ledger:
+    // europe-west could place no Le Corbusier building at all (every French work is
+    // FoP-blocked; the sole Belgian building did not fit its era budget), and India
+    // has usable FoP for the Chandigarh Capitol Complex, so this slice defines him
+    // for the one commission below rather than leaving him out of the pool entirely.
+    id: 'le-corbusier',
+    wikidataId: 'Q4724',
+    name: 'Le Corbusier',
+    alternativeNames: ['Charles-Édouard Jeanneret', 'Charles-Édouard Jeanneret-Gris'],
+    gender: 'man',
+    born: 1887,
+    died: 1965,
+    floruit: { start: 1907, end: 1965, override: false },
+    movements: [{ id: 'international-style', primary: true }, { id: 'brutalism', primary: false }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: "Charles-Édouard Jeanneret took the name Le Corbusier in 1920 and became the central figure of twentieth-century Modernism — the five points of a new architecture, the Unité d'Habitation, the sculptural concrete of his late churches and monasteries. Almost all of that French practice sits behind a Freedom of Panorama block this pool cannot license, so he is claimed here for the one major commission that falls outside it: the Capitol of Chandigarh, the replacement capital Jawaharlal Nehru asked him to design after Partition cost Punjab its old one, Lahore. Corbusier laid out the new city's master plan from 1951 and built the Palace of Assembly, the Secretariat and the High Court in raw board-marked concrete, working the site for the rest of his life alongside his cousin Pierre Jeanneret, the project's resident architect.",
+      es: 'Charles-Édouard Jeanneret adoptó el nombre de Le Corbusier en 1920 y se convirtió en la figura central del modernismo del siglo XX: los cinco puntos de una arquitectura nueva, la Unité d’Habitation, el hormigón escultórico de sus iglesias y monasterios tardíos. Casi toda esa obra francesa queda detrás de un bloqueo por Freedom of Panorama que este repertorio no puede licenciar, así que aquí se le reivindica por el único gran encargo que escapa a esa traba: el Capitolio de Chandigarh, la capital de recambio que Jawaharlal Nehru le pidió tras perder el Punyab su antigua capital, Lahore, en la Partición. Corbusier trazó el plan maestro de la nueva ciudad desde 1951 y levantó el Palacio de la Asamblea, la Secretaría y el Tribunal Superior en hormigón bruto encofrado en tablas, trabajando en el lugar el resto de su vida junto a su primo Pierre Jeanneret, arquitecto residente del proyecto.',
+      it: "Charles-Édouard Jeanneret adottò il nome Le Corbusier nel 1920 e divenne la figura centrale del modernismo del Novecento: i cinque punti di un'architettura nuova, l'Unité d'Habitation, il cemento scultoreo delle sue ultime chiese e dei suoi monasteri. Quasi tutta quella pratica francese resta dietro un blocco da Freedom of Panorama che questo repertorio non può licenziare, perciò qui gli si attribuisce l'unico grande incarico che ne resta fuori: il Campidoglio di Chandigarh, la capitale sostitutiva che Jawaharlal Nehru gli chiese di progettare dopo che la Partizione tolse al Punjab la sua vecchia capitale, Lahore. Corbusier tracciò il piano regolatore della nuova città a partire dal 1951 e costruì il Palazzo dell'Assemblea, il Segretariato e l'Alta Corte in cemento grezzo a cassero di tavole, lavorando sul sito per il resto della vita accanto al cugino Pierre Jeanneret, architetto residente del progetto.",
+    },
+    awards: ['Royal Gold Medal (1953)', 'AIA Gold Medal (1961)'],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q4724', title: 'Le Corbusier (Q4724)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Le_Corbusier', title: 'Le Corbusier', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Chandigarh_Capitol_Complex', title: 'Chandigarh Capitol Complex', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://whc.unesco.org/en/list/1321/', title: 'The Architectural Work of Le Corbusier, an Outstanding Contribution to the Modern Movement — UNESCO World Heritage Centre', license: null },
+    ],
+  },
 ];
