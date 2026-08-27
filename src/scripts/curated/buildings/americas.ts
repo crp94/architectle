@@ -449,7 +449,17 @@ export const AMERICAS_BUILDINGS: Building[] = [
       es: 'Saarinen describió la terminal como una enorme hamaca continua colgada entre árboles de hormigón, que es casi literalmente lo que es. Dos columnatas de pilas se inclinan hacia fuera contra el tiro de la cubierta; entre ellas corren cables de acero que sostienen paneles prefabricados de hormigón, de modo que el techo se hunde en el centro y se levanta en ambos bordes. En la sala no hay un solo soporte. La sección hace el trabajo que suele hacer la señalización: el tráfico de llegada entra bajo el lado bajo, el techo asciende hacia el campo de vuelo y el muro de vidrio entrega las pistas. Saarinen propuso además suprimir el paseo hasta el avión con salas móviles que llevaran al pasaje hasta la plataforma, idea que sobrevive en Dulles y casi en ningún otro sitio. Murió en septiembre de 1961, catorce meses antes de la inauguración. Skidmore, Owings and Merrill alargó el edificio de 183 a 378 metros entre 1996 y 2000, la longitud que Saarinen había dibujado desde el principio.',
       it: 'Saarinen descrisse il terminal come un\'enorme amaca continua sospesa fra alberi di calcestruzzo, che è quasi letteralmente ciò che è. Due colonnati di piloni si inclinano verso l\'esterno contro il tiro della copertura; fra loro corrono cavi d\'acciaio che reggono pannelli prefabbricati in calcestruzzo, così che il tetto si abbassi al centro e si sollevi ai due bordi. Nella sala non c\'è un solo sostegno. La sezione fa il lavoro che di solito tocca alla segnaletica: il traffico in arrivo entra sotto il lato basso, il soffitto sale verso il campo di volo e la parete di vetro consegna le piste. Saarinen propose inoltre di abolire il percorso verso l\'aereo con sale mobili che portassero i passeggeri in piazzale, un\'idea sopravvissuta a Dulles e quasi in nessun altro luogo. Morì nel settembre 1961, quattordici mesi prima dell\'inaugurazione. Skidmore, Owings and Merrill allungò l\'edificio da 183 a 378 metri fra il 1996 e il 2000, la misura che Saarinen aveva disegnato fin dall\'inizio.',
     },
-    context: null,
+    context: {
+      body: {
+        en: 'The terminal\'s site was assembled by federal condemnation. In September 1958 the government sent condemnation letters to the 87 landowners of Willard, an unincorporated Loudoun County community of small farms built up since emancipation by formerly enslaved families and their descendants — among them the Corum, Johnson and Holmes families — and described in contemporary press coverage as largely Black. Between January 1959 and April 1961 those 87 owners deeded about 9,800 acres to the government at an average of $500 an acre; Shiloh Church, the community\'s central congregation, received $4,000 and relocated its building and graveyard to nearby Conklin. Construction took roughly 26 square miles in total, absorbing parts of neighbouring Chantilly, Pleasant Valley, Sterling and Ashburn as well. Some landowners formed a citizens\' association to negotiate together, but it disbanded, and several who hired lawyers saw them take a third of any award above the condemnation price. Willard does not appear on a map today.',
+        es: 'El solar de la terminal se formó por expropiación federal. En septiembre de 1958 el gobierno envió cartas de expropiación a los 87 propietarios de Willard, una comunidad no incorporada del condado de Loudoun formada, desde la abolición de la esclavitud, por familias antes esclavizadas y sus descendientes —entre ellas las familias Corum, Johnson y Holmes— y descrita en la prensa de la época como mayoritariamente negra. Entre enero de 1959 y abril de 1961 esos 87 propietarios cedieron unas 9.800 acres al gobierno a un promedio de 500 dólares por acre; la Shiloh Church, congregación central de la comunidad, recibió 4.000 dólares y trasladó su edificio y su cementerio a Conklin, en las cercanías. La construcción absorbió en total unas 26 millas cuadradas, incluyendo también partes de las vecinas Chantilly, Pleasant Valley, Sterling y Ashburn. Algunos propietarios formaron una asociación de vecinos para negociar en conjunto, pero se disolvió, y varios de los que contrataron abogados vieron cómo estos se quedaban con un tercio de cualquier indemnización superior al precio de expropiación. Willard no aparece hoy en ningún mapa.',
+        it: 'Il terreno della terminal fu formato tramite esproprio federale. Nel settembre 1958 il governo inviò lettere di esproprio agli 87 proprietari di Willard, comunità non incorporata della contea di Loudoun formatasi, dopo l\'abolizione della schiavitù, da famiglie un tempo schiavizzate e dai loro discendenti — fra cui le famiglie Corum, Johnson e Holmes — e descritta dalla stampa dell\'epoca come in prevalenza nera. Tra il gennaio 1959 e l\'aprile 1961 quei 87 proprietari cedettero al governo circa 9.800 acri a una media di 500 dollari per acro; la Shiloh Church, congregazione centrale della comunità, ricevette 4.000 dollari e trasferì l\'edificio e il cimitero a Conklin, nelle vicinanze. I lavori assorbirono in totale circa 26 miglia quadrate, comprendendo anche parti delle vicine Chantilly, Pleasant Valley, Sterling e Ashburn. Alcuni proprietari formarono un\'associazione di residenti per negoziare insieme, ma si sciolse, e diversi tra quanti assunsero avvocati li videro trattenere un terzo di qualunque indennizzo superiore al prezzo di esproprio. Oggi Willard non compare più su alcuna mappa.',
+      },
+      sources: [
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Willard,_Virginia', title: 'Willard, Virginia', license: 'CC BY-SA 4.0' },
+        { kind: 'institution', url: 'http://www.loudounhistory.org/history/dulles-airport-history', title: 'Eugene Scheel, "Dulles Airport Has Its Roots in Rural Black Community of Willard," The Washington Post, Nov. 17, 2002 (repub. Loudoun County history site)', license: null },
+      ],
+    },
     sources: [
       { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q136544402', title: 'Dulles International Airport Main Terminal (Q136544402)', license: null },
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Dulles_International_Airport_Main_Terminal', title: 'Dulles International Airport Main Terminal', license: 'CC BY-SA 4.0' },
@@ -509,5 +519,173 @@ export const AMERICAS_BUILDINGS: Building[] = [
       { kind: 'institution', url: 'https://studiogang.com/project/aqua-tower', title: 'Studio Gang — Aqua Tower', license: null },
     ],
     tier: 'canon',
+  },
+  // --- Fix round (era-bucket quota): pre-1800 and post-2000 additions ---
+  // Review found this slice delivered 0-4-4-1 against N=9 (needed pre-1800
+  // >= 2, post-2000 >= 2) with no honest-gap disclosure. Checked against
+  // progress.md's full-pool dry run (173 buildings, era buckets already
+  // holding pool-globally) — genuinely fixable rather than structurally
+  // thin, so fixed directly: two colonial buildings with individually
+  // documented architects (not the patron/master-mason thin-attribution
+  // pattern flagged elsewhere in the wave) plus one post-2000 building,
+  // bringing this slice to 2-4-4-2 against N=12. All three are >280 km
+  // from every other building in this file and from each other, so none
+  // trip even the OLD (unfixed, any-two-buildings-within-25km)
+  // possible-duplicate-site rule this branch still runs under.
+  {
+    id: 'touro-synagogue',
+    wikidataId: 'Q1355822',
+    name: {
+      en: 'Touro Synagogue',
+      es: 'Sinagoga Touro',
+      it: 'Sinagoga Touro',
+    },
+    architectId: 'peter-harrison',
+    location: { city: 'Newport, Rhode Island', countryCode: 'US', lat: 41.489444, lon: -71.311944 },
+    inception: 1759,
+    completed: 1763,
+    demolished: null,
+    typology: 'sacral',
+    materials: ['brick', 'timber'],
+    structure: {
+      en: 'Twelve free-standing Ionic columns, each carved from a single tree, carry the women\'s gallery around three sides of a plain brick Georgian volume oriented so the Ark faces east toward Jerusalem.',
+      es: 'Doce columnas jónicas exentas, cada una tallada de un solo árbol, sostienen la galería de las mujeres por tres lados de un volumen georgiano de ladrillo liso, orientado para que el Arca mire al este, hacia Jerusalén.',
+      it: 'Dodici colonne ioniche libere, ciascuna intagliata da un unico albero, reggono la galleria delle donne su tre lati di un volume georgiano in mattoni semplici, orientato in modo che l\'Arca guardi a est, verso Gerusalemme.',
+    },
+    program: {
+      en: 'Built for Congregation Jeshuat Israel, formed by Sephardic Jewish families who had been arriving in Newport from the Caribbean since the 1650s in search of the religious tolerance Rhode Island\'s charter guaranteed.',
+      es: 'Construida para la congregación Jeshuat Israel, formada por familias judías sefardíes que llegaban a Newport desde el Caribe desde la década de 1650 en busca de la tolerancia religiosa que garantizaba la carta fundacional de Rhode Island.',
+      it: 'Costruita per la congregazione Jeshuat Israel, formata da famiglie ebraiche sefardite giunte a Newport dai Caraibi a partire dagli anni 1650 in cerca della tolleranza religiosa garantita dalla carta costitutiva di Rhode Island.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Active Orthodox synagogue and National Historic Site, home to Congregation Jeshuat Israel.',
+      es: 'Sinagoga ortodoxa en activo y lugar histórico nacional, sede de la congregación Jeshuat Israel.',
+      it: 'Sinagoga ortodossa attiva e sito storico nazionale, sede della congregazione Jeshuat Israel.',
+    },
+    detailRect: { x: 0.38, y: 0.42, w: 0.28, h: 0.30 },
+    image: {
+      commonsFile: 'File:Touro Synagogue Newport Rhode Island 2.jpg',
+      photographer: 'Swampyank',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Touro_Synagogue_Newport_Rhode_Island_2.jpg',
+      width: 0,
+      height: 0,
+    },
+    dossier: {
+      en: 'Harrison never traveled to see a synagogue built before designing one. He worked instead from pattern books and from what the congregation described of Amsterdam\'s Esnoga and London\'s Bevis Marks, then set the building at an angle to its own street so the Ark could face precisely east. The exterior is a plain, almost windowless Georgian box in brick; nothing on the outside announces what the interior does. Inside, twelve freestanding Ionic columns, each cut from a single tree, ring three walls and carry a women\'s gallery, one column for each tribe of Israel. A trap door beside the bimah opens onto a crawl space, built, tradition holds, so the congregation could hide its Torah scrolls on short notice. The building was dedicated in December 1763. Twenty-seven years later George Washington answered its congregation\'s own letter with the sentence the synagogue is now best known for, that the government of the United States gives to bigotry no sanction, to persecution no assistance.',
+      es: 'Harrison nunca vio en persona una sinagoga construida antes de proyectar esta. Trabajó a partir de manuales de patrones y de lo que la congregación le describió de la Esnoga de Ámsterdam y de Bevis Marks en Londres, y orientó el edificio en ángulo respecto a su propia calle para que el Arca mirara exactamente al este. El exterior es una caja georgiana lisa y casi sin ventanas, de ladrillo; nada afuera anuncia lo que ocurre dentro. En el interior, doce columnas jónicas exentas, cada una tallada de un solo árbol, recorren tres muros y sostienen una galería de mujeres, una columna por cada tribu de Israel. Una trampilla junto a la bimá se abre a un hueco bajo el suelo que, según la tradición, permitía esconder los rollos de la Torá con poco aviso. El edificio se dedicó en diciembre de 1763. Veintisiete años después, George Washington respondió a una carta de la propia congregación con la frase por la que hoy se conoce la sinagoga: que el gobierno de Estados Unidos no da sanción al fanatismo ni asistencia a la persecución.',
+      it: 'Harrison non vide mai di persona una sinagoga già costruita prima di progettarne una. Lavorò a partire da manuali di modelli e da quanto la congregazione gli descrisse della Esnoga di Amsterdam e di Bevis Marks a Londra, orientando l\'edificio in diagonale rispetto alla propria strada perché l\'Arca guardasse esattamente a est. L\'esterno è un volume georgiano semplice e quasi privo di finestre, in mattoni; nulla all\'esterno annuncia ciò che avviene dentro. All\'interno, dodici colonne ioniche libere, ciascuna intagliata da un unico albero, corrono lungo tre pareti e reggono una galleria delle donne, una colonna per ciascuna tribù d\'Israele. Una botola accanto alla bimah si apre su un vano sottostante che, secondo la tradizione, permetteva di nascondere i rotoli della Torah con breve preavviso. L\'edificio fu dedicato nel dicembre 1763. Ventisette anni dopo, George Washington rispose a una lettera della stessa congregazione con la frase per cui la sinagoga è oggi meglio conosciuta: che il governo degli Stati Uniti non concede alcuna sanzione al fanatismo, né assistenza alla persecuzione.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1355822', title: 'Touro Synagogue (Q1355822)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Touro_Synagogue', title: 'Touro Synagogue', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'nassau-hall',
+    wikidataId: 'Q6967574',
+    name: {
+      en: 'Nassau Hall',
+      es: 'Nassau Hall',
+      it: 'Nassau Hall',
+    },
+    architectId: 'robert-smith-1722',
+    location: { city: 'Princeton, New Jersey', countryCode: 'US', lat: 40.348611, lon: -74.659167 },
+    inception: 1754,
+    completed: 1756,
+    demolished: null,
+    typology: 'educational',
+    materials: ['stone'],
+    structure: {
+      en: 'Load-bearing walls of local sandstone rise around a long double-loaded corridor plan; both the roof structure and much of the interior were rebuilt in brick and iron after fires in 1802 and 1855, the second time adding the cupola that now caps the hall.',
+      es: 'Muros de carga de arenisca local se levantan en torno a una planta larga de corredor central con salas a ambos lados; tanto la cubierta como buena parte del interior se reconstruyeron en ladrillo y hierro tras los incendios de 1802 y 1855, el segundo de los cuales añadió la cúpula que hoy corona el edificio.',
+      it: 'Murature portanti in arenaria locale si innalzano attorno a una lunga pianta a corridoio centrale con ambienti su entrambi i lati; sia la copertura sia gran parte dell\'interno furono ricostruiti in mattoni e ferro dopo gli incendi del 1802 e del 1855, il secondo dei quali aggiunse la cupola che oggi corona l\'edificio.',
+    },
+    program: {
+      en: 'Built to house the entire College of New Jersey — dormitories, classrooms, library, dining hall and prayer hall together — on land Nathaniel FitzRandolph donated for the purpose.',
+      es: 'Construido para albergar todo el College of New Jersey —dormitorios, aulas, biblioteca, comedor y capilla juntos— en un terreno donado para ese fin por Nathaniel FitzRandolph.',
+      it: 'Costruito per ospitare l\'intero College of New Jersey — dormitori, aule, biblioteca, refettorio e cappella insieme — su un terreno donato allo scopo da Nathaniel FitzRandolph.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Princeton University\'s oldest building and seat of its central administration, including the President\'s office.',
+      es: 'Edificio más antiguo de la Universidad de Princeton y sede de su administración central, incluida la oficina del presidente.',
+      it: 'Edificio più antico della Princeton University e sede della sua amministrazione centrale, compreso l\'ufficio del presidente.',
+    },
+    detailRect: { x: 0.40, y: 0.35, w: 0.24, h: 0.30 },
+    image: {
+      commonsFile: 'File:Nassau Hall Princeton.JPG',
+      photographer: 'Smallbones',
+      license: 'CC0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Nassau_Hall_Princeton.JPG',
+      width: 0,
+      height: 0,
+    },
+    dossier: {
+      en: 'Nassau Hall was, at its completion in 1756, the largest building in the American colonies built for a single institution — one long sandstone block holding the whole College of New Jersey, later Princeton, under one roof. It served as more than a school. Continental troops and then British troops occupied it in 1776; the following January, Alexander Hamilton\'s artillery fired on the building during the Battle of Princeton, and a cannonball is said to have decapitated a portrait of George II hanging inside. From June to November 1783 the Continental Congress met in its library, making the hall briefly the capital of the United States, in session when word arrived that the war had ended by treaty. Fire gutted the interior twice, in 1802 and 1855; Benjamin Latrobe rebuilt it the first time and John Notman the second, adding the cupola and italianate details visible today. The sandstone walls and the scar from that cannonball, on the building\'s south side, are original.',
+      es: 'Al concluirse en 1756, Nassau Hall era el mayor edificio de las colonias americanas construido para una sola institución: un único bloque de arenisca que albergaba bajo un mismo techo todo el College of New Jersey, luego Princeton. Fue más que una escuela. Tropas continentales y después británicas lo ocuparon en 1776; en enero del año siguiente, la artillería de Alexander Hamilton disparó contra el edificio durante la batalla de Princeton, y una bala de cañón habría decapitado un retrato de Jorge II que colgaba dentro. Entre junio y noviembre de 1783 el Congreso Continental sesionó en su biblioteca, convirtiendo el edificio, por unos meses, en la capital de Estados Unidos, y estaba reunido cuando llegó la noticia de que la guerra había terminado por tratado. Un incendio vació el interior dos veces, en 1802 y 1855; Benjamin Latrobe lo reconstruyó la primera vez y John Notman la segunda, añadiendo la cúpula y los detalles italianizantes que hoy se ven. Los muros de arenisca y la marca de aquella bala de cañón, en el costado sur del edificio, son originales.',
+      it: 'Al suo completamento nel 1756, Nassau Hall era il più grande edificio delle colonie americane costruito per una singola istituzione: un unico blocco in arenaria che ospitava sotto un solo tetto l\'intero College of New Jersey, poi Princeton. Fu più di una scuola. Truppe continentali e poi britanniche lo occuparono nel 1776; nel gennaio dell\'anno seguente l\'artiglieria di Alexander Hamilton sparò contro l\'edificio durante la battaglia di Princeton, e una palla di cannone avrebbe decapitato un ritratto di Giorgio II appeso all\'interno. Tra giugno e novembre 1783 il Congresso continentale si riunì nella sua biblioteca, rendendo l\'edificio, per alcuni mesi, la capitale degli Stati Uniti, ed era in seduta quando giunse la notizia che la guerra si era conclusa con un trattato. Un incendio ne svuotò l\'interno due volte, nel 1802 e nel 1855; Benjamin Latrobe lo ricostruì la prima volta e John Notman la seconda, aggiungendo la cupola e i dettagli all\'italiana oggi visibili. Le murature in arenaria e il segno di quella palla di cannone, sul lato sud dell\'edificio, sono originali.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q6967574', title: 'Nassau Hall (Q6967574)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Nassau_Hall', title: 'Nassau Hall', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'caltrans-district-7-headquarters',
+    wikidataId: 'Q5024011',
+    name: {
+      en: 'Caltrans District 7 Headquarters',
+      es: 'Sede del Distrito 7 de Caltrans',
+      it: 'Sede del Distretto 7 di Caltrans',
+    },
+    architectId: 'thom-mayne',
+    location: { city: 'Los Angeles, California', countryCode: 'US', lat: 34.0514, lon: -118.2439 },
+    inception: 2001,
+    completed: 2004,
+    demolished: null,
+    typology: 'civic',
+    materials: ['steel-and-glass', 'concrete'],
+    structure: {
+      en: 'A steel frame thirteen storeys tall is wrapped in a perforated aluminum sun-screen hung clear of the glazed curtain wall behind it, with a four-storey field of programmable lights animating the building\'s blank north face after dark.',
+      es: 'Una estructura de acero de trece plantas se envuelve en una pantalla solar de aluminio perforado, separada del muro cortina acristalado que queda detrás, con un campo de luces programables de cuatro plantas que anima de noche la fachada norte ciega del edificio.',
+      it: 'Una struttura in acciaio di tredici piani è avvolta in uno schermo solare di alluminio forato, staccato dalla parete vetrata retrostante, con un campo di luci programmabili alto quattro piani che anima di notte la cieca facciata nord dell\'edificio.',
+    },
+    program: {
+      en: 'Headquarters commissioned by the California Department of Transportation to anchor a renewed stretch of downtown Los Angeles\'s Civic Center, shared with the city\'s own transportation department.',
+      es: 'Sede encargada por el Departamento de Transporte de California para anclar un tramo renovado del Civic Center del centro de Los Ángeles, compartida con el departamento de transporte de la propia ciudad.',
+      it: 'Sede commissionata dal Dipartimento dei Trasporti della California per ancorare un tratto rinnovato del Civic Center del centro di Los Angeles, condivisa con il dipartimento dei trasporti della città.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Government office building serving Caltrans District 7 and the Los Angeles Department of Transportation.',
+      es: 'Edificio de oficinas públicas que alberga el Distrito 7 de Caltrans y el Departamento de Transporte de Los Ángeles.',
+      it: 'Edificio di uffici pubblici che ospita il Distretto 7 di Caltrans e il Dipartimento dei Trasporti di Los Angeles.',
+    },
+    detailRect: { x: 0.30, y: 0.35, w: 0.30, h: 0.30 },
+    image: {
+      commonsFile: 'File:Caltrans District 7 Headquarters, Los Angeles, California, US.jpg',
+      photographer: 'Clyde Charles Brown',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Caltrans_District_7_Headquarters,_Los_Angeles,_California,_US.jpg',
+      width: 0,
+      height: 0,
+    },
+    dossier: {
+      en: 'Mayne and his Morphosis studio treated the commission — a headquarters for the state agency that builds California\'s freeways — as an argument that a government office block need not be inert. Thirteen floors of steel frame sit behind a skin of perforated aluminum screens hung clear of the glass wall beneath, shading the offices without sealing them, and the screens themselves fold and cantilever rather than running flat. The north face, which has no windows, carries Motordom, a four-storey field of programmable lights the artist Keith Sonnier designed with the building; a glass-floored conference room on the third storey looks straight down onto the public plaza. None of this was cheap restraint: the building cost $165 million against a program of ordinary state offices, and it opened to as much argument as admiration. Two years later the Pritzker jury gave Mayne the prize on the strength of it, the first American to receive it in more than a decade.',
+      es: 'Mayne y su estudio Morphosis trataron el encargo —una sede para el organismo estatal que construye las autopistas de California— como un argumento de que un edificio de oficinas públicas no tiene por qué ser inerte. Trece plantas de estructura de acero se sitúan tras una piel de pantallas de aluminio perforado separadas del muro de vidrio que queda debajo, que dan sombra a las oficinas sin sellarlas, y las propias pantallas se pliegan y vuelan en vez de correr lisas. La fachada norte, sin ventanas, lleva Motordom, un campo de luces programables de cuatro plantas que el artista Keith Sonnier diseñó junto con el edificio; una sala de juntas de suelo de vidrio en la tercera planta mira directamente a la plaza pública. Nada de esto fue una contención barata: el edificio costó 165 millones de dólares frente a un programa de oficinas estatales corrientes, y se inauguró entre tanta polémica como admiración. Dos años después, el jurado del Pritzker le dio el premio a Mayne por esta obra, el primer estadounidense en recibirlo en más de una década.',
+      it: 'Mayne e il suo studio Morphosis trattarono l\'incarico — una sede per l\'ente statale che costruisce le autostrade della California — come un argomento secondo cui un edificio di uffici pubblici non deve essere inerte. Tredici piani di struttura in acciaio si trovano dietro una pelle di schermi di alluminio forato staccati dalla parete vetrata sottostante, che ombreggiano gli uffici senza sigillarli, e gli schermi stessi si piegano e sbalzano invece di correre piatti. La facciata nord, priva di finestre, porta Motordom, un campo di luci programmabili alto quattro piani che l\'artista Keith Sonnier progettò insieme all\'edificio; una sala riunioni dal pavimento di vetro al terzo piano guarda dritto sulla piazza pubblica. Nulla di tutto ciò fu un risparmio a buon mercato: l\'edificio costò 165 milioni di dollari a fronte di un programma di uffici statali ordinari, e fu inaugurato tra altrettante polemiche quanta ammirazione. Due anni dopo, la giuria del Pritzker assegnò il premio a Mayne per quest\'opera, primo statunitense a riceverlo in più di un decennio.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q5024011', title: 'Caltrans District 7 Headquarters (Q5024011)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Caltrans_District_7_Headquarters', title: 'Caltrans District 7 Headquarters', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'deep',
   },
 ];

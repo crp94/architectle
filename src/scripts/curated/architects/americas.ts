@@ -281,4 +281,98 @@ export const AMERICAS_ARCHITECTS: Architect[] = [
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Jeanne_Gang', title: 'Jeanne Gang', license: 'CC BY-SA 4.0' },
     ],
   },
+  // --- Fix round (era-bucket quota): pre-1800 and post-2000 additions ---
+  // wave5-contract-v2.md quotas for N=9 required pre-1800 >= 2 and
+  // post-2000 >= 2; the initial slice delivered 0 and 1. Added below:
+  // two colonial architects with individually documented attributions
+  // (not the patron/master-mason thin-attribution pattern the contract
+  // warns against) and one post-2000 architect, all with a practice base
+  // in the United States (owned by this slice per contract §3).
+  {
+    id: 'peter-harrison',
+    wikidataId: 'Q1178933',
+    name: 'Peter Harrison',
+    alternativeNames: ['Peter Harrison (architect)'],
+    gender: 'man',
+    born: 1716,
+    died: 1775,
+    floruit: { start: 1748, end: 1772, override: false },
+    movements: [
+      { id: 'palladianism', primary: true },
+    ],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'sacral',
+    signatureMaterial: 'timber',
+    portrait: {
+      en: 'Harrison went to sea as a young man, commanding merchant ships out of Newport, and picked up architecture the way an educated 18th-century amateur could: from pattern books by Palladio, Gibbs and Kent, assembled into a library he kept adding to for the rest of his life. He never trained formally and never called himself an architect in any document that survives; contemporaries described him as a gentleman who designed as a courtesy to his city. Between 1748 and 1763 he gave Newport four buildings that still stand — the Redwood Library, King\'s Chapel in Boston, Touro Synagogue and the Brick Market — each copied close to an English or European precedent but built in wood and brick rather than stone. He held Loyalist sympathies during the Revolution; after his death in New Haven in 1775, a mob burned his house, his library and every drawing he had made.',
+      es: 'Harrison se echó al mar de joven, mandando barcos mercantes desde Newport, y aprendió arquitectura como podía hacerlo un aficionado culto del siglo XVIII: a partir de manuales de Palladio, Gibbs y Kent, reunidos en una biblioteca que no dejó de ampliar el resto de su vida. Nunca se formó de manera reglada ni se llamó arquitecto en documento alguno conservado; sus contemporáneos lo describían como un caballero que proyectaba por cortesía a su ciudad. Entre 1748 y 1763 dio a Newport cuatro edificios que aún siguen en pie —la Redwood Library, la King\'s Chapel de Boston, la sinagoga Touro y el Brick Market—, cada uno calcado de un precedente inglés o europeo pero construido en madera y ladrillo, no en piedra. Mantuvo simpatías lealistas durante la Revolución; tras su muerte en 1775, una turba quemó su casa, su biblioteca y todos sus dibujos.',
+      it: 'Harrison si imbarcò da giovane, comandando navi mercantili da Newport, e imparò l\'architettura come poteva farlo un colto dilettante del Settecento: da manuali di Palladio, Gibbs e Kent, raccolti in una biblioteca che continuò ad ampliare per tutta la vita. Non si formò mai in modo regolare né si definì mai architetto in alcun documento giunto fino a noi; i contemporanei lo descrivevano come un gentiluomo che progettava per cortesia verso la propria città. Tra il 1748 e il 1763 diede a Newport quattro edifici tuttora in piedi — la Redwood Library, la King\'s Chapel di Boston, la sinagoga Touro e il Brick Market —, ciascuno ricalcato su un precedente inglese o europeo ma costruito in legno e mattoni, non in pietra. Durante la Rivoluzione mantenne simpatie lealiste; dopo la morte nel 1775, una folla bruciò la sua casa, la biblioteca e tutti i suoi disegni.',
+    },
+    awards: [],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1178933', title: 'Peter Harrison (Q1178933)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Peter_Harrison_(architect)', title: 'Peter Harrison (architect)', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    id: 'robert-smith-1722',
+    wikidataId: 'Q7349874',
+    name: 'Robert Smith',
+    alternativeNames: ['Robert Smith (architect)'],
+    gender: 'man',
+    born: 1722,
+    died: 1777,
+    floruit: { start: 1750, end: 1774, override: false },
+    movements: [
+      { id: 'palladianism', primary: true },
+    ],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'educational',
+    signatureMaterial: 'stone',
+    portrait: {
+      en: 'Smith was born into a family of masons in Dalkeith, Scotland, and emigrated to Philadelphia in 1748 already trained as a builder rather than a gentleman-amateur. He rose fast: within a few years he was designing the city\'s most prominent commissions, among them the steeple of Christ Church, St Peter\'s Church, Carpenters\' Hall and the building he raised for the College of New Jersey at Princeton. He worked exclusively in the Georgian idiom of his English pattern books and was a founding member of the Carpenters\' Company of Philadelphia, the guild that trained the city\'s builders and set its construction standards. A member of the American Philosophical Society, he turned his skill to defence when war came, designing the chevaux-de-frise sunk in the Delaware River to block British ships. He died in 1777 at Fort Billingsport, New Jersey, while building barracks for the Continental Army.',
+      es: 'Smith nació en una familia de canteros en Dalkeith, Escocia, y emigró a Filadelfia en 1748 ya formado como constructor y no como aficionado. Ascendió deprisa: en pocos años proyectaba los encargos más destacados de la ciudad, entre ellos el chapitel de Christ Church, la iglesia de St. Peter, el Carpenters\' Hall y el edificio que levantó para el College of New Jersey en Princeton. Trabajó siempre en el idioma georgiano de sus manuales ingleses y fue miembro fundador de la Carpenters\' Company de Filadelfia, el gremio que formaba a los constructores de la ciudad y fijaba sus estándares de obra. Miembro de la American Philosophical Society, sirvió a la defensa cuando llegó la guerra, diseñando los chevaux-de-frise hundidos en el río Delaware para cerrar el paso a los barcos británicos. Murió en 1777 en Fort Billingsport, Nueva Jersey, mientras construía cuarteles para el Ejército Continental.',
+      it: 'Smith nacque in una famiglia di scalpellini a Dalkeith, in Scozia, ed emigrò a Filadelfia nel 1748 già formato come costruttore e non come dilettante colto. Fece rapidamente carriera: in pochi anni progettava le commesse più in vista della città, fra cui il campanile di Christ Church, la chiesa di St. Peter, la Carpenters\' Hall e l\'edificio che eresse per il College of New Jersey a Princeton. Lavorò sempre nell\'idioma georgiano dei suoi manuali inglesi e fu membro fondatore della Carpenters\' Company di Filadelfia, la corporazione che formava i costruttori della città e ne fissava gli standard costruttivi. Membro dell\'American Philosophical Society, mise le proprie competenze al servizio della difesa allo scoppio della guerra, progettando i chevaux-de-frise affondati nel fiume Delaware per sbarrare il passo alle navi britanniche. Morì nel 1777 a Fort Billingsport, nel New Jersey, mentre costruiva caserme per l\'esercito continentale.',
+    },
+    awards: [],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q7349874', title: 'Robert Smith (Q7349874)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Robert_Smith_(architect)', title: 'Robert Smith (architect)', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    id: 'thom-mayne',
+    wikidataId: 'Q312847',
+    name: 'Thom Mayne',
+    alternativeNames: ['Thomas Mayne'],
+    gender: 'man',
+    born: 1944,
+    died: null,
+    floruit: { start: 1978, end: 2025, override: false },
+    movements: [
+      { id: 'high-tech', primary: true },
+    ],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'steel-and-glass',
+    portrait: {
+      en: 'Mayne was born in Waterbury, Connecticut, in 1944, studied architecture at USC and helped found the Southern California Institute of Architecture in 1972, the same year he started Morphosis with a rotating group of USC collaborators. For two decades the practice built mostly houses and small institutional work in Los Angeles, developing a vocabulary of tilted planes, exposed structure and machined metal before computer modelling let it build at the scale of the Caltrans headquarters and the San Francisco Federal Building. Mayne has always described the work as diagnostic rather than decorative, treating a facade\'s moving parts and irregular geometry as responses to light, seismic bracing or programme rather than as style for its own sake. He has taught at SCI-Arc since its founding and received the Pritzker Prize in 2005 and the AIA Gold Medal in 2013.',
+      es: 'Mayne nació en Waterbury, Connecticut, en 1944, estudió arquitectura en la USC y contribuyó a fundar el Southern California Institute of Architecture en 1972, el mismo año en que puso en marcha Morphosis con un grupo variable de colaboradores de la USC. Durante dos décadas el estudio construyó sobre todo viviendas y pequeños encargos institucionales en Los Ángeles, desarrollando un vocabulario de planos inclinados, estructura vista y metal mecanizado, antes de que el modelado por ordenador le permitiera construir a la escala de Caltrans o del Edificio Federal de San Francisco. Mayne siempre ha descrito su obra como diagnóstica y no decorativa, tratando las partes móviles y la geometría irregular de una fachada como respuesta a la luz, al arriostramiento sísmico o al programa. Enseña en el SCI-Arc desde su fundación y recibió el Premio Pritzker en 2005 y la Medalla de Oro del AIA en 2013.',
+      it: 'Mayne nacque a Waterbury, nel Connecticut, nel 1944, studiò architettura alla USC e contribuì a fondare il Southern California Institute of Architecture nel 1972, lo stesso anno in cui avviò Morphosis con un gruppo variabile di collaboratori della USC. Per due decenni lo studio costruì soprattutto case e piccoli incarichi istituzionali a Los Angeles, sviluppando un vocabolario di piani inclinati, struttura a vista e metallo lavorato a macchina, prima che la modellazione al computer gli permettesse di costruire alla scala di Caltrans o del Federal Building di San Francisco. Mayne ha sempre descritto il proprio lavoro come diagnostico e non decorativo, trattando le parti mobili e la geometria irregolare di una facciata come risposta alla luce, al controventamento sismico o al programma. Insegna alla SCI-Arc dalla fondazione e ha ricevuto il Premio Pritzker nel 2005 e la AIA Gold Medal nel 2013.',
+    },
+    awards: ['Pritzker Architecture Prize (2005)', 'AIA Gold Medal (2013)'],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q312847', title: 'Thom Mayne (Q312847)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Thom_Mayne', title: 'Thom Mayne', license: 'CC BY-SA 4.0' },
+    ],
+  },
 ];
