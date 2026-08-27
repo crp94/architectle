@@ -1,4 +1,470 @@
 import type { Architect } from '@/types/architect';
 
 // Wave 5 curator agent (East and Southern Africa): real, sourced Architect entries for this slice.
-export const AFRICA_EASTSOUTH_ARCHITECTS: Architect[] = [];
+//
+// Wikidata's coverage of attributed architecture in this region is thin, and
+// several of the people below carry almost no structured data at all: Janina
+// Masojada has no Wikidata item, and neither her birth year nor Jo Noero's is
+// recorded in any source consulted, so `born` is left null rather than
+// guessed. Sophy Gray's authorship of her churches is itself contested in the
+// literature and her portrait says so. Where Wikidata is absent or wrong the
+// metadata here is hand-authored from the published sources cited on each
+// entry — see the task report for the full list.
+//
+// FIX ROUND (see task-9-africa-eastsouth-fix-report.md): Giuseppe Pettazzi,
+// Pancho Guedes and Maria Carlota Quintanilha are removed — the Eritrean and
+// Mozambican buildings that were their only entries in this slice could not
+// be legally licensed once Freedom of Panorama was checked properly (see the
+// buildings file header). Herbert Baker and Gerard Moerdijk are added as
+// `architectId` for their two replacement buildings. David Mutiso, Andrew
+// Makin, Paul Wygers and Heinrich Wolff are added as new Architect records:
+// Andrew Makin and Paul Wygers were, with Janina Masojada, the
+// competition-winning team on the Constitutional Court; Heinrich Wolff was
+// Jo Noero's partner on the Red Location Museum. Mutiso died in December
+// 2025; the other three have no Wikidata item, matching Masojada's own.
+//
+// FIX ROUND 2 (see task-9-africa-eastsouth-fix2-report.md): David Mutiso was
+// first added here as `coArchitects`-only alongside `architectId:
+// 'karl-henrik-nostvik'` on KICC, on the strength of Wikidata's sole `P84`
+// claim (sourced from the SOSBrutalism catalogue) and English Wikipedia's
+// "designed by Karl Henrik Nøstvik architect with David Mutiso." A second
+// independent audit found that the fix round's own cited BUILDesign
+// interview has Mutiso, in his own words, describing himself as the one who
+// developed the design and dealt directly with Tom Mboya and Jomo Kenyatta,
+// and Nøstvik as his government junior who only later became a private
+// consultant once his own contract lapsed — the reverse of the credit
+// ordering the fix shipped. Re-verified against further Kenyan reporting
+// (Construction Kenya's obituary, Business Today) that converges on the same
+// account, against Wikidata's SOSBrutalism-sourced claim, and against Manuel
+// Herz's "African Modernism" essay and ArchiPanic, which name only Nøstvik
+// and do not mention Mutiso at all — i.e. every source crediting Nøstvik as
+// primary or sole is a Western catalogue or essay, and every source naming
+// Mutiso as primary is Kenyan and first- or second-hand. `architectId` was
+// flipped to `david-mutiso` with `karl-henrik-nostvik` moved to
+// `coArchitects`, and both portraits below rewritten accordingly.
+//
+// `workRegions` and `workCentroid` are deliberately left empty/zeroed: the
+// curation script derives both from each architect's buildings and overwrites
+// whatever is typed here.
+export const AFRICA_EASTSOUTH_ARCHITECTS: Architect[] = [
+  {
+    id: 'giovanni-battista-cairati',
+    wikidataId: 'Q10289884',
+    name: 'Giovanni Battista Cairati',
+    alternativeNames: ['João Baptista Cairato', 'Giovanni Battista Cairato', 'João Batista Cairato'],
+    gender: 'man',
+    born: 1550,
+    died: 1596,
+    floruit: { start: 1560, end: 1596, override: false },
+    movements: [{ id: 'renaissance', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'stone',
+    portrait: {
+      en: 'Giovanni Battista Cairati, known in Portuguese service as João Baptista Cairato, was born at Cairate in Lombardy and learned his trade fortifying Malta and Sardinia for the Knights Hospitaller before directing the defence works of Milan through the 1560s. He entered the service of Philip II in 1577 and in 1583 was appointed chief engineer of the Estado da Índia, charged with rebuilding the Portuguese fortresses of the Indian Ocean to the angled-bastion geometry of the trace italienne. For a decade he worked between Vasai, Daman, Hormuz, Muscat, Mannar and Malacca. In about 1593 he chose the site and set out the plan of Fort Jesus at Mombasa, his last known work; he died at Goa in 1596, probably without seeing it finished, and was succeeded by Julio Simão.',
+      es: 'Giovanni Battista Cairati, conocido al servicio portugués como João Baptista Cairato, nació en Cairate, en Lombardía, y aprendió el oficio fortificando Malta y Cerdeña para los Caballeros Hospitalarios antes de dirigir las obras de defensa de Milán durante la década de 1560. Entró al servicio de Felipe II en 1577 y en 1583 fue nombrado ingeniero jefe del Estado da Índia, con el encargo de rehacer las fortalezas portuguesas del océano Índico según la geometría de baluartes angulares de la traza italiana. Durante una década trabajó entre Vasai, Damán, Ormuz, Mascate, Mannar y Malaca. Hacia 1593 escogió el emplazamiento y trazó la planta del fuerte Jesús de Mombasa, su última obra conocida; murió en Goa en 1596, probablemente sin verla terminada, y le sucedió Julio Simão.',
+      it: "Giovanni Battista Cairati, noto al servizio portoghese come João Baptista Cairato, nacque a Cairate, in Lombardia, e imparò il mestiere fortificando Malta e la Sardegna per i Cavalieri Ospitalieri, prima di dirigere le opere difensive di Milano negli anni Sessanta del Cinquecento. Entrò al servizio di Filippo II nel 1577 e nel 1583 fu nominato ingegnere capo dell'Estado da Índia, con l'incarico di rifare le fortezze portoghesi dell'oceano Indiano secondo la geometria a bastioni angolari della trace italienne. Per un decennio lavorò fra Vasai, Daman, Hormuz, Mascate, Mannar e Malacca. Verso il 1593 scelse il sito e tracciò la pianta del Forte Gesù di Mombasa, la sua ultima opera nota; morì a Goa nel 1596, probabilmente senza vederla compiuta, e gli successe Julio Simão.",
+    },
+    awards: [],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q10289884', title: 'Giovanni Battista Cairati (Q10289884)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Giovanni_Battista_Cairati', title: 'Giovanni Battista Cairati', license: 'CC BY-SA 4.0' },
+      { kind: 'publication', url: 'https://search.worldcat.org/title/1067327', title: 'James S. Kirkman, Fort Jesus: A Portuguese Fortress on the East African Coast (Oxford: Clarendon Press, 1974)', license: null },
+    ],
+  },
+  {
+    id: 'louis-michel-thibault',
+    wikidataId: 'Q2604850',
+    name: 'Louis Michel Thibault',
+    alternativeNames: ['Louis-Michel Thibault'],
+    gender: 'man',
+    born: 1750,
+    died: 1815,
+    floruit: { start: 1786, end: 1815, override: false },
+    movements: [{ id: 'neoclassicism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'stone',
+    portrait: {
+      en: "Louis Michel Thibault trained at the royal academy of architecture in Paris under Ange-Jacques Gabriel, then studied military engineering and took a commission in the Swiss de Meuron regiment, reaching the Cape of Good Hope in 1783. He transferred to the Dutch East India Company in 1785 and was appointed its inspector of buildings the following year; until the Company's finances collapsed in 1790 he designed every new public work at the Cape, and private commissions carried him on afterwards. He was the colony's first academically trained architect, and the mannered neoclassicism he brought with him sat deliberately against the curved gables of Cape Dutch building. He worked repeatedly with the Freiburg sculptor Anton Anreith and the Bremen builder Hermann Schutte. Thibault died at the Cape in 1815.",
+      es: 'Louis Michel Thibault se formó en la Real Academia de Arquitectura de París con Ange-Jacques Gabriel, estudió después ingeniería militar y obtuvo un despacho en el regimiento suizo de Meuron, con el que llegó al Cabo de Buena Esperanza en 1783. Pasó al servicio de la Compañía Neerlandesa de las Indias Orientales en 1785 y al año siguiente fue nombrado inspector de obras; hasta la quiebra de la Compañía en 1790 proyectó todos los edificios públicos nuevos del Cabo, y después siguió trabajando por encargo privado. Fue el primer arquitecto de formación académica de la colonia, y el neoclasicismo manierista que trajo consigo contrastaba a propósito con los hastiales curvos de la arquitectura neerlandesa del Cabo. Colaboró una y otra vez con el escultor friburgués Anton Anreith y el constructor bremense Hermann Schutte. Murió en el Cabo en 1815.',
+      it: "Louis Michel Thibault si formò alla Reale Accademia di Architettura di Parigi sotto Ange-Jacques Gabriel, studiò poi ingegneria militare e ottenne un brevetto nel reggimento svizzero de Meuron, con cui raggiunse il Capo di Buona Speranza nel 1783. Passò alla Compagnia olandese delle Indie orientali nel 1785 e l'anno seguente ne divenne ispettore delle costruzioni; fino al tracollo finanziario della Compagnia nel 1790 progettò ogni nuovo edificio pubblico del Capo, e in seguito continuò su commissione privata. Fu il primo architetto di formazione accademica della colonia, e il neoclassicismo manierato che portò con sé si opponeva volutamente ai frontoni curvi dell'architettura olandese del Capo. Lavorò più volte con lo scultore friburghese Anton Anreith e il costruttore bremense Hermann Schutte. Morì al Capo nel 1815.",
+    },
+    awards: [],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q2604850', title: 'Louis Michel Thibault (Q2604850)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Louis_Michel_Thibault', title: 'Louis Michel Thibault', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    id: 'herbert-baker',
+    wikidataId: 'Q382771',
+    name: 'Herbert Baker',
+    alternativeNames: ['Sir Herbert Baker'],
+    gender: 'man',
+    born: 1862,
+    died: 1946,
+    floruit: { start: 1892, end: 1939, override: false },
+    movements: [{ id: 'neoclassicism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'stone',
+    portrait: {
+      en: "Herbert Baker trained under his cousin in Kent and at the Royal Academy Schools before sailing for Cape Town in 1892, where one of his first commissions was to rebuild Cecil Rhodes's house, Groote Schuur, after a fire. Rhodes sent him to Italy, Greece and Egypt to study classical architecture, and the Cape Dutch and Mediterranean idiom Baker brought back from that education, worked in local stone, made him the dominant architect of British South Africa for two decades: Rhodes Memorial and Rhodes House, banks, churches, and the semi-circular Union Buildings that he gave Pretoria as the new seat of a union built on excluding its Black majority from citizenship. He left South Africa in 1912 to design New Delhi's Secretariat buildings with Edwin Lutyens, later added the Bank of England and Tyne Cot Cemetery to his English work, was knighted in 1926, and died in England in 1946.",
+      es: 'Herbert Baker se formó con su primo en Kent y en las Royal Academy Schools antes de embarcar hacia Ciudad del Cabo en 1892, donde reconstruyó tras un incendio Groote Schuur, la casa de Cecil Rhodes. Rhodes lo envió a Italia, Grecia y Egipto a estudiar arquitectura clásica, y el lenguaje que trajo de esa formación, holandés del Cabo y mediterráneo a la vez, en piedra local, lo convirtió en el arquitecto dominante de la Sudáfrica británica: el Rhodes Memorial, bancos, iglesias, y los semicirculares Union Buildings que dio a Pretoria como sede de una unión construida sobre la exclusión de su mayoría negra de la ciudadanía. Dejó Sudáfrica en 1912 para proyectar la Secretaría de Nueva Delhi junto con Edwin Lutyens, sumó después el Banco de Inglaterra a su obra inglesa, fue nombrado caballero en 1926 y murió en Inglaterra en 1946.',
+      it: "Herbert Baker si formò presso il cugino nel Kent e alle Royal Academy Schools prima di imbarcarsi per Città del Capo nel 1892, dove ricostruì dopo un incendio Groote Schuur, la casa di Cecil Rhodes. Rhodes lo mandò in Italia, Grecia ed Egitto a studiare l'architettura classica, e il linguaggio che ne riportò, olandese del Capo e mediterraneo insieme, in pietra locale, ne fece l'architetto dominante del Sudafrica britannico: il Rhodes Memorial, banche, chiese, e gli Union Buildings semicircolari che diede a Pretoria come sede di un'unione costruita sull'esclusione della sua maggioranza nera dalla cittadinanza. Lasciò il Sudafrica nel 1912 per progettare la Segreteria di Nuova Delhi insieme a Edwin Lutyens, aggiunse poi la Banca d'Inghilterra alla sua opera inglese, fu nominato cavaliere nel 1926 e morì in Inghilterra nel 1946.",
+    },
+    awards: ['Royal Gold Medal (1927)', 'Knight Bachelor (1926)'],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q382771', title: 'Herbert Baker (Q382771)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Herbert_Baker', title: 'Herbert Baker', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    id: 'gerard-moerdijk',
+    wikidataId: 'Q2837735',
+    name: 'Gerard Moerdijk',
+    alternativeNames: ['Gerard Leendert Pieter Moerdijk', 'Gerard Moerdyk'],
+    gender: 'man',
+    born: 1890,
+    died: 1958,
+    floruit: { start: 1921, end: 1949, override: false },
+    movements: [{ id: 'neoclassicism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'sacral',
+    signatureMaterial: 'stone',
+    portrait: {
+      en: 'Gerard Moerdijk was born in 1890 on a farm near Nylstroom in the Transvaal to Dutch immigrant parents and was interned as a child in a British concentration camp during the Anglo-Boer War. He trained at the Architectural Association in London and studied further in France and Italy, becoming the first South African Associate of the Royal Institute of British Architects. His practice was mostly ecclesiastical — more than eighty churches for the Dutch Reformed Church across South Africa, Namibia and Zimbabwe — alongside civic commissions such as the Johannesburg railway station, the Reserve Bank at Bloemfontein and the Merensky Library at the University of Pretoria. His largest and most consequential work, the Voortrekker Monument outside Pretoria, occupied him for over a decade and became, on its 1949 opening, the central shrine of Afrikaner nationalist memory. He died in Nylstroom in 1958.',
+      es: 'Gerard Moerdijk nació en 1890 en una granja cerca de Nylstroom, en el Transvaal, hijo de inmigrantes neerlandeses, y de niño estuvo internado en un campo de concentración británico durante la guerra anglo-bóer. Se formó en la Architectural Association de Londres y siguió estudiando en Francia e Italia, y fue el primer sudafricano admitido como asociado del Royal Institute of British Architects. Su obra fue sobre todo eclesiástica —más de ochenta iglesias para la Iglesia Reformada Neerlandesa en el sur de África— junto con encargos cívicos como la estación de Johannesburgo, el Banco de Reserva de Bloemfontein y la biblioteca Merensky de la Universidad de Pretoria. Su obra mayor, el Monumento a los Voortrekkers a las afueras de Pretoria, lo ocupó más de una década y se convirtió, al inaugurarse en 1949, en el santuario central de la memoria nacionalista afrikáner. Murió en Nylstroom en 1958.',
+      it: "Gerard Moerdijk nacque nel 1890 in una fattoria vicino a Nylstroom, nel Transvaal, da genitori immigrati olandesi, e da bambino fu internato in un campo di concentramento britannico durante la guerra anglo-boera. Si formò all'Architectural Association di Londra e proseguì gli studi in Francia e Italia, divenendo il primo sudafricano ammesso come associato del Royal Institute of British Architects. La sua opera fu soprattutto ecclesiastica — più di ottanta chiese per la Chiesa riformata olandese in Sudafrica, Namibia e Zimbabwe — insieme a incarichi civici come la stazione ferroviaria di Johannesburg, la Banca di riserva di Bloemfontein e la biblioteca Merensky dell'Università di Pretoria. La sua opera maggiore e più rilevante, il Monumento ai Voortrekker fuori Pretoria, lo occupò per oltre un decennio e divenne, all'inaugurazione del 1949, il santuario centrale della memoria nazionalista afrikaner. Morì a Nylstroom nel 1958.",
+    },
+    awards: [],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q2837735', title: 'Gerard Moerdijk (Q2837735)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Gerard_Moerdijk', title: 'Gerard Moerdijk', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    id: 'david-mutiso',
+    wikidataId: 'Q111285373',
+    name: 'David Mutiso',
+    alternativeNames: [],
+    gender: 'man',
+    born: 1932,
+    died: 2025,
+    floruit: { start: 1965, end: 1978, override: false },
+    movements: [{ id: 'brutalism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: "David Mutiso, born in Nairobi in 1932, went from Alliance High School on a scholarship to the University of Sheffield, qualifying in 1959 and joining the RIBA in 1960. Back in Kenya, he rose through the Ministry of Public Works to become its Chief Architect in 1967 — the first African to hold the post — until 1974. In that role he developed the Kenyatta International Conference Centre, meeting weekly with President Jomo Kenyatta after KANU secretary-general Tom Mboya brought him the brief in 1968; Karl Henrik Nøstvik, then his ministry junior, joined the project and continued on it as a private consultant. International sources have generally credited Nøstvik alone; Mutiso maintained until his death that the design was chiefly his. He co-founded MutisoMenezes International, designed housing at Buruburu and government buildings at Gigiri, chaired Kenya's architects' registration board, and died in 2025, at 93.",
+      es: 'David Mutiso, nacido en Nairobi en 1932, pasó con una beca de Alliance High School a la Universidad de Sheffield y se tituló en 1959. Volvió a Kenia y ascendió en el Ministerio de Obras Públicas hasta ser su arquitecto jefe en 1967 —el primer africano en ese puesto— hasta 1974. En ese cargo desarrolló el diseño del Centro de Conferencias Internacional Kenyatta, reuniéndose semanalmente con Jomo Kenyatta tras recibir el encargo del secretario general de la KANU, Tom Mboya, en 1968; Karl Henrik Nøstvik, entonces subordinado suyo en el ministerio, se incorporó y siguió como consultor privado. Las fuentes internacionales atribuyen la obra solo a Nøstvik; Mutiso sostuvo hasta su muerte que el diseño era sobre todo suyo. Cofundó MutisoMenezes International, proyectó viviendas en Buruburu y edificios de gobierno en Gigiri, presidió la junta keniana de registro de arquitectos y murió en 2025, a los 93 años.',
+      it: "David Mutiso, nato a Nairobi nel 1932, passò con una borsa di studio dall'Alliance High School all'Università di Sheffield e si laureò nel 1959. Tornò in Kenya e salì nei ranghi del Ministero dei Lavori Pubblici fino a diventarne architetto capo nel 1967 — il primo africano in quel ruolo — fino al 1974. In quel ruolo sviluppò il progetto del Kenyatta International Conference Centre, incontrando ogni settimana Jomo Kenyatta dopo che il segretario generale della KANU, Tom Mboya, gli affidò l'incarico nel 1968; Karl Henrik Nøstvik, allora suo subordinato nel ministero, si unì al progetto e vi proseguì come consulente privato. Le fonti internazionali attribuiscono l'opera al solo Nøstvik; Mutiso sostenne fino alla morte che il progetto fosse principalmente suo. Cofondò MutisoMenezes International, progettò alloggi a Buruburu ed edifici governativi a Gigiri, presiedette l'albo keniota degli architetti e morì nel 2025, a 93 anni.",
+    },
+    awards: [],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q111285373', title: 'David Mutiso (Q111285373)', license: null },
+      { kind: 'publication', url: 'https://eastleighvoice.co.ke/news/248925/david-mutiso-visionary-architect-behind-kicc-dies', title: 'David Mutiso, visionary architect behind KICC, dies — Eastleigh Voice', license: null },
+      { kind: 'publication', url: 'https://buildesign.co.ke/david-mutiso-the-architect-who-designed-kicc/', title: 'David Mutiso, the architect who designed KICC — BUILDesign', license: null },
+      { kind: 'publication', url: 'https://www.constructionkenya.com/12954/architect-david-mutiso/', title: 'Legendary Kenyan architect David Mutiso dies at 93 — Construction Kenya', license: null },
+    ],
+  },
+  {
+    id: 'andrew-makin',
+    wikidataId: '',
+    name: 'Andrew Makin',
+    alternativeNames: [],
+    gender: 'man',
+    born: null,
+    died: null,
+    floruit: { start: 1990, end: 2020, override: false },
+    movements: [{ id: 'critical-regionalism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'brick',
+    portrait: {
+      en: "Andrew Makin co-founded OMM Design Workshop in Durban with Janina Masojada, and the two lead the practice together. In 1997, in their early thirties, they travelled to Johannesburg to join Paul Wygers of Urban Solutions on a submission to the open international competition for South Africa's new Constitutional Court; the partnership's scheme, built on the idea of justice dispensed under a tree, won from more than five hundred entries in 1998. Makin's other work with OMM has included social and institutional buildings in KwaZulu-Natal, among them projects addressing HIV/AIDS-related architecture. No Wikidata item exists for him; this entry is compiled from published accounts of the Constitutional Court competition.",
+      es: 'Andrew Makin cofundó en Durban el estudio OMM Design Workshop junto con Janina Masojada, y ambos dirigen la firma conjuntamente. En 1997, con poco más de treinta años, viajaron a Johannesburgo para unirse a Paul Wygers, de Urban Solutions, en una propuesta al concurso internacional abierto para el nuevo Tribunal Constitucional de Sudáfrica; el proyecto de la asociación, construido sobre la idea de una justicia impartida bajo un árbol, ganó en 1998 entre más de quinientas propuestas. El resto de la obra de Makin con OMM ha incluido edificios sociales e institucionales en KwaZulu-Natal, entre ellos proyectos relacionados con el VIH/sida. No existe ficha suya en Wikidata; esta entrada se ha compuesto a partir de relatos publicados del concurso del Tribunal Constitucional.',
+      it: "Andrew Makin cofondò a Durban lo studio OMM Design Workshop insieme a Janina Masojada, e i due dirigono insieme la pratica. Nel 1997, poco più che trentenni, si recarono a Johannesburg per unirsi a Paul Wygers di Urban Solutions in una proposta al concorso internazionale aperto per la nuova Corte costituzionale del Sudafrica; il progetto dell'associazione, costruito sull'idea di una giustizia amministrata sotto un albero, vinse nel 1998 fra più di cinquecento proposte. Il resto dell'opera di Makin con OMM ha incluso edifici sociali e istituzionali nel KwaZulu-Natal, fra cui progetti legati all'HIV/AIDS. Non esiste una voce Wikidata su di lui; questa scheda è composta a partire da resoconti pubblicati del concorso della Corte costituzionale.",
+    },
+    awards: [],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'institution', url: 'https://www.designworkshop.co.za/about', title: 'Designworkshop — About', license: null },
+      { kind: 'institution', url: 'https://ccac.concourttrust.org.za/uploads/files/Light-on-a-Hill_2006.pdf', title: 'Light on a Hill: Building the Constitutional Court of South Africa (Constitutional Court Trust, 2006)', license: null },
+    ],
+  },
+  {
+    id: 'paul-wygers',
+    wikidataId: '',
+    name: 'Paul Wygers',
+    alternativeNames: [],
+    gender: 'man',
+    born: null,
+    died: 2022,
+    floruit: { start: 1990, end: 2020, override: false },
+    movements: 'unaffiliated',
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: "Paul Wygers led Urban Solutions, an architecture and urban design practice in Johannesburg, working for many years alongside Ludwig Hansen. In 1997 he joined Janina Masojada and Andrew Makin of Durban's OMM Design Workshop on the winning submission for South Africa's Constitutional Court, and Urban Solutions went on to work across the wider Constitution Hill precinct. His other projects included the Melrose Arch mixed-use development in Johannesburg, industrial land-use planning at the Coega development in the Eastern Cape, the Department of Trade and Industry's head office in Pretoria, and, near the end of his career, the Green School South Africa near Paarl and the redevelopment of Jewel City in central Johannesburg. He died in late 2022. No Wikidata item exists for him; this entry is compiled from published accounts of his practice and obituary notices.",
+      es: 'Paul Wygers dirigió Urban Solutions, un estudio de arquitectura y diseño urbano de Johannesburgo, trabajando durante muchos años junto a Ludwig Hansen. En 1997 se unió a Janina Masojada y Andrew Makin, del estudio duranés OMM Design Workshop, en la propuesta ganadora para el Tribunal Constitucional de Sudáfrica, y Urban Solutions siguió trabajando después en todo el recinto de Constitution Hill. Entre sus otros proyectos figuran el desarrollo de uso mixto Melrose Arch en Johannesburgo, la planificación industrial del polo de Coega en el Cabo Oriental, la sede del Departamento de Comercio e Industria en Pretoria y, hacia el final de su carrera, la Green School South Africa cerca de Paarl y la reconversión de Jewel City en el centro de Johannesburgo. Murió a finales de 2022. No existe ficha suya en Wikidata; esta entrada se ha compuesto a partir de relatos publicados de su trayectoria y notas necrológicas.',
+      it: "Paul Wygers diresse Urban Solutions, uno studio di architettura e progettazione urbana di Johannesburg, lavorando per molti anni accanto a Ludwig Hansen. Nel 1997 si unì a Janina Masojada e Andrew Makin, dello studio di Durban OMM Design Workshop, nella proposta vincitrice per la Corte costituzionale del Sudafrica, e Urban Solutions continuò poi a lavorare in tutto il complesso di Constitution Hill. Fra i suoi altri progetti figurano lo sviluppo a uso misto di Melrose Arch a Johannesburg, la pianificazione industriale del polo di Coega nel Capo Orientale, la sede del Dipartimento del Commercio e dell'Industria a Pretoria e, verso la fine della carriera, la Green School South Africa vicino a Paarl e la riconversione di Jewel City nel centro di Johannesburg. Morì alla fine del 2022. Non esiste una voce Wikidata su di lui; questa scheda è composta a partire da resoconti pubblicati della sua attività e da necrologi.",
+    },
+    awards: [],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'institution', url: 'https://ccac.concourttrust.org.za/uploads/files/Light-on-a-Hill_2006.pdf', title: 'Light on a Hill: Building the Constitutional Court of South Africa (Constitutional Court Trust, 2006)', license: null },
+      { kind: 'publication', url: 'https://visi.co.za/lighting-designs-by-renowned-south-african-architects/', title: 'Lighting Designs by Renowned South African Architects — VISI', license: null },
+    ],
+  },
+  {
+    id: 'heinrich-wolff',
+    wikidataId: 'Q132993883',
+    name: 'Heinrich Wolff',
+    alternativeNames: [],
+    gender: 'man',
+    born: 1970,
+    died: null,
+    floruit: { start: 1998, end: 2020, override: false },
+    movements: [{ id: 'critical-regionalism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'mixed',
+    portrait: {
+      en: "Heinrich Wolff, born in 1970, was Jo Noero's partner in Noero Wolff Architects from 1998 to 2012, the firm responsible for the Red Location Museum in New Brighton alongside schools, clinics and housing across South Africa's townships. He won the Daimler Chrysler Award for South African Architecture in 2007 and in 2010 became the first South African architect invited into the main exhibition of the Venice Biennale. Since the partnership ended he has led Wolff Architects in Cape Town together with his wife, the writer and curator Ilze Wolff, working on projects that pair buildings with archival and oral-history research into the communities they serve.",
+      es: 'Heinrich Wolff, nacido en 1970, fue socio de Jo Noero en Noero Wolff Architects entre 1998 y 2012, el estudio responsable del Red Location Museum en New Brighton además de escuelas, dispensarios y viviendas en los townships sudafricanos. Ganó el Daimler Chrysler Award for South African Architecture en 2007 y en 2010 fue el primer arquitecto sudafricano invitado a la exposición principal de la Bienal de Venecia. Desde que terminó la sociedad dirige en Ciudad del Cabo el estudio Wolff Architects junto con su esposa, la escritora y comisaria Ilze Wolff, con proyectos que combinan la construcción con la investigación de archivo e historia oral de las comunidades a las que sirven.',
+      it: "Heinrich Wolff, nato nel 1970, fu socio di Jo Noero in Noero Wolff Architects dal 1998 al 2012, lo studio responsabile del Red Location Museum a New Brighton oltre che di scuole, ambulatori e alloggi nelle township sudafricane. Vinse il Daimler Chrysler Award for South African Architecture nel 2007 e nel 2010 fu il primo architetto sudafricano invitato all'esposizione principale della Biennale di Venezia. Da quando la società si è sciolta dirige a Città del Capo lo studio Wolff Architects insieme alla moglie, la scrittrice e curatrice Ilze Wolff, con progetti che uniscono la costruzione alla ricerca d'archivio e di storia orale sulle comunità servite.",
+    },
+    awards: ['Daimler Chrysler Award for South African Architecture (2007)'],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q132993883', title: 'Heinrich Wolff (Q132993883)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Red_Location_Museum', title: 'Red Location Museum', license: 'CC BY-SA 4.0' },
+      { kind: 'publication', url: 'https://www.e-architect.com/architects/noero-wolff', title: 'Noero Wolff Architects: Cape Town Design Studio — e-architect', license: null },
+    ],
+  },
+  {
+    id: 'sophy-gray',
+    wikidataId: 'Q7563156',
+    name: 'Sophy Gray',
+    alternativeNames: ['Sophia Gray', 'Sophia Wharton Myddleton Gray'],
+    gender: 'woman',
+    born: 1814,
+    died: 1871,
+    floruit: { start: 1848, end: 1871, override: false },
+    movements: [{ id: 'gothic-revival', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'sacral',
+    signatureMaterial: 'stone',
+    portrait: {
+      en: "Sophy Gray, born Sophia Wharton Myddleton in Yorkshire in 1814, married Robert Gray in 1836 and sailed with him to Cape Town in 1847 when he was appointed the first colonial bishop of the Cape. She took with her a stock of English church plans, largely ecclesiological Gothic Revival, and spent the next twenty-four years adapting them to Cape sites, Cape stone and Cape thatch, while also keeping the diocese's records, accounts and correspondence and riding with her husband on all but two of his visitations. Desmond Martin's research attributes at least forty of the roughly fifty churches built during Robert Gray's episcopate to her. The attribution is contested: only eleven of her drawings survive, and Martin's argument that her role was deliberately suppressed has been challenged from the bishop's own correspondence. She died at Bishopscourt in 1871.",
+      es: 'Sophy Gray, nacida Sophia Wharton Myddleton en Yorkshire en 1814, se casó con Robert Gray en 1836 y se embarcó con él hacia Ciudad del Cabo en 1847, recién nombrado él primer obispo colonial del Cabo. Llevó consigo un repertorio de plantas de iglesias inglesas, casi todas de neogótico eclesiológico, y pasó veinticuatro años adaptándolas a los solares, la piedra y la paja del Cabo, mientras llevaba las actas, las cuentas y la correspondencia de la diócesis y acompañaba a caballo a su marido en todas sus visitas pastorales salvo dos. Desmond Martin le atribuye al menos cuarenta de la cincuentena de iglesias levantadas durante el episcopado de Robert Gray. La atribución está discutida: solo se conservan once de sus dibujos, y el argumento de Martin de que su papel fue deliberadamente silenciado ha sido rebatido a partir de la propia correspondencia del obispo. Murió en Bishopscourt en 1871.',
+      it: "Sophy Gray, nata Sophia Wharton Myddleton nello Yorkshire nel 1814, sposò Robert Gray nel 1836 e s'imbarcò con lui per Città del Capo nel 1847, quando egli fu nominato primo vescovo coloniale del Capo. Portò con sé un repertorio di piante di chiese inglesi, quasi tutte di neogotico ecclesiologico, e passò i ventiquattro anni successivi ad adattarle ai lotti, alla pietra e alla paglia del Capo, tenendo insieme i verbali della diocesi, i conti e la corrispondenza e accompagnando a cavallo il marito in tutte le visite pastorali tranne due. Le ricerche di Desmond Martin le attribuiscono almeno quaranta della cinquantina di chiese costruite durante l'episcopato di Robert Gray. L'attribuzione è controversa: sopravvivono soltanto undici dei suoi disegni, e la tesi di Martin secondo cui il suo ruolo fu deliberatamente taciuto è stata contestata sulla base della corrispondenza dello stesso vescovo. Morì a Bishopscourt nel 1871.",
+    },
+    awards: [],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q7563156', title: 'Sophy Gray (Q7563156)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Sophy_Gray', title: 'Sophy Gray', license: 'CC BY-SA 4.0' },
+      { kind: 'publication', url: 'https://open.uct.ac.za/handle/11427/10637', title: 'Desmond K. Martin, The churches of Bishop Robert Gray & Mrs Sophia Gray: an historical and architectural review (University of Cape Town)', license: null },
+      { kind: 'publication', url: 'https://sheffieldgenderhistory.hcommons.org/?p=57', title: 'Discovering Sophia Gray (1814–1871): British Cape Colony "Architect to the Diocese", Sheffield Gender History Journal', license: null },
+    ],
+  },
+  {
+    id: 'gottlieb-redecker',
+    wikidataId: 'Q77806',
+    name: 'Gottlieb Redecker',
+    alternativeNames: ['Gottlieb Wilhelm Eduard Redecker'],
+    gender: 'man',
+    born: 1871,
+    died: 1945,
+    floruit: { start: 1901, end: 1930, override: false },
+    movements: [
+      { id: 'gothic-revival', primary: true },
+      { id: 'art-nouveau', primary: false },
+    ],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'stone',
+    portrait: {
+      en: 'Gottlieb Wilhelm Eduard Redecker was born in 1871 at Otjimbingwe, then the effective capital of German South West Africa, the eldest of seven children of a Rhenish missionary family from Westphalia. He was among the first pupils of the Augustineum school, spoke Herero and Damara fluently, and — having lost through long absence the German citizenship inherited from his father — was for a period classified as a Damara by the colonial administration. He trained as an engineer in Germany, returned, and in 1901 was appointed director of engineering by the imperial government, becoming in effect the territory’s first architect. The two buildings that fix Windhoek in the mind are his: the Christuskirche of 1907–10, neo-Romanesque with Jugendstil detail, and the Tintenpalast of 1912–13, still the seat of Namibia’s parliament. He died in Germany in 1945.',
+      es: 'Gottlieb Wilhelm Eduard Redecker nació en 1871 en Otjimbingwe, entonces capital efectiva del África del Sudoeste Alemana, primero de los siete hijos de una familia de misioneros renanos procedentes de Westfalia. Fue de los primeros alumnos de la escuela Augustineum, hablaba herero y damara con soltura y, tras perder por larga ausencia la ciudadanía alemana heredada de su padre, la administración colonial lo clasificó durante un tiempo como damara. Se formó como ingeniero en Alemania, regresó y en 1901 fue nombrado director de obras públicas por el gobierno imperial, convirtiéndose de hecho en el primer arquitecto del territorio. Los dos edificios que fijan Windhoek en la memoria son suyos: la Christuskirche de 1907-1910, neorrománica con detalle modernista, y el Tintenpalast de 1912-1913, todavía sede del parlamento de Namibia. Murió en Alemania en 1945.',
+      it: "Gottlieb Wilhelm Eduard Redecker nacque nel 1871 a Otjimbingwe, allora capitale di fatto dell'Africa Tedesca del Sud-Ovest, primo di sette figli di una famiglia di missionari renani venuti dalla Vestfalia. Fu tra i primi allievi della scuola Augustineum, parlava correntemente herero e damara e, avendo perduto per lunga assenza la cittadinanza tedesca ereditata dal padre, fu per un periodo classificato come damara dall'amministrazione coloniale. Si formò come ingegnere in Germania, tornò e nel 1901 fu nominato direttore dei lavori pubblici dal governo imperiale, diventando di fatto il primo architetto del territorio. I due edifici che fissano Windhoek nella memoria sono suoi: la Christuskirche del 1907-1910, neoromanica con dettagli Jugendstil, e il Tintenpalast del 1912-1913, tuttora sede del parlamento della Namibia. Morì in Germania nel 1945.",
+    },
+    awards: [],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q77806', title: 'Gottlieb Redecker (Q77806)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Gottlieb_Redecker', title: 'Gottlieb Redecker', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    id: 'karl-henrik-nostvik',
+    wikidataId: 'Q11980252',
+    name: 'Karl Henrik Nøstvik',
+    alternativeNames: ['Karl Henrik Nostvik'],
+    gender: 'man',
+    born: 1925,
+    died: 1992,
+    floruit: { start: 1965, end: 1990, override: false },
+    movements: [{ id: 'brutalism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: "Karl Henrik Nøstvik reached Kenya in 1965 with the first group of Norwegian experts sent out under the Norwegian aid programme after independence, joining the Ministry of Public Works as a junior architect under David Mutiso, Kenya's first African Chief Architect. When his government contract lapsed he opened his own office in Nairobi and worked from there for the rest of his life, which makes him a Kenyan architect by every measure except passport. He joined Mutiso's Kenyatta International Conference Centre project as it developed and continued on it as a private consultant; the finished building, in three phases between 1967 and 1973, is a cylindrical thirty-two-storey tower faced in pale terracotta, a conical amphitheatre and a cuboid plenary hall. International sources came to credit Nøstvik alone for a design Mutiso maintained was chiefly his own. Nøstvik died in 1992.",
+      es: 'Karl Henrik Nøstvik llegó a Kenia en 1965 con el primer grupo de expertos noruegos enviado tras la independencia, incorporándose al Ministerio de Obras Públicas como subordinado de David Mutiso, primer arquitecto jefe africano de Kenia. Al vencer su contrato con el gobierno abrió su propio estudio en Nairobi y trabajó allí el resto de su vida, lo que lo convierte en arquitecto keniano por todos los criterios salvo el pasaporte. Se incorporó al proyecto del Centro Internacional de Conferencias Kenyatta de Mutiso y siguió en él como consultor privado; el edificio terminado, en tres fases entre 1967 y 1973, es una torre cilíndrica de treinta y dos plantas revestida de terracota clara, con un anfiteatro cónico y una sala plenaria cúbica. Las fuentes internacionales acabaron atribuyendo a Nøstvik en solitario un diseño que Mutiso sostuvo siempre como suyo. Nøstvik murió en 1992.',
+      it: "Karl Henrik Nøstvik arrivò in Kenya nel 1965 con il primo gruppo di esperti norvegesi inviato dalla cooperazione norvegese dopo l'indipendenza, entrando nel Ministero dei Lavori Pubblici come architetto subordinato di David Mutiso, il primo africano architetto capo del Kenya. Scaduto il contratto con il governo, aprì un proprio studio a Nairobi e vi lavorò per il resto della vita, il che ne fa un architetto keniano sotto ogni profilo tranne il passaporto. Si unì al progetto del Kenyatta International Conference Centre di Mutiso mentre prendeva forma e vi proseguì come consulente privato; l'edificio finito, in tre fasi fra il 1967 e il 1973, è una torre cilindrica di trentadue piani rivestita di terracotta chiara, con un anfiteatro conico e un'aula plenaria cuboide. Le fonti internazionali finirono per attribuire il progetto al solo Nøstvik, mentre Mutiso sostenne sempre che fosse principalmente suo. Nøstvik morì nel 1992.",
+    },
+    awards: [],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q11980252', title: 'Karl Henrik Nøstvik (Q11980252)', license: null },
+      { kind: 'wikipedia', url: 'https://no.wikipedia.org/wiki/Karl_Henrik_N%C3%B8stvik', title: 'Karl Henrik Nøstvik (Norwegian Wikipedia)', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Kenyatta_International_Convention_Centre', title: 'Kenyatta International Convention Centre', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    id: 'mick-pearce',
+    wikidataId: 'Q2140435',
+    name: 'Mick Pearce',
+    alternativeNames: [],
+    gender: 'man',
+    born: 1938,
+    died: null,
+    floruit: { start: 1972, end: 2015, override: false },
+    movements: [
+      { id: 'sustainable-architecture', primary: true },
+      { id: 'critical-regionalism', primary: false },
+    ],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'commercial',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: 'Mick Pearce was born in Salisbury, now Harare, in 1938 and took his diploma with distinction at the Architectural Association in London in 1962. He has built in Britain, Zambia, Zimbabwe, South Africa, Australia and China, and for four decades has worked almost entirely on one problem: how to condition a building without machinery. His method is biomimicry taken literally rather than decoratively — the ventilation logic of a termite mound, local materials, and old devices such as windmills in place of imported plant. The Eastgate Centre in Harare, completed in 1996 with the engineers Arup, is the demonstration piece, and uses roughly a tenth of the ventilation energy of a comparable air-conditioned building. He left Zimbabwe in 2000, co-designed Council House 2 in Melbourne, spent three years with Vanke in China and returned home in 2012.',
+      es: 'Mick Pearce nació en Salisbury, hoy Harare, en 1938 y obtuvo su diploma con distinción en la Architectural Association de Londres en 1962. Ha construido en el Reino Unido, Zambia, Zimbabue, Sudáfrica, Australia y China, y desde hace cuatro décadas trabaja casi exclusivamente sobre un problema: cómo acondicionar un edificio sin máquinas. Su método es la biomímesis entendida al pie de la letra y no como ornamento: la lógica de ventilación de un termitero, los materiales locales y artefactos antiguos como los molinos de viento en lugar de instalaciones importadas. El Eastgate Centre de Harare, terminado en 1996 con los ingenieros de Arup, es la pieza demostrativa y consume alrededor de la décima parte de la energía de ventilación de un edificio climatizado equivalente. Dejó Zimbabue en 2000, codiseñó el Council House 2 de Melbourne, pasó tres años con Vanke en China y regresó a su país en 2012.',
+      it: "Mick Pearce nacque a Salisbury, oggi Harare, nel 1938 e ottenne il diploma con lode all'Architectural Association di Londra nel 1962. Ha costruito in Gran Bretagna, Zambia, Zimbabwe, Sudafrica, Australia e Cina, e da quarant'anni lavora quasi esclusivamente su un problema: come climatizzare un edificio senza macchine. Il suo metodo è la biomimesi presa alla lettera e non come ornamento: la logica di ventilazione di un termitaio, i materiali locali e dispositivi antichi come i mulini a vento al posto degli impianti importati. L'Eastgate Centre di Harare, completato nel 1996 con gli ingegneri di Arup, ne è la dimostrazione e consuma circa un decimo dell'energia di ventilazione di un edificio climatizzato paragonabile. Lasciò lo Zimbabwe nel 2000, co-progettò il Council House 2 di Melbourne, passò tre anni con Vanke in Cina e tornò in patria nel 2012.",
+    },
+    awards: ['Prince Claus Award (2003)'],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q2140435', title: 'Mick Pearce (Q2140435)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Mick_Pearce', title: 'Mick Pearce', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    id: 'dorothy-hughes',
+    wikidataId: 'Q21176339',
+    name: 'Dorothy Hughes',
+    alternativeNames: ['Eugenie Dorothy Hughes', 'Eugenie Dorothy Ullmann'],
+    gender: 'woman',
+    born: 1910,
+    died: 1987,
+    floruit: { start: 1938, end: 1970, override: false },
+    movements: [{ id: 'international-style', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: 'Eugenie Dorothy Hughes, born Ullmann in London in 1910, was taken as a child to Eldoret in the Rift Valley, returned to London to study at the Architectural Association, and came back to Kenya to practise. She was the first woman to work as an architect in East Africa, became a Fellow of the Royal Institute of British Architects in 1946, and ran her own firm, Hughes and Polkinghorne, designing hospitals, hotels, schools and clubs across the colony; she was appointed MBE in 1950 for her hospital work. Her largest building is the Cathedral of the Holy Family in Nairobi, designed in 1960 and seating four thousand under non-figurative glass. She sat on Nairobi City Council and then the Legislative Council, attended the 1960 Lancaster House conference on Kenyan independence, and spent her later years on social welfare and disability work. She died in 1987.',
+      es: 'Eugenie Dorothy Hughes, de soltera Ullmann, nació en Londres en 1910, creció en Eldoret, en el valle del Rift, volvió a Londres para estudiar en la Architectural Association y regresó a Kenia a ejercer. Fue la primera mujer que ejerció la arquitectura en África oriental, ingresó en el Royal Institute of British Architects en 1946 y dirigió su estudio, Hughes and Polkinghorne, con hospitales, hoteles, escuelas y clubes por toda la colonia; en 1950 fue nombrada MBE por su trabajo hospitalario. Su edificio mayor es la catedral de la Sagrada Familia de Nairobi, proyectada en 1960, con cuatro mil asientos bajo vidrieras no figurativas. Fue concejala de Nairobi y después miembro del Consejo Legislativo, asistió en 1960 a la conferencia de Lancaster House sobre la independencia de Kenia y dedicó sus últimos años a la acción social y a los derechos de las personas con discapacidad. Murió en 1987.',
+      it: "Eugenie Dorothy Hughes, nata Ullmann a Londra nel 1910, fu portata da bambina a Eldoret, nella Rift Valley, tornò a Londra per studiare all'Architectural Association e rientrò in Kenya per esercitare. Fu la prima donna a lavorare come architetto in Africa orientale, divenne Fellow del Royal Institute of British Architects nel 1946 e diresse un proprio studio, Hughes and Polkinghorne, con ospedali, alberghi, scuole e circoli in tutta la colonia; nel 1950 fu nominata MBE per il lavoro ospedaliero. Il suo edificio maggiore è la cattedrale della Sacra Famiglia di Nairobi, progettata nel 1960, con quattromila posti sotto vetrate non figurative. Sedette nel consiglio comunale di Nairobi e poi nel Consiglio legislativo, partecipò nel 1960 alla conferenza di Lancaster House sull'indipendenza del Kenya e dedicò gli ultimi anni all'assistenza sociale e ai diritti delle persone con disabilità. Morì nel 1987.",
+    },
+    awards: ['Fellow of the Royal Institute of British Architects (1946)', 'MBE (1950)'],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q21176339', title: 'Dorothy Hughes (Q21176339)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Dorothy_Hughes_(architect)', title: 'Dorothy Hughes (architect)', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    id: 'janina-masojada',
+    wikidataId: '',
+    name: 'Janina Masojada',
+    alternativeNames: [],
+    gender: 'woman',
+    born: null,
+    died: null,
+    floruit: { start: 1990, end: 2020, override: false },
+    movements: [{ id: 'critical-regionalism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'brick',
+    portrait: {
+      en: 'Janina Masojada is a South African architect based in Durban, where she co-founded OMM Design Workshop and, later, Designworkshop. In 1997 the new Constitutional Court of South Africa was put out to open international competition; more than five hundred entries were assessed by a panel chaired by the Indian architect Charles Correa, and in 1998 the commission went to Masojada, Andrew Makin and Erik Orts-Hansen of OMM Design Workshop together with Paul Wygers of Urban Solutions in Johannesburg. Their scheme took the idea of justice under a tree literally, replacing the usual colonnade with slender canted columns and reusing brick salvaged from the demolished Awaiting Trial Block of the prison whose site the court occupies. The court opened on Human Rights Day 2004. No Wikidata item exists for her; this entry is compiled from published accounts of the competition.',
+      es: 'Janina Masojada es una arquitecta sudafricana afincada en Durban, donde cofundó OMM Design Workshop y, más tarde, Designworkshop. En 1997 el nuevo Tribunal Constitucional de Sudáfrica salió a concurso internacional abierto; más de quinientas propuestas fueron valoradas por un jurado presidido por el arquitecto indio Charles Correa, y en 1998 el encargo recayó en Masojada, Andrew Makin y Erik Orts-Hansen, de OMM Design Workshop, junto con Paul Wygers, de Urban Solutions de Johannesburgo. Su proyecto tomó al pie de la letra la idea de la justicia impartida bajo un árbol: sustituyó la columnata habitual por pilares esbeltos e inclinados y reutilizó el ladrillo recuperado del demolido pabellón de presos preventivos de la cárcel cuyo solar ocupa el tribunal. El edificio se inauguró el Día de los Derechos Humanos de 2004. No existe ficha suya en Wikidata; esta entrada se ha compuesto a partir de relatos publicados del concurso.',
+      it: "Janina Masojada è un'architetta sudafricana con base a Durban, dove ha cofondato OMM Design Workshop e, più tardi, Designworkshop. Nel 1997 la nuova Corte costituzionale del Sudafrica fu messa a concorso internazionale aperto; più di cinquecento proposte furono valutate da una giuria presieduta dall'architetto indiano Charles Correa e nel 1998 l'incarico andò a Masojada, Andrew Makin ed Erik Orts-Hansen di OMM Design Workshop insieme a Paul Wygers di Urban Solutions di Johannesburg. Il loro progetto prese alla lettera l'idea della giustizia amministrata sotto un albero: sostituì il consueto colonnato con esili pilastri inclinati e reimpiegò i mattoni recuperati dal demolito braccio dei detenuti in attesa di giudizio del carcere di cui la corte occupa l'area. L'edificio fu inaugurato nel Giorno dei diritti umani del 2004. Non esiste una voce Wikidata su di lei; questa scheda è composta da resoconti pubblicati del concorso.",
+    },
+    awards: [],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'institution', url: 'https://www.constitutionhill.org.za/pages/building-the-constitutional-court', title: 'The story of the Constitutional Court, Constitution Hill', license: null },
+      { kind: 'institution', url: 'https://ccac.concourttrust.org.za/uploads/files/Light-on-a-Hill_2006.pdf', title: 'Light on a Hill: Building the Constitutional Court of South Africa (Constitutional Court Trust, 2006)', license: null },
+      { kind: 'institution', url: 'https://www.designworkshop.co.za/about', title: 'Designworkshop — About', license: null },
+    ],
+  },
+  {
+    id: 'jo-noero',
+    wikidataId: 'Q3342672',
+    name: 'Jo Noero',
+    alternativeNames: ['Joseph Noero'],
+    gender: 'man',
+    born: null,
+    died: null,
+    floruit: { start: 1980, end: 2020, override: false },
+    movements: [{ id: 'critical-regionalism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'brick',
+    portrait: {
+      en: 'Jo Noero is a South African architect who has practised in Johannesburg, in Port Elizabeth and now in Cape Town, and who has built persistently in townships and informal settlements — schools, churches, clinics, community halls — across four decades. His most discussed building is the Red Location Museum in New Brighton, designed with Heinrich Wolff as Noero Wolff Architects and opened in 2006: twelve rusted steel memory boxes standing inside a shed, their form borrowed from the trunks in which migrant workers kept what they owned, arranged so that no route through the exhibition is prescribed. It won the RIBA Lubetkin Prize in 2010. It has been closed since October 2013, when residents of Red Location shut the museum in protest at the condition of their houses, and it has not reopened.',
+      es: 'Jo Noero es un arquitecto sudafricano que ha ejercido en Johannesburgo, en Port Elizabeth y hoy en Ciudad del Cabo, y que ha construido de forma constante en townships y asentamientos informales —escuelas, iglesias, dispensarios, centros cívicos— a lo largo de cuatro décadas. Su edificio más comentado es el Red Location Museum de New Brighton, proyectado con Heinrich Wolff como Noero Wolff Architects e inaugurado en 2006: doce cajas de memoria de acero oxidado dentro de una nave, con la forma de los baúles en que los trabajadores migrantes guardaban lo que tenían, dispuestas de modo que ningún recorrido por la exposición esté prescrito. Ganó el Premio Lubetkin del RIBA en 2010. Está cerrado desde octubre de 2013, cuando los vecinos de Red Location clausuraron el museo en protesta por el estado de sus viviendas, y no ha vuelto a abrir.',
+      it: "Jo Noero è un architetto sudafricano che ha lavorato a Johannesburg, a Port Elizabeth e oggi a Città del Capo, e che ha costruito con costanza nelle township e negli insediamenti informali — scuole, chiese, ambulatori, centri civici — nell'arco di quarant'anni. Il suo edificio più discusso è il Red Location Museum di New Brighton, progettato con Heinrich Wolff come Noero Wolff Architects e inaugurato nel 2006: dodici scatole della memoria in acciaio arrugginito dentro un capannone, di forma ripresa dai bauli in cui i lavoratori migranti custodivano ciò che possedevano, disposte in modo che nessun percorso espositivo sia prescritto. Vinse il Premio Lubetkin del RIBA nel 2010. È chiuso dall'ottobre 2013, quando gli abitanti di Red Location serrarono il museo per protesta contro lo stato delle loro case, e non ha più riaperto.",
+    },
+    awards: ['RIBA Lubetkin Prize (2010)'],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q3342672', title: 'Jo Noero (Q3342672)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Jo_Noero', title: 'Jo Noero', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Red_Location_Museum', title: 'Red Location Museum', license: 'CC BY-SA 4.0' },
+    ],
+  },
+];
