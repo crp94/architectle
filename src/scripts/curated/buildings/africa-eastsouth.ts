@@ -3,15 +3,31 @@ import type { Building } from '@/types/building';
 // Wave 5 curator agent (East and Southern Africa): real, sourced Building entries for this slice.
 //
 // Slice countries: ET, ER, KE, TZ, UG, RW, ZA, ZW, MZ, NA, BW, ZM, MW, AO, CD, MG.
-// Twelve buildings across six of them. Era distribution 2 / 3 / 5 / 2, matching
-// the contract's 2 / 3 / 5 / 2 for N=12; nine of the twelve are canon tier.
+// FIX ROUND (see task-9-africa-eastsouth-fix-report.md): the original 12
+// buildings included Fiat Tagliero (Asmara, ER) and two Mozambique buildings
+// (O Leão Que Ri, Pemba Airport Terminal) whose Commons images could not
+// legally be freely licensed once checked properly — Eritrea has no Freedom
+// of Panorama at all, and Mozambique's FoP (Law No. 4/2001, Art. 15) is
+// non-commercial-use only, which Commons' own policy treats as incompatible
+// with a CC BY/CC BY-SA grant. All three architects (Pettazzi, Guedes,
+// Quintanilha) died well within the last 70 years, so no other route to a
+// clean licence existed; all three buildings and architects are removed
+// rather than patched. Two were replaced in-place with buildings that carry
+// the same era-bucket weight and an unambiguous South African FoP position:
+// Union Buildings, Pretoria (Herbert Baker, 1910–1913) for Fiat Tagliero, and
+// the Voortrekker Monument, Pretoria (Gerard Moerdijk, 1937–1949) for O Leão
+// Que Ri. Pemba Airport Terminal has no replacement. Net: 11 buildings across
+// four countries (KE, ZA, ZW, NA); era distribution 2 / 3 / 4 / 2, matching
+// the contract's ceil(11/6) / ceil(11/4) / remainder / ceil(11/6) formula for
+// N=11. Nine of the eleven are canon tier. Eritrea and Mozambique are absent
+// from this slice as a structural finding, not an oversight — see the report.
 //
 // Every image licence below was read off the LICENCE BOX of the rendered
-// Commons file page on 2026-08-26, and re-read a second time from the page's
-// own licence templates. The API's `extmetadata` licence field is NOT relied
-// on anywhere here: it is a derived cache and has been observed to report a
-// licence the file page does not state. `image.width` and `image.height` are
-// left at 0 for the later dimensions pass, as the contract requires.
+// Commons file page, and re-read a second time from the page's own licence
+// templates. The API's `extmetadata` licence field is NOT relied on anywhere
+// here: it is a derived cache and has been observed to report a licence the
+// file page does not state. `image.width` and `image.height` are left at 0
+// for the later dimensions pass, as the contract requires.
 //
 // One pair sits inside the validator's 25 km `possible-duplicate-site` radius:
 // the two central Nairobi buildings, ~0.3 km apart. They are distinct buildings
@@ -21,7 +37,10 @@ import type { Building } from '@/types/building';
 // Every architect who died within the last seventy years, or is living, is
 // represented by an EXTERIOR photograph with `detailRect` on exterior fabric,
 // because Freedom of Panorama covers exteriors only and an interior photograph
-// of an in-copyright building is a derivative work of the architecture.
+// of an in-copyright building is a derivative work of the architecture. South
+// Africa has full Freedom of Panorama, so this applies to Union Buildings
+// (Baker, d. 1946, long since PD by expiry) and the Voortrekker Monument
+// (Moerdijk, d. 1958, still in copyright but FoP-cleared) alike.
 export const AFRICA_EASTSOUTH_BUILDINGS: Building[] = [
   // ---------------------------------------------------------------- pre-1800
   {
@@ -98,20 +117,20 @@ export const AFRICA_EASTSOUTH_BUILDINGS: Building[] = [
     },
     architectId: 'louis-michel-thibault',
     location: { city: 'Cape Town', countryCode: 'ZA', lat: -34.02935, lon: 18.42022 },
-    inception: 1685,
+    inception: 1790,
     completed: 1791,
     demolished: null,
     typology: 'domestic',
     materials: ['brick', 'timber'],
     structure: {
-      en: 'Load-bearing brick walls under lime plaster carrying a thatched roof, with a curved central gable over the entrance; the whole rebuilt after the 1925 fire to the eighteenth-century form.',
-      es: 'Muros de carga de ladrillo revocados de cal bajo cubierta de paja, con un hastial curvo central sobre la entrada; el conjunto reconstruido tras el incendio de 1925 según la forma dieciochesca.',
-      it: "Murature portanti in laterizio intonacate a calce sotto un tetto di paglia, con un frontone curvo centrale sopra l'ingresso; il tutto ricostruito dopo l'incendio del 1925 nella forma settecentesca.",
+      en: "Thibault's neoclassical facade and gables applied to a load-bearing brick homestead under lime plaster and a thatched roof, the whole rebuilt after the 1925 fire to that late-eighteenth-century form.",
+      es: 'La fachada y los hastiales neoclásicos de Thibault aplicados sobre una casa de carga de ladrillo revocada de cal bajo cubierta de paja, el conjunto reconstruido tras el incendio de 1925 según esa forma de finales del siglo XVIII.',
+      it: "La facciata e i frontoni neoclassici di Thibault applicati su una casa a struttura portante in laterizio intonacata a calce sotto un tetto di paglia, il tutto ricostruito dopo l'incendio del 1925 in quella forma di fine Settecento.",
     },
     program: {
-      en: 'The homestead of a wine estate granted to a Dutch East India Company governor, later a government experimental farm and now a house museum.',
-      es: 'La casa principal de una finca vinícola concedida a un gobernador de la Compañía Neerlandesa de las Indias Orientales, después granja experimental del gobierno y hoy casa museo.',
-      it: "La casa padronale di una tenuta vinicola concessa a un governatore della Compagnia olandese delle Indie orientali, poi azienda sperimentale di Stato e oggi casa museo.",
+      en: "A remodelling, commissioned by the Cloete family, of the homestead of a wine estate first granted in 1685 to a Dutch East India Company governor; later a government experimental farm and now a house museum.",
+      es: 'Una remodelación, encargada por la familia Cloete, de la casa principal de una finca vinícola concedida por primera vez en 1685 a un gobernador de la Compañía Neerlandesa de las Indias Orientales; después granja experimental del gobierno y hoy casa museo.',
+      it: "Un rimaneggiamento, commissionato dalla famiglia Cloete, della casa padronale di una tenuta vinicola concessa per la prima volta nel 1685 a un governatore della Compagnia olandese delle Indie orientali; poi azienda sperimentale di Stato e oggi casa museo.",
     },
     heritage: 'regional',
     currentUse: {
@@ -129,9 +148,9 @@ export const AFRICA_EASTSOUTH_BUILDINGS: Building[] = [
       height: 0,
     },
     dossier: {
-      en: "Simon van der Stel, governor of the Dutch Cape, was granted the land in 1685 and built a long, low, whitewashed house on it in what would later be called the Cape Dutch manner: thick lime-plastered brick walls, a thatched roof, small-paned windows and a raised stoep. After 1779 the estate passed to the Cloete family, who enlarged the vineyards and the house and brought in Louis Michel Thibault, the Cape's first academically trained architect, to remodel it; the wine cellar behind carries the date 1791 and a pediment carved by Anton Anreith. Thibault's neoclassicism shows itself in proportion and in the handling of the entrance rather than in any wholesale change, since the curved Cape Dutch gable stayed. The house burned to the ground in 1925 and was rebuilt to the earlier form, so what a visitor sees is an early twentieth-century reconstruction of an eighteenth-century building.",
-      es: 'Simon van der Stel, gobernador del Cabo neerlandés, recibió las tierras en 1685 y levantó en ellas una casa larga, baja y encalada según lo que después se llamaría manera neerlandesa del Cabo: gruesos muros de ladrillo revocados de cal, cubierta de paja, ventanas de cuarterones pequeños y un stoep elevado. Después de 1779 la finca pasó a la familia Cloete, que amplió los viñedos y la casa y llamó a Louis Michel Thibault, primer arquitecto de formación académica del Cabo, para reformarla; la bodega trasera lleva la fecha de 1791 y un frontón tallado por Anton Anreith. El neoclasicismo de Thibault se advierte en la proporción y en el tratamiento de la entrada más que en una transformación completa, pues el hastial curvo se mantuvo. La casa ardió por entero en 1925 y se reconstruyó según la forma anterior, de modo que lo que hoy se visita es una reconstrucción de principios del siglo XX de un edificio del XVIII.',
-      it: "Simon van der Stel, governatore del Capo olandese, ricevette le terre nel 1685 e vi costruì una casa lunga, bassa e imbiancata secondo quella che sarebbe stata chiamata la maniera olandese del Capo: spesse murature in laterizio intonacate a calce, tetto di paglia, finestre a piccoli riquadri e uno stoep rialzato. Dopo il 1779 la tenuta passò alla famiglia Cloete, che ampliò i vigneti e la casa e chiamò Louis Michel Thibault, primo architetto di formazione accademica del Capo, a rimaneggiarla; la cantina sul retro porta la data 1791 e un frontone scolpito da Anton Anreith. Il neoclassicismo di Thibault si coglie nelle proporzioni e nel trattamento dell'ingresso più che in una trasformazione integrale, perché il frontone curvo rimase. La casa bruciò interamente nel 1925 e fu ricostruita nella forma precedente: ciò che si visita è dunque una ricostruzione novecentesca di un edificio settecentesco.",
+      en: "Simon van der Stel, governor of the Dutch Cape, was granted the land in 1685 and built a homestead on it himself; no individual designer is recorded for that first house, which followed the vernacular Cape Dutch manner of thick lime-plastered brick walls, a thatched roof and a raised stoep. After 1779 the estate passed to the Cloete family, who enlarged the vineyards and, through the late 1780s, commissioned Louis Michel Thibault, the Cape's first academically trained architect, to redesign the manor house's facade and gables; his neoclassical entrance and slender gables, carried out with the sculptor Anton Anreith, date the remodelling to around 1790–91, the same campaign in which Cloete built the new wine cellar behind the house, its pediment carrying Anreith's 1791 relief. It is this late-eighteenth-century design, not van der Stel's original building, that Thibault is credited with. The house burned to the ground in 1925, and the architect Franklin Kendall rebuilt it without Thibault's original drawings, to what he judged Cape Dutch architecture at its best — so what a visitor sees today is a 1920s reconstruction of Thibault's design rather than his actual fabric.",
+      es: 'Simon van der Stel, gobernador del Cabo neerlandés, recibió las tierras en 1685 y construyó él mismo una casa en ellas; no consta ningún proyectista individual para esa primera casa, que siguió la manera vernácula neerlandesa del Cabo, de gruesos muros de ladrillo revocados de cal, cubierta de paja y un stoep elevado. Después de 1779 la finca pasó a la familia Cloete, que amplió los viñedos y, hacia finales de la década de 1780, encargó a Louis Michel Thibault, primer arquitecto de formación académica del Cabo, rediseñar la fachada y los hastiales de la casa solariega; su entrada neoclásica y sus hastiales esbeltos, ejecutados con el escultor Anton Anreith, fechan la reforma hacia 1790-91, la misma campaña en que Cloete construyó la nueva bodega tras la casa, cuyo frontón lleva el relieve de Anreith de 1791. Es este diseño de finales del siglo XVIII, y no el edificio original de van der Stel, el que se atribuye a Thibault. La casa ardió por completo en 1925, y el arquitecto Franklin Kendall la reconstruyó sin los planos originales de Thibault, según lo que él juzgó la mejor arquitectura del Cabo neerlandés, de modo que lo que hoy se visita es una reconstrucción de los años veinte del diseño de Thibault y no su fábrica real.',
+      it: "Simon van der Stel, governatore del Capo olandese, ricevette le terre nel 1685 e vi costruì egli stesso una casa; non è documentato alcun progettista individuale per quella prima casa, che seguì la maniera vernacolare olandese del Capo, con spesse murature in laterizio intonacate a calce, tetto di paglia e uno stoep rialzato. Dopo il 1779 la tenuta passò alla famiglia Cloete, che ampliò i vigneti e, verso la fine degli anni Ottanta del Settecento, incaricò Louis Michel Thibault, primo architetto di formazione accademica del Capo, di ridisegnare la facciata e i frontoni della casa padronale; il suo ingresso neoclassico e i frontoni esili, realizzati con lo scultore Anton Anreith, datano il rimaneggiamento al 1790-91 circa, la stessa campagna in cui Cloete costruì la nuova cantina dietro la casa, il cui frontone porta il rilievo di Anreith del 1791. È questo disegno di fine Settecento, non l'edificio originale di van der Stel, a essere attribuito a Thibault. La casa bruciò completamente nel 1925, e l'architetto Franklin Kendall la ricostruì senza i disegni originali di Thibault, secondo quella che giudicò la migliore architettura del Capo olandese: ciò che si visita oggi è dunque una ricostruzione degli anni Venti del disegno di Thibault, non la sua fabbrica reale.",
     },
     context: {
       body: {
@@ -148,71 +167,71 @@ export const AFRICA_EASTSOUTH_BUILDINGS: Building[] = [
       { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q134395439', title: 'Groot Constantia Manor House (Q134395439)', license: null },
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Groot_Constantia', title: 'Groot Constantia', license: 'CC BY-SA 4.0' },
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Louis_Michel_Thibault', title: 'Louis Michel Thibault', license: 'CC BY-SA 4.0' },
+      { kind: 'publication', url: 'https://www.theheritageportal.co.za/article/rising-ashes-1926-restoration-groot-constantia', title: 'Rising from the Ashes: The 1926 Restoration of Groot Constantia — The Heritage Portal', license: null },
     ],
     tier: 'canon',
   },
   // ------------------------------------------------------------- 1800–1945
   {
-    id: 'fiat-tagliero-asmara',
-    wikidataId: 'Q1410651',
+    id: 'union-buildings-pretoria',
+    wikidataId: 'Q2264091',
     name: {
-      en: 'Fiat Tagliero Building',
-      es: 'Edificio Fiat Tagliero',
-      it: 'Fiat Tagliero',
+      en: 'Union Buildings',
+      es: 'Union Buildings',
+      it: 'Union Buildings',
     },
-    architectId: 'giuseppe-pettazzi',
-    location: { city: 'Asmara', countryCode: 'ER', lat: 15.32833, lon: 38.92583 },
-    inception: 1938,
-    completed: 1938,
+    architectId: 'herbert-baker',
+    location: { city: 'Pretoria', countryCode: 'ZA', lat: -25.74047, lon: 28.21202 },
+    inception: 1910,
+    completed: 1913,
     demolished: null,
-    typology: 'commercial',
-    materials: ['concrete'],
+    typology: 'civic',
+    materials: ['stone', 'brick'],
     structure: {
-      en: 'A central glazed tower of reinforced concrete from which two wings, each about fifteen metres long, are cantilevered clear with no columns or props beneath them.',
-      es: 'Una torre acristalada central de hormigón armado desde la que vuelan en voladizo dos alas de unos quince metros cada una, sin pilares ni apeos debajo.',
-      it: "Una torre vetrata centrale in cemento armato da cui aggettano a sbalzo due ali lunghe circa quindici metri ciascuna, senza pilastri né puntelli al di sotto.",
+      en: 'Two office wings in local sandstone curving symmetrically around a central amphitheatre of terraced gardens, joined by a colonnade beneath a pair of domed towers, on a steel and concrete frame faced entirely in masonry.',
+      es: 'Dos alas de oficinas en piedra arenisca local que se curvan simétricamente alrededor de un anfiteatro central de jardines escalonados, unidas por una columnata bajo dos torres abovedadas, sobre una estructura de acero y hormigón revestida enteramente de fábrica.',
+      it: 'Due ali per uffici in arenaria locale che si curvano simmetricamente attorno a un anfiteatro centrale di giardini a terrazze, unite da un colonnato sotto due torri a cupola, su un telaio in acciaio e cemento interamente rivestito in muratura.',
     },
     program: {
-      en: 'A filling station and workshop for Dr Tagliero, the Fiat concessionaire in Asmara, with office, shop and cashier accommodated in the tower.',
-      es: 'Una gasolinera con taller para el doctor Tagliero, concesionario de Fiat en Asmara, con oficina, tienda y caja alojadas en la torre.',
-      it: "Una stazione di servizio con officina per il dottor Tagliero, concessionario Fiat ad Asmara, con ufficio, negozio e cassa alloggiati nella torre.",
+      en: "The seat of the newly formed Union of South Africa's civil service, commissioned to house government administration on Meintjieskop above Pretoria.",
+      es: 'Sede de la administración pública de la recién formada Unión Sudafricana, encargada para albergar el gobierno en Meintjieskop, sobre Pretoria.',
+      it: "Sede dell'amministrazione pubblica della neonata Unione Sudafricana, commissionata per ospitare il governo su Meintjieskop, sopra Pretoria.",
     },
     heritage: 'unesco',
     currentUse: {
-      en: 'Restored in 2003 and listed in the highest Eritrean protection category, in which no part of the building may be altered.',
-      es: 'Restaurado en 2003 y protegido en la categoría eritrea más alta, que impide alterar cualquier parte del edificio.',
-      it: "Restaurato nel 2003 e tutelato nella categoria eritrea più alta, che vieta di alterare qualsiasi parte dell'edificio.",
+      en: "The official seat of South Africa's government and the president's offices, with a public amphitheatre and gardens.",
+      es: 'Sede oficial del gobierno de Sudáfrica y de las oficinas presidenciales, con anfiteatro público y jardines.',
+      it: 'Sede ufficiale del governo sudafricano e degli uffici presidenziali, con anfiteatro pubblico e giardini.',
     },
-    detailRect: { x: 0.36, y: 0.28, w: 0.28, h: 0.34 },
+    detailRect: { x: 0.32, y: 0.34, w: 0.30, h: 0.30 },
     image: {
-      commonsFile: 'File:Fiat Tagliero petrol station in Asmara.jpg',
-      photographer: 'JanNeysan',
+      commonsFile: 'File:Union Buildings in Pretoria, ZA.JPG',
+      photographer: 'Ossewa',
       license: 'CC BY-SA 4.0',
-      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Fiat_Tagliero_petrol_station_in_Asmara.jpg',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Union_Buildings_in_Pretoria,_ZA.JPG',
       width: 0,
       height: 0,
     },
     dossier: {
-      en: "An aeroplane about to take off, made of reinforced concrete, standing on a street corner in Asmara since 1938. Giuseppe Pettazzi designed it as a service station for the local Fiat agent: a glazed tower holding office, shop and cashier's desk, and two wings roughly fifteen metres long thrown out on either side to shelter the pumps. The wings are true cantilevers, carried by the tower alone. The municipality demanded props beneath them, and the original drawings, rediscovered in 2001, do show supports; they were never built, and the argument that removed them has become the best-known story in Eritrean architecture, told in versions that cannot be checked. British bombing damaged the building during the Second World War and the wings held. It was restored in 2003, may not now be altered in any part, and was among the works that carried Asmara onto the World Heritage list in 2017.",
-      es: 'Un avión a punto de despegar, hecho de hormigón armado, plantado en una esquina de Asmara desde 1938. Giuseppe Pettazzi lo proyectó como estación de servicio para el agente local de Fiat: una torre acristalada con la oficina, la tienda y la caja, y dos alas de unos quince metros lanzadas a cada lado para cubrir los surtidores. Las alas son voladizos verdaderos, sostenidos solo por la torre. El municipio exigió apeos bajo ellas, y los planos originales, reaparecidos en 2001, efectivamente los dibujan; nunca se construyeron, y la discusión que los eliminó se ha convertido en el relato más conocido de la arquitectura eritrea, contado en versiones que no pueden comprobarse. Los bombardeos británicos dañaron el edificio durante la Segunda Guerra Mundial y las alas resistieron. Fue restaurado en 2003, hoy no puede alterarse en ninguna de sus partes y figuró entre las obras que llevaron a Asmara a la lista del Patrimonio Mundial en 2017.',
-      it: "Un aeroplano sul punto di decollare, fatto di cemento armato, fermo a un angolo di strada di Asmara dal 1938. Giuseppe Pettazzi lo progettò come stazione di servizio per l'agente Fiat locale: una torre vetrata con ufficio, negozio e cassa, e due ali lunghe una quindicina di metri lanciate ai lati a riparare le pompe. Le ali sono sbalzi veri, retti dalla sola torre. Il municipio pretese puntelli sotto di esse, e i disegni originali, ritrovati nel 2001, li riportano davvero; non furono mai costruiti, e la disputa che li eliminò è diventata il racconto più noto dell'architettura eritrea, tramandato in versioni non verificabili. I bombardamenti britannici danneggiarono l'edificio durante la seconda guerra mondiale e le ali tennero. Restaurato nel 2003, oggi non può essere alterato in alcuna parte, e fu tra le opere che portarono Asmara nella lista del Patrimonio Mondiale nel 2017.",
+      en: "Herbert Baker set two long office wings on Meintjieskop, curved so that they read from below as a single amphitheatre wrapped around terraced gardens, and joined them with a semicircular colonnade beneath two domed towers meant, in his own description, to speak of the union of a formerly divided people: one wing for English speakers, one for Afrikaans. The cornerstone was laid on 1 November 1910, five months after the Union of South Africa joined the Boer republics to the Cape and Natal colonies; some 1,265 workers raised it in under three years using local sandstone, granite and indigenous timber over a steel-and-concrete frame, finishing in 1913 what was, at 285 metres end to end, the largest building the Southern Hemisphere had yet seen. It has housed the country's executive ever since, an unbroken span across the whole of segregation and apartheid and the government that succeeded them, and in 2024 it was inscribed on the World Heritage list as part of a set of sites recording Nelson Mandela's legacy.",
+      es: 'Herbert Baker dispuso dos largas alas de oficinas sobre Meintjieskop, curvadas para leerse desde abajo como un único anfiteatro envolviendo jardines escalonados, y las unió con una columnata semicircular bajo dos torres abovedadas destinadas, según sus propias palabras, a expresar la unión de un pueblo antes dividido: un ala para los angloparlantes, otra para los afrikáners. La primera piedra se colocó el 1 de noviembre de 1910, cinco meses después de que la Unión Sudafricana uniera las repúblicas bóer a las colonias del Cabo y Natal; unos 1.265 obreros la levantaron en menos de tres años con arenisca y granito locales y maderas autóctonas sobre una estructura de acero y hormigón, terminando en 1913 lo que, con 285 metros de un extremo a otro, era el mayor edificio que había visto hasta entonces el hemisferio sur. Ha alojado desde entonces el poder ejecutivo del país, un período ininterrumpido que abarca toda la segregación y el apartheid y el gobierno que les sucedió, y en 2024 fue inscrito en la lista del Patrimonio Mundial como parte de un conjunto de sitios que documentan el legado de Nelson Mandela.',
+      it: "Herbert Baker dispose due lunghe ali per uffici su Meintjieskop, curvate in modo da leggersi dal basso come un unico anfiteatro attorno a giardini a terrazze, e le unì con un colonnato semicircolare sotto due torri a cupola destinate, a suo stesso dire, a esprimere l'unione di un popolo prima diviso: un'ala per gli anglofoni, una per gli afrikaner. La prima pietra fu posata il 1° novembre 1910, cinque mesi dopo che l'Unione Sudafricana ebbe riunito le repubbliche boere alle colonie del Capo e del Natal; circa 1.265 operai la costruirono in meno di tre anni con arenaria e granito locali e legni autoctoni su un telaio in acciaio e cemento, completando nel 1913 quello che, con 285 metri da un capo all'altro, era il più grande edificio che l'emisfero australe avesse mai visto. Da allora ha ospitato il potere esecutivo del paese, un arco ininterrotto attraverso tutta la segregazione e l'apartheid e il governo che vi succedette, e nel 2024 è stato iscritto nella lista del Patrimonio Mondiale come parte di un insieme di siti che documentano l'eredità di Nelson Mandela.",
     },
     context: {
       body: {
-        en: "The Fiat Tagliero was built for the settler motor trade in the capital of Italian Eritrea, under Fascist rule. UNESCO's inscription records that Asmara's layout used the principle of zoning to achieve racial segregation as well as functional organisation, and that the city was comprehensively rebuilt in the mid-1930s as Fascist Italy prepared and then prosecuted the invasion of Ethiopia, for which Eritrea was the staging ground. By the census of 1939, 53,000 of Asmara's 98,000 residents were Italian settlers. The service station belongs to that building campaign and to that city. Eritrea was federated with Ethiopia in 1952, fought a war of independence from 1961 to 1991 and became independent in 1993; Asmara was inscribed as a World Heritage Site in 2017.",
-        es: 'El Fiat Tagliero se construyó para el negocio del automóvil de los colonos en la capital de la Eritrea italiana, bajo el régimen fascista. La inscripción de la UNESCO recoge que el trazado de Asmara empleó el principio de zonificación para lograr la segregación racial además de la organización funcional, y que la ciudad fue reconstruida por completo a mediados de los años treinta mientras la Italia fascista preparaba y después ejecutaba la invasión de Etiopía, para la que Eritrea sirvió de base. Según el censo de 1939, 53.000 de los 98.000 habitantes de Asmara eran colonos italianos. La gasolinera pertenece a esa campaña constructiva y a esa ciudad. Eritrea fue federada con Etiopía en 1952, libró una guerra de independencia entre 1961 y 1991 y alcanzó la independencia en 1993; Asmara fue inscrita en la lista del Patrimonio Mundial en 2017.',
-        it: "Il Fiat Tagliero fu costruito per il commercio automobilistico dei coloni nella capitale dell'Eritrea italiana, sotto il regime fascista. L'iscrizione UNESCO registra che l'impianto di Asmara usò il principio dello zoning per ottenere la segregazione razziale oltre che l'organizzazione funzionale, e che la città fu interamente ricostruita a metà degli anni Trenta mentre l'Italia fascista preparava e poi conduceva l'invasione dell'Etiopia, per la quale l'Eritrea fece da base. Secondo il censimento del 1939, 53.000 dei 98.000 abitanti di Asmara erano coloni italiani. La stazione di servizio appartiene a quella campagna edilizia e a quella città. L'Eritrea fu federata all'Etiopia nel 1952, combatté una guerra d'indipendenza dal 1961 al 1991 e divenne indipendente nel 1993; Asmara fu iscritta nella lista del Patrimonio Mondiale nel 2017.",
+        en: 'The Union of South Africa that the Union Buildings were built to govern excluded its Black, Coloured and Indian majority from the franchise across most of the country from its founding in 1910, a foreclosure that hardened into apartheid after 1948; the government housed in this building administered both. On 9 August 1956 some 20,000 women marched on the Union Buildings to petition against the extension of pass laws to Black women, a date now marked annually as National Women\'s Day. On 10 May 1994 Nelson Mandela was inaugurated as South Africa\'s first president elected by universal suffrage on the building\'s terraces, and the amphitheatre was renamed for him in 2013, the year of his death, alongside a nine-metre bronze statue of him unveiled there.',
+        es: 'La Unión Sudafricana que los Union Buildings se construyeron para gobernar excluyó del voto a su mayoría negra, mestiza e india en la mayor parte del país desde su fundación en 1910, una exclusión que se endureció hasta convertirse en apartheid después de 1948; el gobierno alojado en este edificio administró ambos regímenes. El 9 de agosto de 1956 unas 20.000 mujeres marcharon hasta los Union Buildings para protestar contra la extensión de las leyes de pases a las mujeres negras, fecha que hoy se conmemora cada año como Día Nacional de la Mujer. El 10 de mayo de 1994 Nelson Mandela fue investido como primer presidente de Sudáfrica elegido por sufragio universal en las terrazas del edificio, y el anfiteatro recibió su nombre en 2013, año de su muerte, junto con una estatua de bronce de nueve metros allí descubierta.',
+        it: "L'Unione Sudafricana che gli Union Buildings furono costruiti per governare escluse dal voto la sua maggioranza nera, meticcia e indiana nella maggior parte del paese fin dalla fondazione nel 1910, un'esclusione che si irrigidì fino a diventare apartheid dopo il 1948; il governo ospitato in questo edificio amministrò entrambi i regimi. Il 9 agosto 1956 circa 20.000 donne marciarono verso gli Union Buildings per protestare contro l'estensione dei lasciapassare alle donne nere, data oggi commemorata ogni anno come Giornata nazionale della donna. Il 10 maggio 1994 Nelson Mandela fu investito primo presidente sudafricano eletto a suffragio universale sulle terrazze dell'edificio, e l'anfiteatro fu a lui intitolato nel 2013, anno della sua morte, insieme a una statua in bronzo di nove metri lì scoperta.",
       },
       sources: [
-        { kind: 'institution', url: 'https://whc.unesco.org/en/list/1550/', title: 'Asmara: A Modernist African City — UNESCO World Heritage Centre', license: null },
-        { kind: 'publication', url: 'https://doi.org/10.1080/13602365.2016.1276093', title: "Edward Denison, Guang Yu Ren and Naigzy Gebremedhin, 'Asmara: Africa's Modernist City (UNESCO World Heritage Nomination)', The Journal of Architecture 22:1 (2017)", license: null },
-        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Asmara', title: 'Asmara', license: 'CC BY-SA 4.0' },
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Union_Buildings', title: 'Union Buildings', license: 'CC BY-SA 4.0' },
+        { kind: 'wikipedia', url: "https://en.wikipedia.org/wiki/Women's_March_(South_Africa)", title: "Women's March (South Africa)", license: 'CC BY-SA 4.0' },
       ],
     },
     sources: [
-      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1410651', title: 'Fiat Tagliero Building (Q1410651)', license: null },
-      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Fiat_Tagliero_Building', title: 'Fiat Tagliero Building', license: 'CC BY-SA 4.0' },
-      { kind: 'institution', url: 'https://whc.unesco.org/en/list/1550/', title: 'Asmara: A Modernist African City — UNESCO World Heritage Centre', license: null },
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q2264091', title: 'Union Buildings (Q2264091)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Union_Buildings', title: 'Union Buildings', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Herbert_Baker', title: 'Herbert Baker', license: 'CC BY-SA 4.0' },
     ],
     tier: 'canon',
   },
@@ -354,6 +373,7 @@ export const AFRICA_EASTSOUTH_BUILDINGS: Building[] = [
       it: 'Kenyatta International Convention Centre',
     },
     architectId: 'karl-henrik-nostvik',
+    coArchitects: ['david-mutiso'],
     location: { city: 'Nairobi', countryCode: 'KE', lat: -1.28861, lon: 36.82306 },
     inception: 1967,
     completed: 1973,
@@ -409,65 +429,65 @@ export const AFRICA_EASTSOUTH_BUILDINGS: Building[] = [
     tier: 'canon',
   },
   {
-    id: 'leao-que-ri-maputo',
-    wikidataId: 'Q16501783',
+    id: 'voortrekker-monument',
+    wikidataId: 'Q963472',
     name: {
-      en: 'O Leão Que Ri (The Smiling Lion)',
-      es: 'O Leão Que Ri (El león que ríe)',
-      it: 'O Leão Que Ri (Il leone che ride)',
+      en: 'Voortrekker Monument',
+      es: 'Monumento a los Voortrekkers',
+      it: 'Monumento ai Voortrekker',
     },
-    architectId: 'pancho-guedes',
-    location: { city: 'Maputo', countryCode: 'MZ', lat: -25.96277, lon: 32.59049 },
-    inception: 1954,
-    completed: 1958,
+    architectId: 'gerard-moerdijk',
+    location: { city: 'Pretoria', countryCode: 'ZA', lat: -25.77639, lon: 28.17750 },
+    inception: 1937,
+    completed: 1949,
     demolished: null,
-    typology: 'housing',
-    materials: ['concrete'],
+    typology: 'cultural',
+    materials: ['stone'],
     structure: {
-      en: 'A reinforced-concrete frame lifted off the ground on pilotis, the flats reached from an open rear gallery, the street elevations modelled as sculpture rather than composed as a grid.',
-      es: 'Una estructura de hormigón armado levantada del suelo sobre pilotis, con las viviendas servidas desde una galería trasera abierta y los alzados a la calle modelados como escultura en vez de compuestos como retícula.',
-      it: 'Un telaio in cemento armato sollevato da terra su pilotis, con gli alloggi serviti da una galleria posteriore aperta e i prospetti su strada modellati come scultura anziché composti a griglia.',
+      en: 'A granite cube sixty-two metres high on a forty-metre-square base, ringed by a laager wall of sculpted ox-wagons, with a domed cenotaph hall lit through a roof aperture aligned to admit a beam of sunlight at solar noon on one day each year.',
+      es: 'Un cubo de granito de sesenta y dos metros de altura sobre una base cuadrada de cuarenta metros, rodeado por un muro en forma de laager de carromatos esculpidos, con una sala del cenotafio abovedada iluminada por una abertura en la cubierta alineada para dejar entrar un rayo de sol al mediodía solar un día al año.',
+      it: 'Un cubo di granito alto sessantadue metri su una base quadrata di quaranta metri, cinto da un muro a laager di carri esculti, con una sala del cenotafio a cupola illuminata da un\'apertura nel tetto allineata per far entrare un raggio di sole al mezzogiorno solare un giorno all\'anno.',
     },
     program: {
-      en: 'A speculative apartment block of six flats over ground-floor parking, with servants’ rooms on the top floor, built in a 1950s residential quarter of Lourenço Marques.',
-      es: 'Un bloque especulativo de seis viviendas sobre aparcamiento en planta baja, con cuartos de servicio en la última planta, levantado en un barrio residencial de los años cincuenta de Lourenço Marques.',
-      it: 'Una palazzina speculativa di sei alloggi sopra il parcheggio al piano terra, con le stanze della servitù all’ultimo piano, costruita in un quartiere residenziale anni Cinquanta di Lourenço Marques.',
+      en: 'A national monument raised by Afrikaner cultural organisations to commemorate the Voortrekkers of the Great Trek, with a hall of heroes, a cenotaph and a museum wing.',
+      es: 'Monumento nacional erigido por organizaciones culturales afrikáner para conmemorar a los voortrekkers del Gran Trek, con una sala de los héroes, un cenotafio y un ala de museo.',
+      it: 'Monumento nazionale eretto da organizzazioni culturali afrikaner per commemorare i voortrekker del Grande Trek, con una sala degli eroi, un cenotafio e un\'ala museale.',
     },
-    heritage: null,
+    heritage: 'national',
     currentUse: {
-      en: 'Still in residential use, with a bar at street level; the corner lion and the mural on the west face survive.',
-      es: 'Sigue habitado, con un bar a pie de calle; se conservan el león de la esquina y el mural de la fachada oeste.',
-      it: 'Tuttora abitato, con un bar a piano strada; sopravvivono il leone d’angolo e il murale sul fronte ovest.',
+      en: 'Museum and heritage site within a nature reserve south of Pretoria, still the site of an annual ceremony each 16 December.',
+      es: 'Museo y sitio patrimonial dentro de una reserva natural al sur de Pretoria, todavía escenario de una ceremonia anual cada 16 de diciembre.',
+      it: 'Museo e sito patrimoniale all\'interno di una riserva naturale a sud di Pretoria, tuttora sede di una cerimonia annuale ogni 16 dicembre.',
     },
-    detailRect: { x: 0.34, y: 0.32, w: 0.30, h: 0.32 },
+    detailRect: { x: 0.36, y: 0.30, w: 0.28, h: 0.34 },
     image: {
-      commonsFile: 'File:O Leão Que Ri building Maputo.JPG',
-      photographer: 'Jcornelius',
-      license: 'CC BY-SA 4.0',
-      sourceUrl: 'https://commons.wikimedia.org/wiki/File:O_Le%C3%A3o_Que_Ri_building_Maputo.JPG',
+      commonsFile: 'File:Voortrekker Monument in Pretoria, South Africa.jpg',
+      photographer: 'SonyPro',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Voortrekker_Monument_in_Pretoria,_South_Africa.jpg',
       width: 0,
       height: 0,
     },
     dossier: {
-      en: 'Pancho Guedes took the design from a drawing by his six-year-old son and built it between 1954 and 1958 in what was then Lourenço Marques. The block is ordinary in plan — parking on pilotis, three flats to a floor reached from a rear gallery, servants’ rooms above — and extraordinary in everything else. The street elevations are modelled rather than composed: parapets swell and taper, openings are cut like eyes, and a small concrete lion with a smile sits on the north corner and gives the building its name. A mural runs high along the west face. Guedes called the manner Stiloguedes, his own and nobody else’s, and it draws on Picasso, Miró, surrealism and Makonde carving without settling into any of them. It is the best known of the several hundred buildings he designed in Mozambique, and people still live in it.',
-      es: 'Pancho Guedes tomó el diseño de un dibujo de su hijo de seis años y lo construyó entre 1954 y 1958 en lo que entonces era Lourenço Marques. El bloque es corriente en planta —aparcamiento sobre pilotis, tres viviendas por piso servidas desde una galería trasera, cuartos de servicio arriba— y extraordinario en todo lo demás. Los alzados a la calle están modelados más que compuestos: los antepechos se hinchan y se afilan, los huecos se recortan como ojos y un pequeño león de hormigón con una sonrisa se posa en la esquina norte y da nombre al edificio. Un mural recorre en alto la fachada oeste. Guedes llamó Stiloguedes a esa manera, suya y de nadie más, y bebe de Picasso, Miró, el surrealismo y la talla makonde sin quedarse en ninguno. Es el más conocido de los varios centenares de edificios que proyectó en Mozambique, y sigue habitado.',
-      it: 'Pancho Guedes ricavò il progetto da un disegno del figlio di sei anni e lo costruì fra il 1954 e il 1958 in quella che allora era Lourenço Marques. La palazzina è ordinaria in pianta — parcheggio su pilotis, tre alloggi per piano serviti da una galleria posteriore, stanze della servitù in alto — e straordinaria in tutto il resto. I prospetti su strada sono modellati più che composti: i parapetti si gonfiano e si assottigliano, le aperture sono ritagliate come occhi, e un piccolo leone di cemento con un sorriso siede sull’angolo nord e dà il nome all’edificio. Un murale corre in alto sul fronte ovest. Guedes chiamò Stiloguedes questa maniera, sua e di nessun altro, che attinge a Picasso, Miró, al surrealismo e alla scultura makonde senza fermarsi in nessuno di essi. È il più noto delle diverse centinaia di edifici che progettò in Mozambico, e ci si abita ancora.',
+      en: "Gerard Moerdijk gave the Voortrekker Monument the plan of an Egyptian temple and the mass of a mausoleum: a windowless granite cube on a hilltop south of Pretoria, ringed by a laager of sixty-four stone ox-wagons, its walls carrying what is described as the world's largest marble frieze, twenty-seven panels telling the story of the Great Trek of 1835-1852. Building began in 1937 and the cornerstone was laid on 16 December 1938, the centenary of the Voortrekkers' victory at Blood River; the monument opened, on the same date, eleven years later in 1949. At its centre a cenotaph sits beneath a dome cut to let a shaft of sunlight cross the words 'Ons vir jou, Suid-Afrika' — 'We for thee, South Africa' — at noon each 16 December, the anniversary the monument was built to fix in the national calendar.",
+      es: 'Gerard Moerdijk dio al Monumento a los Voortrekkers la planta de un templo egipcio y la masa de un mausoleo: un cubo de granito sin ventanas sobre una colina al sur de Pretoria, rodeado por un laager de sesenta y cuatro carromatos de piedra, con muros que sostienen lo que se describe como el friso de mármol más grande del mundo, veintisiete paneles que narran el Gran Trek de 1835-1852. Las obras comenzaron en 1937 y la primera piedra se colocó el 16 de diciembre de 1938, centenario de la victoria de los voortrekkers en Blood River; el monumento se inauguró, en la misma fecha, once años después, en 1949. En su centro un cenotafio se alza bajo una cúpula abierta para dejar pasar un rayo de sol que cruza las palabras «Ons vir jou, Suid-Afrika» —«Nosotros por ti, Sudáfrica»— al mediodía de cada 16 de diciembre, la fecha que el monumento se construyó para fijar en el calendario nacional.',
+      it: "Gerard Moerdijk diede al Monumento ai Voortrekker la pianta di un tempio egizio e la massa di un mausoleo: un cubo di granito senza finestre su una collina a sud di Pretoria, cinto da un laager di sessantaquattro carri di pietra, con pareti che reggono quello che viene descritto come il più grande fregio marmoreo al mondo, ventisette pannelli che raccontano il Grande Trek del 1835-1852. I lavori iniziarono nel 1937 e la prima pietra fu posata il 16 dicembre 1938, centenario della vittoria dei voortrekker a Blood River; il monumento fu inaugurato, nella stessa data, undici anni dopo, nel 1949. Al centro un cenotafio sorge sotto una cupola tagliata per lasciar passare un raggio di sole che attraversa le parole «Ons vir jou, Suid-Afrika» — «Noi per te, Sudafrica» — a mezzogiorno di ogni 16 dicembre, la data che il monumento fu costruito per fissare nel calendario nazionale.",
     },
     context: {
       body: {
-        en: 'The building records the colonial city it was built in. Its section gives six flats on the middle floors, parking beneath on pilotis, and servants’ rooms on the top floor — the standard arrangement for European apartment blocks in Lourenço Marques, the capital of Portuguese Mozambique, where domestic staff were Mozambican and housed apart from the households they served. The Mozambican war of independence began in 1964; Mozambique became independent in 1975 and the city was renamed Maputo. The block remains in residential use and is documented on the Heritage of Portuguese Influence Portal.',
-        es: 'El edificio deja constancia de la ciudad colonial en que se levantó. Su sección da seis viviendas en las plantas intermedias, aparcamiento debajo sobre pilotis y cuartos de servicio en la última planta: la disposición habitual de los bloques europeos de Lourenço Marques, capital del Mozambique portugués, donde el personal doméstico era mozambiqueño y se alojaba aparte de las familias a las que servía. La guerra de independencia de Mozambique comenzó en 1964; el país alcanzó la independencia en 1975 y la ciudad pasó a llamarse Maputo. El bloque sigue siendo de uso residencial y está documentado en el Portal del Patrimonio de Influencia Portuguesa.',
-        it: 'L’edificio registra la città coloniale in cui fu costruito. La sezione dà sei alloggi ai piani intermedi, il parcheggio sotto su pilotis e le stanze della servitù all’ultimo piano: la disposizione consueta delle palazzine europee di Lourenço Marques, capitale del Mozambico portoghese, dove il personale domestico era mozambicano e alloggiava separato dalle famiglie che serviva. La guerra d’indipendenza mozambicana cominciò nel 1964; il Mozambico divenne indipendente nel 1975 e la città fu ribattezzata Maputo. La palazzina è tuttora abitata ed è documentata sul Portale del Patrimonio di Influenza Portoghese.',
+        en: 'The monument fixes a religious myth at the centre of Afrikaner nationalism: that God granted the Voortrekkers their victory over a Zulu force at Blood River on 16 December 1838 in fulfilment of a vow sworn before the battle, a covenant the monument\'s planners moved to make "the exclusive servant of the Afrikaner and her or his religion" as construction proceeded through the 1930s. E.G. Jansen, chairman of the organising committee, presided over both the 1938 foundation-stone ceremony, held before crowds reported in the hundreds of thousands, and the 1949 opening — one year after the National Party won power and began building apartheid, a policy its leaders and clergy justified in explicitly covenantal, theological terms drawn from the same Vow. The Day of the Vow that the monument\'s architecture exists to mark was a public holiday under apartheid and was renamed the Day of Reconciliation in independent South Africa in 1994, retaining the 16 December date.',
+        es: 'El monumento fija en el centro del nacionalismo afrikáner un mito religioso: que Dios concedió a los voortrekkers su victoria sobre una fuerza zulú en Blood River el 16 de diciembre de 1838 en cumplimiento de un voto jurado antes de la batalla, un pacto que los promotores del monumento se propusieron convertir en «servidor exclusivo del afrikáner y de su religión» a medida que avanzaba la construcción en los años treinta. E. G. Jansen, presidente del comité organizador, presidió tanto la ceremonia de colocación de la primera piedra en 1938, ante multitudes que se contaron por cientos de miles, como la inauguración de 1949, un año después de que el Partido Nacional llegara al poder y comenzara a construir el apartheid, política que sus dirigentes y su clero justificaron en términos teológicos explícitamente pactistas extraídos del mismo Voto. El Día del Voto que la arquitectura del monumento existe para señalar fue día festivo bajo el apartheid y pasó a llamarse Día de la Reconciliación en la Sudáfrica independiente en 1994, conservando la fecha del 16 de diciembre.',
+        it: 'Il monumento fissa al centro del nazionalismo afrikaner un mito religioso: che Dio concesse ai voortrekker la vittoria su una forza zulu a Blood River il 16 dicembre 1838 in adempimento di un voto pronunciato prima della battaglia, un patto che i promotori del monumento vollero rendere «servitore esclusivo dell\'afrikaner e della sua religione» via via che la costruzione procedeva negli anni Trenta. E. G. Jansen, presidente del comitato organizzatore, presiedette sia la cerimonia della posa della prima pietra nel 1938, davanti a folle contate in centinaia di migliaia, sia l\'inaugurazione del 1949, un anno dopo che il Partito Nazionale conquistò il potere e cominciò a costruire l\'apartheid, politica che i suoi dirigenti e il suo clero giustificarono in termini teologici esplicitamente patrizi tratti dallo stesso Voto. Il Giorno del Voto che l\'architettura del monumento esiste per segnare fu festa pubblica sotto l\'apartheid e fu ribattezzato Giorno della Riconciliazione nel Sudafrica indipendente nel 1994, conservando la data del 16 dicembre.',
       },
       sources: [
-        { kind: 'institution', url: 'https://hpip.org/en/heritage/details/116', title: '"O Leão Que Ri" Residential Building, Heritage of Portuguese Influence Portal (HPIP)', license: null },
-        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Pancho_Guedes', title: 'Pancho Guedes', license: 'CC BY-SA 4.0' },
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Voortrekker_Monument', title: 'Voortrekker Monument', license: 'CC BY-SA 4.0' },
+        { kind: 'publication', url: 'https://scielo.org.za/scielo.php?script=sci_arttext&pid=S0259-94222018000300050', title: 'The religious statement of the Voortrekker Monument as a site of Afrikaner memory: Origin, composition and reception', license: null },
       ],
     },
     sources: [
-      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q16501783', title: 'Bloco Habitacional O Leão Que Ri (Q16501783)', license: null },
-      { kind: 'institution', url: 'https://hpip.org/en/heritage/details/116', title: '"O Leão Que Ri" Residential Building, Heritage of Portuguese Influence Portal (HPIP)', license: null },
-      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Pancho_Guedes', title: 'Pancho Guedes', license: 'CC BY-SA 4.0' },
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q963472', title: 'Voortrekker Monument (Q963472)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Voortrekker_Monument', title: 'Voortrekker Monument', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Gerard_Moerdijk', title: 'Gerard Moerdijk', license: 'CC BY-SA 4.0' },
     ],
     tier: 'canon',
   },
@@ -577,69 +597,6 @@ export const AFRICA_EASTSOUTH_BUILDINGS: Building[] = [
     ],
     tier: 'deep',
   },
-  {
-    id: 'pemba-airport-terminal',
-    wikidataId: 'Q1392430',
-    name: {
-      en: 'Pemba Airport Terminal',
-      es: 'Terminal del aeropuerto de Pemba',
-      it: 'Aerostazione di Pemba',
-    },
-    architectId: 'maria-carlota-quintanilha',
-    location: { city: 'Pemba', countryCode: 'MZ', lat: -12.98675, lon: 40.52249 },
-    inception: 1959,
-    completed: 1961,
-    demolished: null,
-    typology: 'infrastructure',
-    materials: ['concrete'],
-    structure: {
-      en: 'A single-storey reinforced-concrete terminal built for the Mozambican civil aviation service; the published record establishes its authorship and its dates but not its structural detail.',
-      es: 'Una terminal de hormigón armado de una sola planta construida para el servicio de aeronáutica civil de Mozambique; la bibliografía publicada fija su autoría y sus fechas, pero no el detalle estructural.',
-      it: 'Un’aerostazione a un solo piano in cemento armato costruita per il servizio di aeronautica civile del Mozambico; la letteratura pubblicata ne fissa la paternità e le date, ma non il dettaglio strutturale.',
-    },
-    program: {
-      en: 'The passenger terminal of the airport serving Porto Amélia, the Portuguese colonial capital of Cabo Delgado, now Pemba.',
-      es: 'La terminal de pasajeros del aeropuerto que servía a Porto Amélia, capital colonial portuguesa de Cabo Delgado, hoy Pemba.',
-      it: 'L’aerostazione passeggeri dell’aeroporto che serviva Porto Amélia, capitale coloniale portoghese di Cabo Delgado, oggi Pemba.',
-    },
-    heritage: null,
-    currentUse: {
-      en: 'In service as the passenger terminal of Pemba Airport, northern Mozambique’s principal air gateway.',
-      es: 'En servicio como terminal de pasajeros del aeropuerto de Pemba, principal puerta aérea del norte de Mozambique.',
-      it: 'In esercizio come aerostazione passeggeri dell’aeroporto di Pemba, principale porta aerea del Mozambico settentrionale.',
-    },
-    detailRect: { x: 0.32, y: 0.36, w: 0.34, h: 0.30 },
-    image: {
-      commonsFile: 'File:Pemba-airport.jpg',
-      photographer: 'Goldsztajn',
-      license: 'CC BY-SA 4.0',
-      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Pemba-airport.jpg',
-      width: 0,
-      height: 0,
-    },
-    dossier: {
-      en: 'Porto Amélia, the administrative capital of Cabo Delgado on the northern Mozambican coast, was given an airport between 1959 and 1961. It was one of a set designed for the colony’s civil aviation service by a team of three — Maria Carlota Quintanilha, João José Tinoco and Alberto Soeiro — who also built the terminal at Nampula. Very little has been published about the fabric of the building itself. What is documented is the authorship: through Wikidata’s architect claim, and through the 2020 survey of Portuguese women architects working in colonial Africa that recovered Quintanilha’s career from the archives. That thinness is part of why the building is here. Quintanilha designed at least four buildings in northern Mozambique in the 1960s and appears in no architectural history written in English. The town is now Pemba, the airport is the country’s gateway to the north, and the terminal is still in use.',
-      es: 'Porto Amélia, capital administrativa de Cabo Delgado en la costa septentrional de Mozambique, recibió su aeropuerto entre 1959 y 1961. Formaba parte de un conjunto proyectado para el servicio de aeronáutica civil de la colonia por un equipo de tres —Maria Carlota Quintanilha, João José Tinoco y Alberto Soeiro—, que levantó también la terminal de Nampula. Poquísimo se ha publicado sobre la fábrica del edificio en sí. Lo documentado es la autoría: mediante la declaración de arquitecta en Wikidata y mediante el estudio de 2020 sobre las arquitectas portuguesas que trabajaron en el África colonial, que rescató de los archivos la trayectoria de Quintanilha. Esa escasez es parte de la razón por la que el edificio figura aquí. Quintanilha proyectó al menos cuatro edificios en el norte de Mozambique en los años sesenta y no aparece en ninguna historia de la arquitectura escrita en inglés. La ciudad se llama hoy Pemba, el aeropuerto es la puerta del país hacia el norte y la terminal sigue en uso.',
-      it: 'Porto Amélia, capitale amministrativa di Cabo Delgado sulla costa settentrionale del Mozambico, ebbe il suo aeroporto fra il 1959 e il 1961. Faceva parte di un gruppo progettato per il servizio di aeronautica civile della colonia da una squadra di tre — Maria Carlota Quintanilha, João José Tinoco e Alberto Soeiro — che costruì anche l’aerostazione di Nampula. Pochissimo è stato pubblicato sulla fabbrica dell’edificio in sé. Ciò che è documentato è la paternità: attraverso la dichiarazione di architetto su Wikidata e attraverso lo studio del 2020 sulle architette portoghesi attive nell’Africa coloniale, che ha recuperato dagli archivi la carriera di Quintanilha. Questa scarsità è parte del motivo per cui l’edificio è qui. Quintanilha progettò almeno quattro edifici nel nord del Mozambico negli anni Sessanta e non compare in nessuna storia dell’architettura scritta in inglese. La città oggi si chiama Pemba, l’aeroporto è la porta del paese verso nord e l’aerostazione è ancora in uso.',
-    },
-    context: {
-      body: {
-        en: 'Porto Amélia was the administrative capital of Cabo Delgado under Portuguese colonial rule, and the airport was built by the colonial civil aviation service in the years immediately before the Mozambican war of independence began in 1964. Cabo Delgado and Niassa — the two provinces for which Quintanilha also designed government buildings — were the provinces where FRELIMO opened and sustained the northern front. Portugal held Mozambique until 1975. The town was renamed Pemba after independence and the terminal remains in service.',
-        es: 'Porto Amélia fue la capital administrativa de Cabo Delgado bajo el dominio colonial portugués, y el aeropuerto lo construyó el servicio de aeronáutica civil de la colonia en los años inmediatamente anteriores al inicio, en 1964, de la guerra de independencia de Mozambique. Cabo Delgado y Niassa —las dos provincias para las que Quintanilha proyectó además edificios de gobierno— fueron aquellas en las que el FRELIMO abrió y sostuvo el frente norte. Portugal conservó Mozambique hasta 1975. La ciudad pasó a llamarse Pemba tras la independencia y la terminal sigue en servicio.',
-        it: 'Porto Amélia fu la capitale amministrativa di Cabo Delgado sotto il dominio coloniale portoghese, e l’aeroporto fu costruito dal servizio di aeronautica civile della colonia negli anni immediatamente precedenti l’inizio, nel 1964, della guerra d’indipendenza mozambicana. Cabo Delgado e Niassa — le due province per cui Quintanilha progettò anche edifici governativi — furono quelle in cui il FRELIMO aprì e mantenne il fronte settentrionale. Il Portogallo tenne il Mozambico fino al 1975. La città fu ribattezzata Pemba dopo l’indipendenza e l’aerostazione resta in servizio.',
-      },
-      sources: [
-        { kind: 'publication', url: 'https://doi.org/10.3390/arts9030086', title: 'Patrícia Santos Pedrosa et al., "Women Architects in Portugal: Working in Colonial Africa before the Carnation Revolution (1950–1974)", Arts 9:3 (2020), 86', license: null },
-        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Mozambican_War_of_Independence', title: 'Mozambican War of Independence', license: 'CC BY-SA 4.0' },
-      ],
-    },
-    sources: [
-      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1392430', title: 'Pemba Airport (Q1392430)', license: null },
-      { kind: 'publication', url: 'https://doi.org/10.3390/arts9030086', title: 'Patrícia Santos Pedrosa et al., "Women Architects in Portugal: Working in Colonial Africa before the Carnation Revolution (1950–1974)", Arts 9:3 (2020), 86', license: null },
-      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Pemba_Airport_(Mozambique)', title: 'Pemba Airport (Mozambique)', license: 'CC BY-SA 4.0' },
-    ],
-    tier: 'deep',
-  },
   // ------------------------------------------------------------- post-2000
   {
     id: 'constitutional-court-johannesburg',
@@ -650,6 +607,7 @@ export const AFRICA_EASTSOUTH_BUILDINGS: Building[] = [
       it: 'Corte costituzionale del Sudafrica',
     },
     architectId: 'janina-masojada',
+    coArchitects: ['andrew-makin', 'paul-wygers'],
     location: { city: 'Johannesburg', countryCode: 'ZA', lat: -26.18861, lon: 28.04333 },
     inception: 1998,
     completed: 2004,
@@ -715,6 +673,7 @@ export const AFRICA_EASTSOUTH_BUILDINGS: Building[] = [
       it: 'Red Location Museum',
     },
     architectId: 'jo-noero',
+    coArchitects: ['heinrich-wolff'],
     location: { city: 'Gqeberha', countryCode: 'ZA', lat: -33.89813, lon: 25.60571 },
     inception: 1998,
     completed: 2006,
