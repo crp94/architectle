@@ -7,13 +7,13 @@ import type { Architect } from '@/types/architect';
 // Almost none of the metadata below could be lifted from Wikidata. A live query
 // on 2026-08-26 returned 39 buildings with an attributed architect for all
 // fourteen countries, and exactly two of those had a woman architect. Every
-// architect here except Jane Drew, Demas Nwoko, Babban Gwani and Tosin Oshinowo
-// is hand-authored from published scholarship; see the task report for the
-// per-architect source list.
+// architect here except Jane Drew, Maxwell Fry, Demas Nwoko, Babban Gwani and
+// Tosin Oshinowo is hand-authored from published scholarship; see the task
+// report for the per-architect source list.
 export const AFRICA_WEST_ARCHITECTS: Architect[] = [
   {
     id: 'al-aqib-ibn-mahmud',
-    wikidataId: '',
+    wikidataId: 'Q4703052',
     name: 'Al-Aqib ibn Mahmud ibn Umar',
     alternativeNames: ['Qadi al-Aqib', 'al-ʿĀqib ibn Maḥmūd ibn ʿUmar', 'Imam Al-Aqib'],
     gender: 'man',
@@ -50,7 +50,7 @@ export const AFRICA_WEST_ARCHITECTS: Architect[] = [
   },
   {
     id: 'nicolas-pepin',
-    wikidataId: '',
+    wikidataId: null,
     name: 'Nicolas Pépin',
     alternativeNames: ['Nicolas Pepin'],
     gender: 'man',
@@ -124,7 +124,7 @@ export const AFRICA_WEST_ARCHITECTS: Architect[] = [
   },
   {
     id: 'joao-baptista-da-costa-lagos',
-    wikidataId: '',
+    wikidataId: null,
     name: 'João Baptista da Costa',
     alternativeNames: ['Senhor João Baptista da Costa', 'Joao Batista da Costa'],
     gender: 'man',
@@ -161,7 +161,7 @@ export const AFRICA_WEST_ARCHITECTS: Architect[] = [
   },
   {
     id: 'ismaila-traore',
-    wikidataId: '',
+    wikidataId: null,
     name: 'Ismaila Traoré',
     alternativeNames: ['Ismaila Traore'],
     gender: 'man',
@@ -226,6 +226,46 @@ export const AFRICA_WEST_ARCHITECTS: Architect[] = [
         kind: 'wikipedia',
         url: 'https://en.wikipedia.org/wiki/Jane_Drew',
         title: 'Jane Drew',
+        license: 'CC BY-SA 4.0',
+      },
+      {
+        kind: 'institution',
+        url: 'https://www.vam.ac.uk/blog/museum-life/tropical-modernism-architecture-and-power-in-west-africa',
+        title: 'Tropical Modernism: Architecture and power in West Africa — Victoria and Albert Museum',
+        license: null,
+      },
+    ],
+  },
+  {
+    id: 'maxwell-fry',
+    wikidataId: 'Q3199944',
+    name: 'Maxwell Fry',
+    alternativeNames: ['Edwin Maxwell Fry', 'E. Maxwell Fry'],
+    gender: 'man',
+    born: 1899,
+    died: 1987,
+    floruit: { start: 1936, end: 1972, override: false },
+    movements: [
+      { id: 'tropical-modernism', primary: true },
+      { id: 'international-style', primary: false },
+    ],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'educational',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: 'Edwin Maxwell Fry trained in the neo-classical tradition at Liverpool and turned to European Modernism in London during the 1930s, designing the Sun House and, with Elizabeth Denby, the Kensal House housing estate. In 1942 he married Jane Drew, and together they built the practice that codified Tropical Modernism — a way of building for hot, humid climates in which the concrete frame is opened with deep eaves, adjustable louvres and cross-ventilation instead of being sealed and cooled. From 1946 the firm worked across British West Africa on schools, colleges and university campuses; the library that anchors University College Ibadan is credited jointly to Fry and Drew. From 1951 he and Drew joined Le Corbusier at Chandigarh, designing housing, colleges and a hospital for India\'s new Punjab capital. He was appointed CBE in 1955 and received the RIBA Royal Gold Medal in 1964.',
+      es: 'Edwin Maxwell Fry se formó en la tradición neoclásica en Liverpool y se pasó al modernismo europeo en Londres durante los años treinta, proyectando la Sun House y, con Elizabeth Denby, el conjunto de viviendas de Kensal House. En 1942 se casó con Jane Drew, y juntos crearon el estudio que codificó el modernismo tropical: una manera de construir para climas cálidos y húmedos en la que la estructura de hormigón se abre con grandes aleros, lamas regulables y ventilación cruzada en lugar de sellarse y refrigerarse. Desde 1946 el estudio trabajó por toda el África Occidental Británica en escuelas, colegios y campus universitarios; la biblioteca que da centro al University College de Ibadán se atribuye conjuntamente a Fry y Drew. Desde 1951, él y Drew se unieron a Le Corbusier en Chandigarh, proyectando viviendas, colegios y un hospital para la nueva capital del Punjab indio. Fue nombrado CBE en 1955 y recibió la Medalla de Oro Real del RIBA en 1964.',
+      it: "Edwin Maxwell Fry si formò nella tradizione neoclassica a Liverpool e si convertì al modernismo europeo a Londra negli anni Trenta, progettando la Sun House e, con Elizabeth Denby, il complesso residenziale di Kensal House. Nel 1942 sposò Jane Drew, e insieme fondarono lo studio che codificò il modernismo tropicale: un modo di costruire per climi caldi e umidi in cui il telaio in cemento armato si apre con gronde profonde, lamelle regolabili e ventilazione incrociata anziché essere sigillato e raffrescato. Dal 1946 lo studio lavorò in tutta l'Africa occidentale britannica a scuole, collegi e campus universitari; la biblioteca che è il fulcro dello University College di Ibadan è attribuita congiuntamente a Fry e Drew. Dal 1951 lui e Drew si unirono a Le Corbusier a Chandigarh, progettando alloggi, collegi e un ospedale per la nuova capitale del Punjab indiano. Fu nominato CBE nel 1955 e ricevette la Royal Gold Medal del RIBA nel 1964.",
+    },
+    awards: ['CBE (1955)', 'RIBA Royal Gold Medal (1964)', 'Royal Academician (1972)'],
+    tier: 'deep',
+    context: null,
+    sources: [
+      {
+        kind: 'wikipedia',
+        url: 'https://en.wikipedia.org/wiki/Maxwell_Fry',
+        title: 'Maxwell Fry',
         license: 'CC BY-SA 4.0',
       },
       {
@@ -312,7 +352,7 @@ export const AFRICA_WEST_ARCHITECTS: Architect[] = [
   },
   {
     id: 'ayuba',
-    wikidataId: '',
+    wikidataId: null,
     name: 'Ayuba',
     alternativeNames: ['Ayub'],
     gender: 'man',
@@ -356,9 +396,9 @@ export const AFRICA_WEST_ARCHITECTS: Architect[] = [
     primaryTypology: 'civic',
     signatureMaterial: 'stone',
     portrait: {
-      en: 'Diogo de Azambuja was a Portuguese knight of the Order of Aviz, a veteran of the succession wars in Castile and of Portugal\'s North African campaigns, when King John II gave him command of the 1481 expedition to build a fortified trading post on the Gulf of Guinea. He was not an architect by training; his task was logistical and military — land nine caravels carrying two hundred masons and carpenters and stone pre-cut in Portugal, secure a site from a wary local ruler, and see the walls assembled before the rains or resistance stopped him. He succeeded within about three weeks and stayed on as the fort\'s first captain. He later built a second Portuguese fort at Essaouira, on the Moroccan coast, in his seventies, and ended his career as a royal councillor.',
-      es: 'Diogo de Azambuja fue un caballero portugués de la Orden de Avís, veterano de las guerras de sucesión en Castilla y de las campañas portuguesas en el norte de África, cuando el rey Juan II le dio el mando de la expedición de 1481 para construir un puesto comercial fortificado en el golfo de Guinea. No era arquitecto de formación; su tarea fue logística y militar: desembarcar nueve carabelas con doscientos canteros y carpinteros y piedra cortada de antemano en Portugal, asegurar un emplazamiento ante un gobernante local receloso y ver alzados los muros antes de que las lluvias o la resistencia lo impidieran. Lo logró en unas tres semanas y permaneció como primer capitán del fuerte. Más tarde, ya en la setentena, construyó una segunda fortaleza portuguesa en Essaouira, en la costa marroquí, y terminó su carrera como consejero real.',
-      it: "Diogo de Azambuja fu un cavaliere portoghese dell'Ordine di Avis, veterano delle guerre di successione in Castiglia e delle campagne portoghesi nel nord Africa, quando il re Giovanni II gli affidò il comando della spedizione del 1481 per costruire un avamposto commerciale fortificato nel golfo di Guinea. Non era architetto di formazione; il suo compito fu logistico e militare: sbarcare nove caravelle con duecento tra muratori e carpentieri e pietra già tagliata in Portogallo, assicurarsi il sito da un sovrano locale diffidente e veder alzate le mura prima che le piogge o la resistenza locale lo fermassero. Ci riuscì in circa tre settimane e rimase come primo capitano del forte. Più tardi, ormai settantenne, costruì una seconda fortezza portoghese a Essaouira, sulla costa marocchina, e concluse la carriera come consigliere reale.",
+      en: 'Diogo de Azambuja was a Portuguese knight of the Order of Aviz, a veteran of the succession wars in Castile and of Portugal\'s North African campaigns, when King John II gave him command of the 1481 expedition to build a fortified trading post on the Gulf of Guinea. He was not an architect by training; his task was logistical and military — land ten caravels and two transport ships carrying six hundred men and stone pre-cut in Portugal, secure a site from a wary local ruler, and see the walls assembled before the rains or resistance stopped him. He succeeded within about three weeks and stayed on as the fort\'s first captain. He later built a second Portuguese fort at Essaouira, on the Moroccan coast, in his seventies, and ended his career as a royal councillor.',
+      es: 'Diogo de Azambuja fue un caballero portugués de la Orden de Avís, veterano de las guerras de sucesión en Castilla y de las campañas portuguesas en el norte de África, cuando el rey Juan II le dio el mando de la expedición de 1481 para construir un puesto comercial fortificado en el golfo de Guinea. No era arquitecto de formación; su tarea fue logística y militar: desembarcar diez carabelas y dos naves de transporte con seiscientos hombres y piedra cortada de antemano en Portugal, asegurar un emplazamiento ante un gobernante local receloso y ver alzados los muros antes de que las lluvias o la resistencia lo impidieran. Lo logró en unas tres semanas y permaneció como primer capitán del fuerte. Más tarde, ya en la setentena, construyó una segunda fortaleza portuguesa en Essaouira, en la costa marroquí, y terminó su carrera como consejero real.',
+      it: "Diogo de Azambuja fu un cavaliere portoghese dell'Ordine di Avis, veterano delle guerre di successione in Castiglia e delle campagne portoghesi nel nord Africa, quando il re Giovanni II gli affidò il comando della spedizione del 1481 per costruire un avamposto commerciale fortificato nel golfo di Guinea. Non era architetto di formazione; il suo compito fu logistico e militare: sbarcare dieci caravelle e due navi da trasporto con seicento uomini e pietra già tagliata in Portogallo, assicurarsi il sito da un sovrano locale diffidente e veder alzate le mura prima che le piogge o la resistenza locale lo fermassero. Ci riuscì in circa tre settimane e rimase come primo capitano del forte. Più tardi, ormai settantenne, costruì una seconda fortezza portoghese a Essaouira, sulla costa marocchina, e concluse la carriera come consigliere reale.",
     },
     awards: [],
     tier: 'canon',

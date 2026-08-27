@@ -9,16 +9,20 @@ import type { Building } from '@/types/building';
 // recorded exactly as the file page credits them.
 //
 // Two structural constraints shaped this set and are documented in the task
-// report. First, none of the fourteen countries has a Freedom of Panorama
-// provision compatible with Wikimedia Commons, so buildings whose architecture
-// is still in copyright are only representable in Nigeria, and there only
-// through photographs uploaded to Commons before 17 March 2023, when the
-// repealed Copyright Act 2004 still permitted "the reproduction and
+// report. First, thirteen of the fourteen countries have no Freedom of
+// Panorama provision compatible with Wikimedia Commons, so buildings whose
+// architecture is still in copyright are only representable in Nigeria, and
+// there only through photographs uploaded to Commons before 17 March 2023,
+// when the repealed Copyright Act 2004 still permitted "the reproduction and
 // distribution of copies of any artistic work permanently situated in a place
-// where it can be viewed by the public". Second, a live Wikidata query on
-// 2026-08-26 returned 39 buildings with an attributed architect across all
-// fourteen countries; the metadata below is largely hand-authored from
-// published scholarship.
+// where it can be viewed by the public". The fourteenth, Mauritania, in fact
+// has full commercial-compatible FoP under Law No. 2012-038 (17 July 2012),
+// Article 47 — confirmed on Commons' own Commons:CRT/Mauritania page — but no
+// Mauritanian building with both a named architect/builder and a licence-clean,
+// well-attributed Commons image was found; see the task report for what was
+// searched. Second, a live Wikidata query on 2026-08-26 returned 39 buildings
+// with an attributed architect across all fourteen countries; the metadata
+// below is largely hand-authored from published scholarship.
 export const AFRICA_WEST_BUILDINGS: Building[] = [
   {
     id: 'sankore-madrasa-timbuktu',
@@ -178,7 +182,7 @@ export const AFRICA_WEST_BUILDINGS: Building[] = [
   },
   {
     id: 'zaria-friday-mosque',
-    wikidataId: '',
+    wikidataId: null,
     name: {
       en: 'Zaria Friday Mosque',
       es: 'Mezquita del Viernes de Zaria',
@@ -425,6 +429,7 @@ export const AFRICA_WEST_BUILDINGS: Building[] = [
       it: 'Biblioteca Kenneth Dike, Università di Ibadan',
     },
     architectId: 'jane-drew',
+    coArchitects: ['maxwell-fry'],
     location: { city: 'Ibadan', countryCode: 'NG', lat: 7.4470098, lon: 3.8960989 },
     inception: 1948,
     completed: 1954,
@@ -506,7 +511,7 @@ export const AFRICA_WEST_BUILDINGS: Building[] = [
   },
   {
     id: 'dominican-chapel-ibadan',
-    wikidataId: '',
+    wikidataId: null,
     name: {
       en: 'Dominican Chapel, Ibadan',
       es: 'Capilla dominica de Ibadán',
@@ -574,7 +579,7 @@ export const AFRICA_WEST_BUILDINGS: Building[] = [
   },
   {
     id: 'oba-akenzua-cultural-centre',
-    wikidataId: '',
+    wikidataId: 'Q110925512',
     name: {
       en: 'Oba Akenzua II Cultural Centre',
       es: 'Centro Cultural Oba Akenzua II',
@@ -636,7 +641,7 @@ export const AFRICA_WEST_BUILDINGS: Building[] = [
   },
   {
     id: 'maryland-mall-lagos',
-    wikidataId: '',
+    wikidataId: null,
     name: {
       en: 'Maryland Mall',
       es: 'Maryland Mall',
@@ -799,9 +804,9 @@ export const AFRICA_WEST_BUILDINGS: Building[] = [
       height: 0,
     },
     dossier: {
-      en: "King John II of Portugal sent Diogo de Azambuja to the Gold Coast in December 1481 with nine caravels, two hundred masons and carpenters, and stone already cut and numbered in Portugal for reassembly — foundation blocks to roof tiles. Landing near the fishing town the Portuguese called A Mina, Azambuja negotiated for the site with the local ruler, traditionally named Kwamena Ansah, and construction proceeded despite local resistance to a foreign fortress on the shore; the fort was substantially complete within about twenty days, an unusual speed made possible entirely by the prefabrication. São Jorge da Mina became the first permanent European trading post in sub-Saharan Africa and the anchor of Portugal's Gold Coast trade. The Dutch West India Company seized it in 1637 and held it until 1872, when it passed to Britain with the rest of the Dutch Gold Coast. What began as an installation built explicitly to protect the gold trade from becoming a slaving post did not remain one; that history is set out below.",
-      es: 'El rey Juan II de Portugal envió a Diogo de Azambuja a la Costa de Oro en diciembre de 1481 con nueve carabelas, doscientos canteros y carpinteros, y piedra ya cortada y numerada en Portugal para su montaje en destino, desde los sillares de cimentación hasta las tejas. Tras desembarcar cerca del pueblo pesquero que los portugueses llamaron A Mina, Azambuja negoció el emplazamiento con el gobernante local, llamado por tradición Kwamena Ansah, y las obras avanzaron pese a la resistencia local a una fortaleza extranjera en la costa; el fuerte quedó sustancialmente terminado en unos veinte días, una rapidez inusual que la prefabricación hizo posible por completo. São Jorge da Mina se convirtió en el primer puesto comercial europeo permanente del África subsahariana y en el eje del comercio portugués del oro en la costa. La Compañía Neerlandesa de las Indias Occidentales lo tomó en 1637 y lo conservó hasta 1872, cuando pasó a Gran Bretaña junto con el resto de la Costa de Oro neerlandesa. Lo que comenzó como una instalación construida expresamente para proteger el comercio del oro de convertirse en un puesto esclavista no siguió siéndolo; esa historia se expone más abajo.',
-      it: "Il re Giovanni II del Portogallo inviò Diogo de Azambuja sulla Costa d'Oro nel dicembre 1481 con nove caravelle, duecento tra muratori e carpentieri, e pietra già tagliata e numerata in Portogallo per essere rimontata in loco, dai blocchi di fondazione alle tegole. Sbarcato presso il villaggio di pescatori che i portoghesi chiamarono A Mina, Azambuja trattò il sito con il sovrano locale, tradizionalmente chiamato Kwamena Ansah, e i lavori proseguirono nonostante la resistenza locale a una fortezza straniera sulla costa; il forte fu sostanzialmente completato in circa venti giorni, una rapidità insolita resa possibile interamente dalla prefabbricazione. São Jorge da Mina divenne il primo insediamento commerciale europeo permanente dell'Africa subsahariana e il perno del commercio portoghese dell'oro sulla costa. La Compagnia Olandese delle Indie Occidentali lo conquistò nel 1637 e lo mantenne fino al 1872, quando passò alla Gran Bretagna insieme al resto della Costa d'Oro olandese. Ciò che nacque come un impianto costruito espressamente per proteggere il commercio dell'oro dal trasformarsi in un avamposto schiavista non rimase tale; questa storia è esposta di seguito.",
+      en: "King John II of Portugal sent Diogo de Azambuja to the Gold Coast in December 1481 with ten caravels and two transport ships, six hundred men, and stone already cut and numbered in Portugal for reassembly — foundation blocks to roof tiles. Landing near the fishing town the Portuguese called A Mina, Azambuja negotiated for the site with the local ruler, traditionally named Kwamin Ansah (interpreted from the Portuguese as 'Caramansa'), and construction proceeded despite local resistance to a foreign fortress on the shore; the fort was substantially complete within about twenty days, an unusual speed made possible entirely by the prefabrication. São Jorge da Mina became the first permanent European trading post in sub-Saharan Africa and the anchor of Portugal's Gold Coast trade. The Dutch West India Company seized it in 1637 and held it until 1872, when it passed to Britain with the rest of the Dutch Gold Coast. What began as an installation built explicitly to protect the gold trade from becoming a slaving post did not remain one; that history is set out below.",
+      es: 'El rey Juan II de Portugal envió a Diogo de Azambuja a la Costa de Oro en diciembre de 1481 con diez carabelas y dos naves de transporte, seiscientos hombres, y piedra ya cortada y numerada en Portugal para su montaje en destino, desde los sillares de cimentación hasta las tejas. Tras desembarcar cerca del pueblo pesquero que los portugueses llamaron A Mina, Azambuja negoció el emplazamiento con el gobernante local, llamado por tradición Kwamin Ansah (interpretado del portugués como «Caramansa»), y las obras avanzaron pese a la resistencia local a una fortaleza extranjera en la costa; el fuerte quedó sustancialmente terminado en unos veinte días, una rapidez inusual que la prefabricación hizo posible por completo. São Jorge da Mina se convirtió en el primer puesto comercial europeo permanente del África subsahariana y en el eje del comercio portugués del oro en la costa. La Compañía Neerlandesa de las Indias Occidentales lo tomó en 1637 y lo conservó hasta 1872, cuando pasó a Gran Bretaña junto con el resto de la Costa de Oro neerlandesa. Lo que comenzó como una instalación construida expresamente para proteger el comercio del oro de convertirse en un puesto esclavista no siguió siéndolo; esa historia se expone más abajo.',
+      it: "Il re Giovanni II del Portogallo inviò Diogo de Azambuja sulla Costa d'Oro nel dicembre 1481 con dieci caravelle e due navi da trasporto, seicento uomini, e pietra già tagliata e numerata in Portogallo per essere rimontata in loco, dai blocchi di fondazione alle tegole. Sbarcato presso il villaggio di pescatori che i portoghesi chiamarono A Mina, Azambuja trattò il sito con il sovrano locale, tradizionalmente chiamato Kwamin Ansah (reso in portoghese come «Caramansa»), e i lavori proseguirono nonostante la resistenza locale a una fortezza straniera sulla costa; il forte fu sostanzialmente completato in circa venti giorni, una rapidità insolita resa possibile interamente dalla prefabbricazione. São Jorge da Mina divenne il primo insediamento commerciale europeo permanente dell'Africa subsahariana e il perno del commercio portoghese dell'oro sulla costa. La Compagnia Olandese delle Indie Occidentali lo conquistò nel 1637 e lo mantenne fino al 1872, quando passò alla Gran Bretagna insieme al resto della Costa d'Oro olandese. Ciò che nacque come un impianto costruito espressamente per proteggere il commercio dell'oro dal trasformarsi in un avamposto schiavista non rimase tale; questa storia è esposta di seguito.",
     },
     context: {
       body: {
