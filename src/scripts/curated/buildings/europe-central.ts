@@ -683,4 +683,188 @@ export const EUROPE_CENTRAL_BUILDINGS: Building[] = [
     ],
     tier: 'deep',
   },
+  {
+    id: 'palace-of-culture-and-science-warsaw',
+    wikidataId: 'Q167566',
+    name: {
+      en: 'Palace of Culture and Science, Warsaw',
+      es: 'Palacio de la Cultura y la Ciencia de Varsovia',
+      it: 'Palazzo della Cultura e della Scienza di Varsavia',
+    },
+    architectId: 'lev-rudnev',
+    location: { city: 'Warsaw', countryCode: 'PL', lat: 52.231667, lon: 21.006389 },
+    inception: 1952,
+    completed: 1955,
+    demolished: null,
+    typology: 'tower',
+    materials: ['steel-and-glass', 'stone', 'concrete'],
+    structure: {
+      en: 'A riveted steel skeleton of 42 floors rising in tiered set-backs to a 237-metre spire, clad in sandstone-toned ceramic tile made in the Urals and dressed at the base and in its reliefs with limestone, sandstone, granite and marble.',
+      es: 'Un esqueleto de acero remachado de 42 plantas que asciende en retranqueos escalonados hasta una aguja de 237 metros, revestido de cerámica sinterizada color arenisca fabricada en los Urales y rematado en la base y en los relieves con caliza, arenisca, granito y mármol.',
+      it: 'Uno scheletro d\'acciaio chiodato di 42 piani che sale a gradoni fino a una guglia di 237 metri, rivestito di ceramica sinterizzata color arenaria prodotta negli Urali e concluso alla base e nei rilievi con calcare, arenaria, granito e marmo.',
+    },
+    program: {
+      en: 'Built at Soviet initiative as a declared "gift" to the Polish people, combining theatres, museums, a cinema, a swimming pool and offices under one roof.',
+      es: 'Construido por iniciativa soviética como un declarado «regalo» al pueblo polaco, combinando teatros, museos, un cine, una piscina y oficinas bajo un mismo techo.',
+      it: 'Costruito per iniziativa sovietica come dichiarato «dono» al popolo polacco, riunendo teatri, musei, un cinema, una piscina e uffici sotto un unico tetto.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Still Warsaw\'s tallest occupied building, combining cultural venues, a public viewing terrace, offices and the city council\'s chambers; listed on Poland\'s Registry of Objects of Cultural Heritage since 2007.',
+      es: 'Sigue siendo el edificio ocupado más alto de Varsovia, con salas culturales, una terraza mirador pública, oficinas y las salas del ayuntamiento; inscrito en el Registro polaco de Objetos del Patrimonio Cultural desde 2007.',
+      it: 'Resta l\'edificio occupato più alto di Varsavia, con sale culturali, una terrazza panoramica pubblica, uffici e le sale del consiglio comunale; iscritto nel Registro polacco degli Oggetti del Patrimonio Culturale dal 2007.',
+    },
+    detailRect: { x: 0.36, y: 0.44, w: 0.28, h: 0.30 },
+    image: {
+      // Exterior daytime street-level view from Roman Dmowski's roundabout,
+      // showing the tiered set-back profile of the tower. Rudnev has been
+      // dead since 1956 (70 years, borderline the interior/exterior rule),
+      // so an exterior was used regardless; the rect below sits on the
+      // tiered stone-and-tile facade well below the spire, away from sky.
+      commonsFile: 'File:Pałac Kultury i Nauki 2019.jpg',
+      photographer: 'Adrian Grycuk (Boston9)',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Pa%C5%82ac_Kultury_i_Nauki_2019.jpg',
+      width: 0,
+      height: 0,
+    },
+    dossier: {
+      en: 'Stalin offered the tower before Poland asked for one: in 1951 the Soviet Union proposed a "gift of the Soviet people to the Polish nation," and Lev Rudnev, chief architect of Moscow State University\'s own tower, was sent to design it. Ground broke in May 1952, raised by an estimated 3,500 to 5,000 imported Soviet workers alongside some 4,000 Polish ones, on a site cleared in the city centre. Rudnev set a steel skeleton over 42 floors, clad in sandstone-toned ceramic tile made in the Urals and dressed at the base and in its reliefs with limestone, sandstone, granite and marble, its silhouette a tiered form climbing through set-backs to a spire reaching 237 metres — modelled on the Manhattan skyscrapers he had studied, following Stalin\'s instruction that the gift still read as built "in the Polish style." It opened on 22 July 1955, the state\'s national holiday, dedicated to Stalin by name on its colonnade and in its lobby; the dedication was revoked during the de-Stalinisation that followed 1956. Warsaw inherited a landmark it could neither demolish nor disown, and gradually filled its floors with theatres, museums, a cinema, a swimming pool, offices and the city council chamber.',
+      es: 'Stalin ofreció la torre antes de que Polonia la pidiera: en 1951 la Unión Soviética propuso un «regalo del pueblo soviético a la nación polaca», y envió a Lev Rúdnev, arquitecto jefe de la torre de la Universidad Estatal de Moscú, para proyectarlo. Las obras comenzaron en mayo de 1952, levantadas por entre 3.500 y 5.000 obreros soviéticos desplazados junto a unos 4.000 polacos, en un solar despejado en pleno centro. Rúdnev dispuso un esqueleto de acero de 42 plantas, revestido de cerámica sinterizada color arenisca fabricada en los Urales y rematado en la base y en los relieves con caliza, arenisca, granito y mármol; su silueta escalonada asciende hasta una aguja de 237 metros, inspirada en los rascacielos de Manhattan que Rúdnev había estudiado, siguiendo la instrucción de Stalin de que el regalo se leyera igualmente construido «al estilo polaco». Se inauguró el 22 de julio de 1955, fiesta nacional del régimen, dedicado a Stalin en la columnata y el vestíbulo; la dedicatoria se revocó durante la desestalinización posterior a 1956. Varsovia heredó un hito que no podía ni derribar ni desentenderse de él, y con el tiempo llenó sus plantas de teatros, museos, cine, piscina, oficinas y la sala del ayuntamiento.',
+      it: 'Stalin offrì la torre prima ancora che la Polonia la chiedesse: nel 1951 l\'Unione Sovietica propose un «dono del popolo sovietico alla nazione polacca», e inviò Lev Rudnev, architetto capo della torre dell\'Università statale di Mosca, per progettarlo. I lavori iniziarono nel maggio 1952, condotti da una stima di 3.500-5.000 operai sovietici trasferiti insieme a circa 4.000 polacchi, su un\'area sgombrata nel centro cittadino. Rudnev impostò uno scheletro d\'acciaio di 42 piani, rivestito di ceramica sinterizzata color arenaria prodotta negli Urali e concluso alla base e nei rilievi con calcare, arenaria, granito e marmo; la sua sagoma a gradoni sale fino a una guglia di 237 metri, modellata sui grattacieli di Manhattan che Rudnev aveva studiato, seguendo l\'istruzione di Stalin secondo cui il dono dovesse comunque leggersi costruito «in stile polacco». Fu inaugurato il 22 luglio 1955, festa nazionale del regime, dedicato a Stalin per nome sul colonnato e nell\'atrio; la dedica fu revocata durante la destalinizzazione seguita al 1956. Varsavia ereditò un monumento che non poteva né demolire né disconoscere, e ne riempì gradualmente i piani con teatri, musei, un cinema, una piscina, uffici e la sala del consiglio comunale.',
+    },
+    context: {
+      body: {
+      en: 'The palace\'s dedication to Stalin, inscribed on its colonnade and in its lobby at the 1955 opening, made explicit what its design already argued: that Warsaw\'s skyline now answered to Moscow. The tower arrived as an unrequested "gift," built at Soviet initiative rather than Polish request, and was widely resented in Poland as a monument to Soviet political domination even while its theatres, museums, cinema and public halls were put to genuine civic use from the start. The dedication to Stalin was formally revoked during the de-Stalinisation that followed 1956, his name removed from the colonnade, lobby and a sculptural group. The building\'s fate has stayed politically contested since: demolition has been proposed by nationalist and anti-communist voices at various points after Poland\'s 1989 transition, and rejected each time on the grounds that the building, whatever the circumstances of its construction, is now simply part of Warsaw\'s skyline and everyday civic life.',
+      es: 'La dedicatoria a Stalin, inscrita en la columnata y en el vestíbulo en la inauguración de 1955, hacía explícito lo que el propio diseño ya argumentaba: que el perfil de Varsovia respondía ahora a Moscú. La torre llegó como un «regalo» no solicitado, construido por iniciativa soviética y no a petición polaca, y fue ampliamente resentido en Polonia como un monumento al dominio político soviético, incluso mientras sus teatros, museos, cine y salas públicas se destinaban desde el principio a un uso cívico real. La dedicatoria a Stalin se revocó formalmente durante la desestalinización posterior a 1956, y su nombre se retiró de la columnata, el vestíbulo y un grupo escultórico. El destino del edificio ha seguido siendo políticamente disputado desde entonces: voces nacionalistas y anticomunistas han propuesto su demolición en distintos momentos tras la transición polaca de 1989, y en cada ocasión se ha rechazado alegando que el edificio, cualesquiera que fueran las circunstancias de su construcción, forma ya simplemente parte del perfil de Varsovia y de su vida cívica cotidiana.',
+      it: 'La dedica a Stalin, incisa sul colonnato e nell\'atrio all\'inaugurazione del 1955, rendeva esplicito ciò che il progetto stesso già affermava: che lo skyline di Varsavia rispondeva ora a Mosca. La torre arrivò come un «dono» non richiesto, costruito per iniziativa sovietica e non su richiesta polacca, e fu ampiamente risentito in Polonia come un monumento al dominio politico sovietico, anche se i suoi teatri, musei, il cinema e le sale pubbliche furono destinati fin dall\'inizio a un uso civico reale. La dedica a Stalin fu revocata formalmente durante la destalinizzazione seguita al 1956, e il suo nome fu rimosso dal colonnato, dall\'atrio e da un gruppo scultoreo. Il destino dell\'edificio è rimasto da allora politicamente controverso: voci nazionaliste e anticomuniste ne hanno proposto la demolizione in vari momenti dopo la transizione polacca del 1989, e ogni volta la proposta è stata respinta sostenendo che l\'edificio, quali che fossero le circostanze della sua costruzione, fa ormai semplicemente parte dello skyline di Varsavia e della sua vita civica quotidiana.',
+    },
+      sources: [
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Palace_of_Culture_and_Science', title: 'Palace of Culture and Science', license: 'CC BY-SA 4.0' },
+      ],
+    },
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q167566', title: 'Palace of Culture and Science (Q167566)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Palace_of_Culture_and_Science', title: 'Palace of Culture and Science', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://pl.wikipedia.org/wiki/Pa%C5%82ac_Kultury_i_Nauki', title: 'Pałac Kultury i Nauki (Polish Wikipedia)', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'spodek-katowice',
+    wikidataId: 'Q1051683',
+    name: {
+      en: 'Spodek, Katowice',
+      es: 'Spodek de Katowice',
+      it: 'Spodek di Katowice',
+    },
+    architectId: 'maciej-gintowt',
+    coArchitects: ['maciej-krasinski'],
+    location: { city: 'Katowice', countryCode: 'PL', lat: 50.266111, lon: 19.025278 },
+    inception: 1964,
+    completed: 1971,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['concrete', 'steel-and-glass'],
+    structure: {
+      en: 'A reinforced-concrete drum on forty flexible foundations, roofed by a tensioned saucer of 120 radial steel cables anchored to a central ring, engineered with Wacław Zalewski to flex under mining tremors rather than resist them rigidly.',
+      es: 'Un tambor de hormigón armado sobre cuarenta cimentaciones flexibles, cubierto por un platillo tensado de 120 cables de acero radiales anclados a un anillo central, calculado con Wacław Zalewski para flexionar ante las sacudidas mineras en vez de resistirlas rígidamente.',
+      it: 'Un tamburo in cemento armato su quaranta fondazioni flessibili, coperto da un disco teso di 120 cavi d\'acciaio radiali ancorati a un anello centrale, calcolato con Wacław Zalewski per flettersi sotto le scosse minerarie anziché resistervi rigidamente.',
+    },
+    program: {
+      en: 'Built for the city of Katowice, after a closed 1959 competition, as a multipurpose arena for sport, concerts and public assembly able to withstand coal-mining subsidence.',
+      es: 'Construido para la ciudad de Katowice, tras un concurso restringido de 1959, como pabellón multiusos para deporte, conciertos y actos públicos capaz de resistir la subsidencia minera.',
+      it: 'Costruito per la città di Katowice, dopo un concorso chiuso del 1959, come palazzetto polifunzionale per sport, concerti e assemblee pubbliche capace di resistere alla subsidenza mineraria.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Still an active arena seating over 10,000, renovated in 2011 and joined by an adjoining conference centre in 2015; listed on Poland\'s register of immovable cultural monuments.',
+      es: 'Sigue siendo un pabellón en activo con aforo para más de 10.000 personas, renovado en 2011 y ampliado con un centro de congresos anexo en 2015; inscrito en el registro polaco de monumentos culturales inmuebles.',
+      it: 'Resta un palazzetto attivo con posti per oltre 10.000 persone, rinnovato nel 2011 e affiancato da un centro congressi annesso nel 2015; iscritto nel registro polacco dei monumenti culturali immobili.',
+    },
+    detailRect: { x: 0.30, y: 0.32, w: 0.34, h: 0.30 },
+    image: {
+      // Close exterior view of the dome's cable roof and upper facade,
+      // shot 2024-08-08 during Wikimania Katowice. Both architects are long
+      // dead (Gintowt 2003, Krasiński 1999) but this is an exterior of a
+      // building in a full-FoP jurisdiction regardless. Rect below sits on
+      // the visible cable/rib junctions of the roof, not the sky above it.
+      commonsFile: 'File:Exterior of Spodek, 20240808.jpg',
+      photographer: 'Abzeronow',
+      license: 'CC BY 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Exterior_of_Spodek,_20240808.jpg',
+      width: 0,
+      height: 0,
+    },
+    dossier: {
+      en: 'Katowice\'s coal seams run directly beneath the city centre, and any building set there has to survive the tremors of mining subsidence. A closed 1959 competition for a hall to replace an earlier venue asked for exactly that, and the entry from architects Maciej Gintowt and Maciej Krasiński, developed with structural engineer Wacław Zalewski, answered with a shape rather than a cage: an inverted concrete cone standing on forty flexible supports, roofed by a saucer of 120 radial steel cables strung from a central ring and anchored to a reinforced concrete rim, so the whole structure can flex under a shock instead of resisting it rigidly. It was among the first tensegrity roofs attempted anywhere at this span. Ground was broken in 1964; the hall opened on 9 May 1971, seating over ten thousand under a dome unbroken by any internal column. Katowice nicknamed it Spodek, the saucer, well before it was finished, and the name displaced whatever the commission had originally intended to call it.',
+      es: 'Las vetas de carbón de Katowice corren justo bajo el centro de la ciudad, y cualquier edificio que se alce allí debe resistir las sacudidas de la subsidencia minera. Un concurso restringido convocado en 1959 para un pabellón que sustituyera a otro anterior pedía exactamente eso, y la propuesta de los arquitectos Maciej Gintowt y Maciej Krasiński, desarrollada con el ingeniero de estructuras Wacław Zalewski, respondió con una forma en vez de una jaula: un cono invertido de hormigón apoyado en cuarenta soportes flexibles, cubierto por un platillo de 120 cables de acero radiales tensados desde un anillo central y anclados a un borde de hormigón armado, de modo que toda la estructura puede flexionar ante una sacudida en lugar de resistirla rígidamente. Fue una de las primeras cubiertas de tensegridad ensayadas en el mundo a esta luz. Las obras comenzaron en 1964; el pabellón abrió el 9 de mayo de 1971, con aforo para más de diez mil personas bajo una cúpula sin una sola columna interior. Katowice lo apodó Spodek, el platillo, mucho antes de que se terminara, y el apodo desplazó cualquier nombre que el encargo hubiera previsto originalmente.',
+      it: 'I filoni di carbone di Katowice corrono proprio sotto il centro cittadino, e ogni edificio costruito lì deve resistere alle scosse della subsidenza mineraria. Un concorso chiuso bandito nel 1959 per una sala che sostituisse una precedente chiedeva esattamente questo, e la proposta degli architetti Maciej Gintowt e Maciej Krasiński, sviluppata con l\'ingegnere strutturale Wacław Zalewski, rispose con una forma anziché con una gabbia: un cono di cemento rovesciato su quaranta appoggi flessibili, coperto da un disco di 120 cavi d\'acciaio radiali tesi da un anello centrale e ancorati a un bordo in cemento armato, così che l\'intera struttura possa flettersi sotto una scossa anziché resisterle rigidamente. Fu una delle prime coperture tensegrali tentate al mondo a questa luce. I lavori iniziarono nel 1964; la sala aprì il 9 maggio 1971, con posti per oltre diecimila persone sotto una cupola priva di qualsiasi colonna interna. Katowice la soprannominò Spodek, il piattino, molto prima che fosse terminata, e il soprannome soppiantò qualunque nome l\'incarico avesse originariamente previsto.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1051683', title: 'Spodek (Q1051683)', license: null },
+      { kind: 'wikipedia', url: 'https://pl.wikipedia.org/wiki/Spodek_(hala_widowiskowa)', title: 'Spodek (hala widowiskowa) (Polish Wikipedia)', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'kotva-department-store-prague',
+    wikidataId: 'Q11744412',
+    name: {
+      en: 'Kotva Department Store, Prague',
+      es: 'Grandes almacenes Kotva de Praga',
+      it: 'Grande magazzino Kotva di Praga',
+    },
+    architectId: 'vera-machoninova',
+    coArchitects: ['vladimir-machonin'],
+    location: { city: 'Prague', countryCode: 'CZ', lat: 50.088889, lon: 14.427222 },
+    inception: 1970,
+    completed: 1975,
+    demolished: null,
+    typology: 'commercial',
+    materials: ['concrete', 'steel-and-glass'],
+    structure: {
+      en: 'A reinforced-concrete frame carrying interlocked hexagonal bays, faceted at every module edge and hung with pressed aluminium panels and dark glazing, five storeys above ground over a comparable depth of parking and services below.',
+      es: 'Una estructura de hormigón armado que soporta módulos hexagonales entrelazados, facetada en cada arista y revestida de paneles de aluminio prensado y vidrio oscuro, con cinco plantas sobre rasante y una profundidad similar de aparcamiento y servicios bajo ella.',
+      it: 'Una struttura in cemento armato che regge campate esagonali incastrate, sfaccettata a ogni spigolo e rivestita di pannelli di alluminio pressato e vetrate scure, con cinque piani fuori terra e una profondità analoga di parcheggio e servizi sottoterra.',
+    },
+    program: {
+      en: 'Built by the Czechoslovak state, with the Swedish firm SIAB as contractor, as its flagship department store, designed to serve some 75,000 customers a day.',
+      es: 'Construido por el Estado checoslovaco, con la contratista sueca SIAB, como sus grandes almacenes insignia, proyectados para atender a unos 75.000 clientes al día.',
+      it: 'Costruito dallo Stato cecoslovacco, con l\'impresa svedese SIAB come appaltatrice, come suo grande magazzino di punta, progettato per servire circa 75.000 clienti al giorno.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Still trading as a department store on its lower floors while its upper floors are converted to offices; a protected Czech cultural monument since 2019.',
+      es: 'Sigue funcionando como grandes almacenes en sus plantas inferiores mientras las superiores se reconvierten en oficinas; monumento cultural checo protegido desde 2019.',
+      it: 'Continua a funzionare come grande magazzino ai piani inferiori mentre quelli superiori vengono convertiti in uffici; monumento culturale ceco protetto dal 2019.',
+    },
+    detailRect: { x: 0.32, y: 0.30, w: 0.32, h: 0.30 },
+    image: {
+      // Exterior street view of the hexagonal-module facade, taken 2013.
+      // Machoninová is living (b. 1928) and Machonin died 1990 (36 years,
+      // well inside the 70-year window), so exterior-only applies to both;
+      // this is an exterior. Rect sits on a hexagon facet junction of the
+      // facade, away from sky and pavement.
+      commonsFile: 'File:Kotva Department Store, Prague.jpg',
+      photographer: 'Slyronit',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Kotva_Department_Store,_Prague.jpg',
+      width: 0,
+      height: 0,
+    },
+    dossier: {
+      en: 'Věra Machoninová and Vladimír Machonin, a married couple who ran their practice jointly, planned Kotva around a single repeating cell: a hexagon, multiplied and interlocked so that the whole footprint reads as a honeycomb rather than a block, with no facade oriented the same way as its neighbour. Five storeys rise above Náměstí Republiky and roughly as many descend below it for parking and a supermarket, threaded by ten escalators in two shafts, an unusually generous circulation for a Prague department store. The exterior hangs pressed aluminium panels and dark glazing from a reinforced concrete frame, faceted at every hexagon edge so the building reads as crystalline rather than smooth. Built with the Swedish contractor SIAB, unusual for Czechoslovakia at the time, it opened on 10 February 1975 as the largest department store in the country, publicly framed as proof of socialist abundance even as supply shortages already strained the shelves behind its glazing. It was declared a Czech cultural monument in 2019, after an earlier bid for protection had failed in 2007.',
+      es: 'Věra Machoninová y Vladimír Machonin, un matrimonio que dirigía su estudio conjuntamente, proyectaron Kotva a partir de una sola célula repetida: un hexágono, multiplicado y entrelazado hasta que toda la planta se lee como un panal más que como un bloque, sin que ninguna fachada mire exactamente en la misma dirección que su vecina. Cinco plantas se alzan sobre la plaza de la República y otras tantas descienden bajo ella para aparcamiento y un supermercado, recorridas por diez escaleras mecánicas en dos núcleos, una circulación inusualmente generosa para unos grandes almacenes praguenses. El exterior cuelga paneles de aluminio prensado y vidrio oscuro de una estructura de hormigón armado, facetados en cada arista hexagonal, de modo que el edificio se lee cristalino y no liso. Construido con la contratista sueca SIAB, algo inusual en la Checoslovaquia de la época, abrió el 10 de febrero de 1975 como los mayores grandes almacenes del país, presentados públicamente como prueba de la abundancia socialista mientras la escasez de suministros ya tensaba las estanterías tras su fachada acristalada. Fue declarado monumento cultural checo en 2019, tras un primer intento de protección fallido en 2007.',
+      it: 'Věra Machoninová e Vladimír Machonin, una coppia sposata che dirigeva insieme il proprio studio, progettarono Kotva a partire da un\'unica cellula ripetuta: un esagono, moltiplicato e incastrato finché l\'intera pianta si legge come un alveare piuttosto che come un blocco, senza che due facciate vicine siano mai orientate allo stesso modo. Cinque piani si innalzano sopra piazza della Repubblica e altrettanti scendono sotto di essa per il parcheggio e un supermercato, collegati da dieci scale mobili in due nuclei, una circolazione insolitamente generosa per un grande magazzino praghese. L\'esterno appende pannelli di alluminio pressato e vetrate scure a una struttura in cemento armato, sfaccettati su ogni spigolo esagonale, così che l\'edificio si legga cristallino anziché liscio. Costruito con l\'impresa svedese SIAB, cosa insolita per la Cecoslovacchia dell\'epoca, aprì il 10 febbraio 1975 come il più grande grande magazzino del paese, presentato pubblicamente come prova dell\'abbondanza socialista mentre le carenze di approvvigionamento già mettevano a dura prova gli scaffali dietro le sue vetrine. Fu dichiarato monumento culturale ceco nel 2019, dopo un primo tentativo di tutela fallito nel 2007.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q11744412', title: 'Kotva (Q11744412)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Kotva_Department_Store', title: 'Kotva Department Store', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://cs.wikipedia.org/wiki/Kotva_(obchodn%C3%AD_d%C5%AFm)', title: 'Kotva (obchodní dům) (Czech Wikipedia)', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
 ];
