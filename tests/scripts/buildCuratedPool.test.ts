@@ -71,6 +71,31 @@ describe('deriveArchitectGeography', () => {
     expect(result.workRegions).toEqual([]);
     expect(result.workCentroid).toEqual({ lat: 0, lon: 0 });
   });
+
+  // Decision (see buildCuratedPool.ts): a co-credited building IS included
+  // when deriving an architect's workRegions/workCentroid — those fields
+  // describe where an architect actually worked, and a co-authored building
+  // is somewhere they worked, even though it isn't their answer-key credit.
+  it('includes a co-credited building when deriving workRegions/workCentroid', () => {
+    const primary = building('b1', 'primary-arch', 'FR', { lat: 48.8566, lon: 2.3522 });
+    const coCredited = {
+      ...building('b2', 'other-arch', 'JP', { lat: 35.6762, lon: 139.6503 }),
+      coArchitects: ['co-arch'],
+    };
+    const result = deriveArchitectGeography('co-arch', [primary, coCredited]);
+    // Only b2 (Eastern Asia) belongs to 'co-arch' via the co-credit — the
+    // derivation must not pick up b1, credited solely to 'primary-arch'.
+    expect(result.workRegions).toEqual(['Eastern Asia']);
+    expect(result.workCentroid).toEqual({ lat: 35.6762, lon: 139.6503 });
+  });
+
+  it('merges a co-credited building alongside an architect\'s own primary buildings', () => {
+    const own = building('b1', 'arch', 'FR', { lat: 0, lon: 0 });
+    const coCredited = { ...building('b2', 'other-arch', 'FR', { lat: 10, lon: 20 }), coArchitects: ['arch'] };
+    const result = deriveArchitectGeography('arch', [own, coCredited]);
+    // Centroid averages both buildings (own + co-credited), not just b1.
+    expect(result.workCentroid).toEqual({ lat: 5, lon: 10 });
+  });
 });
 
 function building(
