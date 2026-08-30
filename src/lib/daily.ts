@@ -1,6 +1,24 @@
 export const EPOCH = Date.UTC(2026, 8, 1); // 2026-09-01, launch day
 const DAY_MS = 86_400_000;
 
+// One-day editorial selections use the player's local calendar date. If an
+// entry is no longer in the featured pool, the game safely falls back to the
+// normal deterministic rotation.
+export const DAILY_BUILDING_OVERRIDES: Readonly<Record<string, string>> = {
+  '2026-08-30': 'the-shard',
+};
+
+export function localDateKey(now: Date): string {
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+export function dailyBuildingIdOverride(now: Date): string | undefined {
+  return DAILY_BUILDING_OVERRIDES[localDateKey(now)];
+}
+
 export function mulberry32(seed: number): () => number {
   let a = seed >>> 0;
   return () => {

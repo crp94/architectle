@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import {
-  dailyIndex, displayPuzzleNumber, localDayIndex, mulberry32, puzzleNumber, shuffledCycle, EPOCH,
+  dailyBuildingIdOverride, dailyIndex, displayPuzzleNumber, localDayIndex, mulberry32, puzzleNumber, shuffledCycle, EPOCH,
 } from '@/lib/daily';
 
 describe('mulberry32', () => {
@@ -28,6 +28,14 @@ describe('shuffledCycle', () => {
 });
 
 describe('dailyIndex', () => {
+  it('pins today to The Shard by Renzo Piano', () => {
+    expect(dailyBuildingIdOverride(new Date(2026, 7, 30, 12))).toBe('the-shard');
+  });
+
+  it('leaves other days on the normal rotation', () => {
+    expect(dailyBuildingIdOverride(new Date(2026, 7, 31, 12))).toBeUndefined();
+  });
+
   it('visits every building exactly once before repeating', () => {
     const n = 40;
     const seen = new Set<number>();

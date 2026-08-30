@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { architectById, featuredBuildings } from '@/lib/pool';
 import { buildingsByArchitect } from '@/lib/archive';
-import { dailyIndex, puzzleNumber } from '@/lib/daily';
+import { dailyBuildingIdOverride, dailyIndex, puzzleNumber } from '@/lib/daily';
 import { compareArchitects, type Comparison } from '@/lib/axes';
 import { cluesAt } from '@/lib/clues';
 import {
@@ -50,6 +50,9 @@ type GuessEntry = { architect: Architect; comparison: Comparison };
 
 function pickDailyBuilding(): Building {
   const pool = featuredBuildings();
+  const overrideId = dailyBuildingIdOverride(new Date());
+  const override = overrideId ? pool.find((building) => building.id === overrideId) : undefined;
+  if (override) return override;
   const idx = dailyIndex(new Date(), pool.length);
   return pool[idx];
 }
