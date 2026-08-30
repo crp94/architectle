@@ -3,10 +3,14 @@ import { movementById, referencedMovementIds } from '@/lib/archive';
 import { familyLabel } from '@/lib/facts';
 import { t } from '@/lib/i18n';
 import { theme } from '@/lib/theme';
+import { markDataUri } from '@/lib/brandArt';
 
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 export const alt = 'An architecture movement on Architectle, with its family and approximate span.';
+// `markDataUri()` rasterizes the brand SVG via `sharp` — needs real Node
+// bindings, same as `building/[slug]`'s own OG route.
+export const runtime = 'nodejs';
 
 type Params = { slug: string };
 
@@ -32,6 +36,7 @@ export default async function Image({ params }: { params: Promise<Params> }) {
   const meta = movement
     ? `${familyLabel(movement.family, 'en')} · ${movement.approxSpan.start}–${movement.approxSpan.end ?? t('en', 'archiveOngoing')}`
     : '';
+  const mark = await markDataUri();
 
   return new ImageResponse(
     (
@@ -48,17 +53,20 @@ export default async function Image({ params }: { params: Promise<Params> }) {
           padding: '80px 96px',
         }}
       >
-        <div
-          style={{
-            display: 'flex',
-            fontSize: 22,
-            letterSpacing: 3,
-            textTransform: 'uppercase',
-            color: accent,
-            fontFamily: 'Arial, Helvetica, sans-serif',
-          }}
-        >
-          Architectle Archive
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <img src={mark} alt="" width={22} height={22} style={{ display: 'flex' }} />
+          <div
+            style={{
+              display: 'flex',
+              fontSize: 22,
+              letterSpacing: 3,
+              textTransform: 'uppercase',
+              color: accent,
+              fontFamily: 'Arial, Helvetica, sans-serif',
+            }}
+          >
+            Architectle Archive
+          </div>
         </div>
         <div
           style={{

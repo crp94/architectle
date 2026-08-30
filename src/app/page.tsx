@@ -124,8 +124,25 @@ export default async function Home({
           fontFamily: theme.type.display,
         }}
       >
-        <h1 className="text-4xl uppercase tracking-tight text-ink">
-          {t(locale, "appTitle")}
+        {/* The real owner wordmark (public/brand/architectle-logo.svg)
+            replaces the styled-text title: its ink/accent fills are the
+            exact hex this palette's `theme.color.ink`/`accent` already use
+            (#1b1712 / #6e2a1f), so it reads as native to the gallery
+            register rather than a foreign brand mark dropped on top. `h1`
+            stays for semantics; the localized title becomes the image's
+            `alt` (its accessible name to a screen reader/crawler) since the
+            logo asset itself can't localize. */}
+        <h1 className="flex items-center">
+          {/* eslint-disable-next-line @next/next/no-img-element -- a
+              static local brand SVG with no responsive/loader benefit from
+              next/image; see CropStage.tsx/ClueStrip.tsx for the same
+              already-established exception. */}
+          <img
+            src="/brand/architectle-logo.svg"
+            alt={t(locale, "appTitle")}
+            height={44}
+            style={{ height: 44, width: "auto" }}
+          />
         </h1>
         <p
           className="text-sm normal-case tracking-normal text-ink/70"

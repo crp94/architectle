@@ -4,6 +4,7 @@ import { join } from 'node:path';
 import sharp from 'sharp';
 import { BUILDINGS, architectById, buildingBySlug } from '@/lib/pool';
 import { theme } from '@/lib/theme';
+import { markDataUri } from '@/lib/brandArt';
 
 // `sharp` (already a project dependency — the same AVIF pipeline
 // fetchImages.ts uses) needs real Node bindings, and reads the built photo
@@ -80,6 +81,7 @@ export default async function Image({ params }: { params: Promise<Params> }) {
     .png()
     .toBuffer();
   const photoSrc = `data:image/png;base64,${pngBuffer.toString('base64')}`;
+  const mark = await markDataUri();
 
   return new ImageResponse(
     (
@@ -109,17 +111,33 @@ export default async function Image({ params }: { params: Promise<Params> }) {
             padding: '32px 48px',
           }}
         >
+          {/* A solid paper chip behind the mark: the corner sits directly
+              on the photo with no scrim (unlike the bottom caption band),
+              so the mark's own ink/accent fill needs a guaranteed-contrast
+              ground of its own regardless of what the photo looks like
+              there. */}
           <div
             style={{
               display: 'flex',
-              fontSize: 24,
-              letterSpacing: 3,
-              textTransform: 'uppercase',
-              color: paper,
-              fontFamily: 'Arial, Helvetica, sans-serif',
+              alignItems: 'center',
+              gap: 12,
+              backgroundColor: paper,
+              padding: '8px 16px',
             }}
           >
-            Architectle
+            <img src={mark} alt="" width={28} height={28} style={{ display: 'flex' }} />
+            <div
+              style={{
+                display: 'flex',
+                fontSize: 24,
+                letterSpacing: 3,
+                textTransform: 'uppercase',
+                color: ink,
+                fontFamily: 'Arial, Helvetica, sans-serif',
+              }}
+            >
+              Architectle
+            </div>
           </div>
         </div>
         <div

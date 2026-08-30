@@ -32,7 +32,19 @@ export function SiteFooter({ locale = 'en' as Locale }: { locale?: Locale }) {
       style={{ fontFamily: theme.type.mono }}
     >
       {links.map((link) => (
-        <Link key={link.href} data-testid={link.testId} href={link.href} className="underline">
+        <Link
+          key={link.href}
+          data-testid={link.testId}
+          href={link.href}
+          className={link.href === '/' ? 'flex items-center gap-1 underline' : 'underline'}
+        >
+          {link.href === '/' && (
+            // A static local brand SVG with no responsive/loader benefit
+            // from next/image; see CropStage.tsx/ClueStrip.tsx for the same
+            // already-established exception.
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src="/brand/architectle-mark.svg" alt="" width={14} height={14} />
+          )}
           {link.label}
         </Link>
       ))}

@@ -21,7 +21,12 @@ export function ArchiveNav({ locale }: { locale: Locale }) {
         borderBottomColor: theme.color.frameLine,
       }}
     >
-      <Link href="/" className="underline">
+      <Link href="/" className="flex items-center gap-1.5 underline">
+        {/* eslint-disable-next-line @next/next/no-img-element -- a static
+            local brand SVG with no responsive/loader benefit from
+            next/image; see CropStage.tsx/ClueStrip.tsx for the same
+            already-established exception. */}
+        <img src="/brand/architectle-mark.svg" alt="" width={18} height={18} />
         {t(locale, 'appTitle')}
       </Link>
       <Link href="/buildings" className="underline">

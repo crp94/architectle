@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" shape-rendering="crispEdges" role="img" aria-labelledby="title">
+  <title id="title">Architectle</title>
+  <rect width="16" height="16" fill="#f5f0e6"/>
+  <path fill="#1b1712" d="M1 14V1h14v13h-2V3H3v11H1Z"/>
+  <path fill="#6e2a1f" d="M4 13V4h8v9h-2V6H6v7H4Z"/>
+  <path fill="#1b1712" d="M5 15 7 7h2l2 8H9l-.4-2H7.4L7 15H5Z"/>
+  <path fill="#6e2a1f" d="m8 9 1 3H7l1-3Z"/>
+</svg>

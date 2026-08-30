@@ -1,9 +1,14 @@
 import { ImageResponse } from 'next/og';
 import { theme } from '@/lib/theme';
+import { logoDataUri } from '@/lib/brandArt';
 
 export const alt = 'Architectle — name the architect from a widening crop of a building photo. A new building every day.';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
+// `logoDataUri()` reads the brand SVG off disk and rasterizes it via
+// `sharp` — needs real Node bindings, same as `building/[slug]`'s own OG
+// route.
+export const runtime = 'nodejs';
 
 // The generic, branded fallback OG image for the whole site (design spec
 // §7: per-route dynamic OG images "replacing the single static template" —
@@ -44,13 +49,14 @@ const GRID: CellState[][] = [
   ['exact', 'exact', 'exact', 'exact'],
 ];
 
-export default function Image() {
+export default async function Image() {
   const paper = theme.color.paper;
   const ink = theme.color.ink;
   const accent = theme.color.accent;
   const frameLine = theme.color.frameLine;
 
   const cellFill: Record<CellState, string> = { none: paper, partial: accent, exact: ink };
+  const logo = await logoDataUri();
 
   return new ImageResponse(
     (
@@ -66,18 +72,10 @@ export default function Image() {
           color: ink,
         }}
       >
-        <div
-          style={{
-            display: 'flex',
-            fontSize: 104,
-            fontWeight: 700,
-            letterSpacing: -3,
-            textTransform: 'uppercase',
-            fontFamily: 'Georgia, "Times New Roman", serif',
-          }}
-        >
-          Architectle
-        </div>
+        {/* The real owner wordmark, not a re-typed "Architectle" —
+            `alt=""`: decorative within the OG image itself, which already
+            carries its own `alt` export for screen readers. */}
+        <img src={logo} alt="" width={624} height={107} style={{ display: 'flex' }} />
         <div
           style={{
             display: 'flex',
