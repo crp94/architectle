@@ -1,8 +1,12 @@
+import type { Metadata } from "next";
 import { theme } from "@/lib/theme";
 import { t, LOCALES, type Locale } from "@/lib/i18n";
 import { GameBoard } from "@/components/game/GameBoard";
 import { LocaleSwitcher } from "@/components/game/LocaleSwitcher";
 import { buildingBySlug } from "@/lib/pool";
+import { SITE_URL } from "@/lib/site";
+import { puzzleNumber } from "@/lib/daily";
+import { websiteJsonLd } from "@/lib/jsonld";
 
 // The index signature (beyond the two named fields this page itself reads)
 // keeps this type assignable to LocaleSwitcher's `searchParams` prop, which
@@ -12,6 +16,56 @@ type SearchParams = { lang?: string; e2eBuilding?: string; [key: string]: string
 
 function resolveLocale(raw: string | undefined): Locale {
   return (LOCALES as readonly string[]).includes(raw ?? "") ? (raw as Locale) : "en";
+}
+
+/**
+ * Home page metadata (design spec §7): a daily freshness signal — the
+ * puzzle number and date — in the description, with zero hint of the
+ * day's actual building or architect. `puzzleNumber` is purely
+ * date-derived (src/lib/daily.ts) so it's safe to compute here, server
+ * side, unlike the daily BUILDING, which this v2 game resolves
+ * client-side specifically to avoid ever putting the answer in
+ * server-rendered HTML or a response any crawler could read before the
+ * round starts.
+ *
+ * `alternates.languages` carries the three `?lang=` query-param variants
+ * the real, reachable locale switch (`LocaleSwitcher.tsx`) produces — the
+ * only locale-routed surface in the app today — plus an `x-default`
+ * pointing at the bare English root.
+ */
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<SearchParams>;
+}): Promise<Metadata> {
+  const params = await searchParams;
+  const locale = resolveLocale(params.lang);
+  const now = new Date();
+  // `puzzleNumber` runs negative/zero before `EPOCH` (src/lib/daily.ts) —
+  // real for any environment (a preview deploy, a pre-launch build) whose
+  // clock reads before launch day. Clamped to 1 so a description meant to
+  // read as a freshness SIGNAL never reads as a visible bug instead.
+  const n = Math.max(1, puzzleNumber(now));
+  const description = t(locale, "metaHomeDescription", {
+    n,
+    date: new Intl.DateTimeFormat(locale, { dateStyle: "long" }).format(now),
+  });
+  const canonical = locale === "en" ? `${SITE_URL}/` : `${SITE_URL}/?lang=${locale}`;
+
+  return {
+    description,
+    alternates: {
+      canonical,
+      languages: {
+        en: `${SITE_URL}/`,
+        es: `${SITE_URL}/?lang=es`,
+        it: `${SITE_URL}/?lang=it`,
+        "x-default": `${SITE_URL}/`,
+      },
+    },
+    openGraph: { description, url: canonical, type: "website", siteName: "Architectle" },
+    twitter: { card: "summary_large_image", description },
+  };
 }
 
 export default async function Home({
@@ -34,6 +88,10 @@ export default async function Home({
 
   return (
     <main className="flex flex-1 flex-col bg-paper">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd()) }}
+      />
       <div
         className="flex flex-col items-center gap-2 border-ink bg-accent px-8 py-6"
         style={{

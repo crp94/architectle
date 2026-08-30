@@ -152,10 +152,20 @@ const en = {
   archiveMovementsCount: '{count} movements',
 
   // Archive <title>/<meta description>
-  metaArchiveTitle: '{name} — Architectle Archive',
+  metaArchiveTitle: '{name}',
+  // Building pages name both the building AND its architect in the title
+  // (the "Fallingwater — Frank Lloyd Wright | Architectle" pattern) —
+  // distinct from `metaArchiveTitle` because a building is the one archive
+  // entity with a natural second name to surface up front.
+  metaBuildingTitle: '{building} — {architect}',
   metaBuildingsIndexDescription: 'Every building in the Architectle pool — {count} landmarks, illustrated and sourced.',
   metaArchitectsIndexDescription: 'Every architect in the Architectle pool — {count} names, with their works, movements and provenance.',
   metaMovementsIndexDescription: 'Every architecture movement referenced in the Architectle pool — {count} movements, with their architects and buildings.',
+  // Home page <meta description> — a daily freshness signal (puzzle
+  // number + date) with zero hint of the day's actual building or
+  // architect (design spec §7, Task w4c).
+  metaHomeDescription: 'Daily architecture puzzle #{n} ({date}) — name the architect from a widening crop of a building photo. A new building every day.',
+  metaAboutDescription: 'What Architectle is, where its data comes from, and the honest limitations of a hand-curated pool of buildings and architects.',
 
   // Movement family labels (Movement.family, src/types/movement.ts)
   familyClassical: 'Classical',
@@ -298,10 +308,13 @@ const es: Strings = {
   archiveArchitectsCount: '{count} arquitectos',
   archiveMovementsCount: '{count} movimientos',
 
-  metaArchiveTitle: '{name} — Archivo de Architectle',
+  metaArchiveTitle: '{name}',
+  metaBuildingTitle: '{building} — {architect}',
   metaBuildingsIndexDescription: 'Todos los edificios del listado de Architectle — {count} monumentos, ilustrados y documentados.',
   metaArchitectsIndexDescription: 'Todos los arquitectos del listado de Architectle — {count} nombres, con sus obras, movimientos y procedencia.',
   metaMovementsIndexDescription: 'Todos los movimientos arquitectónicos presentes en el listado de Architectle — {count} movimientos, con sus arquitectos y edificios.',
+  metaHomeDescription: 'Puzle diario de arquitectura n.º {n} ({date}) — adivina el arquitecto a partir de un recorte que se va ampliando de la foto de un edificio. Un edificio nuevo cada día.',
+  metaAboutDescription: 'Qué es Architectle, de dónde vienen sus datos y las limitaciones honestas de un listado de edificios y arquitectos curado a mano.',
 
   familyClassical: 'Clásica',
   familyMedieval: 'Medieval',
@@ -441,10 +454,13 @@ const it: Strings = {
   archiveArchitectsCount: '{count} architetti',
   archiveMovementsCount: '{count} movimenti',
 
-  metaArchiveTitle: '{name} — Archivio di Architectle',
+  metaArchiveTitle: '{name}',
+  metaBuildingTitle: '{building} — {architect}',
   metaBuildingsIndexDescription: "Tutti gli edifici del catalogo di Architectle — {count} monumenti, illustrati e documentati.",
   metaArchitectsIndexDescription: 'Tutti gli architetti del catalogo di Architectle — {count} nomi, con le loro opere, i movimenti e la provenienza.',
   metaMovementsIndexDescription: 'Tutti i movimenti architettonici presenti nel catalogo di Architectle — {count} movimenti, con i loro architetti ed edifici.',
+  metaHomeDescription: "Puzzle quotidiano di architettura n. {n} ({date}) — indovina l'architetto da un ritaglio che si allarga della foto di un edificio. Un edificio nuovo ogni giorno.",
+  metaAboutDescription: "Cos'è Architectle, da dove vengono i suoi dati e i limiti onesti di un catalogo di edifici e architetti curato a mano.",
 
   familyClassical: 'Classica',
   familyMedieval: 'Medievale',

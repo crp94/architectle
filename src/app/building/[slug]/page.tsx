@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BUILDINGS, architectById, buildingBySlug } from '@/lib/pool';
-import { buildingJsonLd } from '@/lib/jsonld';
+import { breadcrumbJsonLd, buildingJsonLd } from '@/lib/jsonld';
 import { SITE_URL } from '@/lib/site';
 import { t } from '@/lib/i18n';
 import { theme } from '@/lib/theme';
@@ -32,27 +32,33 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   if (!building) return {};
   const architect = architectById(building.architectId);
   const name = building.name.en;
-  const title = t(LOCALE, 'metaArchiveTitle', { name });
+  // "{building} — {architect}" (design spec §7's own example title
+  // pattern) — the root layout's `title.template` appends "| Architectle".
+  const title = t(LOCALE, 'metaBuildingTitle', { building: name, architect: architect.name });
   const description = building.dossier.en.slice(0, 155);
   const url = `${SITE_URL}/building/${building.id}`;
-  const image = `${SITE_URL}/buildings/${building.id}.avif`;
 
   return {
     title,
     description,
     alternates: { canonical: url },
+    // No `images` here: this route's own `opengraph-image.tsx` (the
+    // building's photo + name + wordmark, composed at request time) is
+    // file-based metadata, which Next always prefers over anything set
+    // here — see generateMetadata's own docs. Naming an image here too
+    // would be dead, and would point straight at the raw `.avif` file,
+    // a format several OG crawlers don't render.
     openGraph: {
       title,
       description,
       url,
       type: 'article',
-      images: [{ url: image, width: building.image.width, height: building.image.height, alt: name }],
+      siteName: 'Architectle',
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: [image],
     },
     other: { 'article:author': architect.name },
   };
@@ -74,6 +80,16 @@ export default async function BuildingPage({ params }: { params: Promise<Params>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(buildingJsonLd(building, architect)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd([
+            { name: t(LOCALE, 'appTitle'), url: SITE_URL },
+            { name: t(LOCALE, 'navBuildingsLink'), url: `${SITE_URL}/buildings` },
+            { name: buildingName, url: `${SITE_URL}/building/${building.id}` },
+          ])),
+        }}
       />
       <article className="flex flex-col gap-6 p-4 md:p-8">
         <div className="flex flex-col gap-1">
@@ -119,6 +135,11 @@ export default async function BuildingPage({ params }: { params: Promise<Params>
                 height={building.image.height}
                 sizes="(min-width: 768px) 50vw, 100vw"
                 style={{ width: '100%', height: 'auto' }}
+                // This is the building page's own hero — the largest
+                // above-the-fold image on first paint, and its likely LCP
+                // element — so it skips next/image's default lazy loading
+                // (design spec §7's performance pass).
+                priority
               />
             </div>
             <a

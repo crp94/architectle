@@ -13,7 +13,13 @@ export function generateMetadata(): Metadata {
   const title = t(LOCALE, 'metaArchiveTitle', { name: t(LOCALE, 'navMovementsLink') });
   const description = t(LOCALE, 'metaMovementsIndexDescription', { count: referencedMovementIds().length });
   const url = `${SITE_URL}/movements`;
-  return { title, description, alternates: { canonical: url }, openGraph: { title, description, url } };
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url, type: 'website', siteName: 'Architectle' },
+    twitter: { card: 'summary_large_image', title, description },
+  };
 }
 
 export default function MovementsIndexPage() {
