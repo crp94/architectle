@@ -2,17 +2,28 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { architectById, featuredBuildings } from '@/lib/pool';
+import { buildingsByArchitect } from '@/lib/archive';
 import { dailyIndex, puzzleNumber } from '@/lib/daily';
 import { compareArchitects, type Comparison } from '@/lib/axes';
+import { cluesAt } from '@/lib/clues';
 import { clearState, loadState, saveState, type GameState } from '@/lib/storage';
 import { t, type Locale } from '@/lib/i18n';
 import { theme } from '@/lib/theme';
+import { imageCredit } from '@/lib/facts';
 import type { Building } from '@/types/building';
 import type { Architect } from '@/types/architect';
+import { GalleryFrame } from '@/components/ui/GalleryFrame';
 import { CropStage } from './CropStage';
+import { ClueStrip } from './ClueStrip';
 import { GuessField } from './GuessField';
 import { GuessRow } from './GuessRow';
 import { Reveal } from '@/components/reveal/Reveal';
+
+// The crop stage's real-world width/height ratio (design spec §3 — unchanged
+// from Task 11). Threaded explicitly into both `<GalleryFrame />` (its mat
+// window) and `<CropStage />` (its own crop math) so the two agree even if
+// either component's own default ever diverges from the other's.
+const STAGE_ASPECT = 16 / 9;
 
 const TOTAL_GUESSES = 6;
 
@@ -221,24 +232,48 @@ export function GameBoard({ mode = 'daily', building, locale = 'en' }: GameBoard
   const currentGuessNumber = Math.min(guesses.length + 1, TOTAL_GUESSES);
   const buildingName = target.name[locale] ?? target.name.en;
 
+  // Every guess still in `guesses` while the round is in progress is a
+  // WRONG one (a correct guess sets `finished` and the branch above already
+  // returns `<Reveal />` before this point) — so the miss count the clue
+  // ladder keys off is exactly `guesses.length`, with no separate counter
+  // to keep in sync. Sibling candidates are drawn from the FULL archive
+  // (`buildingsByArchitect`, not the small featured-only pool) so a
+  // featured architect who currently holds only their target building in
+  // the featured set can still surface a real "also designed" work.
+  const clues = cluesAt(target, targetArchitect, buildingsByArchitect(targetArchitect.id), guesses.length);
+
   return (
-    <div data-testid="game-board" className="flex flex-1 flex-col">
-      <CropStage
-        imageSrc={`/buildings/${target.id}.avif`}
-        imageAlt={buildingName}
-        imageWidth={target.image.width}
-        imageHeight={target.image.height}
-        detailRect={target.detailRect}
-        guess={currentGuessNumber}
-        totalGuesses={TOTAL_GUESSES}
-      />
-      <div className="border-b-[3px] border-ink" />
-      <div className="flex flex-col gap-4 p-4">
-        <p className="text-sm uppercase tracking-wide" style={{ fontFamily: theme.type.mono }}>
+    <div
+      data-testid="game-board"
+      className="flex flex-1 flex-col gap-6 p-4 sm:p-6 lg:grid lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:items-start lg:gap-10 lg:p-10"
+    >
+      <GalleryFrame
+        aspectRatio={STAGE_ASPECT}
+        caption={imageCredit(target.image, locale)}
+        className="lg:sticky lg:top-6"
+      >
+        <CropStage
+          imageSrc={`/buildings/${target.id}.avif`}
+          imageAlt={buildingName}
+          imageWidth={target.image.width}
+          imageHeight={target.image.height}
+          detailRect={target.detailRect}
+          guess={currentGuessNumber}
+          totalGuesses={TOTAL_GUESSES}
+          stageAspect={STAGE_ASPECT}
+        />
+      </GalleryFrame>
+
+      <div className="flex flex-col gap-5">
+        <p
+          className="text-xs uppercase tracking-[0.2em] text-ink/70"
+          style={{ fontFamily: theme.type.ui }}
+        >
           {t(locale, 'guessCounter', { n: currentGuessNumber, total: TOTAL_GUESSES })}
         </p>
+        <ClueStrip locale={locale} clues={clues} buildingId={target.id} buildingName={buildingName} />
         <GuessField locale={locale} onGuess={handleGuess} disabled={finished} />
-        <div>
+        <div className="flex flex-col">
           {guesses.map((g, i) => (
             <GuessRow key={`${g.architect.id}-${i}`} guess={g.architect} comparison={g.comparison} locale={locale} />
           ))}

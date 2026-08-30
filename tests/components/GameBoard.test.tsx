@@ -138,6 +138,36 @@ describe('GameBoard', () => {
     expect(screen.getByText('Guess 2 of 6')).toBeTruthy();
   });
 
+  it('presents the photograph in a gallery frame with an in-game photographer credit', () => {
+    // v2 re-skin (design spec §5): the photographer credit used to be
+    // reveal-only; it must now be visible during play, under the frame.
+    render(<GameBoard building={targetBuilding} mode="daily" locale="en" />);
+
+    expect(screen.getByTestId('gallery-frame')).toBeTruthy();
+    const caption = screen.getByTestId('gallery-frame-caption');
+    expect(caption.textContent).toContain('Test Photographer');
+    expect(caption.textContent).toContain('CC0');
+  });
+
+  it('unlocks one case-file clue per wrong guess', () => {
+    render(<GameBoard building={targetBuilding} mode="daily" locale="en" />);
+    const input = screen.getByLabelText('Name the architect');
+
+    // No misses yet: no clue strip at all.
+    expect(screen.queryByTestId('clue-strip')).toBeNull();
+
+    submit(input, 'Wrong Architect');
+    // Miss 1: completion year only. targetBuilding.completed === 1965.
+    expect(screen.getByTestId('clue-year').textContent).toContain('1965');
+    expect(screen.queryByTestId('clue-country')).toBeNull();
+
+    submit(input, 'Wrong Architect');
+    // Miss 2: country joins the year clue. targetBuilding's countryCode is 'XX'.
+    expect(screen.getByTestId('clue-year')).toBeTruthy();
+    expect(screen.getByTestId('clue-country').textContent).toContain('XX');
+    expect(screen.queryByTestId('clue-typology-material')).toBeNull();
+  });
+
   it('rejects an off-roster name without consuming a guess', () => {
     render(<GameBoard building={targetBuilding} mode="daily" locale="en" />);
     const input = screen.getByLabelText('Name the architect');
