@@ -902,4 +902,212 @@ export const AMERICAS_BUILDINGS: Building[] = [
     ],
     tier: 'canon',
   },
+  {
+    // Wave V2-3, batch B8. `robert-venturi` defined in architects/
+    // americas.ts (this file); solo-era work, predating Denise Scott
+    // Brown's involvement in the firm.
+    id: 'vanna-venturi-house',
+    wikidataId: 'Q2060721',
+    name: {
+      en: 'Vanna Venturi House',
+      es: 'Casa Vanna Venturi',
+      it: 'Casa Vanna Venturi',
+    },
+    architectId: 'robert-venturi',
+    location: { city: 'Philadelphia, Pennsylvania', countryCode: 'US', lat: 40.07000, lon: -75.20889 },
+    inception: 1959,
+    completed: 1964,
+    demolished: null,
+    typology: 'domestic',
+    materials: ['timber'],
+    structure: {
+      en: "A single-storey-plus-attic rectangle in light wood frame under a symmetrical gabled roof that Venturi splits down the middle, its off-centre front door set beneath an arch itself sliced by a vertical light slot.",
+      es: 'Un rectángulo de una planta más ático, de estructura ligera de madera, bajo una cubierta a dos aguas simétrica que Venturi corta por la mitad, con la puerta principal descentrada bajo un arco a su vez partido por una ranura vertical de luz.',
+      it: "Un rettangolo di un piano più mansarda, a struttura leggera in legno, sotto una copertura a capanna simmetrica che Venturi taglia a metà, con la porta d'ingresso decentrata sotto un arco a sua volta spezzato da una fessura verticale di luce.",
+    },
+    program: {
+      en: "A private house designed for the architect's mother, Vanna Venturi, an elderly widow, on a lot in the Chestnut Hill neighbourhood of Philadelphia.",
+      es: 'Vivienda privada proyectada para la madre del arquitecto, Vanna Venturi, viuda de edad avanzada, en un solar del barrio de Chestnut Hill, en Filadelfia.',
+      it: "Abitazione privata progettata per la madre dell'architetto, Vanna Venturi, vedova anziana, su un lotto nel quartiere di Chestnut Hill, a Filadelfia.",
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Private residence, sold out of the Venturi family in 2016.',
+      es: 'Vivienda privada, vendida fuera de la familia Venturi en 2016.',
+      it: "Abitazione privata, venduta fuori dalla famiglia Venturi nel 2016.",
+    },
+    detailRect: { x: 0.53, y: 0.22, w: 0.28, h: 0.45 },
+    image: {
+      commonsFile: 'File:Vanna Venturi House in Chestnut Hill, Philadelphia, Pennsylvania LCCN2011631388.jpg',
+      photographer: 'Carol M. Highsmith',
+      license: 'PD',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Vanna_Venturi_House_in_Chestnut_Hill,_Philadelphia,_Pennsylvania_LCCN2011631388.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:V_Venturi_H_720am.JPG',
+        photographer: 'Smallbones',
+        license: 'PD',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:V_Venturi_H_720am.JPG',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "Venturi designed this house for his mother, Vanna, on a wooded lot in Chestnut Hill, and used it to argue in built form against everything postwar Modernism took for granted. The plan is a single rectangle with a symmetrical gabled front, quoted from centuries of American domestic building, but Venturi breaks the symmetry immediately: the front door sits off-centre beneath an arch that is itself split by a vertical slot, and the gable is sliced through the middle so the chimney and the roofline read as two competing, unresolved shapes rather than one clean whole. Inside, a single stair, deliberately too narrow and steeply pitched to be comfortable, wedges between rooms sized and shaped for his mother's specific daily routine as an elderly widow living largely on one floor. Built for a modest budget between 1962 and 1964, the house became architecture's most-reproduced diagram of postmodern ideas years before Venturi wrote them down in Complexity and Contradiction in Architecture (1966); the American Institute of Architects gave it its Twenty-Five Year Award in 1989.",
+      es: 'Venturi proyectó esta casa para su madre, Vanna, en un solar arbolado de Chestnut Hill, y la usó para argumentar en forma construida contra todo lo que el modernismo de posguerra daba por sentado. La planta es un único rectángulo con un frente a dos aguas simétrico, citado de siglos de vivienda estadounidense, pero Venturi rompe la simetría de inmediato: la puerta principal se sitúa descentrada bajo un arco partido a su vez por una ranura vertical, y el hastial queda cortado por la mitad, de modo que la chimenea y la línea de cubierta se leen como dos formas rivales y sin resolver, no como una sola. Dentro, una única escalera, deliberadamente demasiado estrecha y empinada para ser cómoda, se cuña entre estancias dimensionadas y trazadas según la rutina diaria concreta de su madre, una viuda mayor que vivía sobre todo en una sola planta. Construida con un presupuesto modesto entre 1962 y 1964, la casa se convirtió en el diagrama más reproducido de las ideas posmodernas años antes de que Venturi las pusiera por escrito en Complejidad y contradicción en la arquitectura (1966); el AIA le dio su Twenty-Five Year Award en 1989.',
+      it: "Venturi progettò questa casa per sua madre, Vanna, su un lotto alberato di Chestnut Hill, e la usò per argomentare in forma costruita contro tutto ciò che il modernismo del dopoguerra dava per scontato. La pianta è un unico rettangolo con una facciata a capanna simmetrica, citata da secoli di edilizia domestica americana, ma Venturi ne rompe subito la simmetria: la porta d'ingresso è decentrata sotto un arco a sua volta spezzato da una fessura verticale, e il timpano è tagliato a metà, cosicché il camino e la linea di gronda si leggono come due forme rivali e irrisolte, non come una sola. All'interno, un'unica scala, deliberatamente troppo stretta e ripida per essere comoda, si incunea fra stanze dimensionate e tracciate secondo la routine quotidiana concreta della madre, una vedova anziana che viveva soprattutto su un solo piano. Costruita con un budget modesto fra il 1962 e il 1964, la casa divenne il diagramma più riprodotto delle idee postmoderne anni prima che Venturi le mettesse per iscritto in Complessità e contraddizioni nell'architettura (1966); l'AIA le assegnò il proprio Twenty-Five Year Award nel 1989.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q2060721', title: 'Vanna Venturi House (Q2060721)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Vanna_Venturi_House', title: 'Vanna Venturi House', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    // Wave V2-3, batch B8. `robert-venturi` defined in architects/
+    // americas.ts; solo-era work — Wikipedia credits this to "Venturi and
+    // Rauch in collaboration with Cope and Lippincott", with no mention
+    // of Denise Scott Brown, consistent with it predating her
+    // involvement in the firm (confirmed at curation time, per the
+    // feasibility report's flag that this needed checking before use).
+    id: 'guild-house-philadelphia',
+    wikidataId: 'Q5615728',
+    name: {
+      en: 'Guild House',
+      es: 'Guild House',
+      it: 'Guild House',
+    },
+    architectId: 'robert-venturi',
+    location: { city: 'Philadelphia, Pennsylvania', countryCode: 'US', lat: 39.96250, lon: -75.15200 },
+    inception: 1960,
+    completed: 1963,
+    demolished: null,
+    typology: 'housing',
+    materials: ['brick'],
+    structure: {
+      en: 'A six-storey load-bearing brick block faced with double-hung windows and a single applied concrete arch at its centre, its curve left visibly independent of the balconies and iron balustrades set inside it.',
+      es: 'Un bloque de seis plantas en fábrica portante de ladrillo, con ventanas de guillotina y un único arco de hormigón aplicado en el centro, cuya curva queda visiblemente independiente de los balcones y barandillas de hierro colocados dentro de él.',
+      it: "Un blocco di sei piani in muratura portante di mattoni, con finestre a ghigliottina e un unico arco in cemento applicato al centro, la cui curva resta visibilmente indipendente dai balconi e dalle balaustre in ferro collocati al suo interno.",
+    },
+    program: {
+      en: 'Subsidised housing for elderly residents, commissioned by the Friends Neighborhood Guild, a Quaker charity, for a working-class block of North Philadelphia.',
+      es: 'Vivienda subvencionada para personas mayores, encargada por la Friends Neighborhood Guild, una entidad benéfica cuáquera, para una manzana obrera del norte de Filadelfia.',
+      it: 'Edilizia sovvenzionata per anziani, commissionata dalla Friends Neighborhood Guild, un ente benefico quacchero, per un isolato operaio del Philadelphia settentrionale.',
+    },
+    heritage: 'regional',
+    currentUse: {
+      en: 'Working subsidised apartments for seniors.',
+      es: 'Apartamentos subvencionados para mayores, en uso.',
+      it: 'Appartamenti sovvenzionati per anziani, in uso.',
+    },
+    detailRect: { x: 0.30, y: 0.10, w: 0.35, h: 0.45 },
+    image: {
+      commonsFile: 'File:Venturi Guild House.jpg',
+      photographer: 'Smallbones',
+      license: 'CC0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Venturi_Guild_House.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Guild House, Vine St., Philly.JPG',
+        photographer: 'Smallbones',
+        license: 'CC0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Guild_House,_Vine_St.,_Philly.JPG',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: 'Guild House was Venturi\'s second built commission and his first public statement: a six-storey home for elderly residents built by a Quaker charity in a working-class neighbourhood of North Philadelphia. Rather than disguise its ordinariness, Venturi advertised it — an oversized gold-anodised aluminium sculpture of a TV aerial (removed after the client objected to its cost) was meant to crown the roof, and the words GUILD HOUSE still run in giant lettering across the white base of the facade, at the scale of a supermarket sign rather than a cornice. Above it, plain brick punctuated by ordinary double-hung windows is broken only by a single applied arch, its curve left visibly separate from the balconies and iron balustrades set inside it — quotation, not integration. Built for a limited budget between 1960 and 1963 with Cope and Lippincott as associate architects, the building\'s polished black granite entrance column and its self-consciously "ugly and ordinary" materials were, at the time, read by most critics as a joke; Venturi meant them as an argument. It was added to the Philadelphia Register of Historic Places in 2004.',
+      es: 'Guild House fue el segundo encargo construido de Venturi y su primera declaración pública: una residencia de seis plantas para mayores, construida por una entidad benéfica cuáquera en un barrio obrero del norte de Filadelfia. En lugar de disimular su carácter corriente, Venturi lo anunció: una escultura sobredimensionada de aluminio anodizado en oro con forma de antena de televisión (retirada después de que el promotor objetara su coste) debía coronar la cubierta, y las palabras GUILD HOUSE siguen corriendo en letras gigantes por la base blanca de la fachada, a la escala de un rótulo de supermercado y no de una cornisa. Encima, el ladrillo liso, puntuado por ventanas de guillotina corrientes, solo se rompe con un único arco aplicado, cuya curva queda visiblemente separada de los balcones y las barandillas de hierro colocados dentro de él: cita, no integración. Construido con presupuesto limitado entre 1960 y 1963, con Cope and Lippincott como arquitectos asociados, la columna de granito negro pulido de la entrada y sus materiales deliberadamente «feos y corrientes» fueron leídos entonces por la mayoría de la crítica como una broma; Venturi los planteaba como un argumento. Se incorporó al Registro Histórico de Filadelfia en 2004.',
+      it: 'Guild House fu il secondo incarico costruito di Venturi e la sua prima dichiarazione pubblica: una residenza di sei piani per anziani, costruita da un ente benefico quacchero in un quartiere operaio del Philadelphia settentrionale. Anziché dissimulare la propria ordinarietà, Venturi la pubblicizzò: una scultura sovradimensionata in alluminio anodizzato dorato a forma di antenna televisiva (rimossa dopo che il committente ne contestò il costo) avrebbe dovuto coronare il tetto, e le parole GUILD HOUSE corrono tuttora in lettere giganti sulla base bianca della facciata, alla scala di un\'insegna da supermercato anziché di una cornice. Sopra, il mattone semplice, punteggiato da comuni finestre a ghigliottina, è interrotto solo da un unico arco applicato, la cui curva resta visibilmente separata dai balconi e dalle balaustre in ferro collocati al suo interno: citazione, non integrazione. Costruito con budget limitato fra il 1960 e il 1963, con Cope and Lippincott come architetti associati, la colonna in granito nero lucido dell\'ingresso e i materiali deliberatamente «brutti e ordinari» furono letti allora dalla maggior parte della critica come una battuta; Venturi li intendeva come un argomento. Fu iscritto nel Registro Storico di Filadelfia nel 2004.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q5615728', title: 'Guild House (Q5615728)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Guild_House_(Philadelphia)', title: 'Guild House (Philadelphia)', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    // Wave V2-3, batch B8. `denise-scott-brown` defined in architects/
+    // americas.ts; firm-era work, credited here as `architectId` with
+    // Robert Venturi cross-linked via `coArchitects` (defined in the same
+    // file, not redefined) — see the ledger note on both architect
+    // records for why the credit runs this direction for VSBA's
+    // institutional commissions specifically. `wikidataId: null`: no
+    // Wikidata item exists for this specific building (only for the
+    // institution's original, unrelated 1933 Volunteer Park building,
+    // Q1816301 — confirmed NOT to be this building before ruling it out),
+    // so two independent non-Wikipedia/non-Wikidata sources are required
+    // and given below.
+    id: 'seattle-art-museum-downtown',
+    wikidataId: null,
+    name: {
+      en: 'Seattle Art Museum (downtown building)',
+      es: 'Seattle Art Museum (edificio del centro)',
+      it: 'Seattle Art Museum (edificio del centro)',
+    },
+    architectId: 'denise-scott-brown',
+    coArchitects: ['robert-venturi'],
+    location: { city: 'Seattle, Washington', countryCode: 'US', lat: 47.60789, lon: -122.33839 },
+    inception: 1988,
+    completed: 1991,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['stone', 'concrete'],
+    structure: {
+      en: 'A limestone-clad volume with its street name incised directly into the stone facade in oversized letters, striped terracotta-and-stone arches framing the entrances, and a sculptural full-height stair known as the Art Ladder inside.',
+      es: 'Volumen revestido de caliza con el nombre de la calle tallado directamente en la fachada de piedra en letras gigantes, arcos a rayas de terracota y piedra que enmarcan los accesos, y en su interior una escalera escultórica de toda la altura conocida como Art Ladder.',
+      it: "Volume rivestito in calcare con il nome della strada inciso direttamente nella facciata in pietra a lettere gigantesche, archi a righe di terracotta e pietra che incorniciano gli ingressi, e all'interno una scala scultorea a tutta altezza nota come Art Ladder.",
+    },
+    program: {
+      en: "Downtown flagship of the Seattle Art Museum, commissioned to replace the institution's cramped original 1933 home in Volunteer Park.",
+      es: 'Sede insignia del centro de Seattle Art Museum, encargada para sustituir la sede original de 1933, ya insuficiente, en Volunteer Park.',
+      it: "Sede principale del centro cittadino del Seattle Art Museum, commissionata per sostituire l'angusta sede originaria del 1933 a Volunteer Park.",
+    },
+    heritage: 'none',
+    currentUse: {
+      en: "Working art museum, the Seattle Art Museum's main downtown building, expanded in 2007.",
+      es: 'Museo de arte en funcionamiento, edificio principal del Seattle Art Museum en el centro, ampliado en 2007.',
+      it: 'Museo d\'arte in funzione, edificio principale del Seattle Art Museum nel centro città, ampliato nel 2007.',
+    },
+    detailRect: { x: 0.27, y: 0.53, w: 0.24, h: 0.32 },
+    image: {
+      commonsFile: 'File:Seattle Art Museum (2891587322).jpg',
+      photographer: 'Cliff',
+      license: 'CC BY 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Seattle_Art_Museum_(2891587322).jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:West Facade 8719.jpg',
+        photographer: 'Chris Light',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:West_Facade_8719.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: 'Scott Brown was principal-in-charge on this commission alongside Venturi, the firm\'s first major museum since the Sainsbury Wing competition win five years earlier. The building fills an awkward, steeply sloped downtown block with a limestone-clad volume whose street name is carved directly into the stone in oversized letters — SEATTLE ART — a gesture the firm had already tested at Guild House and one that treats the facade as a billboard rather than a temple front. Striped terracotta-and-stone arches, borrowed from the ornamental vocabulary of the city\'s older commercial buildings, frame the entrances below a bank of glazing that steps back from the street. Inside, the sculptural main stair — nicknamed the Art Ladder — climbs through the full height of the building past a monumental grand staircase lined with historic artefacts. It opened on 5 December 1991 at a cost of about $62 million, replacing cramped quarters in the 1933 Volunteer Park building (since renamed the Seattle Asian Art Museum), and was more than doubled in size by a 2007 expansion designed by Brad Cloepfil\'s Allied Works Architecture.',
+      es: 'Scott Brown fue responsable principal de este encargo junto con Venturi, el primer gran museo del estudio tras ganar el concurso del Sainsbury Wing cinco años antes. El edificio ocupa una manzana incómoda y muy inclinada del centro con un volumen revestido de caliza cuyo nombre callejero está tallado directamente en la piedra en letras gigantes —SEATTLE ART—, un gesto que el estudio ya había ensayado en Guild House y que trata la fachada como una valla publicitaria y no como el frente de un templo. Arcos a rayas de terracota y piedra, tomados del vocabulario ornamental de los edificios comerciales más antiguos de la ciudad, enmarcan los accesos bajo una franja acristalada retranqueada respecto a la calle. Dentro, la escalera principal escultórica —apodada la Art Ladder— sube por toda la altura del edificio junto a una escalinata monumental jalonada de piezas históricas. Se inauguró el 5 de diciembre de 1991 con un coste de unos 62 millones de dólares, sustituyendo unas instalaciones estrechas en el edificio de 1933 de Volunteer Park (hoy Seattle Asian Art Museum), y más que duplicó su tamaño con una ampliación de 2007 proyectada por Allied Works Architecture, de Brad Cloepfil.',
+      it: "Scott Brown fu responsabile principale di questo incarico insieme a Venturi, il primo grande museo dello studio dopo la vittoria del concorso per il Sainsbury Wing cinque anni prima. L'edificio occupa un isolato scomodo e fortemente in pendenza del centro con un volume rivestito in calcare il cui nome stradale è inciso direttamente nella pietra in lettere gigantesche — SEATTLE ART —, un gesto che lo studio aveva già sperimentato a Guild House e che tratta la facciata come un cartellone pubblicitario anziché come il fronte di un tempio. Archi a righe di terracotta e pietra, ripresi dal vocabolario ornamentale degli edifici commerciali più antichi della città, incorniciano gli ingressi sotto una fascia vetrata arretrata rispetto alla strada. All'interno, la scala principale scultorea — soprannominata Art Ladder — sale per l'intera altezza dell'edificio accanto a uno scalone monumentale costellato di reperti storici. Aprì il 5 dicembre 1991 con un costo di circa 62 milioni di dollari, sostituendo spazi angusti nell'edificio del 1933 di Volunteer Park (oggi Seattle Asian Art Museum), e più che raddoppiò le proprie dimensioni con un ampliamento del 2007 progettato da Allied Works Architecture di Brad Cloepfil.",
+    },
+    context: null,
+    sources: [
+      { kind: 'institution', url: 'http://www.vsba.com/', title: 'Venturi, Scott Brown and Associates — official website (cited for building specifications: 150,000 sq ft, $28.1 million budget)', license: null },
+      { kind: 'publication', url: 'https://www.nytimes.com/1991/12/10/arts/museum-by-venturi-opens-in-seattle.html', title: 'Egan, Timothy. "Museum By Venturi Opens In Seattle." The New York Times, 10 December 1991', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Seattle_Art_Museum', title: 'Seattle Art Museum', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
 ];

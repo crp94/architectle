@@ -786,4 +786,73 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
     ],
     tier: 'canon',
   },
+  {
+    // Wave V2-3, batch B8. `denise-scott-brown` and `robert-venturi` are
+    // both defined in architects/americas.ts (their Philadelphia practice
+    // base); referenced here, not redefined. Firm-era joint work, credited
+    // to Scott Brown as `architectId` with Venturi cross-linked via
+    // `coArchitects` — see the ledger note on both architect records.
+    id: 'sainsbury-wing',
+    wikidataId: 'Q52984670',
+    name: {
+      en: 'Sainsbury Wing, National Gallery',
+      es: 'Ala Sainsbury, National Gallery',
+      it: 'Ala Sainsbury, National Gallery',
+    },
+    architectId: 'denise-scott-brown',
+    coArchitects: ['robert-venturi'],
+    location: { city: 'London', countryCode: 'GB', lat: 51.50890, lon: -0.12831 },
+    inception: 1986,
+    completed: 1991,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['stone'],
+    structure: {
+      en: "A stone-faced extension whose Corinthian pilasters quote the neoclassical gallery next door, then thin and vanish as the facade turns the corner; inside, top-lit enfilade galleries lead up a theatrical stair modelled on Soane and Brunelleschi.",
+      es: 'Ampliación revestida de piedra cuyas pilastras corintias citan la galería neoclásica contigua, para luego adelgazarse y desaparecer al doblar la fachada la esquina; dentro, galerías en enfilade con luz cenital llevan por una escalera teatral inspirada en Soane y Brunelleschi.',
+      it: "Ampliamento rivestito in pietra le cui paraste corinzie citano la galleria neoclassica accanto, per poi assottigliarsi e scomparire quando la facciata gira l'angolo; all'interno, gallerie in enfilade illuminate dall'alto conducono su una scala teatrale ispirata a Soane e Brunelleschi.",
+    },
+    program: {
+      en: 'An extension to the National Gallery, London, built to house the early Renaissance collection, funded by the Sainsbury family after a first-round competition scheme was withdrawn amid public controversy.',
+      es: 'Ampliación de la National Gallery de Londres, construida para albergar la colección del primer Renacimiento, financiada por la familia Sainsbury tras retirarse el proyecto de la primera ronda del concurso en medio de una polémica pública.',
+      it: 'Ampliamento della National Gallery di Londra, costruito per ospitare la collezione del primo Rinascimento, finanziato dalla famiglia Sainsbury dopo il ritiro del progetto del primo turno del concorso in mezzo a una polemica pubblica.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: "Working public art gallery, displaying the National Gallery's paintings from 1250 to 1500.",
+      es: 'Galería de arte pública en funcionamiento, que exhibe las pinturas de la National Gallery de 1250 a 1500.',
+      it: 'Galleria d\'arte pubblica in funzione, che espone i dipinti della National Gallery dal 1250 al 1500.',
+    },
+    detailRect: { x: 0.52, y: 0.10, w: 0.30, h: 0.40 },
+    image: {
+      commonsFile: 'File:Sainsbury Wing, National Gallery, London, March 2015 (01).JPG',
+      photographer: 'Ardfern',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Sainsbury_Wing,_National_Gallery,_London,_March_2015_(01).JPG',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:National Gallery London Sainsbury Wing 2006-04-17.jpg',
+        photographer: 'Richard George',
+        license: 'CC BY-SA 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:National_Gallery_London_Sainsbury_Wing_2006-04-17.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "The National Gallery's trustees held two competitions for this extension before choosing Venturi, Scott Brown and Associates in 1986, after a first-round entry by another practice was famously condemned by the Prince of Wales as a \"monstrous carbuncle on the face of a much-loved and elegant friend\" — a phrase that outlived the design it killed. Scott Brown, principal-in-charge on the project alongside Venturi, answered the client's real problem: a building large enough to hold the Gallery's early Renaissance collection without competing with William Wilkins's 1838 neoclassical facade next door. The solution quotes that facade directly — Corinthian pilasters marching across the new stone front — but lets the order thin out and finally disappear as the wall turns the corner toward Trafalgar Square, a joke about classical convention only a trained eye registers. Inside, top-lit enfilade galleries modelled on Soane and Brunelleschi lead visitors up a deliberately theatrical staircase to the paintings. Built between 1988 and 1991 at a cost of some £35 million funded by the Sainsbury family, it was given Grade I listed status in 2018.",
+      es: 'Los patronos de la National Gallery convocaron dos concursos para esta ampliación antes de elegir a Venturi, Scott Brown and Associates en 1986, después de que una propuesta de la primera ronda, de otro estudio, fuera célebremente condenada por el Príncipe de Gales como un «monstruoso carbunco en el rostro de un amigo elegante y muy querido», frase que sobrevivió al proyecto que hundió. Scott Brown, responsable principal del proyecto junto con Venturi, resolvió el verdadero problema del cliente: un edificio lo bastante grande para albergar la colección del primer Renacimiento de la Galería sin competir con la fachada neoclásica de 1838 de William Wilkins, contigua. La solución cita esa fachada directamente —pilastras corintias que recorren la nueva fachada de piedra—, pero deja que el orden se adelgace y acabe por desaparecer al doblar el muro la esquina hacia Trafalgar Square, un chiste sobre la convención clásica que solo un ojo entrenado registra. Dentro, galerías en enfilade iluminadas cenitalmente, inspiradas en Soane y Brunelleschi, llevan a los visitantes por una escalera deliberadamente teatral hasta las pinturas. Construida entre 1988 y 1991 con un coste de unos 35 millones de libras financiado por la familia Sainsbury, recibió la calificación de Grade I en 2018.',
+      it: "I trustee della National Gallery bandirono due concorsi per questa ampliazione prima di scegliere Venturi, Scott Brown and Associates nel 1986, dopo che una proposta del primo turno, di un altro studio, era stata celebremente condannata dal Principe di Galles come un «mostruoso foruncolo sul volto di un amico elegante e amato», frase che sopravvisse al progetto che affossò. Scott Brown, responsabile principale del progetto insieme a Venturi, risolse il vero problema del committente: un edificio abbastanza grande da ospitare la collezione del primo Rinascimento della Galleria senza competere con la facciata neoclassica del 1838 di William Wilkins, accanto. La soluzione cita direttamente quella facciata — paraste corinzie che percorrono il nuovo fronte in pietra — ma lascia che l'ordine si assottigli e infine scompaia quando il muro gira l'angolo verso Trafalgar Square, una battuta sulla convenzione classica che solo un occhio allenato coglie. All'interno, gallerie in enfilade illuminate dall'alto, ispirate a Soane e Brunelleschi, conducono i visitatori su una scala deliberatamente teatrale fino ai dipinti. Costruita fra il 1988 e il 1991 con un costo di circa 35 milioni di sterline finanziato dalla famiglia Sainsbury, ha ricevuto lo status di Grade I nel 2018.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q52984670', title: 'Sainsbury Wing (Q52984670)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Sainsbury_Wing', title: 'Sainsbury Wing', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Denise_Scott_Brown', title: 'Denise Scott Brown', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
 ];
