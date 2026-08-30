@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from "next";
+import { Suspense } from "react";
 import { Analytics } from "@vercel/analytics/next";
 import { SITE_URL } from "@/lib/site";
 import { theme } from "@/lib/theme";
 import { fraunces, inter } from "@/lib/fonts";
 import { SiteFooter } from "@/components/ui/SiteFooter";
+import { LocaleDocument } from "@/components/ui/LocaleDocument";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -56,7 +58,10 @@ export default function RootLayout({
     <html lang="en" className={`h-full ${fraunces.variable} ${inter.variable}`}>
       <body className="min-h-full flex flex-col bg-paper text-ink">
         {children}
-        <SiteFooter />
+        <Suspense fallback={null}>
+          <LocaleDocument />
+          <SiteFooter />
+        </Suspense>
         <Analytics />
       </body>
     </html>

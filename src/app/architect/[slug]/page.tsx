@@ -6,6 +6,7 @@ import { MOVEMENTS } from '@/data/movements';
 import { architectJsonLd, breadcrumbJsonLd } from '@/lib/jsonld';
 import { SITE_URL } from '@/lib/site';
 import { t } from '@/lib/i18n';
+import { resolveLocale, type LocaleSearchParams } from '@/lib/locale';
 import { theme } from '@/lib/theme';
 import { architectMovementLabel, architectSpan } from '@/lib/facts';
 import { ArchiveNav } from '@/components/archive/ArchiveNav';
@@ -13,8 +14,6 @@ import { Dossier } from '@/components/archive/Dossier';
 import { BuildingCard } from '@/components/archive/BuildingCard';
 import { LinkList } from '@/components/archive/LinkList';
 import { SectionRule } from '@/components/ui/SectionRule';
-
-const LOCALE = 'en' as const;
 
 type Params = { slug: string };
 
@@ -40,16 +39,17 @@ export function generateStaticParams() {
   return ARCHITECTS.map((a) => ({ slug: a.id }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
+export async function generateMetadata({ params, searchParams }: { params: Promise<Params>; searchParams: Promise<LocaleSearchParams> }): Promise<Metadata> {
+  const locale = resolveLocale((await searchParams).lang);
   const { slug } = await params;
   const architect = findArchitect(slug);
   if (!architect) return {};
 
-  const title = t(LOCALE, 'metaArchiveTitle', { name: architect.name });
-  const bio = architect.portrait.en.trim();
+  const title = t(locale, 'metaArchiveTitle', { name: architect.name });
+  const bio = (architect.portrait[locale] ?? architect.portrait.en).trim();
   const description = bio.length > 0
     ? bio.slice(0, 155)
-    : `${architect.name}, ${architectSpan(architect)} — ${architectMovementLabel(architect, LOCALE)}.`;
+    : `${architect.name}, ${architectSpan(architect)} — ${architectMovementLabel(architect, locale)}.`;
   const url = `${SITE_URL}/architect/${architect.id}`;
 
   return {
@@ -61,7 +61,9 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   };
 }
 
-export default async function ArchitectPage({ params }: { params: Promise<Params> }) {
+export default async function ArchitectPage({ params, searchParams }: { params: Promise<Params>; searchParams: Promise<LocaleSearchParams> }) {
+  const localeParams = await searchParams;
+  const LOCALE = resolveLocale(localeParams.lang);
   const { slug } = await params;
   const architect = findArchitect(slug);
   if (!architect) notFound();
@@ -72,7 +74,7 @@ export default async function ArchitectPage({ params }: { params: Promise<Params
 
   return (
     <main className="flex flex-1 flex-col bg-paper">
-      <ArchiveNav locale={LOCALE} />
+      <ArchiveNav locale={LOCALE} pathname={`/architect/${slug}`} searchParams={localeParams} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(architectJsonLd(architect)) }}
@@ -111,6 +113,7 @@ export default async function ArchitectPage({ params }: { params: Promise<Params
             <SectionRule label={t(LOCALE, 'navMovementsLink')} />
             <LinkList
               testId="archive-movement-links"
+              locale={LOCALE}
               items={movements.map((m) => ({
                 href: `/movement/${m.id}`,
                 label: MOVEMENTS[m.id]?.name ?? m.id,
@@ -137,6 +140,7 @@ export default async function ArchitectPage({ params }: { params: Promise<Params
           {contemporaries.length > 0 ? (
             <LinkList
               testId="archive-contemporaries"
+              locale={LOCALE}
               items={contemporaries.map((a) => ({ href: `/architect/${a.id}`, label: a.name }))}
             />
           ) : (

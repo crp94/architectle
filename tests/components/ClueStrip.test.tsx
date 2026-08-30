@@ -110,7 +110,7 @@ describe('ClueStrip', () => {
 
     renderAt(2);
     expect(screen.getByTestId('clue-year')).toBeTruthy();
-    expect(screen.getByTestId('clue-country').textContent).toContain('FR');
+    expect(screen.getByTestId('clue-country').textContent).toContain('France');
     expect(screen.queryByTestId('clue-typology-material')).toBeNull();
 
     renderAt(3);

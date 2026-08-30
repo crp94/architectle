@@ -13,6 +13,10 @@ const en = {
   navArchive: 'Archive',
   navAbout: 'About',
   navArchitectsLink: 'Architects',
+  languageLabel: 'Language',
+  languageEnglish: 'English',
+  languageSpanish: 'Spanish',
+  languageItalian: 'Italian',
 
   // Round / guess field
   guessCounter: 'Guess {n} of {total}',
@@ -84,6 +88,7 @@ const en = {
   sharePreviewHeading: 'What gets shared',
   sharePreviewNote: 'Spoiler-free — no architect or building name.',
   playAgain: 'Play unlimited',
+  unlimitedEyebrow: 'Unlimited practice',
 
   // Stats
   statsTitle: 'Statistics',
@@ -232,6 +237,10 @@ const es: Strings = {
   navArchive: 'Archivo',
   navAbout: 'Acerca de',
   navArchitectsLink: 'Arquitectos',
+  languageLabel: 'Idioma',
+  languageEnglish: 'Inglés',
+  languageSpanish: 'Español',
+  languageItalian: 'Italiano',
 
   guessCounter: 'Intento {n} de {total}',
   guessFieldLabel: 'Nombra al arquitecto',
@@ -291,6 +300,7 @@ const es: Strings = {
   sharePreviewHeading: 'Qué se comparte',
   sharePreviewNote: 'Sin spoilers — sin el nombre del arquitecto ni del edificio.',
   playAgain: 'Jugar sin límite',
+  unlimitedEyebrow: 'Práctica sin límite',
 
   statsTitle: 'Estadísticas',
   statsPlayed: 'Jugadas',
@@ -398,6 +408,10 @@ const it: Strings = {
   navArchive: 'Archivio',
   navAbout: 'Informazioni',
   navArchitectsLink: 'Architetti',
+  languageLabel: 'Lingua',
+  languageEnglish: 'Inglese',
+  languageSpanish: 'Spagnolo',
+  languageItalian: 'Italiano',
 
   guessCounter: 'Tentativo {n} di {total}',
   guessFieldLabel: "Nomina l'architetto",
@@ -457,6 +471,7 @@ const it: Strings = {
   sharePreviewHeading: 'Cosa viene condiviso',
   sharePreviewNote: 'Senza spoiler — niente nome dell’architetto o dell’edificio.',
   playAgain: 'Gioca senza limiti',
+  unlimitedEyebrow: 'Pratica senza limiti',
 
   statsTitle: 'Statistiche',
   statsPlayed: 'Partite',

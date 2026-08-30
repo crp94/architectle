@@ -43,6 +43,7 @@ export type GameBoardProps = {
    */
   building?: Building;
   locale?: Locale;
+  unlimitedHref?: string;
 };
 
 type GuessEntry = { architect: Architect; comparison: Comparison };
@@ -59,7 +60,7 @@ function pickDailyBuilding(): Building {
  * progress/stats through `storage.ts`, and resolves into `<Reveal />` on
  * win or loss.
  */
-export function GameBoard({ mode = 'daily', building, locale = 'en' }: GameBoardProps) {
+export function GameBoard({ mode = 'daily', building, locale = 'en', unlimitedHref = '/?mode=unlimited&lang=en' }: GameBoardProps) {
   // Neither the daily nor the unlimited target can be resolved during SSR.
   // Unlimited mode has no deterministic index at all (§4.5 draws from the
   // whole pool via a bare `Math.random()`, not a date-seeded slot). Daily
@@ -238,6 +239,7 @@ export function GameBoard({ mode = 'daily', building, locale = 'en' }: GameBoard
         guessesUsed={solved ? guesses.length : null}
         comparisons={guesses.map((g) => g.comparison)}
         locale={locale}
+        unlimitedHref={unlimitedHref}
         // Unlimited mode never tracks daily stats (see the `mode === 'daily'`
         // guard in handleGuess above) — `stats` would just be the unchanging
         // all-zero `defaultStats()` there, which would render a misleading
@@ -298,7 +300,12 @@ export function GameBoard({ mode = 'daily', building, locale = 'en' }: GameBoard
           {t(locale, 'guessCounter', { n: currentGuessNumber, total: TOTAL_GUESSES })}
         </p>
         <ClueStrip locale={locale} clues={clues} buildingId={target.id} />
-        <GuessField locale={locale} onGuess={handleGuess} disabled={finished} />
+        <GuessField
+          locale={locale}
+          onGuess={handleGuess}
+          guessedIds={new Set(guesses.map((guess) => guess.architect.id))}
+          disabled={finished}
+        />
         <div className="flex flex-col">
           {guesses.map((g, i) => (
             <GuessRow key={`${g.architect.id}-${i}`} guess={g.architect} comparison={g.comparison} locale={locale} />

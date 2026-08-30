@@ -1,5 +1,9 @@
+'use client';
+
 import Link from 'next/link';
-import { t, type Locale } from '@/lib/i18n';
+import { useSearchParams } from 'next/navigation';
+import { t } from '@/lib/i18n';
+import { localeHref, resolveLocale } from '@/lib/locale';
 import { theme } from '@/lib/theme';
 
 /**
@@ -9,20 +13,18 @@ import { theme } from '@/lib/theme';
  * about — circulating a reader from wherever they land back to the other
  * three surfaces.
  *
- * Defaults to English: the root layout has no access to a per-request
- * locale (only the home page's `?lang=` query param does — see
- * `src/app/about/page.tsx`'s own comment on this exact limitation). This
- * follows that same already-documented convention rather than inventing a
- * new one here; a real cross-cutting locale would need its own routing
- * change, out of this task's scope.
+ * The query-param locale is read client-side here because this component is
+ * owned by the root layout; every footer link retains that language.
  */
-export function SiteFooter({ locale = 'en' as Locale }: { locale?: Locale }) {
+export function SiteFooter() {
+  const searchParams = useSearchParams();
+  const locale = resolveLocale(searchParams.get('lang'));
   const links: { href: string; label: string; testId: string }[] = [
-    { href: '/', label: t(locale, 'appTitle'), testId: 'footer-link-home' },
-    { href: '/buildings', label: t(locale, 'navBuildingsLink'), testId: 'footer-link-buildings' },
-    { href: '/architects', label: t(locale, 'navArchitectsLink'), testId: 'footer-link-architects' },
-    { href: '/movements', label: t(locale, 'navMovementsLink'), testId: 'footer-link-movements' },
-    { href: '/about', label: t(locale, 'navAbout'), testId: 'footer-link-about' },
+    { href: localeHref('/', locale), label: t(locale, 'appTitle'), testId: 'footer-link-home' },
+    { href: localeHref('/buildings', locale), label: t(locale, 'navBuildingsLink'), testId: 'footer-link-buildings' },
+    { href: localeHref('/architects', locale), label: t(locale, 'navArchitectsLink'), testId: 'footer-link-architects' },
+    { href: localeHref('/movements', locale), label: t(locale, 'navMovementsLink'), testId: 'footer-link-movements' },
+    { href: localeHref('/about', locale), label: t(locale, 'navAbout'), testId: 'footer-link-about' },
   ];
 
   return (

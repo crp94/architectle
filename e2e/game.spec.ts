@@ -22,6 +22,9 @@ const CORRECT = 'Peter Zumthor';
 // A roster architect guaranteed not to be Zumthor, so wrong guesses stay
 // wrong regardless of how the curated pool grows around this fixture.
 const WRONG = 'Luis Barragán';
+const WRONG_GUESSES = [
+  'Luis Barragán', 'Lina Bo Bardi', 'Frank Lloyd Wright', 'Ludwig Mies van der Rohe', 'Philip Johnson', 'Louis Sullivan',
+];
 const GIBBERISH = 'Zzyzx Notarealperson';
 
 function gameUrl(): string {
@@ -76,9 +79,7 @@ test.describe('game flow', () => {
   test('loses after six wrong guesses and names the architect in the reveal', async ({ page }) => {
     await page.goto(gameUrl());
 
-    for (let i = 0; i < 6; i += 1) {
-      await submitGuess(page, WRONG);
-    }
+    for (const guess of WRONG_GUESSES) await submitGuess(page, guess);
 
     await expect(page.getByTestId('reveal')).toBeVisible();
     await expect(page.getByTestId('reveal-message')).toContainText(CORRECT);

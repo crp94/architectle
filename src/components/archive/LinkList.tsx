@@ -1,17 +1,19 @@
 import Link from 'next/link';
 import { theme } from '@/lib/theme';
+import type { Locale } from '@/lib/i18n';
+import { localeHref } from '@/lib/locale';
 
 export type LinkItem = { href: string; label: string; sub?: string };
 
 /** A generic list of cross-links (an architect's movements, a movement's
  * architects, an architect's contemporaries) — one label, one href, an
  * optional secondary line of context. */
-export function LinkList({ items, testId }: { items: LinkItem[]; testId?: string }) {
+export function LinkList({ items, locale, testId }: { items: LinkItem[]; locale: Locale; testId?: string }) {
   return (
     <ul data-testid={testId} className="flex flex-col gap-1">
       {items.map((item) => (
         <li key={item.href}>
-          <Link href={item.href} className="text-sm underline" style={{ fontFamily: theme.type.body }}>
+          <Link href={localeHref(item.href, locale)} className="text-sm underline" style={{ fontFamily: theme.type.body }}>
             {item.label}
           </Link>
           {item.sub && (

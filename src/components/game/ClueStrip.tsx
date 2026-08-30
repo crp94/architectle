@@ -69,9 +69,11 @@ function ClueEntry({
       );
 
     case 'country':
+      const country = new Intl.DisplayNames([locale], { type: 'region' }).of(clue.countryCode)
+        ?? clue.countryCode;
       return (
         <div data-testid="clue-country">
-          <SpecimenLabel label={t(locale, 'clueCountry')} value={clue.countryCode} />
+          <SpecimenLabel label={t(locale, 'clueCountry')} value={country} />
         </div>
       );
 
