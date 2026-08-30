@@ -898,6 +898,20 @@ export const ASIA_SOUTH_BUILDINGS: Building[] = [
       width: 1600,
       height: 1280,
     },
+    // Wave V2-3, batch B8 (image pass on Le Corbusier's existing entry,
+    // topped up elsewhere this batch with the Secretariat and the High
+    // Court, both also in the Chandigarh Capitol Complex). Re-verified the
+    // primary licence live; added one extraImage.
+    extraImages: [
+      {
+        commonsFile: 'File:Palace of Assembly Chandigarh 2006.jpg',
+        photographer: 'duncid',
+        license: 'CC BY-SA 2.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Palace_of_Assembly_Chandigarh_2006.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
     dossier: {
       en: 'The plan starts as a rectangle and is immediately broken open: a deep, unglazed portico runs the width of the entrance front, and behind it two forms collide rather than align — a stepped pyramidal block of committee rooms and offices, and the drum of the assembly chamber itself, its roof punched by a hyperbolic-paraboloid tower that Le Corbusier likened in silhouette to a cooling tower and, before that, to the cupola of a Mughal pavilion. Members move between floors on ramps rather than stairs. A ten-foot enamelled door, its grid of squares filled with cosmic and biological symbols Le Corbusier designed himself, opens onto a forum lit by cannon-shaped light scoops cut through the roof slab. Built in raw board-marked concrete — béton brut — between 1951 and 1962 and inaugurated on 15 April 1964, the Assembly still seats two separate legislatures rather than the one it was designed for. It was inscribed with sixteen other Le Corbusier sites across seven countries as a UNESCO World Heritage property in 2016.',
       es: 'La planta arranca de un rectángulo y se rompe de inmediato: un pórtico profundo y sin acristalar recorre todo el frente de acceso, y detrás chocan dos formas en vez de alinearse: un bloque piramidal escalonado con las salas de comisiones y las oficinas, y el tambor de la propia sala de plenos, cuya cubierta perfora una torre hiperbólico-parabólica que Le Corbusier comparó en silueta con una torre de refrigeración y, antes, con la cúpula de un pabellón mogol. Los diputados se mueven entre plantas por rampas, no por escaleras. Una puerta esmaltada de tres metros, con su retícula de cuadros llenos de símbolos cósmicos y biológicos que el propio Le Corbusier dibujó, se abre a un foro iluminado por lucernarios en forma de cañón recortados en la losa de cubierta. Construida en hormigón bruto encofrado en tablas —béton brut— entre 1951 y 1962 e inaugurada el 15 de abril de 1964, la Asamblea sigue albergando dos legislaturas separadas en vez de la única para la que se proyectó. Fue inscrita junto a otras dieciséis obras de Le Corbusier en siete países como Patrimonio Mundial de la UNESCO en 2016.',
@@ -919,6 +933,138 @@ export const ASIA_SOUTH_BUILDINGS: Building[] = [
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Palace_of_Assembly', title: 'Palace of Assembly', license: 'CC BY-SA 4.0' },
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Chandigarh_Capitol_Complex', title: 'Chandigarh Capitol Complex', license: 'CC BY-SA 4.0' },
       { kind: 'institution', url: 'https://whc.unesco.org/en/list/1321/', title: 'The Architectural Work of Le Corbusier, an Outstanding Contribution to the Modern Movement — UNESCO World Heritage Centre', license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    // Wave V2-3, batch B8. `le-corbusier` defined in this same file above
+    // (Palace of Assembly); referenced here and by the Secretariat entry
+    // below, not redefined. Same Chandigarh Capitol Complex UNESCO
+    // property, India s.52(1)(s) FoP.
+    id: 'punjab-haryana-high-court',
+    wikidataId: 'Q130502',
+    name: {
+      en: 'Punjab and Haryana High Court',
+      es: 'Tribunal Superior de Punyab y Haryana',
+      it: "Alta Corte del Punjab e dell'Haryana",
+    },
+    architectId: 'le-corbusier',
+    location: { city: 'Chandigarh', countryCode: 'IN', lat: 30.754167, lon: 76.801111 },
+    inception: 1951,
+    completed: 1955,
+    demolished: null,
+    typology: 'civic',
+    materials: ['concrete'],
+    structure: {
+      en: 'A deep, unglazed concrete portico — a parasol roof structurally independent of the block below — runs the width of the entrance front on three tapering, brightly painted pylons, shading eight stacked courtrooms reached by ramp rather than stair.',
+      es: 'Un pórtico profundo de hormigón sin acristalar —una cubierta parasol estructuralmente independiente del bloque de abajo— recorre todo el frente de acceso sobre tres pilonos cónicos pintados de colores vivos, dando sombra a ocho salas apiladas a las que se llega por rampa y no por escalera.',
+      it: "Un portico profondo in cemento senza vetrate — una copertura a parasole strutturalmente indipendente dal blocco sottostante — corre lungo tutto il fronte d'ingresso su tre piloni conici dipinti a colori vivaci, ombreggiando otto aule impilate raggiunte da una rampa anziché da una scala.",
+    },
+    program: {
+      en: "Seat of the High Court of East Punjab, part of Le Corbusier's Chandigarh Capitol Complex commissioned by Jawaharlal Nehru to replace the judiciary's temporary post-Partition home in Shimla.",
+      es: 'Sede del Tribunal Superior de Punyab Oriental, parte del Capitolio de Chandigarh de Le Corbusier, encargado por Jawaharlal Nehru para sustituir la sede provisional de la judicatura en Simla tras la Partición.',
+      it: "Sede dell'Alta Corte del Punjab orientale, parte del Campidoglio di Chandigarh di Le Corbusier, commissionato da Jawaharlal Nehru per sostituire la sede provvisoria della magistratura a Shimla dopo la Partizione.",
+    },
+    heritage: 'unesco',
+    currentUse: {
+      en: 'Working joint High Court for the states of Punjab and Haryana and the union territory of Chandigarh.',
+      es: 'Tribunal Superior conjunto en funcionamiento para los estados de Punyab y Haryana y el territorio de la Unión de Chandigarh.',
+      it: "Alta Corte congiunta in funzione per gli stati del Punjab e dell'Haryana e per il territorio dell'Unione di Chandigarh.",
+    },
+    detailRect: { x: 0.15, y: 0.20, w: 0.30, h: 0.35 },
+    image: {
+      commonsFile: 'File:Chandigarh High Court.jpg',
+      photographer: 'gb pandey',
+      license: 'CC BY-SA 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Chandigarh_High_Court.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Punjab and Haryana High Court , Chandigarh.jpg',
+        photographer: 'Harvinder Chandigarh',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Punjab_and_Haryana_High_Court_,_Chandigarh.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "The court was the first of the Capitol's three buildings to be occupied, moving from Shimla to Chandigarh in January 1955 and inaugurated by Nehru that March. Le Corbusier gave it a single deep, unglazed portico that runs the whole width of the entrance front — a parasol roof independent of the block below it, shading the courtrooms behind from the Punjab sun and shedding monsoon rain clear of the walls. Three tapering pylons carry the portico at the entrance, painted green, yellow and vermilion, the only saturated colour on an otherwise raw-concrete building; judges reach their chambers by a ramp rather than a stair, a processional route Le Corbusier used across the whole Capitol. Eight courtrooms and their attendant offices sit behind the shading screen in a straightforward stacked block. It shares its UNESCO inscription with the Palace of Assembly and the Secretariat as one property, listed in 2016, and still serves as the joint High Court for Punjab, Haryana and the union territory of Chandigarh.",
+      es: 'El tribunal fue el primero de los tres edificios del Capitolio en entrar en servicio: se trasladó de Simla a Chandigarh en enero de 1955 y Nehru lo inauguró ese mismo marzo. Le Corbusier le dio un único pórtico profundo y sin acristalar que recorre todo el frente de acceso —una cubierta parasol independiente del bloque de abajo—, que protege del sol punyabí las salas y evacúa la lluvia del monzón lejos de los muros. Tres pilonos cónicos sostienen el pórtico en la entrada, pintados de verde, amarillo y bermellón, el único color saturado de un edificio por lo demás en hormigón bruto; los jueces llegan a sus despachos por una rampa y no por una escalera, recorrido procesional que Le Corbusier empleó en todo el Capitolio. Ocho salas y sus oficinas anejas se alinean tras la pantalla de sombra en un bloque apilado sin complicaciones. Comparte su inscripción de la UNESCO con el Palacio de la Asamblea y la Secretaría como un único bien, listado en 2016, y sigue funcionando como Tribunal Superior conjunto de Punyab, Haryana y el territorio de la Unión de Chandigarh.',
+      it: "Il tribunale fu il primo dei tre edifici del Campidoglio a entrare in funzione: si trasferì da Shimla a Chandigarh nel gennaio 1955 e Nehru lo inaugurò quello stesso marzo. Le Corbusier gli diede un unico portico profondo e senza vetrate che corre lungo tutto il fronte d'ingresso — una copertura a parasole indipendente dal blocco sottostante — che ripara le aule dal sole del Punjab e allontana dai muri la pioggia monsonica. Tre piloni conici sorreggono il portico all'ingresso, dipinti di verde, giallo e vermiglio, l'unico colore saturo in un edificio altrimenti in cemento grezzo; i giudici raggiungono i propri uffici tramite una rampa anziché una scala, percorso processionale che Le Corbusier impiegò in tutto il Campidoglio. Otto aule e i relativi uffici si allineano dietro lo schermo d'ombra in un blocco impilato senza complicazioni. Condivide la propria iscrizione UNESCO con il Palazzo dell'Assemblea e il Segretariato come un unico bene, iscritto nel 2016, e serve tuttora come Alta Corte congiunta di Punjab, Haryana e del territorio dell'Unione di Chandigarh.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q130502', title: 'Punjab and Haryana High Court (Q130502)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Punjab_and_Haryana_High_Court', title: 'Punjab and Haryana High Court', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Chandigarh_Capitol_Complex', title: 'Chandigarh Capitol Complex', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    // Wave V2-3, batch B8. `le-corbusier` defined above in this file
+    // (Palace of Assembly); referenced here, not redefined.
+    id: 'secretariat-building-chandigarh',
+    wikidataId: 'Q7444209',
+    name: {
+      en: 'Secretariat Building, Chandigarh',
+      es: 'Edificio de la Secretaría, Chandigarh',
+      it: 'Edificio del Segretariato, Chandigarh',
+    },
+    architectId: 'le-corbusier',
+    location: { city: 'Chandigarh', countryCode: 'IN', lat: 30.76111, lon: 76.80056 },
+    inception: 1952,
+    completed: 1958,
+    demolished: null,
+    typology: 'civic',
+    materials: ['concrete'],
+    structure: {
+      en: "A 254-metre, eight-storey slab wrapped in a continuous grid of concrete brise-soleil sized differently per facade for each elevation's actual sun exposure, climbed by two car-width ramps in place of a lift core.",
+      es: 'Una losa de 254 metros y ocho plantas envuelta en una retícula continua de brise-soleil de hormigón dimensionada de forma distinta en cada fachada según la exposición solar real de cada una, recorrida por dos rampas del ancho de un coche en lugar de un núcleo de ascensores.',
+      it: "Una lastra di 254 metri e otto piani avvolta in una griglia continua di brise-soleil in cemento dimensionata in modo diverso su ogni fronte secondo l'esposizione solare reale di ciascuno, percorsa da due rampe larghe quanto un'automobile al posto di un nucleo ascensori.",
+    },
+    program: {
+      en: "Ministry offices for the Punjab state government, the third and largest building of Le Corbusier's Chandigarh Capitol Complex, commissioned alongside the Assembly and High Court.",
+      es: 'Oficinas ministeriales del gobierno del estado de Punyab, el tercer y mayor edificio del Capitolio de Chandigarh de Le Corbusier, encargado junto con la Asamblea y el Tribunal Superior.',
+      it: "Uffici ministeriali del governo dello stato del Punjab, il terzo e più grande edificio del Campidoglio di Chandigarh di Le Corbusier, commissionato insieme all'Assemblea e all'Alta Corte.",
+    },
+    heritage: 'unesco',
+    currentUse: {
+      en: 'Working government offices, its floors divided since 1966 between the Punjab and Haryana state administrations.',
+      es: 'Oficinas gubernamentales en funcionamiento, con sus plantas repartidas desde 1966 entre las administraciones de los estados de Punyab y Haryana.',
+      it: "Uffici governativi in funzione, con i piani ripartiti dal 1966 tra le amministrazioni degli stati del Punjab e dell'Haryana.",
+    },
+    detailRect: { x: 0.30, y: 0.25, w: 0.32, h: 0.35 },
+    image: {
+      commonsFile: 'File:Secretariat facade.jpg',
+      photographer: 'Lian Chang',
+      license: 'CC BY 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Secretariat_facade.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Chandigarh Capitol Complex - Le Corbusier - Secretariat front elevation.jpg',
+        photographer: 'Nicholas.iyadurai',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Chandigarh_Capitol_Complex_-_Le_Corbusier_-_Secretariat_front_elevation.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "The Secretariat is the largest single element of the Capitol: a slab 254 metres long and eight storeys high, wrapped its full length in a continuous grid of concrete brise-soleil that Le Corbusier sized differently on each face to match the sun each elevation actually receives. Two ramps, wide enough for a car, climb the building's end in place of a lift core, and the roof carries a garden and a ventilation stack shaped like the horn motif of the Modulor figure that recurs across the whole Capitol. It was built to hold the ministries of the joint Punjab government of the 1950s, floor after floor of open-plan offices behind the sun-breaking screen, with construction running from the early 1950s to the building's completion around 1958. After the 1966 Reorganisation split Punjab and created Haryana, the two states divided the Secretariat's floors between their administrations rather than each building a new one, and it remains in that shared use today, inscribed with the rest of the Capitol Complex as a UNESCO World Heritage property in 2016.",
+      es: 'La Secretaría es el elemento más grande del Capitolio: una losa de 254 metros de largo y ocho plantas de alto, envuelta en toda su longitud por una retícula continua de brise-soleil de hormigón que Le Corbusier dimensionó de forma distinta en cada fachada según el sol que realmente recibe cada orientación. Dos rampas, anchas como para un coche, suben por el extremo del edificio en lugar de un núcleo de ascensores, y la cubierta lleva un jardín y una chimenea de ventilación con el motivo del cuerno de la figura del Modulor que reaparece en todo el Capitolio. Se construyó para albergar los ministerios del gobierno conjunto del Punyab de los años cincuenta, planta tras planta de oficinas diáfanas tras la pantalla parasol, con obras que se desarrollaron desde principios de los años cincuenta hasta la conclusión del edificio hacia 1958. Tras la Reorganización de 1966, que dividió el Punyab y creó Haryana, los dos estados se repartieron las plantas de la Secretaría entre sus administraciones en vez de construir cada uno la suya, y sigue en ese uso compartido hoy, inscrita junto al resto del Capitolio como Patrimonio Mundial de la UNESCO en 2016.',
+      it: "Il Segretariato è l'elemento più grande del Campidoglio: una lastra lunga 254 metri e alta otto piani, avvolta per tutta la sua lunghezza in una griglia continua di brise-soleil in cemento che Le Corbusier dimensionò in modo diverso su ogni fronte secondo il sole che ciascun prospetto riceve davvero. Due rampe, larghe quanto basta per un'automobile, salgono all'estremità dell'edificio al posto di un nucleo ascensori, e la copertura porta un giardino e una ciminiera di ventilazione con il motivo del corno della figura del Modulor che ricompare in tutto il Campidoglio. Fu costruito per ospitare i ministeri del governo congiunto del Punjab degli anni Cinquanta, piano dopo piano di uffici a pianta aperta dietro lo schermo parasole, con lavori che si svolsero dai primi anni Cinquanta al completamento dell'edificio verso il 1958. Dopo la Riorganizzazione del 1966, che divise il Punjab e creò l'Haryana, i due stati si spartirono i piani del Segretariato fra le rispettive amministrazioni anziché costruirne uno ciascuno, e resta oggi in quell'uso condiviso, iscritto insieme al resto del Campidoglio come Patrimonio Mondiale UNESCO nel 2016.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q7444209', title: 'Secretariat Building (Q7444209)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Secretariat_Building,_Chandigarh', title: 'Secretariat Building, Chandigarh', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Chandigarh_Capitol_Complex', title: 'Chandigarh Capitol Complex', license: 'CC BY-SA 4.0' },
     ],
     tier: 'canon',
   },
