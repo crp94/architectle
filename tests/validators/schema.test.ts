@@ -121,4 +121,25 @@ describe('validateSchema', () => {
     }));
     expect(v.map((x) => x.rule)).not.toContain('demolished-after-completion');
   });
+
+  describe('extraImages cardinality', () => {
+    it('accepts a building with no extraImages', () => {
+      const v = validateSchema(withBuilding(validPool(), { extraImages: undefined }));
+      expect(v.map((x) => x.rule)).not.toContain('extra-images-max');
+    });
+
+    it('accepts a building with 1-2 extraImages', () => {
+      const p = validPool();
+      const extra = p.buildings[0].image;
+      const v = validateSchema(withBuilding(p, { extraImages: [extra, extra] }));
+      expect(v.map((x) => x.rule)).not.toContain('extra-images-max');
+    });
+
+    it('rejects a building with more than 2 extraImages', () => {
+      const p = validPool();
+      const extra = p.buildings[0].image;
+      const v = validateSchema(withBuilding(p, { extraImages: [extra, extra, extra] }));
+      expect(v.map((x) => x.rule)).toContain('extra-images-max');
+    });
+  });
 });

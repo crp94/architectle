@@ -31,6 +31,8 @@ const MIN_YEAR = 1;
 const MAX_YEAR = 2100;
 const MIN_DETAIL_RECT_AREA = 0.04;
 const BOUNDS_EPSILON = 1e-9;
+// Design spec §6: `extraImages` is 0-2 hand-picked additional angles.
+const MAX_EXTRA_IMAGES = 2;
 
 function isPlausibleYear(year: number): boolean {
   return year >= MIN_YEAR && year <= MAX_YEAR;
@@ -186,6 +188,14 @@ function checkBuildingSchema(b: Building, out: Violation[]): void {
   }
 
   checkTier(b.tier, b.id, out);
+
+  if ((b.extraImages?.length ?? 0) > MAX_EXTRA_IMAGES) {
+    out.push({
+      rule: 'extra-images-max',
+      subject: b.id,
+      detail: `extraImages has ${b.extraImages!.length} entries, exceeding the maximum ${MAX_EXTRA_IMAGES}`,
+    });
+  }
 }
 
 function checkArchitectSchema(a: Architect, out: Violation[]): void {
