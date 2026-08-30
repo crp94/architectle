@@ -126,6 +126,49 @@ describe('Reveal', () => {
     expect(screen.getAllByTestId(/^reveal-fact-/)).toHaveLength(4);
   });
 
+  it('omits the extra-images gallery entirely when the building has no extraImages', () => {
+    renderReveal();
+    expect(screen.queryByTestId('reveal-extra-images')).toBeNull();
+  });
+
+  it('renders each extraImages entry as a smaller framed print, credited and captioned', () => {
+    renderReveal({
+      extraImages: [
+        {
+          commonsFile: 'File:Reveal-angle-2.jpg',
+          photographer: 'Second Photographer',
+          license: 'CC BY-SA 4.0',
+          sourceUrl: 'https://commons.wikimedia.org/wiki/File:Reveal-angle-2.jpg',
+          width: 1200,
+          height: 800,
+        },
+        {
+          commonsFile: 'File:Reveal-angle-3.jpg',
+          photographer: 'Third Photographer',
+          license: 'CC BY 4.0',
+          sourceUrl: 'https://commons.wikimedia.org/wiki/File:Reveal-angle-3.jpg',
+          width: 1200,
+          height: 800,
+        },
+      ],
+    });
+
+    const gallery = screen.getByTestId('reveal-extra-images');
+    expect(gallery).toBeTruthy();
+
+    const firstImg = screen.getByTestId('image-gallery-photo-0');
+    expect(decodeURIComponent(firstImg.getAttribute('src') ?? '')).toContain(`/buildings/${baseBuilding.id}-2.avif`);
+    const secondImg = screen.getByTestId('image-gallery-photo-1');
+    expect(decodeURIComponent(secondImg.getAttribute('src') ?? '')).toContain(`/buildings/${baseBuilding.id}-3.avif`);
+
+    // Each print carries its own alt text and photographer credit — never a
+    // bare, uncredited image (design spec §6).
+    expect(firstImg.getAttribute('alt')).toContain(baseBuilding.name.en);
+    const captions = screen.getAllByTestId('gallery-frame-caption').map((c) => c.textContent ?? '');
+    expect(captions.some((c) => c.includes('Second Photographer'))).toBe(true);
+    expect(captions.some((c) => c.includes('Third Photographer'))).toBe(true);
+  });
+
   it('renders the trilingual dossier in the active locale', () => {
     const building = { ...baseBuilding };
     render(
