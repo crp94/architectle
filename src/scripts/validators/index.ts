@@ -16,6 +16,18 @@ export {
   yearOf, eraOf, geographyBucketOf,
 } from './coverage';
 export type { Era, GeographyBucket } from './coverage';
+// Not part of ALL_VALIDATORS/validatePool below: unlike the other five,
+// validateFeatured's default argument reaches outside the `Pool` it's
+// given (the real FEATURED_ARCHITECT_IDS list, src/scripts/curated/
+// featured.ts) — folding it into the pool-agnostic `validatePool(pool)`
+// composition would make that function's result depend on which pool a
+// caller passes AND on unrelated global curated data, which every existing
+// caller (including this file's own validatePool tests, run against the
+// small tests/fixtures/pool.ts fixture) does not expect. buildCuratedPool.ts
+// calls it explicitly instead, exactly like validateCoverage's
+// `--skip-coverage` handling already is a case handled outside this
+// generic composition.
+export { validateFeatured } from './featured';
 
 export const ALL_VALIDATORS = [
   validateSchema, validateCrossRefs, validateImages, validateProvenance, validateCoverage,
