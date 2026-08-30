@@ -45,6 +45,16 @@ export const WESTASIA_BUILDINGS: Building[] = [
       width: 1600,
       height: 1036,
     },
+    extraImages: [
+      {
+        commonsFile: 'File:Selimiye Mosque 025.jpg',
+        photographer: 'Dosseman',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Selimiye_Mosque_025.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
     dossier: {
       en: 'Sinan was approaching eighty when Selim II gave him Edirne, the old Ottoman capital, and a hilltop above it. He answered with the building he had been working towards for forty years. Eight piers set in an octagon inside a square hall take the whole 31.3-metre dome directly, on arches, rather than through the cascade of half-domes that steadies the Süleymaniye; the buttresses that resist the outward thrust are folded into the thickness of the outer walls, which are therefore free to be cut through with windows at every level. The result is a single undivided room, lit all round, with the muezzin’s platform standing free at its centre and İznik tilework concentrated at the mihrab. Four minarets, each nearly seventy-one metres, hold the mass down at the corners. Sinan called it his masterpiece; his biography claims for it a dome higher and wider than Hagia Sophia’s. UNESCO inscribed the mosque and its social complex in 2011.',
       es: 'Sinan rondaba los ochenta años cuando Selim II le entregó Edirne, la vieja capital otomana, y una colina sobre ella. Respondió con el edificio hacia el que llevaba cuarenta años trabajando. Ocho pilares dispuestos en octógono dentro de una sala cuadrada reciben directamente sobre arcos toda la cúpula de 31,3 metros, sin la cascada de semicúpulas que estabiliza la Süleymaniye; los contrafuertes que resisten el empuje se pliegan en el espesor de los muros exteriores, que quedan así libres para abrirse en ventanas a todos los niveles. El resultado es una sala única y sin divisiones, iluminada por todo su perímetro, con la tribuna del almuédano exenta en el centro y la loza de İznik concentrada en el mihrab. Cuatro alminares de casi setenta y un metros sujetan la masa en las esquinas. Sinan la llamó su obra maestra; su biografía le atribuye una cúpula más alta y más ancha que la de Santa Sofía. La UNESCO la inscribió con su complejo asistencial en 2011.',
@@ -353,5 +363,141 @@ export const WESTASIA_BUILDINGS: Building[] = [
       },
     ],
     tier: 'deep',
+  },
+  // --- Wave V2-3 batch B7 top-up: Mimar Sinan (existing) ---
+  {
+    id: 'suleymaniye-mosque',
+    wikidataId: 'Q178643',
+    name: {
+      en: 'Süleymaniye Mosque',
+      es: 'Mezquita de Solimán',
+      it: 'Moschea di Solimano',
+    },
+    architectId: 'mimar-sinan',
+    location: { city: 'Istanbul', countryCode: 'TR', lat: 41.016111, lon: 28.963889 },
+    inception: 1550,
+    completed: 1557,
+    demolished: null,
+    typology: 'sacral',
+    materials: ['stone'],
+    structure: {
+      en: "A central dome 26 metres in diameter and 53 metres high is carried on four massive piers and stabilised by a cascade of semi-domes and buttresses to the east and west, a system Sinan himself later called his 'journeyman' work on the way to Selimiye.",
+      es: 'Una cúpula central de 26 metros de diámetro y 53 de altura se sostiene sobre cuatro pilares macizos y se estabiliza con una cascada de semicúpulas y contrafuertes al este y al oeste, un sistema que el propio Sinan llamaría después su obra «de oficial» camino de la Selimiye.',
+      it: "Una cupola centrale di 26 metri di diametro e 53 di altezza è retta da quattro pilastri massicci e stabilizzata da una cascata di semicupole e contrafforti a est e a ovest, un sistema che lo stesso Sinan avrebbe poi chiamato la sua opera «da artigiano» sulla via della Selimiye.",
+    },
+    program: {
+      en: 'Commissioned by Sultan Süleyman the Magnificent as the centre of a vast charitable complex including madrasas, a hospital, a soup kitchen, a caravanserai and Sinan\'s own tomb.',
+      es: 'Encargada por el sultán Solimán el Magnífico como centro de un vasto complejo asistencial con madrazas, un hospital, un comedor de beneficencia, una caravanserai y la propia tumba de Sinan.',
+      it: 'Commissionata dal sultano Solimano il Magnifico come nucleo di un vasto complesso assistenziale con madrase, un ospedale, una mensa per i poveri, un caravanserraglio e la tomba dello stesso Sinan.',
+    },
+    heritage: 'unesco',
+    currentUse: {
+      en: "An active congregational mosque; several of the complex's former madrasas now house a library, a hospital and Sinan's own tomb garden.",
+      es: 'Mezquita congregacional en uso; varias de las antiguas madrazas del complejo albergan hoy una biblioteca, un hospital y el jardín-tumba del propio Sinan.',
+      it: 'Moschea congregazionale in uso; diverse delle antiche madrase del complesso ospitano oggi una biblioteca, un ospedale e il giardino-tomba dello stesso Sinan.',
+    },
+    // NOT pixel-verified this session: Commons upload-host rate limiting
+    // (shared across all 8 parallel wave-3 batches) blocked every download
+    // attempt for this file. Licence/photographer WERE verified on the live
+    // rendered file page (Dursun Sülük, CC BY-SA 4.0). Rect reasoned to sit
+    // over the dome/pier junction at the building's centre; re-crop and
+    // confirm before this ships.
+    detailRect: { x: 0.32, y: 0.28, w: 0.32, h: 0.32 },
+    image: {
+      commonsFile: 'File:Süleymaniye Camii 2022.jpg',
+      photographer: 'Dursun Sülük',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:S%C3%BCleymaniye_Camii_2022.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Süleymaniye Mosque February 2013 01.jpg',
+        photographer: 'Arild Vågen',
+        license: 'CC BY-SA 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:S%C3%BCleymaniye_Mosque_February_2013_01.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "Süleyman the Magnificent gave Sinan a hill above the Golden Horn and a budget to match an empire at its widest extent, and the result is less a single mosque than a small planned city: madrasas ranged around the courtyard for four schools of Islamic law, a hospital, a soup kitchen feeding the poor daily, a caravanserai, baths and shops whose rents endowed the whole foundation. The mosque itself carries a central dome 26 metres across on four monumental piers, propped by cascading semi-domes to east and west in a system directly descended from Hagia Sophia, which stands across the city and which Sinan studied for decades. Sinan called it his journeyman work, the middle term between the Şehzade Mosque's apprentice-level solution and the Selimiye's mastery three decades later. He is buried, along with his patron, in the mosque's own precinct. UNESCO inscribed the complex within the Historic Areas of Istanbul in 1985.",
+      es: 'Solimán el Magnífico le dio a Sinan una colina sobre el Cuerno de Oro y un presupuesto a la altura de un imperio en su máxima extensión, y el resultado es menos una sola mezquita que una pequeña ciudad planificada: madrazas dispuestas en torno al patio para las cuatro escuelas jurídicas islámicas, un hospital, un comedor de beneficencia que alimentaba a diario a los pobres, una caravanserai, baños y tiendas cuyas rentas sostenían toda la fundación. La mezquita en sí sostiene una cúpula central de 26 metros de diámetro sobre cuatro pilares monumentales, apuntalada por semicúpulas en cascada al este y al oeste en un sistema que desciende directamente de Santa Sofía, situada al otro lado de la ciudad y que Sinan estudió durante décadas. Él mismo la llamó su obra de oficial, el término medio entre la solución de aprendiz de la mezquita de Şehzade y la maestría de la Selimiye tres décadas después. Está enterrado, junto a su mecenas, en el propio recinto de la mezquita. La UNESCO inscribió el conjunto dentro de las Áreas Históricas de Estambul en 1985.',
+      it: "Solimano il Magnifico diede a Sinan una collina sopra il Corno d'Oro e un budget all'altezza di un impero alla sua massima estensione, e il risultato è meno una singola moschea che una piccola città pianificata: madrase disposte attorno al cortile per le quattro scuole giuridiche islamiche, un ospedale, una mensa che sfamava ogni giorno i poveri, un caravanserraglio, bagni e botteghe le cui rendite sostenevano l'intera fondazione. La moschea vera e propria regge una cupola centrale di 26 metri di diametro su quattro pilastri monumentali, puntellata da semicupole a cascata a est e a ovest in un sistema che discende direttamente da Santa Sofia, che sorge dall'altra parte della città e che Sinan studiò per decenni. Egli stesso la definì la sua opera di artigiano, il termine medio tra la soluzione da apprendista della moschea di Şehzade e la maestria della Selimiye tre decenni dopo. È sepolto, accanto al suo mecenate, nel recinto stesso della moschea. L'UNESCO ha iscritto il complesso nelle Aree Storiche di Istanbul nel 1985.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q178643', title: 'Süleymaniye Mosque (Q178643)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/S%C3%BCleymaniye_Mosque', title: 'Süleymaniye Mosque', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://whc.unesco.org/en/list/356/', title: 'Historic Areas of Istanbul — UNESCO World Heritage Centre', license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'mihrimah-sultan-mosque-uskudar',
+    wikidataId: 'Q2537376',
+    name: {
+      en: 'Mihrimah Sultan Mosque, Üsküdar',
+      es: 'Mezquita de Mihrimah Sultan de Üsküdar',
+      it: 'Moschea di Mihrimah Sultan a Üsküdar',
+    },
+    architectId: 'mimar-sinan',
+    location: { city: 'Istanbul', countryCode: 'TR', lat: 41.026792, lon: 29.01598 },
+    inception: 1546,
+    completed: 1548,
+    demolished: null,
+    typology: 'sacral',
+    materials: ['stone'],
+    structure: {
+      en: 'A square prayer hall carries a single dome, roughly 11 metres across, on an arrangement of piers engaged within the perimeter walls, lit by rows of windows stacked in tiers up to the drum, with a single slender minaret at one corner.',
+      es: 'Una sala de oración cuadrada sostiene una sola cúpula, de unos 11 metros de diámetro, sobre pilares embebidos en los muros perimetrales, iluminada por hileras de ventanas superpuestas hasta el tambor, con un único alminar esbelto en una esquina.',
+      it: 'Una sala di preghiera quadrata regge un\'unica cupola, di circa 11 metri di diametro, su pilastri inglobati nei muri perimetrali, illuminata da file di finestre sovrapposte fino al tamburo, con un unico minareto snello su un angolo.',
+    },
+    program: {
+      en: 'Commissioned by Mihrimah Sultan, daughter of Süleyman the Magnificent and wife of grand vizier Rüstem Pasha, as the centrepiece of a charitable complex on the Bosphorus shore at Üsküdar.',
+      es: 'Encargada por Mihrimah Sultan, hija de Solimán el Magnífico y esposa del gran visir Rüstem Pasha, como núcleo de un complejo asistencial en la orilla del Bósforo en Üsküdar.',
+      it: 'Commissionata da Mihrimah Sultan, figlia di Solimano il Magnifico e moglie del gran visir Rüstem Pasha, come fulcro di un complesso assistenziale sulla riva del Bosforo a Üsküdar.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'An active congregational mosque overlooking the Bosphorus ferry terminal at Üsküdar.',
+      es: 'Mezquita congregacional en uso, con vistas a la terminal de transbordadores del Bósforo en Üsküdar.',
+      it: 'Moschea congregazionale in uso, affacciata sul terminal dei traghetti del Bosforo a Üsküdar.',
+    },
+    // NOT pixel-verified this session (Commons rate limiting — see
+    // Süleymaniye Mosque above for the full note). Licence/photographer
+    // verified. Rect reasoned to sit over the dome/window-tier junction at
+    // the building's centre; re-crop and confirm before this ships.
+    detailRect: { x: 0.34, y: 0.30, w: 0.32, h: 0.35 },
+    image: {
+      commonsFile: 'File:Mihrimah Sultan Mosque Uskudar 9528.jpg',
+      photographer: 'Dosseman',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Mihrimah_Sultan_Mosque_Uskudar_9528.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Mihrimah Sultan Mosque (Üsküdar) (26).jpg',
+        photographer: 'Yahia.Mokhtar',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Mihrimah_Sultan_Mosque_(%C3%9Csk%C3%BCdar)_(26).jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "Mihrimah Sultan, Süleyman the Magnificent's only daughter, commissioned two mosques from Sinan under her own name — one at Edirnekapı, on the city's western land walls, and this one at Üsküdar, on the Bosphorus shore where the Asian side's ferries still dock. Built in the late 1540s, early in the period Sinan later called his apprenticeship, the mosque is markedly smaller and simpler than his later imperial commissions: a square prayer hall under a single dome about eleven metres across, its drum lit by rings of stacked windows rather than the cascading semi-domes he would use at Süleymaniye a decade later. A single slender minaret stands at one corner rather than the paired or quadruple minarets of the sultans' own mosques, a scale appropriate to a princess's rather than a sultan's foundation. It remains in daily use, overlooking Üsküdar's ferry terminal and one of the busiest crossing points on the Bosphorus.",
+      es: 'Mihrimah Sultan, la única hija de Solimán el Magnífico, encargó a Sinan dos mezquitas bajo su propio nombre —una en Edirnekapı, en las murallas terrestres occidentales de la ciudad, y esta en Üsküdar, en la orilla del Bósforo donde aún atracan los transbordadores del lado asiático—. Construida a finales de la década de 1540, al principio del periodo que Sinan llamaría después su aprendizaje, la mezquita es notablemente más pequeña y sencilla que sus encargos imperiales posteriores: una sala de oración cuadrada bajo una sola cúpula de unos once metros de diámetro, cuyo tambor se ilumina con anillos de ventanas superpuestas y no con las semicúpulas en cascada que emplearía en la Süleymaniye una década después. Un único alminar esbelto se alza en una esquina, en vez de los alminares dobles o cuádruples de las mezquitas de los propios sultanes, una escala adecuada a una fundación de princesa y no de sultán. Sigue en uso diario, con vistas a la terminal de transbordadores de Üsküdar, uno de los cruces más transitados del Bósforo.',
+      it: "Mihrimah Sultan, unica figlia di Solimano il Magnifico, commissionò a Sinan due moschee a proprio nome — una a Edirnekapı, sulle mura terrestri occidentali della città, e questa a Üsküdar, sulla riva del Bosforo dove ancora attraccano i traghetti del lato asiatico. Costruita alla fine degli anni 1540, agli inizi del periodo che Sinan avrebbe poi chiamato il suo apprendistato, la moschea è nettamente più piccola e semplice dei suoi incarichi imperiali successivi: una sala di preghiera quadrata sotto un'unica cupola di circa undici metri di diametro, il cui tamburo è illuminato da anelli di finestre sovrapposte e non dalle semicupole a cascata che avrebbe usato alla Süleymaniye un decennio dopo. Un unico minareto snello si erge su un angolo, anziché i minareti doppi o quadrupli delle moschee dei sultani stessi, una scala adeguata a una fondazione principesca più che sultanale. Resta in uso quotidiano, affacciata sul terminal dei traghetti di Üsküdar, uno dei punti di attraversamento più trafficati del Bosforo.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q2537376', title: 'Mihrimah Sultan Mosque, Üsküdar (Q2537376)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Mihrimah_Sultan_Mosque,_%C3%9Csk%C3%BCdar', title: 'Mihrimah Sultan Mosque, Üsküdar', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
   },
 ];

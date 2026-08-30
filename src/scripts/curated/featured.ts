@@ -36,4 +36,10 @@ export const FEATURED_ARCHITECT_IDS: string[] = [
   'michelangelo',
   'renzo-piano',
   'jean-nouvel',
+  'tadao-ando',
+  'kenzo-tange',
+  'kazuyo-sejima',
+  'toyo-ito',
+  'wang-shu',
+  'mimar-sinan',
 ];

@@ -361,4 +361,159 @@ export const ASIA_ARCHITECTS: Architect[] = [
       { kind: 'wikipedia', url: 'https://ko.wikipedia.org/wiki/%EA%B9%80%EC%88%98%EA%B7%BC_(%EA%B1%B4%EC%B6%95%EA%B0%80)', title: '김수근 (건축가)', license: 'CC BY-SA 4.0' },
     ],
   },
+  // --- Wave V2-3 batch B7 additions below ---
+  {
+    id: 'tadao-ando',
+    wikidataId: 'Q208220',
+    name: 'Tadao Ando',
+    alternativeNames: ['安藤忠雄', 'Andō Tadao'],
+    gender: 'man',
+    born: 1941,
+    died: null,
+    // Span of completed works: Row House in Sumiyoshi (1976) is conventionally
+    // treated as his breakthrough first mature building; living, still
+    // completing work (Poly Grand Theatre, Shanghai, 2014).
+    floruit: { start: 1976, end: 2026, override: false },
+    // Kenneth Frampton's writing on Ando (a 1984 Rizzoli monograph, part of a
+    // series on critical-regionalist practices, and his later "Critical
+    // Regionalism" essays) is the standard citation for this label — Ando
+    // himself has neither adopted nor objected to the term.
+    movements: [{ id: 'critical-regionalism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: 'Tadao Ando boxed briefly as a teenager to pay for travel, and gave it up after seeing Frank Lloyd Wright\'s Imperial Hotel in Tokyo. He never studied architecture formally: he read, took a correspondence course, and between 1962 and 1969 travelled through Japan, Europe, Africa and the United States tracing Le Corbusier\'s buildings by hand. He opened his own office in Osaka in 1969 and spent the 1970s working almost entirely in raw, fair-faced concrete, a material he treats as finished rather than as a shell for something else. Row House in Sumiyoshi (1976), a nearly windowless concrete box wrapped around an open courtyard, established the vocabulary — light, water, and unbroken wall — that runs through four decades of museums, temples and houses across Japan and abroad. He won the Pritzker Prize in 1995.',
+      es: 'Tadao Ando boxeó brevemente de adolescente para costearse viajes, y lo dejó tras ver el Hotel Imperial de Frank Lloyd Wright en Tokio. Nunca estudió arquitectura de forma reglada: leyó, siguió un curso por correspondencia y entre 1962 y 1969 recorrió Japón, Europa, África y Estados Unidos calcando a mano los edificios de Le Corbusier. Abrió estudio propio en Osaka en 1969 y pasó los años setenta trabajando casi solo con hormigón visto, un material que trata como acabado y no como envoltorio de otra cosa. La Row House de Sumiyoshi (1976), una caja de hormigón casi sin ventanas envuelta en torno a un patio abierto, fijó el vocabulario —luz, agua, muro continuo— que recorre cuatro décadas de museos, templos y casas en Japón y fuera de él. Ganó el Premio Pritzker en 1995.',
+      it: 'Tadao Ando fece brevemente il pugile da adolescente per pagarsi i viaggi, e lasciò perdere dopo aver visto l\'Imperial Hotel di Frank Lloyd Wright a Tokyo. Non studiò mai architettura in modo formale: lesse, seguì un corso per corrispondenza e tra il 1962 e il 1969 percorse Giappone, Europa, Africa e Stati Uniti ricalcando a mano gli edifici di Le Corbusier. Aprì uno studio proprio a Osaka nel 1969 e passò gli anni Settanta lavorando quasi solo con il cemento a vista, un materiale che tratta come finitura e non come involucro per altro. La Row House di Sumiyoshi (1976), una scatola di cemento quasi priva di finestre avvolta attorno a un cortile aperto, fissò il vocabolario — luce, acqua, muro continuo — che attraversa quattro decenni di musei, templi e case in Giappone e all\'estero. Vinse il Premio Pritzker nel 1995.',
+    },
+    awards: [
+      'Pritzker Architecture Prize (1995)',
+      'RIBA Royal Gold Medal (1997)',
+      'Praemium Imperiale (1996)',
+      'AIA Gold Medal (2002)',
+      'Order of Culture (Japan, 2010)',
+    ],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q208220', title: 'Tadao Ando (Q208220)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Tadao_Ando', title: 'Tadao Ando', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.pritzkerprize.com/laureates/1995', title: 'Tadao Ando — The Pritzker Architecture Prize', license: null },
+    ],
+  },
+  {
+    id: 'toyo-ito',
+    wikidataId: 'Q333585',
+    name: 'Toyo Ito',
+    alternativeNames: ['伊東豊雄', 'Itō Toyo'],
+    gender: 'man',
+    born: 1941,
+    died: null,
+    // Span of completed works: from his own practice's early built work
+    // (1971, as "Urban Robot") to the present; living, still active.
+    floruit: { start: 1971, end: 2026, override: false },
+    // Ito is repeatedly described in secondary literature as resisting any
+    // single movement label — he trained under Metabolist Kiyonori Kikutake
+    // but explicitly moved past Metabolism's biological metaphors, and is
+    // characterised (Wallpaper*, STIR, the Architectural League) as
+    // practising an "ever-evolving," "nonspecific" architecture rather than
+    // a school. Left unaffiliated rather than mis-filed under Metabolism.
+    movements: 'unaffiliated',
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'steel-and-glass',
+    portrait: {
+      en: 'Toyo Ito graduated from the University of Tokyo in 1965 and spent four years in the office of Kiyonori Kikutake, at the centre of the Metabolist movement, before opening his own studio — first named Urban Robot — in Tokyo in 1971. He never adopted Metabolism\'s biological metaphors or its megastructures, and by the 1980s was building a reputation on the opposite instinct: structures light enough to feel temporary, expressed through thin steel and glass rather than exposed concrete mass. Sendai Mediatheque (2001) is usually treated as the hinge of his career, the first building in which an idea he had sketched for years — a structure of irregular tubes standing in for both columns and services — actually got built. He has taught and employed a generation of younger Japanese architects, Kazuyo Sejima among them, and won the Pritzker Prize in 2013.',
+      es: 'Toyo Ito se graduó por la Universidad de Tokio en 1965 y pasó cuatro años en el estudio de Kiyonori Kikutake, en el centro del movimiento metabolista, antes de abrir el suyo propio —llamado primero Urban Robot— en Tokio en 1971. Nunca adoptó las metáforas biológicas del metabolismo ni sus megaestructuras, y hacia los años ochenta se había labrado fama con el instinto contrario: estructuras lo bastante ligeras como para parecer provisionales, expresadas en acero fino y vidrio y no en masa de hormigón visto. La Mediateca de Sendai (2001) suele tratarse como la bisagra de su carrera, el primer edificio en el que una idea que llevaba años esbozando —una estructura de tubos irregulares que hacían a la vez de pilares e instalaciones— llegó por fin a construirse. Ha formado y empleado a una generación de arquitectos japoneses más jóvenes, entre ellos Kazuyo Sejima, y ganó el Premio Pritzker en 2013.',
+      it: 'Toyo Ito si laureò all\'Università di Tokyo nel 1965 e trascorse quattro anni nello studio di Kiyonori Kikutake, al centro del movimento metabolista, prima di aprire il proprio — chiamato dapprima Urban Robot — a Tokyo nel 1971. Non adottò mai le metafore biologiche del metabolismo né le sue megastrutture, e verso gli anni Ottanta si era fatto una reputazione con l\'istinto opposto: strutture abbastanza leggere da sembrare provvisorie, espresse in sottile acciaio e vetro anziché in massa di cemento a vista. La Mediateca di Sendai (2001) è di solito considerata la cerniera della sua carriera, il primo edificio in cui un\'idea che abbozzava da anni — una struttura di tubi irregolari che fungevano insieme da pilastri e da impianti — fu finalmente realizzata. Ha formato e impiegato una generazione di architetti giapponesi più giovani, tra cui Kazuyo Sejima, e vinse il Premio Pritzker nel 2013.',
+    },
+    awards: [
+      'Pritzker Architecture Prize (2013)',
+      'RIBA Royal Gold Medal (2006)',
+      'Praemium Imperiale (2010)',
+      'Golden Lion, Venice Architecture Biennale (2012)',
+    ],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q333585', title: 'Toyo Ito (Q333585)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Toyo_Ito', title: 'Toyo Ito', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.pritzkerprize.com/laureates/2013', title: 'Toyo Ito — The Pritzker Architecture Prize', license: null },
+    ],
+  },
+  {
+    // Co-architect record — required by crossRefs' co-architect-exists rule
+    // for the `coArchitects: ['ryue-nishizawa']` credit on Kanazawa 21st
+    // Century Museum and Rolex Learning Center above (both SANAA joint
+    // works with Kazuyo Sejima, who holds architectId on both).
+    id: 'ryue-nishizawa',
+    wikidataId: 'Q369645',
+    name: 'Ryue Nishizawa',
+    alternativeNames: ['西沢立衛', 'Nishizawa Ryūe'],
+    gender: 'man',
+    born: 1966,
+    died: null,
+    floruit: { start: 1995, end: 2026, override: false },
+    movements: [{ id: 'minimalism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'steel-and-glass',
+    portrait: {
+      en: 'Ryue Nishizawa studied architecture at Yokohama National University, joined Kazuyo Sejima\'s office as an employee in 1990, and became her full partner when they founded SANAA together in 1995. Since 1997 he has also run a separate solo practice, Office of Ryue Nishizawa, taking on smaller projects — houses, artist\'s studios — that the larger firm\'s museum-scale commissions don\'t allow; the Teshima Art Museum, a single unbroken concrete shell shaped like a drop of water resting on a hillside, is his best-known solo work. He shares SANAA\'s vocabulary of thin structure and unbroken glass but works at a more domestic scale on his own. He received the Pritzker Prize jointly with Sejima in 2010.',
+      es: 'Ryue Nishizawa estudió arquitectura en la Universidad Nacional de Yokohama, se incorporó como empleado al estudio de Kazuyo Sejima en 1990 y se convirtió en su socio pleno al fundar juntos SANAA en 1995. Desde 1997 dirige además una práctica propia independiente, Office of Ryue Nishizawa, que asume proyectos más pequeños —casas, estudios de artista— que los encargos a escala museística del estudio mayor no permiten; el Museo de Arte de Teshima, una sola cáscara continua de hormigón con forma de gota de agua posada en una ladera, es su obra en solitario más conocida. Comparte el vocabulario de SANAA de estructura delgada y vidrio continuo, pero trabaja por su cuenta a una escala más doméstica. Recibió el Premio Pritzker junto con Sejima en 2010.',
+      it: 'Ryue Nishizawa studiò architettura alla Yokohama National University, entrò come dipendente nello studio di Kazuyo Sejima nel 1990 e ne divenne socio a pieno titolo fondando insieme SANAA nel 1995. Dal 1997 dirige anche una pratica propria indipendente, Office of Ryue Nishizawa, che accoglie progetti più piccoli — case, studi d\'artista — che le commesse su scala museale dello studio maggiore non consentono; il Museo d\'Arte di Teshima, un unico guscio continuo di cemento a forma di goccia d\'acqua posata su un pendio, è la sua opera in proprio più nota. Condivide il vocabolario di SANAA fatto di struttura sottile e vetro continuo, ma lavora per conto proprio a una scala più domestica. Ha ricevuto il Premio Pritzker insieme a Sejima nel 2010.',
+    },
+    awards: [
+      'Pritzker Architecture Prize (2010, with Kazuyo Sejima)',
+      'Golden Lion, 9th Venice Architecture Biennale (2004, with Kazuyo Sejima)',
+    ],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q369645', title: 'Ryue Nishizawa (Q369645)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Ryue_Nishizawa', title: 'Ryue Nishizawa', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.pritzkerprize.com/laureates/2010', title: 'Kazuyo Sejima and Ryue Nishizawa — The Pritzker Architecture Prize', license: null },
+    ],
+  },
+  {
+    // Co-architect record — required by crossRefs' co-architect-exists rule
+    // for the `coArchitects: ['lu-wenyu']` credit on Ningbo Museum and
+    // Ningbo Tengtou Pavilion above (both Amateur Architecture Studio joint
+    // works with Wang Shu, who holds architectId on both).
+    id: 'lu-wenyu',
+    wikidataId: 'Q16239806',
+    name: 'Lu Wenyu',
+    alternativeNames: ['陆文宇'],
+    gender: 'woman',
+    born: 1967,
+    died: null,
+    floruit: { start: 1997, end: 2026, override: false },
+    movements: [
+      { id: 'critical-regionalism', primary: true },
+      { id: 'sustainable-architecture', primary: false },
+    ],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'mixed',
+    portrait: {
+      en: 'Lu Wenyu met Wang Shu as an architecture student at what is now Southeast University in Nanjing, and co-founded Amateur Architecture Studio with him in Hangzhou in 1997, when both were still building almost nothing and Wang Shu was completing a doctorate. She has directed the studio\'s construction and material research since, working with masons on-site to test how salvaged brick, tile and stone can be relaid into new walls, and now teaches alongside her partner at the China Academy of Art. When the Pritzker Prize went to Wang Shu alone in 2012 despite their joint authorship of every building credited to the practice, including the Ningbo Museum, the omission drew public criticism that Wang Shu himself has echoed; in 2010 the two shared the German Schelling Architecture Prize.',
+      es: 'Lu Wenyu conoció a Wang Shu como estudiante de arquitectura en la actual Universidad del Sudeste de Nankín, y cofundó con él el estudio Amateur Architecture en Hangzhou en 1997, cuando ambos apenas construían nada y Wang Shu terminaba un doctorado. Desde entonces dirige la investigación constructiva y de materiales del estudio, trabajando junto a los albañiles en obra para comprobar cómo pueden volver a asentarse en muros nuevos el ladrillo, la teja y la piedra recuperados, y hoy enseña junto a su pareja en la Academia China de Arte. Cuando el Premio Pritzker recayó solo en Wang Shu en 2012 pese a la autoría conjunta de todos los edificios acreditados al estudio, incluido el Museo de Ningbo, la omisión suscitó críticas públicas que el propio Wang Shu ha hecho suyas; en 2010 ambos compartieron el Premio Schelling de Arquitectura alemán.',
+      it: 'Lu Wenyu conobbe Wang Shu da studentessa di architettura all\'attuale Università del Sud-est di Nanchino, e con lui cofondò lo studio Amateur Architecture ad Hangzhou nel 1997, quando entrambi costruivano ancora quasi nulla e Wang Shu stava completando un dottorato. Da allora dirige la ricerca costruttiva e sui materiali dello studio, lavorando insieme ai muratori in cantiere per verificare come mattoni, tegole e pietre di recupero possano essere riposati in muri nuovi, e oggi insegna accanto al suo compagno all\'Accademia Cinese d\'Arte. Quando il Premio Pritzker andò al solo Wang Shu nel 2012 nonostante la paternità congiunta di tutti gli edifici accreditati allo studio, incluso il Museo di Ningbo, l\'esclusione suscitò critiche pubbliche che lo stesso Wang Shu ha fatto proprie; nel 2010 i due condivisero il Premio Schelling di architettura tedesco.',
+    },
+    awards: [
+      'Schelling Architecture Prize (2010, with Wang Shu)',
+    ],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q16239806', title: 'Lu Wenyu (Q16239806)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Lu_Wenyu', title: 'Lu Wenyu', license: 'CC BY-SA 4.0' },
+      { kind: 'publication', url: 'https://www.dezeen.com/2025/11/26/amateur-architecture-studios-wang-shu-lu-wenyu-venice-architecture-biennale-2027/', title: "Amateur Architecture Studio's Wang Shu and Lu Wenyu to curate Venice Architecture Biennale 2027 (Dezeen)", license: null },
+    ],
+  },
 ];
