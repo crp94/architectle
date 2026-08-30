@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { ARCHITECTS, ArchitectNotFoundError, architectById } from '@/lib/pool';
 import { buildingsByArchitect, contemporariesOf } from '@/lib/archive';
 import { MOVEMENTS } from '@/data/movements';
-import { architectJsonLd } from '@/lib/jsonld';
+import { architectJsonLd, breadcrumbJsonLd } from '@/lib/jsonld';
 import { SITE_URL } from '@/lib/site';
 import { t } from '@/lib/i18n';
 import { theme } from '@/lib/theme';
@@ -56,7 +56,8 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     title,
     description,
     alternates: { canonical: url },
-    openGraph: { title, description, url, type: 'profile' },
+    openGraph: { title, description, url, type: 'profile', siteName: 'Architectle' },
+    twitter: { card: 'summary_large_image', title, description },
   };
 }
 
@@ -75,6 +76,16 @@ export default async function ArchitectPage({ params }: { params: Promise<Params
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(architectJsonLd(architect)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd([
+            { name: t(LOCALE, 'appTitle'), url: SITE_URL },
+            { name: t(LOCALE, 'navArchitectsLink'), url: `${SITE_URL}/architects` },
+            { name: architect.name, url: `${SITE_URL}/architect/${architect.id}` },
+          ])),
+        }}
       />
       <article className="flex flex-col gap-8 p-4 md:p-8">
         <div className="flex flex-col gap-1">

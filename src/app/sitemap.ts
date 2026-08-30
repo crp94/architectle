@@ -12,7 +12,21 @@ import { SITE_URL } from '@/lib/site';
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const indexes: MetadataRoute.Sitemap = [
-    { url: `${SITE_URL}/`, changeFrequency: 'daily', priority: 1 },
+    {
+      url: `${SITE_URL}/`,
+      changeFrequency: 'daily',
+      priority: 1,
+      // The home page's only locale-routed variants (`?lang=`, driven by
+      // LocaleSwitcher.tsx) — mirrors the `alternates.languages` this same
+      // route's own `generateMetadata` emits (src/app/page.tsx).
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/`,
+          es: `${SITE_URL}/?lang=es`,
+          it: `${SITE_URL}/?lang=it`,
+        },
+      },
+    },
     { url: `${SITE_URL}/buildings`, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${SITE_URL}/architects`, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${SITE_URL}/movements`, changeFrequency: 'weekly', priority: 0.8 },

@@ -12,7 +12,13 @@ export function generateMetadata(): Metadata {
   const title = t(LOCALE, 'metaArchiveTitle', { name: t(LOCALE, 'navBuildingsLink') });
   const description = t(LOCALE, 'metaBuildingsIndexDescription', { count: BUILDINGS.length });
   const url = `${SITE_URL}/buildings`;
-  return { title, description, alternates: { canonical: url }, openGraph: { title, description, url } };
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url, type: 'website', siteName: 'Architectle' },
+    twitter: { card: 'summary_large_image', title, description },
+  };
 }
 
 // The full catalogue (design spec §8) — every building in the pool,

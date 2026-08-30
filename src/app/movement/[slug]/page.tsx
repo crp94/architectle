@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { architectsByMovement, buildingsByMovement, movementById, referencedMovementIds } from '@/lib/archive';
-import { movementJsonLd } from '@/lib/jsonld';
+import { breadcrumbJsonLd, movementJsonLd } from '@/lib/jsonld';
 import { SITE_URL } from '@/lib/site';
 import { t } from '@/lib/i18n';
 import { theme } from '@/lib/theme';
@@ -36,7 +36,8 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     title,
     description,
     alternates: { canonical: url },
-    openGraph: { title, description, url },
+    openGraph: { title, description, url, type: 'website', siteName: 'Architectle' },
+    twitter: { card: 'summary_large_image', title, description },
   };
 }
 
@@ -55,6 +56,16 @@ export default async function MovementPage({ params }: { params: Promise<Params>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(movementJsonLd(movement)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd([
+            { name: t(LOCALE, 'appTitle'), url: SITE_URL },
+            { name: t(LOCALE, 'navMovementsLink'), url: `${SITE_URL}/movements` },
+            { name: movement.name, url: `${SITE_URL}/movement/${movement.id}` },
+          ])),
+        }}
       />
       <article className="flex flex-col gap-8 p-4 md:p-8">
         <div className="flex flex-col gap-1">

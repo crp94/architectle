@@ -13,7 +13,13 @@ export function generateMetadata(): Metadata {
   const title = t(LOCALE, 'metaArchiveTitle', { name: t(LOCALE, 'navArchitectsLink') });
   const description = t(LOCALE, 'metaArchitectsIndexDescription', { count: roster().length });
   const url = `${SITE_URL}/architects`;
-  return { title, description, alternates: { canonical: url }, openGraph: { title, description, url } };
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url, type: 'website', siteName: 'Architectle' },
+    twitter: { card: 'summary_large_image', title, description },
+  };
 }
 
 // This is the roster GuessField's rejection message links to (design spec

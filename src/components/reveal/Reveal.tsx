@@ -126,6 +126,10 @@ export function Reveal({
             height={building.image.height}
             sizes="(min-width: 768px) 60vw, 100vw"
             style={{ width: '100%', height: 'auto' }}
+            // The reveal's hero is the round's answer at full resolution —
+            // the first thing the player looks at once it mounts, so it
+            // skips lazy loading (SEO/perf pass, spec §7).
+            priority
           />
         </GalleryFrame>
 

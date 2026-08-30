@@ -4,6 +4,7 @@ import { theme } from '@/lib/theme';
 import { t, type Locale } from '@/lib/i18n';
 import { SectionRule } from '@/components/ui/SectionRule';
 import { SpecimenLabel } from '@/components/ui/SpecimenLabel';
+import { SITE_URL } from '@/lib/site';
 import { ABOUT_SECTIONS, type AboutSection, type CoverageGateRow } from './content';
 
 // No dynamic locale routing exists yet anywhere in the app (src/app/page.tsx
@@ -13,10 +14,22 @@ import { ABOUT_SECTIONS, type AboutSection, type CoverageGateRow } from './conte
 // real locale through once routing exists, is a one-line change here.
 const LOCALE: Locale = 'en';
 
+const ABOUT_TITLE = t(LOCALE, 'navAbout');
+const ABOUT_DESCRIPTION = t(LOCALE, 'metaAboutDescription');
+const ABOUT_URL = `${SITE_URL}/about`;
+
 export const metadata: Metadata = {
-  title: 'About — Architectle',
-  description:
-    'What Architectle is, where its data comes from, and the honest limitations of a hand-curated pool of buildings and architects.',
+  title: ABOUT_TITLE,
+  description: ABOUT_DESCRIPTION,
+  alternates: { canonical: ABOUT_URL },
+  openGraph: {
+    title: ABOUT_TITLE,
+    description: ABOUT_DESCRIPTION,
+    url: ABOUT_URL,
+    type: 'website',
+    siteName: 'Architectle',
+  },
+  twitter: { card: 'summary_large_image', title: ABOUT_TITLE, description: ABOUT_DESCRIPTION },
 };
 
 function GateRow({ row }: { row: CoverageGateRow }) {
