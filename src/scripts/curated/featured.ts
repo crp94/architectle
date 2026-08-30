@@ -22,6 +22,13 @@ export const FEATURED_ARCHITECT_IDS: string[] = [
   'lina-bo-bardi', // 2 buildings (americas-southern.ts)
   'peter-zumthor', // 2 buildings (europe-germanic.ts), incl. Therme Vals
 
+  // Batch B6 (Italy/France) top-ups and new curates, Wave V2-3:
+  'filippo-brunelleschi', // 3 buildings (europe.ts): Duomo, Ospedale degli Innocenti, Pazzi Chapel
+  'andrea-palladio', // 3 buildings (europe.ts): La Rotonda, Basilica Palladiana, San Giorgio Maggiore
+  'michelangelo', // 3 buildings (europe.ts): St Peter's dome, Piazza del Campidoglio, Laurentian Library
+  'renzo-piano', // 3 buildings (asia.ts, americas.ts, europe-british.ts): Kansai, Whitney, the Shard
+  'jean-nouvel', // 3 buildings (europe.ts, europe-germanic.ts, americas.ts): Torre Glòries, KKL Luzern, Guthrie Theater
+
   // --- PENDING (Wave V2-3 curation fan-out fills these gaps) -------------
   // Every id below EITHER:
   //   (a) already exists in the pool but currently holds exactly 1
@@ -39,18 +46,17 @@ export const FEATURED_ARCHITECT_IDS: string[] = [
   // 'antoni-gaudi', 'frank-lloyd-wright', 'le-corbusier',
   // 'mies-van-der-rohe', 'zaha-hadid', 'norman-foster', 'oscar-niemeyer',
   // 'alvar-aalto', 'louis-kahn', 'jorn-utzon', 'kenzo-tange',
-  // 'filippo-brunelleschi', 'andrea-palladio', 'mimar-sinan',
-  // 'walter-gropius', 'kazuyo-sejima', 'victor-horta',
+  // 'mimar-sinan', 'walter-gropius', 'kazuyo-sejima', 'victor-horta',
   // 'charles-rennie-mackintosh', 'moshe-safdie', 'richard-rogers',
   // 'felix-candela', 'balkrishna-doshi',
   //
   // (b) not yet curated as a primary architect at all:
-  // 'renzo-piano', 'tadao-ando', 'frank-gehry', 'rem-koolhaas', 'i-m-pei',
+  // 'tadao-ando', 'frank-gehry', 'rem-koolhaas', 'i-m-pei',
   // 'christopher-wren', 'santiago-calatrava', 'eero-saarinen',
-  // 'louis-sullivan', 'jean-nouvel', 'alvaro-siza' (NB: already curated as
+  // 'louis-sullivan', 'alvaro-siza' (NB: already curated as
   // a NON-featured pool architect — check building count before adding),
   // 'toyo-ito', 'marcel-breuer', 'philip-johnson', 'buckminster-fuller',
-  // 'michelangelo', 'gustave-eiffel', 'antonin-raymond', 'wang-shu' (also
+  // 'gustave-eiffel', 'antonin-raymond', 'wang-shu' (also
   // already in the pool — check building count), 'denise-scott-brown',
   // 'robert-venturi',
 ];

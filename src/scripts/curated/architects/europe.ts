@@ -25,7 +25,10 @@ export const EUROPE_ARCHITECTS: Architect[] = [
     gender: 'man',
     born: 1377,
     died: 1446,
-    floruit: { start: 1419, end: 1446, override: false },
+    // override: the Pazzi Chapel was not completed until 1478, thirty-two
+    // years after Brunelleschi's death — construction dragged on after he
+    // died, not a claim he was still working. See pazzi-chapel's dossier.
+    floruit: { start: 1419, end: 1478, override: true },
     movements: [{ id: 'renaissance', primary: true }],
     workRegions: [],
     workCentroid: { lat: 0, lon: 0 },
@@ -468,6 +471,40 @@ export const EUROPE_ARCHITECTS: Architect[] = [
       { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q190148', title: 'Renzo Piano (Q190148)', license: null },
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Renzo_Piano', title: 'Renzo Piano — Wikipedia', license: 'CC BY-SA 4.0' },
       { kind: 'institution', url: 'https://www.pritzkerprize.com/laureates/1998', title: 'Renzo Piano — The Pritzker Architecture Prize', license: null },
+    ],
+  },
+  {
+    // Wave V2-3, batch B6 — Michelangelo, full curate (new architect).
+    id: 'michelangelo',
+    wikidataId: 'Q5592',
+    name: 'Michelangelo',
+    alternativeNames: ['Michelangelo Buonarroti', 'Michelangelo di Lodovico Buonarroti Simoni'],
+    gender: 'man',
+    born: 1475,
+    died: 1564,
+    // override: all three curated buildings were finished by other hands
+    // after Michelangelo's death — the dome in 1590 (Giacomo della Porta),
+    // the Laurentian Library in 1571 (Ammannati/Vasari, from his model and
+    // letters), and the Campidoglio ensemble only in 1655 — the end of the
+    // span is the completion date of a work he designed, not a claim he was
+    // still building. See each building's dossier.
+    floruit: { start: 1520, end: 1655, override: true },
+    movements: [{ id: 'renaissance', primary: true }, { id: 'mannerism', primary: false }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'sacral',
+    signatureMaterial: 'stone',
+    portrait: {
+      en: 'Michelangelo Buonarroti trained as a sculptor and painter and came to architecture only in his forties, first as an amateur consultant on the facade of San Lorenzo — a commission from Pope Leo X that was never built — and then, decisively, in the 1520s at the same church\'s Laurentian Library, where he treated the wall itself as sculpted mass: recessed columns, blind tapering windows, and a cascading pietra serena staircase that reads as poured rather than built. Later commissions took him to Rome: a new civic square on the Capitoline Hill for Pope Paul III, and finally, in 1546 at the age of seventy-one, chief architect of St Peter\'s Basilica, where he returned Bramante\'s plan to a centralized Greek cross and designed the crossing dome, raised only after his death in 1564. His architecture is often read as Mannerism\'s beginning: rules quoted only to be strained against.',
+      es: 'Miguel Ángel Buonarroti se formó como escultor y pintor y no llegó a la arquitectura hasta los cuarenta años, primero como asesor aficionado para la fachada de San Lorenzo —un encargo del papa León X que nunca se construyó— y después, de forma decisiva, en la década de 1520 en la Biblioteca Laurenciana de esa misma iglesia, donde trató el propio muro como masa esculpida: columnas embutidas, ventanas ciegas y afiladas, y una escalinata de pietra serena en cascada que parece vertida antes que construida. Encargos posteriores lo llevaron a Roma: una nueva plaza cívica en el Capitolio para el papa Pablo III y, por fin, en 1546, a los setenta y un años, arquitecto jefe de la basílica de San Pedro, donde devolvió la planta de Bramante a una cruz griega centralizada y diseñó la cúpula del crucero, alzada solo tras su muerte en 1564. Su arquitectura suele leerse como el arranque del manierismo: reglas citadas solo para tensarlas.',
+      it: 'Michelangelo Buonarroti si formò come scultore e pittore e arrivò all\'architettura solo intorno ai quarant\'anni, dapprima come consulente dilettante per la facciata di San Lorenzo — una commessa di papa Leone X mai realizzata — e poi, in modo decisivo, negli anni \'20 del Cinquecento nella Biblioteca Laurenziana della stessa chiesa, dove trattò il muro stesso come massa scolpita: colonne incassate, finestre cieche e affusolate, e una scala a cascata in pietra serena che sembra colata anziché costruita. Commesse successive lo portarono a Roma: una nuova piazza civica sul Campidoglio per papa Paolo III e infine, nel 1546, a settantun anni, architetto capo della basilica di San Pietro, dove riportò la pianta di Bramante a una croce greca centralizzata e disegnò la cupola del tiburio, innalzata solo dopo la sua morte nel 1564. La sua architettura è spesso letta come l\'inizio del manierismo: regole citate solo per essere messe in tensione.',
+    },
+    awards: [],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q5592', title: 'Michelangelo (Q5592)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Michelangelo', title: 'Michelangelo — Wikipedia', license: 'CC BY-SA 4.0' },
     ],
   },
 ];
