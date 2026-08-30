@@ -1252,7 +1252,14 @@ export const ASIA_SOUTH_BUILDINGS: Building[] = [
       es: 'Campus universitario de gestión en activo; la biblioteca y los bloques académicos siguen en uso, y una restauración de la biblioteca en 2019 recibió un Premio UNESCO Asia-Pacífico de Conservación del Patrimonio Cultural.',
       it: 'Campus universitario di management in attività; la biblioteca e i blocchi accademici restano in uso, e un restauro della biblioteca nel 2019 ha vinto un premio UNESCO Asia-Pacific per la conservazione del patrimonio culturale.',
     },
-    detailRect: { x: 0.80, y: 0.20, w: 0.19, h: 0.35 },
+    // Fix round 2 (review B2 Important): the previous rect {x:0.80,
+    // y:0.20, w:0.19, h:0.35} was a real improvement over an earlier
+    // attempt but still caught a visible cluster of tree leaves and a
+    // strip of sky in its top-left ~20%. Re-cropped and confirmed this
+    // session: this rect sits over the library facade's diagnostic
+    // exposed-brick geometric arches and the giant circular oculus, with
+    // no foliage or sky in frame.
+    detailRect: { x: 0.52, y: 0.365, w: 0.19, h: 0.315 },
     image: {
       commonsFile: 'File:Louis Kahn Plaza, IIM Ahmedabad.jpg',
       photographer: 'Perspectives - The Photography Club, IIM Ahmedabad',

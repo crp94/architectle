@@ -743,10 +743,19 @@ export const ASIA_BUILDINGS: Building[] = [
       es: 'Cuatro pilares de esquina compuestos y arriostrados con acero se elevan como un entramado espacial triangulado, de modo que el edificio va desprendiéndose de un cuarto triangular cada varios pisos según asciende, hasta rematar en una única aguja; el arriostramiento diagonal es legible en cada alzado de vidrio como único ornamento de la torre.',
       it: 'Quattro pilastri d\'angolo compositi controventati in acciaio si innalzano come un traliccio spaziale triangolato, così che l\'edificio perde un quadrante triangolare alla volta salendo, fino a terminare in un\'unica guglia; il controventamento diagonale è leggibile su ogni prospetto vetrato come unico ornamento della torre.',
     },
+    // Fix round 2 (review B1/B2 Critical): the previous text credited
+    // "Pei's son and partner, the structural engineer Chien Chung 'Didi'
+    // Pei" — but the cited Wikipedia source names Leslie E. Robertson
+    // (of Leslie E. Robertson Associates, also structural engineer of the
+    // original World Trade Center towers) as the tower's structural
+    // engineer; Didi Pei was an architect at I. M. Pei & Partners, not a
+    // structural engineer, and the source does not document his specific
+    // role on this building, so his name is dropped here rather than
+    // re-guessed. Corrected to name Robertson's actual, sourced credit.
     program: {
-      en: 'A headquarters tower for the Bank of China\'s Hong Kong operations, commissioned to mark the bank\'s standing ahead of the 1997 handover and designed with Pei\'s son and partner, the structural engineer Chien Chung "Didi" Pei.',
-      es: 'Torre sede de las operaciones en Hong Kong del Banco de China, encargada para marcar el prestigio del banco antes de la retrocesión de 1997 y diseñada con el hijo y socio de Pei, el ingeniero estructural Chien Chung "Didi" Pei.',
-      it: 'Torre sede delle operazioni di Hong Kong della Bank of China, commissionata per segnare il prestigio della banca in vista della restituzione del 1997 e progettata con il figlio e socio di Pei, l\'ingegnere strutturale Chien Chung "Didi" Pei.',
+      en: "A headquarters tower for the Bank of China's Hong Kong operations, commissioned to mark the bank's standing ahead of the 1997 handover; the structural engineering, letting the glass skin carry no load of its own, was by Leslie E. Robertson Associates, the firm also known for the original World Trade Center towers.",
+      es: 'Torre sede de las operaciones en Hong Kong del Banco de China, encargada para marcar el prestigio del banco antes de la retrocesión de 1997; la ingeniería estructural, que permite que la piel de vidrio no cargue peso alguno, corrió a cargo de Leslie E. Robertson Associates, la firma también conocida por las torres originales del World Trade Center.',
+      it: "Torre sede delle operazioni di Hong Kong della Bank of China, commissionata per segnare il prestigio della banca in vista della restituzione del 1997; l'ingegneria strutturale, che consente alla pelle di vetro di non portare alcun carico proprio, fu affidata a Leslie E. Robertson Associates, lo studio noto anche per le torri originali del World Trade Center.",
     },
     heritage: 'none',
     currentUse: {
@@ -774,14 +783,18 @@ export const ASIA_BUILDINGS: Building[] = [
       },
     ],
     dossier: {
-      en: 'The commission came to Pei\'s father, a former Bank of China governor, rather than to Pei directly, at a moment — a decade before the 1997 handover to China — when Beijing wanted a Hong Kong headquarters that would outbuild every colonial-era tower on the skyline. Pei\'s answer was structural rather than decorative: four composite steel-and-concrete columns at the corners of a square plan pick up the loads through a triangulated truss visible on every face, and as the tower rises it drops one triangular prism after another, so the square base tapers to a single triangular shaft crowned by a mast. The bracing did double duty as wind and seismic resistance, letting Pei skip the internal steel frame most towers of its height still needed, and made it, briefly, the tallest building outside the United States. Locally the sharp angles and prominent X-braces read differently: without consulting feng shui masters, an omission unusual for a major Hong Kong project, the tower acquired a reputation as a "vertical knife" whose corners point at neighbours including Government House and the HSBC headquarters across the harbour view.',
-      es: 'El encargo llegó al padre de Pei, antiguo gobernador del Banco de China, y no a Pei directamente, en un momento —una década antes de la retrocesión de Hong Kong a China en 1997— en que Pekín quería una sede en Hong Kong que superara en altura a cualquier torre de la era colonial en el perfil de la ciudad. La respuesta de Pei fue estructural antes que decorativa: cuatro pilares compuestos de acero y hormigón en las esquinas de una planta cuadrada recogen las cargas mediante una celosía triangulada visible en cada fachada, y a medida que la torre asciende va desprendiéndose de un prisma triangular tras otro, de modo que la base cuadrada se afila hasta un único fuste triangular coronado por un mástil. El arriostramiento cumplía además la función de resistencia al viento y a los sismos, permitiendo a Pei prescindir de la estructura interior de acero que aún necesitaban la mayoría de torres de su altura, y la convirtió, brevemente, en el edificio más alto fuera de Estados Unidos. Localmente, los ángulos agudos y los marcados arriostramientos en X se leyeron de otro modo: sin consultar a maestros de feng shui, omisión inusual en un proyecto importante de Hong Kong, la torre se ganó fama de "cuchillo vertical" cuyas esquinas apuntan a vecinos como Government House y la sede del HSBC al otro lado de la bahía.',
-      it: 'L\'incarico giunse al padre di Pei, ex governatore della Bank of China, e non a Pei direttamente, in un momento — un decennio prima della restituzione di Hong Kong alla Cina nel 1997 — in cui Pechino voleva una sede a Hong Kong che superasse in altezza ogni torre dell\'epoca coloniale nello skyline. La risposta di Pei fu strutturale più che decorativa: quattro pilastri compositi in acciaio e cemento agli angoli di una pianta quadrata raccolgono i carichi tramite un traliccio triangolato visibile su ogni facciata, e mentre la torre sale perde un prisma triangolare dopo l\'altro, cosicché la base quadrata si assottiglia fino a un unico fusto triangolare coronato da un\'antenna. Il controventamento svolgeva anche la funzione di resistenza al vento e ai sismi, permettendo a Pei di rinunciare alla struttura interna in acciaio che la maggior parte delle torri della sua altezza richiedeva ancora, e la rese, per breve tempo, l\'edificio più alto fuori dagli Stati Uniti. Localmente gli spigoli acuti e i vistosi controventi a X furono letti diversamente: senza consultare maestri di feng shui, omissione inusuale per un grande progetto di Hong Kong, la torre si guadagnò fama di "coltello verticale" i cui angoli puntano verso vicini come la Government House e la sede HSBC dall\'altra parte della baia.',
+      en: 'The commission came to Pei\'s father, Tsuyee Pei, a former general manager of the Bank of China, rather than to Pei directly, at a moment — a decade before the 1997 handover to China — when Beijing wanted a Hong Kong headquarters that would outbuild every colonial-era tower on the skyline. Pei\'s answer was structural rather than decorative: four composite steel-and-concrete columns at the corners of a square plan pick up the loads through a triangulated truss visible on every face, and as the tower rises it drops one triangular prism after another, so the square base tapers to a single triangular shaft crowned by a mast. The bracing did double duty as wind and seismic resistance, letting Pei skip the internal steel frame most towers of its height still needed, and made it, briefly, the tallest building outside the United States. Locally the sharp angles and prominent X-braces read differently: without consulting feng shui masters, an omission unusual for a major Hong Kong project, the tower acquired a reputation as a "vertical knife" whose corners point at neighbours including Government House and the HSBC headquarters across the harbour view.',
+      es: 'El encargo llegó al padre de Pei, Tsuyee Pei, antiguo gerente general del Banco de China, y no a Pei directamente, en un momento —una década antes de la retrocesión de Hong Kong a China en 1997— en que Pekín quería una sede en Hong Kong que superara en altura a cualquier torre de la era colonial en el perfil de la ciudad. La respuesta de Pei fue estructural antes que decorativa: cuatro pilares compuestos de acero y hormigón en las esquinas de una planta cuadrada recogen las cargas mediante una celosía triangulada visible en cada fachada, y a medida que la torre asciende va desprendiéndose de un prisma triangular tras otro, de modo que la base cuadrada se afila hasta un único fuste triangular coronado por un mástil. El arriostramiento cumplía además la función de resistencia al viento y a los sismos, permitiendo a Pei prescindir de la estructura interior de acero que aún necesitaban la mayoría de torres de su altura, y la convirtió, brevemente, en el edificio más alto fuera de Estados Unidos. Localmente, los ángulos agudos y los marcados arriostramientos en X se leyeron de otro modo: sin consultar a maestros de feng shui, omisión inusual en un proyecto importante de Hong Kong, la torre se ganó fama de "cuchillo vertical" cuyas esquinas apuntan a vecinos como Government House y la sede del HSBC al otro lado de la bahía.',
+      it: 'L\'incarico giunse al padre di Pei, Tsuyee Pei, ex direttore generale della Bank of China, e non a Pei direttamente, in un momento — un decennio prima della restituzione di Hong Kong alla Cina nel 1997 — in cui Pechino voleva una sede a Hong Kong che superasse in altezza ogni torre dell\'epoca coloniale nello skyline. La risposta di Pei fu strutturale più che decorativa: quattro pilastri compositi in acciaio e cemento agli angoli di una pianta quadrata raccolgono i carichi tramite un traliccio triangolato visibile su ogni facciata, e mentre la torre sale perde un prisma triangolare dopo l\'altro, cosicché la base quadrata si assottiglia fino a un unico fusto triangolare coronato da un\'antenna. Il controventamento svolgeva anche la funzione di resistenza al vento e ai sismi, permettendo a Pei di rinunciare alla struttura interna in acciaio che la maggior parte delle torri della sua altezza richiedeva ancora, e la rese, per breve tempo, l\'edificio più alto fuori dagli Stati Uniti. Localmente gli spigoli acuti e i vistosi controventi a X furono letti diversamente: senza consultare maestri di feng shui, omissione inusuale per un grande progetto di Hong Kong, la torre si guadagnò fama di "coltello verticale" i cui angoli puntano verso vicini come la Government House e la sede HSBC dall\'altra parte della baia.',
     },
     context: null,
     sources: [
       { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q214855', title: 'Bank of China Tower (Q214855)', license: null },
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Bank_of_China_Tower_(Hong_Kong)', title: 'Bank of China Tower (Hong Kong)', license: 'CC BY-SA 4.0' },
+      // Supports the dossier's "Pei's father, Tsuyee Pei, a former general
+      // manager of the Bank of China" claim, added fix round 2 — this
+      // detail isn't in the building's own Wikipedia article above.
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Tsuyee_Pei', title: 'Tsuyee Pei', license: 'CC BY-SA 4.0' },
     ],
     tier: 'canon',
   },
@@ -1096,13 +1109,15 @@ export const ASIA_BUILDINGS: Building[] = [
       es: 'Biblioteca y galería pública en activo, reparada y reabierta en menos de un año tras los daños importantes del terremoto y tsunami de Tōhoku de 2011.',
       it: "Biblioteca e galleria pubblica in attività, riparata e riaperta entro un anno dopo i danni rilevanti del terremoto e tsunami del Tōhoku del 2011.",
     },
-    // NOT pixel-verified this session: Commons upload-host rate limiting
-    // (shared across all 8 parallel wave-3 batches) blocked every download
-    // attempt for this file. Licence/photographer WERE verified on the live
-    // rendered file page. Rect reasoned from the file's own framing
-    // ("Exterior view ... from Jozenji Street") on the glass-and-tube
-    // facade; re-crop and confirm before this ships.
-    detailRect: { x: 0.40, y: 0.30, w: 0.20, h: 0.45 },
+    // Fix round 2 (review B7 Critical): the old rect {x:0.40, y:0.30,
+    // w:0.20, h:0.45} was never actually pixel-verified and turned out to
+    // crop almost entirely to a foreground tree's foliage in front of
+    // plain reflective glass — none of Ito's diagnostic tube structure was
+    // visible. Re-cropped and confirmed this session: the tube structure
+    // *is* visible elsewhere in this same photo, at ground level where the
+    // glass is transparent rather than reflective, alongside the
+    // building's own "せんだいメディアテーク" signage.
+    detailRect: { x: 0.47, y: 0.61, w: 0.21, h: 0.27 },
     image: {
       commonsFile: 'File:Exterior view of Sendai Mediatheque from Jozenji Street 20220910b.jpg',
       photographer: '掬茶',
@@ -1300,12 +1315,14 @@ export const ASIA_BUILDINGS: Building[] = [
       es: 'Demolido en 2015 al reurbanizarse el recinto de la Expo; ya no existe.',
       it: "Demolito nel 2015 con la riqualificazione del sito dell'Expo; non esiste più.",
     },
-    // NOT pixel-verified this session (Commons rate limiting — see Sendai
-    // Mediatheque above for the full note). Licence/photographer verified.
-    // Rect reasoned to sit over the salvaged-brick wapan cladding and
-    // leaning upper masses at the building's centre; re-crop and confirm
-    // before this ships.
-    detailRect: { x: 0.32, y: 0.30, w: 0.35, h: 0.35 },
+    // Fix round 2 (review B7 Minor): the old rect {x:0.32, y:0.30, w:0.35,
+    // h:0.35} was roughly half-obscured by a foreground wooden ring
+    // sculpture (a plaza art installation, not part of Wang Shu's
+    // building); only the upper portion showed the salvaged-brick wapan
+    // cladding. Re-cropped and confirmed this session: a clean, full-height
+    // view of the variegated reclaimed-brick coursing with no foreground
+    // obstruction, and the building's own "...TOU PAVILION" signage visible.
+    detailRect: { x: 0.30, y: 0.10, w: 0.35, h: 0.35 },
     image: {
       commonsFile: 'File:Ningbo Tengtou Case Pavilion.jpg',
       photographer: 'Kimon Berlin',

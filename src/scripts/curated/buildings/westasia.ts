@@ -465,20 +465,42 @@ export const WESTASIA_BUILDINGS: Building[] = [
       es: 'Mezquita congregacional en uso, con vistas a la terminal de transbordadores del Bósforo en Üsküdar.',
       it: 'Moschea congregazionale in uso, affacciata sul terminal dei traghetti del Bosforo a Üsküdar.',
     },
-    // NOT pixel-verified this session (Commons rate limiting — see
-    // Süleymaniye Mosque above for the full note). Licence/photographer
-    // verified. Rect reasoned to sit over the dome/window-tier junction at
-    // the building's centre; re-crop and confirm before this ships.
-    detailRect: { x: 0.34, y: 0.30, w: 0.32, h: 0.35 },
+    // Fix round 2 (review B7 Important): the previous primary,
+    // File:Mihrimah_Sultan_Mosque_Uskudar_9528.jpg, is a courtyard/portico
+    // (son cemaat yeri) view with an ablutions fountain — not an exterior
+    // shot of the prayer hall's dome-and-minaret silhouette this record's
+    // own `structure` field describes. Replaced with a genuine exterior
+    // elevation by the same photographer (Dosseman, CC BY-SA 4.0, verified
+    // live on Commons) showing the single dome, its tiered drum windows,
+    // the lone minaret, and the Bosphorus behind — pixel-cropped and
+    // confirmed this session. detailRect sits over the drum/window-tier
+    // junction and the cascading semi-domes, genuinely diagnostic.
+    detailRect: { x: 0.0, y: 0.35, w: 0.32, h: 0.32 },
     image: {
-      commonsFile: 'File:Mihrimah Sultan Mosque Uskudar 9528.jpg',
+      commonsFile: 'File:Mihrimah Sultan Mosque Uskudar 0466.jpg',
       photographer: 'Dosseman',
       license: 'CC BY-SA 4.0',
-      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Mihrimah_Sultan_Mosque_Uskudar_9528.jpg',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Mihrimah_Sultan_Mosque_Uskudar_0466.jpg',
       width: 1600,
-      height: 1065,
+      height: 1063,
     },
     extraImages: [
+      // Former primary: a genuine courtyard/portico (son cemaat yeri) view
+      // with the complex's ablutions fountain — kept as an extra angle, not
+      // mistaken for the exterior silhouette (see comment above).
+      {
+        commonsFile: 'File:Mihrimah Sultan Mosque Uskudar 9528.jpg',
+        photographer: 'Dosseman',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Mihrimah_Sultan_Mosque_Uskudar_9528.jpg',
+        width: 1600,
+        height: 1065,
+      },
+      // Interior dome-underside shot. Legally fine despite showing
+      // in-copyright-eligible fabric from inside: Sinan died in 1588, so
+      // the whole building is out of copyright by age and the FoP
+      // exterior-only restriction doesn't apply here (see AGENTS.md's
+      // licence-verification rule). Kept as a detail angle, not primary.
       {
         commonsFile: 'File:Mihrimah Sultan Mosque (Üsküdar) (26).jpg',
         photographer: 'Yahia.Mokhtar',

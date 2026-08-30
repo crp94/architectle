@@ -63,7 +63,10 @@ function ClueEntry({
     case 'year':
       return (
         <div data-testid="clue-year">
-          <SpecimenLabel label={t(locale, 'clueYear')} value={String(clue.year)} />
+          <SpecimenLabel
+            label={t(locale, clue.yearKind === 'completed' ? 'clueYear' : 'clueYearBegun')}
+            value={String(clue.year)}
+          />
         </div>
       );
 

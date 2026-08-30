@@ -82,18 +82,22 @@ describe('cluesAt', () => {
     expect(cluesAt(building, architect, [SIBLING], 0)).toEqual([]);
   });
 
-  it('unlocks only the completion year after 1 miss', () => {
+  it('unlocks only the completion year after 1 miss, labelled as completed', () => {
     const building = makeBuilding({ extraImages: [EXTRA_IMAGE] });
     const architect = makeArchitect();
     const clues = cluesAt(building, architect, [SIBLING], 1);
-    expect(clues).toEqual([{ kind: 'year', year: 1925 }]);
+    expect(clues).toEqual([{ kind: 'year', year: 1925, yearKind: 'completed' }]);
   });
 
-  it('falls back to inception when completed is null', () => {
+  it('falls back to inception when completed is null, and labels the clue as "begun" rather than "completed"', () => {
     const building = makeBuilding({ completed: null, inception: 1918, extraImages: [EXTRA_IMAGE] });
     const architect = makeArchitect();
     const clues = cluesAt(building, architect, [SIBLING], 1);
-    expect(clues).toEqual([{ kind: 'year', year: 1918 }]);
+    // Sagrada Família's own bug (review B3/B4 Critical #2): completed: null
+    // must never be silently relabelled as "Completed" once it falls back
+    // to inception — the clue has to say it's still `year: 1918` under a
+    // truthful `yearKind: 'begun'`, not the completed year's label.
+    expect(clues).toEqual([{ kind: 'year', year: 1918, yearKind: 'begun' }]);
   });
 
   it('unlocks year + country after 2 misses', () => {
@@ -101,7 +105,7 @@ describe('cluesAt', () => {
     const architect = makeArchitect();
     const clues = cluesAt(building, architect, [SIBLING], 2);
     expect(clues).toEqual([
-      { kind: 'year', year: 1925 },
+      { kind: 'year', year: 1925, yearKind: 'completed' },
       { kind: 'country', countryCode: 'FR' },
     ]);
   });
@@ -111,7 +115,7 @@ describe('cluesAt', () => {
     const architect = makeArchitect({ signatureMaterial: 'stone' });
     const clues = cluesAt(building, architect, [SIBLING], 3);
     expect(clues).toEqual([
-      { kind: 'year', year: 1925 },
+      { kind: 'year', year: 1925, yearKind: 'completed' },
       { kind: 'country', countryCode: 'FR' },
       { kind: 'typology-material', typology: 'sacral', material: 'stone' },
     ]);

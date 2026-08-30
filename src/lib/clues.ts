@@ -13,7 +13,14 @@ import type { Architect } from '@/types/architect';
 import type { ImageRecord, Material, Typology } from '@/types/common';
 import type { MovementId } from '@/types/movement';
 
-export type YearClue = { kind: 'year'; year: number };
+// `yearKind` distinguishes a building that has actually finished
+// construction (`completed`) from one still under construction/of unknown
+// completion, whose year is `inception` instead (design spec review B3/B4
+// Critical #2: Sagrada Família and 6 other pool buildings carry
+// `completed: null`, and silently falling back to `inception` under a
+// "Completed" label misrepresents a building that isn't finished — the UI
+// must render a truthful "Begun" label whenever `yearKind` is `'begun'`).
+export type YearClue = { kind: 'year'; year: number; yearKind: 'completed' | 'begun' };
 export type CountryClue = { kind: 'country'; countryCode: string };
 export type TypologyMaterialClue = { kind: 'typology-material'; typology: Typology; material: Material };
 export type SecondPhotoClue = { kind: 'second-photo'; image: ImageRecord };
@@ -65,7 +72,9 @@ type ClueProducer = () => Clue | null;
 
 function buildProducers(building: Building, architect: Architect, siblingBuildings: Building[]): ClueProducer[] {
   return [
-    () => ({ kind: 'year', year: building.completed ?? building.inception }),
+    () => (building.completed !== null
+      ? { kind: 'year', year: building.completed, yearKind: 'completed' }
+      : { kind: 'year', year: building.inception, yearKind: 'begun' }),
     () => ({ kind: 'country', countryCode: building.location.countryCode }),
     () => ({ kind: 'typology-material', typology: building.typology, material: architect.signatureMaterial }),
     () => {

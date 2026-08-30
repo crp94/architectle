@@ -192,6 +192,11 @@ const en = {
   // keep this an easy merge alongside any other agent's own additions.
   clueStripHeading: 'Case file',
   clueYear: 'Completed',
+  // Shown instead of `clueYear` when the building's `completed` is null
+  // (still under construction / no recorded completion) and the year clue
+  // falls back to `inception` — never label an unfinished building
+  // "Completed" (review B3/B4 Critical #2, e.g. Sagrada Família).
+  clueYearBegun: 'Begun',
   clueCountry: 'Country',
   clueTypologyMaterial: 'Typology + material',
   clueSecondPhoto: 'Second photograph',
@@ -353,6 +358,7 @@ const es: Strings = {
 
   clueStripHeading: 'Expediente',
   clueYear: 'Finalización',
+  clueYearBegun: 'Comenzado',
   clueCountry: 'País',
   clueTypologyMaterial: 'Tipología y material',
   clueSecondPhoto: 'Segunda fotografía',
@@ -512,6 +518,7 @@ const it: Strings = {
 
   clueStripHeading: 'Fascicolo',
   clueYear: 'Completamento',
+  clueYearBegun: 'Iniziato',
   clueCountry: 'Paese',
   clueTypologyMaterial: 'Tipologia e materiale',
   clueSecondPhoto: 'Seconda fotografia',

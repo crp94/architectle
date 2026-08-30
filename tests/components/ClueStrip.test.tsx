@@ -189,6 +189,39 @@ describe('ClueStrip', () => {
     expect(screen.getByTestId('clue-movement-sibling').textContent).toContain('Unaffiliated');
   });
 
+  it('labels the year clue "Completed" when the building has a completed year', () => {
+    const building = makeBuilding({ completed: 1925 });
+    const architect = makeArchitect();
+    const clues = cluesAt(building, architect, [siblingBuilding], 1);
+
+    render(
+      <ClueStrip locale="en" clues={clues} buildingId={building.id} buildingName="Target Building" />,
+    );
+
+    const yearClue = screen.getByTestId('clue-year');
+    expect(yearClue.textContent).toContain('Completed');
+    expect(yearClue.textContent).toContain('1925');
+    expect(yearClue.textContent).not.toContain('Begun');
+  });
+
+  it('labels the year clue "Begun" (not "Completed") and shows the inception year when completed is null', () => {
+    // Regression test for review B3/B4 Critical #2: a still-under-
+    // construction building like Sagrada Família (completed: null) must
+    // never be shown under the "Completed" label.
+    const building = makeBuilding({ completed: null, inception: 1882 });
+    const architect = makeArchitect();
+    const clues = cluesAt(building, architect, [siblingBuilding], 1);
+
+    render(
+      <ClueStrip locale="en" clues={clues} buildingId={building.id} buildingName="Target Building" />,
+    );
+
+    const yearClue = screen.getByTestId('clue-year');
+    expect(yearClue.textContent).toContain('Begun');
+    expect(yearClue.textContent).toContain('1882');
+    expect(yearClue.textContent).not.toContain('Completed');
+  });
+
   it('omits the "also designed" line when no sibling building is available', () => {
     const building = makeBuilding();
     const architect = makeArchitect();
