@@ -1,6 +1,6 @@
 import type { Building, HeritageStatus } from '@/types/building';
-import type { Architect } from '@/types/architect';
-import type { LocalizedString, Material, Typology } from '@/types/common';
+import type { Architect, Gender } from '@/types/architect';
+import type { LocalizedString, Material, Tier, Typology } from '@/types/common';
 
 // The pool a validator operates on: every curated building and architect,
 // composed by Task 8's `data:curate` script before any validator runs.
@@ -23,10 +23,16 @@ const MATERIALS: Material[] = [
 
 const HERITAGE_STATUSES: HeritageStatus[] = ['unesco', 'national', 'regional', 'none'];
 
+const TIERS: Tier[] = ['canon', 'deep'];
+
+const GENDERS: Gender[] = ['woman', 'man', 'non-binary', 'unknown'];
+
 const MIN_YEAR = 1;
 const MAX_YEAR = 2100;
 const MIN_DETAIL_RECT_AREA = 0.04;
 const BOUNDS_EPSILON = 1e-9;
+// Design spec §6: `extraImages` is 0-2 hand-picked additional angles.
+const MAX_EXTRA_IMAGES = 2;
 
 function isPlausibleYear(year: number): boolean {
   return year >= MIN_YEAR && year <= MAX_YEAR;
@@ -63,6 +69,38 @@ function checkYear(
       rule: 'plausible-years',
       subject,
       detail: `${fieldLabel} ${year} is outside the plausible range ${MIN_YEAR}-${MAX_YEAR}`,
+    });
+  }
+}
+
+function checkTier(tier: Tier | undefined, subject: string, out: Violation[]): void {
+  if (tier === undefined || tier === null) {
+    out.push({
+      rule: 'enum-membership',
+      subject,
+      detail: 'tier is missing (must be "canon" or "deep")',
+    });
+  } else if (!TIERS.includes(tier)) {
+    out.push({
+      rule: 'enum-membership',
+      subject,
+      detail: `tier "${tier}" is not a recognized Tier`,
+    });
+  }
+}
+
+function checkGender(gender: Gender | undefined, subject: string, out: Violation[]): void {
+  if (gender === undefined || gender === null) {
+    out.push({
+      rule: 'enum-membership',
+      subject,
+      detail: 'gender is missing (must be "woman", "man", "non-binary", or "unknown")',
+    });
+  } else if (!GENDERS.includes(gender)) {
+    out.push({
+      rule: 'enum-membership',
+      subject,
+      detail: `gender "${gender}" is not a recognized Gender`,
     });
   }
 }
@@ -108,6 +146,23 @@ function checkBuildingSchema(b: Building, out: Violation[]): void {
   checkYear(b.completed, 'completed', b.id, out);
   checkYear(b.demolished, 'demolished', b.id, out);
 
+  // `demolished` must not precede whichever of `completed`/`inception` is
+  // the best-known completion year (falls back to `inception` when
+  // `completed` is null, same fallback `floruit-consistent` in crossRefs.ts
+  // already uses for a building's effective year). Same class of bug as
+  // `inception-before-completion` above — a basic internal-consistency
+  // check on this building's own fields, unrelated to any override.
+  if (b.demolished !== null) {
+    const completionYear = b.completed ?? b.inception;
+    if (b.demolished < completionYear) {
+      out.push({
+        rule: 'demolished-after-completion',
+        subject: b.id,
+        detail: `demolished ${b.demolished} is before ${b.completed !== null ? 'completed' : 'inception'} ${completionYear}`,
+      });
+    }
+  }
+
   if (!TYPOLOGIES.includes(b.typology)) {
     out.push({
       rule: 'enum-membership',
@@ -131,9 +186,20 @@ function checkBuildingSchema(b: Building, out: Violation[]): void {
       detail: `heritage "${b.heritage}" is not a recognized HeritageStatus`,
     });
   }
+
+  checkTier(b.tier, b.id, out);
+
+  if ((b.extraImages?.length ?? 0) > MAX_EXTRA_IMAGES) {
+    out.push({
+      rule: 'extra-images-max',
+      subject: b.id,
+      detail: `extraImages has ${b.extraImages!.length} entries, exceeding the maximum ${MAX_EXTRA_IMAGES}`,
+    });
+  }
 }
 
 function checkArchitectSchema(a: Architect, out: Violation[]): void {
+  checkGender(a.gender, a.id, out);
   checkLocalized(a.portrait, 'architect.portrait', a.id, out);
   if (a.context) checkLocalized(a.context.body, 'architect.context.body', a.id, out);
 
@@ -141,6 +207,36 @@ function checkArchitectSchema(a: Architect, out: Violation[]): void {
   checkYear(a.died, 'died', a.id, out);
   checkYear(a.floruit.start, 'floruit.start', a.id, out);
   checkYear(a.floruit.end, 'floruit.end', a.id, out);
+
+  // `born`/`died` internal consistency. Same class of bug this project has
+  // already had to fix twice for `tier` and `gender` (validated in one
+  // place — coverage.ts — but not the analogous place — schema.ts): a check
+  // that only lives in crossRefs.ts (or nowhere) misses a hand-authored
+  // typo that never gets cross-checked against anything else.
+  if (a.born !== null && a.died !== null && a.born > a.died) {
+    out.push({
+      rule: 'born-before-died',
+      subject: a.id,
+      detail: `born ${a.born} is after died ${a.died}`,
+    });
+  }
+
+  // `floruit.start` <= `floruit.end`, checked here — unconditionally, even
+  // when `floruit.override` is true. `override` exempts a floruit from
+  // being cross-checked against this architect's OWN buildings
+  // (crossRefs.ts's `floruit-consistent` rule skips it deliberately, since
+  // an override is often used precisely because the buildings-derived
+  // window is wrong) — it was never meant to exempt the floruit from basic
+  // internal consistency. A hand-authored `{start: 1990, end: 1950,
+  // override: true}` must still fail loudly: an inverted window like that
+  // corrupts src/lib/axes/era.ts's midpoint math during live gameplay.
+  if (a.floruit.start > a.floruit.end) {
+    out.push({
+      rule: 'floruit-start-before-end',
+      subject: a.id,
+      detail: `floruit.start ${a.floruit.start} is after floruit.end ${a.floruit.end}`,
+    });
+  }
 
   if (!TYPOLOGIES.includes(a.primaryTypology)) {
     out.push({
@@ -156,6 +252,8 @@ function checkArchitectSchema(a: Architect, out: Violation[]): void {
       detail: `signatureMaterial "${a.signatureMaterial}" is not a recognized Material`,
     });
   }
+
+  checkTier(a.tier, a.id, out);
 }
 
 export function validateSchema(pool: Pool): Violation[] {

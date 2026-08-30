@@ -1,5 +1,1737 @@
 import type { Building } from '@/types/building';
 
-// Task 9 (asia curator agent): replace this stub with real, sourced Building
-// entries located in this region.
-export const ASIA_BUILDINGS: Building[] = [];
+// Eastern Asia slice (Japan, China, South Korea, Taiwan, Hong Kong, Mongolia).
+//
+// Every `image.license` below was read off the live Commons file page named in
+// `image.sourceUrl`, not inferred from the file being hosted on Commons.
+// `image.width`/`height` are left at 0 for Task 10 to record.
+export const ASIA_BUILDINGS: Building[] = [
+{
+    id: 'hwaseong-fortress',
+    wikidataId: 'Q482423',
+    name: {
+      en: 'Hwaseong Fortress',
+      es: 'Fortaleza de Hwaseong',
+      it: 'Fortezza di Hwaseong',
+    },
+    architectId: 'jeong-yak-yong',
+    location: { city: 'Suwon', countryCode: 'KR', lat: 37.2807, lon: 127.0102 },
+    inception: 1794,
+    completed: 1796,
+    demolished: null,
+    typology: 'infrastructure',
+    materials: ['stone', 'brick'],
+    structure: {
+      en: 'A piled-stone rampart 5.74 km long, following the topography and carrying fired-brick parapets, ravelins, arched watergates and timber gate pavilions on stone bases.',
+      es: 'Una muralla de piedra apilada de 5,74 km que sigue la topografía y sostiene parapetos de ladrillo cocido, revellines, compuertas abovedadas y pabellones de puerta de madera sobre basamentos pétreos.',
+      it: 'Una cinta di pietra a secco lunga 5,74 km che segue la topografia e regge parapetti in mattone cotto, rivellini, chiuse ad arco e padiglioni-porta lignei su basamenti in pietra.',
+    },
+    program: {
+      en: 'Built for King Jeongjo to defend and administer a new city at Suwon, to form a new political base for his reign, and to honour the relocated remains of his father, Crown Prince Sado.',
+      es: 'Levantada por orden del rey Jeongjo para defender y administrar una nueva ciudad en Suwon, formar una nueva base política para su reinado y honrar los restos trasladados de su padre, el príncipe heredero Sado.',
+      it: 'Eretta per volere del re Jeongjo per difendere e amministrare una nuova città a Suwon, formare una nuova base politica per il suo regno e onorare le spoglie trasferite del padre, il principe ereditario Sado.',
+    },
+    heritage: 'unesco',
+    currentUse: {
+      en: 'A public monument and urban park still enclosing central Suwon; the walls, gates and watergates are open to walk.',
+      es: 'Monumento público y parque urbano que sigue rodeando el centro de Suwon; murallas, puertas y compuertas son transitables.',
+      it: 'Monumento pubblico e parco urbano che cinge tuttora il centro di Suwon; mura, porte e chiuse sono percorribili.',
+    },
+    detailRect: { x: 0.22, y: 0.40, w: 0.34, h: 0.32 },
+    image: {
+      commonsFile: 'File:Hwahongmun_01.jpg',
+      photographer: 'Bernard Gagnon',
+      license: 'CC0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hwahongmun_01.jpg',
+      width: 1600,
+      height: 1067,
+    },
+    dossier: {
+      en: 'Hwaseong is the one building for which a scholar remembered chiefly as a philosopher is also remembered as a designer. King Jeongjo gave the commission to Jeong Yak-yong, a scholar of the Silhak school, who compared Korean, Chinese and European fortification and returned a plan that refused the standard Korean arrangement of a town wall plus a separate mountain refuge. Instead, a single 5.74-kilometre circuit takes in the defences, the garrison and a functioning market town, following the hills where they help and crossing the flat ground where they do not. Fired brick, unusual in Korean military work, was used for parapets, ravelins and the arched watergates; a hoisting device called the geojunggi cut the cost of moving stone. The labourers were paid rather than conscripted. The photograph shows Hwahongmun, the north floodgate over the Suwoncheon, its pavilion set on a row of arched stone sluices. A ten-volume construction record published in 1801 allowed the fortress to be rebuilt accurately after the Korean War.',
+      es: 'Hwaseong es la única obra por la que un erudito recordado sobre todo como filósofo lo es también como proyectista. El rey Jeongjo confió el encargo a Jeong Yak-yong, erudito de la escuela Silhak, que comparó la fortificación coreana, china y europea y devolvió un plan que rechazaba la disposición coreana habitual —muralla urbana más refugio de montaña separado—. En su lugar, un único recinto de 5,74 kilómetros abarca las defensas, la guarnición y una ciudad mercantil en funcionamiento, siguiendo las colinas donde ayudan y cruzando el llano donde no. El ladrillo cocido, inusual en la obra militar coreana, se empleó en parapetos, revellines y compuertas abovedadas; un aparejo de izado llamado geojunggi abarató el traslado de la piedra. A los obreros se les pagó en lugar de reclutarlos. La fotografía muestra Hwahongmun, la compuerta norte sobre el Suwoncheon, con su pabellón asentado sobre una hilera de arcos de desagüe en piedra. Un informe de obra en diez volúmenes publicado en 1801 permitió reconstruir la fortaleza con exactitud tras la guerra de Corea.',
+      it: 'Hwaseong è l\'unica opera per cui uno studioso ricordato soprattutto come filosofo lo è anche come progettista. Il re Jeongjo affidò l\'incarico a Jeong Yak-yong, studioso della scuola Silhak, che confrontò la fortificazione coreana, cinese ed europea e restituì un piano che rifiutava la consueta soluzione coreana — cinta urbana più rifugio montano separato. Un unico circuito di 5,74 chilometri raccoglie invece le difese, la guarnigione e una città mercantile funzionante, seguendo le colline dove giovano e attraversando il piano dove non servono. Il mattone cotto, inconsueto nell\'edilizia militare coreana, fu impiegato per parapetti, rivellini e chiuse ad arco; un apparecchio di sollevamento detto geojunggi ridusse il costo di movimentare la pietra. Gli operai furono pagati anziché arruolati. La fotografia mostra Hwahongmun, la chiusa nord sul Suwoncheon, col padiglione posato su una fila di arcate-chiusa in pietra. Un resoconto di cantiere in dieci volumi pubblicato nel 1801 permise di ricostruire la fortezza con esattezza dopo la guerra di Corea.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q482423', title: 'Hwaseong Fortress (Q482423)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Hwaseong_Fortress', title: 'Hwaseong Fortress', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://whc.unesco.org/en/list/817/', title: 'Hwaseong Fortress — UNESCO World Heritage Centre', license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'presidential-office-building-taipei',
+    wikidataId: 'Q55601',
+    name: {
+      en: 'Presidential Office Building, Taipei',
+      es: 'Palacio Presidencial de Taipéi',
+      it: 'Palazzo Presidenziale di Taipei',
+    },
+    architectId: 'uheiji-nagano',
+    location: { city: 'Taipei', countryCode: 'TW', lat: 25.0400, lon: 121.5120 },
+    inception: 1912,
+    completed: 1919,
+    demolished: null,
+    typology: 'civic',
+    materials: ['brick', 'stone'],
+    structure: {
+      en: 'A six-storey masonry block laid out as two linked squares around internal courtyards, banded in red brick and white render across a 130-metre east-facing front, with a sixty-metre tower on the central axis.',
+      es: 'Un bloque de fábrica de seis plantas dispuesto como dos cuadrados enlazados en torno a patios interiores, con bandas de ladrillo rojo y revoco blanco en un frente de 130 metros orientado al este y una torre de sesenta metros en el eje central.',
+      it: 'Un blocco in muratura di sei piani disposto come due quadrati collegati attorno a corti interne, fasciato di mattone rosso e intonaco bianco su un fronte di 130 metri rivolto a est, con una torre di sessanta metri sull\'asse centrale.',
+    },
+    program: {
+      en: 'Built as the Office of the Governor-General of Taiwan, the administrative seat of Japanese colonial rule, and in use as the Office of the President of the Republic of China since 1950.',
+      es: 'Construido como Oficina del Gobernador General de Taiwán, sede administrativa del dominio colonial japonés, y en uso como Oficina del Presidente de la República de China desde 1950.',
+      it: 'Costruito come Ufficio del Governatore Generale di Taiwan, sede amministrativa del dominio coloniale giapponese, e in uso come Ufficio del Presidente della Repubblica di Cina dal 1950.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Working office of the President of the Republic of China, with parts of the ground floor opened to public tours.',
+      es: 'Sede en activo del Presidente de la República de China, con parte de la planta baja abierta a visitas públicas.',
+      it: 'Sede operativa del Presidente della Repubblica di Cina, con parte del piano terra aperta alle visite.',
+    },
+    detailRect: { x: 0.40, y: 0.15, w: 0.20, h: 0.38 },
+    image: {
+      commonsFile: 'File:Taipei_Taiwan_Presidential-Office-Building-01.jpg',
+      photographer: 'CEphoto, Uwe Aranas',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Taipei_Taiwan_Presidential-Office-Building-01.jpg',
+      width: 1600,
+      height: 910,
+    },
+    dossier: {
+      en: 'After fire destroyed the Governor-General\'s offices in 1905, the colonial administration held what is generally counted as Japan\'s first open architectural competition, in two rounds between 1906 and 1910. Uheiji Nagano\'s entry was selected; the drawings were then sent to Tokyo, where the scheme was revised and the executed design completed by Matsunosuke Moriyama, who raised the central tower from six storeys to eleven and reworked the corner turrets. Construction ran from June 1912 to March 1919. The result is a European historicist vocabulary — Renaissance, Baroque and neoclassical elements, Ionic and Corinthian columns at the porch — carried out in the red brick and white banding that Meiji-trained architects used across the empire, and turned to face east. The 60-metre tower was the tallest structure in the Taipei basin during Japanese rule. Allied bombing on 31 May 1945 struck the front left side, the main lobby and the northern sections; restoration financed by donation was completed at the end of 1948.',
+      es: 'Tras el incendio que destruyó las oficinas del Gobernador General en 1905, la administración colonial convocó lo que suele contarse como el primer concurso abierto de arquitectura de Japón, en dos rondas entre 1906 y 1910. Se eligió la propuesta de Uheiji Nagano; los planos se enviaron después a Tokio, donde el proyecto se revisó y el diseño ejecutado lo completó Matsunosuke Moriyama, que elevó la torre central de seis a once plantas y rehízo los torreones de esquina. Las obras corrieron de junio de 1912 a marzo de 1919. El resultado es un vocabulario historicista europeo —elementos renacentistas, barrocos y neoclásicos, columnas jónicas y corintias en el porche— ejecutado en el ladrillo rojo con bandas blancas que los arquitectos formados en la era Meiji emplearon por todo el imperio, y orientado al este. La torre de 60 metros fue la construcción más alta de la cuenca de Taipéi durante el dominio japonés. El bombardeo aliado del 31 de mayo de 1945 alcanzó el frente izquierdo, el vestíbulo principal y las alas del norte; la restauración, costeada por donativos, concluyó a finales de 1948.',
+      it: 'Dopo l\'incendio che nel 1905 distrusse gli uffici del Governatore Generale, l\'amministrazione coloniale bandì quello che di norma è considerato il primo concorso pubblico di architettura del Giappone, in due tornate fra il 1906 e il 1910. Fu scelta la proposta di Uheiji Nagano; i disegni furono poi inviati a Tokyo, dove il progetto venne rivisto e il disegno esecutivo completato da Matsunosuke Moriyama, che portò la torre centrale da sei a undici piani e rifece le torrette d\'angolo. Il cantiere andò dal giugno 1912 al marzo 1919. Ne risulta un lessico storicista europeo — elementi rinascimentali, barocchi e neoclassici, colonne ioniche e corinzie al portico — realizzato nel mattone rosso a fasce bianche che gli architetti di formazione Meiji impiegarono in tutto l\'impero, e rivolto a oriente. La torre di 60 metri fu la costruzione più alta del bacino di Taipei durante il dominio giapponese. Il bombardamento alleato del 31 maggio 1945 colpì il fronte sinistro, l\'atrio principale e le ali nord; il restauro, finanziato da donazioni, si concluse alla fine del 1948.',
+    },
+    context: {
+      body: {
+        en: 'The building was commissioned and built as the seat of the Office of the Governor-General of Taiwan, the administrative apparatus of Japanese colonial rule over Taiwan and the Pescadores from 1895 to 1945. It housed that administration from 1919 until Japan\'s surrender. Bombed by Allied aircraft during the raid on Taihoku on 31 May 1945, it was left unrepaired until the Taiwan Provincial Government began a donation-funded restoration in 1947, completed at the end of 1948 and named Chieh Shou Hall — "long live Chiang Kai-shek" — to mark the president\'s sixtieth birthday. It became the Office of the President of the Republic of China in 1950, was designated a national monument by the Ministry of the Interior in 1998, and the Chieh Shou Hall name was formally dropped in 2006.',
+        es: 'El edificio se encargó y se construyó como sede de la Oficina del Gobernador General de Taiwán, el aparato administrativo del dominio colonial japonés sobre Taiwán y las Pescadores entre 1895 y 1945. Albergó esa administración desde 1919 hasta la rendición de Japón. Bombardeado por la aviación aliada durante el ataque a Taihoku del 31 de mayo de 1945, quedó sin reparar hasta que el Gobierno Provincial de Taiwán inició en 1947 una restauración costeada por donativos, terminada a finales de 1948 y bautizada Salón Chieh Shou —«larga vida a Chiang Kai-shek»— por el sexagésimo cumpleaños del presidente. Pasó a ser Oficina del Presidente de la República de China en 1950, fue declarado monumento nacional por el Ministerio del Interior en 1998 y el nombre de Salón Chieh Shou se retiró formalmente en 2006.',
+        it: 'L\'edificio fu commissionato e costruito come sede dell\'Ufficio del Governatore Generale di Taiwan, l\'apparato amministrativo del dominio coloniale giapponese su Taiwan e le Pescadores dal 1895 al 1945. Ospitò quell\'amministrazione dal 1919 fino alla resa del Giappone. Colpito dagli aerei alleati durante l\'incursione su Taihoku del 31 maggio 1945, restò senza riparazioni finché nel 1947 il Governo Provinciale di Taiwan avviò un restauro finanziato da donazioni, concluso alla fine del 1948 e intitolato Sala Chieh Shou — «lunga vita a Chiang Kai-shek» — per il sessantesimo compleanno del presidente. Divenne Ufficio del Presidente della Repubblica di Cina nel 1950, fu dichiarato monumento nazionale dal Ministero dell\'Interno nel 1998 e il nome Sala Chieh Shou fu formalmente abbandonato nel 2006.',
+      },
+      sources: [
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Presidential_Office_Building,_Taipei', title: 'Presidential Office Building, Taipei', license: 'CC BY-SA 4.0' },
+      ],
+    },
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q55601', title: 'Presidential Office Building (Q55601)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Presidential_Office_Building,_Taipei', title: 'Presidential Office Building, Taipei', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://ja.wikipedia.org/wiki/%E9%95%B7%E9%87%8E%E5%AE%87%E5%B9%B3%E6%B2%BB', title: '長野宇平治', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'sun-yat-sen-mausoleum',
+    wikidataId: 'Q1338405',
+    name: {
+      en: 'Sun Yat-sen Mausoleum',
+      es: 'Mausoleo de Sun Yat-sen',
+      it: 'Mausoleo di Sun Yat-sen',
+    },
+    architectId: 'lu-yanzhi',
+    location: { city: 'Nanjing', countryCode: 'CN', lat: 32.0644, lon: 118.8483 },
+    inception: 1926,
+    completed: 1929,
+    demolished: null,
+    typology: 'civic',
+    materials: ['stone', 'concrete'],
+    structure: {
+      en: 'A stone sacrificial hall carrying the great roof profile of a Chinese palace, clad in blue glazed tile and built by Western structural technique, set at the head of a ceremonial route more than 700 metres long and a stair of 392 steps.',
+      es: 'Un salón sacrificial de piedra que sostiene el gran perfil de cubierta de un palacio chino, revestido de teja vidriada azul y construido con técnica estructural occidental, en lo alto de un recorrido ceremonial de más de 700 metros y una escalera de 392 peldaños.',
+      it: 'Una sala sacrificale in pietra che porta il grande profilo di copertura di un palazzo cinese, rivestita di tegole invetriate azzurre e costruita con tecnica strutturale occidentale, in cima a un percorso cerimoniale di oltre 700 metri e a una scalinata di 392 gradini.',
+    },
+    program: {
+      en: 'A national tomb and pilgrimage route commissioned by the Nationalist government for Sun Yat-sen, whose remains were interred there on 1 June 1929.',
+      es: 'Tumba nacional y recorrido de peregrinación encargados por el gobierno nacionalista para Sun Yat-sen, cuyos restos se inhumaron allí el 1 de junio de 1929.',
+      it: 'Tomba nazionale e percorso di pellegrinaggio commissionati dal governo nazionalista per Sun Yat-sen, le cui spoglie vi furono tumulate il 1º giugno 1929.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'A national memorial site on Purple Mountain, open to visitors and used for official commemorations.',
+      es: 'Recinto conmemorativo nacional en la Montaña Púrpura, abierto al público y utilizado para actos oficiales.',
+      it: 'Sito commemorativo nazionale sul Monte Purpureo, aperto ai visitatori e usato per commemorazioni ufficiali.',
+    },
+    detailRect: { x: 0.30, y: 0.26, w: 0.40, h: 0.28 },
+    image: {
+      commonsFile: 'File:Hall_of_Sun_Yat-sen_Mausoleum.jpg',
+      photographer: 'Jiong Sheng',
+      license: 'CC BY-SA 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hall_of_Sun_Yat-sen_Mausoleum.jpg',
+      width: 768,
+      height: 1024,
+    },
+    dossier: {
+      en: 'The competition brief of May 1925 was unusually explicit: the tomb was to be Chinese in spirit yet modern, memorial in substance, and buildable for 300,000 yuan. More than forty entries arrived; the committee chose Lü Yanzhi unanimously in September. What he delivered reads as one long ceremonial ascent rather than a building — a paifang, a gate, a stele pavilion, then a 392-step stair climbing between pines and ginkgos to a granite hall whose blue glazed roofs and white stone were taken to stand for the Nationalist flag. Beneath the palace roof profile are Western construction methods and a Beaux-Arts axial plan learned at Cornell and in Henry Murphy\'s office; the layout as a whole was drawn in the shape of an alarm bell, answering Sun\'s charge to awaken the people. Work began in January 1926, the hall and the main structures were finished in the spring of 1929 and the complex only in 1931; the final cost passed three million yuan. Lü died of cancer that March, months before Sun was interred. Liang Sicheng later argued the hall\'s proportions betrayed a borrowed rather than understood tradition.',
+      es: 'Las bases del concurso de mayo de 1925 eran inusualmente explícitas: la tumba debía ser china de espíritu y a la vez moderna, y construible por 300.000 yuanes. Llegaron más de cuarenta propuestas; en septiembre el comité eligió por unanimidad la de Lü Yanzhi. Lo que entregó se lee más como un largo ascenso ceremonial que como un edificio: un paifang, una puerta, un pabellón de estela y una escalera de 392 peldaños que sube entre pinos y ginkgos hasta un salón de granito cuyas cubiertas vidriadas azules y piedra blanca se leyeron como la bandera nacionalista. Bajo el tejado palaciego hay técnica constructiva occidental y una planta axial Beaux-Arts aprendida en Cornell y con Henry Murphy; el trazado del conjunto dibuja una campana de alarma, en respuesta al mandato de Sun de despertar al pueblo. La obra empezó en enero de 1926; el salón quedó listo en la primavera de 1929 y el conjunto solo en 1931, con un coste final superior a tres millones de yuanes. Lü murió de cáncer aquel marzo, meses antes de la inhumación de Sun. Liang Sicheng sostuvo después que las proporciones del salón delataban una tradición tomada prestada, no comprendida.',
+      it: 'Il bando del maggio 1925 era insolitamente esplicito: la tomba doveva essere cinese nello spirito e insieme moderna, e realizzabile con 300.000 yuan. Arrivarono oltre quaranta proposte; a settembre la commissione scelse all\'unanimità quella di Lü Yanzhi. Ciò che consegnò si legge più come una lunga ascesa cerimoniale che come un edificio: un paifang, una porta, un padiglione della stele e poi una scalinata di 392 gradini che sale tra pini e ginkgo fino a una sala di granito le cui coperture invetriate azzurre e la pietra bianca furono lette come la bandiera nazionalista. Sotto il profilo di tetto palaziale ci sono tecniche costruttive occidentali e un impianto assiale Beaux-Arts appreso alla Cornell e nello studio di Henry Murphy; il tracciato d\'insieme disegna una campana d\'allarme, in risposta all\'invito di Sun a destare il popolo. Il cantiere iniziò nel gennaio 1926; la sala fu ultimata nella primavera del 1929 e il complesso solo nel 1931, con un costo finale superiore ai tre milioni di yuan. Lü morì di cancro quel marzo, mesi prima della tumulazione di Sun. Liang Sicheng sostenne poi che le proporzioni della sala tradivano una tradizione presa in prestito, non compresa.',
+    },
+    context: {
+      body: {
+        en: 'The mausoleum was built as a national shrine of the ruling Kuomintang from the outset: a stele set by the party stands in the pavilion below the ceremonial stair, and the sacrificial hall\'s ceiling is painted with the KMT\'s Blue Sky with a White Sun flag. President Chiang Kai-shek opened and visited it in 1929, after the Nationalist government\'s Northern Expedition victory, and returned in the summer of 1946 after the war with Japan; on 29 March 1948 he led the delegates of the first National Assembly there to pay respects, and did so again with vice-president Li Zongren around his own inauguration as the Republic of China\'s first president that May. During the wartime Japanese occupation, troops were stationed to keep the collaborationist government of Wang Jingwei, installed in Nanjing in 1940, from encroaching on the site; a tomb built for Wang beside the mausoleum was demolished on Nationalist orders once Japan surrendered. Kuomintang chairmen have continued to travel from Taiwan to pay respects, from Lien Chan in 2005 to Cheng Li-wun in 2026.',
+        es: 'El mausoleo se concibió desde el principio como santuario nacional del Kuomintang, el partido gobernante: una estela erigida por el partido se alza en el pabellón situado bajo la escalinata ceremonial, y el techo del salón sacrificial luce pintada la bandera del KMT, Cielo Azul con Sol Blanco. El presidente Chiang Kai-shek lo inauguró y visitó en 1929, tras la victoria del gobierno nacionalista en la Expedición del Norte, y regresó en el verano de 1946 al término de la guerra con Japón; el 29 de marzo de 1948 condujo hasta allí a los delegados de la primera Asamblea Nacional para presentar sus respetos, y volvió a hacerlo junto al vicepresidente Li Zongren en torno a su propia investidura como primer presidente de la República de China aquel mes de mayo. Durante la ocupación japonesa se apostaron tropas para impedir que el gobierno colaboracionista de Wang Jingwei, instalado en Nankín en 1940, se acercara al recinto; una tumba construida para Wang junto al mausoleo fue demolida por orden nacionalista tras la rendición de Japón. Los presidentes del partido Kuomintang han seguido viajando desde Taiwán para rendir homenaje, de Lien Chan en 2005 a Cheng Li-wun en 2026.',
+        it: 'Il mausoleo fu concepito fin dall\'inizio come santuario nazionale del Kuomintang, il partito al potere: una stele eretta dal partito si trova nel padiglione sotto la scalinata cerimoniale, e il soffitto della sala sacrificale reca dipinta la bandiera del KMT, Cielo Azzurro con Sole Bianco. Il presidente Chiang Kai-shek lo inaugurò e visitò nel 1929, dopo la vittoria del governo nazionalista nella Spedizione del Nord, e vi tornò nell\'estate del 1946 al termine della guerra con il Giappone; il 29 marzo 1948 vi condusse i delegati della prima Assemblea Nazionale per rendere omaggio, e tornò a farlo insieme al vicepresidente Li Zongren in occasione del proprio insediamento come primo presidente della Repubblica di Cina, quel maggio. Durante l\'occupazione giapponese furono di stanza truppe per impedire che il governo collaborazionista di Wang Jingwei, insediato a Nanchino nel 1940, si avvicinasse al sito; una tomba costruita per Wang accanto al mausoleo fu demolita per ordine nazionalista dopo la resa del Giappone. I presidenti del partito Kuomintang hanno continuato a recarsi da Taiwan per rendere omaggio, da Lien Chan nel 2005 a Cheng Li-wun nel 2026.',
+      },
+      sources: [
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Sun_Yat-sen_Mausoleum', title: 'Sun Yat-sen Mausoleum', license: 'CC BY-SA 4.0' },
+      ],
+    },
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1338405', title: 'Sun Yat-sen Mausoleum (Q1338405)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Sun_Yat-sen_Mausoleum', title: 'Sun Yat-sen Mausoleum', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/L%C3%BC_Yanzhi', title: 'Lü Yanzhi', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%B1%B1%E9%99%B5', title: '中山陵', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'deep',
+  },
+  {
+    id: 'hiroshima-peace-memorial-museum',
+    wikidataId: 'Q1200076',
+    name: {
+      en: 'Hiroshima Peace Memorial Museum',
+      es: 'Museo Memorial de la Paz de Hiroshima',
+      it: 'Museo della Pace di Hiroshima',
+    },
+    architectId: 'kenzo-tange',
+    location: { city: 'Hiroshima', countryCode: 'JP', lat: 34.3915, lon: 132.4531 },
+    inception: 1951,
+    completed: 1955,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['concrete'],
+    structure: {
+      en: 'A reinforced-concrete slab of two storeys with a partial mezzanine, lifted clear of the ground on pilotis and screened along its long faces by a grid of vertical concrete louvres.',
+      es: 'Un prisma de hormigón armado de dos plantas con entreplanta parcial, levantado del suelo sobre pilotis y velado en sus caras largas por una retícula de lamas verticales de hormigón.',
+      it: 'Un volume in cemento armato di due piani con mezzanino parziale, sollevato da terra su pilotis e schermato sui lati lunghi da una griglia di lamelle verticali in calcestruzzo.',
+    },
+    program: {
+      en: 'Built by the city of Hiroshima to collect, preserve and display the material remains of the atomic bombing of 6 August 1945.',
+      es: 'Construido por la ciudad de Hiroshima para reunir, conservar y exponer los restos materiales del bombardeo atómico del 6 de agosto de 1945.',
+      it: 'Costruito dalla città di Hiroshima per raccogliere, conservare ed esporre i resti materiali del bombardamento atomico del 6 agosto 1945.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Still the main hall of the Peace Memorial Museum, reopened in 2019 after seismic retrofitting and a redisplay of the collection.',
+      es: 'Sigue siendo el edificio principal del Museo Memorial de la Paz, reabierto en 2019 tras un refuerzo sísmico y una nueva museografía.',
+      it: 'È tuttora l\'edificio principale del Museo della Pace, riaperto nel 2019 dopo un adeguamento sismico e un riallestimento della collezione.',
+    },
+    detailRect: { x: 0.34, y: 0.38, w: 0.30, h: 0.18 },
+    image: {
+      commonsFile: 'File:Hiroshima_Peace_Memorial_Museum_20170310.jpg',
+      photographer: 'そらみみ',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshima_Peace_Memorial_Museum_20170310.jpg',
+      width: 1600,
+      height: 1200,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Hiroshima Peace Memorial Museum, 20240817 0829 4208.jpg',
+        photographer: 'Jakub Hałun',
+        license: 'CC BY 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshima_Peace_Memorial_Museum%2C_20240817_0829_4208.jpg',
+        width: 1600,
+        height: 703,
+      },
+    ],
+    dossier: {
+      en: 'Tange won the 1949 competition for the Peace Memorial Park with a scheme that was really one idea: an axis, running north from the museum through the cenotaph to the ruined dome of the Industrial Promotion Hall, so that the surviving wreck is framed for anyone standing under the building. The museum is the instrument of that view. Raised on pilotis, it leaves the ground open and lets the park pass beneath; the long elevations are shaded by concrete louvres proportioned on a set of mathematical ratios Tange used throughout. Construction began in 1951 and was suspended for three years when national funding fell short, resuming only when the city met the balance; the main hall opened in August 1955, ten years after the bomb. It was among the first Japanese postwar buildings to be recognised internationally, and in 2006 the first to be designated an Important Cultural Property.',
+      es: 'Tange ganó el concurso de 1949 para el Parque Memorial de la Paz con un esquema que era en realidad una sola idea: un eje que corre al norte desde el museo, atraviesa el cenotafio y llega a la cúpula en ruinas del Palacio de Promoción Industrial, de modo que el resto en pie queda encuadrado para quien se sitúe bajo el edificio. El museo es el instrumento de esa vista. Elevado sobre pilotis, deja el suelo libre y permite que el parque pase por debajo; los alzados largos se protegen con lamas de hormigón proporcionadas según razones matemáticas que Tange empleó en todo el conjunto. Las obras empezaron en 1951 y se interrumpieron tres años cuando la financiación estatal resultó insuficiente, y solo se reanudaron al asumir la ciudad la diferencia; el edificio principal abrió en agosto de 1955, diez años después de la bomba. Fue de las primeras obras japonesas de posguerra reconocidas fuera del país y, en 2006, la primera declarada Bien Cultural Importante.',
+      it: 'Tange vinse il concorso del 1949 per il Parco della Pace con uno schema che era in realtà una sola idea: un asse che corre a nord dal museo, attraversa il cenotafio e raggiunge la cupola in rovina del Palazzo della Promozione Industriale, così che il rudere superstite risulta inquadrato per chi si trovi sotto l\'edificio. Il museo è lo strumento di quella vista. Sollevato su pilotis, lascia libero il suolo e fa passare il parco al di sotto; i prospetti lunghi sono schermati da lamelle in calcestruzzo proporzionate secondo rapporti matematici che Tange usò in tutto il complesso. Il cantiere iniziò nel 1951 e fu sospeso per tre anni quando il finanziamento statale si rivelò insufficiente, riprendendo solo quando la città coprì la differenza; l\'edificio principale aprì nell\'agosto 1955, dieci anni dopo la bomba. Fu tra le prime opere giapponesi del dopoguerra riconosciute all\'estero e, nel 2006, la prima dichiarata Bene Culturale Importante.',
+    },
+    context: {
+      body: {
+        en: 'The museum stands on the Nakajima district, before 1945 the busiest commercial and residential quarter of Hiroshima and, after the atomic bomb of 6 August 1945, an open field. Estimates of the direct and indirect dead run to around 140,000. The park was laid out on that ground; the ruin of the Prefectural Industrial Promotion Hall, the structure nearest the hypocentre left partly standing, was preserved as the A-Bomb Dome and inscribed on the World Heritage List on 7 December 1996. Between 1956 and 1967 part of the museum was given over to displays promoting the peaceful use of atomic energy, first for a travelling exhibition and later as an "Atomic Science Hall"; visitors complained of a split message, and the peaceful-use material was removed in May 1967.',
+        es: 'El museo se levanta sobre el barrio de Nakajima, antes de 1945 el sector comercial y residencial más activo de Hiroshima y, tras la bomba atómica del 6 de agosto de 1945, un descampado. Las estimaciones de muertos directos e indirectos rondan los 140.000. El parque se trazó sobre ese terreno; la ruina del Palacio Prefectural de Promoción Industrial, la construcción más próxima al hipocentro que quedó parcialmente en pie, se conservó como Cúpula de la Bomba Atómica y se inscribió en la Lista del Patrimonio Mundial el 7 de diciembre de 1996. Entre 1956 y 1967 parte del museo se destinó a exposiciones sobre el uso pacífico de la energía atómica, primero para una muestra itinerante y luego como «Sala de Ciencia Atómica»; los visitantes se quejaron de un mensaje contradictorio y ese material se retiró en mayo de 1967.',
+        it: 'Il museo sorge sul quartiere di Nakajima, prima del 1945 il settore commerciale e residenziale più animato di Hiroshima e, dopo la bomba atomica del 6 agosto 1945, un campo aperto. Le stime dei morti diretti e indiretti si aggirano sui 140.000. Il parco fu tracciato su quel terreno; il rudere del Palazzo Prefettizio della Promozione Industriale, la costruzione più vicina all\'ipocentro rimasta in parte in piedi, fu conservato come Cupola della Bomba Atomica e iscritto nella Lista del Patrimonio Mondiale il 7 dicembre 1996. Fra il 1956 e il 1967 una parte del museo fu destinata a mostre sull\'uso pacifico dell\'energia atomica, dapprima per un\'esposizione itinerante e poi come «Sala della Scienza Atomica»; i visitatori lamentarono un messaggio contraddittorio e quel materiale fu rimosso nel maggio 1967.',
+      },
+      sources: [
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Hiroshima_Peace_Memorial_Park', title: 'Hiroshima Peace Memorial Park', license: 'CC BY-SA 4.0' },
+        { kind: 'wikipedia', url: 'https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E5%B9%B3%E5%92%8C%E8%A8%98%E5%BF%B5%E8%B3%87%E6%96%99%E9%A4%A8', title: '広島平和記念資料館', license: 'CC BY-SA 4.0' },
+      ],
+    },
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1200076', title: 'Hiroshima Peace Memorial Museum (Q1200076)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Hiroshima_Peace_Memorial_Museum', title: 'Hiroshima Peace Memorial Museum', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'http://hpmmuseum.jp/modules/info/index.php?action=PageView&page_id=20', title: 'Hiroshima Peace Memorial Museum — facility outline (施設概要)', license: null },
+      { kind: 'institution', url: 'https://www.pref.hiroshima.lg.jp/soshiki_file/tatemonogatari/page001.html', title: '広島平和記念資料館（本館）— ひろしまたてものがたり (Hiroshima Prefecture)', license: null },
+      { kind: 'publication', url: 'https://haruaki.shunjusha.co.jp/posts/6239', title: '岸佑「平和を創りだす——平和記念公園および広島平和記念資料館本館」web春秋 (Shunjusha)', license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'nakagin-capsule-tower',
+    wikidataId: 'Q1633586',
+    name: {
+      en: 'Nakagin Capsule Tower',
+      es: 'Torre Cápsula Nakagin',
+      it: 'Torre a capsule Nakagin',
+    },
+    architectId: 'kisho-kurokawa',
+    location: { city: 'Tokyo', countryCode: 'JP', lat: 35.6656, lon: 139.7635 },
+    inception: 1970,
+    completed: 1972,
+    demolished: 2022,
+    typology: 'housing',
+    materials: ['concrete', 'steel-and-glass'],
+    structure: {
+      en: 'Two rigid-frame cores of steel and reinforced concrete, eleven and thirteen storeys, from which 140 prefabricated steel capsules were cantilevered, each hung on four high-tension bolts and served by a flexible plumbing umbilical.',
+      es: 'Dos núcleos de pórtico rígido en acero y hormigón armado, de once y trece plantas, de los que volaban 140 cápsulas prefabricadas de acero, colgada cada una de cuatro pernos de alta resistencia y servida por un cordón umbilical flexible de instalaciones.',
+      it: 'Due nuclei a telaio rigido in acciaio e cemento armato, di undici e tredici piani, dai quali sporgevano a sbalzo 140 capsule prefabbricate in acciaio, appese ciascuna a quattro bulloni ad alta resistenza e servite da un cordone ombelicale flessibile.',
+    },
+    program: {
+      en: 'A speculative mixed-use development in the Ginza district of Tokyo, sold as compact residential units and small offices.',
+      es: 'Promoción especulativa de uso mixto en el barrio tokiota de Ginza, vendida como viviendas compactas y pequeñas oficinas.',
+      it: 'Intervento speculativo a uso misto nel quartiere di Ginza, a Tokyo, venduto come unità residenziali compatte e piccoli uffici.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Demolished in 2022; twenty-three capsules were removed for preservation and have since been restored for museum and exhibition use.',
+      es: 'Demolida en 2022; se retiraron veintitrés cápsulas para su conservación y desde entonces se han restaurado con destino museístico y expositivo.',
+      it: 'Demolita nel 2022; ventitré capsule furono rimosse per la conservazione e sono state poi restaurate per usi museali ed espositivi.',
+    },
+    detailRect: { x: 0.20, y: 0.50, w: 0.34, h: 0.26 },
+    image: {
+      commonsFile: 'File:Nakagin.jpg',
+      photographer: 'Jordy Meow',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Nakagin.jpg',
+      width: 1068,
+      height: 1600,
+    },
+    dossier: {
+      en: 'Metabolism proposed that a building should behave like an organism, with a durable frame and parts replaced as they wear out. Nakagin was the world\'s first built example of capsule architecture. Each capsule was an all-welded steel box of 2.5 by 2.5 by 4 metres — the dimensions, Kurokawa noted, of a traditional tea room — fitted out in a factory that also made shipping containers, trucked to Ginza and bolted to a core with four fasteners so that any one could be swapped without touching its neighbours. A single round window, 1.3 metres across, faced the street. The system was never exercised: no replacement capsule was ever manufactured and none was ever changed. The building fell into disrepair, fundraising and landmark campaigns failed, and it was demolished in 2022 after half a century. Twenty-three capsules were saved.',
+      es: 'El metabolismo proponía que un edificio se comportara como un organismo, con una estructura duradera y piezas sustituibles a medida que se gastan. Nakagin fue el primer ejemplo construido de arquitectura de cápsulas del mundo. Cada cápsula era una caja de acero enteramente soldada de 2,5 por 2,5 por 4 metros —las medidas, señalaba Kurokawa, de una sala de té tradicional—, equipada en una fábrica que también hacía contenedores marítimos, transportada a Ginza y atornillada al núcleo con cuatro pernos, de modo que cualquiera pudiese cambiarse sin tocar las contiguas. Una única ventana circular de 1,3 metros daba a la calle. El sistema nunca se puso a prueba: jamás se fabricó una cápsula de repuesto ni se sustituyó ninguna. El edificio se fue degradando, fracasaron las campañas de recaudación y de protección patrimonial y se demolió en 2022, medio siglo después. Se salvaron veintitrés cápsulas.',
+      it: 'Il metabolismo proponeva che un edificio si comportasse come un organismo, con una struttura durevole e parti sostituite man mano che si consumano. Nakagin fu il primo esempio costruito al mondo di architettura a capsule. Ogni capsula era una scatola d\'acciaio interamente saldata di 2,5 per 2,5 per 4 metri — le misure, notava Kurokawa, di una tradizionale stanza da tè — allestita in una fabbrica che produceva anche container, portata a Ginza e imbullonata al nucleo con quattro fissaggi, così che una qualsiasi potesse essere sostituita senza toccare le vicine. Un\'unica finestra circolare di 1,3 metri guardava la strada. Il sistema non fu mai messo alla prova: non fu mai prodotta una capsula di ricambio né se ne sostituì alcuna. L\'edificio si degradò, le raccolte fondi e le campagne per il vincolo fallirono e fu demolito nel 2022, mezzo secolo dopo. Ventitré capsule furono salvate.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1633586', title: 'Nakagin Capsule Tower (Q1633586)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Nakagin_Capsule_Tower', title: 'Nakagin Capsule Tower', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'shonandai-culture-centre',
+    wikidataId: 'Q11563318',
+    name: {
+      en: 'Shōnandai Culture Centre',
+      es: 'Centro Cultural de Shōnandai',
+      it: 'Centro Culturale di Shōnandai',
+    },
+    architectId: 'itsuko-hasegawa',
+    location: { city: 'Fujisawa', countryCode: 'JP', lat: 35.3979, lon: 139.4696 },
+    inception: 1987,
+    completed: 1990,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['concrete', 'steel-and-glass'],
+    structure: {
+      en: 'Two basement levels sunk into the site and four storeys above them, carrying a landscape of light steel frames, perforated aluminium screens and two clad spheres of 37 and 23 metres diameter.',
+      es: 'Dos plantas de sótano hundidas en el solar y cuatro sobre ellas, que sostienen un paisaje de estructuras ligeras de acero, pantallas de aluminio perforado y dos esferas revestidas de 37 y 23 metros de diámetro.',
+      it: 'Due piani interrati affondati nel lotto e quattro piani soprastanti, che reggono un paesaggio di leggere strutture d\'acciaio, schermi di alluminio forato e due sfere rivestite di 37 e 23 metri di diametro.',
+    },
+    program: {
+      en: 'A municipal complex for Fujisawa combining a community hall, a children\'s museum with planetarium, a 600-seat civic theatre and district administrative offices.',
+      es: 'Complejo municipal de Fujisawa que reúne un centro cívico, un museo infantil con planetario, un teatro público de 600 plazas y oficinas administrativas de distrito.',
+      it: 'Complesso municipale di Fujisawa che riunisce una casa di quartiere, un museo dei bambini con planetario, un teatro civico da 600 posti e uffici amministrativi di distretto.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'In municipal use as the Shōnandai Culture Centre, with the children\'s museum, the planetarium and the civic theatre all still running.',
+      es: 'En uso municipal como Centro Cultural de Shōnandai, con el museo infantil, el planetario y el teatro público todavía en funcionamiento.',
+      it: 'In uso municipale come Centro Culturale di Shōnandai, con il museo dei bambini, il planetario e il teatro civico tuttora attivi.',
+    },
+    detailRect: { x: 0.50, y: 0.26, w: 0.30, h: 0.30 },
+    image: {
+      commonsFile: 'File:Shonandai_bunka_center.JPG',
+      photographer: 'Archs',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Shonandai_bunka_center.JPG',
+      width: 1024,
+      height: 768,
+    },
+    dossier: {
+      en: 'Hasegawa won this by competition and then had to argue for it: residents objected to a public building sunk below ground level. She spent long stretches in meetings with them, and by the time construction reached the surface the scheme had their backing. Two basement levels absorb much of the accommodation, which frees the ground to work as a public park rather than a forecourt. Above ground she assembled something closer to a metal thicket than a façade: perforated aluminium canopies on slender posts, faceted tent-like volumes, trees, water, and two spheres, one of 37 metres taking the motif of a celestial globe and holding the civic theatre, one of 23 metres taking a terrestrial globe and holding the planetarium. She called the result "second nature". After it opened she stayed on for ten years as director of its children\'s museum.',
+      es: 'Hasegawa ganó el encargo por concurso y luego tuvo que defenderlo: los vecinos se oponían a un edificio público hundido bajo el nivel del suelo. Pasó largas temporadas reuniéndose con ellos y, cuando la obra asomó a la superficie, el proyecto contaba con su respaldo. Dos plantas de sótano absorben buena parte del programa, lo que libera el suelo para funcionar como parque público y no como antesala. Encima montó algo más parecido a una espesura metálica que a una fachada: marquesinas de aluminio perforado sobre soportes esbeltos, volúmenes facetados como tiendas de campaña, árboles, agua y dos esferas, una de 37 metros que toma el motivo de una esfera celeste y aloja el teatro público y otra de 23 metros que toma el globo terráqueo y alberga el planetario. Llamó al resultado «segunda naturaleza». Tras la inauguración se quedó diez años dirigiendo el museo infantil.',
+      it: 'Hasegawa vinse l\'incarico per concorso e poi dovette difenderlo: gli abitanti si opponevano a un edificio pubblico affondato sotto il livello del suolo. Trascorse lunghi periodi in assemblee con loro e, quando il cantiere emerse dal suolo, il progetto aveva il loro appoggio. Due piani interrati assorbono buona parte del programma, il che libera il suolo perché funzioni da parco pubblico e non da anticamera. Sopra vi montò qualcosa di più simile a una boscaglia metallica che a una facciata: pensiline di alluminio forato su esili sostegni, volumi sfaccettati come tende, alberi, acqua e due sfere, una di 37 metri che riprende il motivo di una sfera celeste e accoglie il teatro civico e una di 23 metri che riprende il globo terrestre e ospita il planetario. Chiamò l\'esito «seconda natura». Dopo l\'apertura rimase dieci anni a dirigerne il museo dei bambini.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q11563318', title: 'Shonandai Culture Center (Q11563318)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Itsuko_Hasegawa', title: 'Itsuko Hasegawa', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://ja.wikipedia.org/wiki/%E6%B9%98%E5%8D%97%E5%8F%B0%E6%96%87%E5%8C%96%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC', title: '湘南台文化センター', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'deep',
+  },
+  {
+    id: 'kanazawa-21st-century-museum',
+    wikidataId: 'Q3242206',
+    name: {
+      en: '21st Century Museum of Contemporary Art, Kanazawa',
+      es: 'Museo de Arte Contemporáneo del Siglo XXI de Kanazawa',
+      it: 'Museo d\'arte contemporanea del XXI secolo di Kanazawa',
+    },
+    architectId: 'kazuyo-sejima',
+    // SANAA joint work — Sejima holds architectId per the pool's conventional
+    // credit; Nishizawa is her equal co-designer, added here per the v1
+    // ledger's finding that he had been wrongly dropped from credit.
+    coArchitects: ['ryue-nishizawa'],
+    location: { city: 'Kanazawa', countryCode: 'JP', lat: 36.5608, lon: 136.6580 },
+    inception: 2002,
+    completed: 2004,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['steel-and-glass', 'concrete'],
+    structure: {
+      en: 'A circular plate 112.5 metres across, two storeys above ground and two below, wrapped in an unbroken curved glass wall of 122 panes, from which white-rendered gallery boxes of differing heights rise through the roof.',
+      es: 'Una pieza circular de 112,5 metros de diámetro, con dos plantas sobre rasante y dos bajo ella, envuelta por un muro de vidrio curvo continuo de 122 paños, del que emergen a través de la cubierta cajas de sala revocadas en blanco de alturas distintas.',
+      it: 'Una piastra circolare di 112,5 metri di diametro, con due piani fuori terra e due interrati, avvolta da una parete di vetro curva continua di 122 lastre, dalla quale emergono attraverso la copertura scatole espositive intonacate di bianco di altezze diverse.',
+    },
+    program: {
+      en: 'A municipal museum of contemporary art for Kanazawa, built on the site of a former university school and split between a ticketed exhibition zone and a free public zone.',
+      es: 'Museo municipal de arte contemporáneo de Kanazawa, construido en el solar de una antigua escuela universitaria y dividido entre una zona expositiva de pago y una zona pública gratuita.',
+      it: 'Museo comunale d\'arte contemporanea di Kanazawa, costruito sull\'area di una ex scuola universitaria e diviso tra una zona espositiva a pagamento e una zona pubblica gratuita.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'A working municipal art museum, among the most visited in Japan; the city has announced a closure for services renewal and earthquake repairs from 2027.',
+      es: 'Museo municipal de arte en activo, de los más visitados de Japón; la ciudad ha anunciado un cierre desde 2027 para renovar instalaciones y reparar daños sísmicos.',
+      it: 'Museo civico d\'arte in attività, tra i più visitati del Giappone; la città ha annunciato una chiusura dal 2027 per rinnovare gli impianti e riparare i danni del terremoto.',
+    },
+    detailRect: { x: 0.30, y: 0.42, w: 0.30, h: 0.28 },
+    image: {
+      commonsFile: 'File:21st_Century_Museum_of_Contemporary_Art_in_Kanazawa_-_Takeshi_DSC_1132_(3872661475).jpg',
+      photographer: 'Takeshi Kuboki',
+      license: 'CC BY 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:21st_Century_Museum_of_Contemporary_Art_in_Kanazawa_-_Takeshi_DSC_1132_(3872661475).jpg',
+      width: 1600,
+      height: 1065,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Kanazawa 21st Century Museum.jpg',
+        photographer: 'Keemz',
+        license: 'CC BY 2.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Kanazawa_21st_Century_Museum.jpg',
+        width: 1024,
+        height: 685,
+      },
+    ],
+    dossier: {
+      en: 'Kanazawa already had a formal provincial art museum, so the brief for this one asked for its opposite: a museum people would walk into without deciding to. Sejima and Nishizawa answered with a circle. There is no front and no back, no steps, no plinth; four entrances face four different streets, and the glass wall that closes the plan carries no visible frame, so from the lawn the building reads as a low disc of light with white boxes floating over it. Inside, the curators had asked for ideal rooms — square, rectangular, round, of many sizes — and SANAA scattered them across the disc as separate volumes with corridors and courtyards left over between, which is what makes the route ambiguous and the visit unrepeatable. Construction ran from April 2002 to August 2004; the museum opened that October and SANAA took the Golden Lion at Venice.',
+      es: 'Kanazawa ya tenía un museo provincial de arte de corte solemne, de modo que el encargo pedía su contrario: un museo en el que se entrase sin haberlo decidido. Sejima y Nishizawa respondieron con un círculo. No hay frente ni trasera, ni escalinata, ni podio; cuatro accesos miran a cuatro calles distintas, y el muro de vidrio que cierra la planta no tiene carpintería visible, así que desde el césped el edificio se lee como un disco bajo de luz con cajas blancas flotando encima. Dentro, los conservadores habían pedido salas ideales —cuadradas, rectangulares, circulares, de muchos tamaños— y SANAA las dispersó por el disco como volúmenes sueltos, dejando pasillos y patios en los intersticios: de ahí que el recorrido sea ambiguo y la visita irrepetible. Las obras fueron de abril de 2002 a agosto de 2004; el museo abrió aquel octubre y SANAA obtuvo el León de Oro en Venecia.',
+      it: 'Kanazawa aveva già un museo d\'arte provinciale di taglio solenne, e il programma chiedeva dunque il suo contrario: un museo in cui si entrasse senza averlo deciso. Sejima e Nishizawa risposero con un cerchio. Non c\'è fronte né retro, né gradinata, né basamento; quattro ingressi guardano quattro strade diverse, e la parete di vetro che chiude la pianta non ha telai a vista, così che dal prato l\'edificio si legge come un basso disco di luce con scatole bianche sospese sopra. All\'interno i curatori avevano chiesto sale ideali — quadrate, rettangolari, circolari, di molte misure — e SANAA le sparpagliò sul disco come volumi separati, lasciando corridoi e corti negli interstizi: per questo il percorso è ambiguo e la visita irripetibile. Il cantiere andò dall\'aprile 2002 all\'agosto 2004; il museo aprì quell\'ottobre e SANAA ottenne il Leone d\'Oro a Venezia.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q3242206', title: '21st Century Museum of Contemporary Art (Q3242206)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/21st_Century_Museum_of_Contemporary_Art,_Kanazawa', title: '21st Century Museum of Contemporary Art, Kanazawa', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://ja.wikipedia.org/wiki/%E9%87%91%E6%B2%A221%E4%B8%96%E7%B4%80%E7%BE%8E%E8%A1%93%E9%A4%A8', title: '金沢21世紀美術館', license: 'CC BY-SA 4.0' },
+      { kind: 'publication', url: 'https://archinect.com/news/article/7083/eisenman-and-sanaa-awarded-at-biennale', title: 'Eisenman and SANAA — Awarded at Biennale (Archinect, 2004)', license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'ningbo-museum',
+    wikidataId: 'Q1070226',
+    name: {
+      en: 'Ningbo Museum',
+      es: 'Museo de Ningbo',
+      it: 'Museo di Ningbo',
+    },
+    architectId: 'wang-shu',
+    // Amateur Architecture Studio joint work — Wang Shu holds architectId per
+    // the pool's conventional credit (and per the sole 2012 Pritzker
+    // citation, discussed in his context block below); Lu Wenyu, his
+    // co-founder and equal collaborator on every AAS building including this
+    // one, is added here via coArchitects.
+    coArchitects: ['lu-wenyu'],
+    location: { city: 'Ningbo', countryCode: 'CN', lat: 29.8174, lon: 121.5412 },
+    inception: 2006,
+    completed: 2008,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['brick', 'concrete', 'stone'],
+    structure: {
+      en: 'A concrete block 144 metres long, 65 wide and 24 high whose upper floors split into five leaning masses, faced either in salvaged brick and tile laid up as wapan walling or in concrete cast against bamboo formwork.',
+      es: 'Un bloque de hormigón de 144 metros de largo, 65 de ancho y 24 de alto cuyas plantas superiores se escinden en cinco masas inclinadas, revestidas con ladrillo y teja recuperados en aparejo wapan o con hormigón encofrado contra bambú.',
+      it: 'Un blocco in calcestruzzo lungo 144 metri, largo 65 e alto 24, i cui piani superiori si scindono in cinque masse inclinate, rivestite di mattoni e tegole di recupero in apparecchio wapan oppure di calcestruzzo gettato contro casseforme di bambù.',
+    },
+    program: {
+      en: 'A municipal museum of the history and folk customs of the Ningbo region, built for the city and Yinzhou district on a cleared site in a new administrative centre.',
+      es: 'Museo municipal de la historia y las costumbres populares de la región de Ningbo, construido para la ciudad y el distrito de Yinzhou en un solar despejado de un nuevo centro administrativo.',
+      it: 'Museo comunale della storia e delle tradizioni popolari della regione di Ningbo, costruito per la città e il distretto di Yinzhou su un\'area sgombrata di un nuovo centro amministrativo.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'A working municipal museum, rated a national first-grade museum by the State Administration of Cultural Heritage in 2012.',
+      es: 'Museo municipal en activo, calificado como museo nacional de primer grado por la Administración Estatal de Patrimonio Cultural en 2012.',
+      it: 'Museo comunale in attività, classificato museo nazionale di primo grado dall\'Amministrazione Statale del Patrimonio Culturale nel 2012.',
+    },
+    detailRect: { x: 0.34, y: 0.38, w: 0.30, h: 0.30 },
+    image: {
+      commonsFile: 'File:South_Gate_of_Ningbo_Museum.jpg',
+      photographer: 'Siyuwj',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:South_Gate_of_Ningbo_Museum.jpg',
+      width: 1600,
+      height: 1067,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Ningbo Museum Appearance.JPG',
+        photographer: 'Siyuwj',
+        license: 'CC BY-SA 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Ningbo_Museum_Appearance.JPG',
+        width: 979,
+        height: 734,
+      },
+    ],
+    dossier: {
+      en: 'The site was a district of villages until it was cleared for a new administrative centre, leaving the museum standing more than a hundred metres from anything else. Wang Shu\'s response was to make an object with its own horizon: a solid base of three floors that splits, higher up, into five leaning masses read as a fragment of mountain, with a stepped valley cut into the south side after the manner of Northern Song landscape painting. The surface is the argument. Bricks, roof tiles and stones salvaged from the demolished villages were handed to the masons, who laid them up in wapan, the regional technique used to rebuild after typhoons; where walls lean away from vertical the cladding is instead concrete cast against bamboo, which leaves the cane grain in the surface. Windows are scattered without alignment. Construction began on 31 August 2006 and the museum opened on 5 December 2008.',
+      es: 'El emplazamiento fue un conjunto de aldeas hasta que se arrasó para levantar un nuevo centro administrativo, de modo que el museo quedó a más de cien metros de cualquier otra cosa. La respuesta de Wang Shu fue construir un objeto con horizonte propio: una base maciza de tres plantas que, más arriba, se escinde en cinco masas inclinadas leídas como un fragmento de montaña, con un valle escalonado abierto en el lado sur a la manera de la pintura de paisaje Song del Norte. La superficie es el argumento. Ladrillos, tejas y piedras recuperados de las aldeas derribadas se entregaron a los albañiles, que los asentaron en wapan, la técnica regional con que se reconstruía tras los tifones; donde los muros se apartan de la vertical, el revestimiento es hormigón encofrado contra bambú, que deja la fibra de la caña impresa. Las ventanas se dispersan sin alineación. La obra empezó el 31 de agosto de 2006 y el museo abrió el 5 de diciembre de 2008.',
+      it: 'L\'area era un insieme di villaggi finché non fu sgombrata per un nuovo centro amministrativo, lasciando il museo a più di cento metri da qualsiasi altra cosa. La risposta di Wang Shu fu costruire un oggetto con un orizzonte proprio: un basamento massiccio di tre piani che, più in alto, si scinde in cinque masse inclinate lette come frammento di montagna, con una valle a gradoni incisa sul lato sud alla maniera della pittura di paesaggio Song settentrionale. La superficie è l\'argomento. Mattoni, tegole e pietre recuperati dai villaggi demoliti furono consegnati ai muratori, che li posarono in wapan, la tecnica regionale con cui si ricostruiva dopo i tifoni; dove le pareti si scostano dalla verticale il rivestimento è invece calcestruzzo gettato contro il bambù, che ne lascia impressa la fibra. Le finestre sono sparse senza allineamenti. Il cantiere iniziò il 31 agosto 2006 e il museo aprì il 5 dicembre 2008.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1070226', title: 'Ningbo Museum (Q1070226)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Ningbo_Museum', title: 'Ningbo Museum', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://zh.wikipedia.org/wiki/%E5%AE%81%E6%B3%A2%E5%8D%9A%E7%89%A9%E9%A6%86', title: '宁波博物馆', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'nikko-toshogu',
+    wikidataId: 'Q696641',
+    name: {
+      en: 'Nikkō Tōshō-gū',
+      es: 'Santuario Tōshō-gū de Nikkō',
+      it: 'Santuario Tōshō-gū di Nikkō',
+    },
+    architectId: 'kora-munehiro',
+    location: { city: 'Nikkō', countryCode: 'JP', lat: 36.758064, lon: 139.598958 },
+    inception: 1634,
+    completed: 1636,
+    demolished: null,
+    typology: 'sacral',
+    materials: ['timber', 'stone'],
+    structure: {
+      en: 'A Shinto mausoleum-shrine complex of some forty structures in gongen-zukuri form, their cypress-wood frames carried on stone plinths and covered in lacquer, gold leaf and polychrome relief carving, climbing a wooded hillside toward Ieyasu\'s grave.',
+      es: 'Un complejo funerario sintoísta de una cuarentena de edificios en forma gongen-zukuri, con armazones de madera de ciprés hinoki alzados sobre zócalos de piedra y revestidos de laca, pan de oro y talla policromada en relieve, que asciende por una ladera boscosa hasta la tumba de Ieyasu.',
+      it: 'Un complesso funerario shintoista di una quarantina di edifici in forma gongen-zukuri, con intelaiature in legno di cipresso hinoki poggianti su basamenti di pietra e rivestite di lacca, foglia d\'oro e intagli policromi a rilievo, che sale lungo un pendio boscoso fino alla tomba di Ieyasu.',
+    },
+    program: {
+      en: 'Commissioned by the third Tokugawa shogun, Iemitsu, as a lavish rebuilding of the shrine housing the remains and cult of his grandfather Tokugawa Ieyasu, founder of the shogunate, to project the dynasty\'s authority and sanctity.',
+      es: 'Encargado por el tercer sogún Tokugawa, Iemitsu, como una fastuosa reconstrucción del santuario que alberga los restos y el culto de su abuelo Tokugawa Ieyasu, fundador del sogunato, para proyectar la autoridad y la sacralidad de la dinastía.',
+      it: 'Commissionato dal terzo shogun Tokugawa, Iemitsu, come sontuosa ricostruzione del santuario che custodisce le spoglie e il culto del nonno Tokugawa Ieyasu, fondatore dello shogunato, per proiettare l\'autorità e la sacralità della dinastia.',
+    },
+    heritage: 'unesco',
+    currentUse: {
+      en: 'An active Shinto shrine and major pilgrimage and tourist site, part of the Shrines and Temples of Nikkō UNESCO World Heritage Site, with the Heisei-era repair of the Yōmeimon completed in 2017.',
+      es: 'Santuario sintoísta en activo y gran centro de peregrinación y turismo, parte del Patrimonio Mundial de la UNESCO Santuarios y Templos de Nikkō, con la restauración de la era Heisei del Yōmeimon concluida en 2017.',
+      it: 'Santuario shintoista attivo e importante meta di pellegrinaggio e turismo, parte del Patrimonio Mondiale UNESCO Santuari e Templi di Nikkō, con il restauro di epoca Heisei dello Yōmeimon concluso nel 2017.',
+    },
+    detailRect: { x: 0.32, y: 0.38, w: 0.32, h: 0.30 },
+    image: {
+      commonsFile: 'File:Nikko_Toshogu_Yomeimon_Gate_2024.jpg',
+      photographer: 'Jpatokal',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Nikko_Toshogu_Yomeimon_Gate_2024.jpg',
+      width: 1600,
+      height: 1205,
+    },
+    dossier: {
+      en: 'In September 1634 Tokugawa Iemitsu, the third shogun, made a pilgrimage to his grandfather\'s shrine and ordered its replacement for the twenty-first memorial year in 1636. The chief magistrate Akimoto Yasutomo directed the project; the building itself was the work of the shogunate\'s chief carpenter, Kōra Munehiro, who led carpenters drawn from Edo, Kyoto and Osaka, and who had already built the Taitoku-in mausoleum at Zōjō-ji. What they raised in barely two years still stands as the fullest statement of Edo-period ornament: some forty structures in gongen-zukuri form, their timber frames lacquered, gilded and carved in deep relief, culminating in the Yōmeimon, a gate so densely worked it was nicknamed higurashi-no-mon, the gate you could watch until sundown without tiring. Hidari Jingorō is credited with its most famous small carving, a sleeping cat. On completion Kōra received the fourth court rank; he retired the same year, leaving the shogunate\'s works office to his descendants for eleven more generations.',
+      es: 'En septiembre de 1634 Tokugawa Iemitsu, el tercer sogún, peregrinó al santuario de su abuelo y ordenó su reconstrucción para el vigésimo primer aniversario luctuoso de 1636. El magistrado en jefe Akimoto Yasutomo dirigió la obra; el edificio en sí fue obra del maestro carpintero del sogunato, Kōra Munehiro, que encabezó a carpinteros llegados de Edo, Kioto y Osaka, y que ya había construido el mausoleo Taitoku-in en el templo Zōjō-ji. Lo que levantaron en apenas dos años sigue siendo la expresión más plena del ornamento del período Edo: una cuarentena de edificios en forma gongen-zukuri, con armazones de madera lacados, dorados y tallados en hondo relieve, que culminan en el Yōmeimon, una puerta tan densamente labrada que se apodó higurashi-no-mon, «la puerta que se puede mirar hasta el atardecer sin cansarse». A Hidari Jingorō se le atribuye su talla menor más célebre, un gato dormido. Al terminar la obra, Kōra recibió el cuarto rango cortesano; se retiró ese mismo año, dejando la dirección de obras del sogunato a sus descendientes durante once generaciones más.',
+      it: 'Nel settembre 1634 Tokugawa Iemitsu, il terzo shogun, si recò in pellegrinaggio al santuario del nonno e ne ordinò la ricostruzione per il ventunesimo anniversario della morte, nel 1636. Il magistrato capo Akimoto Yasutomo diresse l\'opera; l\'edificio fu però opera del capo carpentiere dello shogunato, Kōra Munehiro, che guidò carpentieri giunti da Edo, Kyoto e Osaka, e che aveva già costruito il mausoleo Taitoku-in presso il tempio Zōjō-ji. Ciò che innalzarono in appena due anni resta l\'espressione più compiuta dell\'ornato del periodo Edo: una quarantina di edifici in forma gongen-zukuri, con intelaiature lignee laccate, dorate e intagliate a rilievo profondo, che culminano nello Yōmeimon, un portale così fittamente lavorato da essere soprannominato higurashi-no-mon, «il portale che si può guardare fino al tramonto senza stancarsene». A Hidari Jingorō è attribuito il suo intaglio minore più celebre, un gatto addormentato. A lavori conclusi, Kōra ricevette il quarto rango di corte; si ritirò quello stesso anno, lasciando la direzione dei lavori dello shogunato ai suoi discendenti per altre undici generazioni.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q696641', title: 'Nikkō Tōshō-gū (Q696641)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Nikk%C5%8D_T%C5%8Dsh%C5%8D-g%C5%AB', title: 'Nikkō Tōshō-gū', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://ja.wikipedia.org/wiki/%E6%97%A5%E5%85%89%E6%9D%B1%E7%85%A7%E5%AE%AE', title: '日光東照宮', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://whc.unesco.org/en/list/913', title: 'Shrines and Temples of Nikkō — UNESCO World Heritage Centre', license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'seoul-olympic-stadium',
+    wikidataId: 'Q392086',
+    name: {
+      en: 'Seoul Olympic Stadium',
+      es: 'Estadio Olímpico de Seúl',
+      it: 'Stadio Olimpico di Seul',
+    },
+    architectId: 'kim-swoo-geun',
+    location: { city: 'Seoul', countryCode: 'KR', lat: 37.515889, lon: 127.07275 },
+    inception: 1977,
+    completed: 1984,
+    demolished: null,
+    typology: 'civic',
+    materials: ['concrete'],
+    structure: {
+      en: 'A reinforced-concrete bowl for nearly 70,000 spectators, its unbroken cantilevered upper rim curved into a single continuous profile that Kim Swoo-geun modelled on the silhouette of a Joseon-dynasty white porcelain moon jar.',
+      es: 'Un tazón de hormigón armado para casi 70 000 espectadores, cuyo borde superior en voladizo se curva en un perfil continuo e ininterrumpido que Kim Swoo-geun modeló sobre la silueta de una jarra de porcelana blanca de la dinastía Joseon.',
+      it: 'Una coppa in cemento armato per quasi 70.000 spettatori, il cui bordo superiore a sbalzo si incurva in un profilo continuo e ininterrotto che Kim Swoo-geun modellò sulla sagoma di un vaso di porcellana bianca della dinastia Joseon.',
+    },
+    program: {
+      en: 'Built by the city of Seoul as the centrepiece of the Seoul Sports Complex, first for the 1986 Asian Games and then as the main stadium of the 1988 Summer Olympics.',
+      es: 'Construido por la ciudad de Seúl como pieza central del Complejo Deportivo de Seúl, primero para los Juegos Asiáticos de 1986 y después como estadio principal de los Juegos Olímpicos de Verano de 1988.',
+      it: 'Costruito dalla città di Seul come fulcro del Complesso Sportivo di Seul, dapprima per i Giochi Asiatici del 1986 e poi come stadio principale delle Olimpiadi estive del 1988.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Home ground of Seoul E-Land FC since 2015 and a venue for athletics meets, concerts and civic events; a renovation plan announced in 2018 would reduce its seating and add a public sky deck.',
+      es: 'Campo del Seoul E-Land FC desde 2015 y sede de encuentros de atletismo, conciertos y actos cívicos; un plan de renovación anunciado en 2018 prevé reducir su aforo y añadir una terraza mirador pública.',
+      it: 'Campo di casa del Seoul E-Land FC dal 2015 e sede di manifestazioni di atletica, concerti ed eventi civici; un piano di ristrutturazione annunciato nel 2018 prevede di ridurne la capienza e aggiungere una terrazza panoramica pubblica.',
+    },
+    detailRect: { x: 0.30, y: 0.30, w: 0.35, h: 0.28 },
+    image: {
+      commonsFile: 'File:Seoul_Jamsil_Main_Stadium.jpg',
+      photographer: 'Jeong seolah',
+      license: 'CC0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Seoul_Jamsil_Main_Stadium.jpg',
+      width: 1600,
+      height: 1200,
+    },
+    dossier: {
+      en: 'Seoul\'s largest stadium replaced Dongdaemun Stadium, whose 30,000 seats were too small for international competition. Planning began in September 1976; Kim Swoo-geun took the commission and modelled the building\'s silhouette on the unbroken curve of a Joseon white porcelain moon jar, wrapping nearly 70,000 seats in a single continuous concrete rim rather than the tiered, faceted bowls common to stadium design. Piling started in 1977, the main structure in November 1978, and the stadium opened on 29 September 1984, four years before Seoul hosted the Games it was built for. It staged the 10th Asian Games in 1986 and, in 1988, the Olympic opening and closing ceremonies, athletics, the football final and equestrian jumping. Long the home of the national football team, it hosted the side\'s last match there in May 2000, before the team moved to the newly built Seoul World Cup Stadium, and it stood without a permanent tenant until Seoul E-Land FC moved in in 2015. A renovation plan announced in 2018 would cut its capacity and add a public sky deck.',
+      es: 'El mayor estadio de Seúl sustituyó al Estadio de Dongdaemun, de aforo insuficiente para la competición internacional. La planificación empezó en septiembre de 1976; Kim Swoo-geun recibió el encargo y modeló la silueta del edificio sobre la curva ininterrumpida de una jarra de porcelana blanca Joseon, envolviendo casi 70 000 asientos en un único borde continuo de hormigón en vez de los tazones escalonados y facetados habituales en el diseño de estadios. La cimentación empezó en 1977, la estructura principal en noviembre de 1978, y el estadio se inauguró el 29 de septiembre de 1984. Albergó los X Juegos Asiáticos de 1986 y, en 1988, las ceremonias olímpicas de apertura y clausura, el atletismo, la final de fútbol y el salto individual de hípica. Sede durante años de la selección nacional de fútbol, acogió allí su último partido en mayo de 2000, antes de que el equipo se trasladara al nuevo Estadio de la Copa Mundial de Seúl, y quedó sin equipo fijo hasta que el Seoul E-Land FC se instaló en 2015. Un plan de renovación de 2018 prevé reducir su aforo y añadir una terraza mirador pública.',
+      it: 'Il più grande stadio di Seul sostituì lo Stadio di Dongdaemun, i cui 30.000 posti erano ormai insufficienti per le competizioni internazionali. La pianificazione iniziò nel settembre 1976; l\'incarico andò a Kim Swoo-geun, che modellò la sagoma dell\'edificio sulla curva ininterrotta di un vaso di porcellana bianca Joseon, avvolgendo quasi 70.000 posti in un unico bordo continuo di cemento anziché nelle tribune sfaccettate e a gradoni tipiche dei progetti di stadio. I pali di fondazione iniziarono nel 1977, la struttura principale nel novembre 1978, e lo stadio aprì il 29 settembre 1984, quattro anni prima che Seul ospitasse i Giochi per cui era stato costruito. Vi si tennero i X Giochi Asiatici del 1986 e, nel 1988, le cerimonie di apertura e chiusura olimpiche, l\'atletica, la finale di calcio e il salto individuale di equitazione. A lungo sede della nazionale di calcio, vi ospitò l\'ultima partita della selezione nel maggio 2000, prima che la squadra si trasferisse al nuovo Seoul World Cup Stadium, e restò senza squadra fissa finché il Seoul E-Land FC non vi si trasferì nel 2015. Un piano di ristrutturazione annunciato nel 2018 prevede di ridurne la capienza e aggiungere una terrazza panoramica pubblica.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q392086', title: 'Seoul Olympic Main Stadium (Q392086)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Seoul_Olympic_Stadium', title: 'Seoul Olympic Stadium', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8%EC%98%AC%EB%A6%BC%ED%94%BD%EC%A3%BC%EA%B2%BD%EA%B8%B0%EC%9E%A5', title: '서울올림픽주경기장', license: 'CC BY-SA 4.0' },
+      { kind: 'publication', url: 'https://www.washingtonpost.com/archive/lifestyle/1988/09/17/seouls-olympic-inspiration/d916e101-5867-4218-8dbe-51875690f055/', title: "Seoul's Olympic Inspiration (The Washington Post, 1988)", license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'suzhou-museum',
+    wikidataId: 'Q998042',
+    name: {
+      en: 'Suzhou Museum',
+      es: 'Museo de Suzhou',
+      it: 'Museo di Suzhou',
+    },
+    architectId: 'i-m-pei',
+    location: { city: 'Suzhou, Jiangsu', countryCode: 'CN', lat: 31.3234, lon: 120.6229 },
+    inception: 2003,
+    completed: 2006,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['stone', 'steel-and-glass'],
+    structure: {
+      en: 'A steel-and-glass roof structure, cut into octagons, rhombuses and triangles, replaces the timber framing of the traditional Suzhou garden house it sits beside, with grey granite trim standing in for the black roof tiles and window frames of the city\'s historic white-walled architecture.',
+      es: 'Una cubierta de acero y vidrio, recortada en octógonos, rombos y triángulos, sustituye el entramado de madera de la casa-jardín tradicional de Suzhou junto a la que se levanta, con remates de granito gris en lugar de las tejas negras y los marcos de ventana de la arquitectura histórica de muros blancos de la ciudad.',
+      it: 'Una copertura in acciaio e vetro, ritagliata in ottagoni, rombi e triangoli, sostituisce l\'orditura lignea della tradizionale casa-giardino di Suzhou accanto a cui sorge, con finiture in granito grigio al posto delle tegole nere e degli infissi dell\'architettura storica cittadina dai muri bianchi.',
+    },
+    program: {
+      en: 'A museum of Chinese antiquities, painting and calligraphy, built as Pei\'s "homecoming" commission for the city his family originated from, sited directly beside the Humble Administrator\'s Garden.',
+      es: 'Museo de antigüedades, pintura y caligrafía chinas, construido como el encargo del "regreso a casa" de Pei para la ciudad de origen de su familia, junto al Jardín del Administrador Humilde.',
+      it: 'Museo di antichità, pittura e calligrafia cinesi, costruito come incarico del "ritorno a casa" di Pei per la città d\'origine della sua famiglia, accanto al Giardino dell\'Umile Amministratore.',
+    },
+    heritage: 'regional',
+    currentUse: {
+      en: 'Working national first-grade museum, among the most-visited museums in China.',
+      es: 'Museo nacional de primer grado en funcionamiento, uno de los más visitados de China.',
+      it: 'Museo nazionale di primo grado in attività, tra i più visitati della Cina.',
+    },
+    detailRect: { x: 0.66, y: 0.08, w: 0.28, h: 0.28 },
+    image: {
+      commonsFile: 'File:Suzhou Museum - new buildings.jpg',
+      photographer: 'Peter Potrowl',
+      license: 'CC BY 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Suzhou_Museum_-_new_buildings.jpg',
+      width: 1600,
+      height: 1200,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Gate of Suzhou Museum.JPG',
+        photographer: 'そらみみ',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Gate_of_Suzhou_Museum.JPG',
+        width: 1600,
+        height: 1200,
+      },
+    ],
+    dossier: {
+      en: 'Pei was born in Suzhou-connected Guangzhou but his family\'s ancestral home and namesake garden, the Lion Grove, sit inside the old city, a few steps from the site the municipal government offered him in 2002 for a new museum. He was in his mid-eighties and had said he was retired; he took the commission anyway, on the condition that the building respect the low, white-walled roofline of its neighbours rather than compete with it. What resulted keeps Suzhou\'s black-on-white palette and its vocabulary of courtyards, bridges and reflecting water, translated into modern materials: the black is now granite rather than roof tile, and the traditional timber roof structure becomes an openwork steel-and-glass lattice that reads, from below, as an abstraction of the same pitched forms. A pierced circular "moon" window at the entrance and a stone garden composed with slabs cut to suggest a Song-dynasty ink landscape make the connection explicit rather than nostalgic. Pei called it his most personal building; it opened in October 2006 as one of his very last completed works.',
+      es: 'Pei nació en Cantón, pero el hogar ancestral de su familia y el jardín que le da nombre, el Bosque de los Leones, se encuentran dentro de la ciudad vieja de Suzhou, a pocos pasos del solar que el gobierno municipal le ofreció en 2002 para un nuevo museo. Tenía ya mediados los ochenta años y había dicho estar retirado; aceptó el encargo de todos modos, con la condición de que el edificio respetara la silueta baja y de muros blancos de sus vecinos en lugar de competir con ella. El resultado conserva la paleta blanco y negro de Suzhou y su vocabulario de patios, puentes y aguas reflectantes, traducidos a materiales modernos: el negro es ahora granito en vez de teja, y la estructura tradicional de cubierta de madera se convierte en una celosía calada de acero y vidrio que se lee, desde abajo, como una abstracción de las mismas formas a dos aguas. Una ventana circular de "luna" calada en la entrada y un jardín de piedra compuesto con losas cortadas para sugerir un paisaje a tinta de la dinastía Song hacen explícita la conexión en vez de nostálgica. Pei lo llamó su edificio más personal; abrió en octubre de 2006 como una de sus últimas obras concluidas.',
+      it: 'Pei nacque a Canton, ma la casa ancestrale della sua famiglia e il giardino omonimo, il Bosco dei Leoni, si trovano dentro la città vecchia di Suzhou, a pochi passi dal lotto che il governo municipale gli offrì nel 2002 per un nuovo museo. Aveva ormai passato gli ottant\'anni e si era detto ritirato; accettò comunque l\'incarico, a condizione che l\'edificio rispettasse il profilo basso e i muri bianchi dei vicini invece di competere con essi. Il risultato conserva la palette bianco e nero di Suzhou e il suo vocabolario di corti, ponti e acque riflettenti, tradotti in materiali moderni: il nero è ora granito anziché tegola, e la tradizionale struttura di copertura lignea diventa un reticolo traforato in acciaio e vetro che si legge, dal basso, come un\'astrazione delle stesse forme a falde. Una finestra circolare a "luna" traforata all\'ingresso e un giardino di pietra composto con lastre tagliate per evocare un paesaggio a inchiostro della dinastia Song rendono il legame esplicito e non nostalgico. Pei lo definì il suo edificio più personale; aprì nell\'ottobre 2006 come una delle sue ultimissime opere compiute.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q998042', title: 'Suzhou Museum (Q998042)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Suzhou_Museum', title: 'Suzhou Museum', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'miho-museum',
+    wikidataId: 'Q1268542',
+    name: {
+      en: 'Miho Museum',
+      es: 'Museo Miho',
+      it: 'Museo Miho',
+    },
+    architectId: 'i-m-pei',
+    location: { city: 'Kōka, Shiga', countryCode: 'JP', lat: 34.8564, lon: 136.1178 },
+    inception: 1994,
+    completed: 1997,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['stone', 'steel-and-glass'],
+    structure: {
+      en: 'About three-quarters of the building is buried inside a mountain ridge, its exposed portion a steel-framed, triangulated glass roof over a limestone-clad hall, reached across a bridge after a curving pedestrian tunnel bored through the hillside.',
+      es: 'Alrededor de las tres cuartas partes del edificio quedan enterradas en una cresta montañosa; la parte visible es una cubierta de vidrio triangulada sobre estructura de acero que corona una sala revestida de caliza, a la que se llega cruzando un puente tras un túnel peatonal curvo excavado en la ladera.',
+      it: 'Circa tre quarti dell\'edificio sono interrati in un crinale montano; la porzione visibile è una copertura di vetro triangolata su struttura d\'acciaio che sovrasta una sala rivestita in pietra calcarea, raggiunta attraversando un ponte dopo un tunnel pedonale curvo scavato nel pendio.',
+    },
+    program: {
+      en: 'A museum for the Shumei Cultural Foundation\'s collection of Japanese, Chinese, South Asian, Egyptian, Greek and Roman antiquities, commissioned by Mihoko and Hiroko Koyama on a mountainside they wanted disturbed as little as possible.',
+      es: 'Museo para la colección de antigüedades japonesas, chinas, surasiáticas, egipcias, griegas y romanas de la Shumei Cultural Foundation, encargado por Mihoko e Hiroko Koyama en una ladera que deseaban alterar lo menos posible.',
+      it: 'Museo per la collezione di antichità giapponesi, cinesi, sudasiatiche, egizie, greche e romane della Shumei Cultural Foundation, commissionato da Mihoko e Hiroko Koyama su un versante montano che desideravano alterare il meno possibile.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Working museum operated by the Shumei Cultural Foundation.',
+      es: 'Museo en funcionamiento gestionado por la Shumei Cultural Foundation.',
+      it: 'Museo in attività gestito dalla Shumei Cultural Foundation.',
+    },
+    detailRect: { x: 0.33, y: 0.18, w: 0.34, h: 0.35 },
+    image: {
+      commonsFile: 'File:241119 MIHO MUSEUM Koga Shiga pref Japan08s3.jpg',
+      photographer: '663highland',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:241119_MIHO_MUSEUM_Koga_Shiga_pref_Japan08s3.jpg',
+      width: 1600,
+      height: 1067,
+    },
+    dossier: {
+      en: 'Local building codes on the Shigaraki mountainside where the Koyama sisters wanted their collection housed effectively forbade a conventional building, so Pei buried most of it: roughly eighty per cent of the museum\'s volume sits inside the ridge, and the excavated hillside was replanted after construction so that from a distance almost nothing is visible but a glass roofline among the pines. Pei told the sisters he had in mind the Chinese poet Tao Yuanming\'s "Peach Blossom Spring," in which a fisherman finds a hidden utopia by following a stream through a narrow, dark passage that suddenly opens onto light; visitors reach the museum the same way, on an electric cart or on foot along a curving tunnel bored through the mountain, over a cable-stayed bridge, and into a glazed steel-trussed hall clad inside in the same French limestone Pei had used at the Louvre. The geometric roof, triangulated glass over a repeating diamond lattice, is the one part of the building Pei allowed to declare itself; everything else is landscape first. It opened in 1997 and now holds nine Japanese Important Cultural Properties.',
+      es: 'Las normas urbanísticas locales en la ladera de Shigaraki donde las hermanas Koyama querían alojar su colección prohibían de hecho un edificio convencional, así que Pei enterró la mayor parte: alrededor del ochenta por ciento del volumen del museo se encuentra dentro de la cresta, y la ladera excavada se replantó tras la construcción, de modo que desde lejos apenas se distingue algo más que una cubierta de vidrio entre los pinos. Pei dijo a las hermanas que tenía en mente el poema de Tao Yuanming "La fuente de las flores de melocotón", en el que un pescador halla una utopía oculta siguiendo un arroyo por un pasaje estrecho y oscuro que de pronto se abre a la luz; los visitantes llegan al museo del mismo modo, en un carrito eléctrico o a pie, por un túnel curvo excavado en la montaña, cruzando un puente atirantado y entrando en una sala acristalada de armadura de acero revestida por dentro con la misma caliza francesa que Pei había usado en el Louvre. La cubierta geométrica, de vidrio triangulado sobre una retícula romboidal repetida, es la única parte del edificio a la que Pei permitió declararse; todo lo demás es, primero, paisaje. Abrió en 1997 y hoy conserva nueve Bienes Culturales Importantes de Japón.',
+      it: 'Le norme edilizie locali sul versante di Shigaraki dove le sorelle Koyama volevano collocare la propria collezione vietavano di fatto un edificio convenzionale, così Pei ne interrò la maggior parte: circa l\'ottanta per cento del volume del museo si trova dentro il crinale, e il versante scavato fu ripiantumato dopo i lavori, cosicché da lontano non si distingue quasi altro che una copertura di vetro fra i pini. Pei disse alle sorelle di avere in mente la poesia di Tao Yuanming "La sorgente dei fiori di pesco", in cui un pescatore trova un\'utopia nascosta seguendo un ruscello lungo un passaggio stretto e buio che d\'un tratto si apre alla luce; i visitatori raggiungono il museo allo stesso modo, su un carrello elettrico o a piedi, lungo un tunnel curvo scavato nella montagna, attraversando un ponte strallato ed entrando in una sala vetrata a struttura d\'acciaio rivestita all\'interno con lo stesso calcare francese che Pei aveva usato al Louvre. La copertura geometrica, in vetro triangolato su un reticolo romboidale ripetuto, è l\'unica parte dell\'edificio a cui Pei permise di dichiararsi; tutto il resto è, prima di tutto, paesaggio. Aprì nel 1997 e conserva oggi nove Beni Culturali Importanti del Giappone.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1268542', title: 'Miho Museum (Q1268542)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Miho_Museum', title: 'Miho Museum', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'bank-of-china-tower-hong-kong',
+    wikidataId: 'Q214855',
+    name: {
+      en: 'Bank of China Tower',
+      es: 'Torre del Banco de China',
+      it: 'Bank of China Tower',
+    },
+    architectId: 'i-m-pei',
+    location: { city: 'Hong Kong', countryCode: 'HK', lat: 22.2794, lon: 114.1611 },
+    inception: 1985,
+    completed: 1990,
+    demolished: null,
+    typology: 'tower',
+    materials: ['steel-and-glass'],
+    structure: {
+      en: 'Four steel-braced composite corner columns rise as a triangulated space frame, so that the building sheds one triangular quadrant at a time as it climbs, ending in a single spire; the diagonal bracing is legible on every glass elevation as the tower\'s only ornament.',
+      es: 'Cuatro pilares de esquina compuestos y arriostrados con acero se elevan como un entramado espacial triangulado, de modo que el edificio va desprendiéndose de un cuarto triangular cada varios pisos según asciende, hasta rematar en una única aguja; el arriostramiento diagonal es legible en cada alzado de vidrio como único ornamento de la torre.',
+      it: 'Quattro pilastri d\'angolo compositi controventati in acciaio si innalzano come un traliccio spaziale triangolato, così che l\'edificio perde un quadrante triangolare alla volta salendo, fino a terminare in un\'unica guglia; il controventamento diagonale è leggibile su ogni prospetto vetrato come unico ornamento della torre.',
+    },
+    // Fix round 2 (review B1/B2 Critical): the previous text credited
+    // "Pei's son and partner, the structural engineer Chien Chung 'Didi'
+    // Pei" — but the cited Wikipedia source names Leslie E. Robertson
+    // (of Leslie E. Robertson Associates, also structural engineer of the
+    // original World Trade Center towers) as the tower's structural
+    // engineer; Didi Pei was an architect at I. M. Pei & Partners, not a
+    // structural engineer, and the source does not document his specific
+    // role on this building, so his name is dropped here rather than
+    // re-guessed. Corrected to name Robertson's actual, sourced credit.
+    program: {
+      en: "A headquarters tower for the Bank of China's Hong Kong operations, commissioned to mark the bank's standing ahead of the 1997 handover; the structural engineering, letting the glass skin carry no load of its own, was by Leslie E. Robertson Associates, the firm also known for the original World Trade Center towers.",
+      es: 'Torre sede de las operaciones en Hong Kong del Banco de China, encargada para marcar el prestigio del banco antes de la retrocesión de 1997; la ingeniería estructural, que permite que la piel de vidrio no cargue peso alguno, corrió a cargo de Leslie E. Robertson Associates, la firma también conocida por las torres originales del World Trade Center.',
+      it: "Torre sede delle operazioni di Hong Kong della Bank of China, commissionata per segnare il prestigio della banca in vista della restituzione del 1997; l'ingegneria strutturale, che consente alla pelle di vetro di non portare alcun carico proprio, fu affidata a Leslie E. Robertson Associates, lo studio noto anche per le torri originali del World Trade Center.",
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Working bank headquarters and commercial office tower.',
+      es: 'Sede bancaria y torre de oficinas comerciales en funcionamiento.',
+      it: 'Sede bancaria e torre di uffici commerciali in attività.',
+    },
+    detailRect: { x: 0.05, y: 0.55, w: 0.45, h: 0.3 },
+    image: {
+      commonsFile: 'File:Looking up to the Bank of China Tower in Hong Kong.jpg',
+      photographer: 'Choinowski',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Looking_up_to_the_Bank_of_China_Tower_in_Hong_Kong.jpg',
+      width: 1067,
+      height: 1600,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Hong Kong Bank of China Tower 14-04-2026.jpg',
+        photographer: 'LN9267',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hong_Kong_Bank_of_China_Tower_14-04-2026.jpg',
+        width: 1600,
+        height: 1200,
+      },
+    ],
+    dossier: {
+      en: 'The commission came to Pei\'s father, Tsuyee Pei, a former general manager of the Bank of China, rather than to Pei directly, at a moment — a decade before the 1997 handover to China — when Beijing wanted a Hong Kong headquarters that would outbuild every colonial-era tower on the skyline. Pei\'s answer was structural rather than decorative: four composite steel-and-concrete columns at the corners of a square plan pick up the loads through a triangulated truss visible on every face, and as the tower rises it drops one triangular prism after another, so the square base tapers to a single triangular shaft crowned by a mast. The bracing did double duty as wind and seismic resistance, letting Pei skip the internal steel frame most towers of its height still needed, and made it, briefly, the tallest building outside the United States. Locally the sharp angles and prominent X-braces read differently: without consulting feng shui masters, an omission unusual for a major Hong Kong project, the tower acquired a reputation as a "vertical knife" whose corners point at neighbours including Government House and the HSBC headquarters across the harbour view.',
+      es: 'El encargo llegó al padre de Pei, Tsuyee Pei, antiguo gerente general del Banco de China, y no a Pei directamente, en un momento —una década antes de la retrocesión de Hong Kong a China en 1997— en que Pekín quería una sede en Hong Kong que superara en altura a cualquier torre de la era colonial en el perfil de la ciudad. La respuesta de Pei fue estructural antes que decorativa: cuatro pilares compuestos de acero y hormigón en las esquinas de una planta cuadrada recogen las cargas mediante una celosía triangulada visible en cada fachada, y a medida que la torre asciende va desprendiéndose de un prisma triangular tras otro, de modo que la base cuadrada se afila hasta un único fuste triangular coronado por un mástil. El arriostramiento cumplía además la función de resistencia al viento y a los sismos, permitiendo a Pei prescindir de la estructura interior de acero que aún necesitaban la mayoría de torres de su altura, y la convirtió, brevemente, en el edificio más alto fuera de Estados Unidos. Localmente, los ángulos agudos y los marcados arriostramientos en X se leyeron de otro modo: sin consultar a maestros de feng shui, omisión inusual en un proyecto importante de Hong Kong, la torre se ganó fama de "cuchillo vertical" cuyas esquinas apuntan a vecinos como Government House y la sede del HSBC al otro lado de la bahía.',
+      it: 'L\'incarico giunse al padre di Pei, Tsuyee Pei, ex direttore generale della Bank of China, e non a Pei direttamente, in un momento — un decennio prima della restituzione di Hong Kong alla Cina nel 1997 — in cui Pechino voleva una sede a Hong Kong che superasse in altezza ogni torre dell\'epoca coloniale nello skyline. La risposta di Pei fu strutturale più che decorativa: quattro pilastri compositi in acciaio e cemento agli angoli di una pianta quadrata raccolgono i carichi tramite un traliccio triangolato visibile su ogni facciata, e mentre la torre sale perde un prisma triangolare dopo l\'altro, cosicché la base quadrata si assottiglia fino a un unico fusto triangolare coronato da un\'antenna. Il controventamento svolgeva anche la funzione di resistenza al vento e ai sismi, permettendo a Pei di rinunciare alla struttura interna in acciaio che la maggior parte delle torri della sua altezza richiedeva ancora, e la rese, per breve tempo, l\'edificio più alto fuori dagli Stati Uniti. Localmente gli spigoli acuti e i vistosi controventi a X furono letti diversamente: senza consultare maestri di feng shui, omissione inusuale per un grande progetto di Hong Kong, la torre si guadagnò fama di "coltello verticale" i cui angoli puntano verso vicini come la Government House e la sede HSBC dall\'altra parte della baia.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q214855', title: 'Bank of China Tower (Q214855)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Bank_of_China_Tower_(Hong_Kong)', title: 'Bank of China Tower (Hong Kong)', license: 'CC BY-SA 4.0' },
+      // Supports the dossier's "Pei's father, Tsuyee Pei, a former general
+      // manager of the Bank of China" claim, added fix round 2 — this
+      // detail isn't in the building's own Wikipedia article above.
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Tsuyee_Pei', title: 'Tsuyee Pei', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+{
+    // Wave V2-3 batch B5 top-up: Norman Foster is pre-assigned to
+    // europe-british.ts (wave5-contract-v2.md §3; his architect record
+    // lives there). Filed here per the wave 3 shared instructions because
+    // the building itself is in Hong Kong. Hong Kong's Freedom of Panorama
+    // covers commercial use of buildings (Copyright Ordinance s.71),
+    // independently re-verified on Wikipedia's Freedom of panorama article
+    // during this pass.
+    id: 'hsbc-main-building-hong-kong',
+    wikidataId: 'Q1372014',
+    name: {
+      en: 'HSBC Main Building',
+      es: 'Edificio principal del HSBC, Hong Kong',
+      it: 'Sede principale HSBC, Hong Kong',
+    },
+    architectId: 'norman-foster',
+    location: { city: 'Hong Kong', countryCode: 'HK', lat: 22.28000, lon: 114.15944 },
+    inception: 1981,
+    completed: 1985,
+    demolished: null,
+    typology: 'commercial',
+    materials: ['steel-and-glass'],
+    structure: {
+      en: 'Eight clusters of four aluminium-clad steel masts carry five storeys of suspension trusses from which the floor modules hang in sections, leaving the plan entirely free of a central core.',
+      es: 'Ocho grupos de cuatro mástiles de acero revestidos de aluminio sostienen cinco niveles de cerchas de suspensión de las que cuelgan por tramos los módulos de forjado, dejando la planta completamente libre de núcleo central.',
+      it: "Otto gruppi di quattro montanti d'acciaio rivestiti d'alluminio portano cinque livelli di capriate di sospensione da cui pendono a sezioni i moduli dei solai, lasciando la pianta completamente libera da un nucleo centrale.",
+    },
+    program: {
+      en: "Built as the Hongkong and Shanghai Banking Corporation's headquarters, prefabricated in modules in a British shipyard and assembled over a public ground-floor plaza kept open on feng shui advice.",
+      es: 'Construido como sede de la Hongkong and Shanghai Banking Corporation, prefabricado en módulos en un astillero británico y montado sobre una plaza pública en planta baja mantenida abierta por consejo de feng shui.',
+      it: "Costruito come sede della Hongkong and Shanghai Banking Corporation, prefabbricato in moduli in un cantiere navale britannico e montato sopra una piazza pubblica al piano terra mantenuta aperta su consiglio del feng shui.",
+    },
+    heritage: 'none',
+    currentUse: {
+      en: "Still HSBC's Hong Kong headquarters, with its ground-floor plaza kept open as a public route between Statue Square and Des Voeux Road.",
+      es: 'Sigue siendo la sede del HSBC en Hong Kong, con su plaza en planta baja abierta como paso público entre Statue Square y Des Voeux Road.',
+      it: 'È tuttora la sede HSBC di Hong Kong, con la piazza al piano terra mantenuta aperta come passaggio pubblico fra Statue Square e Des Voeux Road.',
+    },
+    detailRect: { x: 0.32, y: 0.30, w: 0.36, h: 0.28 },
+    image: {
+      commonsFile: 'File:HSBC HK Headquarters.jpg',
+      photographer: 'Craddocktm',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:HSBC_HK_Headquarters.jpg',
+      width: 1600,
+      height: 1200,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:HK HSBC Main Building 2008.jpg',
+        photographer: 'WiNG',
+        license: 'CC BY 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:HK_HSBC_Main_Building_2008.jpg',
+        width: 1177,
+        height: 1452,
+      },
+    ],
+    dossier: {
+      en: "Foster won the commission in 1979 to replace a third headquarters that itself stood on the site of the bank's first Hong Kong office, and the result abandoned almost everything conventional about a tower. There is no central concrete core: eight clusters of four aluminium-clad steel masts run up the building's edges, carrying five storeys' worth of enormous suspension trusses from which the floor modules are hung in sections, the way a bridge deck hangs from its cables. Steel components were prefabricated by a shipyard on the Clyde and floated out to Hong Kong for assembly, and mirrored 'sunscoops' on the south face bounce daylight down through a ten-storey atrium onto the plaza below. That ground-level plaza, kept open on feng shui advice, still doubles as a public route between Statue Square and Des Voeux Road, guarded by the bank's two bronze lions, Stephen and Stitt, cast in 1935 and rubbed shiny by passers-by touching them for luck. At roughly £500 million it was, briefly, the most expensive building ever constructed.",
+      es: "Foster ganó en 1979 el encargo de sustituir una tercera sede que a su vez ocupaba el solar de la primera oficina del banco en Hong Kong, y el resultado abandonó casi todo lo convencional en una torre. No hay núcleo central de hormigón: ocho grupos de cuatro mástiles de acero revestidos de aluminio suben por los bordes del edificio, sosteniendo cinco niveles de enormes cerchas de suspensión de las que cuelgan los módulos de forjado por tramos, como el tablero de un puente cuelga de sus cables. Los componentes de acero se prefabricaron en un astillero del Clyde y se transportaron por mar hasta Hong Kong para su montaje, y unos 'captadores de sol' espejados en la fachada sur reflejan la luz natural a través de un atrio de diez plantas hasta la plaza inferior. Esa plaza, mantenida abierta por consejo de feng shui, sigue sirviendo de paso público entre Statue Square y Des Voeux Road, custodiada por los dos leones de bronce del banco, Stephen y Stitt, fundidos en 1935 y pulidos a fuerza de que los transeúntes los toquen por suerte. Con unos 500 millones de libras, fue brevemente el edificio más caro jamás construido.",
+      it: "Foster vinse nel 1979 l'incarico di sostituire una terza sede che a sua volta occupava il sito del primo ufficio della banca a Hong Kong, e il risultato abbandonò quasi tutto ciò che è convenzionale in una torre. Non esiste un nucleo centrale in cemento: otto gruppi di quattro montanti d'acciaio rivestiti d'alluminio salgono lungo i bordi dell'edificio, portando cinque livelli di enormi capriate di sospensione da cui pendono a sezioni i moduli dei solai, come l'impalcato di un ponte pende dai suoi cavi. I componenti d'acciaio furono prefabbricati in un cantiere navale sul Clyde e trasportati via mare a Hong Kong per il montaggio, e degli specchi 'raccoglisole' sulla facciata sud riflettono la luce naturale attraverso un atrio di dieci piani fino alla piazza sottostante. Quella piazza, mantenuta aperta su consiglio del feng shui, funge tuttora da passaggio pubblico fra Statue Square e Des Voeux Road, custodita dai due leoni di bronzo della banca, Stephen e Stitt, fusi nel 1935 e resi lucidi dal tocco portafortuna dei passanti. Con circa 500 milioni di sterline, fu per breve tempo l'edificio più costoso mai costruito.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1372014', title: 'HSBC Building (Q1372014)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/HSBC_Building_(Hong_Kong)', title: 'HSBC Building (Hong Kong)', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    // Wave V2-3 batch B5 top-up: Zaha Hadid is pre-assigned to
+    // europe-british.ts (wave5-contract-v2.md §3; her architect record
+    // lives there). Filed here per the wave 3 shared instructions because
+    // the building is physically in China. China's Freedom of Panorama
+    // covers commercial use of buildings (Copyright Law art. 24(10)),
+    // independently re-verified on Wikipedia's Freedom of panorama article
+    // during this pass. Heydar Aliyev Center (Baku) was researched for this
+    // batch and DROPPED: Azerbaijan has no Freedom of Panorama for
+    // buildings at all (Commons COM:FOP Azerbaijan shows a hard ✗ for
+    // buildings/3D/2D artwork/public interiors), so no freely-licensed
+    // commercial-use photo of it can be used with the building as the main
+    // subject — verified directly against the Commons policy page, not
+    // assumed.
+    id: 'guangzhou-opera-house',
+    wikidataId: 'Q3354553',
+    name: {
+      en: 'Guangzhou Opera House',
+      es: 'Ópera de Guangzhou',
+      it: "Teatro dell'Opera di Guangzhou",
+    },
+    architectId: 'zaha-hadid',
+    location: { city: 'Guangzhou', countryCode: 'CN', lat: 23.11056, lon: 113.31889 },
+    inception: 2005,
+    completed: 2010,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['concrete', 'steel-and-glass', 'stone'],
+    structure: {
+      en: 'A freestanding, double-curved concrete auditorium shell sits inside an independent steel frame clad in triangulated granite and glass panels that dissolve into faceted glazing toward the river.',
+      es: 'Una cáscara de hormigón de doble curvatura para el auditorio, exenta, se aloja dentro de una estructura de acero independiente revestida de paneles triangulados de granito y vidrio que se disuelven en vidriera facetada hacia el río.',
+      it: "Un guscio di cemento a doppia curvatura per l'auditorium, autoportante, è alloggiato dentro una struttura d'acciaio indipendente rivestita di pannelli triangolati in granito e vetro che si dissolvono in una vetrata sfaccettata verso il fiume.",
+    },
+    program: {
+      en: 'Built for the Guangzhou municipal government to anchor the Zhujiang New Town cultural axis on the Pearl River, it holds a 1,804-seat opera hall and a smaller multipurpose theatre.',
+      es: 'Construida para el gobierno municipal de Guangzhou como ancla del eje cultural de Zhujiang New Town junto al río de las Perlas, alberga una sala de ópera de 1.804 butacas y un teatro multiusos más pequeño.',
+      it: "Costruita per il governo municipale di Guangzhou come ancoraggio dell'asse culturale di Zhujiang New Town sul Fiume delle Perle, ospita una sala d'opera da 1.804 posti e un teatro multiuso più piccolo.",
+    },
+    heritage: 'none',
+    currentUse: {
+      en: "Working opera house and performing arts venue on Guangzhou's Pearl River waterfront.",
+      es: 'Ópera y sala de artes escénicas en activo, en el frente fluvial del río de las Perlas en Guangzhou.',
+      it: "Teatro dell'opera e sala per le arti performative in attività, sul lungofiume del Fiume delle Perle a Guangzhou.",
+    },
+    detailRect: { x: 0.45, y: 0.15, w: 0.35, h: 0.50 },
+    image: {
+      commonsFile: 'File:Guangzhou Opera House(Near).JPG',
+      photographer: 'Mr a',
+      license: 'CC BY 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Guangzhou_Opera_House(Near).JPG',
+      width: 1600,
+      height: 900,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Guangzhou Opera House overview.JPG',
+        photographer: '圍棋一級',
+        license: 'CC BY-SA 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Guangzhou_Opera_House_overview.JPG',
+        width: 1600,
+        height: 1200,
+      },
+    ],
+    dossier: {
+      en: "Hadid won the international competition for Guangzhou's new opera house in November 2002, beating entries from Rem Koolhaas and Coop Himmelb(l)au for a site on the Pearl River intended to anchor the city's new Zhujiang New Town cultural axis. Her scheme reads as two irregular boulders, one large and one small, set as if washed downriver and left on the bank — a freestanding, double-curved concrete auditorium shell sits inside an independent steel frame clad in triangulated granite and glass panels that tighten and dissolve into faceted glazing where the building meets the water. Ground was broken in 2005 and the building opened in May 2010 at a cost of roughly 1.38 billion yuan, its inaugural production a staging of Puccini's Turandot, a work banned in China for decades over its stereotyped depiction of a Chinese princess. Construction quality became a point of controversy in the Chinese press, with cracking granite panels and water damage reported within a few years of opening, problems the venue's operators have since worked to repair.",
+      es: 'Hadid ganó en noviembre de 2002 el concurso internacional para la nueva ópera de Guangzhou, superando propuestas de Rem Koolhaas y Coop Himmelb(l)au, para un solar junto al río de las Perlas destinado a anclar el nuevo eje cultural de Zhujiang New Town. Su proyecto se lee como dos rocas irregulares, una grande y otra pequeña, como arrastradas río abajo y depositadas en la orilla: una cáscara de hormigón de doble curvatura para el auditorio, exenta, se aloja dentro de una estructura de acero independiente revestida de paneles triangulados de granito y vidrio que se estrechan y se disuelven en vidriera facetada donde el edificio toca el agua. Las obras empezaron en 2005 y el edificio se inauguró en mayo de 2010 con un coste de unos 1.380 millones de yuanes, con Turandot de Puccini como producción inaugural, una obra prohibida en China durante décadas por su retrato estereotipado de una princesa china. La calidad de la construcción se convirtió en motivo de polémica en la prensa china, con paneles de granito agrietados y daños por agua señalados pocos años después de la apertura, problemas que los gestores del recinto han ido reparando.',
+      it: "Hadid vinse nel novembre 2002 il concorso internazionale per il nuovo teatro dell'opera di Guangzhou, superando le proposte di Rem Koolhaas e Coop Himmelb(l)au, per un sito sul Fiume delle Perle destinato ad ancorare il nuovo asse culturale di Zhujiang New Town. Il suo progetto si legge come due rocce irregolari, una grande e una piccola, come trascinate dal fiume e depositate sulla riva: un guscio di cemento a doppia curvatura per l'auditorium, autoportante, è alloggiato dentro una struttura d'acciaio indipendente rivestita di pannelli triangolati in granito e vetro che si restringono e si dissolvono in una vetrata sfaccettata dove l'edificio incontra l'acqua. I lavori iniziarono nel 2005 e l'edificio aprì nel maggio 2010 con un costo di circa 1,38 miliardi di yuan, con la Turandot di Puccini come produzione inaugurale, un'opera vietata in Cina per decenni a causa del suo ritratto stereotipato di una principessa cinese. La qualità costruttiva divenne motivo di polemica sulla stampa cinese, con pannelli di granito incrinati e danni da infiltrazioni segnalati pochi anni dopo l'apertura, problemi che i gestori del luogo hanno da allora riparato.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q3354553', title: 'Guangzhou Opera House (Q3354553)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Guangzhou_Opera_House', title: 'Guangzhou Opera House', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+
+{
+    // Wave V2-3, batch B6 — Renzo Piano featured curate. Japan has FoP; no
+    // living-architect concern. No distinct Wikidata item exists for the
+    // terminal building itself (Q193682 covers the whole airport), so
+    // wikidataId is null with 2 non-wiki/non-Wikipedia sources per the
+    // provenance rule.
+    id: 'kansai-airport-terminal-1',
+    wikidataId: null,
+    name: {
+      en: 'Kansai International Airport, Terminal 1',
+      es: 'Aeropuerto Internacional de Kansai, Terminal 1',
+      it: 'Aeroporto Internazionale del Kansai, Terminal 1',
+    },
+    architectId: 'renzo-piano',
+    location: { city: 'Izumisano, Osaka', countryCode: 'JP', lat: 34.4342, lon: 135.2441 },
+    inception: 1988,
+    completed: 1994,
+    demolished: null,
+    typology: 'infrastructure',
+    materials: ['steel-and-glass'],
+    structure: {
+      en: 'A steel-trussed toroidal roof, curved in section like an aircraft wing and clad in 82,000 identical stainless-steel panels, spans the terminal without internal ductwork; the whole structure rests on jacks that correct for the uneven settlement of the reclaimed island beneath it.',
+      es: 'Una cubierta toroidal de celosía de acero, curvada en sección como el ala de un avión y revestida con 82.000 paneles idénticos de acero inoxidable, cubre la terminal sin conductos internos; toda la estructura se apoya en gatos que corrigen el asiento desigual de la isla artificial sobre la que se levanta.',
+      it: 'Una copertura toroidale a traliccio d\'acciaio, curva in sezione come l\'ala di un aereo e rivestita da 82.000 pannelli identici in acciaio inossidabile, copre il terminal senza condotte interne; l\'intera struttura poggia su martinetti che correggono l\'assestamento non uniforme dell\'isola di bonifica sottostante.',
+    },
+    program: {
+      en: 'The passenger terminal of an international airport built on an artificial island in Osaka Bay, commissioned by the Kansai International Airport Company after a 1988 international design competition.',
+      es: 'La terminal de pasajeros de un aeropuerto internacional construido en una isla artificial de la bahía de Osaka, encargada por la Kansai International Airport Company tras un concurso internacional de 1988.',
+      it: 'Il terminal passeggeri di un aeroporto internazionale costruito su un\'isola artificiale nella baia di Osaka, commissionato dalla Kansai International Airport Company dopo un concorso internazionale del 1988.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'In continuous operation as Kansai International Airport\'s Terminal 1.',
+      es: 'En funcionamiento continuo como Terminal 1 del Aeropuerto Internacional de Kansai.',
+      it: 'In funzionamento continuo come Terminal 1 dell\'Aeroporto Internazionale del Kansai.',
+    },
+    detailRect: { x: 0.45, y: 0.28, w: 0.40, h: 0.28 },
+    image: {
+      commonsFile: 'File:関空第1ターミナル全景 - panoramio.jpg',
+      photographer: 'sinndati8692',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:%E9%96%A2%E7%A9%BA%E7%AC%AC1%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB%E5%85%A8%E6%99%AF_-_panoramio.jpg',
+      width: 1600,
+      height: 1200,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Kansai Airport terminal 1 ,from the top of observation hall "sky view" (16041786233).jpg',
+        photographer: 'lasta29',
+        license: 'CC BY 2.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Kansai_Airport_terminal_1_,from_the_top_of_observation_hall_%22sky_view%22_(16041786233).jpg',
+        width: 1600,
+        height: 1067,
+      },
+    ],
+    dossier: {
+      en: "Kansai International Airport was built to relieve overcrowded Osaka air traffic without the noise disputes that had plagued the city's inland airport, and its site is the reason the terminal looks the way it does: a 4-kilometre artificial island built in Osaka Bay, chosen so flights could operate around the clock over open water. Renzo Piano won the 1988 design competition and, working with the engineers Peter Rice and Tom Barker of Ove Arup and with Nikken Sekkei, resolved the airport's central problem — moving vast volumes of conditioned air through a mile-long shed — into its form: a single toroidal roof surface, curved in section like an aircraft wing, that channels air along its underside from mechanical rooms at the terminal's centre out to its far ends, needing no ductwork at all. The 1.7-kilometre terminal, clad in 82,000 identical stainless-steel panels, opened in September 1994 and has since settled unevenly on its reclaimed ground, exactly as its engineers anticipated when they designed the structure's jacking system to correct for it.",
+      es: 'El Aeropuerto Internacional de Kansai se construyó para aliviar la saturación aérea de Osaka sin repetir los conflictos por ruido que habían acosado al aeropuerto interior de la ciudad, y ese emplazamiento explica la forma de la terminal: una isla artificial de 4 kilómetros construida en la bahía de Osaka, elegida para poder operar vuelos las veinticuatro horas sobre mar abierto. Renzo Piano ganó el concurso de 1988 y, junto con los ingenieros Peter Rice y Tom Barker, de Ove Arup, y con Nikken Sekkei, resolvió el problema central del aeropuerto —mover enormes volúmenes de aire acondicionado a lo largo de un cobertizo de más de un kilómetro— convirtiéndolo en su propia forma: una única cubierta toroidal, curvada en sección como el ala de un avión, que conduce el aire por su cara inferior desde las salas técnicas del centro de la terminal hasta sus extremos, sin necesidad de conductos. La terminal, de 1,7 kilómetros y revestida con 82.000 paneles idénticos de acero inoxidable, abrió en septiembre de 1994 y desde entonces se ha asentado de forma desigual sobre el terreno ganado al mar, tal como previeron sus ingenieros, que diseñaron el sistema de gatos hidráulicos de la estructura precisamente para corregirlo.',
+      it: 'L\'Aeroporto Internazionale del Kansai fu costruito per alleggerire il traffico aereo di Osaka senza ripetere i conflitti per il rumore che avevano afflitto l\'aeroporto cittadino nell\'entroterra, e proprio quel sito spiega la forma del terminal: un\'isola artificiale di 4 chilometri costruita nella baia di Osaka, scelta per poter operare voli ventiquattr\'ore su ventiquattro sul mare aperto. Renzo Piano vinse il concorso del 1988 e, insieme agli ingegneri Peter Rice e Tom Barker di Ove Arup e allo studio Nikken Sekkei, risolse il problema centrale dell\'aeroporto — spostare enormi volumi d\'aria condizionata lungo un capannone lungo oltre un chilometro — trasformandolo nella sua stessa forma: un\'unica copertura toroidale, curva in sezione come l\'ala di un aereo, che convoglia l\'aria sul suo intradosso dalle centrali tecniche al centro del terminal fino alle estremità, senza bisogno di condotte. Il terminal, lungo 1,7 chilometri e rivestito con 82.000 pannelli identici in acciaio inossidabile, aprì nel settembre 1994 e da allora si è assestato in modo non uniforme sul terreno di bonifica, esattamente come previsto dagli ingegneri, che progettarono il sistema di martinetti della struttura proprio per correggerlo.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Kansai_International_Airport', title: 'Kansai International Airport — Wikipedia', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.rpbw.com/project/kansai-international-airport-terminal', title: 'Kansai International Airport Terminal — RPBW', license: null },
+      { kind: 'publication', url: 'https://www.britannica.com/topic/Terminal-1-at-Kansai-International-Airport', title: 'Terminal 1 at Kansai International Airport — Encyclopaedia Britannica', license: null },
+    ],
+    tier: 'canon',
+  },
+
+{
+    id: 'rolex-learning-center',
+    wikidataId: 'Q3030047',
+    name: {
+      en: 'Rolex Learning Center',
+      es: 'Rolex Learning Center',
+      it: 'Rolex Learning Center',
+    },
+    architectId: 'kazuyo-sejima',
+    // SANAA joint work — same credit pattern as Kanazawa 21st Century Museum
+    // above: Sejima holds architectId, Nishizawa is added via coArchitects.
+    coArchitects: ['ryue-nishizawa'],
+    location: { city: 'Lausanne', countryCode: 'CH', lat: 46.518333, lon: 6.568333 },
+    inception: 2008,
+    completed: 2010,
+    demolished: null,
+    typology: 'educational',
+    materials: ['concrete', 'steel-and-glass'],
+    structure: {
+      en: 'A single unpartitioned concrete shell roughly 120 by 160 metres undulates in section between raised mounds and sunken hollows, its uninterrupted floor slab spanning without internal columns and enclosed in glass that follows the same curves at the perimeter.',
+      es: 'Una única cáscara de hormigón sin tabicar, de unos 120 por 160 metros, ondula en sección entre montículos elevados y hondonadas, con un forjado continuo sin pilares internos y cerrada en el perímetro por un vidrio que sigue las mismas curvas.',
+      it: 'Un unico guscio di cemento non tramezzato, di circa 120 per 160 metri, ondula in sezione tra rilievi sollevati e avvallamenti, con un solaio continuo privo di pilastri interni e chiuso sul perimetro da un vetro che segue le stesse curve.',
+    },
+    program: {
+      en: 'Built by EPFL as a combined library, study, exhibition and social space for the whole university, funded in part by Rolex.',
+      es: 'Construido por la EPFL como espacio combinado de biblioteca, estudio, exposiciones y vida social para toda la universidad, financiado en parte por Rolex.',
+      it: "Costruito dall'EPFL come spazio combinato di biblioteca, studio, esposizioni e vita sociale per l'intera università, finanziato in parte da Rolex.",
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'An active university library and study centre, also used for public exhibitions and events.',
+      es: 'Biblioteca y centro de estudio universitario en activo, usado también para exposiciones y actos públicos.',
+      it: "Biblioteca e centro studi universitario in attività, utilizzato anche per mostre ed eventi pubblici.",
+    },
+    detailRect: { x: 0.55, y: 0.05, w: 0.40, h: 0.55 },
+    image: {
+      commonsFile: 'File:Rolex Learning Center, EPFL, Vaud.jpg',
+      photographer: 'Alexelgayar',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Rolex_Learning_Center%2C_EPFL%2C_Vaud.jpg',
+      width: 828,
+      height: 616,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Rolex Learning center details 2.jpg',
+        photographer: 'Mikado1201',
+        license: 'CC BY-SA 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Rolex_Learning_center_details_2.jpg',
+        width: 1024,
+        height: 683,
+      },
+    ],
+    dossier: {
+      en: "EPFL wanted a single building to replace a scattered set of departmental libraries and give the university an informal social heart, and SANAA's winning 2004 competition entry removed every wall it could. The building is one continuous concrete shell, roughly 120 by 160 metres, folded rather than partitioned: the floor rises into artificial hills that separate zones informally and dips into hollows that hold auditoria, a restaurant and reading rooms, all reached by walking across a single undulating surface rather than through corridors. Oval courtyards, cut straight through the shell, bring daylight and outside air into the lower dips. The whole perimeter is glazed, following the same curves as the floor, so the building appears from outside as a flattened, folded disc sitting on the ground rather than a conventional multi-storey block. Structural engineers needed several years to work out how to cast the doubly curved concrete shell as one continuous surface; construction ran from 2008 and the centre opened in February 2010.",
+      es: 'La EPFL quería un único edificio que sustituyera un conjunto disperso de bibliotecas departamentales y diera a la universidad un corazón social informal, y la propuesta ganadora de SANAA en el concurso de 2004 eliminó todos los muros que pudo. El edificio es una sola cáscara continua de hormigón, de unos 120 por 160 metros, plegada en vez de tabicada: el suelo se eleva en colinas artificiales que separan zonas de manera informal y desciende en hondonadas que albergan auditorios, un restaurante y salas de lectura, todo alcanzable caminando sobre una única superficie ondulada en vez de por pasillos. Unos patios ovalados, abiertos directamente en la cáscara, llevan luz natural y aire exterior hasta las hondonadas inferiores. Todo el perímetro está acristalado siguiendo las mismas curvas del suelo, de modo que el edificio se percibe desde fuera como un disco aplanado y plegado apoyado en el terreno y no como un bloque convencional de varias plantas. Los ingenieros de estructuras necesitaron varios años para resolver cómo colar la cáscara de hormigón de doble curvatura como una sola superficie continua; las obras se prolongaron desde 2008 y el centro abrió en febrero de 2010.',
+      it: "L'EPFL voleva un unico edificio che sostituisse un insieme disperso di biblioteche dipartimentali e desse all'università un cuore sociale informale, e la proposta vincitrice di SANAA al concorso del 2004 eliminò tutti i muri possibili. L'edificio è un unico guscio continuo di cemento, di circa 120 per 160 metri, piegato anziché tramezzato: il pavimento si solleva in colline artificiali che separano le zone in modo informale e scende in avvallamenti che ospitano auditorium, un ristorante e sale di lettura, tutti raggiungibili camminando su un'unica superficie ondulata anziché attraverso corridoi. Cortili ovali, tagliati direttamente nel guscio, portano luce naturale e aria esterna fino agli avvallamenti inferiori. L'intero perimetro è vetrato seguendo le stesse curve del pavimento, cosicché l'edificio appare dall'esterno come un disco appiattito e piegato appoggiato al suolo anziché come un blocco convenzionale a più piani. Gli ingegneri strutturisti impiegarono diversi anni per risolvere come gettare il guscio di cemento a doppia curvatura come un'unica superficie continua; il cantiere durò dal 2008 e il centro aprì nel febbraio 2010.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q3030047', title: 'Rolex Learning Center (Q3030047)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Rolex_Learning_Center', title: 'Rolex Learning Center', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.pritzkerprize.com/laureates/2010', title: 'Kazuyo Sejima and Ryue Nishizawa — The Pritzker Architecture Prize', license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'sendai-mediatheque',
+    wikidataId: 'Q988508',
+    name: {
+      en: 'Sendai Mediatheque',
+      es: 'Mediateca de Sendai',
+      it: 'Mediateca di Sendai',
+    },
+    architectId: 'toyo-ito',
+    location: { city: 'Sendai', countryCode: 'JP', lat: 38.265556, lon: 140.865556 },
+    inception: 1997,
+    completed: 2001,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['steel-and-glass'],
+    structure: {
+      en: 'Thirteen irregular lattice-work steel tubes, some bundled thick with diagonal cross-bracing, run the full seven floors and carry both the load and the building\'s services, standing free within an all-glass envelope with no other columns or bearing walls.',
+      es: 'Trece tubos irregulares de celosía de acero, algunos agrupados y arriostrados en diagonal, recorren las siete plantas y soportan a la vez la carga y las instalaciones del edificio, exentos dentro de una envolvente totalmente acristalada sin otros pilares ni muros de carga.',
+      it: 'Tredici tubi irregolari a reticolo d\'acciaio, alcuni raggruppati e controventati in diagonale, attraversano tutti e sette i piani e portano insieme il carico e gli impianti dell\'edificio, liberi entro un involucro interamente vetrato privo di altri pilastri o muri portanti.',
+    },
+    program: {
+      en: 'Built by the city of Sendai after an open 1995 competition to combine a public library, an art gallery, a media centre for the visually and hearing impaired, and a video library in one building.',
+      es: 'Construida por la ciudad de Sendai tras un concurso abierto en 1995 para combinar en un solo edificio una biblioteca pública, una galería de arte, un centro de medios para personas con discapacidad visual y auditiva, y una videoteca.',
+      it: 'Costruita dalla città di Sendai dopo un concorso aperto del 1995 per riunire in un solo edificio una biblioteca pubblica, una galleria d\'arte, un centro media per persone con disabilità visive e uditive e una videoteca.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'An active public library and gallery, repaired and reopened within a year after significant damage in the 2011 Tōhoku earthquake and tsunami.',
+      es: 'Biblioteca y galería pública en activo, reparada y reabierta en menos de un año tras los daños importantes del terremoto y tsunami de Tōhoku de 2011.',
+      it: "Biblioteca e galleria pubblica in attività, riparata e riaperta entro un anno dopo i danni rilevanti del terremoto e tsunami del Tōhoku del 2011.",
+    },
+    // Fix round 2 (review B7 Critical): the old rect {x:0.40, y:0.30,
+    // w:0.20, h:0.45} was never actually pixel-verified and turned out to
+    // crop almost entirely to a foreground tree's foliage in front of
+    // plain reflective glass — none of Ito's diagnostic tube structure was
+    // visible. Re-cropped and confirmed this session: the tube structure
+    // *is* visible elsewhere in this same photo, at ground level where the
+    // glass is transparent rather than reflective, alongside the
+    // building's own "せんだいメディアテーク" signage.
+    detailRect: { x: 0.47, y: 0.61, w: 0.21, h: 0.27 },
+    image: {
+      commonsFile: 'File:Exterior view of Sendai Mediatheque from Jozenji Street 20220910b.jpg',
+      photographer: '掬茶',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Exterior_view_of_Sendai_Mediatheque_from_Jozenji_Street_20220910b.jpg',
+      width: 1600,
+      height: 1067,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Sendai Mediatheque 2020 1.jpg',
+        photographer: 'Ymblanter',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Sendai_Mediatheque_2020_1.jpg',
+        width: 1600,
+        height: 1067,
+      },
+    ],
+    dossier: {
+      en: 'Sendai held an open international competition in 1995 for a building combining a public library with galleries and a media-literacy centre, and the brief itself asked entrants to rethink the conventional layered floor plate. Ito\'s winning idea removed the columns. Thirteen irregular tubes, welded lattices of thin steel rod bundled tighter where they carry more load, rise through all seven floors like kelp stems, doubling as risers for stairs, lifts, ducts and light; the floor slabs are thin steel-and-concrete decks threaded onto the tubes, and the outer wall is glass from top to bottom with no structural frame of its own. Ito had been developing the tube idea for years without a client able to build it; Sendai\'s competition brief happened to want exactly that kind of structural transparency. The building withstood the March 2011 Tōhoku earthquake with only cosmetic damage — ceiling panels and glazing gaskets — and reopened within a year, cited afterward as evidence the tube structure had worked as intended.',
+      es: 'Sendai convocó en 1995 un concurso internacional abierto para un edificio que combinara biblioteca pública, galerías y un centro de alfabetización mediática, y las propias bases pedían replantear la convencional losa de planta por capas. La idea ganadora de Ito eliminó los pilares. Trece tubos irregulares, celosías soldadas de varilla de acero fina agrupadas más densamente donde soportan más carga, atraviesan las siete plantas como tallos de alga, sirviendo a la vez de caja para escaleras, ascensores, conductos y luz; los forjados son finas losas mixtas de acero y hormigón ensartadas en los tubos, y el muro exterior es vidrio de arriba abajo sin estructura propia. Ito llevaba años desarrollando la idea del tubo sin un cliente capaz de construirla; el concurso de Sendai pedía precisamente ese tipo de transparencia estructural. El edificio resistió el terremoto de Tōhoku de marzo de 2011 con solo daños cosméticos —paneles de techo y juntas de acristalamiento— y reabrió en menos de un año, citado después como prueba de que la estructura tubular había funcionado según lo previsto.',
+      it: 'Sendai bandì nel 1995 un concorso internazionale aperto per un edificio che unisse biblioteca pubblica, gallerie e un centro di alfabetizzazione mediatica, e il bando stesso chiedeva di ripensare la convenzionale soletta di piano a strati. L\'idea vincitrice di Ito eliminò i pilastri. Tredici tubi irregolari, reticoli saldati di sottile tondino d\'acciaio raggruppati più fittamente dove reggono più carico, salgono per tutti e sette i piani come steli d\'alga, fungendo anche da vano per scale, ascensori, condotti e luce; i solai sono sottili piastre miste di acciaio e cemento infilate sui tubi, e la parete esterna è vetro da cima a fondo senza una propria struttura portante. Ito sviluppava da anni l\'idea del tubo senza un committente in grado di realizzarla; il bando di Sendai chiedeva proprio quel tipo di trasparenza strutturale. L\'edificio resistette al terremoto del Tōhoku del marzo 2011 con soli danni cosmetici — pannelli del controsoffitto e guarnizioni delle vetrate — e riaprì entro un anno, citato in seguito come prova che la struttura tubolare aveva funzionato come previsto.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q988508', title: 'Sendai Mediatheque (Q988508)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Sendai_Mediatheque', title: 'Sendai Mediatheque', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'tama-art-university-library',
+    wikidataId: 'Q28154423',
+    name: {
+      en: 'Tama Art University Library',
+      es: 'Biblioteca de la Universidad de Arte de Tama',
+      it: "Biblioteca dell'Università d'Arte di Tama",
+    },
+    architectId: 'toyo-ito',
+    location: { city: 'Hachioji', countryCode: 'JP', lat: 35.611389, lon: 139.351111 },
+    inception: 2005,
+    completed: 2007,
+    demolished: null,
+    typology: 'educational',
+    materials: ['concrete', 'steel-and-glass'],
+    structure: {
+      en: 'A single-storey-over-basement hall carried on irregular concrete arches of varying width and span, thin enough at fifteen to twenty centimetres that the structure reads as a continuous curved plane rather than a set of discrete beams, closed at the perimeter almost entirely in glass.',
+      es: 'Una sala de una planta sobre sótano sostenida por arcos irregulares de hormigón de ancho y luz variables, tan delgados —de quince a veinte centímetros— que la estructura se lee como un plano curvo continuo y no como un conjunto de vigas independientes, cerrada en el perímetro casi por completo con vidrio.',
+      it: 'Una sala di un piano su seminterrato sostenuta da archi irregolari in cemento di larghezza e luce variabili, sottili al punto da quindici a venti centimetri che la struttura si legge come un piano curvo continuo e non come un insieme di travi distinte, chiusa sul perimetro quasi interamente in vetro.',
+    },
+    program: {
+      en: "Built for Tama Art University's Hachioji campus as a library, gallery and café open to the sloping ground floor without partitions.",
+      es: 'Construida para el campus de Hachioji de la Universidad de Arte de Tama como biblioteca, galería y cafetería abiertas sin tabiques en la planta baja inclinada.',
+      it: "Costruita per il campus di Hachioji dell'Università d'Arte di Tama come biblioteca, galleria e caffetteria aperte senza tramezzi sul piano terra in pendenza.",
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'A working university library, open to the public on a limited basis and widely visited for its architecture alone.',
+      es: 'Biblioteca universitaria en activo, abierta al público de forma limitada y muy visitada solo por su arquitectura.',
+      it: "Biblioteca universitaria in attività, aperta al pubblico in modo limitato e molto visitata solo per la sua architettura.",
+    },
+    // NOT pixel-verified this session (Commons rate limiting — see Sendai
+    // Mediatheque above for the full note). Licence/photographer verified.
+    // Rect reasoned to sit over the arch grid at the building's centre;
+    // re-crop and confirm before this ships.
+    detailRect: { x: 0.30, y: 0.35, w: 0.35, h: 0.35 },
+    image: {
+      commonsFile: 'File:Tama Art University Library.JPG',
+      photographer: 'Wiiii',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Tama_Art_University_Library.JPG',
+      width: 1600,
+      height: 1064,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Tama Art University (Hachioji Library).jpg',
+        photographer: 'Eric Mathias',
+        license: 'CC BY-SA 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Tama_Art_University_(Hachioji_Library).jpg',
+        width: 1600,
+        height: 1067,
+      },
+    ],
+    dossier: {
+      en: "Tama Art University asked for a library that would work as an informal gathering space as much as a place to read, on a corner site at the low point of its hillside campus. Ito answered with arches instead of walls: a grid of unevenly spaced concrete arches, each a different width, thin enough — fifteen to twenty centimetres at the crown — that from a distance they look bent rather than built. The ground floor keeps almost no partitions, so the arches alone divide reading areas from the café and gallery, and the floor itself slopes gently to follow the site rather than being levelled flat. Glass fills every opening between the arches at the perimeter, so daylight reaches deep into the plan without direct sun. Completed in 2007, the library became a minor pilgrimage site among architecture students independent of the university's own program, and Ito has said the thin-arch structure took an unusual amount of engineering to keep from reading as decoration.",
+      es: 'La Universidad de Arte de Tama pidió una biblioteca que funcionase tanto como espacio informal de encuentro como lugar de lectura, en un solar de esquina en el punto más bajo de su campus en ladera. Ito respondió con arcos en vez de muros: una retícula de arcos de hormigón de anchos desiguales, cada uno distinto, tan delgados —de quince a veinte centímetros en la clave— que de lejos parecen doblados y no construidos. La planta baja apenas conserva tabiques, de modo que solo los arcos separan las zonas de lectura de la cafetería y la galería, y el propio suelo desciende suavemente siguiendo el terreno en vez de nivelarse. El vidrio cierra cada hueco entre arcos en el perímetro, así que la luz natural llega hasta el fondo de la planta sin sol directo. Terminada en 2007, la biblioteca se convirtió en un pequeño lugar de peregrinación para estudiantes de arquitectura al margen del programa de la propia universidad, e Ito ha dicho que la estructura de arcos delgados exigió una ingeniería inusual para no leerse como decoración.',
+      it: "L'Università d'Arte di Tama chiese una biblioteca che funzionasse tanto come spazio informale di incontro quanto come luogo di lettura, su un lotto d'angolo nel punto più basso del campus collinare. Ito rispose con archi al posto dei muri: una griglia di archi in cemento diseguali, ciascuno di larghezza diversa, così sottili — da quindici a venti centimetri in chiave — che da lontano sembrano piegati anziché costruiti. Il piano terra non conserva quasi tramezzi, cosicché sono solo gli archi a separare le aree di lettura dal caffè e dalla galleria, e il pavimento stesso scende dolcemente seguendo il terreno anziché essere livellato. Il vetro chiude ogni vano tra gli archi sul perimetro, cosicché la luce naturale raggiunge il fondo della pianta senza sole diretto. Completata nel 2007, la biblioteca divenne un piccolo luogo di pellegrinaggio per gli studenti di architettura indipendentemente dal programma universitario, e Ito ha dichiarato che la struttura ad archi sottili richiese un'ingegneria inconsueta per non essere letta come decorazione.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q28154423', title: 'Tama Art University Library (Q28154423)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Tama_Art_University_Library', title: 'Tama Art University Library', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'national-taichung-theater',
+    wikidataId: 'Q555338',
+    name: {
+      en: 'National Taichung Theater',
+      es: 'Teatro Nacional de Taichung',
+      it: 'Teatro Nazionale di Taichung',
+    },
+    architectId: 'toyo-ito',
+    location: { city: 'Taichung', countryCode: 'TW', lat: 24.1628, lon: 120.641 },
+    inception: 2010,
+    completed: 2016,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['concrete'],
+    structure: {
+      en: "A continuous curved concrete wall system Ito calls a 'sound cave' — free-form, doubly curved surfaces cast without repeating formwork, threading three auditoria and their lobbies into one another with no flat orthogonal wall anywhere in the public spaces.",
+      es: 'Un sistema continuo de muros curvos de hormigón que Ito llama «cueva del sonido»: superficies de doble curvatura y forma libre coladas sin encofrado repetido, que enlazan entre sí los vestíbulos de tres salas sin un solo muro plano y ortogonal en los espacios públicos.',
+      it: 'Un sistema continuo di pareti curve in cemento che Ito chiama «caverna del suono»: superfici a doppia curvatura e forma libera gettate senza casseforme ripetute, che collegano tra loro i foyer di tre sale senza un solo muro piano e ortogonale negli spazi pubblici.',
+    },
+    program: {
+      en: "Built by Taichung City as a national-standard opera house, playhouse and black-box theatre after Ito's design won an international competition in 2005.",
+      es: 'Construido por la ciudad de Taichung como ópera, teatro y sala de caja negra de nivel nacional, tras ganar el proyecto de Ito un concurso internacional en 2005.',
+      it: "Costruito dalla città di Taichung come teatro d'opera, teatro di prosa e sala black-box di livello nazionale, dopo che il progetto di Ito vinse un concorso internazionale nel 2005.",
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'An active public performing-arts centre operated by the Taichung municipal government.',
+      es: 'Centro público de artes escénicas en activo, gestionado por el ayuntamiento de Taichung.',
+      it: "Centro pubblico di arti performative in attività, gestito dal comune di Taichung.",
+    },
+    // NOT pixel-verified this session (Commons rate limiting — see Sendai
+    // Mediatheque above for the full note). Licence/photographer verified.
+    // Rect reasoned to sit over the curved "sound cave" concrete walls at
+    // the building's centre; re-crop and confirm before this ships.
+    detailRect: { x: 0.32, y: 0.35, w: 0.35, h: 0.35 },
+    image: {
+      commonsFile: 'File:National Taichung Theater, Nov 2024 (2).jpg',
+      photographer: 'Ralff Nestor Nacor',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:National_Taichung_Theater%2C_Nov_2024_%282%29.jpg',
+      width: 1600,
+      height: 1205,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:National Taichung Theater 2019.jpg',
+        photographer: 'Nico Kaiser',
+        license: 'CC BY 2.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:National_Taichung_Theater_2019.jpg',
+        width: 1600,
+        height: 1067,
+      },
+    ],
+    dossier: {
+      en: "Ito's 2005 competition entry proposed doing away with the flat wall altogether. The building's public spaces are formed by a lattice of doubly curved concrete surfaces — Ito called the resulting caves and grottoes an 'emergent grid,' popularly shortened to 'sound cave' — that thread the lobbies of three separate auditoria, a 2,014-seat grand theatre, a mid-sized playhouse and a black-box space, into a single continuous volume with no repeated formwork panel anywhere. Realising it required Arup's engineers, led by Cecil Balmond, to develop a construction method combining steel reinforcement cages with sprayed concrete, built in sections over roughly six years against repeated technical delays. Taichung broke ground in 2010; the theatre opened to the public in stages from late 2014, reaching full operation in 2016. Ito has described the building as an attempt to make architecture behave like a cave dweller's terrain rather than a stacked structure of rooms — visitors move through curved openings rather than doors.",
+      es: 'La propuesta de Ito para el concurso de 2005 planteaba prescindir por completo del muro plano. Los espacios públicos del edificio se forman con una retícula de superficies de hormigón de doble curvatura —Ito llamó al resultado, entre cuevas y grutas, «malla emergente», popularizado como «cueva del sonido»— que enlazan los vestíbulos de tres salas distintas, un gran teatro de 2.014 butacas, una sala mediana y un espacio de caja negra, en un único volumen continuo sin un solo panel de encofrado repetido. Hacerlo realidad exigió que los ingenieros de Arup, encabezados por Cecil Balmond, desarrollaran un método constructivo que combinaba jaulas de armadura de acero con hormigón proyectado, levantado por tramos a lo largo de unos seis años entre repetidos retrasos técnicos. Taichung inició las obras en 2010; el teatro abrió al público por fases desde finales de 2014 y alcanzó pleno funcionamiento en 2016. Ito ha descrito el edificio como un intento de que la arquitectura se comporte como el terreno de un morador de cuevas y no como una estructura apilada de salas: los visitantes se mueven por vanos curvos en vez de puertas.',
+      it: "La proposta di Ito per il concorso del 2005 prevedeva di rinunciare del tutto al muro piano. Gli spazi pubblici dell'edificio sono formati da un reticolo di superfici in cemento a doppia curvatura — Ito definì il risultato, tra grotte e caverne, una «griglia emergente», divenuta popolarmente «caverna del suono» — che collegano i foyer di tre sale distinte, un grande teatro da 2.014 posti, una sala di medie dimensioni e uno spazio black-box, in un unico volume continuo senza un solo pannello di cassaforma ripetuto. Realizzarlo richiese che gli ingegneri di Arup, guidati da Cecil Balmond, mettessero a punto un metodo costruttivo che combinava gabbie di armatura in acciaio e calcestruzzo spruzzato, costruito per tratti nell'arco di circa sei anni tra ripetuti ritardi tecnici. Taichung avviò il cantiere nel 2010; il teatro aprì al pubblico per fasi dalla fine del 2014 e raggiunse la piena operatività nel 2016. Ito ha descritto l'edificio come un tentativo di far comportare l'architettura come il terreno di chi abita le caverne anziché come una struttura di stanze impilate: i visitatori si muovono attraverso aperture curve anziché porte.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q555338', title: 'National Taichung Theater (Q555338)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/National_Taichung_Theater', title: 'National Taichung Theater', license: 'CC BY-SA 4.0' },
+      { kind: 'publication', url: 'https://www.architecturalrecord.com/articles/12040-national-taichung-theater-by-toyo-ito-associates', title: 'National Taichung Theater by Toyo Ito & Associates (Architectural Record, 2016)', license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'ningbo-tengtou-pavilion',
+    wikidataId: null,
+    name: {
+      en: 'Ningbo Tengtou Pavilion',
+      es: 'Pabellón de Tengtou de Ningbo',
+      it: 'Padiglione di Tengtou di Ningbo',
+    },
+    architectId: 'wang-shu',
+    // Amateur Architecture Studio joint work — same credit pattern as Ningbo
+    // Museum above.
+    coArchitects: ['lu-wenyu'],
+    location: { city: 'Shanghai', countryCode: 'CN', lat: 31.194167, lon: 121.486389 },
+    inception: 2009,
+    completed: 2010,
+    demolished: 2015,
+    typology: 'cultural',
+    materials: ['brick', 'concrete'],
+    structure: {
+      en: 'A long narrow two-storey volume, clad in reclaimed brick and roof tile laid up in the wapan technique the studio also used at Ningbo Museum, arranged as a sequence of self-similar layers that thicken toward the interior to create a sense of deepening space on a shallow site.',
+      es: 'Un volumen largo y estrecho de dos plantas, revestido de ladrillo y teja recuperados y asentados con la técnica wapan que el estudio empleó también en el Museo de Ningbo, dispuesto como una secuencia de capas autosemejantes que se espesan hacia el interior para dar sensación de profundidad en un solar poco profundo.',
+      it: 'Un volume lungo e stretto di due piani, rivestito di mattoni e tegole di recupero posati con la tecnica wapan che lo studio impiegò anche al Museo di Ningbo, disposto come una sequenza di strati autosimili che si ispessiscono verso l\'interno per dare sensazione di profondità su un lotto poco profondo.',
+    },
+    program: {
+      en: "Commissioned by the city of Ningbo for the 2010 Shanghai Expo's Urban Best Practices Area, representing Tengtou village as the exposition's only rural case study.",
+      es: 'Encargado por la ciudad de Ningbo para el Área de Mejores Prácticas Urbanas de la Expo de Shanghái de 2010, en representación de la aldea de Tengtou como único caso rural de la exposición.',
+      it: "Commissionato dalla città di Ningbo per l'Area delle Migliori Pratiche Urbane dell'Expo di Shanghai 2010, in rappresentanza del villaggio di Tengtou come unico caso rurale dell'esposizione.",
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Demolished in 2015 after the Expo site was redeveloped; it no longer stands.',
+      es: 'Demolido en 2015 al reurbanizarse el recinto de la Expo; ya no existe.',
+      it: "Demolito nel 2015 con la riqualificazione del sito dell'Expo; non esiste più.",
+    },
+    // Fix round 2 (review B7 Minor): the old rect {x:0.32, y:0.30, w:0.35,
+    // h:0.35} was roughly half-obscured by a foreground wooden ring
+    // sculpture (a plaza art installation, not part of Wang Shu's
+    // building); only the upper portion showed the salvaged-brick wapan
+    // cladding. Re-cropped and confirmed this session: a clean, full-height
+    // view of the variegated reclaimed-brick coursing with no foreground
+    // obstruction, and the building's own "...TOU PAVILION" signage visible.
+    detailRect: { x: 0.30, y: 0.10, w: 0.35, h: 0.35 },
+    image: {
+      commonsFile: 'File:Ningbo Tengtou Case Pavilion.jpg',
+      photographer: 'Kimon Berlin',
+      license: 'CC BY-SA 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Ningbo_Tengtou_Case_Pavilion.jpg',
+      width: 1600,
+      height: 866,
+    },
+    dossier: {
+      en: "Of the roughly eighty cases assembled in the 2010 Shanghai Expo's Urban Best Practices Area, only one represented a village rather than a city: Tengtou, in Ningbo's Fenghua district, whose model of eco-agriculture and rural tourism the Expo organisers wanted showcased. Wang Shu and Lu Wenyu, commissioned in 2009, built the pavilion on a narrow site using the same salvaged-material technique they had just tested at Ningbo Museum — brick and roof tile recovered from demolished village houses, laid up by hand in overlapping courses. Visitors moved through a sequence of self-similar spaces devoted to the sounds, sights and produce of Tengtou, arranged to feel deeper than the shallow site allowed. Unlike several Expo pavilions preserved afterward as a permanent cultural district, the Tengtou pavilion was demolished in March 2015 when the site was redeveloped, leaving Ningbo Museum as this partnership's only surviving public building of its kind.",
+      es: 'De los aproximadamente ochenta casos reunidos en el Área de Mejores Prácticas Urbanas de la Expo de Shanghái de 2010, solo uno representaba una aldea y no una ciudad: Tengtou, en el distrito de Fenghua, en Ningbo, cuyo modelo de ecoagricultura y turismo rural quisieron mostrar los organizadores. Wang Shu y Lu Wenyu, contratados en 2009, construyeron el pabellón en un solar estrecho con la misma técnica de materiales recuperados que acababan de ensayar en el Museo de Ningbo: ladrillo y teja rescatados de casas de aldea derribadas, colocados a mano en hiladas superpuestas. Los visitantes recorrían una secuencia de espacios autosemejantes dedicados a los sonidos, las vistas y los productos de Tengtou, dispuestos para parecer más profundos de lo que permitía el estrecho solar. A diferencia de varios pabellones de la Expo conservados después como distrito cultural permanente, el pabellón de Tengtou fue demolido en marzo de 2015 al reurbanizarse el recinto, dejando al Museo de Ningbo como el único edificio público de este tipo que sobrevive de la sociedad.',
+      it: "Dei circa ottanta casi riuniti nell'Area delle Migliori Pratiche Urbane dell'Expo di Shanghai 2010, solo uno rappresentava un villaggio anziché una città: Tengtou, nel distretto di Fenghua a Ningbo, il cui modello di eco-agricoltura e turismo rurale gli organizzatori vollero mettere in mostra. Wang Shu e Lu Wenyu, incaricati nel 2009, costruirono il padiglione su un lotto stretto con la stessa tecnica dei materiali di recupero appena sperimentata al Museo di Ningbo: mattoni e tegole recuperati da case di villaggio demolite, posati a mano in corsi sovrapposti. I visitatori attraversavano una sequenza di spazi autosimili dedicati ai suoni, alle immagini e ai prodotti di Tengtou, disposti per sembrare più profondi di quanto consentisse lo stretto lotto. A differenza di diversi padiglioni dell'Expo conservati poi come distretto culturale permanente, il padiglione di Tengtou fu demolito nel marzo 2015 con la riqualificazione del sito, lasciando il Museo di Ningbo come unico edificio pubblico di questo tipo sopravvissuto della coppia.",
+    },
+    context: null,
+    sources: [
+      { kind: 'publication', url: 'https://www.archilovers.com/projects/51280/ningbo-tengtou-pavilion.html', title: 'Ningbo Tengtou Pavilion — Amateur Architecture Studio (Archilovers)', license: null },
+      { kind: 'publication', url: 'https://www.world-architects.com/en/amateur-architecture-studio-hangzhou/project/ningbo-tengtou-pavillion', title: 'Ningbo Tengtou Pavilion — Amateur Architecture Studio (World-Architects)', license: null },
+      { kind: 'publication', url: 'http://www.ecns.cn/cns-wire/2015/03-18/158501.shtml', title: 'Famed pavilion by Pritzker Prize winner demolished in Shanghai (ECNS, 2015)', license: null },
+    ],
+    tier: 'deep',
+  },
+  {
+    id: 'church-of-the-light',
+    wikidataId: 'Q1655766',
+    name: {
+      en: 'Church of the Light',
+      es: 'Iglesia de la Luz',
+      it: 'Chiesa della Luce',
+    },
+    architectId: 'tadao-ando',
+    location: { city: 'Ibaraki', countryCode: 'JP', lat: 34.818611, lon: 135.536944 },
+    inception: 1988,
+    completed: 1989,
+    demolished: null,
+    typology: 'sacral',
+    materials: ['concrete'],
+    structure: {
+      en: 'A rectangular reinforced-concrete hall is sliced at an angle by a freestanding concrete wall that does not meet the corners, with a full-height cross cut through the east wall behind it.',
+      es: 'Una sala rectangular de hormigón armado queda cortada en ángulo por un muro de hormigón exento que no llega a las esquinas, con una cruz de altura completa abierta en el muro oriental situado tras él.',
+      it: 'Una sala rettangolare in cemento armato è tagliata obliquamente da un muro di cemento autonomo che non tocca gli angoli, con una croce a tutta altezza incisa nel muro orientale retrostante.',
+    },
+    program: {
+      en: "Built as an addition to a small Protestant congregation's existing wooden church and community hall on a minimal construction budget.",
+      es: 'Construida como ampliación de la pequeña iglesia de madera y el salón parroquial ya existentes de una congregación protestante, con un presupuesto de obra mínimo.',
+      it: 'Costruita come ampliamento della piccola chiesa in legno e della sala parrocchiale già esistenti di una congregazione protestante, con un budget di cantiere minimo.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Still an active Protestant church; visits are accommodated around regular services.',
+      es: 'Sigue siendo una iglesia protestante activa; las visitas se organizan en torno a los oficios regulares.',
+      it: 'È tuttora una chiesa protestante attiva; le visite sono organizzate attorno alle funzioni regolari.',
+    },
+    detailRect: { x: 0.35, y: 0.25, w: 0.35, h: 0.55 },
+    image: {
+      commonsFile: 'File:Church of the Light exterior.jpg',
+      photographer: 'antjeverena',
+      license: 'CC BY-SA 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Church_of_the_Light_exterior.jpg',
+      width: 800,
+      height: 600,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Church of the Light.jpg',
+        photographer: 'Chun-Hung Eric Cheng',
+        license: 'CC BY 2.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Church_of_the_Light.jpg',
+        width: 1600,
+        height: 1071,
+      },
+    ],
+    dossier: {
+      en: 'Ando was asked to enlarge a small Protestant compound in a quiet Ibaraki suburb on a budget that allowed only the plainest concrete box. He designed the addition in 1987-88 and built it in a year, finishing in April 1989. A freestanding wall enters the 113-square-metre rectangular hall at an angle, splitting the room without touching its corners and forcing the congregation to turn before facing the altar. Behind that wall Ando cut a full-height cross into the east concrete panel; he wanted the outside weather to enter with the light, though the church later glazed the slit to keep out rain. The formwork itself carries the design: panels are marked with the tie-hole grid Ando had used since Row House in Sumiyoshi, the building\'s only ornament besides the cross. Pews and floor are unfinished plywood on trestles, chosen for cost rather than effect. The chapel was the first phase of a larger rebuilding of the site, completed a decade later with a freestanding Sunday school wing. It remains an active Protestant church, and visitors are asked not to disturb services.',
+      es: 'A Ando le encargaron ampliar un pequeño recinto protestante en un tranquilo barrio de Ibaraki con un presupuesto que solo permitía la caja de hormigón más simple. Proyectó la ampliación en 1987-88 y la construyó en un año, terminándola en abril de 1989. Un muro exento entra en la sala rectangular de 113 metros cuadrados en ángulo, dividiendo el espacio sin tocar sus esquinas y obligando a la congregación a girar antes de encarar el altar. Tras ese muro, Ando cortó una cruz de altura completa en el panel de hormigón oriental; quería que el clima exterior entrase junto con la luz, aunque la iglesia acristaló después la ranura para evitar la lluvia. El propio encofrado lleva el diseño: los paneles muestran la retícula de agujeros de anclaje que Ando usaba desde la Row House de Sumiyoshi, el único ornamento del edificio además de la cruz. Los bancos y el suelo son de contrachapado sin acabar sobre caballetes, elegidos por coste y no por efecto. La capilla fue la primera fase de una reconstrucción mayor del recinto, completada una década después con un pabellón exento de escuela dominical. Sigue siendo una iglesia protestante activa, y se pide a los visitantes que no perturben los oficios.',
+      it: 'Ad Ando fu chiesto di ampliare un piccolo complesso protestante in un tranquillo sobborgo di Ibaraki con un budget che permetteva solo la più semplice scatola di cemento. Progettò l\'ampliamento nel 1987-88 e lo costruì in un anno, terminandolo nell\'aprile 1989. Un muro autonomo entra nella sala rettangolare di 113 metri quadrati con un\'angolazione, dividendo lo spazio senza toccarne gli angoli e costringendo i fedeli a voltarsi prima di trovarsi di fronte all\'altare. Dietro quel muro Ando tagliò una croce a tutta altezza nel pannello di cemento orientale; voleva che il clima esterno entrasse insieme alla luce, sebbene la chiesa abbia poi vetrato la fessura per tenere fuori la pioggia. È la stessa carpenteria a portare il disegno: i pannelli recano la griglia dei fori dei tiranti che Ando usava fin dalla Row House di Sumiyoshi, unico ornamento dell\'edificio oltre alla croce. Panche e pavimento sono in compensato grezzo su cavalletti, scelti per economia e non per effetto. La cappella fu la prima fase di una ricostruzione più ampia del sito, completata un decennio dopo con un padiglione autonomo per la scuola domenicale. Resta una chiesa protestante attiva, e ai visitatori si chiede di non disturbare le funzioni.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1655766', title: 'Church of the Light (Q1655766)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Church_of_the_Light', title: 'Church of the Light', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.moma.org/collection/works/338', title: 'Tadao Ando. Church of the Light — MoMA', license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'chichu-art-museum',
+    wikidataId: 'Q4556499',
+    name: {
+      en: 'Chichu Art Museum',
+      es: 'Museo de Arte Chichu',
+      it: 'Museo d\'Arte Chichu',
+    },
+    architectId: 'tadao-ando',
+    location: { city: 'Naoshima', countryCode: 'JP', lat: 34.449758, lon: 133.985803 },
+    inception: 2002,
+    completed: 2004,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['concrete'],
+    structure: {
+      en: "Roughly 60 percent of the museum's floor area sits below grade, arranged as a sequence of triangular, square and rectangular concrete rooms lit only by skylights and light wells cut into the hillside above them.",
+      es: 'Cerca del sesenta por ciento de la superficie del museo queda bajo rasante, distribuida en una secuencia de salas de hormigón triangulares, cuadradas y rectangulares iluminadas solo por lucernarios y pozos de luz abiertos en la colina sobre ellas.',
+      it: "Circa il sessanta per cento della superficie del museo si trova sotto il piano di campagna, distribuita in una sequenza di sale in cemento triangolari, quadrate e rettangolari illuminate solo da lucernari e pozzi di luce ricavati nella collina sovrastante.",
+    },
+    program: {
+      en: "Built by the Benesse Holdings patron Soichiro Fukutake as a museum for a fixed collection — Claude Monet's water-lily paintings and site-specific installations by Walter De Maria and James Turrell — set into Naoshima's coastline.",
+      es: 'Construido por el mecenas de Benesse Holdings Soichiro Fukutake como museo para una colección fija —los lienzos de nenúfares de Claude Monet e instalaciones específicas de Walter De Maria y James Turrell— encajado en la costa de Naoshima.',
+      it: "Costruito dal mecenate di Benesse Holdings Soichiro Fukutake come museo per una collezione fissa — le tele delle ninfee di Claude Monet e installazioni site-specific di Walter De Maria e James Turrell — incassato nella costa di Naoshima.",
+    },
+    heritage: 'none',
+    currentUse: {
+      en: "A working museum on the Benesse Art Site Naoshima circuit, timed-ticketed and limited in visitor numbers to protect the galleries' controlled daylight.",
+      es: 'Museo en activo dentro del circuito de Benesse Art Site Naoshima, con entrada horaria y aforo limitado para proteger la luz natural controlada de las salas.',
+      it: "Museo in attività nel circuito di Benesse Art Site Naoshima, a ingresso orario e con aforo limitato per proteggere la luce naturale controllata delle sale.",
+    },
+    detailRect: { x: 0.34, y: 0.28, w: 0.30, h: 0.30 },
+    image: {
+      commonsFile: 'File:Chichu Art Museum exterior open space 2025.jpg',
+      photographer: 'Fotointheworld',
+      license: 'CC BY 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Chichu_Art_Museum_exterior_open_space_2025.jpg',
+      width: 1600,
+      height: 1200,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:150505 Chichu Art Museum Naoshima Island Kagawa pref Japan01s3.jpg',
+        photographer: '663highland',
+        license: 'CC BY-SA 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:150505_Chichu_Art_Museum_Naoshima_Island_Kagawa_pref_Japan01s3.jpg',
+        width: 1600,
+        height: 1067,
+      },
+    ],
+    dossier: {
+      en: "Naoshima already held Ando's earlier Benesse House when Soichiro Fukutake asked for a museum built entirely for three artists: Claude Monet's water-lily paintings, and permanent installations by Walter De Maria and James Turrell. Ando's answer was to bury it. Roughly sixty percent of the floor area sits below the hillside, reached by an open-air ramp and a sequence of courtyards that are the only rooms with a visible sky; the exhibition spaces themselves are lit solely by skylights and angled light wells, no artificial lighting at all in the Monet room. Concrete throughout is Ando's usual fair-faced finish, tie-holes exposed, but here the material is deliberately secondary — the museum's own literature describes the building as existing 'to make people conscious of the changeability of nature.' The five Monet canvases were bought specifically for the room built to hold them, an oval space lined in tiny white tile. Opened in July 2004, the museum admits visitors by timed ticket to protect the controlled daylight the whole design depends on.",
+      es: 'Naoshima ya contaba con la primera Benesse House de Ando cuando Soichiro Fukutake le pidió un museo construido enteramente para tres artistas: los lienzos de nenúfares de Claude Monet y sendas instalaciones permanentes de Walter De Maria y James Turrell. La respuesta de Ando fue enterrarlo. Cerca del sesenta por ciento de la superficie queda bajo la colina, a la que se llega por una rampa al aire libre y una serie de patios que son las únicas salas con cielo visible; las galerías de exposición se iluminan solo con lucernarios y pozos de luz inclinados, sin ninguna luz artificial en la sala de Monet. El hormigón es el habitual acabado visto de Ando, con los agujeros de anclaje al descubierto, pero aquí el material queda deliberadamente en segundo plano: la propia documentación del museo describe el edificio como pensado «para hacer consciente a la gente de la mutabilidad de la naturaleza». Los cinco lienzos de Monet se compraron específicamente para la sala construida para acogerlos, un óvalo revestido de pequeñas teselas blancas. Inaugurado en julio de 2004, el museo admite visitantes con entrada horaria para proteger la luz natural controlada de la que depende todo el proyecto.',
+      it: "Naoshima ospitava già la prima Benesse House di Ando quando Soichiro Fukutake gli chiese un museo costruito interamente per tre artisti: le tele delle ninfee di Claude Monet e installazioni permanenti di Walter De Maria e James Turrell. La risposta di Ando fu interrarlo. Circa il sessanta per cento della superficie si trova sotto la collina, raggiungibile con una rampa all'aperto e una sequenza di cortili che sono le uniche stanze con cielo visibile; gli spazi espositivi sono illuminati solo da lucernari e pozzi di luce inclinati, senza alcuna luce artificiale nella sala di Monet. Il cemento è la consueta finitura a vista di Ando, con i fori dei tiranti lasciati in vista, ma qui il materiale resta deliberatamente in secondo piano: la documentazione stessa del museo descrive l'edificio come pensato «per rendere le persone consapevoli della mutevolezza della natura». Le cinque tele di Monet furono acquistate appositamente per la sala costruita per ospitarle, un ovale rivestito di piccole tessere bianche. Inaugurato nel luglio 2004, il museo ammette i visitatori con biglietto a orario per proteggere la luce naturale controllata da cui dipende l'intero progetto.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q4556499', title: 'Chichu Art Museum (Q4556499)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Chichu_Art_Museum', title: 'Chichu Art Museum', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://benesse-artsite.jp/en/art/chichu.html', title: 'Chichu Art Museum — Benesse Art Site Naoshima', license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'hyogo-prefectural-museum-of-art',
+    wikidataId: 'Q3329607',
+    name: {
+      en: 'Hyōgo Prefectural Museum of Art',
+      es: 'Museo de Arte de la Prefectura de Hyōgo',
+      it: "Museo d'Arte della Prefettura di Hyōgo",
+    },
+    architectId: 'tadao-ando',
+    location: { city: 'Kobe', countryCode: 'JP', lat: 34.699192, lon: 135.218011 },
+    inception: 1999,
+    completed: 2002,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['concrete', 'steel-and-glass'],
+    structure: {
+      en: 'A double-skin building: solid fair-faced concrete gallery volumes stand wrapped, across a covered gap, in an outer envelope of glass and steel.',
+      es: 'Un edificio de doble piel: volúmenes macizos de hormigón visto que alojan las salas quedan envueltos, a través de un intersticio cubierto, en una envolvente exterior de vidrio y acero.',
+      it: 'Un edificio a doppia pelle: volumi massicci in cemento a vista che ospitano le sale sono avvolti, attraverso un\'intercapedine coperta, in un involucro esterno di vetro e acciaio.',
+    },
+    program: {
+      en: "Built by the Hyōgo prefectural government after an international competition to replace its earthquake-damaged Museum of Modern Art and rehouse its collection in a new cultural district.",
+      es: 'Construido por el gobierno de la prefectura de Hyōgo tras un concurso internacional para sustituir su Museo de Arte Moderno, dañado por el terremoto, y realojar su colección en un nuevo distrito cultural.',
+      it: "Costruito dal governo della prefettura di Hyōgo dopo un concorso internazionale per sostituire il proprio Museo d'Arte Moderna, danneggiato dal terremoto, e ricollocare la collezione in un nuovo quartiere culturale.",
+    },
+    heritage: 'none',
+    currentUse: {
+      en: "A working prefectural art museum with a dedicated gallery of Ando's own architectural models and drawings.",
+      es: 'Museo de arte prefectural en activo, con una sala dedicada a los propios modelos y dibujos arquitectónicos de Ando.',
+      it: "Museo d'arte prefettizio in attività, con una sala dedicata ai modelli e ai disegni architettonici dello stesso Ando.",
+    },
+    // Primary chosen deliberately over "Hyogo Prefectural Museum Of Art.jpg"
+    // (Tokumeigakarinoaoshima, licence-verified but never successfully
+    // downloaded this session — Commons upload-host rate limiting, shared
+    // across all 8 parallel wave-3 batches, blocked every fetch attempt).
+    // This one WAS downloaded and inspected on pixels: a street-corner shot
+    // with the museum set back across an intersection, the dark cantilevered
+    // roof overhang and pale stone entrance wall (with climbing vine)
+    // legible left-of-centre. Not a striking hero shot, but genuinely
+    // diagnostic and confirmed on the actual image rather than guessed.
+    detailRect: { x: 0.45, y: 0.24, w: 0.32, h: 0.24 },
+    image: {
+      commonsFile: 'File:Hyogo Prefectural Museum of Art oct 2018.jpg',
+      photographer: 'Chacmool',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hyogo_Prefectural_Museum_of_Art_oct_2018.jpg',
+      width: 1600,
+      height: 1200,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Hyogo Prefectural Museum Of Art.jpg',
+        photographer: 'Tokumeigakarinoaoshima',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hyogo_Prefectural_Museum_Of_Art.jpg',
+        width: 1600,
+        height: 1200,
+      },
+    ],
+    dossier: {
+      en: "The Hyōgo prefectural government held an international competition to replace its earthquake-damaged Museum of Modern Art, and Ando's winning scheme became a deliberate symbol of Kobe's recovery from the 1995 Great Hanshin earthquake. The building is a double-skin construction: solid, fair-faced concrete volumes housing the galleries are wrapped, at a distance, in an outer wall of glass and steel, so a visitor crosses a covered gap between the two before reaching the collection proper. A spiral stair pulls light down through the gap from a rooftop opening, and a long external ramp — one of Ando's recurring devices — runs the length of the harbourside elevation, framing views out to Osaka Bay rather than the museum itself. It stands in HAT Kobe, a district rebuilt after the earthquake for exactly this purpose, and inherited its predecessor's roughly 13,000-work collection of modern and contemporary Japanese and international art. Opened in April 2002, it also houses a dedicated gallery of Ando's own models and drawings.",
+      es: 'El gobierno de la prefectura de Hyōgo convocó un concurso internacional para sustituir su Museo de Arte Moderno, dañado por el terremoto, y el proyecto ganador de Ando se convirtió en un símbolo deliberado de la recuperación de Kobe tras el gran terremoto de Hanshin de 1995. El edificio es una construcción de doble piel: volúmenes macizos de hormigón visto que alojan las salas quedan envueltos, a cierta distancia, por un muro exterior de vidrio y acero, de modo que el visitante cruza un intersticio cubierto entre ambos antes de llegar a la colección propiamente dicha. Una escalera de caracol hace descender la luz por ese intersticio desde una abertura en cubierta, y una larga rampa exterior —uno de los recursos recurrentes de Ando— recorre toda la fachada frente al puerto, encuadrando vistas hacia la bahía de Osaka antes que el propio museo. Se levanta en HAT Kobe, un distrito reconstruido tras el terremoto precisamente con ese fin, y heredó de su predecesor una colección de unas 13.000 obras de arte moderno y contemporáneo japonés e internacional. Inaugurado en abril de 2002, alberga también una sala dedicada a los propios modelos y dibujos de Ando.',
+      it: "Il governo della prefettura di Hyōgo bandì un concorso internazionale per sostituire il proprio Museo d'Arte Moderna, danneggiato dal terremoto, e il progetto vincitore di Ando divenne un simbolo deliberato della rinascita di Kobe dopo il grande terremoto di Hanshin del 1995. L'edificio è una costruzione a doppia pelle: volumi massicci in cemento a vista che ospitano le sale sono avvolti, a una certa distanza, da un muro esterno di vetro e acciaio, cosicché il visitatore attraversa un'intercapedine coperta tra i due prima di raggiungere la collezione vera e propria. Una scala a chiocciola fa scendere la luce lungo quell'intercapedine da un'apertura in copertura, e una lunga rampa esterna — uno degli espedienti ricorrenti di Ando — percorre l'intero prospetto sul porto, inquadrando viste sulla baia di Osaka piuttosto che il museo stesso. Sorge ad HAT Kobe, un quartiere ricostruito dopo il terremoto proprio a questo scopo, ed ereditò dal suo predecessore una collezione di circa 13.000 opere d'arte moderna e contemporanea giapponese e internazionale. Inaugurato nell'aprile 2002, ospita anche una sala dedicata ai modelli e ai disegni dello stesso Ando.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q3329607', title: 'Hyōgo Prefectural Museum of Art (Q3329607)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Hy%C5%8Dgo_Prefectural_Museum_of_Art', title: 'Hyōgo Prefectural Museum of Art', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.artm.pref.hyogo.jp/eng/access/archtect/ando/', title: 'Ando Gallery — Hyogo Prefectural Museum of Art', license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'yoyogi-national-gymnasium',
+    wikidataId: 'Q1069457',
+    name: {
+      en: 'Yoyogi National Gymnasium',
+      es: 'Gimnasio Nacional de Yoyogi',
+      it: 'Palazzetto Nazionale di Yoyogi',
+    },
+    architectId: 'kenzo-tange',
+    location: { city: 'Tokyo', countryCode: 'JP', lat: 35.6675, lon: 139.700278 },
+    inception: 1961,
+    completed: 1964,
+    demolished: null,
+    typology: 'civic',
+    materials: ['concrete', 'steel-and-glass'],
+    structure: {
+      en: 'Two opposed concrete-and-steel masts anchor a network of steel suspension cables that pulls a tensile roof membrane taut over the main arena in a single continuous curve, with no interior columns breaking the span.',
+      es: 'Dos mástiles opuestos de hormigón y acero anclan una red de cables de acero en suspensión que tensa una membrana de cubierta sobre el pabellón principal en una sola curva continua, sin pilares interiores que interrumpan la luz.',
+      it: 'Due piloni contrapposti in cemento e acciaio ancorano una rete di cavi d\'acciaio sospesi che tende una membrana di copertura sul padiglione principale in un\'unica curva continua, senza pilastri interni a interromperne la luce.',
+    },
+    program: {
+      en: 'Built by the City of Tokyo to host swimming and diving at the 1964 Summer Olympics, alongside a smaller annex gymnasium for basketball on the same suspension principle.',
+      es: 'Construido por la ciudad de Tokio para acoger la natación y los saltos en los Juegos Olímpicos de verano de 1964, junto a un anexo menor para baloncesto según el mismo principio de suspensión.',
+      it: 'Costruito dalla città di Tokyo per ospitare nuoto e tuffi alle Olimpiadi estive del 1964, insieme a un annesso minore per la pallacanestro secondo lo stesso principio sospeso.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Still an active sports and event arena, used for ice hockey, handball and concerts; renovated ahead of the 2019 Rugby World Cup and 2020 Tokyo Olympics.',
+      es: 'Sigue siendo un recinto activo de deporte y espectáculos, usado para hockey sobre hielo, balonmano y conciertos; renovado antes del Mundial de Rugby de 2019 y los Juegos Olímpicos de Tokio de 2020.',
+      it: 'È tuttora un\'arena attiva per sport ed eventi, usata per hockey su ghiaccio, pallamano e concerti; rinnovata in vista della Coppa del Mondo di Rugby 2019 e delle Olimpiadi di Tokyo 2020.',
+    },
+    detailRect: { x: 0.33, y: 0.38, w: 0.16, h: 0.36 },
+    image: {
+      commonsFile: 'File:Yoyogi National Gymnasium 20200607.jpg',
+      photographer: 'Suicasmo',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Yoyogi_National_Gymnasium_20200607.jpg',
+      width: 1600,
+      height: 1067,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Yoyogi National Gymnasium detail.jpg',
+        photographer: 'Syced',
+        license: 'CC BY-SA 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Yoyogi_National_Gymnasium_detail.jpg',
+        width: 1600,
+        height: 1200,
+      },
+    ],
+    dossier: {
+      en: 'Tange had two years to design an Olympic swimming stadium capable of seating over ten thousand people with no interior columns to block sightlines, and answered with a suspension structure borrowed from bridge engineering rather than stadium design. Two enormous concrete piers, one taller than the other, anchor a main steel cable slung between them; a dense secondary net of cables hangs from it and carries a curved roof membrane down to a low concrete perimeter wall, so the whole 126-metre span reads as a single continuous sweep with no interior support. A smaller annex next door, built for basketball on a spiral variant of the same cable principle, seats about four thousand. Both opened in time for the 1964 Tokyo Olympics, where the main hall hosted swimming and diving. The structural engineer Yoshikatsu Tsuboi worked out the cable geometry with Tange; the roof shape, driven entirely by force rather than ornament, became one of the most photographed results of postwar Japanese engineering and was renovated for the venue\'s return as an Olympic arena in 2020.',
+      es: 'Tange disponía de dos años para proyectar un estadio olímpico de natación capaz de albergar a más de diez mil espectadores sin un solo pilar interior que cortara la visión, y respondió con una estructura de suspensión tomada de la ingeniería de puentes y no del diseño de estadios. Dos pilares enormes de hormigón, uno más alto que el otro, anclan un cable de acero principal tendido entre ambos; de él cuelga una densa red secundaria de cables que sostiene una cubierta curva hasta un muro perimetral bajo de hormigón, de modo que el vano entero, de 126 metros, se lee como un único trazo continuo sin apoyo interior. Un anexo menor contiguo, construido para baloncesto según una variante en espiral del mismo principio de cables, tiene aforo para unos cuatro mil espectadores. Ambos se inauguraron a tiempo para los Juegos Olímpicos de Tokio de 1964, donde el pabellón principal acogió la natación y los saltos. El ingeniero de estructuras Yoshikatsu Tsuboi resolvió la geometría de los cables junto con Tange; la forma de la cubierta, dictada por completo por la fuerza y no por el ornamento, se convirtió en uno de los resultados más fotografiados de la ingeniería japonesa de posguerra y fue renovada para el regreso del recinto como sede olímpica en 2020.',
+      it: 'Tange aveva due anni per progettare uno stadio olimpico di nuoto capace di ospitare oltre diecimila spettatori senza un solo pilastro interno a interrompere la visuale, e rispose con una struttura sospesa presa in prestito dall\'ingegneria dei ponti piuttosto che dalla progettazione di stadi. Due enormi piloni in cemento, uno più alto dell\'altro, ancorano un cavo d\'acciaio principale teso tra loro; da esso pende una fitta rete secondaria di cavi che regge una copertura curva fino a un basso muro perimetrale in cemento, cosicché l\'intera luce di 126 metri si legge come un unico tratto continuo privo di appoggi interni. Un annesso più piccolo accanto, costruito per la pallacanestro secondo una variante a spirale dello stesso principio dei cavi, ha una capienza di circa quattromila spettatori. Entrambi furono inaugurati in tempo per le Olimpiadi di Tokyo del 1964, dove il padiglione principale ospitò nuoto e tuffi. L\'ingegnere strutturale Yoshikatsu Tsuboi risolse la geometria dei cavi insieme a Tange; la forma della copertura, dettata interamente dalla forza e non dall\'ornamento, divenne uno dei risultati più fotografati dell\'ingegneria giapponese del dopoguerra e fu rinnovata per il ritorno dell\'impianto come sede olimpica nel 2020.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1069457', title: 'Yoyogi National Gymnasium (Q1069457)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Yoyogi_National_Gymnasium', title: 'Yoyogi National Gymnasium', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'st-marys-cathedral-tokyo',
+    wikidataId: 'Q1193480',
+    name: {
+      en: "St Mary's Cathedral, Tokyo",
+      es: 'Catedral de Santa María de Tokio',
+      it: 'Cattedrale di Santa Maria di Tokyo',
+    },
+    architectId: 'kenzo-tange',
+    location: { city: 'Tokyo', countryCode: 'JP', lat: 35.714167, lon: 139.726667 },
+    inception: 1961,
+    completed: 1964,
+    demolished: null,
+    typology: 'sacral',
+    materials: ['concrete', 'steel-and-glass'],
+    structure: {
+      en: 'Eight hyperbolic-paraboloid concrete-and-steel shells rise from a diamond-shaped plan to interlock in a single soaring cross-shaped roofline, clad outside in stainless steel and left as bare concrete within.',
+      es: 'Ocho cáscaras de paraboloide hiperbólico de hormigón y acero se elevan desde una planta romboidal y se entrelazan en una sola cresta de cubierta con forma de cruz, revestidas por fuera de acero inoxidable y dejadas en hormigón visto por dentro.',
+      it: 'Otto gusci a paraboloide iperbolico in cemento e acciaio si innalzano da una pianta romboidale e si intrecciano in un\'unica cresta di copertura a forma di croce, rivestiti all\'esterno in acciaio inossidabile e lasciati a cemento a vista all\'interno.',
+    },
+    program: {
+      en: 'Built for the Roman Catholic Archdiocese of Tokyo to replace a wooden Gothic-revival cathedral destroyed in the 1945 firebombing of Tokyo.',
+      es: 'Construida para el arzobispado católico de Tokio en sustitución de una catedral neogótica de madera destruida en el bombardeo incendiario de Tokio de 1945.',
+      it: "Costruita per l'arcidiocesi cattolica di Tokyo in sostituzione di una cattedrale neogotica in legno distrutta nel bombardamento incendiario di Tokyo del 1945.",
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'The seat of the Archdiocese of Tokyo, in regular use for services; restored between 1999 and 2007 for water damage and glazing.',
+      es: 'Sede del arzobispado de Tokio, en uso regular para los oficios; restaurada entre 1999 y 2007 por daños de humedad y en las vidrieras.',
+      it: "Sede dell'arcidiocesi di Tokyo, in uso regolare per le funzioni; restaurata tra il 1999 e il 2007 per infiltrazioni d'acqua e per le vetrate.",
+    },
+    detailRect: { x: 0.36, y: 0.15, w: 0.20, h: 0.55 },
+    image: {
+      commonsFile: "File:2018 St. Mary's Cathedral Tokyo 1.jpg",
+      photographer: 'Kakidai',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:2018_St._Mary%27s_Cathedral_Tokyo_1.jpg",
+      width: 1600,
+      height: 1093,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Cathedral St. Mary Westseite 1.jpg',
+        photographer: 'Zairon',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Cathedral_St._Mary_Westseite_1.jpg',
+        width: 1600,
+        height: 1201,
+      },
+    ],
+    dossier: {
+      en: "Tokyo's original wooden cathedral, a Gothic-revival building from the 1890s, burned in the March 1945 firebombing that destroyed most of the surrounding district. The Archdiocese gave the replacement to Tange, who was not Catholic and had built almost nothing sacred before. His plan is a diamond in section as much as in footprint: eight hyperbolic-paraboloid shells, cast in concrete over a steel frame, rise from ground level and twist together until their edges meet overhead in a single ridge shaped, seen from above, like a cross. Clad outside in stainless steel that catches the sky's colour and left as raw concrete within, the shells narrow the nave to a slot of light at the highest point rather than opening it with conventional windows. Completed in 1964, the same year as Tange's Olympic gymnasiums, the cathedral needed a full restoration between 1999 and 2007 after decades of leaks through its stainless-steel seams and stained glass, reopening with the structure otherwise unchanged.",
+      es: 'La catedral original de madera de Tokio, un edificio neogótico de la década de 1890, ardió en el bombardeo incendiario de marzo de 1945 que destruyó buena parte del barrio circundante. El arzobispado encargó la sustitución a Tange, que no era católico y apenas había construido nada sacro hasta entonces. Su planta es un rombo tanto en sección como en huella: ocho cáscaras de paraboloide hiperbólico, coladas en hormigón sobre una estructura de acero, se elevan desde el suelo y se retuercen entre sí hasta que sus bordes se encuentran en lo alto formando una sola cresta que, vista desde arriba, dibuja una cruz. Revestidas por fuera de acero inoxidable que recoge el color del cielo y dejadas en hormigón visto por dentro, las cáscaras estrechan la nave hasta una ranura de luz en el punto más alto en vez de abrirla con ventanas convencionales. Terminada en 1964, el mismo año que los gimnasios olímpicos de Tange, la catedral necesitó una restauración completa entre 1999 y 2007 tras décadas de filtraciones por las juntas de acero inoxidable y las vidrieras, y reabrió con la estructura por lo demás intacta.',
+      it: "La cattedrale lignea originaria di Tokyo, un edificio neogotico degli anni 1890, bruciò nel bombardamento incendiario del marzo 1945 che distrusse buona parte del quartiere circostante. L'arcidiocesi affidò la sostituzione a Tange, che non era cattolico e non aveva quasi mai costruito nulla di sacro fino ad allora. La sua pianta è un rombo tanto in sezione quanto in impronta: otto gusci a paraboloide iperbolico, gettati in cemento su un'ossatura d'acciaio, si innalzano da terra e si attorcigliano tra loro finché i bordi si incontrano in alto in un'unica cresta che, vista dall'alto, disegna una croce. Rivestiti all'esterno in acciaio inossidabile che riflette il colore del cielo e lasciati a cemento a vista all'interno, i gusci restringono la navata fino a una fenditura di luce nel punto più alto anziché aprirla con finestre convenzionali. Completata nel 1964, lo stesso anno delle palestre olimpiche di Tange, la cattedrale richiese un restauro completo tra il 1999 e il 2007 dopo decenni di infiltrazioni dalle giunture in acciaio inossidabile e dalle vetrate, riaprendo con la struttura per il resto invariata.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1193480', title: "St Mary's Cathedral, Tokyo (Q1193480)", license: null },
+      { kind: 'wikipedia', url: "https://en.wikipedia.org/wiki/St._Mary%27s_Cathedral,_Tokyo", title: "St. Mary's Cathedral, Tokyo", license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+
+{
+    // Wave V2-3, batch B8. China's building FoP covers commercial use
+    // (confirmed against Commons' country table) so a living architect's
+    // 2012 work is licensable here without an age exemption.
+    id: 'cctv-headquarters',
+    wikidataId: 'Q754321',
+    name: {
+      en: 'CCTV Headquarters',
+      es: 'Sede de la CCTV',
+      it: 'Sede della CCTV',
+    },
+    architectId: 'rem-koolhaas',
+    location: { city: 'Beijing', countryCode: 'CN', lat: 39.91330, lon: 116.45810 },
+    inception: 2004,
+    completed: 2012,
+    demolished: null,
+    typology: 'tower',
+    materials: ['steel-and-glass', 'concrete'],
+    structure: {
+      en: "Two leaning steel-framed L-shaped towers rise from a shared podium and lock together under an overhanging cantilever; their skin is an irregular diagonal steel grid whose density Arup's engineers set directly from calculated seismic and gravity stress rather than drawing it as pattern.",
+      es: 'Dos torres inclinadas en forma de ele, de estructura de acero, se alzan sobre un podio común y quedan trabadas bajo un voladizo superior; su piel es una retícula diagonal de acero cuya densidad los ingenieros de Arup fijaron directamente a partir del esfuerzo sísmico y gravitatorio calculado, no como dibujo decorativo.',
+      it: "Due torri inclinate a elle, con struttura in acciaio, si innalzano da un podio comune e si serrano sotto uno sbalzo superiore; la loro pelle è una griglia diagonale d'acciaio la cui densità gli ingegneri di Arup fissarono direttamente in base allo sforzo sismico e gravitazionale calcolato, non come disegno decorativo.",
+    },
+    program: {
+      en: 'Headquarters and production complex commissioned by China Central Television to consolidate its administration, newsrooms, studios and broadcasting operations on a single Beijing site, won by OMA in a 2002 international competition.',
+      es: 'Sede y complejo de producción encargado por la Televisión Central de China para reunir en un único emplazamiento de Pekín su administración, redacciones, estudios y operaciones de emisión; la propuesta de OMA ganó el concurso internacional de 2002.',
+      it: "Sede e complesso di produzione commissionato dalla Televisione Centrale Cinese per riunire in un unico sito di Pechino amministrazione, redazioni, studi e attività di trasmissione; la proposta di OMA vinse il concorso internazionale del 2002.",
+    },
+    heritage: 'none',
+    currentUse: {
+      en: "Headquarters of China Media Group, the state broadcaster formed by CCTV's 2018 merger with China National Radio and China Radio International.",
+      es: 'Sede de China Media Group, la radiotelevisión estatal surgida en 2018 de la fusión de la CCTV con la Radio Nacional de China y China Radio International.',
+      it: "Sede di China Media Group, l'emittente statale nata nel 2018 dalla fusione della CCTV con China National Radio e China Radio International.",
+    },
+    detailRect: { x: 0.05, y: 0.55, w: 0.35, h: 0.35 },
+    image: {
+      commonsFile: 'File:CCTV Headquarters (Beijing, China) - Flickr.jpg',
+      photographer: 'Kilian Evang',
+      license: 'CC BY 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:CCTV_Headquarters_(Beijing,_China)_-_Flickr.jpg',
+      width: 1600,
+      height: 1201,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:CCTV Headquarters 20170801 091706(0).jpg',
+        photographer: 'SecretName101',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:CCTV_Headquarters_20170801_091706(0).jpg',
+        width: 1200,
+        height: 1600,
+      },
+    ],
+    dossier: {
+      en: "OMA's winning 2002 competition entry rejected the usual skyscraper — a single tower straining upward — for a closed loop: two leaning towers, one holding administration and offices and the other production and broadcasting, joined at the top by an overhanging cantilever and at the base by a shared podium. The result reads less as a building than as a tube bent back on itself, its structure exposed as an irregular diagonal grid, denser wherever seismic and gravity loads run highest. At 234 metres, the two towers lean toward each other at six degrees and meet 162 metres above the ground; a public loop lets visitors walk the cantilever itself, ending in a view over the Beijing CBD. Construction began in 2004 and the façade was finished by January 2008, in time for the Olympics, though fit-out continued to 2012. An adjoining building in the same complex, the Television Cultural Center, burned down in February 2009 after fireworks ignited its skin during a Lunar New Year celebration, killing one firefighter; the headquarters itself was undamaged. It has been renamed China Media Group Headquarters since CCTV's 2018 merger into the new state broadcaster.",
+      es: 'La propuesta ganadora de OMA en el concurso de 2002 rechazó el rascacielos habitual —una sola torre tensada hacia arriba— por un bucle cerrado: dos torres inclinadas, una con la administración y las oficinas y la otra con producción y emisión, unidas en lo alto por un voladizo y en la base por un podio común. El resultado se lee menos como un edificio que como un tubo doblado sobre sí mismo, con la estructura expuesta en una retícula diagonal irregular, más densa allí donde las cargas sísmicas y gravitatorias son mayores. Con 234 metros de altura, las dos torres se inclinan la una hacia la otra seis grados y se encuentran a 162 metros del suelo; un recorrido público permite a los visitantes caminar por el propio voladizo, que termina con una vista sobre el distrito central de negocios de Pekín. Las obras comenzaron en 2004 y la fachada se terminó en enero de 2008, a tiempo para los Juegos Olímpicos, aunque los acabados continuaron hasta 2012. Un edificio contiguo del mismo complejo, el Television Cultural Center, ardió en febrero de 2009 cuando unos fuegos artificiales incendiaron su piel durante una celebración del Año Nuevo chino, y murió un bombero; la sede central no sufrió daños. Ha pasado a llamarse China Media Group Headquarters desde la fusión de la CCTV en la nueva radiotelevisión estatal en 2018.',
+      it: "La proposta vincitrice di OMA nel concorso del 2002 respinse il grattacielo consueto — un'unica torre tesa verso l'alto — per un anello chiuso: due torri inclinate, una con l'amministrazione e gli uffici e l'altra con la produzione e la messa in onda, unite in alto da uno sbalzo e alla base da un podio comune. Il risultato si legge meno come un edificio che come un tubo ripiegato su se stesso, con la struttura esposta in una griglia diagonale irregolare, più fitta dove i carichi sismici e gravitazionali sono maggiori. Alte 234 metri, le due torri si inclinano l'una verso l'altra di sei gradi e si incontrano a 162 metri da terra; un percorso pubblico permette ai visitatori di camminare sullo sbalzo stesso, che termina con una vista sul quartiere centrale degli affari di Pechino. I lavori iniziarono nel 2004 e la facciata fu completata nel gennaio 2008, in tempo per le Olimpiadi, sebbene le finiture interne proseguissero fino al 2012. Un edificio adiacente dello stesso complesso, il Television Cultural Center, bruciò nel febbraio 2009 quando dei fuochi d'artificio incendiarono il suo rivestimento durante i festeggiamenti per il Capodanno cinese, causando la morte di un vigile del fuoco; la sede centrale non subì danni. Dal 2018, dopo la fusione della CCTV nella nuova emittente statale, è stata rinominata China Media Group Headquarters.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q754321', title: 'China Media Group Guanghua Road Office Area (Q754321)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/CCTV_Headquarters', title: 'CCTV Headquarters', license: 'CC BY-SA 4.0' },
+      { kind: 'publication', url: 'https://www.designboom.com/architecture/oma-cctv-headquarters-now-complete/', title: 'OMA: CCTV Headquarters now complete — Designboom', license: null },
+    ],
+    tier: 'canon',
+  },
+
+];

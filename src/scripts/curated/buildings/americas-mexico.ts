@@ -1,4 +1,984 @@
 import type { Building } from '@/types/building';
 
 // Wave 5 curator agent (Mexico and Central America): real, sourced Building entries for this slice.
-export const AMERICAS_MEXICO_BUILDINGS: Building[] = [];
+//
+// Countries in scope: MX, GT, CR, PA, NI, HN, SV, BZ — all of them
+// "Latin America and the Caribbean" under UN M49 (see src/lib/m49.ts),
+// never "Northern America".
+//
+// Image rule applied throughout: every licence was read on the live Commons
+// file page. For any building whose architect died within the last 70 years
+// or is still living, the photograph is an EXTERIOR view and `detailRect`
+// sits on exterior fabric — freedom of panorama does not reach interiors.
+// The two pre-1800 buildings (Arrieta d. 1738, Porres d. 1741) are out of
+// copyright, so a cloister view is unproblematic there.
+//
+// `image.width`/`image.height` are left at 0 for a later pass, per contract.
+//
+// Fix round (task-9-americas-mexico review, Important #1 — country spread):
+// added one building in El Salvador (Iglesia El Rosario, San Salvador,
+// architect Rubén Martínez Bulnes) after genuine research turned up a real,
+// licence-clean, single-architect-attributed candidate there. Costa Rica,
+// Panama, Nicaragua, Honduras and Belize remain disclosed gaps — see the
+// task report for what was checked in each and why nothing qualified
+// (thin/no named architect, no Wikidata entity for an otherwise
+// well-sourced candidate, or FoP too restrictive for a commercially
+// licensed photo of an in-copyright building).
+export const AMERICAS_MEXICO_BUILDINGS: Building[] = [
+  // ---------------------------------------------------------------- pre-1800
+  {
+    id: 'antigua-basilica-de-guadalupe',
+    wikidataId: 'Q67772495',
+    name: {
+      en: 'Old Basilica of Our Lady of Guadalupe',
+      es: 'Antigua Basílica de Nuestra Señora de Guadalupe',
+      it: 'Antica basilica di Nostra Signora di Guadalupe',
+    },
+    architectId: 'pedro-de-arrieta',
+    location: { city: 'Ciudad de México', countryCode: 'MX', lat: 19.484, lon: -99.117 },
+    inception: 1695,
+    completed: 1709,
+    demolished: null,
+    typology: 'sacral',
+    materials: ['stone', 'brick'],
+    structure: {
+      en: 'Masonry vaults and a crossing dome carried on walls of dark tezontle faced with pale chiluca stone, with a free-standing screen front and four octagonal corner towers tiled in yellow Talavera.',
+      es: 'Bóvedas de mampostería y cúpula en el crucero sobre muros de tezontle oscuro revestidos de chiluca clara, con una portada exenta a modo de biombo y cuatro torres octagonales en las esquinas cubiertas de talavera amarilla.',
+      it: 'Volte in muratura e cupola sull\'incrocio su murature di tezontle scuro rivestite di chiara pietra di chiluca, con una facciata autonoma a paravento e quattro torri ottagonali d\'angolo rivestite di maiolica gialla di Talavera.',
+    },
+    program: {
+      en: 'Built by the Guadalupan chapter to shelter the image venerated at the foot of Tepeyac; it became a collegiate church in 1749 and a basilica in 1904.',
+      es: 'Levantada por el cabildo guadalupano para resguardar la imagen venerada al pie del Tepeyac; recibió el título de colegiata en 1749 y el de basílica en 1904.',
+      it: 'Eretta dal capitolo guadalupano per custodire l\'immagine venerata ai piedi del Tepeyac; ottenne il titolo di collegiata nel 1749 e quello di basilica nel 1904.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Templo Expiatorio a Cristo Rey, part of the Guadalupe sanctuary, open for worship since the new basilica took over in 1976.',
+      es: 'Templo Expiatorio a Cristo Rey, parte del santuario de Guadalupe, abierto al culto desde que la nueva basílica asumió sus funciones en 1976.',
+      it: 'Templo Expiatorio a Cristo Rey, parte del santuario di Guadalupe, aperto al culto da quando la nuova basilica ne ha assunto le funzioni nel 1976.',
+    },
+    detailRect: { x: 0.35, y: 0.39, w: 0.29, h: 0.30 },
+    image: {
+      commonsFile: 'File:Templo Expiatorio a Cristo Rey (Antigua Basílica de Guadalupe) - Frente.jpg',
+      photographer: 'Juan Carlos Fonseca Mata',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Templo_Expiatorio_a_Cristo_Rey_(Antigua_Bas%C3%ADlica_de_Guadalupe)_-_Frente.jpg',
+      width: 1600,
+      height: 1268,
+    },
+    dossier: {
+      en: 'Work began in March 1695 and the church opened on 1 May 1709, which makes it the largest thing Pedro de Arrieta ever built and the clearest statement of his transitional manner. The front is not a facade in the usual sense but a screen, set forward of the body of the church like a folding panel, its grey chiluca relief held against walls of dark red tezontle. Four octagonal towers stand at the corners, and they and the dome are finished in yellow Talavera tile with a blue border, a scheme read at the time as the golden Jerusalem of Revelation. Almost nothing of the baroque interior survives: a neoclassical redecoration designed by Agustín Paz and carried out by Manuel Tolsá ran from 1804 to 1836, interrupted by the war of independence, and further campaigns followed in the 1890s and around 1929.',
+      es: 'Las obras comenzaron en marzo de 1695 y el templo abrió sus puertas el 1 de mayo de 1709; es lo más grande que llegó a construir Pedro de Arrieta y el enunciado más claro de su manera de transición. El frente no es una fachada en el sentido corriente sino una portada exenta, adelantada respecto al cuerpo del templo como un biombo, con su relieve de chiluca gris recortado contra muros de tezontle rojo oscuro. Cuatro torres octagonales ocupan las esquinas y, como la cúpula, van cubiertas de talavera amarilla con cenefa azul, un esquema leído entonces como la Jerusalén de oro del Apocalipsis. Del interior barroco casi nada queda: la redecoración neoclásica proyectada por Agustín Paz y ejecutada por Manuel Tolsá corrió de 1804 a 1836, interrumpida por la guerra de independencia, y le siguieron campañas en la década de 1890 y hacia 1929.',
+      it: 'I lavori iniziarono nel marzo del 1695 e la chiesa aprì il 1º maggio 1709: è la fabbrica più vasta che Pedro de Arrieta abbia costruito e l\'enunciato più limpido della sua maniera di transizione. Il fronte non è una facciata nel senso consueto ma un diaframma autonomo, avanzato rispetto al corpo della chiesa come un paravento, con il rilievo in chiluca grigia stagliato su murature di tezontle rosso scuro. Quattro torri ottagonali occupano gli angoli e, come la cupola, sono rivestite di maiolica gialla con fascia azzurra, schema letto allora come la Gerusalemme d\'oro dell\'Apocalisse. Dell\'interno barocco quasi nulla resta: la ridecorazione neoclassica ideata da Agustín Paz ed eseguita da Manuel Tolsá andò dal 1804 al 1836, interrotta dalla guerra d\'indipendenza, e altre campagne seguirono negli anni Novanta dell\'Ottocento e verso il 1929.',
+    },
+    context: {
+      body: {
+        en: 'The sanctuary stands on and beside the hill of Tepeyac, which Spanish and Indigenous chroniclers agree was a place of worship before the conquest. Bernardino de Sahagún, Juan de Torquemada and the later chronicler Jacinto de la Serna all record that Nahua people continued to call the festival there one for "our mother", tonantzin or totlaçonantzin; the Códice Teotenantzin describes two images carved into the rock of the hill, one associated with Tonantzin and one with Toci, and a sculpture of Cihuacóatl was recorded by Guillermo Dupaix as found on the Tepeyac. Sahagún treated the continuity as a problem rather than a coincidence. The colonial shrine was therefore not built on empty ground: it replaced an existing cult on its own site, and Arrieta\'s church is the third and most monumental of the buildings raised there under Spanish rule.',
+        es: 'El santuario se levanta sobre y junto al cerro del Tepeyac, que cronistas españoles e indígenas coinciden en describir como sitio de adoración anterior a la conquista. Bernardino de Sahagún, Juan de Torquemada y, más tarde, Jacinto de la Serna registran que los nahuas siguieron llamando a la fiesta de aquel lugar la de "nuestra madre", tonantzin o totlaçonantzin; el Códice Teotenantzin describe dos imágenes talladas en la roca del cerro, una asociada a Tonantzin y otra a Toci, y Guillermo Dupaix consignó como hallada en el Tepeyac una escultura de Cihuacóatl. Sahagún trató esa continuidad como un problema, no como una coincidencia. El santuario colonial no se erigió, por tanto, sobre terreno vacío: sustituyó un culto preexistente en su propio sitio, y el templo de Arrieta es el tercero y más monumental de los edificios allí levantados bajo el dominio español.',
+        it: 'Il santuario sorge sul colle di Tepeyac e ai suoi piedi; cronisti spagnoli e indigeni concordano nel descriverlo come luogo di culto anteriore alla conquista. Bernardino de Sahagún, Juan de Torquemada e più tardi Jacinto de la Serna registrano che i nahua continuarono a chiamare la festa di quel luogo quella di "nostra madre", tonantzin o totlaçonantzin; il Códice Teotenantzin descrive due immagini scolpite nella roccia del colle, una legata a Tonantzin e una a Toci, e Guillermo Dupaix segnalò come rinvenuta sul Tepeyac una scultura di Cihuacóatl. Sahagún considerò quella continuità un problema, non una coincidenza. Il santuario coloniale non sorse dunque su terreno vuoto: sostituì un culto preesistente sul suo stesso sito, e la chiesa di Arrieta è la terza e più monumentale delle fabbriche innalzate lì sotto il dominio spagnolo.',
+      },
+      sources: [
+        { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Cerro_del_Tepeyac', title: 'Cerro del Tepeyac — Wikipedia en español', license: 'CC BY-SA 4.0' },
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Tepeyac', title: 'Tepeyac — English Wikipedia', license: 'CC BY-SA 4.0' },
+      ],
+    },
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q67772495', title: 'Antigua Basílica de Nuestra Señora de Guadalupe (Q67772495)', license: null },
+      { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Bas%C3%ADlica_de_Santa_Mar%C3%ADa_de_Guadalupe', title: 'Basílica de Santa María de Guadalupe — Wikipedia en español', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Pedro_de_Arrieta', title: 'Pedro de Arrieta — Wikipedia en español', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'convento-de-las-capuchinas-antigua',
+    wikidataId: 'Q5116750',
+    name: {
+      en: 'Church and Convent of the Capuchins, Antigua Guatemala',
+      es: 'Iglesia y convento de las Capuchinas de Antigua Guatemala',
+      it: 'Chiesa e convento delle Cappuccine di Antigua Guatemala',
+    },
+    architectId: 'diego-de-porres',
+    location: { city: 'Antigua Guatemala', countryCode: 'GT', lat: 14.5595039, lon: -90.7312769 },
+    inception: 1731,
+    completed: 1736,
+    demolished: null,
+    typology: 'sacral',
+    materials: ['stone', 'brick'],
+    structure: {
+      en: 'Earthquake-resistant baroque: very thick lime-and-rubble walls, low springing arches on squat masonry columns, and a circular retreat tower whose ring of cells rests on a vault carried by a single mushroom-headed column three metres across.',
+      es: 'Barroco antisísmico: muros de cal y canto de gran espesor, arcos de arranque bajo sobre columnas achaparradas de mampostería y una torre del retiro circular cuyo anillo de celdas descansa sobre una bóveda sostenida por una única columna en forma de hongo de tres metros de diámetro.',
+      it: 'Barocco antisismico: murature di calce e pietrame di forte spessore, archi ribassati su tozze colonne in muratura e una torre del ritiro circolare, il cui anello di celle poggia su una volta retta da un\'unica colonna a fungo di tre metri di diametro.',
+    },
+    program: {
+      en: 'A convent for twenty-five to twenty-eight Capuchin Poor Clares, licensed by Philip V in 1725 and the first house in the city to admit novices without a dowry.',
+      es: 'Convento para veinticinco o veintiocho clarisas capuchinas, autorizado por Felipe V en 1725 y primera casa de la ciudad en admitir novicias sin dote.',
+      it: 'Convento per venticinque o ventotto clarisse cappuccine, autorizzato da Filippo V nel 1725 e prima casa della città ad accogliere novizie senza dote.',
+    },
+    heritage: 'unesco',
+    currentUse: {
+      en: 'Seat of the Consejo Nacional para la Protección de La Antigua Guatemala since 1972, and one of the most visited monuments in the city.',
+      es: 'Sede del Consejo Nacional para la Protección de La Antigua Guatemala desde 1972 y uno de los monumentos más visitados de la ciudad.',
+      it: 'Sede del Consejo Nacional para la Protección de La Antigua Guatemala dal 1972 e uno dei monumenti più visitati della città.',
+    },
+    detailRect: { x: 0.32, y: 0.18, w: 0.30, h: 0.45 },
+    image: {
+      commonsFile: 'File:Kapuzinerkonvent Antigua, Guatemala-2.JPG',
+      photographer: 'Willyman',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Kapuzinerkonvent_Antigua,_Guatemala-2.JPG',
+      width: 1600,
+      height: 900,
+    },
+    dossier: {
+      en: 'Begun in 1731 and consecrated in 1736 under the supervision of Diego de Porres, this was the last convent founded in Santiago de los Caballeros and the most inventive. Everything about it is shaped by the fact that the city had been shaken repeatedly since the sixteenth century: walls are enormously thick, arches spring low from columns broad enough to be mistaken for piers, and ornament is confined to the stone-worked church front, a treatment shared only with the Escuela de Cristo. Behind the cloister stands the "torre del retiro", a circular court ringed by eighteen cells each with its own privy and study, which has been called the first apartment building in the Americas; the vault beneath the novitiate is carried on one mushroom-headed column three metres in diameter. After the Santa Marta earthquakes of 1773 the community moved to the new capital and the buildings were sold, drying coffee and housing a dye works before restoration began in the 1940s.',
+      es: 'Iniciado en 1731 y consagrado en 1736 bajo la supervisión de Diego de Porres, fue el último convento fundado en Santiago de los Caballeros y el más inventivo. Todo en él responde a que la ciudad venía siendo sacudida desde el siglo XVI: los muros son de un espesor enorme, los arcos arrancan bajos desde columnas tan anchas que parecen pilas y el ornato se concentra en la portada de la iglesia, labrada en piedra, tratamiento que sólo comparte con la Escuela de Cristo. Tras el claustro se alza la torre del retiro, patio circular rodeado por dieciocho celdas con retrete y área de estudio propios, a la que se ha llamado el primer edificio de apartamentos de América; la bóveda bajo el noviciado descansa en una sola columna en forma de hongo de tres metros de diámetro. Después de los terremotos de Santa Marta de 1773 la comunidad se trasladó a la nueva capital y el inmueble se vendió: sirvió para secar café y albergó una tintorería antes de que en los años cuarenta comenzara su restauración.',
+      it: 'Avviato nel 1731 e consacrato nel 1736 sotto la direzione di Diego de Porres, fu l\'ultimo convento fondato a Santiago de los Caballeros e il più inventivo. Tutto vi risponde al fatto che la città era stata scossa a più riprese fin dal Cinquecento: le murature sono di spessore enorme, gli archi partono bassi da colonne tanto larghe da sembrare pilastri e l\'ornato si concentra sulla facciata della chiesa, lavorata in pietra, trattamento che condivide solo con l\'Escuela de Cristo. Dietro il chiostro si leva la torre del ritiro, corte circolare cinta da diciotto celle dotate ciascuna di latrina e studiolo, chiamata il primo edificio di appartamenti delle Americhe; la volta sotto il noviziato poggia su un\'unica colonna a fungo di tre metri di diametro. Dopo i terremoti di Santa Marta del 1773 la comunità si trasferì nella nuova capitale e l\'edificio fu venduto: vi si essiccò caffè e vi funzionò una tintoria, prima del restauro avviato negli anni Quaranta.',
+    },
+    context: {
+      body: {
+        en: 'Santiago de los Caballeros was a colonial capital twice relocated after Kaqchikel uprisings and a lahar, and its grid was laid out to centralise Spanish authority over what the record describes as the seventy-three surrounding Indigenous villages and subordinate townships that sustained it. The Capuchin convent belongs to that system: it was licensed by the crown, and its novelty — dropping the dowry requirement that had barred poorer young women from religious life — was a reform inside a colonial church, not outside it. The line of master builders is itself part of the picture. Diego de Porres was the natural son of Joseph de Porres, a mestizo of Santiago who held the same office of maestro mayor before him, so the architecture of the Spanish capital of Central America was designed for two generations by a family of mixed descent formed on its own building sites.',
+        es: 'Santiago de los Caballeros fue una capital colonial trasladada dos veces tras las sublevaciones kaqchikeles y un lahar, y su traza se dispuso para centralizar la autoridad española sobre lo que las fuentes describen como los setenta y tres pueblos indígenas y sujetos del entorno que la sostenían. El convento de Capuchinas pertenece a ese sistema: lo autorizó la corona, y su novedad —suprimir la dote que había impedido la vida religiosa a las jóvenes de escasos recursos— fue una reforma dentro de la iglesia colonial, no fuera de ella. La estirpe de maestros de obras forma parte del cuadro. Diego de Porres era hijo natural de Joseph de Porres, mestizo de Santiago que ocupó antes que él el mismo cargo de maestro mayor: la arquitectura de la capital española de Centroamérica fue proyectada durante dos generaciones por una familia mestiza formada en sus propias obras.',
+        it: 'Santiago de los Caballeros fu una capitale coloniale trasferita due volte dopo le rivolte kaqchikel e un lahar, e il suo impianto fu tracciato per accentrare l\'autorità spagnola su quelli che le fonti descrivono come i settantatré villaggi indigeni e i centri subordinati che la sostenevano. Il convento delle Cappuccine appartiene a quel sistema: fu autorizzato dalla corona, e la sua novità — l\'abolizione della dote che aveva escluso dalla vita religiosa le giovani povere — fu una riforma interna alla chiesa coloniale, non esterna a essa. Anche la stirpe dei capimastri fa parte del quadro. Diego de Porres era figlio naturale di Joseph de Porres, meticcio di Santiago che prima di lui aveva ricoperto la stessa carica di maestro mayor: l\'architettura della capitale spagnola dell\'America centrale fu progettata per due generazioni da una famiglia meticcia formatasi nei suoi stessi cantieri.',
+      },
+      sources: [
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Antigua_Guatemala', title: 'Antigua Guatemala — English Wikipedia', license: 'CC BY-SA 4.0' },
+        { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Diego_de_Porres', title: 'Diego de Porres — Wikipedia en español', license: 'CC BY-SA 4.0' },
+        { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Iglesia_y_convento_de_las_Capuchinas_(Antigua_Guatemala)', title: 'Iglesia y convento de las Capuchinas (Antigua Guatemala) — Wikipedia en español', license: 'CC BY-SA 4.0' },
+      ],
+    },
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q5116750', title: 'Iglesia y convento de las Capuchinas (Q5116750)', license: null },
+      { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Iglesia_y_convento_de_las_Capuchinas_(Antigua_Guatemala)', title: 'Iglesia y convento de las Capuchinas (Antigua Guatemala) — Wikipedia en español', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://whc.unesco.org/en/list/65/', title: 'Antigua Guatemala — UNESCO World Heritage List (inscribed 1979)', license: null },
+    ],
+    tier: 'canon',
+  },
+
+  // ------------------------------------------------------------- 1800 – 1945
+  {
+    id: 'palacio-postal-ciudad-de-mexico',
+    wikidataId: 'Q978161',
+    name: {
+      en: 'Palacio de Correos de México',
+      es: 'Palacio Postal',
+      it: 'Palazzo delle Poste di Città del Messico',
+    },
+    architectId: 'adamo-boari',
+    location: { city: 'Ciudad de México', countryCode: 'MX', lat: 19.4356861, lon: -99.1404 },
+    inception: 1902,
+    completed: 1907,
+    demolished: null,
+    typology: 'civic',
+    materials: ['stone', 'steel-and-glass'],
+    structure: {
+      en: 'A steel-joist frame on a Chicago-type raft — a continuous concrete slab about seventy centimetres thick with 21-inch joists running both ways — carrying a carved chiluca stone envelope and a leaded-glass dome over the light well.',
+      es: 'Estructura de viguetas de acero sobre cimentación tipo Chicago —losa corrida de concreto de unos setenta centímetros con peralte de 21 pulgadas en ambos sentidos— que sostiene una envolvente labrada en cantera de chiluca y un domo de cristal emplomado sobre el cubo de luz.',
+      it: 'Ossatura di travi d\'acciaio su fondazione di tipo Chicago — platea continua in calcestruzzo di circa settanta centimetri con travetti da 21 pollici nei due sensi — che regge un involucro scolpito in pietra di chiluca e una cupola di vetro piombato sul pozzo di luce.',
+    },
+    program: {
+      en: 'The fifth home of the Mexican postal service, built for the Dirección General de Correos when the volume of mail outgrew its quarters beside the Casa de Moneda.',
+      es: 'Quinta sede del correo mexicano, construida para la Dirección General de Correos cuando el volumen de correspondencia desbordó sus locales junto a la Casa de Moneda.',
+      it: 'Quinta sede delle poste messicane, costruita per la Dirección General de Correos quando il volume della corrispondenza superò gli spazi accanto alla Casa de Moneda.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Still a working post office; the top floor has held the navy\'s museum of naval history and culture since 2004.',
+      es: 'Sigue funcionando como oficina de correos; desde 2004 el último piso alberga el Museo de Historia y Cultura Naval de la Secretaría de Marina.',
+      it: 'Funziona ancora come ufficio postale; dal 2004 l\'ultimo piano ospita il Museo di storia e cultura navale della Marina.',
+    },
+    detailRect: { x: 0.26, y: 0.20, w: 0.30, h: 0.28 },
+    image: {
+      commonsFile: 'File:Palacio Postal Version 2.jpg',
+      photographer: 'Thomas Ledl',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Palacio_Postal_Version_2.jpg',
+      width: 1600,
+      height: 1066,
+    },
+    dossier: {
+      en: 'Porfirio Díaz laid the first stone on 14 September 1902 and reopened the building as a post office on 17 February 1907, five years door to door. Boari designed it; the Mexican engineer Gonzalo Garita built it, floating the whole thing on a Chicago-type raft because the site is old lake bed. The result is a fantasy of Isabelline Gothic — mixtilinear arches, twisted colonnettes, florid cresting and an open arcade running along the top — cut in chiluca stone quarried at Santa María Tulpetlac and hung on an American steel frame, with the main front chamfered at the corner. Inside, the iron columns are cased in scagliola, the ceremonial stair is Mexican marble with bronze by the Fonderia Pignone of Florence, and the arcade of the third floor carries the arms of the countries then in the Universal Postal Union. The Hospital de Terceros de San Francisco of 1761 was demolished in 1900 to clear the site.',
+      es: 'Porfirio Díaz colocó la primera piedra el 14 de septiembre de 1902 y devolvió el edificio a la ciudad como oficina de correos el 17 de febrero de 1907: cinco años de obra. Boari lo proyectó; el ingeniero mexicano Gonzalo Garita lo construyó y lo hizo flotar sobre una cimentación tipo Chicago, porque el terreno es antiguo lecho lacustre. El resultado es una fantasía gótico-isabelina —arcos mixtilíneos, columnas entorchadas, cresterías floridas y una arquería abierta que corona la fachada— labrada en chiluca extraída de Santa María Tulpetlac y colgada de un esqueleto de acero norteamericano, con el frente principal achaflanado en la esquina. Dentro, las columnas de hierro van forradas de escayola, la escalinata monumental es de mármoles mexicanos con herrería de bronce de la Fondería Pignone de Florencia, y la arquería del tercer piso ostenta los escudos de los países que integraban entonces la Unión Postal Universal. El Hospital de Terceros de San Francisco, de 1761, fue demolido en 1900 para despejar el solar.',
+      it: 'Porfirio Díaz posò la prima pietra il 14 settembre 1902 e restituì l\'edificio alla città come ufficio postale il 17 febbraio 1907: cinque anni di cantiere. Boari lo progettò; l\'ingegnere messicano Gonzalo Garita lo costruì, facendolo galleggiare su una fondazione di tipo Chicago, perché il suolo è antico fondo lacustre. Il risultato è una fantasia gotico-isabellina — archi mistilinei, colonnine tortili, creste fiorite e un loggiato aperto a coronamento — scolpita nella chiluca cavata a Santa María Tulpetlac e appesa a un\'ossatura d\'acciaio statunitense, con il fronte principale smussato all\'angolo. All\'interno le colonne di ferro sono rivestite di scagliola, lo scalone d\'onore è in marmi messicani con bronzi della Fonderia Pignone di Firenze e il loggiato del terzo piano reca gli stemmi dei paesi allora aderenti all\'Unione postale universale. L\'Hospital de Terceros de San Francisco, del 1761, fu demolito nel 1900 per liberare l\'area.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q978161', title: 'Palacio de Correos de México (Q978161)', license: null },
+      { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Palacio_Postal', title: 'Palacio Postal — Wikipedia en español', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'palacio-de-bellas-artes',
+    wikidataId: 'Q1139081',
+    name: {
+      en: 'Palacio de Bellas Artes',
+      es: 'Palacio de Bellas Artes',
+      it: 'Palacio de Bellas Artes',
+    },
+    architectId: 'adamo-boari',
+    location: { city: 'Ciudad de México', countryCode: 'MX', lat: 19.4352778, lon: -99.1413889 },
+    inception: 1904,
+    completed: 1934,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['stone', 'steel-and-glass'],
+    structure: {
+      en: 'A riveted steel skeleton by Milliken Brothers of New York, calculated by William H. Birkmire, standing on a grillage and a reinforced box of concrete and tezontle, and clad in Carrara marble.',
+      es: 'Esqueleto de acero remachado de Milliken Brothers de Nueva York, calculado por William H. Birkmire, apoyado en un emparrillado y un cajón reforzado de concreto y tezontle, y revestido de mármol de Carrara.',
+      it: 'Scheletro d\'acciaio chiodato della Milliken Brothers di New York, calcolato da William H. Birkmire, poggiato su un graticcio e su un cassone armato di calcestruzzo e tezontle, e rivestito di marmo di Carrara.',
+    },
+    program: {
+      en: 'Commissioned as the new National Theatre for the centenary of independence; it opened as a state arts complex with concert hall, opera house and museums.',
+      es: 'Encargado como nuevo Teatro Nacional para el centenario de la Independencia; abrió como recinto artístico del Estado, con sala de conciertos, ópera y museos.',
+      it: 'Commissionato come nuovo Teatro Nazionale per il centenario dell\'indipendenza; aprì come complesso artistico statale con sala da concerto, teatro d\'opera e musei.',
+    },
+    heritage: 'unesco',
+    currentUse: {
+      en: 'Run by the Instituto Nacional de Bellas Artes y Literatura: opera, dance, concerts, and two museums holding seventeen murals by seven artists.',
+      es: 'Gestionado por el Instituto Nacional de Bellas Artes y Literatura: ópera, danza, conciertos y dos museos que resguardan diecisiete murales de siete artistas.',
+      it: 'Gestito dall\'Instituto Nacional de Bellas Artes y Literatura: opera, danza, concerti e due musei che custodiscono diciassette murali di sette artisti.',
+    },
+    detailRect: { x: 0.22, y: 0.35, w: 0.32, h: 0.25 },
+    image: {
+      commonsFile: 'File:Fachada lateral de Bellas Artes.jpg',
+      photographer: 'Octavio Alonso Maya Castro',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Fachada_lateral_de_Bellas_Artes.jpg',
+      width: 1059,
+      height: 1600,
+    },
+    dossier: {
+      en: 'Work started on 2 August 1904 on the site of the convent of Santa Isabel, disentailed after the Reform laws and by then holding a silk mill and cheap housing for its women workers, all expropriated and demolished. Boari asked Milliken Brothers of New York for the steel, which arrived in June 1906. Then the ground gave way. Subsidence into the montmorillonite clay of the old lake began in 1907 and by 1921 the building had dropped more than 1.80 metres; it still sits well below the street. The Revolution stopped the work, Boari left for Rome in 1916, and Federico Mariscal finished the building between 1932 and 1934, so the marble exterior is Art Nouveau and the interior is Art Deco. The glass ceiling over the centre, showing Apollo and the muses, is by the Hungarian Géza Maróti. It opened on 29 September 1934.',
+      es: 'La obra arrancó el 2 de agosto de 1904 en el solar del convento de Santa Isabel, desamortizado tras las leyes de Reforma y ocupado entonces por una fábrica de seda y viviendas precarias de sus obreras, todo expropiado y demolido. Boari encargó el acero a Milliken Brothers de Nueva York y llegó en junio de 1906. Después cedió el suelo: el hundimiento en las arcillas del antiguo lago se manifestó desde 1907 y en 1921 el edificio había bajado más de 1.80 metros; aún hoy queda muy por debajo del nivel de la calle. La Revolución detuvo los trabajos, Boari partió a Roma en 1916 y Federico Mariscal concluyó el conjunto entre 1932 y 1934, de modo que el exterior de mármol es art nouveau y el interior art déco. El plafón de cristal del centro, con Apolo y las musas, es del húngaro Géza Maróti. Se inauguró el 29 de septiembre de 1934.',
+      it: 'I lavori cominciarono il 2 agosto 1904 sull\'area del convento di Santa Isabel, incamerato dopo le leggi di Riforma e allora occupato da una filanda di seta e da alloggi precari delle sue operaie, tutto espropriato e demolito. Boari ordinò l\'acciaio alla Milliken Brothers di New York e arrivò nel giugno del 1906. Poi cedette il terreno: l\'affondamento nelle argille dell\'antico lago si manifestò dal 1907 e nel 1921 l\'edificio era sceso di oltre 1,80 metri; ancora oggi resta ben sotto il livello stradale. La rivoluzione fermò il cantiere, Boari partì per Roma nel 1916 e Federico Mariscal completò l\'opera fra il 1932 e il 1934: così l\'esterno in marmo è art nouveau e l\'interno art déco. Il soffitto di vetro al centro, con Apollo e le muse, è dell\'ungherese Géza Maróti. Fu inaugurato il 29 settembre 1934.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1139081', title: 'Palacio de Bellas Artes (Q1139081)', license: null },
+      { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Palacio_de_Bellas_Artes_(Ciudad_de_M%C3%A9xico)', title: 'Palacio de Bellas Artes (Ciudad de México) — Wikipedia en español', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'casa-estudio-rivera-kahlo',
+    wikidataId: 'Q6033206',
+    name: {
+      en: 'Diego Rivera and Frida Kahlo Studio Houses',
+      es: 'Casas Estudio de Diego Rivera y Frida Kahlo',
+      it: 'Case-studio di Diego Rivera e Frida Kahlo',
+    },
+    architectId: 'juan-ogorman',
+    location: { city: 'Ciudad de México', countryCode: 'MX', lat: 19.34956, lon: -99.19733 },
+    inception: 1931,
+    completed: 1932,
+    demolished: null,
+    typology: 'domestic',
+    materials: ['concrete', 'brick'],
+    structure: {
+      en: 'Reinforced concrete slabs left unplastered on lightweight piloti, with brick infill, exposed conduit, sheet-asbestos doors in steel frames, a sawtooth studio roof and an external helical concrete stair.',
+      es: 'Losas de concreto armado sin aplanar sobre pilotes ligeros, muros de ladrillo aplanados, instalaciones aparentes, puertas de lámina de asbesto con marco de herrería, techumbre de diente de sierra en el estudio y escalera helicoidal exterior de concreto.',
+      it: 'Solette in cemento armato lasciate a vista su esili pilotis, tamponamenti in mattoni, impianti a vista, porte in lastre di amianto con telaio metallico, copertura a shed sullo studio e scala elicoidale esterna in calcestruzzo.',
+    },
+    program: {
+      en: 'Two independent studio houses on one lot for Diego Rivera and Frida Kahlo, joined only by a bridge at roof level, with a photographic laboratory alongside.',
+      es: 'Dos casas estudio independientes en un mismo predio para Diego Rivera y Frida Kahlo, unidas sólo por un puente a la altura de la azotea, con un laboratorio fotográfico anexo.',
+      it: 'Due case-studio indipendenti sullo stesso lotto per Diego Rivera e Frida Kahlo, unite solo da un ponte al livello del tetto, con annesso un laboratorio fotografico.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Museo Casa Estudio Diego Rivera y Frida Kahlo, open since 1986 and run by the Instituto Nacional de Bellas Artes y Literatura.',
+      es: 'Museo Casa Estudio Diego Rivera y Frida Kahlo, abierto desde 1986 y administrado por el Instituto Nacional de Bellas Artes y Literatura.',
+      it: 'Museo Casa Estudio Diego Rivera y Frida Kahlo, aperto dal 1986 e gestito dall\'Instituto Nacional de Bellas Artes y Literatura.',
+    },
+    detailRect: { x: 0.58, y: 0.40, w: 0.30, h: 0.30 },
+    image: {
+      commonsFile: 'File:Casa Estudio Diego Rivera y Frida Kahlo (2566206309).jpg',
+      photographer: 'Randal Sheppard',
+      license: 'CC BY-SA 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Casa_Estudio_Diego_Rivera_y_Frida_Kahlo_(2566206309).jpg',
+      width: 1600,
+      height: 1200,
+    },
+    dossier: {
+      en: 'At twenty-four Juan O\'Gorman bought two stepped tennis courts in San Ángel and built a house on the lower one, nominally for his father. Diego Rivera saw it, liked it, and was offered the neighbouring court at cost in exchange for the commission. What went up in 1931–32 is two blocks on one site — red and white for the painter, blue for Kahlo — standing apart and touching only at a bridge across the roofs, the whole thing fenced by a hedge of organ cactus. The doctrine is stated without apology: slabs left rough, wiring on the surface, only the brick walls rendered, floor-to-ceiling glazing where a studio needs north light, and the ground floor opened up on slim piles. O\'Gorman summarised it as the minimum of cost and effort for the maximum of use. Rivera moved in from 1934 and died in the studio in 1957.',
+      es: 'A los veinticuatro años Juan O\'Gorman compró dos canchas de tenis escalonadas en San Ángel y levantó en la más baja una casa, nominalmente para su padre. Diego Rivera la vio, le gustó, y el joven arquitecto le ofreció la cancha vecina a precio de costo a cambio del encargo. Lo que se construyó en 1931-1932 son dos bloques en un mismo predio —rojo y blanco para el pintor, azul para Kahlo—, separados y unidos sólo por un puente entre azoteas, todo ello cercado por un seto de órganos. La doctrina se enuncia sin disculpas: losas sin acabado, instalaciones aparentes, aplanado sólo en los muros de ladrillo, cancelería de piso a techo donde un estudio necesita luz del norte y planta baja liberada sobre pilotes esbeltos. O\'Gorman lo resumió como el mínimo de gasto y esfuerzo por el máximo de utilidad. Rivera la habitó desde 1934 y murió en el estudio en 1957.',
+      it: 'A ventiquattro anni Juan O\'Gorman comprò due campi da tennis terrazzati a San Ángel e sul più basso costruì una casa, nominalmente per il padre. Diego Rivera la vide, gli piacque, e il giovane architetto gli offrì il campo attiguo a prezzo di costo in cambio dell\'incarico. Quello che sorse nel 1931-32 sono due blocchi sullo stesso lotto — rosso e bianco per il pittore, azzurro per la Kahlo — distinti e uniti solo da un ponte fra i tetti, il tutto recintato da una siepe di cactus a candelabro. La dottrina è enunciata senza scuse: solette grezze, impianti a vista, intonaco solo sui muri in mattoni, vetrate a tutta altezza dove uno studio chiede luce da nord e piano terra liberato su esili pali. O\'Gorman la riassunse come il minimo di spesa e fatica per il massimo di utilità. Rivera vi abitò dal 1934 e morì nello studio nel 1957.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q6033206', title: 'Museo Casa Estudio Diego Rivera y Frida Kahlo (Q6033206)', license: null },
+      { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Museo_Casa_Estudio_Diego_Rivera_y_Frida_Kahlo', title: 'Museo Casa Estudio Diego Rivera y Frida Kahlo — Wikipedia en español', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+
+  // ------------------------------------------------------------- 1945 – 2000
+  {
+    id: 'biblioteca-central-unam',
+    wikidataId: 'Q5061367',
+    name: {
+      en: 'Central Library, UNAM',
+      es: 'Biblioteca Central de la UNAM',
+      it: 'Biblioteca centrale della UNAM',
+    },
+    architectId: 'juan-ogorman',
+    location: { city: 'Ciudad de México', countryCode: 'MX', lat: 19.3334798, lon: -99.1870958 },
+    inception: 1950,
+    completed: 1956,
+    demolished: null,
+    typology: 'educational',
+    materials: ['concrete', 'stone'],
+    structure: {
+      en: 'A ten-storey concrete stack tower on a masonry plinth of dressed volcanic rubble raised three metres above the lava field, its four windowless flanks faced with 4,000 square metres of natural stone mosaic.',
+      es: 'Torre de acervos de diez niveles de concreto sobre un zócalo de mampostería de piedra braza labrada, elevado tres metros sobre el pedregal, con cuatro costados ciegos revestidos por 4000 metros cuadrados de mosaico de piedras naturales.',
+      it: 'Torre libraria di dieci livelli in calcestruzzo su uno zoccolo di muratura in pietra lavica squadrata, sollevato tre metri sul campo di lava, con quattro fianchi ciechi rivestiti da 4000 metri quadrati di mosaico di pietre naturali.',
+    },
+    program: {
+      en: 'Designed from 1948 for the new university city, first intended to hold the national library and newspaper archive, and opened in 1956 as the campus library.',
+      es: 'Proyectada desde 1948 para la nueva Ciudad Universitaria, pensada al principio para alojar la Biblioteca y la Hemeroteca Nacionales, abrió en 1956 como biblioteca del campus.',
+      it: 'Progettata dal 1948 per la nuova città universitaria, dapprima destinata a ospitare la Biblioteca e l\'Emeroteca nazionali, aprì nel 1956 come biblioteca del campus.',
+    },
+    heritage: 'unesco',
+    currentUse: {
+      en: 'The largest of the 140 libraries of the UNAM, open to the public daily and holding well over a million volumes.',
+      es: 'La mayor de las 140 bibliotecas de la UNAM, abierta al público todos los días y con más de un millón de volúmenes.',
+      it: 'La maggiore delle 140 biblioteche della UNAM, aperta al pubblico tutti i giorni e con oltre un milione di volumi.',
+    },
+    detailRect: { x: 0.28, y: 0.36, w: 0.28, h: 0.30 },
+    image: {
+      commonsFile: 'File:Biblioteca central de la UNAM.jpg',
+      photographer: 'Gomnrz',
+      license: 'CC BY 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Biblioteca_central_de_la_UNAM.jpg',
+      width: 1600,
+      height: 1060,
+    },
+    dossier: {
+      en: 'Juan O\'Gorman designed the library from 1948 with Gustavo María Saavedra and Juan Martínez de Velasco, and it was built from 1950 on sixteen thousand square metres of the Pedregal lava field. The parti is blunt: put the stacks in one windowless block, lift it on a stone plinth, and treat the four blind faces as a single surface. That surface carries "Representación histórica de la cultura", four thousand square metres of mosaic laid in naturally coloured stones gathered across the country, with tinted glass standing in for the blues O\'Gorman could not find. The north wall is the pre-Hispanic past, the south the colony, with the Ptolemaic and Copernican systems set against each other; the east is the Revolution and the atomic present, the west the university itself. Read frontally the whole block reads as a mask of Tláloc. UNESCO inscribed it with the central campus in 2007.',
+      es: 'Juan O\'Gorman proyectó la biblioteca desde 1948 junto con Gustavo María Saavedra y Juan Martínez de Velasco, y se construyó a partir de 1950 sobre dieciséis mil metros cuadrados del pedregal. El partido es tajante: concentrar el acervo en un bloque ciego, levantarlo sobre un zócalo de piedra y tratar las cuatro caras como una sola superficie. Esa superficie lleva la "Representación histórica de la cultura": cuatro mil metros cuadrados de mosaico de piedras de color natural reunidas en todo el país, con vidrio teñido supliendo los azules que O\'Gorman no consiguió. El muro norte es el pasado prehispánico; el sur, la colonia, con los sistemas ptolemaico y copernicano enfrentados; el oriente, la Revolución y el presente atómico; el poniente, la propia universidad. Visto de frente, el bloque entero se lee como una máscara de Tláloc. La Unesco lo inscribió junto con el campus central en 2007.',
+      it: 'Juan O\'Gorman progettò la biblioteca dal 1948 con Gustavo María Saavedra e Juan Martínez de Velasco, e la costruzione partì nel 1950 su sedicimila metri quadrati del campo lavico del Pedregal. Il partito è netto: concentrare i depositi in un blocco cieco, sollevarlo su uno zoccolo di pietra e trattare le quattro facce come una sola superficie. Quella superficie porta la "Representación histórica de la cultura": quattromila metri quadrati di mosaico di pietre dai colori naturali raccolte in tutto il paese, con vetro colorato a supplire gli azzurri che O\'Gorman non trovò. Il muro nord è il passato preispanico; il sud la colonia, con i sistemi tolemaico e copernicano contrapposti; l\'est la rivoluzione e il presente atomico; l\'ovest l\'università stessa. Visto frontalmente, l\'intero blocco si legge come una maschera di Tláloc. L\'Unesco lo ha iscritto con il campus centrale nel 2007.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q5061367', title: 'Biblioteca Central, UNAM (Q5061367)', license: null },
+      { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Biblioteca_Central_(UNAM)', title: 'Biblioteca Central (UNAM) — Wikipedia en español', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://whc.unesco.org/en/list/1250/', title: 'Central University City Campus of the UNAM — UNESCO World Heritage List (inscribed 2007)', license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'casa-luis-barragan',
+    wikidataId: 'Q1046414',
+    name: {
+      en: 'Luis Barragán House and Studio',
+      es: 'Casa-Taller de Luis Barragán',
+      it: 'Casa-studio di Luis Barragán',
+    },
+    architectId: 'luis-barragan',
+    location: { city: 'Ciudad de México', countryCode: 'MX', lat: 19.4111111, lon: -99.1925 },
+    inception: 1948,
+    completed: 1948,
+    demolished: null,
+    typology: 'domestic',
+    materials: ['concrete', 'timber', 'stone'],
+    structure: {
+      en: 'A concrete and rendered-masonry box under a flat roof, its street wall almost blank, with heavy pine beams spanning the tall rooms and floors of volcanic stone; the roof terrace is enclosed by free-standing coloured walls.',
+      es: 'Caja de concreto y mampostería aplanada bajo cubierta plana, con el muro a la calle casi ciego, vigas de pino de gran escuadría salvando las estancias altas y pisos de piedra volcánica; la azotea se cierra con muros de color exentos.',
+      it: 'Scatola in calcestruzzo e muratura intonacata sotto un tetto piano, con il muro sulla strada quasi cieco, travi di pino di forte sezione a coprire le stanze alte e pavimenti in pietra vulcanica; il terrazzo è chiuso da muri colorati autonomi.',
+    },
+    program: {
+      en: 'The architect\'s own house and office, built on land he had bought on the then-modest Calzada Madereros and lived in for forty years.',
+      es: 'Casa y despacho del propio arquitecto, construidos en terrenos que había comprado sobre la entonces modesta Calzada Madereros y que habitó durante cuarenta años.',
+      it: 'Abitazione e studio dell\'architetto stesso, costruiti su terreni acquistati sull\'allora modesta Calzada Madereros e abitati per quarant\'anni.',
+    },
+    heritage: 'unesco',
+    currentUse: {
+      en: 'House museum owned by the Government of Jalisco and the Fundación de Arquitectura Tapatía Luis Barragán, visited only in small guided groups.',
+      es: 'Casa museo, propiedad del gobierno de Jalisco y de la Fundación de Arquitectura Tapatía Luis Barragán, visitable sólo en grupos pequeños con guía.',
+      it: 'Casa museo di proprietà del governo di Jalisco e della Fundación de Arquitectura Tapatía Luis Barragán, visitabile solo in piccoli gruppi guidati.',
+    },
+    detailRect: { x: 0.30, y: 0.37, w: 0.45, h: 0.25 },
+    image: {
+      commonsFile: 'File:Luis Barragan House exterior 02.jpg',
+      photographer: 'Ymblanter',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Luis_Barragan_House_exterior_02.jpg',
+      width: 1381,
+      height: 1600,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Luis Barragán House and Studio Street view.JPG',
+        photographer: 'Thomas Ledl',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Luis_Barrag%C3%A1n_House_and_Studio_Street_view.JPG',
+        width: 1600,
+        height: 1067,
+      },
+    ],
+    dossier: {
+      en: 'Built in 1948 on 1,162 square metres of house and garden, this is the only single building in Latin America on the World Heritage List, inscribed in 2004 as, in UNESCO\'s words, a masterpiece of the modern movement that fuses traditional and vernacular elements with philosophical and artistic currents of every period. From the street it gives almost nothing away: a grey rendered wall, windows placed where rooms need them rather than where a facade would want them, garage doors, and a service entrance. The composition is entirely inward and upward — a sequence of tall rooms, a cantilevered stair without a handrail, a garden allowed to grow wild against the glass, and a roof terrace closed on all sides by free-standing planes of orange, pink and lilac so that nothing but sky is visible from within it. Barragán bought the land in the early 1940s in what was then a working-class district.',
+      es: 'Construida en 1948 sobre 1162 metros cuadrados repartidos entre casa y jardín, es el único inmueble individual de América Latina inscrito en la Lista del Patrimonio Mundial, en 2004, por ser —según la Unesco— una obra maestra del movimiento moderno que integra en una nueva síntesis elementos tradicionales y vernáculos con corrientes filosóficas y artísticas de todos los tiempos. Desde la calle apenas se entrega: un muro aplanado gris, ventanas colocadas donde las piden las habitaciones y no donde las querría una fachada, portones de garaje y un acceso de servicio. La composición es enteramente hacia dentro y hacia arriba: una secuencia de estancias altas, una escalera volada sin barandal, un jardín al que se dejó crecer salvaje contra los cristales y una azotea cerrada por planos exentos de naranja, rosa y lila que no dejan ver más que cielo. Barragán compró el terreno a principios de los cuarenta, en un barrio entonces popular.',
+      it: 'Costruita nel 1948 su 1.162 metri quadrati fra casa e giardino, è l\'unico edificio singolo dell\'America Latina iscritto nella Lista del Patrimonio Mondiale, nel 2004, in quanto — parole dell\'Unesco — capolavoro del movimento moderno che integra in una nuova sintesi elementi tradizionali e vernacolari con correnti filosofiche e artistiche di ogni epoca. Dalla strada quasi non si concede: un muro intonacato grigio, finestre poste dove le chiedono le stanze e non dove le vorrebbe una facciata, portoni di garage e un ingresso di servizio. La composizione è tutta verso l\'interno e verso l\'alto: una sequenza di stanze alte, una scala a sbalzo senza ringhiera, un giardino lasciato crescere selvatico contro i vetri e un terrazzo chiuso da piani autonomi arancioni, rosa e lilla che non lasciano vedere altro che cielo. Barragán acquistò il terreno all\'inizio degli anni Quaranta, in un quartiere allora popolare.',
+    },
+    context: {
+      body: {
+        en: 'Barragán divided his archive in his will. The personal papers stayed in Mexico at this house, now a museum. The professional archive — tens of thousands of drawings, prints, models and files, together with the rights to his name and to photographs of his work — was bought in 1995 by Rolf Fehlbaum, chairman of the Swiss furniture company Vitra, who gave it to his fiancée Federica Zanco; she directs the Barragan Foundation and the material has been held in Switzerland ever since. Repeated attempts to return it to Mexico have stalled. In 2016 the artist Jill Magid made "The Proposal": with the family\'s consent she had a portion of Barragán\'s ashes compressed into a two-carat diamond, set it in an engagement ring, and offered it to Zanco in exchange for the archive. The offer was not accepted and the archive remains in Switzerland.',
+        es: 'Barragán repartió su archivo en el testamento. Los papeles personales quedaron en México, en esta casa, hoy museo. El archivo profesional —decenas de miles de dibujos, grabados, maquetas y expedientes, junto con los derechos sobre su nombre y sobre las fotografías de su obra— fue adquirido en 1995 por Rolf Fehlbaum, presidente de la firma suiza de muebles Vitra, que se lo regaló a su prometida Federica Zanco; ella dirige la Barragan Foundation y el material permanece desde entonces en Suiza. Los intentos de devolverlo a México se han estancado una y otra vez. En 2016 la artista Jill Magid realizó "The Proposal": con el consentimiento de la familia mandó comprimir una porción de las cenizas de Barragán en un diamante de dos quilates, lo montó en un anillo de compromiso y se lo ofreció a Zanco a cambio del archivo. La oferta no fue aceptada y el archivo sigue en Suiza.',
+        it: 'Barragán divise il proprio archivio per testamento. Le carte personali rimasero in Messico, in questa casa, oggi museo. L\'archivio professionale — decine di migliaia di disegni, stampe, modelli e fascicoli, insieme ai diritti sul suo nome e sulle fotografie delle sue opere — fu acquistato nel 1995 da Rolf Fehlbaum, presidente dell\'azienda svizzera di mobili Vitra, che lo donò alla fidanzata Federica Zanco; lei dirige la Barragan Foundation e il materiale è da allora custodito in Svizzera. I tentativi di restituirlo al Messico si sono arenati più volte. Nel 2016 l\'artista Jill Magid realizzò "The Proposal": con il consenso della famiglia fece comprimere una porzione delle ceneri di Barragán in un diamante di due carati, lo montò in un anello di fidanzamento e lo offrì a Zanco in cambio dell\'archivio. L\'offerta non fu accettata e l\'archivio resta in Svizzera.',
+      },
+      sources: [
+        { kind: 'publication', url: 'https://www.dezeen.com/2016/07/29/jill-magid-luis-barragan-remains-turned-into-diamond-trade-for-archive/', title: "Artist turns Luis Barragán's remains into diamond to trade for his archive — Dezeen, 29 July 2016", license: null },
+        { kind: 'publication', url: 'https://sightlinesmag.org/the-proposal-jill-magid', title: "'The Proposal' reveals Jill Magid's art provocation over Luis Barragán's archive — Sightlines", license: null },
+        { kind: 'institution', url: 'https://www.barragan-foundation.org/', title: 'Barragan Foundation, Birsfelden, Switzerland', license: null },
+      ],
+    },
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1046414', title: 'Luis Barragán House and Studio (Q1046414)', license: null },
+      { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Casa_Luis_Barrag%C3%A1n', title: 'Casa Luis Barragán — Wikipedia en español', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://whc.unesco.org/en/list/1136/', title: 'Luis Barragán House and Studio — UNESCO World Heritage List (inscribed 2004)', license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'cuadra-san-cristobal',
+    wikidataId: 'Q55065499',
+    name: {
+      en: 'Cuadra San Cristóbal',
+      es: 'Cuadra San Cristóbal',
+      it: 'Cuadra San Cristóbal',
+    },
+    architectId: 'luis-barragan',
+    location: { city: 'Atizapán de Zaragoza', countryCode: 'MX', lat: 19.5741, lon: -99.2261 },
+    inception: 1966,
+    completed: 1968,
+    demolished: null,
+    typology: 'domestic',
+    materials: ['brick', 'concrete'],
+    structure: {
+      en: 'Rendered masonry planes of no structural ambition, sized and placed to enclose a walled court, with a raised trough spilling water into a horse pool through a wide spout cut in a free-standing wall.',
+      es: 'Planos de mampostería aplanada sin ambición estructural, dimensionados y colocados para cerrar un patio amurallado, con un pilón elevado que vierte agua al abrevadero por una boca ancha abierta en un muro exento.',
+      it: 'Piani di muratura intonacata senza ambizione strutturale, dimensionati e disposti per chiudere una corte murata, con una vasca rialzata che versa acqua nell\'abbeveratoio attraverso una larga bocca aperta in un muro autonomo.',
+    },
+    program: {
+      en: 'An equestrian estate for Folke Egerström: a main house, a two-bedroom guest house, stables, paddocks, a granary and two L-shaped pools, one for people and one for horses.',
+      es: 'Quinta ecuestre para Folke Egerström: casa principal, casa de huéspedes de dos recámaras, caballerizas, corrales, granero y dos albercas en L, una para las personas y otra para los caballos.',
+      it: 'Tenuta equestre per Folke Egerström: casa padronale, foresteria con due camere, scuderie, recinti, granaio e due piscine a L, una per le persone e una per i cavalli.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Still a private house and stable at Los Clubes; visits are by prior arrangement.',
+      es: 'Sigue siendo casa y caballeriza particulares en Los Clubes; las visitas se conciertan con antelación.',
+      it: 'Resta casa e scuderia private a Los Clubes; le visite si concordano in anticipo.',
+    },
+    detailRect: { x: 0.66, y: 0.45, w: 0.20, h: 0.28 },
+    image: {
+      commonsFile: 'File:Cuadra San Cristóbal (17423058118).jpg',
+      photographer: 'Šarūnas Burdulis',
+      license: 'CC BY-SA 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Cuadra_San_Crist%C3%B3bal_(17423058118).jpg',
+      width: 1600,
+      height: 1200,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Cuadra San Cristobal, Mexico City.jpg',
+        photographer: 'Anna Bertho',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Cuadra_San_Cristobal,_Mexico_City.jpg',
+        width: 1600,
+        height: 1067,
+      },
+    ],
+    dossier: {
+      en: 'Folke Egerström, a fellow member of the French riding club nearby, commissioned the estate in 1966; Barragán developed it with his colleague Andrés Casillas and built it in two stages, the stables through 1967 and the house by 1968. The subject is the Mexican hacienda reduced to its irreducible parts. House and stables sit at the edge of a vast walled court, and the court is furnished with almost nothing: a granary, a paddock, a strip of pasture, a pink plane pierced by a doorway, and a broad spout that drops water from a raised trough into the horses\' pool. Nothing is load-bearing that does not need to be, and the composition is calibrated for animals in motion — the walls are set at the distance from which a rider sees them, and the colour changes as the reflected surface of the water moves.',
+      es: 'Folke Egerström, socio del club hípico francés vecino, encargó la quinta en 1966; Barragán la desarrolló con su colaborador Andrés Casillas y la construyó en dos etapas, las caballerizas a lo largo de 1967 y la residencia hacia 1968. El tema es la hacienda mexicana reducida a sus partes irreductibles. Casa y caballerizas se sitúan al borde de un vasto patio amurallado, y el patio se amuebla casi con nada: un granero, un corral, una franja de pastizal, un plano rosa perforado por un vano y una boca ancha que deja caer el agua de un pilón elevado al abrevadero de los caballos. Nada carga que no tenga que cargar, y la composición está calibrada para animales en movimiento: los muros se colocan a la distancia desde la que los ve un jinete, y el color cambia conforme se mueve la superficie reflejante del agua.',
+      it: 'Folke Egerström, socio del vicino circolo ippico francese, commissionò la tenuta nel 1966; Barragán la sviluppò con il collaboratore Andrés Casillas e la costruì in due fasi, le scuderie nel corso del 1967 e la residenza entro il 1968. Il tema è l\'hacienda messicana ridotta alle sue parti irriducibili. Casa e scuderie stanno al margine di una vasta corte murata, e la corte è arredata quasi con nulla: un granaio, un recinto, una striscia di pascolo, un piano rosa forato da un vano e una larga bocca che lascia cadere l\'acqua da una vasca rialzata nell\'abbeveratoio dei cavalli. Nulla porta carichi che non debba portarne, e la composizione è calibrata su animali in movimento: i muri sono posti alla distanza da cui li vede un cavaliere, e il colore muta al muoversi della superficie riflettente dell\'acqua.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q55065499', title: 'Cuadra San Cristóbal (Q55065499)', license: null },
+      { kind: 'institution', url: 'https://www.barragan-foundation.org/works/list/cuadra-san-cristobal', title: 'Cuadra San Cristóbal — Barragan Foundation, catalogue of works', license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'casa-gilardi',
+    wikidataId: 'Q5754223',
+    name: {
+      en: 'Casa Gilardi',
+      es: 'Casa Gilardi',
+      it: 'Casa Gilardi',
+    },
+    architectId: 'luis-barragan',
+    location: { city: 'Ciudad de México', countryCode: 'MX', lat: 19.4141, lon: -99.1862 },
+    inception: 1976,
+    completed: 1976,
+    demolished: null,
+    typology: 'domestic',
+    materials: ['concrete', 'brick'],
+    structure: {
+      en: 'A narrow rendered-masonry house built around a surviving jacaranda, with a top-lit stair, a corridor slotted with vertical openings glazed in onyx-coloured glass, and a red wall carrying the skylight over an indoor pool.',
+      es: 'Casa estrecha de mampostería aplanada construida en torno a una jacaranda preexistente, con escalera de luz cenital, un corredor rasgado por aberturas verticales acristaladas en color ónix y un muro rojo que sujeta el tragaluz sobre una alberca interior.',
+      it: 'Casa stretta in muratura intonacata costruita attorno a una jacaranda preesistente, con scala illuminata dall\'alto, un corridoio inciso da aperture verticali vetrate color onice e un muro rosso che regge il lucernario su una piscina interna.',
+    },
+    program: {
+      en: 'A single-family house for the Gilardi family on a narrow city lot in San Miguel Chapultepec, and the last work Barragán completed.',
+      es: 'Vivienda unifamiliar para la familia Gilardi en un lote estrecho de San Miguel Chapultepec, y la última obra que Barragán llegó a terminar.',
+      it: 'Casa unifamiliare per la famiglia Gilardi su un lotto stretto a San Miguel Chapultepec, e l\'ultima opera che Barragán portò a termine.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Privately owned and still lived in, opened occasionally for exhibitions and booked visits.',
+      es: 'De propiedad privada y todavía habitada, se abre ocasionalmente para exposiciones y visitas concertadas.',
+      it: 'Di proprietà privata e ancora abitata, si apre saltuariamente per mostre e visite su prenotazione.',
+    },
+    detailRect: { x: 0.35, y: 0.62, w: 0.35, h: 0.30 },
+    image: {
+      commonsFile: 'File:Casa Gilardi de Luis Barragán, 2024.jpg',
+      photographer: 'TSolange',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Casa_Gilardi_de_Luis_Barrag%C3%A1n,_2024.jpg',
+      width: 960,
+      height: 1280,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Casa gilardi.jpg',
+        photographer: 'Arudana',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Casa_gilardi.jpg',
+        width: 1600,
+        height: 1200,
+      },
+    ],
+    dossier: {
+      en: 'Designed and built in 1976, Casa Gilardi is the closing statement of Barragán\'s architectural testament, and the least structural building imaginable: what it is made of is colour, sequence and filtered light. The entrance is deliberately plain. A corridor narrows and then widens; a stair without a handrail appears to levitate under a shaft of overhead light; the passage beyond is flooded yellow by a row of vertical slots glazed in onyx-toned glass. At the end a door opens into an austere room holding a small pool, a rough dining table and chairs, where a red wall rises straight out of the water to hold the skylight above it. The plan turns on a mature jacaranda already growing on the lot, which the magenta and white planes of the entrance patio are set up to frame.',
+      es: 'Diseñada y construida en 1976, la Casa Gilardi es el cierre del testamento arquitectónico de Barragán y el edificio menos estructural que quepa imaginar: está hecho de color, secuencia y luz tamizada. La entrada es deliberadamente sencilla. Un pasillo se estrecha y luego se amplía; una escalera sin barandal parece levitar bajo un haz de luz cenital; el corredor siguiente se inunda de amarillo por una serie de aberturas verticales con vidrios de color ónix. Al final, una puerta da paso a un espacio austero que contiene una pequeña alberca, una mesa rústica de comedor y sus sillas, donde un muro rojo emerge directamente del agua para sujetar el tragaluz. La planta gira en torno a una jacaranda ya crecida en el predio, a la que los planos magenta y blancos del patio de acceso están dispuestos para enmarcar.',
+      it: 'Progettata e costruita nel 1976, Casa Gilardi è la chiusa del testamento architettonico di Barragán e l\'edificio meno strutturale che si possa immaginare: è fatto di colore, sequenza e luce filtrata. L\'ingresso è volutamente dimesso. Un corridoio si restringe e poi si allarga; una scala senza ringhiera sembra levitare sotto un fascio di luce zenitale; il passaggio successivo è inondato di giallo da una serie di fenditure verticali vetrate color onice. In fondo una porta immette in uno spazio austero con una piccola piscina, un tavolo rustico e le sue sedie, dove un muro rosso emerge direttamente dall\'acqua a sorreggere il lucernario. La pianta ruota attorno a una jacaranda già adulta sul lotto, che i piani magenta e bianchi del patio d\'ingresso sono disposti a inquadrare.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q5754223', title: 'Casa Gilardi (Q5754223)', license: null },
+      { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Casa_Gilardi', title: 'Casa Gilardi — Wikipedia en español', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'deep',
+  },
+  {
+    id: 'palacio-de-los-deportes-mexico',
+    wikidataId: 'Q301937',
+    name: {
+      en: 'Palacio de los Deportes',
+      es: 'Palacio de los Deportes',
+      it: 'Palacio de los Deportes',
+    },
+    architectId: 'felix-candela',
+    location: { city: 'Ciudad de México', countryCode: 'MX', lat: 19.405278, lon: -99.099722 },
+    inception: 1966,
+    completed: 1968,
+    demolished: null,
+    typology: 'civic',
+    materials: ['concrete', 'mixed'],
+    structure: {
+      en: 'A circular plan roofed by a dome 120 metres across covering some 27,000 square metres: tubular aluminium hyperbolic paraboloids on great steel arches, sheathed in timber boards clad with a weatherproof copper and tin alloy, buttressed by dozens of brick-faced concrete piers.',
+      es: 'Planta circular cubierta por una cúpula de 120 metros de diámetro sobre unos 27 000 metros cuadrados: paraboloides hiperbólicos de aluminio tubular sobre grandes arcos de acero, forrados de tablero de madera revestido con una aleación de cobre y estaño resistente a la intemperie, y contrarrestados por decenas de pilas de concreto aparejadas en ladrillo.',
+      it: 'Pianta circolare coperta da una cupola di 120 metri di diametro su circa 27.000 metri quadrati: paraboloidi iperbolici in alluminio tubolare su grandi archi d\'acciaio, rivestiti di tavolato ligneo e di una lega di rame e stagno resistente alle intemperie, controspinti da decine di pile in calcestruzzo rivestite in mattoni.',
+    },
+    program: {
+      en: 'Built by the contractor ICA as the basketball venue of the 1968 Olympic Games, and designed from the start for boxing, wrestling, cycling, exhibitions and shows.',
+      es: 'Construido por ICA como sede del baloncesto de los Juegos Olímpicos de 1968, y proyectado desde el principio para boxeo, lucha, ciclismo, exposiciones y espectáculos.',
+      it: 'Costruito dall\'impresa ICA come sede del basket dei Giochi Olimpici del 1968, e progettato fin dall\'inizio per pugilato, lotta, ciclismo, mostre e spettacoli.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'A 20,000-seat arena within the Magdalena Mixhuca sports city, operated under concession for concerts, fairs and exhibitions.',
+      es: 'Arena de 20 000 asientos dentro de la Ciudad Deportiva Magdalena Mixhuca, operada en concesión para conciertos, ferias y exposiciones.',
+      it: 'Arena da 20.000 posti nella città sportiva Magdalena Mixhuca, gestita in concessione per concerti, fiere ed esposizioni.',
+    },
+    detailRect: { x: 0.22, y: 0.20, w: 0.30, h: 0.28 },
+    image: {
+      commonsFile: 'File:PalacioDeportesMex.JPG',
+      photographer: 'AlejandroLinaresGarcia',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:PalacioDeportesMex.JPG',
+      width: 1600,
+      height: 1071,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Vista aérea del Palacio de los Deportes 01.jpg',
+        photographer: 'ProtoplasmaKid',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Vista_a%C3%A9rea_del_Palacio_de_los_Deportes_01.jpg',
+        width: 1600,
+        height: 900,
+      },
+    ],
+    dossier: {
+      en: 'Construction ran from 15 October 1966 to September 1968, 714 days with Álvaro Sánchez as resident engineer, and the design was wind- and earthquake-tested before a single pier went in. Candela worked here with Antonio Peyrí and Enrique Castañeda Tamborrel, and with Nervi\'s Roman sports halls of 1960 clearly in view, but the solution is his own: the same hyperbolic paraboloid he had spent twenty years casting in thin concrete, this time built in tubular aluminium and skinned in copper alloy over timber, because a shell that size in concrete would have been unbuildable. The result is a faceted dome that reads as a tent pegged to the ground, its diamond panels catching the sun so variously that an American magazine called it the palace of a thousand suns before it was finished. Mathias Goeritz\'s sculpture "Osa Mayor" stands outside.',
+      es: 'La construcción corrió del 15 de octubre de 1966 a septiembre de 1968 —714 días, con Álvaro Sánchez como ingeniero residente— y el proyecto se sometió a pruebas de viento y sismo antes de colar la primera pila. Candela trabajó aquí con Antonio Peyrí y Enrique Castañeda Tamborrel, y con los palacios deportivos romanos de Nervi de 1960 a la vista, pero la solución es suya: el mismo paraboloide hiperbólico que llevaba veinte años colando en cascarones delgados, construido ahora en aluminio tubular y forrado de aleación de cobre sobre madera, porque un cascarón de concreto de ese tamaño habría sido irrealizable. El resultado es una cúpula facetada que se lee como una carpa anclada al suelo, con paños romboidales que devuelven la luz de forma tan cambiante que una revista estadounidense lo llamó el palacio de los mil soles antes de que estuviera terminado. Afuera se levanta la Osa Mayor de Mathias Goeritz.',
+      it: 'Il cantiere andò dal 15 ottobre 1966 al settembre 1968 — 714 giorni, con Álvaro Sánchez ingegnere residente — e il progetto fu sottoposto a prove di vento e di sisma prima di gettare la prima pila. Candela lavorò qui con Antonio Peyrí ed Enrique Castañeda Tamborrel, e con i palazzetti romani di Nervi del 1960 ben presenti, ma la soluzione è sua: lo stesso paraboloide iperbolico che da vent\'anni gettava in gusci sottili, costruito stavolta in alluminio tubolare e rivestito di lega di rame su tavolato, perché un guscio di calcestruzzo di quella luce sarebbe stato irrealizzabile. Ne risulta una cupola sfaccettata che si legge come una tenda ancorata al suolo, con specchiature romboidali che rimandano la luce in modo così mutevole che una rivista statunitense lo chiamò il palazzo dei mille soli prima ancora che fosse finito. All\'esterno si leva l\'Osa Mayor di Mathias Goeritz.',
+    },
+    context: {
+      body: {
+        en: 'The building was inaugurated by President Gustavo Díaz Ordaz on 13 September 1968 and opened its programme on 8 October with Maurice Béjart\'s company, part of the Cultural Olympiad. Six days before that performance, on 2 October 1968, security forces fired on a student demonstration in the Plaza de las Tres Culturas at Tlatelolco, ten days before the Games opened. Casualty figures remain contested: the government of the day reported a few dozen deaths, the researcher Kate Doyle has documented 44, and estimates of 300 to 400 are widely cited; more than a thousand were injured and 1,345 arrested. President Zedillo authorised a congressional investigation in 1998, Vicente Fox released classified files in 2001 and appointed a special prosecutor in 2002, and former president Luis Echeverría was arrested on genocide charges in 2006; the charges were dismissed in March 2009 for insufficient evidence. Mexico has marked 2 October as a day of national mourning since 2009.',
+        es: 'El edificio fue inaugurado por el presidente Gustavo Díaz Ordaz el 13 de septiembre de 1968 y abrió su programa el 8 de octubre con la compañía de Maurice Béjart, dentro de la Olimpiada Cultural. Seis días antes de esa función, el 2 de octubre de 1968, las fuerzas de seguridad dispararon contra una manifestación estudiantil en la Plaza de las Tres Culturas de Tlatelolco, diez días antes de la apertura de los Juegos. Las cifras de víctimas siguen en disputa: el gobierno de entonces reportó algunas decenas de muertos, la investigadora Kate Doyle ha documentado 44 y se citan con frecuencia estimaciones de 300 a 400; hubo más de mil heridos y 1345 detenidos. El presidente Zedillo autorizó una investigación legislativa en 1998, Vicente Fox desclasificó expedientes en 2001 y nombró un fiscal especial en 2002, y el expresidente Luis Echeverría fue detenido en 2006 por genocidio; los cargos se desecharon en marzo de 2009 por falta de pruebas. Desde 2009 el 2 de octubre es día de luto nacional.',
+        it: 'L\'edificio fu inaugurato dal presidente Gustavo Díaz Ordaz il 13 settembre 1968 e aprì il proprio cartellone l\'8 ottobre con la compagnia di Maurice Béjart, nell\'ambito dell\'Olimpiade culturale. Sei giorni prima di quello spettacolo, il 2 ottobre 1968, le forze di sicurezza spararono su una manifestazione studentesca nella Plaza de las Tres Culturas di Tlatelolco, dieci giorni prima dell\'apertura dei Giochi. Il bilancio delle vittime resta conteso: il governo dell\'epoca riferì poche decine di morti, la ricercatrice Kate Doyle ne ha documentati 44 e si citano spesso stime di 300-400; i feriti furono oltre mille e gli arrestati 1.345. Il presidente Zedillo autorizzò un\'inchiesta parlamentare nel 1998, Vicente Fox declassificò gli atti nel 2001 e nominò un procuratore speciale nel 2002, e l\'ex presidente Luis Echeverría fu arrestato nel 2006 con l\'accusa di genocidio; le accuse furono archiviate nel marzo del 2009 per insufficienza di prove. Dal 2009 il 2 ottobre è giornata di lutto nazionale.',
+      },
+      sources: [
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Tlatelolco_massacre', title: 'Tlatelolco massacre — English Wikipedia', license: 'CC BY-SA 4.0' },
+        { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Palacio_de_los_Deportes_(M%C3%A9xico)', title: 'Palacio de los Deportes (México) — Wikipedia en español', license: 'CC BY-SA 4.0' },
+      ],
+    },
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q301937', title: 'Palacio de los Deportes (Q301937)', license: null },
+      { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Palacio_de_los_Deportes_(M%C3%A9xico)', title: 'Palacio de los Deportes (México) — Wikipedia en español', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'los-manantiales',
+    wikidataId: 'Q118083403',
+    name: {
+      en: 'Los Manantiales Restaurant',
+      es: 'Restaurante Los Manantiales',
+      it: 'Ristorante Los Manantiales',
+    },
+    architectId: 'felix-candela',
+    location: { city: 'Xochimilco, Ciudad de México', countryCode: 'MX', lat: 19.24857, lon: -99.09286 },
+    inception: 1958,
+    completed: 1958,
+    demolished: null,
+    typology: 'commercial',
+    materials: ['concrete'],
+    structure: {
+      en: 'A circular groin vault of four intersecting hyperbolic-paraboloid shells, cast only four centimetres thick with steel reinforcement, its eight petal-like edges rising clear of any columns from a single slender base ring.',
+      es: 'Bóveda de arista circular de cuatro paraboloides hiperbólicos que se cruzan, colada en apenas cuatro centímetros de espesor con armado de acero, cuyos ocho bordes en pétalo se elevan sin columna alguna desde un único anillo de apoyo esbelto.',
+      it: "Volta a crociera circolare di quattro paraboloidi iperbolici che si intersecano, gettata in appena quattro centimetri di spessore con armatura d'acciaio, i cui otto bordi a petalo si elevano senza alcuna colonna da un unico anello di base sottile.",
+    },
+    program: {
+      en: 'A restaurant built beside the chinampa canals of Xochimilco for the restaurateur and engineer Joaquín Álvarez Ordóñez, who is credited as architect of record on some official documentation even though the shell — the entire design — is Candela’s.',
+      es: 'Restaurante construido junto a los canales de chinampas de Xochimilco para el restaurantero e ingeniero Joaquín Álvarez Ordóñez, a quien parte de la documentación oficial acredita como arquitecto responsable, aunque el cascarón —el proyecto entero— es de Candela.',
+      it: "Ristorante costruito accanto ai canali delle chinampas di Xochimilco per il ristoratore e ingegnere Joaquín Álvarez Ordóñez, accreditato come architetto responsabile in parte della documentazione ufficiale, sebbene il guscio — l'intero progetto — sia di Candela.",
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Restored after 2017 earthquake damage under a national reconstruction plan; reopened as a restaurant and reception venue, though still awaiting a full landscape and access restoration.',
+      es: 'Restaurado tras los daños del sismo de 2017 dentro de un plan nacional de reconstrucción; reabierto como restaurante y salón de recepciones, aunque aún a la espera de una restauración completa del entorno paisajístico y del acceso.',
+      it: 'Restaurato dopo i danni del terremoto del 2017 nell’ambito di un piano nazionale di ricostruzione; riaperto come ristorante e sala per ricevimenti, sebbene sia ancora in attesa di un restauro completo del paesaggio circostante e dell’accesso.',
+    },
+    detailRect: { x: 0.28, y: 0.28, w: 0.34, h: 0.32 },
+    image: {
+      commonsFile: 'File:Restaurante Los Manantiales 07.jpg',
+      photographer: 'Dge',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Restaurante_Los_Manantiales_07.jpg',
+      width: 1600,
+      height: 1200,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Restaurante Los Manantiales 02.jpg',
+        photographer: 'Dge',
+        license: 'CC BY-SA 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Restaurante_Los_Manantiales_02.jpg',
+        width: 1600,
+        height: 1200,
+      },
+    ],
+    dossier: {
+      en: 'Félix Candela was already Mexico’s busiest shell-builder in 1958 when the engineer and restaurateur Joaquín Álvarez Ordóñez commissioned a new dining room beside the chinampa canals of Xochimilco, replacing a wooden restaurant on the same site. Candela drew four hyperbolic-paraboloid shells intersecting on a circular plan, their curved edges free of any perimeter beam, so the whole roof reads as an eight-pointed flower resting on a single ring of glazing at ground level; the concrete itself is only about four centimetres thick, reinforced with a fine steel mesh. Some official records list Álvarez Ordóñez as architect of record, but Candela’s own account of the design, and the architectural literature since, treat the shell as entirely his — usually cited as his most complete built statement of the geometry he spent a career refining. The 2017 Puebla earthquake cracked the shell badly; a federal reconstruction programme with UNAM’s Instituto de Ingeniería repaired roughly a kilometre of cracking and rebuilt two damaged vault segments, completed in 2024.',
+      es: 'Félix Candela era ya el constructor de cascarones más activo de México cuando, en 1958, el ingeniero y restaurantero Joaquín Álvarez Ordóñez le encargó un nuevo comedor junto a los canales de chinampas de Xochimilco, en sustitución de un restaurante de madera del mismo predio. Candela trazó cuatro paraboloides hiperbólicos que se cruzan sobre planta circular, con los bordes curvos libres de cualquier viga perimetral, de modo que toda la cubierta se lee como una flor de ocho puntas apoyada en un único anillo de vidrio a ras de suelo; el concreto mismo tiene apenas unos cuatro centímetros de espesor, armado con malla de acero fina. Parte de la documentación oficial acredita a Álvarez Ordóñez como arquitecto responsable, pero el propio relato de Candela sobre el proyecto, y la bibliografía de arquitectura desde entonces, tratan el cascarón como enteramente suyo: se le cita habitualmente como su declaración construida más completa de la geometría que perfeccionó durante toda su carrera. El sismo de Puebla de 2017 agrietó gravemente el cascarón; un programa federal de reconstrucción con el Instituto de Ingeniería de la UNAM reparó cerca de un kilómetro de grietas y reconstruyó dos tramos dañados de la bóveda, concluido en 2024.',
+      it: "Félix Candela era già il più attivo costruttore di gusci del Messico quando, nel 1958, l'ingegnere e ristoratore Joaquín Álvarez Ordóñez gli commissionò una nuova sala da pranzo accanto ai canali delle chinampas di Xochimilco, in sostituzione di un ristorante in legno sullo stesso terreno. Candela tracciò quattro paraboloidi iperbolici che si intersecano su pianta circolare, con i bordi curvi liberi da qualsiasi trave perimetrale, cosicché l'intera copertura si legge come un fiore a otto punte appoggiato su un unico anello vetrato a livello del suolo; il calcestruzzo stesso è spesso appena quattro centimetri, armato con una fine rete d'acciaio. Parte della documentazione ufficiale accredita Álvarez Ordóñez come architetto responsabile, ma il resoconto dello stesso Candela sul progetto, e la letteratura architettonica successiva, trattano il guscio come interamente suo: viene citato di solito come la sua dichiarazione costruita più completa della geometria che perfezionò per tutta la carriera. Il terremoto di Puebla del 2017 lesionò gravemente il guscio; un programma federale di ricostruzione con l'Instituto de Ingeniería dell'UNAM ha riparato circa un chilometro di fessurazioni e ricostruito due tratti danneggiati della volta, completato nel 2024.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q118083403', title: 'Restaurante Los Manantiales (Q118083403)', license: null },
+      { kind: 'publication', url: 'https://www.archdaily.com/496202/ad-classics-los-manantiales-felix-candela', title: 'AD Classics: Los Manantiales / Félix Candela — ArchDaily', license: null },
+      { kind: 'publication', url: 'https://mexicocity.cdmx.gob.mx/venues/manantieles-xochimilco-ruin/?lang=en', title: 'Los Manantiales de Xochimilco — Mexico City venue guide', license: null },
+      { kind: 'publication', url: 'https://mvsnoticias.com/nacional/cdmx/2024/11/25/se-logra-restauracion-de-los-manantiales-de-xochimilco-tras-sismo-del-2017-661012.html', title: 'Se logra restauración de "Los Manantiales de Xochimilco" tras sismo del 2017 — MVS Noticias', license: null },
+    ],
+    tier: 'canon',
+  },
+
+  // ------------------------------------------------------------- post-2000
+  {
+    id: 'la-tallera-siqueiros',
+    wikidataId: 'Q16587831',
+    name: {
+      en: 'La Tallera',
+      es: 'La Tallera',
+      it: 'La Tallera',
+    },
+    architectId: 'frida-escobedo',
+    location: { city: 'Cuernavaca', countryCode: 'MX', lat: 18.932002, lon: -99.204872 },
+    inception: 2010,
+    completed: 2012,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['concrete'],
+    structure: {
+      en: 'The 1965 mural workshop kept as found, wrapped in new perforated concrete-block screens that carry no load but filter light and air, with two of Siqueiros\' mural panels unbolted and rotated to close a new plaza.',
+      es: 'El taller de muralismo de 1965 conservado tal cual, envuelto en nuevas celosías de bloque de concreto perforado que no cargan nada pero tamizan luz y aire, con dos de los tableros murales de Siqueiros desmontados y girados para cerrar una plaza nueva.',
+      it: 'Il laboratorio di muralismo del 1965 conservato com\'era, avvolto da nuove grate di blocchi di calcestruzzo forato che non portano carichi ma filtrano luce e aria, con due dei pannelli murali di Siqueiros smontati e ruotati a chiudere una nuova piazza.',
+    },
+    program: {
+      en: 'Rehabilitation of David Alfaro Siqueiros\' workshop and last home into a public museum and centre for contemporary art, run with the Sala de Arte Público Siqueiros.',
+      es: 'Rehabilitación del taller y última vivienda de David Alfaro Siqueiros como museo público y centro de arte contemporáneo, operado con la Sala de Arte Público Siqueiros.',
+      it: 'Riabilitazione del laboratorio e ultima abitazione di David Alfaro Siqueiros in museo pubblico e centro d\'arte contemporanea, gestito insieme alla Sala de Arte Público Siqueiros.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Museum, artists\' residency and public art centre in Cuernavaca, open to visitors.',
+      es: 'Museo, residencia de artistas y centro de arte público en Cuernavaca, abierto al público.',
+      it: 'Museo, residenza per artisti e centro d\'arte pubblica a Cuernavaca, aperto ai visitatori.',
+    },
+    detailRect: { x: 0.40, y: 0.26, w: 0.28, h: 0.32 },
+    image: {
+      commonsFile: 'File:Fachada de La Tallera 01.jpg',
+      photographer: 'TSolange',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Fachada_de_La_Tallera_01.jpg',
+      width: 1600,
+      height: 1200,
+    },
+    dossier: {
+      en: 'David Alfaro Siqueiros built La Tallera in 1965 as what he called the first workshop for muralism anywhere — a great barn of a shed lit from above, stocked with mobile scaffolding, laboratories for testing pigments, film cameras — and lived in it for the last nine years of his life. Frida Escobedo\'s rehabilitation, begun in 2010 and opened in 2012, refuses the white cube. Her single decisive move was to unbolt two of the enormous mural panels standing in the courtyard and swing them out of their original alignment, so that the museum\'s private yard becomes a public plaza and the murals now address the street. Around the workshop she wrapped screens of perforated concrete block, which shade the building, ventilate it and print a shifting lattice of light across it. The paintings are treated as a civic possession rather than an exhibit.',
+      es: 'David Alfaro Siqueiros construyó La Tallera en 1965 como lo que él llamó el primer taller de muralismo del mundo —un granero inmenso iluminado desde arriba, con andamios supermóviles, laboratorios para probar pigmentos y cámaras de cine— y la habitó los últimos nueve años de su vida. La rehabilitación de Frida Escobedo, iniciada en 2010 e inaugurada en 2012, se niega al cubo blanco. Su única jugada decisiva fue desmontar dos de los enormes tableros murales que ocupaban el patio y girarlos fuera de su alineación original, de modo que el patio privado del museo se convirtiera en plaza pública y los murales quedaran dirigidos a la calle. Alrededor del taller envolvió celosías de bloque de concreto perforado que sombrean el edificio, lo ventilan y le imprimen un enrejado de luz que se mueve durante el día. La pintura queda tratada como bien cívico y no como pieza en exhibición.',
+      it: 'David Alfaro Siqueiros costruì La Tallera nel 1965 come quello che chiamava il primo laboratorio di muralismo al mondo — un immenso capannone illuminato dall\'alto, con ponteggi supermobili, laboratori per provare i pigmenti e macchine da presa — e vi abitò gli ultimi nove anni di vita. La riabilitazione di Frida Escobedo, avviata nel 2010 e inaugurata nel 2012, rifiuta il cubo bianco. La sua unica mossa decisiva è stata smontare due degli enormi pannelli murali che occupavano il cortile e ruotarli fuori dall\'allineamento originario, così che il cortile privato del museo diventasse piazza pubblica e i murales si rivolgessero alla strada. Attorno al laboratorio ha avvolto grate di blocchi di calcestruzzo forato che ombreggiano l\'edificio, lo ventilano e vi stampano un reticolo di luce che si sposta nell\'arco del giorno. La pittura è trattata come bene civico e non come pezzo esposto.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q16587831', title: 'La Tallera (Q16587831)', license: null },
+      { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/La_Tallera', title: 'La Tallera — Wikipedia en español', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'deep',
+  },
+  {
+    id: 'centro-academico-cultural-san-pablo',
+    wikidataId: 'Q16545613',
+    name: {
+      en: 'San Pablo Academic and Cultural Centre',
+      es: 'Centro Académico y Cultural San Pablo',
+      it: 'Centro accademico e culturale San Pablo',
+    },
+    architectId: 'gabriela-carrillo',
+    // Equal "+" credit per the building's own cited ArchDaily source
+    // ("Mauricio Rocha + Gabriela Carrillo") — added via coArchitects
+    // rather than swapping architectId, which would drop this slice's
+    // gender ratio below its floor (task-9 review, Important #2 / Minor #1).
+    coArchitects: ['mauricio-rocha'],
+    location: { city: 'Oaxaca de Juárez', countryCode: 'MX', lat: 17.0612528, lon: -96.7221694 },
+    inception: 2008,
+    completed: 2011,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['stone', 'steel-and-glass'],
+    structure: {
+      en: 'The sixteenth-century Dominican fabric consolidated and left legible, with new elements kept structurally independent: white rendered volumes, a steel-and-glass envelope closing the cloister arcade, and paving of brick laid open so that grass grows through the joints.',
+      es: 'La fábrica dominica del siglo XVI consolidada y dejada legible, con elementos nuevos estructuralmente independientes: volúmenes blancos aplanados, una envolvente de acero y cristal que cierra la arquería del claustro y un solado de ladrillo tendido abierto para que el pasto crezca en las juntas.',
+      it: 'La fabbrica domenicana del Cinquecento consolidata e lasciata leggibile, con elementi nuovi strutturalmente indipendenti: volumi bianchi intonacati, un involucro di acciaio e vetro che chiude il loggiato del chiostro e una pavimentazione in mattoni posata aperta perché l\'erba cresca nei giunti.',
+    },
+    program: {
+      en: 'Rehabilitation of the ex-convent of San Pablo for the Fundación Alfredo Harp Helú Oaxaca as classrooms, exhibition rooms, offices and the Juan de Córdova research library.',
+      es: 'Rehabilitación del ex convento de San Pablo para la Fundación Alfredo Harp Helú Oaxaca como aulas, salas de exposición, oficinas y la Biblioteca de Investigación Juan de Córdova.',
+      it: 'Riabilitazione dell\'ex convento di San Pablo per la Fundación Alfredo Harp Helú Oaxaca come aule, sale espositive, uffici e la biblioteca di ricerca Juan de Córdova.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'A public academic and cultural centre devoted to the languages, history and material culture of Oaxaca and Mesoamerica, with a public research library.',
+      es: 'Centro académico y cultural público dedicado a las lenguas, la historia y la cultura material de Oaxaca y Mesoamérica, con biblioteca de investigación de acceso público.',
+      it: 'Centro accademico e culturale pubblico dedicato alle lingue, alla storia e alla cultura materiale di Oaxaca e della Mesoamerica, con biblioteca di ricerca ad accesso pubblico.',
+    },
+    detailRect: { x: 0.28, y: 0.20, w: 0.30, h: 0.32 },
+    image: {
+      commonsFile: 'File:Centro Académico y Cultural San Pablo 08.jpg',
+      photographer: 'ProtoplasmaKid',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Centro_Acad%C3%A9mico_y_Cultural_San_Pablo_08.jpg',
+      width: 1600,
+      height: 1071,
+    },
+    dossier: {
+      en: 'The first Dominican convent in Oaxaca had been swallowed by four centuries of subdivision — shops, tenements, a cinema — when the Fundación Alfredo Harp Helú bought it in 2005 and commissioned a rescue in 2008 from the Taller de Arquitectura of Mauricio Rocha, where Gabriela Carrillo was directing projects and with whom the office has been jointly named since 2012. The strategy was subtraction before addition: strip the accretions, recover about ninety per cent of the upper and lower corridors, and leave the sixteenth-century stone visible and unrestored where it survives. What is new declares itself as new — white rendered volumes with deep recessed openings, a curtain of steel and glass hung inside the cloister arcade so the courtyard can be used year-round, and open brick paving through which grass grows. It opened on 26 November 2011.',
+      es: 'El primer convento dominico de Oaxaca había quedado devorado por cuatro siglos de subdivisión —comercios, vecindades, un cine— cuando la Fundación Alfredo Harp Helú lo compró en 2005 y encargó en 2008 su rescate al Taller de Arquitectura de Mauricio Rocha, donde Gabriela Carrillo dirigía los proyectos y con quien la oficina comparte nombre desde 2012. La estrategia fue restar antes que sumar: retirar los añadidos, recuperar cerca del noventa por ciento de los corredores altos y bajos y dejar a la vista, sin restaurar, la piedra del siglo XVI que sobrevivía. Lo nuevo se declara nuevo: volúmenes blancos aplanados con vanos profundamente rehundidos, una cortina de acero y cristal montada por dentro de la arquería del claustro para poder usar el patio todo el año, y un solado de ladrillo abierto por el que crece el pasto. Abrió el 26 de noviembre de 2011.',
+      it: 'Il primo convento domenicano di Oaxaca era stato inghiottito da quattro secoli di frazionamenti — botteghe, case popolari, un cinema — quando la Fundación Alfredo Harp Helú lo acquistò nel 2005 e nel 2008 ne affidò il recupero al Taller de Arquitectura di Mauricio Rocha, dove Gabriela Carrillo dirigeva i progetti e con cui lo studio condivide il nome dal 2012. La strategia fu sottrarre prima di aggiungere: rimuovere le superfetazioni, recuperare circa il novanta per cento dei corridoi superiori e inferiori e lasciare a vista, non restaurata, la pietra cinquecentesca superstite. Ciò che è nuovo si dichiara nuovo: volumi bianchi intonacati con aperture profondamente incassate, una cortina di acciaio e vetro montata all\'interno del loggiato del chiostro per usare la corte tutto l\'anno, e una pavimentazione in mattoni aperta da cui cresce l\'erba. Aprì il 26 novembre 2011.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q16545613', title: 'Centro Académico y Cultural San Pablo (Q16545613)', license: null },
+      { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Centro_Acad%C3%A9mico_y_Cultural_San_Pablo', title: 'Centro Académico y Cultural San Pablo — Wikipedia en español', license: 'CC BY-SA 4.0' },
+      { kind: 'publication', url: 'https://www.archdaily.com/785414/san-pablo-academic-and-cultural-center-taller-de-arquitectura-mauricio-rocha-plus-gabriela-carrillo', title: 'San Pablo Academic and Cultural Center / Taller de Arquitectura Mauricio Rocha + Gabriela Carrillo — ArchDaily', license: null },
+    ],
+    tier: 'deep',
+  },
+  {
+    id: 'iglesia-el-rosario-san-salvador',
+    wikidataId: 'Q42808859',
+    name: {
+      en: 'Church of the Rosary, San Salvador',
+      es: 'Iglesia El Rosario',
+      it: 'Chiesa del Rosario di San Salvador',
+    },
+    architectId: 'ruben-martinez-bulnes',
+    location: { city: 'San Salvador', countryCode: 'SV', lat: 13.697372, lon: -89.188511 },
+    inception: 1964,
+    completed: 1971,
+    demolished: null,
+    typology: 'sacral',
+    materials: ['concrete'],
+    structure: {
+      en: 'A single unpillared nave under a folded, arch-shaped concrete roof rising from a low rear wall to a tall street front, its flanks perforated by a grid of deep concrete coffers filled with fragments of coloured glass set directly into cement rather than leaded stained glass.',
+      es: 'Una sola nave sin pilares bajo una cubierta de concreto plegada en forma de arco, que se eleva desde un muro trasero bajo hasta un frente alto sobre la calle, con los costados horadados por una retícula de profundos casetones de concreto rellenos de fragmentos de vidrio de color engastados directamente en cemento en vez de vidrieras emplomadas.',
+      it: 'Un\'unica navata priva di pilastri sotto una copertura di calcestruzzo piegata a arco, che sale da un muro posteriore basso fino a un fronte alto sulla strada, con i fianchi forati da una griglia di profondi cassettoni di calcestruzzo riempiti di frammenti di vetro colorato inglobati direttamente nel cemento anziché da vetrate piombate.',
+    },
+    program: {
+      en: 'Commissioned in 1962 by the Dominican parish to replace an outgrown wooden church on the site of San Salvador\'s original parish and first cathedral.',
+      es: 'Encargada en 1962 por la parroquia dominica para sustituir una iglesia de madera ya insuficiente, en el sitio de la parroquia original y primera catedral de San Salvador.',
+      it: 'Commissionata nel 1962 dalla parrocchia domenicana per sostituire una chiesa di legno ormai insufficiente, nel sito della parrocchia originaria e prima cattedrale di San Salvador.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'An active Catholic parish church in San Salvador\'s historic centre, and one of the city\'s most-photographed modern landmarks.',
+      es: 'Iglesia parroquial católica activa en el centro histórico de San Salvador, y uno de los hitos modernos más fotografiados de la ciudad.',
+      it: 'Chiesa parrocchiale cattolica attiva nel centro storico di San Salvador, e uno dei simboli moderni più fotografati della città.',
+    },
+    detailRect: { x: 0.34, y: 0.2, w: 0.3, h: 0.3 },
+    image: {
+      commonsFile: 'File:Iglesia El Rosario, San Salvador.JPG',
+      photographer: 'BelenM',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Iglesia_El_Rosario,_San_Salvador.JPG',
+      width: 1600,
+      height: 900,
+    },
+    dossier: {
+      en: 'In 1962 the Dominican friar Alejandro Peinador asked the architect and sculptor Rubén Martínez Bulnes to replace the wooden parish church standing on the site of San Salvador\'s original parish, later its first cathedral. Martínez broke deliberately with the Latin- and Greek-cross plans customary in the city: a single unpillared nave, arched like a folded wing, puts every worshipper in sight of the altar, answering the Second Vatican Council\'s call for a church that faces the people rather than fleeing from God, in his own words. Local church authorities balked at the plans; approval came instead from the Vatican. Construction ran from 1964 to June 1971. The exposed-concrete walls are perforated by a grid of deep coffers that the Spanish Dominican Domingo Iturgaiz filled with fragments of coloured glass set directly into cement, and a Way of the Cross in black iron over concrete and pumice ends at a spiralling risen Christ. The church holds the remains of the priest José Matías Delgado, a leader of Central American independence. It was declared a Historic Site of the Republic in 1972 and a Cultural Property of El Salvador in 2015.',
+      es: 'En 1962 el fraile dominico Alejandro Peinador encargó al arquitecto y escultor Rubén Martínez Bulnes sustituir la iglesia parroquial de madera situada en el sitio de la parroquia original de San Salvador, luego su primera catedral. Martínez rompió deliberadamente con las plantas de cruz latina y griega habituales en la ciudad: una sola nave sin pilares, arqueada como un ala plegada, pone a todos los fieles a la vista del altar, respondiendo al llamado del Concilio Vaticano II a una iglesia de cara al pueblo y no en fuga de Dios. Las autoridades eclesiales locales rechazaron en un principio los planos; la aprobación llegó desde el Vaticano. La obra corrió de 1964 a junio de 1971. Los muros de concreto aparente están horadados por una retícula de casetones profundos que el dominico español Domingo Iturgaiz llenó de fragmentos de vidrio de color engastados directamente en cemento, y un vía crucis de hierro negro sobre concreto y piedra pómez termina en un Cristo resucitado en espiral. La iglesia guarda los restos del presbítero José Matías Delgado, prócer de la independencia centroamericana. Fue declarada Lugar Histórico de la República en 1972 y Bien Cultural de El Salvador en 2015.',
+      it: 'Nel 1962 il frate domenicano Alejandro Peinador affidò all\'architetto e scultore Rubén Martínez Bulnes il compito di sostituire la chiesa parrocchiale di legno situata nel sito della parrocchia originaria di San Salvador, poi sua prima cattedrale. Martínez ruppe deliberatamente con le piante a croce latina e greca consuete in città: un\'unica navata priva di pilastri, ad arco come un\'ala piegata, mette ogni fedele a vista dell\'altare, rispondendo all\'invito del Concilio Vaticano II a una chiesa rivolta verso il popolo e non in fuga da Dio, con le sue stesse parole. Le autorità ecclesiastiche locali respinsero dapprima i disegni; l\'approvazione arrivò invece dal Vaticano. I lavori durarono dal 1964 al giugno 1971. Le pareti in calcestruzzo a vista sono forate da una griglia di cassettoni profondi che il domenicano spagnolo Domingo Iturgaiz riempì di frammenti di vetro colorato inglobati direttamente nel cemento, e una via crucis in ferro nero su calcestruzzo e pomice termina in un Cristo risorto a spirale. La chiesa custodisce le spoglie del sacerdote José Matías Delgado, protagonista dell\'indipendenza centroamericana. Fu dichiarata Luogo Storico della Repubblica nel 1972 e Bene Culturale di El Salvador nel 2015.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q42808859', title: 'Iglesia del Rosario, San Salvador (Q42808859)', license: null },
+      { kind: 'wikipedia', url: 'https://es.wikipedia.org/wiki/Iglesia_del_Rosario_(San_Salvador)', title: 'Iglesia del Rosario (San Salvador) — Wikipedia en español', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'deep',
+  },
+  {
+    id: 'museo-nacional-antropologia-mexico',
+    wikidataId: 'Q524249',
+    name: {
+      en: 'National Museum of Anthropology, Mexico City',
+      es: 'Museo Nacional de Antropología, Ciudad de México',
+      it: 'Museo Nazionale di Antropologia, Città del Messico',
+    },
+    architectId: 'pedro-ramirez-vazquez',
+    coArchitects: ['rafael-mijares'],
+    location: { city: 'Mexico City', countryCode: 'MX', lat: 19.426111, lon: -99.186111 },
+    inception: 1963,
+    completed: 1964,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['concrete', 'stone', 'steel-and-glass'],
+    structure: {
+      en: 'A ring of reinforced-concrete and marble galleries around a single courtyard roofed by El Paraguas, a concrete-and-aluminium canopy cantilevered from one sculpted, bronze-clad column.',
+      es: 'Un anillo de salas de hormigón armado y mármol en torno a un único patio cubierto por El Paraguas, una marquesina de hormigón y aluminio en voladizo sobre una sola columna esculpida y revestida de bronce.',
+      it: 'Un anello di sale in cemento armato e marmo attorno a un unico cortile coperto da El Paraguas, una pensilina di cemento e alluminio a sbalzo su un\'unica colonna scolpita e rivestita di bronzo.',
+    },
+    program: {
+      en: 'Commissioned by President Adolfo López Mateos to give Mexico\'s national anthropology and archaeology collections their first purpose-built home, in Chapultepec Park.',
+      es: 'Encargado por el presidente Adolfo López Mateos para dar a las colecciones nacionales de antropología y arqueología de México su primera sede construida expresamente, en el Bosque de Chapultepec.',
+      it: 'Commissionato dal presidente Adolfo López Mateos per dare alle collezioni nazionali di antropologia e archeologia del Messico la loro prima sede costruita appositamente, nel Bosco di Chapultepec.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Mexico\'s national anthropology museum, run by the National Institute of Anthropology and History and among the most-visited museums in the Americas; awarded the 2025 Princess of Asturias Award for Concord.',
+      es: 'Museo nacional de antropología de México, gestionado por el Instituto Nacional de Antropología e Historia y uno de los museos más visitados de América; galardonado en 2025 con el Premio Princesa de Asturias de la Concordia.',
+      it: 'Museo nazionale di antropologia del Messico, gestito dall\'Istituto Nazionale di Antropologia e Storia e tra i musei più visitati delle Americhe; insignito nel 2025 del Premio Principessa delle Asturie per la Concordia.',
+    },
+    detailRect: { x: 0.30, y: 0.40, w: 0.34, h: 0.32 },
+    image: {
+      // Exterior courtyard view of El Paraguas (the umbrella column), part
+      // of a dated series of exterior photos of the museum. Ramírez
+      // Vázquez d.2013 and Mijares d.2015 are both well inside the
+      // 70-year window, so exterior-only applies; this is an exterior
+      // courtyard shot, not an interior gallery. Rect sits on the column
+      // and canopy underside, away from open sky.
+      commonsFile: 'File:2019-02-24 - Museo Nacional de Antropología - 001.jpg',
+      photographer: 'Oleg Yunakov',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:2019-02-24_-_Museo_Nacional_de_Antropolog%C3%ADa_-_001.jpg',
+      width: 1200,
+      height: 1600,
+    },
+    dossier: {
+      en: 'President López Mateos gave Pedro Ramírez Vázquez nineteen months to move the national anthropology collection out of a cramped colonial-era building and into purpose-built galleries in Chapultepec Park, and construction ran from February 1963 to the opening on 17 September 1964. Ramírez Vázquez, working with Rafael Mijares Alcérreca and Jorge Campuzano, organised the whole museum as a ring of galleries around a single courtyard, closed overhead by El Paraguas, "the umbrella": a vast concrete and aluminium canopy carried on one sculpted bronze-clad column, from which water sheets down in a ring during the rainy season. Grey Santo Tomás marble paves the courtyard; white marble, aluminium and glass line the surrounding halls, which run chronologically from the pre-Hispanic civilisations through the ethnography of Mexico\'s living indigenous peoples. Twelve archaeology rooms and eleven ethnography rooms open off the single continuous route, so a visitor can walk the whole of Mexican prehistory without doubling back. It remains one of the most visited museums in the Americas and, in 2025, received the Princess of Asturias Award for Concord.',
+      es: 'El presidente López Mateos dio a Pedro Ramírez Vázquez diecinueve meses para trasladar la colección nacional de antropología de un edificio colonial hacinado a unas galerías construidas expresamente en el Bosque de Chapultepec, y las obras corrieron de febrero de 1963 a la inauguración, el 17 de septiembre de 1964. Ramírez Vázquez, junto con Rafael Mijares Alcérreca y Jorge Campuzano, organizó todo el museo como un anillo de salas en torno a un único patio, cubierto por El Paraguas: una vasta marquesina de hormigón y aluminio sostenida por una sola columna esculpida y revestida de bronce, de la que cae una cortina de agua durante la temporada de lluvias. Mármol gris de Santo Tomás pavimenta el patio; mármol blanco, aluminio y vidrio recorren las salas circundantes, que avanzan cronológicamente desde las civilizaciones prehispánicas hasta la etnografía de los pueblos indígenas vivos de México. Doce salas de arqueología y once de etnografía se abren sobre un único recorrido continuo, de modo que el visitante puede recorrer toda la prehistoria mexicana sin retroceder. Sigue siendo uno de los museos más visitados de América y, en 2025, recibió el Premio Princesa de Asturias de la Concordia.',
+      it: 'Il presidente López Mateos concesse a Pedro Ramírez Vázquez diciannove mesi per trasferire la collezione nazionale di antropologia da un edificio coloniale angusto a gallerie costruite appositamente nel Bosco di Chapultepec, e i lavori corsero da febbraio 1963 all\'inaugurazione, il 17 settembre 1964. Ramírez Vázquez, insieme a Rafael Mijares Alcérreca e Jorge Campuzano, organizzò l\'intero museo come un anello di sale attorno a un unico cortile, coperto da El Paraguas, "l\'ombrello": un\'immensa pensilina di cemento e alluminio sorretta da un\'unica colonna scolpita e rivestita in bronzo, da cui durante la stagione delle piogge scende una cortina d\'acqua. Il cortile è pavimentato in marmo grigio di Santo Tomás; marmo bianco, alluminio e vetro percorrono le sale circostanti, che procedono cronologicamente dalle civiltà precolombiane fino all\'etnografia dei popoli indigeni viventi del Messico. Dodici sale di archeologia e undici di etnografia si aprono su un unico percorso continuo, così che il visitatore possa attraversare l\'intera preistoria messicana senza tornare sui propri passi. Resta uno dei musei più visitati delle Americhe e, nel 2025, ha ricevuto il Premio Principessa delle Asturie per la Concordia.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q524249', title: 'National Museum of Anthropology (Q524249)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/National_Museum_of_Anthropology_(Mexico)', title: 'National Museum of Anthropology (Mexico)', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'museo-rufino-tamayo-mexico',
+    wikidataId: 'Q3330551',
+    name: {
+      en: 'Rufino Tamayo Museum, Mexico City',
+      es: 'Museo Rufino Tamayo, Ciudad de México',
+      it: 'Museo Rufino Tamayo, Città del Messico',
+    },
+    architectId: 'teodoro-gonzalez-de-leon',
+    coArchitects: ['abraham-zabludovsky'],
+    location: { city: 'Mexico City', countryCode: 'MX', lat: 19.42552, lon: -99.18173 },
+    inception: 1979,
+    completed: 1981,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['concrete'],
+    structure: {
+      en: 'A sequence of cantilevered reinforced-concrete volumes in board-marked, bush-hammered finish, stepping down the sloped site with no applied cladding, so the raw structure is also the facade.',
+      es: 'Una sucesión de volúmenes de hormigón armado en voladizo, con acabado encofrado y abujardado, que descienden por el terreno inclinado sin revestimiento alguno, de modo que la estructura desnuda es también la fachada.',
+      it: 'Una sequenza di volumi in cemento armato a sbalzo, con finitura a casseratura a vista e bocciardata, che scendono lungo il terreno in pendenza senza alcun rivestimento, cosicché la struttura nuda è anche la facciata.',
+    },
+    program: {
+      en: 'Built by the Mexican state to house the modern art collection Rufino and Olga Tamayo donated to the nation on condition that a public gallery be built for it.',
+      es: 'Construido por el Estado mexicano para albergar la colección de arte moderno que Rufino y Olga Tamayo donaron a la nación a condición de que se construyera una galería pública para exhibirla.',
+      it: 'Costruito dallo Stato messicano per ospitare la collezione d\'arte moderna che Rufino e Olga Tamayo donarono alla nazione a condizione che vi si costruisse una galleria pubblica.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'A contemporary art museum in Chapultepec Park showing the Tamayos\' modern collection alongside works acquired since the 1990s, part of Mexico\'s national institute of fine arts.',
+      es: 'Museo de arte contemporáneo en el Bosque de Chapultepec que exhibe el fondo moderno de los Tamayo junto a obras adquiridas desde los años noventa, integrado en el instituto nacional de bellas artes de México.',
+      it: 'Museo d\'arte contemporanea nel Bosco di Chapultepec che espone il fondo moderno dei Tamayo accanto a opere acquisite dagli anni Novanta, parte dell\'istituto nazionale delle belle arti del Messico.',
+    },
+    detailRect: { x: 0.30, y: 0.34, w: 0.32, h: 0.30 },
+    image: {
+      // Exterior 2024 photo of the board-marked concrete volumes,
+      // Commons-categorised "Exterior". González de León d.2016 and
+      // Zabludovsky d.2003 are both inside the 70-year window, so
+      // exterior-only applies; confirmed exterior. Rect sits on the
+      // cantilevered concrete volume junctions, away from sky.
+      commonsFile: 'File:Museo Rufino Tamayo - Mexico 2024.jpg',
+      photographer: 'José Luiz (Jbribeiro1)',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Museo_Rufino_Tamayo_-_Mexico_2024.jpg',
+      width: 1600,
+      height: 900,
+    },
+    dossier: {
+      en: 'Rufino and Olga Tamayo gave the state a substantial part of their own art collection on the condition that Mexico City build somewhere to show it, and the government answered with a site inside Chapultepec Park, a short walk from Ramírez Vázquez\'s anthropology museum. Teodoro González de León and Abraham Zabludovsky, partners who had already built the Colegio de México and would go on to the National Auditorium together, designed a sequence of cantilevered concrete volumes stepping down the sloped ground, cast in the same board-marked, bush-hammered concrete the two used throughout their joint practice and left entirely unclad, so that the museum\'s structure is also its finish. Terraces and stepped platforms outside continue the section of the galleries into the park, blurring where the building ends and the landscape begins. It opened on 29 May 1981, and the two architects shared Mexico\'s National Award of Science and Arts in Fine Arts the following year for the design. The museum still shows the Tamayos\' modern holdings alongside a contemporary collection built from artists\' donations since the 1990s.',
+      es: 'Rufino y Olga Tamayo cedieron al Estado una parte sustancial de su propia colección de arte a condición de que la Ciudad de México construyera un lugar donde exhibirla, y el gobierno respondió con un solar dentro del Bosque de Chapultepec, a poca distancia del museo de antropología de Ramírez Vázquez. Teodoro González de León y Abraham Zabludovsky, socios que ya habían construido El Colegio de México y que más tarde levantarían el Auditorio Nacional, proyectaron una sucesión de volúmenes de hormigón en voladizo que descienden por el terreno inclinado, vaciados en el mismo hormigón encofrado y abujardado que ambos empleaban en toda su obra conjunta y dejados por completo sin revestir, de modo que la estructura del museo es también su acabado. Terrazas y plataformas escalonadas en el exterior prolongan la sección de las salas hacia el parque, difuminando dónde termina el edificio y dónde empieza el paisaje. Se inauguró el 29 de mayo de 1981, y al año siguiente ambos compartieron el Premio Nacional de Ciencias y Artes de México en Bellas Artes. El museo sigue mostrando el fondo moderno de los Tamayo junto a una colección contemporánea formada con donaciones de artistas desde los años noventa.',
+      it: 'Rufino e Olga Tamayo cedettero allo Stato una parte sostanziale della propria collezione d\'arte a condizione che Città del Messico costruisse un luogo dove esporla, e il governo rispose con un\'area all\'interno del Bosco di Chapultepec, a breve distanza dal museo di antropologia di Ramírez Vázquez. Teodoro González de León e Abraham Zabludovsky, soci che avevano già costruito il Colegio de México e che in seguito avrebbero realizzato insieme l\'Auditorio Nacional, progettarono una sequenza di volumi di cemento a sbalzo che scendono lungo il terreno in pendenza, gettati nello stesso calcestruzzo con casseratura a vista e bocciardato che i due impiegavano in tutta la loro opera comune e lasciati del tutto privi di rivestimento, cosicché la struttura del museo ne è anche la finitura. Terrazze e piattaforme digradanti all\'esterno prolungano la sezione delle sale nel parco, sfumando dove finisce l\'edificio e dove inizia il paesaggio. Fu inaugurato il 29 maggio 1981, e l\'anno seguente i due architetti condivisero il Premio Nazionale di Scienze e Arti del Messico per le Belle Arti per il progetto. Il museo espone tuttora il fondo moderno dei Tamayo accanto a una collezione contemporanea formata dalle donazioni degli artisti a partire dagli anni Novanta.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q3330551', title: 'Museo Tamayo (Q3330551)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Museo_Rufino_Tamayo,_Mexico_City', title: 'Museo Rufino Tamayo, Mexico City', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+];

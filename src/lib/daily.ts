@@ -33,6 +33,20 @@ export function puzzleNumber(now: Date): number {
   return localDayIndex(now) + 1;
 }
 
+/**
+ * `puzzleNumber` reads negative/zero for any clock before `EPOCH` (a
+ * preview deploy, a pre-launch build). That's real and fine for
+ * `puzzleNumber` itself (used as a storage key and to compute `dailyIndex`),
+ * but every player-FACING surface that prints the number — the home page's
+ * `<meta description>` (page.tsx) and the reveal's share/preview text
+ * (Reveal.tsx) — must clamp it to 1 so it never reads as a visible bug
+ * instead of a freshness signal. Defined once, here, so both call sites
+ * share the same clamp instead of each re-deriving it (and risking drift).
+ */
+export function displayPuzzleNumber(now: Date): number {
+  return Math.max(1, puzzleNumber(now));
+}
+
 export function dailyIndex(now: Date, poolSize: number): number {
   if (poolSize <= 0) throw new Error('poolSize must be positive');
   const d = localDayIndex(now);

@@ -57,4 +57,47 @@ describe('validateImages', () => {
     const violation = v.find((x) => x.rule === 'image-photographer-required')!;
     expect(violation.subject).toBe('b1');
   });
+
+  describe('extraImages', () => {
+    it('accepts a building whose extraImages all pass every image rule', () => {
+      const p = validPool();
+      const extra = {
+        ...p.buildings[0].image,
+        commonsFile: 'File:Building_b1_extra.jpg',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Building_b1_extra.jpg',
+      };
+      const v = validateImages(withBuilding(p, { extraImages: [extra] }));
+      expect(v).toEqual([]);
+    });
+
+    it('rejects an unknown licence on an extraImages entry', () => {
+      const p = validPool();
+      const extra = { ...p.buildings[0].image, commonsFile: 'File:Extra.jpg', license: 'All rights reserved' as never };
+      const v = validateImages(withBuilding(p, { extraImages: [extra] }));
+      expect(v.map((x) => x.rule)).toContain('image-license-allowed');
+    });
+
+    it('rejects an empty photographer on an extraImages entry', () => {
+      const p = validPool();
+      const extra = { ...p.buildings[0].image, commonsFile: 'File:Extra.jpg', photographer: '   ' };
+      const v = validateImages(withBuilding(p, { extraImages: [extra] }));
+      expect(v.map((x) => x.rule)).toContain('image-photographer-required');
+    });
+
+    it('rejects zero width/height on an extraImages entry', () => {
+      const p = validPool();
+      const extra = { ...p.buildings[0].image, commonsFile: 'File:Extra.jpg', width: 0 };
+      const v = validateImages(withBuilding(p, { extraImages: [extra] }));
+      expect(v.map((x) => x.rule)).toContain('image-dimensions-recorded');
+    });
+
+    it('names the building and the extraImages index in the violation subject/detail', () => {
+      const p = validPool();
+      const extra = { ...p.buildings[0].image, commonsFile: 'File:Extra.jpg', photographer: '' };
+      const v = validateImages(withBuilding(p, { extraImages: [extra] }));
+      const violation = v.find((x) => x.rule === 'image-photographer-required')!;
+      expect(violation.subject).toBe('b1');
+      expect(violation.detail).toContain('extraImages[0]');
+    });
+  });
 });

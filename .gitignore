@@ -16,6 +16,9 @@
 
 # testing
 /coverage
+/test-results/
+/playwright-report/
+/blob-report/
 
 # next.js
 /.next/
@@ -50,3 +53,7 @@ src/data/curated-*.json
 # research aid output from `npm run data:seed` — never shipped data
 reports/
 .claude/worktrees/
+
+# curator scratch scripts (Wikipedia/Wikidata/Commons research helpers) —
+# benign, per-agent, never shipped data
+.curation-scratch/

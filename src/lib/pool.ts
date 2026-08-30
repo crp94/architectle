@@ -8,6 +8,7 @@ import buildingsData from '@/data/curated-buildings.json';
 import architectsData from '@/data/curated-architects.json';
 import type { Building } from '@/types/building';
 import type { Architect } from '@/types/architect';
+import { FEATURED_ARCHITECT_IDS } from '@/scripts/curated/featured';
 
 // Double assertion (`as unknown as X`), not a single `as Building[]`: the
 // JSON's inferred literal type is derived from whatever pool is on disk at
@@ -45,7 +46,54 @@ export function canonBuildings(): Building[] {
 // Every architect referenced by at least one building — and nothing else,
 // so an `architect-orphan` violation (Task 3) is the only thing that could
 // ever make this differ from `ARCHITECTS` itself.
+//
+// UNTOUCHED by the v2 featured-roster refocus (design spec §2): this stays
+// full-pool because it backs the archive (`/architects`, `/buildings`,
+// autocomplete on those pages) and archive/autocomplete elsewhere, which
+// keep browsing the whole curated pool. The game itself (daily, unlimited,
+// GuessField's guess autocomplete/rejection) uses `featuredRoster()`
+// below instead — see that function's own comment for why the two must
+// stay separate.
 export function roster(): Architect[] {
   const referencedIds = new Set(BUILDINGS.map((b) => b.architectId));
   return ARCHITECTS.filter((a) => referencedIds.has(a.id));
+}
+
+// v2 "featured roster" (design spec §2): the hand-picked ~40 world-famous
+// architects the game itself draws from — see
+// src/scripts/curated/featured.ts's `FEATURED_ARCHITECT_IDS` and the two
+// hard validator gates over it (src/scripts/validators/featured.ts). This
+// is every architect referenced by `FEATURED_ARCHITECT_IDS`, in whatever
+// order that list gives, filtered to ids that actually resolve (an id
+// that doesn't resolve is itself a `featured-architect-exists` violation
+// data:curate already gates on — this function stays defensive rather than
+// throwing, so a transient dev-time desync never crashes the running game).
+export function featuredArchitects(): Architect[] {
+  const featuredIds = new Set(FEATURED_ARCHITECT_IDS);
+  return ARCHITECTS.filter((a) => featuredIds.has(a.id));
+}
+
+// Every building whose `architectId` (never `coArchitects` — matching the
+// answer-key-only semantics `architectId` carries everywhere else in this
+// codebase) is a featured architect. This is what `GameBoard.tsx`'s daily
+// and unlimited modes draw the day's/round's target building from as of
+// v2, replacing `canonBuildings()` (daily) and `BUILDINGS` (unlimited) —
+// see design spec §2: "the whole featured set IS the canon now."
+export function featuredBuildings(): Building[] {
+  const featuredIds = new Set(FEATURED_ARCHITECT_IDS);
+  return BUILDINGS.filter((b) => featuredIds.has(b.architectId));
+}
+
+// The roster `GuessField.tsx` matches/rejects guesses against as of v2,
+// replacing `roster()` there. Deliberately narrower than
+// `featuredArchitects()`: an architect can be listed in
+// `FEATURED_ARCHITECT_IDS` while genuinely holding zero buildings via
+// `architectId` in the CURRENT pool mid-curation (Wave V2-3, guarded by
+// `--allow-featured-gaps` in buildCuratedPool.ts) — such an architect must
+// never be a guessable/suggested answer, since no building in the game's
+// pool could ever be their target. Mirrors `roster()`'s own
+// "referenced by a building" filter, restricted to the featured set.
+export function featuredRoster(): Architect[] {
+  const referencedFeaturedIds = new Set(featuredBuildings().map((b) => b.architectId));
+  return featuredArchitects().filter((a) => referencedFeaturedIds.has(a.id));
 }

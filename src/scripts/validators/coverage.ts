@@ -1,15 +1,17 @@
 import type { Pool, Violation } from './schema';
 import { m49For } from '@/lib/m49';
 
-// Coverage quotas from design spec §7.3, copied verbatim. These are hard
-// failures: a pool generated naively from Wikidata is measurably skewed
-// (31,128 buildings with attributed architects in the 1900s against ~1,900
-// for all of 1000-1500; Lina Bo Bardi 10 attributed buildings to Frank Lloyd
-// Wright's 283), so the thresholds exist to force deliberate correction.
-// Exported (in addition to being used below) so Task 8's `buildCuratedPool`
-// can render a coverage summary table from the exact same thresholds and
-// bucketing logic this validator gates on, rather than re-implementing it —
-// "the script orchestrates; it does not re-implement validation."
+// Coverage quotas from design spec §7.3 (v1) / v2 refocus §3. As of v2, the
+// four era floors, five geography rules, `gender-min` and `canon-tier-min`
+// below are REPORT-ONLY: `validateCoverage` no longer fails on them. They
+// remain exported (and buildCuratedPool.ts still prints a coverage summary
+// against them) purely so a curator can see how the pool sits against the
+// numbers that shaped v1 curation — see design spec §3: v2 trades
+// representativeness targets for guessability with a hand-picked featured
+// roster, and a hard gate that fought that goal would block real curation
+// work for no correctness benefit. `max-buildings-per-architect` (raised
+// 3 -> 6) and the empty-pool/unmapped-country guards below remain hard —
+// those catch actual pool-construction defects, not distributional taste.
 export const ERA_MIN = {
   'pre-1800': 0.10,
   '1800-1945': 0.25,
@@ -29,11 +31,13 @@ export const GEOGRAPHY_MIN = {
 } as const;
 
 export const GENDER_MIN = 0.20;
-export const MAX_BUILDINGS_PER_ARCHITECT = 3;
+// v2 refocus §3: raised from 3 -> 6. Stays a HARD gate — unlike the
+// representativeness rules above, this protects the game's answer-key
+// distribution itself (one architect dominating the day's targets), which
+// matters MORE now that daily/unlimited draw from a much smaller featured
+// pool, not less.
+export const MAX_BUILDINGS_PER_ARCHITECT = 6;
 export const CANON_TIER_MIN = 0.60;
-
-// Guards against float noise around an exact threshold (e.g. 1/10 === 0.10).
-const EPSILON = 1e-9;
 
 export type Era = keyof typeof ERA_MIN;
 export type GeographyBucket = keyof typeof GEOGRAPHY_MAX | keyof typeof GEOGRAPHY_MIN | 'other' | 'unmapped';
@@ -66,69 +70,43 @@ export function geographyBucketOf(countryCode: string): GeographyBucket {
   return 'other';
 }
 
-function pct(count: number, total: number): string {
-  return `${((count / total) * 100).toFixed(1)}%`;
-}
-
-function pushMin(
-  out: Violation[], rule: string, label: string, count: number, total: number, min: number,
-): void {
-  if (count / total < min - EPSILON) {
-    out.push({
-      rule,
-      subject: 'pool',
-      detail: `${label} ${pct(count, total)} (${count}/${total}) is below minimum ${(min * 100).toFixed(0)}%`,
-    });
-  }
-}
-
-function pushMax(
-  out: Violation[], rule: string, label: string, count: number, total: number, max: number,
-): void {
-  if (count / total > max + EPSILON) {
-    out.push({
-      rule,
-      subject: 'pool',
-      detail: `${label} ${pct(count, total)} (${count}/${total}) exceeds maximum ${(max * 100).toFixed(0)}%`,
-    });
-  }
-}
-
+// The eleven report-only rules (era x4, geography x5, gender-min,
+// canon-tier-min) no longer compute or push a Violation at all here; their
+// numbers are computed independently by buildCuratedPool.ts's
+// `buildCoverageSummary`, which prints them in the informational table on
+// every run regardless of pass/fail.
 export function validateCoverage(pool: Pool): Violation[] {
   const out: Violation[] = [];
   const totalBuildings = pool.buildings.length;
   const totalArchitects = pool.architects.length;
 
-  // Every rule below is a ratio over totalBuildings or totalArchitects. In
-  // JavaScript, `NaN < x` and `NaN > x` are both false, so dividing by zero
-  // would make every pushMin/pushMax a silent no-op — an empty pool would
-  // pass every coverage rule with zero violations, exactly the failure this
-  // validator exists to catch. Short-circuit instead of ever computing 0/0.
+  // Both remaining building-based hard rules (geography-country-unmapped,
+  // max-buildings-per-architect) are still ratios/counts over
+  // totalBuildings, so the division-by-zero guard stays: an empty pool
+  // must never silently pass by short-circuiting into a 0/0 no-op.
   if (totalBuildings === 0) {
     out.push({
       rule: 'coverage-empty-pool',
       subject: 'pool',
-      detail: 'pool has 0 buildings; every building-based coverage rule (era, geography, canon-tier, max-buildings-per-architect) is unverifiable',
+      detail: 'pool has 0 buildings; every building-based coverage rule (max-buildings-per-architect, geography-country-unmapped) is unverifiable',
     });
     return out;
   }
 
-  // --- Era ---
-  const eraCounts: Record<Era, number> = { 'pre-1800': 0, '1800-1945': 0, '1945-2000': 0, 'post-2000': 0 };
-  for (const b of pool.buildings) eraCounts[eraOf(yearOf(b))] += 1;
-  pushMin(out, 'era-pre-1800-min', 'pre-1800 buildings', eraCounts['pre-1800'], totalBuildings, ERA_MIN['pre-1800']);
-  pushMin(out, 'era-1800-1945-min', '1800-1945 buildings', eraCounts['1800-1945'], totalBuildings, ERA_MIN['1800-1945']);
-  pushMin(out, 'era-1945-2000-min', '1945-2000 buildings', eraCounts['1945-2000'], totalBuildings, ERA_MIN['1945-2000']);
-  pushMin(out, 'era-post-2000-min', 'post-2000 buildings', eraCounts['post-2000'], totalBuildings, ERA_MIN['post-2000']);
+  if (totalArchitects === 0) {
+    out.push({
+      rule: 'coverage-empty-pool',
+      subject: 'pool',
+      detail: 'pool has 0 architects',
+    });
+  }
 
-  // --- Geography ---
-  const geoCounts: Record<GeographyBucket, number> = {
-    europe: 0, 'north-america': 0, asia: 0, 'africa-west-asia': 0, 'latin-america': 0, other: 0, unmapped: 0,
-  };
+  // --- Geography: only the unmapped-country flag is still hard. The five
+  // europe/north-america/asia/africa-west-asia/latin-america ratio rules
+  // are report-only as of v2 (design spec §3) — see buildCoverageSummary in
+  // buildCuratedPool.ts for where they're still measured and printed.
   for (const b of pool.buildings) {
-    const bucket = geographyBucketOf(b.location.countryCode);
-    geoCounts[bucket] += 1;
-    if (bucket === 'unmapped') {
+    if (geographyBucketOf(b.location.countryCode) === 'unmapped') {
       out.push({
         rule: 'geography-country-unmapped',
         subject: b.id,
@@ -136,25 +114,17 @@ export function validateCoverage(pool: Pool): Violation[] {
       });
     }
   }
-  pushMax(out, 'geography-europe-max', 'Europe', geoCounts.europe, totalBuildings, GEOGRAPHY_MAX.europe);
-  pushMax(out, 'geography-north-america-max', 'Northern America', geoCounts['north-america'], totalBuildings, GEOGRAPHY_MAX['north-america']);
-  pushMin(out, 'geography-asia-min', 'Eastern/Southern/South-eastern Asia', geoCounts.asia, totalBuildings, GEOGRAPHY_MIN.asia);
-  pushMin(out, 'geography-africa-west-asia-min', 'Africa and Western Asia', geoCounts['africa-west-asia'], totalBuildings, GEOGRAPHY_MIN['africa-west-asia']);
-  pushMin(out, 'geography-latin-america-min', 'Latin America and the Caribbean', geoCounts['latin-america'], totalBuildings, GEOGRAPHY_MIN['latin-america']);
-
-  // --- Gender ---
-  if (totalArchitects === 0) {
-    out.push({
-      rule: 'coverage-empty-pool',
-      subject: 'pool',
-      detail: 'pool has 0 architects; gender-min is unverifiable',
-    });
-  } else {
-    const womenOrNonBinary = pool.architects.filter((a) => a.gender === 'woman' || a.gender === 'non-binary').length;
-    pushMin(out, 'gender-min', 'woman or non-binary architects', womenOrNonBinary, totalArchitects, GENDER_MIN);
-  }
 
   // --- Max buildings per architect ---
+  // Decision: `coArchitects` does NOT count toward this cap — deliberately,
+  // not by omission. This rule exists to stop one architect dominating the
+  // game's *answers* (a pool where Frank Lloyd Wright's architectId sits on
+  // 20 buildings makes the day's target predictable); a co-credit is never
+  // an answer, so counting it here would penalize precisely the joint
+  // credits (Wang Shu + Lu Wenyu, Sejima + Nishizawa, Emin Onat + Orhan
+  // Arda) this field exists to stop erasing, for a cap whose rationale
+  // doesn't apply to them. Counting only `b.architectId` below is that
+  // decision, not an oversight.
   const buildingCountByArchitect = new Map<string, number>();
   for (const b of pool.buildings) {
     buildingCountByArchitect.set(b.architectId, (buildingCountByArchitect.get(b.architectId) ?? 0) + 1);
@@ -168,10 +138,6 @@ export function validateCoverage(pool: Pool): Violation[] {
       });
     }
   }
-
-  // --- Canon tier ---
-  const canonCount = pool.buildings.filter((b) => b.tier === 'canon').length;
-  pushMin(out, 'canon-tier-min', 'canon-tier buildings', canonCount, totalBuildings, CANON_TIER_MIN);
 
   return out;
 }

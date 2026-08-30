@@ -1,5 +1,7 @@
 import { describe, it, expect } from 'vitest';
-import { dailyIndex, localDayIndex, mulberry32, puzzleNumber, shuffledCycle } from '@/lib/daily';
+import {
+  dailyIndex, displayPuzzleNumber, localDayIndex, mulberry32, puzzleNumber, shuffledCycle, EPOCH,
+} from '@/lib/daily';
 
 describe('mulberry32', () => {
   it('is deterministic for a seed', () => {
@@ -55,6 +57,19 @@ describe('puzzleNumber', () => {
   });
   it('increments by one per local day', () => {
     expect(puzzleNumber(new Date(2026, 8, 11, 12))).toBe(11);
+  });
+});
+
+describe('displayPuzzleNumber (codereview finding #5)', () => {
+  it('matches puzzleNumber on and after the epoch day', () => {
+    expect(displayPuzzleNumber(new Date(2026, 8, 1, 12))).toBe(1);
+    expect(displayPuzzleNumber(new Date(2026, 8, 11, 12))).toBe(11);
+  });
+
+  it('clamps a pre-epoch (negative/zero) puzzleNumber up to 1', () => {
+    const before = new Date(EPOCH - 5 * 86_400_000); // 5 days before launch
+    expect(puzzleNumber(before)).toBeLessThan(1);
+    expect(displayPuzzleNumber(before)).toBe(1);
   });
 });
 

@@ -1,6 +1,519 @@
 import type { Architect } from '@/types/architect';
 
-// Task 9 (asia curator agent): replace this stub with real, sourced Architect
-// entries whose practice is centred on this region. workRegions/workCentroid
-// on each entry are ignored — buildCuratedPool derives them from buildings.
-export const ASIA_ARCHITECTS: Architect[] = [];
+// Eastern Asia slice (Japan, China, South Korea, Taiwan, Hong Kong, Mongolia).
+//
+// `workRegions` and `workCentroid` are intentionally left empty here:
+// buildCuratedPool derives both from each architect's buildings and discards
+// whatever these fields contain.
+export const ASIA_ARCHITECTS: Architect[] = [
+  {
+    id: 'jeong-yak-yong',
+    wikidataId: 'Q256246',
+    name: 'Jeong Yak-yong',
+    alternativeNames: ['정약용', '丁若鏞', 'Chŏng Yagyong', 'Tasan', '다산'],
+    gender: 'man',
+    born: 1762,
+    died: 1836,
+    floruit: { start: 1794, end: 1796, override: false },
+    movements: 'unaffiliated',
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'infrastructure',
+    signatureMaterial: 'brick',
+    portrait: {
+      en: 'Jeong Yak-yong was a Joseon scholar of the Silhak, or "practical learning", school, remembered chiefly for his writing on law, government and agronomy, and in architecture for one commission that reorganised Korean fortification. Asked by King Jeongjo to design Hwaseong, he weighed Korean, Chinese and European precedents and produced a plan gathering a defensive wall, a garrison and a working market town into a single enclosure. His most consequential decisions were technical: fired brick, almost unused in Korean military building, for parapets, ravelins and watergates, and a hoisting device, the geojunggi, that cut the labour of moving cut stone. UNESCO credits the design to him by name. From 1801 he spent eighteen years in internal exile in Gangjin.',
+      es: 'Jeong Yak-yong fue un erudito coreano de la escuela Silhak —el «aprendizaje práctico»—, recordado sobre todo por sus escritos de derecho, gobierno y agronomía y, en arquitectura, por un solo encargo que reordenó la fortificación coreana. Llamado por el rey Jeongjo a proyectar Hwaseong, sopesó precedentes coreanos, chinos y europeos y trazó un plan que reunía en un mismo recinto la muralla defensiva, la guarnición y una ciudad mercantil en funcionamiento. Sus decisiones más determinantes fueron técnicas: el ladrillo cocido, casi inédito en la construcción militar coreana, en parapetos, revellines y compuertas, y un aparejo de izado, el geojunggi, que redujo el trabajo de mover la piedra labrada. La UNESCO le atribuye por su nombre el diseño. Desde 1801 pasó dieciocho años desterrado en Gangjin.',
+      it: 'Jeong Yak-yong fu uno studioso coreano della scuola Silhak, il «sapere pratico», ricordato soprattutto per i suoi scritti di diritto, governo e agronomia e, in architettura, per un unico incarico che riordinò la fortificazione coreana. Chiamato dal re Jeongjo a progettare Hwaseong, soppesò precedenti coreani, cinesi ed europei e mise a punto un piano che riuniva in un solo recinto la muraglia difensiva, la guarnigione e una città mercantile funzionante. Le sue scelte più incisive furono tecniche: il mattone cotto, quasi inedito nell\'edilizia militare coreana, per parapetti, rivellini e chiuse, e un apparecchio di sollevamento, il geojunggi, che ridusse la fatica di spostare la pietra lavorata. L\'UNESCO attribuisce a lui, per nome, il progetto. Dal 1801 trascorse diciotto anni in esilio a Gangjin.',
+    },
+    awards: [],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q256246', title: 'Jeong Yak-yong (Q256246)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Ch%C5%8Fng_Yagyong', title: 'Chŏng Yagyong', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://whc.unesco.org/en/list/817/', title: 'Hwaseong Fortress — UNESCO World Heritage Centre', license: null },
+    ],
+  },
+  {
+    id: 'uheiji-nagano',
+    wikidataId: 'Q11654164',
+    name: 'Uheiji Nagano',
+    alternativeNames: ['長野宇平治', 'Nagano Uheiji'],
+    gender: 'man',
+    born: 1867,
+    died: 1937,
+    floruit: { start: 1895, end: 1938, override: false },
+    movements: [
+      { id: 'beaux-arts', primary: true },
+      { id: 'neoclassicism', primary: false },
+    ],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'commercial',
+    signatureMaterial: 'stone',
+    portrait: {
+      en: 'Uheiji Nagano was a pupil of Kingo Tatsuno and, for most of his career, the house architect of a bank. He entered the Bank of Japan as an engineer in 1897 and designed or supervised its Osaka, Kyoto and Otaru branches; after fifteen years in private practice he returned in 1927 to run the head-office extension, which was finished the year after his death. His idiom was the classicism the Meiji state used to look solvent: masonry orders, rusticated bases, disciplined symmetry. He took the leading award in the competition for the Office of the Governor-General of Taiwan, generally counted as Japan\'s first open architectural contest, though the executed building was substantially revised in Tokyo. In 1917 he was elected first president of the Japan Institute of Architects, and pressed for legislation to make architecture a licensed profession.',
+      es: 'Uheiji Nagano fue discípulo de Kingo Tatsuno y, durante casi toda su carrera, el arquitecto de cabecera de un banco. Entró como ingeniero en el Banco de Japón en 1897 y proyectó o dirigió sus sucursales de Osaka, Kioto y Otaru; tras quince años de estudio propio volvió en 1927 para hacerse cargo de la ampliación de la sede central, terminada el año siguiente a su muerte. Su lenguaje era el clasicismo con que el Estado Meiji quería parecer solvente: órdenes de fábrica, basamentos almohadillados, simetría severa. Obtuvo el galardón principal en el concurso para la Oficina del Gobernador General de Taiwán, que suele contarse como el primer certamen público de arquitectura de Japón, aunque el edificio construido se revisó a fondo en Tokio. En 1917 fue elegido primer presidente del Instituto de Arquitectos de Japón e impulsó una ley que diera estatuto profesional al oficio.',
+      it: 'Uheiji Nagano fu allievo di Kingo Tatsuno e, per quasi tutta la carriera, l\'architetto di fiducia di una banca. Entrò come ingegnere alla Banca del Giappone nel 1897 e progettò o diresse le filiali di Osaka, Kyoto e Otaru; dopo quindici anni di studio proprio vi tornò nel 1927 per seguire l\'ampliamento della sede centrale, ultimata l\'anno successivo alla sua morte. Il suo linguaggio era il classicismo con cui lo Stato Meiji voleva apparire solido: ordini in muratura, basamenti bugnati, simmetria severa. Ottenne il premio principale nel concorso per l\'Ufficio del Governatore Generale di Taiwan, di norma considerato il primo concorso pubblico di architettura del Giappone, benché l\'edificio realizzato fosse profondamente rivisto a Tokyo. Nel 1917 fu eletto primo presidente dell\'Istituto degli Architetti del Giappone e si batté per una legge che desse statuto professionale al mestiere.',
+    },
+    awards: [],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q11654164', title: 'Uheiji Nagano (Q11654164)', license: null },
+      { kind: 'wikipedia', url: 'https://ja.wikipedia.org/wiki/%E9%95%B7%E9%87%8E%E5%AE%87%E5%B9%B3%E6%B2%BB', title: '長野宇平治', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Presidential_Office_Building,_Taipei', title: 'Presidential Office Building, Taipei', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    id: 'lu-yanzhi',
+    wikidataId: 'Q10918370',
+    name: 'Lü Yanzhi',
+    alternativeNames: ['呂彥直', '吕彦直', 'Lü Yen-chih'],
+    gender: 'man',
+    born: 1894,
+    died: 1929,
+    floruit: { start: 1923, end: 1931, override: false },
+    movements: [{ id: 'beaux-arts', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'stone',
+    portrait: {
+      en: 'Lü Yanzhi took an architecture degree at Cornell in 1918, worked for Murphy & Dana on Ginling College and Yenching University, and in 1921 opened what is generally described as the first Chinese-owned architectural practice. In 1924 he co-founded China\'s first professional architectural association. He then won, in succession, the two competitions that defined republican commemorative architecture: the Sun Yat-sen Mausoleum in Nanjing in September 1925 and the Sun Yat-sen Memorial Hall in Guangzhou the following year. Both graft Chinese roofs, glazed tile and axial ceremonial sequence onto Beaux-Arts planning, a synthesis he described in writing as a way of asserting Chinese nationhood against foreign imperialism. Liang Sicheng later faulted him for borrowing only the surface of Chinese building. He died of cancer in March 1929, months before Sun was interred.',
+      es: 'Lü Yanzhi se tituló en arquitectura por Cornell en 1918, trabajó para Murphy & Dana en el Ginling College y la Universidad de Yenching y en 1921 abrió lo que suele describirse como el primer estudio de arquitectura de propiedad china. En 1924 cofundó la primera asociación profesional de arquitectos del país. Ganó luego, encadenados, los dos concursos que definieron la arquitectura conmemorativa republicana: el Mausoleo de Sun Yat-sen en Nankín, en septiembre de 1925, y el Salón Conmemorativo de Sun Yat-sen en Cantón al año siguiente. Ambos injertan cubiertas chinas, teja vidriada y secuencia ceremonial axial sobre una planta Beaux-Arts, síntesis que él mismo describió por escrito como una afirmación de la nación china frente al imperialismo extranjero. Liang Sicheng le reprochó después haber tomado solo la superficie de la construcción china. Murió de cáncer en marzo de 1929, meses antes de la inhumación de Sun.',
+      it: 'Lü Yanzhi si laureò in architettura alla Cornell nel 1918, lavorò per Murphy & Dana al Ginling College e all\'Università di Yenching e nel 1921 aprì quello che viene di norma descritto come il primo studio di architettura di proprietà cinese. Nel 1924 cofondò la prima associazione professionale di architetti del paese. Vinse poi, uno dopo l\'altro, i due concorsi che definirono l\'architettura commemorativa repubblicana: il Mausoleo di Sun Yat-sen a Nanchino, nel settembre 1925, e la Sala Commemorativa di Sun Yat-sen a Canton l\'anno seguente. Entrambi innestano tetti cinesi, tegole invetriate e sequenza cerimoniale assiale su un impianto Beaux-Arts, una sintesi che egli stesso descrisse per iscritto come affermazione della nazione cinese contro l\'imperialismo straniero. Liang Sicheng gli rimproverò poi di aver preso solo la superficie del costruire cinese. Morì di cancro nel marzo 1929, mesi prima della tumulazione di Sun.',
+    },
+    awards: [
+      'First prize, Sun Yat-sen Mausoleum design competition (1925)',
+      'First prize, Sun Yat-sen Memorial Hall design competition (1926)',
+    ],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q10918370', title: 'Lü Yanzhi (Q10918370)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/L%C3%BC_Yanzhi', title: 'Lü Yanzhi', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    id: 'kenzo-tange',
+    wikidataId: 'Q151794',
+    name: 'Kenzō Tange',
+    alternativeNames: ['丹下健三', 'Tange Kenzō'],
+    gender: 'man',
+    born: 1913,
+    died: 2005,
+    floruit: { start: 1955, end: 2005, override: false },
+    movements: [
+      { id: 'brutalism', primary: true },
+      { id: 'metabolism', primary: false },
+    ],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: 'Kenzō Tange decided to become an architect after finding drawings of Le Corbusier\'s Palace of the Soviets in a foreign journal, and spent a career arguing that a modern architecture could be specifically Japanese without being decorative about it. He trained at the University of Tokyo, worked briefly for Kunio Maekawa, and won a run of wartime national competitions before 1945. His reputation was made after the war by Hiroshima, where he planned the Peace Memorial Park and its museum, and consolidated by the Yoyogi gymnasiums of 1964 and the Tokyo Metropolitan Government Building of 1991. He taught Kisho Kurokawa, Arata Isozaki and Fumihiko Maki, and was mentor and patron to the Metabolists without joining them. Pritzker laureate in 1987; Royal Gold Medal in 1965.',
+      es: 'Kenzō Tange decidió ser arquitecto al encontrar en una revista extranjera los dibujos del Palacio de los Sóviets de Le Corbusier, y dedicó su carrera a sostener que una arquitectura moderna podía ser específicamente japonesa sin recurrir al ornamento. Se formó en la Universidad de Tokio, trabajó brevemente con Kunio Maekawa y ganó una serie de concursos nacionales durante la guerra. Su reputación la hizo, tras 1945, Hiroshima, donde planificó el Parque Memorial de la Paz y su museo, y la consolidaron los gimnasios de Yoyogi de 1964 y la sede del Gobierno Metropolitano de Tokio de 1991. Fue maestro de Kisho Kurokawa, Arata Isozaki y Fumihiko Maki, y fue mentor y valedor de los metabolistas sin llegar a integrarse en el grupo. Premio Pritzker en 1987 y Medalla de Oro del RIBA en 1965.',
+      it: 'Kenzō Tange decise di fare l\'architetto dopo aver trovato in una rivista straniera i disegni del Palazzo dei Soviet di Le Corbusier, e passò la carriera a sostenere che un\'architettura moderna potesse essere specificamente giapponese senza per questo farsi decorativa. Si formò all\'Università di Tokyo, lavorò brevemente con Kunio Maekawa e vinse una serie di concorsi nazionali durante la guerra. La sua fama la costruì, dopo il 1945, Hiroshima, di cui pianificò il Parco della Pace e il museo, e la consolidarono le palestre di Yoyogi del 1964 e la sede del Governo Metropolitano di Tokyo del 1991. Fu maestro di Kisho Kurokawa, Arata Isozaki e Fumihiko Maki, e fu mentore e sostenitore dei metabolisti senza mai entrare nel gruppo. Premio Pritzker nel 1987 e Royal Gold Medal nel 1965.',
+    },
+    awards: [
+      'Pritzker Architecture Prize (1987)',
+      'RIBA Royal Gold Medal (1965)',
+      'AIA Gold Medal (1966)',
+      'Praemium Imperiale (1993)',
+      'Order of Culture (Japan)',
+    ],
+    tier: 'canon',
+    context: {
+      body: {
+        en: 'Tange\'s first competition successes were commissions of the Japanese wartime state. In 1942 he took first prize in the competition for a Memorial Hall for the Greater East Asia Co-Prosperity Sphere, to stand at the foot of Mount Fuji, and in 1943 he won the competition for a Japan–Thai Cultural Hall; neither was built. Answering a 1942 questionnaire on architectural policy for the Co-Prosperity Sphere he wrote: "We must ignore both Anglo-American culture and the pre-existing cultures of the Southeast Asian Races. […] We should start out with an unshakable conviction in the tradition and the future of the Japanese races." Critics rarely raised this record in the immediate postwar years, when Tange was rebuilding Hiroshima; scholars have since traced continuities between the early nationalist projects and his lifelong search for a specifically Japanese modernism.',
+        es: 'Los primeros éxitos de Tange en concurso fueron encargos del Estado japonés en guerra. En 1942 obtuvo el primer premio del concurso para un Salón Conmemorativo de la Esfera de Coprosperidad de la Gran Asia Oriental, previsto al pie del monte Fuji, y en 1943 ganó el del Salón Cultural Japonés-Tailandés; ninguno se construyó. Al responder en 1942 a un cuestionario sobre política arquitectónica para la Esfera escribió: «Debemos ignorar tanto la cultura angloamericana como las culturas preexistentes de las razas del Sudeste Asiático. […] Hemos de partir de una convicción inquebrantable en la tradición y el futuro de las razas japonesas». La crítica apenas mencionó ese historial en la inmediata posguerra, mientras Tange reconstruía Hiroshima; después, los estudiosos han rastreado continuidades entre aquellos proyectos nacionalistas y su búsqueda constante de un modernismo específicamente japonés.',
+        it: 'I primi successi di Tange nei concorsi furono incarichi dello Stato giapponese in guerra. Nel 1942 vinse il primo premio per una Sala Commemorativa della Sfera di Co-prosperità della Grande Asia Orientale, prevista ai piedi del monte Fuji, e nel 1943 il concorso per una Sala Culturale nippo-thailandese; nessuna delle due fu costruita. Rispondendo nel 1942 a un questionario sulla politica architettonica per la Sfera scrisse: «Dobbiamo ignorare sia la cultura angloamericana sia le culture preesistenti delle razze del Sud-est asiatico. […] Dobbiamo partire da una convinzione incrollabile nella tradizione e nel futuro delle razze giapponesi». La critica quasi non richiamò quel percorso nell\'immediato dopoguerra, mentre Tange ricostruiva Hiroshima; in seguito gli studiosi hanno individuato continuità fra quei progetti nazionalisti e la sua ricerca costante di un modernismo specificamente giapponese.',
+      },
+      sources: [
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Kenz%C5%8D_Tange', title: 'Kenzō Tange', license: 'CC BY-SA 4.0' },
+      ],
+    },
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q151794', title: 'Kenzō Tange (Q151794)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Kenz%C5%8D_Tange', title: 'Kenzō Tange', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.pritzkerprize.com/laureates/1987', title: 'Kenzo Tange — The Pritzker Architecture Prize', license: null },
+    ],
+  },
+  {
+    id: 'kisho-kurokawa',
+    wikidataId: 'Q358502',
+    name: 'Kisho Kurokawa',
+    alternativeNames: ['黒川紀章', 'Kurokawa Kishō'],
+    gender: 'man',
+    born: 1934,
+    died: 2007,
+    floruit: { start: 1962, end: 2007, override: false },
+    movements: [{ id: 'metabolism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: 'Kisho Kurokawa studied under Kenzō Tange at the University of Tokyo and was a founding member of the Metabolist group that announced itself at the 1960 World Design Conference in Tokyo. Metabolism held that a building should be a growing organism: a permanent frame carrying replaceable parts, sized and detailed like machine components. Kurokawa founded his own office in 1962 and spent four decades testing the idea at every scale, from the capsules of the Nakagin tower to airports at Kuala Lumpur and museums at Nagoya, Hiroshima and, finally, the National Art Center in Tokyo, completed in the year he died. He wrote extensively on symbiosis and, late in life, on ecology, standing for public office in 2007 on an environmental platform.',
+      es: 'Kisho Kurokawa estudió con Kenzō Tange en la Universidad de Tokio y fue miembro fundador del grupo metabolista que se presentó en la Conferencia Mundial de Diseño de Tokio de 1960. El metabolismo sostenía que un edificio debía ser un organismo en crecimiento: una estructura permanente que soporta piezas sustituibles, dimensionadas y detalladas como componentes de máquina. Kurokawa abrió estudio propio en 1962 y dedicó cuatro décadas a ensayar la idea a todas las escalas, de las cápsulas de la torre Nakagin a los aeropuertos de Kuala Lumpur y los museos de Nagoya, Hiroshima y, finalmente, el Centro Nacional de Arte de Tokio, terminado el año de su muerte. Escribió largamente sobre la simbiosis y, ya mayor, sobre ecología, y en 2007 se presentó a elecciones con un programa ambiental.',
+      it: 'Kisho Kurokawa studiò con Kenzō Tange all\'Università di Tokyo e fu tra i fondatori del gruppo metabolista che si presentò alla Conferenza Mondiale del Design di Tokyo del 1960. Il metabolismo sosteneva che un edificio dovesse essere un organismo in crescita: una struttura permanente che regge parti sostituibili, dimensionate e dettagliate come componenti di macchina. Kurokawa aprì il proprio studio nel 1962 e dedicò quarant\'anni a verificare l\'idea a ogni scala, dalle capsule della torre Nakagin agli aeroporti di Kuala Lumpur e ai musei di Nagoya, Hiroshima e infine al Centro Nazionale d\'Arte di Tokyo, ultimato nell\'anno della sua morte. Scrisse a lungo sulla simbiosi e, in tarda età, di ecologia, candidandosi nel 2007 con un programma ambientalista.',
+    },
+    awards: [
+      'Chevalier des Arts et des Lettres',
+      'Japan Art Academy Prize',
+      'Order of the Lion of Finland',
+    ],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q358502', title: 'Kisho Kurokawa (Q358502)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Kisho_Kurokawa', title: 'Kisho Kurokawa', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    id: 'itsuko-hasegawa',
+    wikidataId: 'Q445298',
+    name: 'Itsuko Hasegawa',
+    alternativeNames: ['長谷川逸子', 'Hasegawa Itsuko'],
+    gender: 'woman',
+    born: 1941,
+    died: null,
+    floruit: { start: 1979, end: 2008, override: false },
+    movements: 'unaffiliated',
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'steel-and-glass',
+    portrait: {
+      en: 'Itsuko Hasegawa graduated in architecture from Kanto Gakuin University in 1964, worked for Kiyonori Kikutake, then spent seven years with Kazuo Shinohara at the Tokyo Institute of Technology before opening her own studio in Tokyo. She describes her work as "second nature": buildings that behave like landscape and are shaped by the way a particular community actually lives. In practice that means perforated aluminium screens, light steel frames and metal spheres and canopies assembled into something closer to a park than a monument. She ran unusually long consultations with the residents who opposed the Shōnandai centre, and afterwards directed its children\'s museum for ten years. In 2018 she received the inaugural Royal Academy Architecture Prize, whose panel called her one of Japan\'s most important architects and noted how little recognised she had been.',
+      es: 'Itsuko Hasegawa se licenció en arquitectura por la Universidad Kanto Gakuin en 1964, trabajó con Kiyonori Kikutake y pasó luego siete años junto a Kazuo Shinohara en el Instituto Tecnológico de Tokio antes de abrir estudio propio en la ciudad. Describe su obra como «segunda naturaleza»: edificios que se comportan como paisaje y toman forma de cómo vive realmente una comunidad concreta. En la práctica eso significa pantallas de aluminio perforado, estructuras ligeras de acero y esferas y marquesinas metálicas montadas en algo más cercano a un parque que a un monumento. Mantuvo consultas insólitamente largas con los vecinos que se oponían al centro de Shōnandai y después dirigió diez años su museo infantil. En 2018 recibió el primer Premio de Arquitectura de la Royal Academy, cuyo jurado la llamó una de las arquitectas más importantes de Japón y señaló lo poco reconocida que había estado.',
+      it: 'Itsuko Hasegawa si laureò in architettura alla Kanto Gakuin University nel 1964, lavorò con Kiyonori Kikutake e trascorse poi sette anni accanto a Kazuo Shinohara al Politecnico di Tokyo prima di aprire uno studio proprio in città. Descrive il suo lavoro come «seconda natura»: edifici che si comportano come paesaggio e prendono forma dal modo in cui una determinata comunità vive davvero. In pratica significa schermi di alluminio forato, leggere strutture d\'acciaio e sfere e pensiline metalliche montate in qualcosa di più simile a un parco che a un monumento. Condusse consultazioni insolitamente lunghe con gli abitanti che si opponevano al centro di Shōnandai e ne diresse poi per dieci anni il museo dei bambini. Nel 2018 ricevette il primo Royal Academy Architecture Prize, la cui giuria la definì una delle architette più importanti del Giappone rilevando quanto poco fosse stata riconosciuta.',
+    },
+    awards: [
+      'Architectural Institute of Japan Design Prize (1986)',
+      'BCS Prize (1992)',
+      'Japan Art Academy Prize (2000)',
+      'Royal Academy Architecture Prize (2018)',
+      'Honorary Fellow, Royal Institute of British Architects',
+    ],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q445298', title: 'Itsuko Hasegawa (Q445298)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Itsuko_Hasegawa', title: 'Itsuko Hasegawa', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.royalacademy.org.uk/page/architecture-awards-2018', title: 'RA Architecture Awards 2018 — Royal Academy of Arts', license: null },
+    ],
+  },
+  {
+    id: 'kazuyo-sejima',
+    wikidataId: 'Q253350',
+    name: 'Kazuyo Sejima',
+    alternativeNames: ['妹島和世', 'Sejima Kazuyo'],
+    gender: 'woman',
+    born: 1956,
+    died: null,
+    floruit: { start: 1991, end: 2026, override: false },
+    movements: [{ id: 'minimalism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'steel-and-glass',
+    portrait: {
+      en: 'Kazuyo Sejima took her master\'s degree at Japan Women\'s University in 1981, spent six years with Toyo Ito, and opened Kazuyo Sejima & Associates in 1987; in 1995 she and Ryue Nishizawa founded SANAA. The work is easy to recognise and hard to imitate: thin white planes, structure reduced until it stops being read as structure, glass without visible frames, plans that keep circulation ambiguous so a visitor chooses a route rather than following one. Buildings such as the Kanazawa museum, the Zollverein school in Essen, the New Museum in New York and the Rolex Learning Center in Lausanne treat lightness as a discipline rather than an effect. She received the Pritzker Prize with Nishizawa in 2010 and directed the Venice Architecture Biennale the same year.',
+      es: 'Kazuyo Sejima obtuvo el máster en la Universidad Femenina de Japón en 1981, pasó seis años con Toyo Ito y abrió Kazuyo Sejima & Associates en 1987; en 1995 fundó SANAA junto a Ryue Nishizawa. Su obra es fácil de reconocer y difícil de imitar: planos blancos delgados, estructura reducida hasta dejar de leerse como estructura, vidrio sin carpintería visible y plantas que mantienen ambigua la circulación para que el visitante elija recorrido en lugar de seguir uno. Edificios como el museo de Kanazawa, la escuela de Zollverein en Essen, el New Museum de Nueva York o el Rolex Learning Center de Lausana tratan la ligereza como disciplina y no como efecto. Recibió el Premio Pritzker con Nishizawa en 2010 y ese mismo año dirigió la Bienal de Arquitectura de Venecia.',
+      it: 'Kazuyo Sejima conseguì il master alla Japan Women\'s University nel 1981, trascorse sei anni con Toyo Ito e aprì Kazuyo Sejima & Associates nel 1987; nel 1995 fondò SANAA con Ryue Nishizawa. Il suo lavoro è facile da riconoscere e difficile da imitare: sottili piani bianchi, struttura ridotta fino a non leggersi più come struttura, vetro senza telai a vista, piante che tengono ambigua la circolazione perché il visitatore scelga un percorso invece di seguirne uno. Edifici come il museo di Kanazawa, la scuola di Zollverein a Essen, il New Museum di New York o il Rolex Learning Center di Losanna trattano la leggerezza come disciplina e non come effetto. Ha ricevuto il Premio Pritzker con Nishizawa nel 2010 e nello stesso anno ha diretto la Biennale di Architettura di Venezia.',
+    },
+    awards: [
+      'Pritzker Architecture Prize (2010)',
+      'Golden Lion, 9th Venice Architecture Biennale (2004)',
+      'Rolf Schock Prize in Visual Arts',
+      'Jane Drew Prize',
+      'Officer of the Order of Arts and Letters',
+    ],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q253350', title: 'Kazuyo Sejima (Q253350)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Kazuyo_Sejima', title: 'Kazuyo Sejima', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.pritzkerprize.com/laureates/2010', title: 'Kazuyo Sejima and Ryue Nishizawa — The Pritzker Architecture Prize', license: null },
+    ],
+  },
+  {
+    id: 'wang-shu',
+    wikidataId: 'Q336620',
+    name: 'Wang Shu',
+    alternativeNames: ['王澍'],
+    gender: 'man',
+    born: 1963,
+    died: null,
+    floruit: { start: 1990, end: 2026, override: false },
+    movements: [
+      { id: 'critical-regionalism', primary: true },
+      { id: 'sustainable-architecture', primary: false },
+    ],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'mixed',
+    portrait: {
+      en: 'Wang Shu was born in Ürümqi, studied at what is now Southeast University in Nanjing, and completed his first building — a youth centre near Hangzhou — in 1990. He then took almost no commissions for eight years, working alongside craftsmen on site and studying for a doctorate at Tongji, completed in 2000. In 1997 he and Lu Wenyu founded Amateur Architecture Studio, the name a deliberate rebuke to the professionalised practice they blamed for the erasure of old Chinese neighbourhoods. Their buildings are made largely from what demolition leaves behind: salvaged brick and roof tile laid up in the regional wapan technique, concrete cast against bamboo, walls whose surface records a village that no longer exists. He is dean of architecture at the China Academy of Art in Hangzhou and won the Pritzker Prize in 2012.',
+      es: 'Wang Shu nació en Ürümqi, estudió en la actual Universidad del Sudeste de Nankín y terminó su primer edificio —una casa de la juventud cerca de Hangzhou— en 1990. Después pasó casi ocho años sin apenas encargos, trabajando a pie de obra con artesanos y cursando un doctorado en Tongji, concluido en 2000. En 1997 fundó con Lu Wenyu el estudio Amateur Architecture, cuyo nombre es un reproche deliberado a la práctica profesionalizada a la que ambos atribuían la desaparición de los barrios antiguos chinos. Sus edificios se hacen en buena medida con lo que deja el derribo: ladrillo y teja recuperados y asentados con la técnica regional del wapan, hormigón encofrado contra bambú, muros cuya superficie registra una aldea que ya no existe. Dirige la escuela de arquitectura de la Academia China de Arte en Hangzhou y ganó el Premio Pritzker en 2012.',
+      it: 'Wang Shu nacque a Ürümqi, studiò all\'attuale Università del Sud-est di Nanchino e completò il suo primo edificio — una casa della gioventù presso Hangzhou — nel 1990. Trascorse poi quasi otto anni quasi senza incarichi, lavorando in cantiere con gli artigiani e preparando un dottorato alla Tongji, concluso nel 2000. Nel 1997 fondò con Lu Wenyu lo studio Amateur Architecture, il cui nome è un rimprovero deliberato alla pratica professionalizzata cui entrambi imputavano la cancellazione dei vecchi quartieri cinesi. I loro edifici sono fatti in larga parte di ciò che la demolizione lascia: mattoni e tegole di recupero posati con la tecnica regionale del wapan, calcestruzzo gettato contro il bambù, murature la cui superficie registra un villaggio che non esiste più. È preside di architettura all\'Accademia Cinese d\'Arte di Hangzhou e ha vinto il Premio Pritzker nel 2012.',
+    },
+    awards: [
+      'Pritzker Architecture Prize (2012)',
+      'Global Award for Sustainable Architecture',
+    ],
+    tier: 'canon',
+    context: {
+      body: {
+        en: 'Amateur Architecture Studio was founded in 1997 by Wang Shu together with Lu Wenyu, an architect and his wife, and the two have practised jointly since. The 2012 Pritzker Prize was awarded to Wang Shu alone. The omission of Lu Wenyu drew public criticism given their years of collaboration, and Wikidata records both of them as architects of the Ningbo Museum. The prize is awarded to individuals at the jury\'s discretion and has occasionally gone to partnerships — Herzog & de Meuron in 2001 and Sejima with Nishizawa in 2010 — which is why the single citation here was read as a choice rather than a rule.',
+        es: 'El estudio Amateur Architecture fue fundado en 1997 por Wang Shu junto a Lu Wenyu, arquitecta y esposa suya, y ambos ejercen desde entonces conjuntamente. El Premio Pritzker de 2012 se concedió solo a Wang Shu. La omisión de Lu Wenyu suscitó críticas públicas dados sus años de colaboración, y Wikidata registra a los dos como arquitectos del Museo de Ningbo. El galardón se otorga a individuos según el criterio del jurado y en alguna ocasión ha recaído en sociedades —Herzog & de Meuron en 2001 y Sejima con Nishizawa en 2010—, razón por la cual aquella mención única se leyó como una elección y no como una norma.',
+        it: 'Lo studio Amateur Architecture fu fondato nel 1997 da Wang Shu insieme a Lu Wenyu, architetta e sua moglie, e i due esercitano da allora congiuntamente. Il Premio Pritzker del 2012 fu assegnato al solo Wang Shu. L\'esclusione di Lu Wenyu suscitò critiche pubbliche, visti gli anni di collaborazione, e Wikidata registra entrambi come architetti del Museo di Ningbo. Il premio viene conferito a singoli secondo il giudizio della giuria e in qualche caso è andato a società — Herzog & de Meuron nel 2001 e Sejima con Nishizawa nel 2010 — ed è per questo che quella menzione unica fu letta come una scelta e non come una regola.',
+      },
+      sources: [
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Wang_Shu', title: 'Wang Shu', license: 'CC BY-SA 4.0' },
+        { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1070226', title: 'Ningbo Museum (Q1070226) — architect (P84)', license: null },
+        { kind: 'institution', url: 'https://www.pritzkerprize.com/laureates/2012', title: 'Wang Shu — The Pritzker Architecture Prize', license: null },
+      ],
+    },
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q336620', title: 'Wang Shu (Q336620)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Wang_Shu', title: 'Wang Shu', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.pritzkerprize.com/laureates/2012', title: 'Wang Shu — The Pritzker Architecture Prize', license: null },
+    ],
+  },
+  {
+    id: 'kora-munehiro',
+    wikidataId: 'Q17219530',
+    name: 'Kōra Munehiro',
+    alternativeNames: ['甲良宗広', '甲良宗廣', 'Dōken', '道賢'],
+    gender: 'man',
+    born: 1574,
+    died: 1646,
+    floruit: { start: 1596, end: 1639, override: false },
+    movements: 'unaffiliated',
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'sacral',
+    signatureMaterial: 'timber',
+    portrait: {
+      en: 'Kōra Munehiro was born in 1574 in Ōmi Province into a lineage of master carpenters serving the Kennin-ji school who had worked in Kyoto since his grandfather\'s generation. He repaired Fushimi Castle after the 1596 earthquake, entered Tokugawa service in Edo in 1604, and in 1632 became chief carpenter of the shogunate\'s newly created works office, a post he handed down through eleven generations of descendants until the Meiji Restoration. His major commissions include the Taitoku-in mausoleum at Zōjō-ji in 1632 and the five-storey pagoda at Kan\'ei-ji in 1639, but his defining work is the 1636 rebuilding of Nikkō Tōshō-gū, for which shogun Iemitsu granted him fourth court rank. He retired that year, took the Buddhist name Dōken, and died in 1646.',
+      es: 'Kōra Munehiro nació en 1574 en la provincia de Ōmi, en un linaje de maestros carpinteros al servicio de la escuela Kennin-ji que trabajaba en Kioto desde la generación de su abuelo. Reparó el castillo de Fushimi tras el terremoto de 1596, entró al servicio de los Tokugawa en Edo en 1604 y en 1632 fue nombrado maestro carpintero jefe de la recién creada oficina de obras del sogunato, cargo que transmitió durante once generaciones de descendientes hasta la Restauración Meiji. Entre sus encargos mayores figuran el mausoleo Taitoku-in del templo Zōjō-ji en 1632 y la pagoda de cinco pisos de Kan\'ei-ji en 1639, pero su obra decisiva es la reconstrucción de 1636 del Nikkō Tōshō-gū, por la que el sogún Iemitsu le concedió el cuarto rango cortesano. Se retiró ese mismo año, tomó el nombre budista de Dōken y murió en 1646.',
+      it: 'Kōra Munehiro nacque nel 1574 nella provincia di Ōmi, in un lignaggio di capomastri al servizio della scuola Kennin-ji che lavorava a Kyoto sin dalla generazione del nonno. Riparò il castello di Fushimi dopo il terremoto del 1596, entrò al servizio dei Tokugawa a Edo nel 1604 e nel 1632 divenne capo carpentiere del neoistituito ufficio dei lavori dello shogunato, carica che trasmise per undici generazioni di discendenti fino alla Restaurazione Meiji. Tra i suoi incarichi maggiori figurano il mausoleo Taitoku-in presso il tempio Zōjō-ji nel 1632 e la pagoda a cinque piani di Kan\'ei-ji nel 1639, ma la sua opera decisiva è la ricostruzione del 1636 del Nikkō Tōshō-gū, per la quale lo shogun Iemitsu gli concesse il quarto rango di corte. Si ritirò quello stesso anno, prese il nome buddista di Dōken e morì nel 1646.',
+    },
+    awards: ['Fourth court rank, conferred on completion of Nikkō Tōshō-gū (1636)'],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q17219530', title: 'Kōra Munehiro (Q17219530)', license: null },
+      { kind: 'wikipedia', url: 'https://ja.wikipedia.org/wiki/%E7%94%B2%E8%89%AF%E5%AE%97%E5%BB%A3', title: '甲良宗広', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Nikk%C5%8D_T%C5%8Dsh%C5%8D-g%C5%AB', title: 'Nikkō Tōshō-gū', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    id: 'kim-swoo-geun',
+    wikidataId: 'Q497301',
+    name: 'Kim Swoo-geun',
+    alternativeNames: ['김수근', 'Kim Su-geun', '金壽根'],
+    gender: 'man',
+    born: 1931,
+    died: 1986,
+    floruit: { start: 1963, end: 1986, override: false },
+    movements: [
+      { id: 'critical-regionalism', primary: true },
+      { id: 'brutalism', primary: false },
+    ],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'civic',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: 'Kim Swoo-geun studied architecture at Seoul National University before the Korean War, then trained at the Tokyo University of the Arts and took a master\'s degree at the University of Tokyo, where he befriended fellow student Arata Isozaki. He returned to Seoul in 1960 and in 1961 opened the practice that grew into Space Group, publishing the monthly review SPACE from 1966 and turning its own headquarters into a venue for experimental theatre and dance. Close to the political establishment under Park Chung-hee and Chun Doo-hwan, he carried out an unusual share of the state\'s own architecture, from the Freedom Center to the Olympic facilities built for 1988, work that TIME in 1977 likened to the patronage of Lorenzo de\' Medici. He taught at Hongik and Kookmin universities and died of liver cancer in 1986, aged 55.',
+      es: 'Kim Swoo-geun estudió arquitectura en la Universidad Nacional de Seúl antes de la guerra de Corea, y luego se formó en la Universidad de las Artes de Tokio y cursó un máster en la Universidad de Tokio, donde entabló amistad con su compañero Arata Isozaki. Regresó a Seúl en 1960 y en 1961 abrió el estudio que se convertiría en Space Group, editor desde 1966 de la revista mensual SPACE y de una sede propia convertida en escenario de teatro y danza experimentales. Cercano al poder bajo Park Chung-hee y Chun Doo-hwan, ejecutó una parte inusual de la arquitectura estatal, desde el Freedom Center hasta las instalaciones olímpicas de 1988, obra que TIME comparó en 1977 con el mecenazgo de Lorenzo de Medici. Enseñó en las universidades Hongik y Kookmin y murió de cáncer de hígado en 1986, a los 55 años.',
+      it: 'Kim Swoo-geun studiò architettura all\'Università Nazionale di Seul prima della guerra di Corea, per poi formarsi all\'Università delle Arti di Tokyo e conseguire un master all\'Università di Tokyo, dove strinse amicizia con il compagno di studi Arata Isozaki. Tornò a Seul nel 1960 e nel 1961 aprì lo studio che sarebbe diventato Space Group, editore dal 1966 della rivista mensile SPACE e di una propria sede trasformata in palcoscenico per teatro e danza sperimentali. Vicino al potere sotto Park Chung-hee e Chun Doo-hwan, realizzò una parte insolita dell\'architettura di stato, dal Freedom Center agli impianti olimpici del 1988, un\'opera che TIME paragonò nel 1977 al mecenatismo di Lorenzo de\' Medici. Insegnò nelle università Hongik e Kookmin e morì di cancro al fegato nel 1986, a 55 anni.',
+    },
+    awards: [
+      'Civil Merit Medal, South Korea (1970)',
+      'AIA Pan Pacific Citation (1971)',
+      "Commendatore dell'Ordine della Stella della Solidarietà Italiana (1979)",
+      'Honorary Fellow, American Institute of Architects (1982)',
+      'Iron Tower Order of Industrial Service Merit, South Korea (1984)',
+      'Silver Tower Order of Industrial Service Merit, South Korea (1986)',
+    ],
+    tier: 'canon',
+    context: {
+      body: {
+        en: 'In 1976 Kim built the Namyeong-dong Anti-Communist Interrogation Office for the National Police, at the request of his patron Kim Jong-pil, a former KCIA director and prime minister; a 1983 addition raised it from five storeys to seven. Faced in black brick, the building disguised interrogation rooms behind slit windows too narrow to escape through, connected the fifth floor to the ground by a disorienting spiral stair, staggered doorways to keep detainees from seeing one another, and soundproofed cells that still let prisoners hear each other. An estimated 400 or more pro-democracy activists were tortured there under the Park Chung-hee and Chun Doo-hwan governments; the student Park Jong-chul died there of water torture in January 1987, a death that helped trigger the June Democratic Struggle. Whether Kim understood the building\'s purpose, or supplied only its outer design, remains disputed. The site became the police force\'s Human Rights Center in 2005 and opened in 2025 as the National Museum of Korean Democracy.',
+        es: 'En 1976 Kim construyó la Oficina de Interrogatorio Anticomunista de Namyeong-dong para la Policía Nacional, a petición de su valedor Kim Jong-pil, antiguo director de la KCIA y primer ministro; una ampliación de 1983 la elevó de cinco a siete plantas. Revestido de ladrillo negro, el edificio disimulaba las salas de interrogatorio tras ventanas en forma de rendija demasiado estrechas para escapar, unía la quinta planta con la calle mediante una escalera de caracol pensada para desorientar, escalonaba las puertas para impedir que los detenidos se vieran entre sí e insonorizaba celdas en las que, aun así, los presos podían oírse unos a otros. Se calcula que más de 400 activistas prodemocracia fueron torturados allí bajo los gobiernos de Park Chung-hee y Chun Doo-hwan; el estudiante Park Jong-chul murió allí por tortura de agua en enero de 1987, muerte que ayudó a desencadenar la Lucha Democrática de Junio. Si Kim conocía el uso del edificio, o si solo aportó su diseño exterior, sigue discutiéndose. El recinto pasó a ser en 2005 el Centro de Derechos Humanos de la policía y en 2025 abrió como Museo Nacional de la Democracia de Corea.',
+        it: 'Nel 1976 Kim costruì l\'Ufficio Interrogatori Anticomunista di Namyeong-dong per la Polizia Nazionale, su richiesta del suo protettore Kim Jong-pil, ex direttore della KCIA e primo ministro; un ampliamento del 1983 lo portò da cinque a sette piani. Rivestito di mattoni neri, l\'edificio dissimulava le sale d\'interrogatorio dietro finestre a feritoia troppo strette per fuggirvi, collegava il quinto piano al livello stradale con una scala a chiocciola pensata per disorientare, sfalsava gli ingressi per impedire ai detenuti di vedersi tra loro e insonorizzava celle in cui, ciò nonostante, i prigionieri riuscivano a sentirsi a vicenda. Si stima che più di 400 attivisti pro-democrazia vi furono torturati sotto i governi di Park Chung-hee e Chun Doo-hwan; lo studente Park Jong-chul vi morì per tortura dell\'acqua nel gennaio 1987, morte che contribuì a innescare la Lotta Democratica di Giugno. Se Kim fosse consapevole dello scopo dell\'edificio, o avesse fornito solo il disegno esterno, resta discusso. Il sito divenne nel 2005 il Centro per i Diritti Umani della polizia e nel 2025 ha aperto come Museo Nazionale della Democrazia Coreana.',
+      },
+      sources: [
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/National_Museum_of_Korean_Democracy', title: 'National Museum of Korean Democracy', license: 'CC BY-SA 4.0' },
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Park_Jong-chul', title: 'Park Jong-chul', license: 'CC BY-SA 4.0' },
+      ],
+    },
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q497301', title: 'Kim Swoo-geun (Q497301)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Kim_Swoo-geun', title: 'Kim Swoo-geun', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://ko.wikipedia.org/wiki/%EA%B9%80%EC%88%98%EA%B7%BC_(%EA%B1%B4%EC%B6%95%EA%B0%80)', title: '김수근 (건축가)', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  // --- Wave V2-3 batch B7 additions below ---
+  {
+    id: 'tadao-ando',
+    wikidataId: 'Q208220',
+    name: 'Tadao Ando',
+    alternativeNames: ['安藤忠雄', 'Andō Tadao'],
+    gender: 'man',
+    born: 1941,
+    died: null,
+    // Span of completed works: Row House in Sumiyoshi (1976) is conventionally
+    // treated as his breakthrough first mature building; living, still
+    // completing work (Poly Grand Theatre, Shanghai, 2014).
+    floruit: { start: 1976, end: 2026, override: false },
+    // Kenneth Frampton's writing on Ando (a 1984 Rizzoli monograph, part of a
+    // series on critical-regionalist practices, and his later "Critical
+    // Regionalism" essays) is the standard citation for this label — Ando
+    // himself has neither adopted nor objected to the term.
+    movements: [{ id: 'critical-regionalism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: 'Tadao Ando boxed briefly as a teenager to pay for travel, and gave it up after seeing Frank Lloyd Wright\'s Imperial Hotel in Tokyo. He never studied architecture formally: he read, took a correspondence course, and between 1962 and 1969 travelled through Japan, Europe, Africa and the United States tracing Le Corbusier\'s buildings by hand. He opened his own office in Osaka in 1969 and spent the 1970s working almost entirely in raw, fair-faced concrete, a material he treats as finished rather than as a shell for something else. Row House in Sumiyoshi (1976), a nearly windowless concrete box wrapped around an open courtyard, established the vocabulary — light, water, and unbroken wall — that runs through four decades of museums, temples and houses across Japan and abroad. He won the Pritzker Prize in 1995.',
+      es: 'Tadao Ando boxeó brevemente de adolescente para costearse viajes, y lo dejó tras ver el Hotel Imperial de Frank Lloyd Wright en Tokio. Nunca estudió arquitectura de forma reglada: leyó, siguió un curso por correspondencia y entre 1962 y 1969 recorrió Japón, Europa, África y Estados Unidos calcando a mano los edificios de Le Corbusier. Abrió estudio propio en Osaka en 1969 y pasó los años setenta trabajando casi solo con hormigón visto, un material que trata como acabado y no como envoltorio de otra cosa. La Row House de Sumiyoshi (1976), una caja de hormigón casi sin ventanas envuelta en torno a un patio abierto, fijó el vocabulario —luz, agua, muro continuo— que recorre cuatro décadas de museos, templos y casas en Japón y fuera de él. Ganó el Premio Pritzker en 1995.',
+      it: 'Tadao Ando fece brevemente il pugile da adolescente per pagarsi i viaggi, e lasciò perdere dopo aver visto l\'Imperial Hotel di Frank Lloyd Wright a Tokyo. Non studiò mai architettura in modo formale: lesse, seguì un corso per corrispondenza e tra il 1962 e il 1969 percorse Giappone, Europa, Africa e Stati Uniti ricalcando a mano gli edifici di Le Corbusier. Aprì uno studio proprio a Osaka nel 1969 e passò gli anni Settanta lavorando quasi solo con il cemento a vista, un materiale che tratta come finitura e non come involucro per altro. La Row House di Sumiyoshi (1976), una scatola di cemento quasi priva di finestre avvolta attorno a un cortile aperto, fissò il vocabolario — luce, acqua, muro continuo — che attraversa quattro decenni di musei, templi e case in Giappone e all\'estero. Vinse il Premio Pritzker nel 1995.',
+    },
+    awards: [
+      'Pritzker Architecture Prize (1995)',
+      'RIBA Royal Gold Medal (1997)',
+      'Praemium Imperiale (1996)',
+      'AIA Gold Medal (2002)',
+      'Order of Culture (Japan, 2010)',
+    ],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q208220', title: 'Tadao Ando (Q208220)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Tadao_Ando', title: 'Tadao Ando', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.pritzkerprize.com/laureates/1995', title: 'Tadao Ando — The Pritzker Architecture Prize', license: null },
+    ],
+  },
+  {
+    id: 'toyo-ito',
+    wikidataId: 'Q333585',
+    name: 'Toyo Ito',
+    alternativeNames: ['伊東豊雄', 'Itō Toyo'],
+    gender: 'man',
+    born: 1941,
+    died: null,
+    // Span of completed works: from his own practice's early built work
+    // (1971, as "Urban Robot") to the present; living, still active.
+    floruit: { start: 1971, end: 2026, override: false },
+    // Ito is repeatedly described in secondary literature as resisting any
+    // single movement label — he trained under Metabolist Kiyonori Kikutake
+    // but explicitly moved past Metabolism's biological metaphors, and is
+    // characterised (Wallpaper*, STIR, the Architectural League) as
+    // practising an "ever-evolving," "nonspecific" architecture rather than
+    // a school. Left unaffiliated rather than mis-filed under Metabolism.
+    movements: 'unaffiliated',
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'steel-and-glass',
+    portrait: {
+      en: 'Toyo Ito graduated from the University of Tokyo in 1965 and spent four years in the office of Kiyonori Kikutake, at the centre of the Metabolist movement, before opening his own studio — first named Urban Robot — in Tokyo in 1971. He never adopted Metabolism\'s biological metaphors or its megastructures, and by the 1980s was building a reputation on the opposite instinct: structures light enough to feel temporary, expressed through thin steel and glass rather than exposed concrete mass. Sendai Mediatheque (2001) is usually treated as the hinge of his career, the first building in which an idea he had sketched for years — a structure of irregular tubes standing in for both columns and services — actually got built. He has taught and employed a generation of younger Japanese architects, Kazuyo Sejima among them, and won the Pritzker Prize in 2013.',
+      es: 'Toyo Ito se graduó por la Universidad de Tokio en 1965 y pasó cuatro años en el estudio de Kiyonori Kikutake, en el centro del movimiento metabolista, antes de abrir el suyo propio —llamado primero Urban Robot— en Tokio en 1971. Nunca adoptó las metáforas biológicas del metabolismo ni sus megaestructuras, y hacia los años ochenta se había labrado fama con el instinto contrario: estructuras lo bastante ligeras como para parecer provisionales, expresadas en acero fino y vidrio y no en masa de hormigón visto. La Mediateca de Sendai (2001) suele tratarse como la bisagra de su carrera, el primer edificio en el que una idea que llevaba años esbozando —una estructura de tubos irregulares que hacían a la vez de pilares e instalaciones— llegó por fin a construirse. Ha formado y empleado a una generación de arquitectos japoneses más jóvenes, entre ellos Kazuyo Sejima, y ganó el Premio Pritzker en 2013.',
+      it: 'Toyo Ito si laureò all\'Università di Tokyo nel 1965 e trascorse quattro anni nello studio di Kiyonori Kikutake, al centro del movimento metabolista, prima di aprire il proprio — chiamato dapprima Urban Robot — a Tokyo nel 1971. Non adottò mai le metafore biologiche del metabolismo né le sue megastrutture, e verso gli anni Ottanta si era fatto una reputazione con l\'istinto opposto: strutture abbastanza leggere da sembrare provvisorie, espresse in sottile acciaio e vetro anziché in massa di cemento a vista. La Mediateca di Sendai (2001) è di solito considerata la cerniera della sua carriera, il primo edificio in cui un\'idea che abbozzava da anni — una struttura di tubi irregolari che fungevano insieme da pilastri e da impianti — fu finalmente realizzata. Ha formato e impiegato una generazione di architetti giapponesi più giovani, tra cui Kazuyo Sejima, e vinse il Premio Pritzker nel 2013.',
+    },
+    awards: [
+      'Pritzker Architecture Prize (2013)',
+      'RIBA Royal Gold Medal (2006)',
+      'Praemium Imperiale (2010)',
+      'Golden Lion, Venice Architecture Biennale (2012)',
+    ],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q333585', title: 'Toyo Ito (Q333585)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Toyo_Ito', title: 'Toyo Ito', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.pritzkerprize.com/laureates/2013', title: 'Toyo Ito — The Pritzker Architecture Prize', license: null },
+    ],
+  },
+  {
+    // Co-architect record — required by crossRefs' co-architect-exists rule
+    // for the `coArchitects: ['ryue-nishizawa']` credit on Kanazawa 21st
+    // Century Museum and Rolex Learning Center above (both SANAA joint
+    // works with Kazuyo Sejima, who holds architectId on both).
+    id: 'ryue-nishizawa',
+    wikidataId: 'Q369645',
+    name: 'Ryue Nishizawa',
+    alternativeNames: ['西沢立衛', 'Nishizawa Ryūe'],
+    gender: 'man',
+    born: 1966,
+    died: null,
+    floruit: { start: 1995, end: 2026, override: false },
+    movements: [{ id: 'minimalism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'steel-and-glass',
+    portrait: {
+      en: 'Ryue Nishizawa studied architecture at Yokohama National University, joined Kazuyo Sejima\'s office as an employee in 1990, and became her full partner when they founded SANAA together in 1995. Since 1997 he has also run a separate solo practice, Office of Ryue Nishizawa, taking on smaller projects — houses, artist\'s studios — that the larger firm\'s museum-scale commissions don\'t allow; the Teshima Art Museum, a single unbroken concrete shell shaped like a drop of water resting on a hillside, is his best-known solo work. He shares SANAA\'s vocabulary of thin structure and unbroken glass but works at a more domestic scale on his own. He received the Pritzker Prize jointly with Sejima in 2010.',
+      es: 'Ryue Nishizawa estudió arquitectura en la Universidad Nacional de Yokohama, se incorporó como empleado al estudio de Kazuyo Sejima en 1990 y se convirtió en su socio pleno al fundar juntos SANAA en 1995. Desde 1997 dirige además una práctica propia independiente, Office of Ryue Nishizawa, que asume proyectos más pequeños —casas, estudios de artista— que los encargos a escala museística del estudio mayor no permiten; el Museo de Arte de Teshima, una sola cáscara continua de hormigón con forma de gota de agua posada en una ladera, es su obra en solitario más conocida. Comparte el vocabulario de SANAA de estructura delgada y vidrio continuo, pero trabaja por su cuenta a una escala más doméstica. Recibió el Premio Pritzker junto con Sejima en 2010.',
+      it: 'Ryue Nishizawa studiò architettura alla Yokohama National University, entrò come dipendente nello studio di Kazuyo Sejima nel 1990 e ne divenne socio a pieno titolo fondando insieme SANAA nel 1995. Dal 1997 dirige anche una pratica propria indipendente, Office of Ryue Nishizawa, che accoglie progetti più piccoli — case, studi d\'artista — che le commesse su scala museale dello studio maggiore non consentono; il Museo d\'Arte di Teshima, un unico guscio continuo di cemento a forma di goccia d\'acqua posata su un pendio, è la sua opera in proprio più nota. Condivide il vocabolario di SANAA fatto di struttura sottile e vetro continuo, ma lavora per conto proprio a una scala più domestica. Ha ricevuto il Premio Pritzker insieme a Sejima nel 2010.',
+    },
+    awards: [
+      'Pritzker Architecture Prize (2010, with Kazuyo Sejima)',
+      'Golden Lion, 9th Venice Architecture Biennale (2004, with Kazuyo Sejima)',
+    ],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q369645', title: 'Ryue Nishizawa (Q369645)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Ryue_Nishizawa', title: 'Ryue Nishizawa', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.pritzkerprize.com/laureates/2010', title: 'Kazuyo Sejima and Ryue Nishizawa — The Pritzker Architecture Prize', license: null },
+    ],
+  },
+  {
+    // Co-architect record — required by crossRefs' co-architect-exists rule
+    // for the `coArchitects: ['lu-wenyu']` credit on Ningbo Museum and
+    // Ningbo Tengtou Pavilion above (both Amateur Architecture Studio joint
+    // works with Wang Shu, who holds architectId on both).
+    id: 'lu-wenyu',
+    wikidataId: 'Q16239806',
+    name: 'Lu Wenyu',
+    alternativeNames: ['陆文宇'],
+    gender: 'woman',
+    born: 1967,
+    died: null,
+    floruit: { start: 1997, end: 2026, override: false },
+    movements: [
+      { id: 'critical-regionalism', primary: true },
+      { id: 'sustainable-architecture', primary: false },
+    ],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'mixed',
+    portrait: {
+      en: 'Lu Wenyu met Wang Shu as an architecture student at what is now Southeast University in Nanjing, and co-founded Amateur Architecture Studio with him in Hangzhou in 1997, when both were still building almost nothing and Wang Shu was completing a doctorate. She has directed the studio\'s construction and material research since, working with masons on-site to test how salvaged brick, tile and stone can be relaid into new walls, and now teaches alongside her partner at the China Academy of Art. When the Pritzker Prize went to Wang Shu alone in 2012 despite their joint authorship of every building credited to the practice, including the Ningbo Museum, the omission drew public criticism that Wang Shu himself has echoed; in 2010 the two shared the German Schelling Architecture Prize.',
+      es: 'Lu Wenyu conoció a Wang Shu como estudiante de arquitectura en la actual Universidad del Sudeste de Nankín, y cofundó con él el estudio Amateur Architecture en Hangzhou en 1997, cuando ambos apenas construían nada y Wang Shu terminaba un doctorado. Desde entonces dirige la investigación constructiva y de materiales del estudio, trabajando junto a los albañiles en obra para comprobar cómo pueden volver a asentarse en muros nuevos el ladrillo, la teja y la piedra recuperados, y hoy enseña junto a su pareja en la Academia China de Arte. Cuando el Premio Pritzker recayó solo en Wang Shu en 2012 pese a la autoría conjunta de todos los edificios acreditados al estudio, incluido el Museo de Ningbo, la omisión suscitó críticas públicas que el propio Wang Shu ha hecho suyas; en 2010 ambos compartieron el Premio Schelling de Arquitectura alemán.',
+      it: 'Lu Wenyu conobbe Wang Shu da studentessa di architettura all\'attuale Università del Sud-est di Nanchino, e con lui cofondò lo studio Amateur Architecture ad Hangzhou nel 1997, quando entrambi costruivano ancora quasi nulla e Wang Shu stava completando un dottorato. Da allora dirige la ricerca costruttiva e sui materiali dello studio, lavorando insieme ai muratori in cantiere per verificare come mattoni, tegole e pietre di recupero possano essere riposati in muri nuovi, e oggi insegna accanto al suo compagno all\'Accademia Cinese d\'Arte. Quando il Premio Pritzker andò al solo Wang Shu nel 2012 nonostante la paternità congiunta di tutti gli edifici accreditati allo studio, incluso il Museo di Ningbo, l\'esclusione suscitò critiche pubbliche che lo stesso Wang Shu ha fatto proprie; nel 2010 i due condivisero il Premio Schelling di architettura tedesco.',
+    },
+    awards: [
+      'Schelling Architecture Prize (2010, with Wang Shu)',
+    ],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q16239806', title: 'Lu Wenyu (Q16239806)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Lu_Wenyu', title: 'Lu Wenyu', license: 'CC BY-SA 4.0' },
+      { kind: 'publication', url: 'https://www.dezeen.com/2025/11/26/amateur-architecture-studios-wang-shu-lu-wenyu-venice-architecture-biennale-2027/', title: "Amateur Architecture Studio's Wang Shu and Lu Wenyu to curate Venice Architecture Biennale 2027 (Dezeen)", license: null },
+    ],
+  },
+];

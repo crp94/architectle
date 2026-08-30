@@ -20,6 +20,55 @@ describe('validateCrossRefs', () => {
     expect(v.map((x) => x.rule)).toContain('architect-orphan');
   });
 
+  it('accepts a building with a valid coArchitects entry', () => {
+    const p = validPool();
+    const buildings = p.buildings.map((b) => ({ ...b }));
+    // b1 is credited to a4 (Architect Four); co-credit a5 alongside them —
+    // the Ningbo Museum / Kanazawa 21st Century Museum shape this field
+    // exists for (Wang Shu + Lu Wenyu, Kazuyo Sejima + Ryue Nishizawa).
+    buildings[0] = { ...buildings[0], coArchitects: ['a5'] };
+    const v = validateCrossRefs({ buildings, architects: p.architects });
+    expect(v).toEqual([]);
+  });
+
+  it('rejects a coArchitects id that resolves to no architect in the pool', () => {
+    const p = validPool();
+    const buildings = p.buildings.map((b) => ({ ...b }));
+    buildings[0] = { ...buildings[0], coArchitects: ['no-such-architect'] };
+    const v = validateCrossRefs({ buildings, architects: p.architects });
+    expect(v.map((x) => x.rule)).toContain('co-architect-exists');
+  });
+
+  it('rejects coArchitects containing the building\'s own architectId', () => {
+    const p = validPool();
+    const buildings = p.buildings.map((b) => ({ ...b }));
+    // buildings[0].architectId is 'a4' — listing it again in coArchitects is
+    // a duplicate credit, not a second author.
+    buildings[0] = { ...buildings[0], coArchitects: ['a4'] };
+    const v = validateCrossRefs({ buildings, architects: p.architects });
+    expect(v.map((x) => x.rule)).toContain('co-architect-duplicate');
+  });
+
+  it('rejects coArchitects containing an internal duplicate id', () => {
+    const p = validPool();
+    const buildings = p.buildings.map((b) => ({ ...b }));
+    buildings[0] = { ...buildings[0], coArchitects: ['a5', 'a5'] };
+    const v = validateCrossRefs({ buildings, architects: p.architects });
+    expect(v.map((x) => x.rule)).toContain('co-architect-duplicate');
+  });
+
+  it('does not flag architect-orphan for an architect who appears only as a co-credit', () => {
+    const p = validPool();
+    const buildings = p.buildings.map((b) => ({ ...b }));
+    // Point every building away from a1 so a1 has zero *primary* credits,
+    // then co-credit a1 on b1. a1 is legitimately in the pool (as a
+    // co-author) and must not be flagged as orphaned.
+    buildings.forEach((b) => { if (b.architectId === 'a1') b.architectId = 'a4'; });
+    buildings[0] = { ...buildings[0], coArchitects: ['a1'] };
+    const v = validateCrossRefs({ buildings, architects: p.architects });
+    expect(v.map((x) => x.rule)).not.toContain('architect-orphan');
+  });
+
   it('rejects a movement id not in MOVEMENTS', () => {
     const v = validateCrossRefs(withArchitect(validPool(), { movements: [{ id: 'no-such-movement', primary: true }] }));
     expect(v.map((x) => x.rule)).toContain('movement-resolves');
@@ -116,6 +165,41 @@ describe('validateCrossRefs', () => {
         it: 'Tempio Espiatorio della Sagrada Família',
       },
     };
+    const v = validateCrossRefs({ buildings: [...buildings, dup], architects: p.architects });
+    expect(v.map((x) => x.rule)).toContain('possible-duplicate-site');
+  });
+
+  it('flags a duplicate building id used by two distinct entries', () => {
+    const p = validPool();
+    const clash = { ...p.buildings[1], id: p.buildings[0].id };
+    const v = validateCrossRefs({ buildings: [...p.buildings, clash], architects: p.architects });
+    const violation = v.find((x) => x.rule === 'unique-id' && x.subject === p.buildings[0].id);
+    expect(violation).toBeDefined();
+  });
+
+  it('flags a duplicate architect id used by two distinct entries', () => {
+    const p = validPool();
+    const clash = { ...p.architects[1], id: p.architects[0].id };
+    const v = validateCrossRefs({ buildings: p.buildings, architects: [...p.architects, clash] });
+    const violation = v.find((x) => x.rule === 'unique-id' && x.subject === p.architects[0].id);
+    expect(violation).toBeDefined();
+  });
+
+  it('does not flag unique-id for a pool with no duplicate ids', () => {
+    const v = validateCrossRefs(validPool());
+    expect(v.map((x) => x.rule)).not.toContain('unique-id');
+  });
+
+  it('flags an exact-duplicate non-Latin-script building name (CJK) as a possible duplicate site', () => {
+    const p = validPool();
+    const buildings = p.buildings.map((b) => ({ ...b }));
+    // A name whose tokenizer collapses to the empty set for BOTH sides:
+    // pre-fix, `tokensA.size === 0 || tokensB.size === 0` unconditionally
+    // returned false here, so this pair could never be flagged no matter
+    // how close the coordinates. Regression guard for the raw-string
+    // fallback.
+    buildings[0] = { ...buildings[0], name: { en: '東京タワー', es: '東京タワー', it: '東京タワー' } };
+    const dup = { ...buildings[0], id: 'b1-dup', name: { en: '東京タワー', es: '東京タワー', it: '東京タワー' } };
     const v = validateCrossRefs({ buildings: [...buildings, dup], architects: p.architects });
     expect(v.map((x) => x.rule)).toContain('possible-duplicate-site');
   });

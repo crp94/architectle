@@ -1,4 +1,1344 @@
 import type { Building } from '@/types/building';
 
 // Wave 5 curator agent (Germany, Austria, Switzerland, Liechtenstein): real, sourced Building entries for this slice.
-export const EUROPE_GERMANIC_BUILDINGS: Building[] = [];
+//
+// Every `image` was checked on the live Commons file page (licence template
+// and |author= field read from the page wikitext) before being recorded here.
+// `image.width`/`image.height` are left at 0 for Task 10 to fill in.
+//
+// `heritage` follows a single rule across this slice: 'unesco' for World
+// Heritage inscription; 'national' for statutory monument protection under a
+// national monument-protection regime (German Baudenkmal / Kulturdenkmal,
+// Austrian Denkmalschutz); 'regional' where the protection is explicitly
+// sub-national only (Therme Vals, cantonal); 'none' where the building is not
+// listed.
+export const EUROPE_GERMANIC_BUILDINGS: Building[] = [
+{
+    id: 'karlskirche-vienna',
+    wikidataId: 'Q408847',
+    name: {
+      en: 'Karlskirche',
+      es: 'Iglesia de San Carlos Borromeo',
+      it: 'Chiesa di San Carlo Borromeo',
+    },
+    architectId: 'johann-bernhard-fischer-von-erlach',
+    // Wikidata P84 (Q408847) lists both father and son: Joseph Emanuel
+    // completed the church after his father's 1723 death, per the dossier.
+    coArchitects: ['joseph-emanuel-fischer-von-erlach'],
+    location: { city: 'Vienna', countryCode: 'AT', lat: 48.19828, lon: 16.37188 },
+    inception: 1716,
+    completed: 1737,
+    demolished: null,
+    typology: 'sacral',
+    materials: ['stone'],
+    structure: {
+      en: 'A longitudinal-oval nave carries a masonry drum and dome on pendentives, buttressed laterally by low bell towers and fronted by a free-standing pedimented portico.',
+      es: 'Una nave de óvalo longitudinal sostiene sobre pechinas un tambor y una cúpula de fábrica, contrarrestados lateralmente por torres campanario bajas y precedidos por un pórtico exento con frontón.',
+      it: 'Una navata a ovale longitudinale sorregge su pennacchi un tamburo e una cupola in muratura, controspinti lateralmente da campanili bassi e preceduti da un portico libero con frontone.',
+    },
+    program: {
+      en: 'A votive church built for Emperor Charles VI, who vowed it in St Stephen\'s on 22 October 1713 during Vienna\'s last great plague epidemic and dedicated it to his name saint, Charles Borromeo.',
+      es: 'Iglesia votiva erigida para el emperador Carlos VI, que la prometió en la catedral de San Esteban el 22 de octubre de 1713 durante la última gran epidemia de peste de Viena y la dedicó a su santo patrón, Carlos Borromeo.',
+      it: 'Chiesa votiva costruita per l\'imperatore Carlo VI, che la promise nel duomo di Santo Stefano il 22 ottobre 1713 durante l\'ultima grande epidemia di peste a Vienna, dedicandola al suo santo patrono, Carlo Borromeo.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Roman Catholic rectory church, tended by the Knights of the Cross with the Red Star, and a concert venue.',
+      es: 'Iglesia rectoral católica, atendida por los Caballeros de la Cruz de la Estrella Roja, y sala de conciertos.',
+      it: 'Chiesa rettoriale cattolica, officiata dai Cavalieri della Croce con la Stella Rossa, e sede di concerti.',
+    },
+    detailRect: { x: 0.33, y: 0.33, w: 0.28, h: 0.30 },
+    image: {
+      commonsFile: 'File:Wien - Karlskirche (1).JPG',
+      photographer: 'C.Stadler/Bwag',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Wien_-_Karlskirche_(1).JPG',
+      width: 1600,
+      height: 1013,
+    },
+    dossier: {
+      en: 'The plague ended in 1714 and Charles VI held an architectural competition, which Fischer von Erlach won in 1715 against Johann Lucas von Hildebrandt and Ferdinando Galli-Bibiena. The site was fixed on 11 November 1715 and the foundation stone laid on 4 February 1716. What Fischer built is a deliberate collage of borrowed authority: German Wikipedia describes the church as a link between Rome and Byzantium, its dome echoing Hagia Sophia and its two flanking columns imitating Trajan\'s Column, with a Roman temple portico set between them. The columns are hollow inside, cut from Zogelsdorf stone, wrapped in spiral reliefs by the sculptors Johann Baptist Mader, Johann Baptist Straub and Jakob Christoph Schletterer and crowned by eagles by Lorenzo Mattielli — an emperor\'s name saint given the propaganda apparatus of an emperor. Fischer died in 1723 and his son Joseph Emanuel completed the church in 1737. Unusually generous spiral stairs with newel columns flank the choir, a Roman type descended from Bramante\'s Belvedere stair.',
+      es: 'La peste remitió en 1714 y Carlos VI convocó un concurso de arquitectura que Fischer von Erlach ganó en 1715 frente a Johann Lucas von Hildebrandt y Ferdinando Galli-Bibiena. El solar se fijó el 11 de noviembre de 1715 y la primera piedra se colocó el 4 de febrero de 1716. Lo que Fischer construyó es un collage deliberado de autoridades prestadas: la Wikipedia alemana describe la iglesia como un enlace entre Roma y Bizancio, con una cúpula que evoca Santa Sofía y dos columnas flanqueantes que imitan la columna Trajana, y entre ellas un pórtico de templo romano. Las columnas son huecas por dentro, talladas en piedra de Zogelsdorf, envueltas en relieves helicoidales de los escultores Johann Baptist Mader, Johann Baptist Straub y Jakob Christoph Schletterer y coronadas por águilas de Lorenzo Mattielli: el santo patrón de un emperador dotado del aparato propagandístico de un emperador. Fischer murió en 1723 y su hijo Joseph Emanuel terminó la obra en 1737. Junto al coro se despliegan escaleras de caracol de anchura insólita, con columna de alma, tipo romano heredado de la escalera del Belvedere de Bramante.',
+      it: 'La peste cessò nel 1714 e Carlo VI bandì un concorso di architettura che Fischer von Erlach vinse nel 1715 contro Johann Lucas von Hildebrandt e Ferdinando Galli-Bibiena. L\'area fu fissata l\'11 novembre 1715 e la prima pietra posata il 4 febbraio 1716. Quel che Fischer costruì è un collage deliberato di autorità prese a prestito: la Wikipedia tedesca descrive la chiesa come un ponte fra Roma e Bisanzio, con una cupola che richiama Santa Sofia e due colonne laterali che imitano la Colonna Traiana, e in mezzo un portico da tempio romano. Le colonne sono cave all\'interno, tagliate in pietra di Zogelsdorf, avvolte da rilievi elicoidali degli scultori Johann Baptist Mader, Johann Baptist Straub e Jakob Christoph Schletterer e coronate da aquile di Lorenzo Mattielli: il santo patrono di un imperatore dotato dell\'apparato propagandistico di un imperatore. Fischer morì nel 1723 e suo figlio Joseph Emanuel completò la chiesa nel 1737. Ai lati del coro si aprono scale a chiocciola di larghezza insolita, con colonna centrale, tipo romano derivato dalla scala del Belvedere di Bramante.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q408847', title: 'Karlskirche (Q408847)', license: null },
+      { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Wiener_Karlskirche', title: 'Wiener Karlskirche', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Johann_Bernhard_Fischer_von_Erlach', title: 'Johann Bernhard Fischer von Erlach', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'basilika-vierzehnheiligen',
+    wikidataId: 'Q694252',
+    name: {
+      en: 'Basilica of the Fourteen Holy Helpers',
+      es: 'Basílica de los Catorce Santos Auxiliadores',
+      it: 'Basilica dei Quattordici Santi Ausiliatori',
+    },
+    architectId: 'balthasar-neumann',
+    location: { city: 'Bad Staffelstein', countryCode: 'DE', lat: 50.11567, lon: 11.05407 },
+    inception: 1743,
+    completed: 1772,
+    demolished: null,
+    typology: 'sacral',
+    materials: ['stone'],
+    structure: {
+      en: 'A basilican shell of local sandstone encloses a plan of interpenetrating ovals whose vaults spring from the ovals rather than from the outer walls, so the interior structure and the envelope no longer coincide.',
+      es: 'Una envolvente basilical de arenisca local encierra una planta de óvalos que se interpenetran, cuyas bóvedas arrancan de los propios óvalos y no de los muros exteriores, de modo que estructura interior y envolvente dejan de coincidir.',
+      it: 'Un involucro basilicale in arenaria locale racchiude una pianta di ovali compenetrati le cui volte impostano sugli ovali stessi e non sui muri perimetrali, cosicché struttura interna e involucro non coincidono più.',
+    },
+    program: {
+      en: 'A pilgrimage church for the Cistercian abbey of Langheim, built on the site of a fifteenth-century apparition and financed by the abbey from its own funds.',
+      es: 'Iglesia de peregrinación para la abadía cisterciense de Langheim, levantada en el lugar de una aparición del siglo XV y financiada por la abadía con fondos propios.',
+      it: 'Chiesa di pellegrinaggio per l\'abbazia cistercense di Langheim, eretta sul luogo di un\'apparizione quattrocentesca e finanziata dall\'abbazia con fondi propri.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Active pilgrimage church and minor basilica of the Archdiocese of Bamberg, receiving around half a million visitors a year.',
+      es: 'Iglesia de peregrinación en activo y basílica menor de la archidiócesis de Bamberg, con cerca de medio millón de visitantes al año.',
+      it: 'Chiesa di pellegrinaggio ancora attiva e basilica minore dell\'arcidiocesi di Bamberga, con circa mezzo milione di visitatori l\'anno.',
+    },
+    // Deliberate exception to the slice's exterior-only default: Neumann died in
+    // 1753, so there is no copyright question at all for an interior view, and
+    // the interpenetrating ovals of the vault ARE the argument of the building
+    // in a way the exterior alone cannot make. Swapped in for the fix round in
+    // place of the original exterior photo (File:Bad Staffelstein Basilika
+    // Vierzehnheiligen 001.jpg, still a valid CC BY-SA 4.0 candidate if this
+    // building ever needs a second image).
+    //
+    // detailRect re-verified against the actual downloaded image (task-9
+    // review, Minor #2): the original {x:0.28, y:0.12, w:0.32, h:0.30} mostly
+    // framed the gilded Rococo altar canopy, not the vault. Moved up and left
+    // to {x:0.08, y:0.02, w:0.32, h:0.28} (area 0.0896), which frames the
+    // diagonal rib where two vault ovals interpenetrate, the fresco medallion
+    // in its scalloped border, and a window for scale — the actual
+    // interpenetrating-oval geometry the dossier describes.
+    detailRect: { x: 0.08, y: 0.02, w: 0.32, h: 0.28 },
+    image: {
+      commonsFile: 'File:Vierzehnheiligen Gnadenaltar P3RM0723-HDR.jpg',
+      photographer: 'Ermell',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Vierzehnheiligen_Gnadenaltar_P3RM0723-HDR.jpg',
+      width: 1108,
+      height: 1600,
+    },
+    dossier: {
+      en: 'The masterpiece is the product of a construction blunder. Planning began in 1735; Neumann was appointed in 1742 and the foundation stone laid in April 1743. He then discovered that Gottfried Heinrich Krohne, who held the site management, had departed from the agreed drawings and shifted the building east, so the altar could no longer stand where it belonged, on the site of the apparition under the crossing dome. Demolishing the finished outer walls was out of the question, so in 1744 Neumann designed a new interior inside the existing envelope: a sequence of interlocking ovals that pulls the vaults inward and leaves the shrine free-standing in the nave, ringed by its own space. The result is a church whose façade is late Baroque and whose interior is Rococo, consecrated in 1772, nineteen years after Neumann\'s death. The twin towers are 75 metres high; Leo XIII raised it to minor basilica in 1897.',
+      es: 'La obra maestra nació de un error de obra. La planificación arrancó en 1735; Neumann fue designado en 1742 y la primera piedra se colocó en abril de 1743. Entonces descubrió que Gottfried Heinrich Krohne, que llevaba la dirección de obra, se había apartado de los planos convenidos y había desplazado el edificio hacia el este, de modo que el altar ya no podía situarse donde debía, sobre el lugar de la aparición y bajo la cúpula del crucero. Demoler los muros exteriores ya levantados era impensable, así que en 1744 Neumann proyectó un interior nuevo dentro de la envolvente existente: una secuencia de óvalos encadenados que atrae las bóvedas hacia dentro y deja el altar de gracia exento en la nave, rodeado de su propio espacio. El resultado es una iglesia de fachada tardobarroca e interior rococó, consagrada en 1772, diecinueve años después de la muerte de Neumann. Las torres gemelas alcanzan 75 metros; León XIII la elevó a basílica menor en 1897.',
+      it: 'Il capolavoro nasce da un errore di cantiere. La progettazione cominciò nel 1735; Neumann fu incaricato nel 1742 e la prima pietra posata nell\'aprile 1743. Scoprì allora che Gottfried Heinrich Krohne, che dirigeva i lavori, si era discostato dai disegni concordati e aveva spostato l\'edificio verso est, sicché l\'altare non poteva più stare dove doveva, sul luogo dell\'apparizione sotto la cupola della crociera. Demolire i muri perimetrali già eretti era impensabile, così nel 1744 Neumann disegnò un interno nuovo dentro l\'involucro esistente: una successione di ovali concatenati che tira le volte verso l\'interno e lascia l\'altare della grazia isolato nella navata, circondato da uno spazio proprio. Ne risulta una chiesa dalla facciata tardobarocca e dall\'interno rococò, consacrata nel 1772, diciannove anni dopo la morte di Neumann. Le torri gemelle sono alte 75 metri; Leone XIII la elevò a basilica minore nel 1897.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q694252', title: 'Basilica of the Fourteen Holy Helpers (Q694252)', license: null },
+      { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Basilika_Vierzehnheiligen', title: 'Basilika Vierzehnheiligen', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'bauhausgebaeude-dessau',
+    wikidataId: 'Q516770',
+    name: {
+      en: 'Bauhaus Building, Dessau',
+      es: 'Edificio de la Bauhaus de Dessau',
+      it: 'Edificio del Bauhaus a Dessau',
+    },
+    architectId: 'walter-gropius',
+    location: { city: 'Dessau-Roßlau', countryCode: 'DE', lat: 51.83920, lon: 12.22670 },
+    inception: 1925,
+    completed: 1926,
+    demolished: null,
+    typology: 'educational',
+    materials: ['steel-and-glass', 'concrete'],
+    structure: {
+      en: 'A reinforced-concrete skeleton set back from the perimeter lets the workshop wing hang a three-storey glass curtain wall clear of the structure, turning the corner without a visible support.',
+      es: 'Un esqueleto de hormigón armado retranqueado respecto al perímetro permite que el ala de talleres cuelgue un muro cortina de vidrio de tres plantas por delante de la estructura, doblando la esquina sin apoyo visible.',
+      it: 'Uno scheletro in cemento armato arretrato rispetto al perimetro consente all\'ala delle officine di appendere una parete continua vetrata di tre piani davanti alla struttura, girando l\'angolo senza appoggi visibili.',
+    },
+    program: {
+      en: 'A school building commissioned by the city of Dessau for the Bauhaus and the municipal school of arts and crafts, with workshops, studios, an auditorium and a canteen.',
+      es: 'Edificio escolar encargado por la ciudad de Dessau para la Bauhaus y la escuela municipal de artes y oficios, con talleres, estudios, auditorio y comedor.',
+      it: 'Edificio scolastico commissionato dalla città di Dessau per il Bauhaus e la scuola comunale di arti e mestieri, con officine, atelier, auditorium e mensa.',
+    },
+    heritage: 'unesco',
+    currentUse: {
+      en: 'Home of the Stiftung Bauhaus Dessau, which owns the building; parts are used by Anhalt University of Applied Sciences, and it is open to visitors.',
+      es: 'Sede de la Stiftung Bauhaus Dessau, propietaria del edificio; parte de él lo utiliza la Universidad de Ciencias Aplicadas de Anhalt, y está abierto al público.',
+      it: 'Sede della Stiftung Bauhaus Dessau, che ne è proprietaria; parte dell\'edificio è usata dalla Hochschule Anhalt ed è aperto ai visitatori.',
+    },
+    detailRect: { x: 0.19, y: 0.30, w: 0.28, h: 0.38 },
+    image: {
+      commonsFile: 'File:Fassade des Bauhausgebädes, Dessau 2019.jpg',
+      photographer: 'Leojng',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Fassade_des_Bauhausgeb%C3%A4des,_Dessau_2019.jpg',
+      width: 1600,
+      height: 1201,
+    },
+    extraImages: [
+      {
+        commonsFile: 'Dessau-Roßlau - Bauhaus Dessau - 20190922080502.jpeg',
+        photographer: 'Maschma',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Dessau-Ro%C3%9Flau_-_Bauhaus_Dessau_-_20190922080502.jpeg',
+        width: 1600,
+        height: 1200,
+      },
+    ],
+    dossier: {
+      en: 'Gropius designed the building in 1925 and it was built in 1925–26, together with the masters\' houses nearby, after the Bauhaus was forced out of Weimar. There is no principal façade. Three wings of different character — workshops, school, studios — are linked by a bridge containing the administration and Gropius\'s own office, and the composition can only be read by walking around it or from the air. The glass curtain wall of the workshop wing is the argument: because the concrete frame stands behind it, the glazing runs continuously across three storeys and around the corner, and the building declares its structure by not showing it. The Bauhaus used it until 1932. Later it served as a Nazi party training school, was partly burnt out in the war, was rebuilt as a vocational school, and was restored towards its original state from 1975. It has been a UNESCO World Heritage Site since 1996.',
+      es: 'Gropius proyectó el edificio en 1925 y se construyó entre 1925 y 1926, junto con las casas de los maestros cercanas, después de que la Bauhaus fuera expulsada de Weimar. No hay fachada principal. Tres alas de carácter distinto —talleres, escuela, estudios— se enlazan mediante un puente que aloja la administración y el propio despacho de Gropius, y la composición solo se entiende rodeándola o desde el aire. El muro cortina del ala de talleres es el argumento: como la estructura de hormigón queda detrás, el acristalamiento corre sin interrupción por tres plantas y dobla la esquina, y el edificio declara su estructura precisamente al no mostrarla. La Bauhaus lo ocupó hasta 1932. Después sirvió como escuela de cuadros del partido nazi, se incendió en parte durante la guerra, se reconstruyó como escuela de formación profesional y desde 1975 se restauró hacia su estado original. Es Patrimonio Mundial de la UNESCO desde 1996.',
+      it: 'Gropius progettò l\'edificio nel 1925 e fu costruito tra il 1925 e il 1926, insieme alle vicine case dei maestri, dopo che il Bauhaus era stato costretto a lasciare Weimar. Non esiste una facciata principale. Tre ali di carattere diverso — officine, scuola, atelier — sono collegate da un ponte che ospita l\'amministrazione e lo studio di Gropius, e la composizione si legge solo girandoci intorno o dall\'alto. La parete vetrata continua dell\'ala delle officine è la tesi: poiché il telaio in cemento sta dietro, la vetrata corre ininterrotta su tre piani e gira l\'angolo, e l\'edificio dichiara la propria struttura proprio non mostrandola. Il Bauhaus lo usò fino al 1932. In seguito servì come scuola di quadri del partito nazista, bruciò in parte durante la guerra, fu ricostruito come istituto professionale e dal 1975 riportato verso lo stato originario. È Patrimonio mondiale UNESCO dal 1996.',
+    },
+    context: {
+      body: {
+        en: 'The Bauhaus was in Dessau only from 1925 to 1932. German Wikipedia records that the school was closed in 1932 on the initiative of the National Socialists — a newly elected city council with a National Socialist majority shut it for political reasons — and that it then survived only one further year as a private institute in Berlin. English Wikipedia adds that the Berlin school was closed in 1933 by its own leadership under pressure from the Nazi regime, having been painted as a centre of communist intellectualism. Its three directors scattered: Walter Gropius emigrated to England in 1934 and to the United States in 1937; Ludwig Mies van der Rohe, the last director, emigrated in 1937–38; Hannes Meyer had already gone to the Soviet Union in 1930. After the closure the Dessau building was at first slated for demolition, then used among other things as a training school for the Nazi party district of Magdeburg.',
+        es: 'La Bauhaus estuvo en Dessau solo de 1925 a 1932. La Wikipedia alemana recoge que la escuela fue cerrada en 1932 a instancias de los nacionalsocialistas —un consistorio recién elegido con mayoría nacionalsocialista la clausuró por motivos políticos— y que después sobrevivió apenas un año más como instituto privado en Berlín. La Wikipedia en inglés añade que la escuela berlinesa fue cerrada en 1933 por su propia dirección ante la presión del régimen nazi, tras haber sido presentada como un foco de intelectualismo comunista. Sus tres directores se dispersaron: Walter Gropius emigró a Inglaterra en 1934 y a Estados Unidos en 1937; Ludwig Mies van der Rohe, el último director, emigró en 1937-38; Hannes Meyer se había marchado ya a la Unión Soviética en 1930. Tras el cierre, el edificio de Dessau estuvo primero destinado al derribo y luego se usó, entre otras cosas, como escuela de cuadros del partido nazi para el Gau de Magdeburgo.',
+        it: 'Il Bauhaus rimase a Dessau soltanto dal 1925 al 1932. La Wikipedia tedesca riporta che la scuola fu chiusa nel 1932 su iniziativa dei nazionalsocialisti — un consiglio comunale appena eletto a maggioranza nazionalsocialista la chiuse per ragioni politiche — e che poi sopravvisse solo un altro anno come istituto privato a Berlino. La Wikipedia inglese aggiunge che la scuola berlinese fu chiusa nel 1933 dalla sua stessa direzione sotto la pressione del regime nazista, dopo essere stata dipinta come un centro di intellettualismo comunista. I suoi tre direttori si dispersero: Walter Gropius emigrò in Inghilterra nel 1934 e negli Stati Uniti nel 1937; Ludwig Mies van der Rohe, ultimo direttore, emigrò nel 1937-38; Hannes Meyer era già partito per l\'Unione Sovietica nel 1930. Dopo la chiusura l\'edificio di Dessau fu dapprima destinato alla demolizione, poi usato fra l\'altro come scuola di quadri del partito nazista per il Gau di Magdeburgo.',
+      },
+      sources: [
+        { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Bauhausgeb%C3%A4ude_Dessau', title: 'Bauhausgebäude Dessau', license: 'CC BY-SA 4.0' },
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Bauhaus', title: 'Bauhaus', license: 'CC BY-SA 4.0' },
+        { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Ludwig_Mies_van_der_Rohe', title: 'Ludwig Mies van der Rohe', license: 'CC BY-SA 4.0' },
+      ],
+    },
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q516770', title: 'Bauhaus Dessau (Q516770)', license: null },
+      { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Bauhausgeb%C3%A4ude_Dessau', title: 'Bauhausgebäude Dessau', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Bauhaus', title: 'Bauhaus', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'fagus-factory',
+    wikidataId: 'Q685476',
+    name: {
+      en: 'Fagus Factory',
+      es: 'Fábrica Fagus',
+      it: 'Fabbrica Fagus',
+    },
+    architectId: 'walter-gropius',
+    location: { city: 'Alfeld an der Leine', countryCode: 'DE', lat: 51.98369, lon: 9.81261 },
+    inception: 1911,
+    completed: 1913,
+    demolished: null,
+    typology: 'industrial',
+    materials: ['steel-and-glass', 'brick'],
+    structure: {
+      en: 'A steel skeleton is set back from the corners of the main building so that floor-to-ceiling glazing wraps around them with no visible vertical support, the brick piers between the windows reduced to thin curtain-wall mullions.',
+      es: 'Un esqueleto de acero se retranquea de las esquinas del edificio principal para que un acristalamiento de suelo a techo las envuelva sin apoyo vertical visible, y los machones de ladrillo entre las ventanas quedan reducidos a finos montantes de muro cortina.',
+      it: 'Uno scheletro d\'acciaio arretra dagli angoli dell\'edificio principale perché una vetrata a tutta altezza li avvolga senza alcun sostegno verticale visibile, e i pilastrini di mattoni fra le finestre si riducono a sottili montanti di parete continua.',
+    },
+    program: {
+      en: 'A shoe-last factory built for the manufacturer Carl Benscheidt, who had broken from his former employer to found his own works and wanted a building to announce it.',
+      es: 'Fábrica de hormas de zapatero construida para el fabricante Carl Benscheidt, que había roto con su antiguo patrón para fundar su propia empresa y quería un edificio que lo anunciara.',
+      it: 'Fabbrica di forme per calzature costruita per l\'industriale Carl Benscheidt, che aveva rotto con il suo precedente datore di lavoro per fondare un\'impresa propria e voleva un edificio che lo annunciasse.',
+    },
+    heritage: 'unesco',
+    currentUse: {
+      en: 'Still an operating shoe-last factory, part of it given over to a visitor centre since UNESCO inscription in 2011.',
+      es: 'Sigue siendo una fábrica de hormas en funcionamiento, con parte de sus instalaciones dedicadas a un centro de visitantes desde la inscripción de la UNESCO en 2011.',
+      it: 'È tuttora una fabbrica di forme in funzione, con parte degli spazi destinata a un centro visitatori dopo l\'iscrizione UNESCO del 2011.',
+    },
+    detailRect: { x: 0.60, y: 0.25, w: 0.32, h: 0.55 },
+    image: {
+      commonsFile: 'Fagus Gropius Hauptgebaeude 200705 wiki front.jpg',
+      photographer: 'Carsten Janssen',
+      license: 'CC BY-SA 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Fagus_Gropius_Hauptgebaeude_200705_wiki_front.jpg',
+      width: 1000,
+      height: 600,
+    },
+    extraImages: [
+      {
+        commonsFile: 'Fagus Gropius Hauptgebaeude 200705 wiki rueckseite.jpg',
+        photographer: 'Carsten Janssen',
+        license: 'CC BY-SA 2.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Fagus_Gropius_Hauptgebaeude_200705_wiki_rueckseite.jpg',
+        width: 1000,
+        height: 600,
+      },
+    ],
+    dossier: {
+      en: "Carl Benscheidt had managed a shoe-last works owned by others before breaking away in 1911 to found his own; the twenty-eight-year-old Gropius, not yet running his own atelier, and his collaborator Adolf Meyer were hired to design its main office and production buildings, taking over from an established local architect on the client's own initiative. Their model was Peter Behrens' AEG turbine hall in Berlin, where Gropius had briefly worked, but they inverted its logic: instead of massive brick piers with glass filling the gaps, the steel structure here retreats behind the surface, and glass runs floor to ceiling around the corners with nothing appearing to hold it up. It was a radical claim for a factory building to make in 1911 and it announced ideas Gropius would return to at the Bauhaus fourteen years later. Interior fitting-out continued until 1925. The company still makes wooden and plastic shoe lasts on the site, and UNESCO inscribed the factory as a World Heritage Site in 2011.",
+      es: 'Carl Benscheidt había dirigido una fábrica de hormas propiedad de terceros antes de romper en 1911 para fundar la suya propia; contrató para el edificio de oficinas y producción a un Gropius de veintiocho años, que aún no dirigía taller propio, y a su colaborador Adolf Meyer, relevando por iniciativa del propio cliente a un arquitecto local ya establecido. Su modelo fue la nave de turbinas de la AEG de Peter Behrens en Berlín, donde Gropius había trabajado brevemente, pero invirtieron su lógica: en vez de machones macizos de ladrillo con el vidrio rellenando los huecos, aquí la estructura de acero se retira tras la superficie, y el vidrio corre de suelo a techo en las esquinas sin que nada parezca sostenerlo. Fue una afirmación radical para un edificio fabril en 1911, y anunciaba ideas a las que Gropius volvería en la Bauhaus catorce años después. El acabado de los interiores continuó hasta 1925. La empresa sigue fabricando hormas de madera y plástico en el mismo lugar, y la UNESCO inscribió la fábrica como Patrimonio Mundial en 2011.',
+      it: "Carl Benscheidt aveva diretto una fabbrica di forme di proprietà altrui prima di staccarsene nel 1911 per fondarne una propria; assunse per l'edificio degli uffici e della produzione un Gropius ventottenne, che non dirigeva ancora un proprio studio, e il suo collaboratore Adolf Meyer, sostituendo per iniziativa dello stesso committente un architetto locale già affermato. Il loro modello fu la sala turbine dell'AEG di Peter Behrens a Berlino, dove Gropius aveva lavorato brevemente, ma ne rovesciarono la logica: invece di massicci pilastri di mattoni con il vetro a riempire gli intervalli, qui la struttura d'acciaio arretra dietro la superficie, e il vetro corre da terra al soffitto sugli angoli senza che nulla sembri sorreggerlo. Fu un'affermazione radicale per un edificio industriale nel 1911, e annunciava idee a cui Gropius sarebbe tornato al Bauhaus quattordici anni dopo. La rifinitura degli interni proseguì fino al 1925. L'azienda produce ancora forme di legno e plastica sul posto, e l'UNESCO ha iscritto la fabbrica come Patrimonio Mondiale nel 2011.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q685476', title: 'Fagus-Werk (Q685476)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Fagus_Factory', title: 'Fagus Factory', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'gropius-house-lincoln',
+    wikidataId: 'Q4179781',
+    name: {
+      en: 'Gropius House',
+      es: 'Casa Gropius',
+      it: 'Casa Gropius',
+    },
+    architectId: 'walter-gropius',
+    location: { city: 'Lincoln, Massachusetts', countryCode: 'US', lat: 42.42708, lon: -71.32639 },
+    inception: 1937,
+    completed: 1938,
+    demolished: null,
+    typology: 'domestic',
+    materials: ['timber', 'stone'],
+    structure: {
+      en: 'A white-painted timber-frame volume on a fieldstone-walled terrace mixes International Style elements — a flat roof, glass block, an exterior spiral stair — with New England materials and carpentry.',
+      es: 'Un volumen de entramado de madera pintado de blanco sobre una terraza de muros de piedra combina elementos del Estilo Internacional —cubierta plana, bloque de vidrio, escalera de caracol exterior— con materiales y carpintería de Nueva Inglaterra.',
+      it: 'Un volume a struttura lignea dipinto di bianco su una terrazza dai muri in pietrame unisce elementi dello Stile Internazionale — tetto piano, vetrocemento, scala a chiocciola esterna — a materiali e falegnameria della Nuova Inghilterra.',
+    },
+    program: {
+      en: "Gropius's own house, built for himself and his family the year after he emigrated to the United States to teach at Harvard, with Marcel Breuer, his colleague at the Graduate School of Design, as associate architect.",
+      es: 'Casa propia de Gropius, construida para él y su familia el año después de emigrar a Estados Unidos para enseñar en Harvard, con Marcel Breuer, su colega en la Graduate School of Design, como arquitecto asociado.',
+      it: "Casa propria di Gropius, costruita per sé e la famiglia l'anno dopo essere emigrato negli Stati Uniti per insegnare ad Harvard, con Marcel Breuer, suo collega alla Graduate School of Design, come architetto associato.",
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'A house museum owned and run by Historic New England, furnished with the family\'s own Bauhaus-era furniture and open for guided tours.',
+      es: 'Casa museo propiedad de Historic New England y gestionada por ella, amueblada con el mobiliario de época Bauhaus de la propia familia y abierta a visitas guiadas.',
+      it: 'Casa museo di proprietà e gestione di Historic New England, arredata con i mobili di epoca Bauhaus della stessa famiglia e aperta a visite guidate.',
+    },
+    detailRect: { x: 0.42, y: 0.36, w: 0.24, h: 0.42 },
+    image: {
+      commonsFile: 'Gropius House, Lincoln, Massachusetts - Front View.JPG',
+      photographer: 'Daderot',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Gropius_House,_Lincoln,_Massachusetts_-_Front_View.JPG',
+      width: 1600,
+      height: 1200,
+    },
+    extraImages: [
+      {
+        commonsFile: 'Gropius House, Lincoln, Massachusetts - View from Side Rear.JPG',
+        photographer: 'Daderot',
+        license: 'CC BY-SA 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Gropius_House,_Lincoln,_Massachusetts_-_View_from_Side_Rear.JPG',
+        width: 1600,
+        height: 1200,
+      },
+    ],
+    dossier: {
+      en: "Gropius left Germany for London in 1934 and then, in 1937, accepted a professorship at Harvard's Graduate School of Design; a Lincoln, Massachusetts philanthropist, Helen Storrow, offered him a hilltop lot and construction money in exchange for the right to use the finished house as an object lesson for local builders. Working with Marcel Breuer, his former Bauhaus colleague and now fellow Harvard professor, Gropius built himself a house that reads at a distance like International Style orthodoxy — flat roof, ribbon windows, an open plan — but is executed almost entirely in materials a New England contractor already knew how to handle: painted wood clapboard rather than stucco, fieldstone retaining walls gathered from the property itself, and a screened porch adapted from a regional vernacular. A glass-block panel and an exposed spiral stair supply the machine-age notes. Gropius, his wife Ise and their daughter Ati lived in the house until his death in 1969; his family later gave it to Historic New England, which opened it to the public with its original furniture intact.",
+      es: 'Gropius dejó Alemania por Londres en 1934 y en 1937 aceptó una cátedra en la Graduate School of Design de Harvard; una mecenas de Lincoln, Massachusetts, Helen Storrow, le ofreció una parcela en una loma y dinero para construir a cambio del derecho a usar la casa terminada como lección práctica para los constructores locales. Trabajando con Marcel Breuer, su antiguo colega de la Bauhaus y ahora también profesor en Harvard, Gropius se construyó una casa que a distancia se lee como ortodoxia del Estilo Internacional —cubierta plana, ventanas corridas, planta abierta— pero está ejecutada casi por completo con materiales que un contratista de Nueva Inglaterra ya sabía manejar: tablilla de madera pintada en vez de estuco, muros de contención de piedra recogida en la propia parcela, y un porche con mosquitera adaptado de la tradición regional. Un panel de bloques de vidrio y una escalera de caracol exterior aportan las notas de la era de la máquina. Gropius, su esposa Ise y su hija Ati vivieron en la casa hasta la muerte de él en 1969; su familia la donó después a Historic New England, que la abrió al público con el mobiliario original intacto.',
+      it: "Gropius lasciò la Germania per Londra nel 1934 e nel 1937 accettò una cattedra alla Graduate School of Design di Harvard; una mecenate di Lincoln, Massachusetts, Helen Storrow, gli offrì un lotto in collina e il denaro per costruire in cambio del diritto di usare la casa finita come lezione pratica per i costruttori locali. Lavorando con Marcel Breuer, suo ex collega al Bauhaus e ora anche professore ad Harvard, Gropius costruì per sé una casa che a distanza si legge come ortodossia dello Stile Internazionale — tetto piano, finestre a nastro, pianta aperta — ma è realizzata quasi interamente con materiali che un'impresa della Nuova Inghilterra già sapeva lavorare: assicelle di legno dipinte anziché intonaco, muri di contenimento in pietrame raccolto sul terreno stesso, e un portico schermato adattato da una tradizione regionale. Un pannello di vetrocemento e una scala a chiocciola esterna forniscono le note dell'età della macchina. Gropius, la moglie Ise e la figlia Ati vissero nella casa fino alla morte di lui nel 1969; la famiglia la donò poi a Historic New England, che l'ha aperta al pubblico con l'arredamento originale intatto.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q4179781', title: 'Gropius House (Q4179781)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Gropius_House', title: 'Gropius House', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.historicnewengland.org/property/gropius-house/', title: 'Gropius House — Historic New England', license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'zeppelinhaupttribuene-nuremberg',
+    wikidataId: 'Q49006263',
+    name: {
+      en: 'Zeppelin Grandstand, Nuremberg',
+      es: 'Tribuna Zeppelin de Núremberg',
+      it: 'Tribuna Zeppelin di Norimberga',
+    },
+    architectId: 'albert-speer',
+    location: { city: 'Nuremberg', countryCode: 'DE', lat: 49.43158, lon: 11.12508 },
+    inception: 1935,
+    completed: 1937,
+    demolished: null,
+    typology: 'civic',
+    materials: ['stone', 'concrete', 'brick'],
+    structure: {
+      en: 'Earth embankments reshaped into terraced stands are faced with concrete slabs and ashlar, with a main tribune 360 metres long and 20 metres wide built of concrete, brick and Muschelkalk limestone, whose pilaster range originally carried an eight-metre colonnade of 144 columns.',
+      es: 'Terraplenes de tierra remodelados en graderíos escalonados se revisten con losas de hormigón y sillería, con una tribuna principal de 360 metros de largo y 20 de ancho construida en hormigón, ladrillo y caliza conchífera, cuyo orden de pilastras sostenía en origen una columnata de ocho metros con 144 columnas.',
+      it: 'Terrapieni rimodellati in gradonate sono rivestiti con lastre di calcestruzzo e conci di pietra, con una tribuna principale lunga 360 metri e larga 20, costruita in calcestruzzo, laterizio e calcare conchiglifero, il cui ordine di lesene reggeva in origine un colonnato di otto metri con 144 colonne.',
+    },
+    program: {
+      en: 'The reviewing stand of the Zeppelinfeld deployment ground, built for the Nazi party rallies held at Nuremberg between 1933 and 1938.',
+      es: 'Tribuna de honor del campo de formaciones del Zeppelinfeld, construida para los congresos del partido nazi celebrados en Núremberg entre 1933 y 1938.',
+      it: 'Tribuna d\'onore del campo di adunata dello Zeppelinfeld, costruita per i raduni del partito nazista tenuti a Norimberga fra il 1933 e il 1938.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Part of the Nazi party rally grounds memorial site; the stone stands also serve spectators of the Norisring motor-racing circuit. Conservation work began in late 2024.',
+      es: 'Forma parte del recinto memorial de los congresos del partido nazi; las gradas de piedra sirven además de tribuna al circuito automovilístico del Norisring. Las obras de conservación comenzaron a finales de 2024.',
+      it: 'Fa parte del sito memoriale dell\'area dei raduni del partito nazista; le gradinate in pietra servono anche da tribuna per il circuito automobilistico del Norisring. I lavori di conservazione sono iniziati alla fine del 2024.',
+    },
+    detailRect: { x: 0.25, y: 0.17, w: 0.34, h: 0.25 },
+    image: {
+      commonsFile: 'File:Stage Zeppelinfeld in Nürnberg.JPG',
+      photographer: 'Mark Ahsmann',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Stage_Zeppelinfeld_in_N%C3%BCrnberg.JPG',
+      width: 1600,
+      height: 1200,
+    },
+    dossier: {
+      en: 'Hitler moved the party rallies onto the Zeppelinfeld in 1933 and in 1934 ordered Speer\'s temporary timber stands replaced in stone, overwriting what the site had been since 1926 — a municipal sports and recreation ground laid out to plans by the city garden director Alfred Hensel. Speer delivered in time for the 1935 rally: the earth banks were reshaped, concrete slabs driven in to carry seating, and the northern main tribune demolished and rebuilt in masonry. A further campaign in 1936 added thirty-four block-like stone-clad towers housing lavatories and transformers and extended the main tribune, whose shell stood by September 1936; the interior, apart from the Golden Hall, was largely finished by the last rally in 1938. The grandstand survived the war intact. Its swastika was blown up on 22 April 1945, the pillared colonnade in 1967 and the two end pylons in 1976. It was placed under monument protection in 1973.',
+      es: 'Hitler trasladó los congresos del partido al Zeppelinfeld en 1933 y en 1934 ordenó sustituir por piedra las tribunas provisionales de madera de Speer, borrando lo que el lugar había sido desde 1926: un recinto municipal de deporte y recreo trazado según planos del director de jardines municipales Alfred Hensel. Speer entregó a tiempo para el congreso de 1935: se remodelaron los taludes, se hincaron losas de hormigón para el asiento y la tribuna principal norte se derribó y se rehízo en fábrica. Una segunda campaña en 1936 añadió treinta y cuatro torres macizas revestidas de piedra con letrinas y transformadores y amplió la tribuna principal, cuya estructura estaba en pie en septiembre de 1936; el interior, salvo la Sala Dorada, quedó casi terminado para el último congreso, en 1938. La tribuna sobrevivió intacta a la guerra. Su esvástica fue volada el 22 de abril de 1945, la columnata en 1967 y los dos pilonos extremos en 1976. Está protegida como monumento desde 1973.',
+      it: 'Hitler trasferì i raduni del partito sullo Zeppelinfeld nel 1933 e nel 1934 ordinò di sostituire in pietra le tribune provvisorie in legno di Speer, cancellando ciò che il luogo era stato dal 1926: un\'area comunale per lo sport e lo svago tracciata su progetto del direttore dei giardini cittadini Alfred Hensel. Speer consegnò in tempo per il raduno del 1935: i terrapieni furono rimodellati, lastre di calcestruzzo infisse a reggere i posti a sedere e la tribuna principale a nord demolita e rifatta in muratura. Una seconda campagna nel 1936 aggiunse trentaquattro torri a blocco rivestite in pietra con latrine e cabine elettriche e ampliò la tribuna principale, la cui struttura era in piedi nel settembre 1936; gli interni, tranne la Sala d\'Oro, furono quasi ultimati per l\'ultimo raduno, nel 1938. La tribuna sopravvisse intatta alla guerra. La sua svastica fu fatta saltare il 22 aprile 1945, il colonnato nel 1967 e i due piloni terminali nel 1976. È sotto tutela monumentale dal 1973.',
+    },
+    context: {
+      body: {
+        en: 'The Zeppelin grandstand was built to stage the Nazi party rallies, and its architecture is the instrument. German Wikipedia records that the ground held 320,000 people, of whom only 70,000 were seated spectators: the remaining quarter of a million stood in formation on the field, facing a main tribune 360 metres long modelled on the Pergamon Altar and carrying the central speaker\'s rostrum. Around the field stood some 150 anti-aircraft searchlights aimed vertically, powered by a substation built for the purpose; English Wikipedia records that this cathedral of light was designed by Speer, was a main aesthetic feature of the rallies from 1934 to 1938 and was filmed for the 1937 propaganda film Festliches Nürnberg. Six party rallies were held here between 1933 and 1938; English Wikipedia states that they had no programmatic task and served as a self-portrayal of the National Socialist state. Speer joined the Nazi Party in 1931; as General Building Inspector for Berlin from 1937 he was responsible for the Central Department for Resettlement that evicted Jewish tenants from their homes in Berlin; in February 1942 he became Reich Minister of Armaments and War Production, and in 1944 established a task force that became instrumental in exploiting slave labour. At the Nuremberg trials he was found guilty of war crimes and crimes against humanity, principally for the use of slave labour, narrowly avoided a death sentence, served twenty years and was released in 1966. The Kongresshalle, Zeppelinfeld and Große Straße have been protected monuments since 1973 as significant examples of Nazi party architecture, and the whole site is now a memorial maintained to commemorate the victims of Nazi repression.',
+        es: 'La tribuna Zeppelin se construyó para escenificar los congresos del partido nazi, y su arquitectura es el instrumento. La Wikipedia alemana recoge que el recinto acogía a 320.000 personas, de las cuales solo 70.000 eran espectadores sentados: el cuarto de millón restante permanecía formado en el campo, frente a una tribuna principal de 360 metros de largo inspirada en el altar de Pérgamo y provista del púlpito central del orador. Alrededor del campo se disponían unos 150 reflectores antiaéreos apuntados en vertical, alimentados por una subestación construida al efecto; la Wikipedia en inglés recoge que esa catedral de luz fue diseñada por Speer, fue el principal recurso estético de los congresos entre 1934 y 1938 y se filmó para la película de propaganda Festliches Nürnberg, de 1937. Allí se celebraron seis congresos del partido entre 1933 y 1938; la Wikipedia en inglés señala que carecían de cometido programático y servían como autorrepresentación del Estado nacionalsocialista. Speer se afilió al partido nazi en 1931; como Inspector General de Construcción de Berlín desde 1937 fue responsable del Departamento Central de Reasentamiento que desalojó a inquilinos judíos de sus viviendas en Berlín; en febrero de 1942 pasó a ser ministro de Armamento y Producción de Guerra y en 1944 creó un grupo de trabajo que resultó decisivo en la explotación de trabajo esclavo. En los juicios de Núremberg fue declarado culpable de crímenes de guerra y crímenes contra la humanidad, sobre todo por el empleo de trabajo esclavo, se libró por poco de la pena de muerte, cumplió veinte años y salió en libertad en 1966. La Kongresshalle, el Zeppelinfeld y la Große Straße están protegidos como monumentos desde 1973 por ser ejemplos significativos de la arquitectura del partido nazi, y todo el recinto es hoy un memorial dedicado a las víctimas de la represión nazi.',
+        it: 'La tribuna Zeppelin fu costruita per mettere in scena i raduni del partito nazista, e la sua architettura ne è lo strumento. La Wikipedia tedesca riporta che l\'area conteneva 320.000 persone, di cui solo 70.000 spettatori seduti: il restante quarto di milione stava schierato sul campo, di fronte a una tribuna principale lunga 360 metri modellata sull\'altare di Pergamo e dotata del pulpito centrale dell\'oratore. Attorno al campo erano disposti circa 150 proiettori contraerei puntati in verticale, alimentati da una cabina elettrica costruita apposta; la Wikipedia inglese riporta che quella cattedrale di luce fu ideata da Speer, fu il principale espediente estetico dei raduni fra il 1934 e il 1938 e fu ripresa nel film di propaganda Festliches Nürnberg del 1937. Vi si tennero sei raduni del partito fra il 1933 e il 1938; la Wikipedia inglese osserva che non avevano alcun compito programmatico e servivano come autorappresentazione dello Stato nazionalsocialista. Speer aderì al partito nazista nel 1931; come Ispettore generale per l\'edilizia di Berlino dal 1937 fu responsabile del Dipartimento centrale per il reinsediamento che sfrattò gli inquilini ebrei dalle loro case a Berlino; nel febbraio 1942 divenne ministro del Reich per gli armamenti e la produzione bellica e nel 1944 istituì una task force che risultò decisiva nello sfruttamento del lavoro schiavistico. Al processo di Norimberga fu riconosciuto colpevole di crimini di guerra e crimini contro l\'umanità, soprattutto per l\'impiego di lavoro schiavistico, sfuggì per poco alla condanna a morte, scontò vent\'anni e fu rilasciato nel 1966. La Kongresshalle, lo Zeppelinfeld e la Große Straße sono monumenti tutelati dal 1973 in quanto esempi significativi dell\'architettura del partito nazista, e l\'intera area è oggi un memoriale dedicato alle vittime della repressione nazista.',
+      },
+      sources: [
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Nazi_party_rally_grounds', title: 'Nazi party rally grounds', license: 'CC BY-SA 4.0' },
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Albert_Speer', title: 'Albert Speer', license: 'CC BY-SA 4.0' },
+        { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Zeppelintrib%C3%BCne', title: 'Zeppelintribüne', license: 'CC BY-SA 4.0' },
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Cathedral_of_light', title: 'Cathedral of light', license: 'CC BY-SA 4.0' },
+      ],
+    },
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q49006263', title: 'Zeppelinhaupttribüne (Q49006263)', license: null },
+      { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Zeppelintrib%C3%BCne', title: 'Zeppelintribüne', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Nazi_party_rally_grounds', title: 'Nazi party rally grounds', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'woinovichgasse-2-4-vienna',
+    wikidataId: 'Q126680266',
+    name: {
+      en: 'Woinovichgasse 2–4, Vienna Werkbund Estate',
+      es: 'Woinovichgasse 2-4, colonia del Werkbund de Viena',
+      it: 'Woinovichgasse 2-4, Werkbundsiedlung di Vienna',
+    },
+    architectId: 'margarete-schuette-lihotzky',
+    location: { city: 'Vienna', countryCode: 'AT', lat: 48.17995, lon: 16.26833 },
+    inception: 1930,
+    completed: 1932,
+    demolished: null,
+    typology: 'housing',
+    materials: ['mixed'],
+    structure: {
+      en: 'A pair of two-storey terrace houses in rendered load-bearing masonry under a flat roof, each with a footprint of thirty-five square metres.',
+      es: 'Un par de casas en hilera de dos plantas, de fábrica portante revocada y cubierta plana, con una superficie de treinta y cinco metros cuadrados cada una.',
+      it: 'Una coppia di case a schiera su due piani, in muratura portante intonacata con tetto piano, ciascuna di trentacinque metri quadrati di superficie.',
+    },
+    program: {
+      en: 'Two of the show houses of the Vienna Werkbund estate, a full-scale exhibition of minimum single-family dwellings opened to the public in 1932.',
+      es: 'Dos de las casas piloto de la colonia del Werkbund de Viena, una exposición a escala real de viviendas unifamiliares mínimas abierta al público en 1932.',
+      it: 'Due delle case dimostrative della Werkbundsiedlung di Vienna, un\'esposizione a grandezza naturale di case unifamiliari minime aperta al pubblico nel 1932.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Occupied housing. The estate is mostly owned by the City of Vienna, is a protected monument and is designated a conservation zone.',
+      es: 'Viviendas ocupadas. La colonia pertenece en su mayor parte al Ayuntamiento de Viena, está protegida como monumento y declarada zona de protección urbanística.',
+      it: 'Abitazioni ancora occupate. La colonia appartiene in gran parte al Comune di Vienna, è monumento tutelato ed è dichiarata zona di protezione edilizia.',
+    },
+    detailRect: { x: 0.14, y: 0.10, w: 0.36, h: 0.28 },
+    image: {
+      commonsFile: 'File:Woinovichgasse 2-4 G.Schütte-Lihotzky.jpg',
+      photographer: 'Thomas Ledl',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Woinovichgasse_2-4_G.Sch%C3%BCtte-Lihotzky.jpg',
+      width: 1600,
+      height: 929,
+    },
+    dossier: {
+      en: 'The Vienna Werkbundsiedlung was built between 1930 and 1932 in Lainz and shown to the public in 1932 as part of a European housing exhibition; at the opening it was called the largest building exhibition in Europe. Around thirty architects from Austria and abroad each contributed a house or a pair — Josef Frank directed the whole, and Adolf Loos, Gerrit Rietveld, Richard Neutra, Gabriel Guevrekian and André Lurçat all built here. Schütte-Lihotzky was the only woman among them. Her contribution is the double house at Woinovichgasse 2 and 4: two terrace houses of thirty-five square metres each, flat-roofed, rendered, with square windows punched into unmodelled wall. The economy is not stylistic but programmatic — the same argument as the Frankfurt Kitchen she had designed four years earlier, that a dwelling can be reduced to its measured minimum without becoming meaner. Of the original seventy houses, sixty-four survive.',
+      es: 'La Werkbundsiedlung de Viena se construyó entre 1930 y 1932 en Lainz y se mostró al público en 1932 dentro de una exposición europea de vivienda; en la inauguración se la llamó la mayor exposición de arquitectura de Europa. Una treintena de arquitectos austríacos y extranjeros aportaron cada uno una casa o un par —Josef Frank dirigió el conjunto, y allí construyeron Adolf Loos, Gerrit Rietveld, Richard Neutra, Gabriel Guevrekian y André Lurçat—. Schütte-Lihotzky fue la única mujer entre ellos. Su aportación es la casa doble de Woinovichgasse 2 y 4: dos viviendas en hilera de treinta y cinco metros cuadrados cada una, de cubierta plana, revocadas, con ventanas cuadradas recortadas sobre un muro sin modelar. La economía no es estilística sino programática: el mismo argumento de la cocina de Fráncfort que había proyectado cuatro años antes, según el cual una vivienda puede reducirse a su mínimo medido sin volverse más pobre. De las setenta casas originales se conservan sesenta y cuatro.',
+      it: 'La Werkbundsiedlung di Vienna fu costruita fra il 1930 e il 1932 a Lainz e mostrata al pubblico nel 1932 nell\'ambito di un\'esposizione europea sull\'abitazione; all\'inaugurazione fu definita la più grande mostra di architettura d\'Europa. Una trentina di architetti austriaci e stranieri contribuirono ciascuno con una casa o una coppia — Josef Frank diresse l\'insieme, e vi costruirono Adolf Loos, Gerrit Rietveld, Richard Neutra, Gabriel Guevrekian e André Lurçat. Schütte-Lihotzky fu l\'unica donna fra loro. Il suo contributo è la casa doppia di Woinovichgasse 2 e 4: due case a schiera di trentacinque metri quadrati ciascuna, a tetto piano, intonacate, con finestre quadrate ritagliate su una parete non modellata. L\'economia non è stilistica ma programmatica: la stessa tesi della cucina di Francoforte che aveva progettato quattro anni prima, secondo cui un alloggio può essere ridotto al suo minimo misurato senza diventare più povero. Delle settanta case originarie ne restano sessantaquattro.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q126680266', title: 'Doppel-Wohnhaus Woinovichgasse 2/4 (Q126680266)', license: null },
+      { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Werkbundsiedlung_Wien', title: 'Werkbundsiedlung Wien', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Margarete_Sch%C3%BCtte-Lihotzky', title: 'Margarete Schütte-Lihotzky', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'deep',
+  },
+  {
+    id: 'neue-nationalgalerie-berlin',
+    wikidataId: 'Q130608380',
+    name: {
+      en: 'Neue Nationalgalerie',
+      es: 'Nueva Galería Nacional de Berlín',
+      it: 'Neue Nationalgalerie',
+    },
+    architectId: 'mies-van-der-rohe',
+    location: { city: 'Berlin', countryCode: 'DE', lat: 52.50694, lon: 13.36778 },
+    inception: 1965,
+    completed: 1968,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['steel-and-glass', 'stone'],
+    structure: {
+      en: 'A welded steel roof plate 64.8 metres square, weighing 1,260 tonnes, rests on eight tapered cruciform columns set two to a side, leaving the glazed hall beneath entirely free of supports.',
+      es: 'Una placa de cubierta de acero soldado de 64,8 metros de lado y 1.260 toneladas descansa sobre ocho pilares cruciformes de sección variable, dos por lado, dejando la sala acristalada inferior enteramente libre de apoyos.',
+      it: 'Una piastra di copertura in acciaio saldato di 64,8 metri di lato e 1.260 tonnellate poggia su otto pilastri cruciformi rastremati, due per lato, lasciando la sala vetrata sottostante del tutto priva di appoggi.',
+    },
+    program: {
+      en: 'The twentieth-century collection of Berlin\'s Nationalgalerie, commissioned in 1962 for West Berlin and built as the first element of what became the Kulturforum.',
+      es: 'La colección del siglo XX de la Nationalgalerie de Berlín, encargada en 1962 para Berlín Occidental y construida como primera pieza de lo que sería el Kulturforum.',
+      it: 'La collezione novecentesca della Nationalgalerie di Berlino, commissionata nel 1962 per Berlino Ovest e costruita come primo tassello di quello che sarebbe diventato il Kulturforum.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Museum of twentieth-century art, reopened in 2021 after a six-year refurbishment coordinated by David Chipperfield Architects.',
+      es: 'Museo de arte del siglo XX, reabierto en 2021 tras una rehabilitación de seis años coordinada por David Chipperfield Architects.',
+      it: 'Museo d\'arte del Novecento, riaperto nel 2021 dopo un restauro di sei anni coordinato da David Chipperfield Architects.',
+    },
+    detailRect: { x: 0.22, y: 0.35, w: 0.24, h: 0.26 },
+    image: {
+      commonsFile: 'File:2021-09-01-Neue-Nationalgalerie-2021-b.jpg',
+      photographer: 'Gunnar Klack',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:2021-09-01-Neue-Nationalgalerie-2021-b.jpg',
+      width: 1600,
+      height: 1401,
+    },
+    // Wave V2-3, batch B1: image pass on the existing entry. Downloaded and
+    // looked at the current primary above (kept — clean, diagnostic
+    // roof-plate/column composition) and added one corner elevation showing
+    // the granite plinth and column base up close.
+    extraImages: [
+      {
+        commonsFile: 'File:Berlin-Neue Nationalgalerie-06-Ludwig Mies van der Rohe-2016-gje.jpg',
+        photographer: 'Gerd Eichmann',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Berlin-Neue_Nationalgalerie-06-Ludwig_Mies_van_der_Rohe-2016-gje.jpg',
+        width: 1600,
+        height: 922,
+      },
+    ],
+    dossier: {
+      en: 'Mies was seventy-six when the commission arrived in 1962, and he answered it with a design he had already made twice and never built: the unrealised Bacardi headquarters for Santiago de Cuba of 1957 and the Georg Schäfer museum for Schweinfurt of 1960–63, both a roof on eight columns over an interior without supports. He asked his friend Frei Otto to help with the statics of the 1,260-tonne roof, and Otto replaced the four central piers with two on each side. The pavilion sits on a granite terrace 105 by 110 metres that takes up the fall towards the Landwehrkanal; the glass walls are set back 7.2 metres on every side, so the roof reads as a free plate. It was assembled at working height on the plinth and lifted by twenty-four synchronised jacks. Construction began on 23 September 1965 and finished in 1968, a year before Mies died.',
+      es: 'Mies tenía setenta y seis años cuando llegó el encargo, en 1962, y respondió con un proyecto que ya había hecho dos veces sin llegar a construirlo: la sede de Bacardí para Santiago de Cuba de 1957 y el museo Georg Schäfer de Schweinfurt de 1960-63, ambos una cubierta sobre ocho pilares sobre un interior sin apoyos. Pidió a su amigo Frei Otto ayuda con el cálculo de la cubierta de 1.260 toneladas, y Otto sustituyó los cuatro pilares centrales por dos en cada lado. El pabellón se asienta sobre una terraza de granito de 105 por 110 metros que salva el desnivel hacia el Landwehrkanal; los cerramientos de vidrio se retranquean 7,2 metros en todos los lados, de modo que la cubierta se lee como una placa exenta. Se montó a la altura de trabajo sobre el zócalo y se izó con veinticuatro gatos sincronizados. Las obras empezaron el 23 de septiembre de 1965 y acabaron en 1968, un año antes de la muerte de Mies.',
+      it: 'Mies aveva settantasei anni quando arrivò l\'incarico, nel 1962, e rispose con un progetto che aveva già fatto due volte senza mai costruirlo: la sede Bacardí per Santiago de Cuba del 1957 e il museo Georg Schäfer di Schweinfurt del 1960-63, entrambi una copertura su otto pilastri sopra un interno privo di appoggi. Chiese all\'amico Frei Otto di aiutarlo con la statica della copertura da 1.260 tonnellate, e Otto sostituì i quattro pilastri centrali con due per lato. Il padiglione poggia su una terrazza di granito di 105 per 110 metri che compensa il dislivello verso il Landwehrkanal; le pareti vetrate sono arretrate di 7,2 metri su ogni lato, così la copertura si legge come una piastra libera. Fu assemblata a quota di lavoro sullo zoccolo e sollevata da ventiquattro martinetti sincronizzati. I lavori iniziarono il 23 settembre 1965 e finirono nel 1968, un anno prima della morte di Mies.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q130608380', title: 'Neue Nationalgalerie (Q130608380)', license: null },
+      { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Neue_Nationalgalerie', title: 'Neue Nationalgalerie', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'therme-vals',
+    wikidataId: 'Q675081',
+    name: {
+      en: 'Therme Vals',
+      es: 'Termas de Vals',
+      it: 'Terme di Vals',
+    },
+    architectId: 'peter-zumthor',
+    location: { city: 'Vals', countryCode: 'CH', lat: 46.62200, lon: 9.18100 },
+    inception: 1996,
+    completed: 1996,
+    demolished: null,
+    typology: 'civic',
+    materials: ['stone', 'concrete'],
+    structure: {
+      en: 'Free-standing concrete blocks, each roofed as a hollow table and clad in Valser gneiss, are set apart so that the daylight slots between their cantilevered roof slabs read as the building\'s only joints.',
+      es: 'Bloques de hormigón exentos, cada uno cubierto como una mesa hueca y revestido de gneis de Vals, se disponen separados de modo que las rendijas de luz entre sus losas voladas resultan ser las únicas juntas del edificio.',
+      it: 'Blocchi di calcestruzzo isolati, ciascuno coperto come un tavolo cavo e rivestito in gneiss di Vals, sono disposti staccati così che le fessure di luce fra le loro lastre a sbalzo risultino le uniche giunzioni dell\'edificio.',
+    },
+    program: {
+      en: 'Thermal baths fed by the Saint Peter spring, built for the commune of Vals within a hotel complex of the 1960s that it serves.',
+      es: 'Balneario termal alimentado por el manantial de San Pedro, construido para el municipio de Vals dentro de un complejo hotelero de los años sesenta al que sirve.',
+      it: 'Terme alimentate dalla sorgente di San Pietro, costruite per il comune di Vals all\'interno di un complesso alberghiero degli anni Sessanta cui fanno servizio.',
+    },
+    heritage: 'regional',
+    currentUse: {
+      en: 'Working thermal baths, now operated under the name 7132 Therme; under cantonal monument protection since 1998.',
+      es: 'Balneario termal en funcionamiento, explotado hoy con el nombre de 7132 Therme; protegido como monumento cantonal desde 1998.',
+      it: 'Terme ancora in funzione, gestite oggi con il nome 7132 Therme; sotto tutela monumentale cantonale dal 1998.',
+    },
+    detailRect: { x: 0.45, y: 0.52, w: 0.30, h: 0.30 },
+    image: {
+      commonsFile: 'File:2005-08-06-Therme-Vals-Peter-Zumthor 04.jpg',
+      photographer: 'Gunnar Klack',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:2005-08-06-Therme-Vals-Peter-Zumthor_04.jpg',
+      width: 1600,
+      height: 1254,
+    },
+    // Wave V2-3, batch B8 (image pass only — Zumthor was already at the
+    // 2-building floor). Downloaded and visually confirmed the existing
+    // primary is genuinely exterior (stone-banded facade against the
+    // hillside, not an interior bathing hall) before leaving it in place.
+    // Rejected two higher-resolution alternates in this building's Commons
+    // category (`Therme Vals roof...jpg`, `Therme Vals panoramic view...jpg`)
+    // because their licence box reads as photographer Micha L. Rieser's own
+    // bespoke "attribution only" terms, not one of the exhaustively allowed
+    // CC0/CC BY/CC BY-SA/PD licences; also rejected `Therme Vals Winter.JPG`
+    // after viewing it — it shows the neighbouring 1960s hotel tower through
+    // trees, not Zumthor's baths building.
+    extraImages: [
+      {
+        commonsFile: 'File:Therme Vals facade, Vals, Graubünden, Switzerland - 20051009.jpg',
+        photographer: 'Roland Zumbühl',
+        license: 'CC BY-SA 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Therme_Vals_facade,_Vals,_Graub%C3%BCnden,_Switzerland_-_20051009.jpg',
+        width: 502,
+        height: 333,
+      },
+    ],
+    dossier: {
+      en: 'The baths opened in 1996, half buried in the hillside above the village. The governing image, stated by the architect, is a quarry: a mass from which blocks have been cut, so that what remains and the voids between are the building. Some sixty thousand slabs of Valser gneiss, each a metre long, were quarried nearby and laid in courses of three varying heights, which is why the wall reads as geology rather than as masonry. Zumthor reduced the programme to bathing itself — a hot bath, a cold bath, a flower bath, steam rooms — and refused every leisure-pool device: no slides, no jets. Water comes from the Saint Peter spring. The commune of Vals owned the complex when it was built; the baths won the European Union Prize for Contemporary Architecture in 1998, the year they were placed under cantonal monument protection.',
+      es: 'Las termas se inauguraron en 1996, medio enterradas en la ladera sobre el pueblo. La imagen rectora, formulada por el arquitecto, es la de una cantera: una masa de la que se han extraído bloques, de modo que lo que queda y los huecos intermedios constituyen el edificio. Unas sesenta mil losas de gneis de Vals, de un metro de largo cada una, se extrajeron de la cantera cercana y se colocaron en hiladas de tres alturas distintas, y por eso el muro se lee como geología antes que como fábrica. Zumthor redujo el programa al baño mismo —baño caliente, baño frío, baño de flores, salas de vapor— y rechazó todo artificio de piscina lúdica: ni toboganes ni chorros. El agua procede del manantial de San Pedro. El municipio de Vals era propietario del complejo cuando se construyó; las termas ganaron el Premio de Arquitectura Contemporánea de la Unión Europea en 1998, el mismo año en que quedaron protegidas como monumento cantonal.',
+      it: 'Le terme aprirono nel 1996, mezze interrate nel pendio sopra il paese. L\'immagine guida, dichiarata dall\'architetto, è quella di una cava: una massa da cui sono stati tagliati blocchi, sicché ciò che resta e i vuoti intermedi costituiscono l\'edificio. Circa sessantamila lastre di gneiss di Vals, lunghe un metro ciascuna, furono cavate lì vicino e posate in corsi di tre altezze diverse: per questo il muro si legge come geologia più che come muratura. Zumthor ridusse il programma al bagno in sé — bagno caldo, bagno freddo, bagno dei fiori, bagni di vapore — e rifiutò ogni espediente da piscina ludica: niente scivoli, niente idromassaggi. L\'acqua viene dalla sorgente di San Pietro. Il comune di Vals possedeva il complesso all\'epoca della costruzione; le terme vinsero il Premio dell\'Unione Europea per l\'architettura contemporanea nel 1998, l\'anno in cui furono poste sotto tutela monumentale cantonale.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q675081', title: 'Therme Vals (Q675081)', license: null },
+      { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Therme_Vals', title: 'Therme Vals', license: 'CC BY-SA 4.0' },
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q123179', title: 'Peter Zumthor (Q123179) — awards, incl. European Union Prize for Contemporary Architecture 1998', license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'nevigeser-wallfahrtsdom',
+    wikidataId: 'Q1982229',
+    name: {
+      en: 'Pilgrimage Church of Mary, Queen of Peace, Neviges',
+      es: 'Iglesia de peregrinación María, Reina de la Paz (Neviges)',
+      it: 'Chiesa di pellegrinaggio Maria Regina della Pace, Neviges',
+    },
+    architectId: 'gottfried-boehm',
+    location: { city: 'Velbert', countryCode: 'DE', lat: 51.31278, lon: 7.08750 },
+    inception: 1966,
+    completed: 1968,
+    demolished: null,
+    typology: 'sacral',
+    materials: ['concrete'],
+    structure: {
+      en: 'A folded shell of board-marked reinforced concrete works as a single crystalline surface, its creases acting as stiffening ribs so that walls and roof are one continuous structure.',
+      es: 'Una lámina plegada de hormigón armado encofrado con tablas funciona como una única superficie cristalina, cuyos pliegues actúan de nervios de rigidez, de modo que muros y cubierta son una sola estructura continua.',
+      it: 'Un guscio piegato in cemento armato con casseratura a tavole funziona come un\'unica superficie cristallina, le cui pieghe fanno da nervature di irrigidimento, così che pareti e copertura sono una sola struttura continua.',
+    },
+    program: {
+      en: 'A pilgrimage church for the Archdiocese of Cologne, built to receive the crowds who have venerated the Neviges image of the Immaculate Conception since 1681.',
+      es: 'Iglesia de peregrinación para la archidiócesis de Colonia, construida para acoger a las multitudes que veneran desde 1681 la imagen de la Inmaculada Concepción de Neviges.',
+      it: 'Chiesa di pellegrinaggio per l\'arcidiocesi di Colonia, costruita per accogliere le folle che dal 1681 venerano l\'immagine dell\'Immacolata Concezione di Neviges.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Active Marian pilgrimage church, the second-largest church in the Archdiocese of Cologne after the cathedral.',
+      es: 'Iglesia de peregrinación mariana en activo, la segunda mayor de la archidiócesis de Colonia después de la catedral.',
+      it: 'Chiesa di pellegrinaggio mariano ancora attiva, la seconda per dimensioni nell\'arcidiocesi di Colonia dopo il duomo.',
+    },
+    detailRect: { x: 0.40, y: 0.18, w: 0.30, h: 0.32 },
+    image: {
+      commonsFile: 'File:Gottfried böhm, pilgrimage church, neviges 1963-1972 - 02.jpg',
+      photographer: 'seier+seier',
+      license: 'CC BY 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Gottfried_b%C3%B6hm,_pilgrimage_church,_neviges_1963-1972_-_02.jpg',
+      width: 1600,
+      height: 1089,
+    },
+    dossier: {
+      en: 'Böhm did not win the competition. Cardinal Joseph Frings, Archbishop of Cologne, whose sight was already failing, had the entries presented so that he could feel the models, liked Böhm\'s so much that he asked for a second competition on new terms, and the commission finally went to Böhm on the archbishop\'s personal wish. The design answers a pilgrimage running since 1681 not with a nave but with a street: a broad curving processional approach leads in from the forecourt and widens inside into a church space like a market square, the main altar at its centre and the galleries around it reading as houses full of windows. The outside paving is carried through the doors, and so are the free-standing street lanterns. Built from 1966 and consecrated in 1968, the shell is board-marked concrete inside and out, creased into faceted peaks. German Wikipedia assigns it to Brutalism; it is the second-largest church in the Archdiocese of Cologne after the cathedral.',
+      es: 'Böhm no ganó el concurso. El cardenal Joseph Frings, arzobispo de Colonia, cuya vista ya flaqueaba, pidió que le presentaran las propuestas para poder palpar las maquetas; la de Böhm le gustó tanto que solicitó un segundo concurso con nuevas bases, y el encargo acabó recayendo en Böhm por deseo personal del arzobispo. El proyecto responde a una romería activa desde 1681 no con una nave sino con una calle: un ancho acceso procesional curvo entra desde el atrio y se ensancha dentro hasta formar un espacio como una plaza de mercado, con el altar mayor en el centro y las tribunas alrededor leídas como casas llenas de ventanas. El pavimento exterior se prolonga puertas adentro, y también los faroles exentos. Construida desde 1966 y consagrada en 1968, la lámina es hormigón encofrado con tablas por dentro y por fuera, plegado en picos facetados. La Wikipedia alemana la adscribe al brutalismo; es la segunda iglesia más grande de la archidiócesis de Colonia después de la catedral.',
+      it: 'Böhm non vinse il concorso. Il cardinale Joseph Frings, arcivescovo di Colonia, la cui vista era già compromessa, si fece presentare le proposte per poter tastare i modelli; quello di Böhm gli piacque a tal punto che chiese un secondo concorso con nuove condizioni, e l\'incarico andò infine a Böhm per volontà personale dell\'arcivescovo. Il progetto risponde a un pellegrinaggio attivo dal 1681 non con una navata ma con una strada: un ampio accesso processionale curvo entra dal sagrato e si allarga all\'interno in uno spazio simile a una piazza di mercato, con l\'altare maggiore al centro e le gallerie attorno lette come case piene di finestre. La pavimentazione esterna prosegue oltre le porte, e con essa i lampioni isolati. Costruita dal 1966 e consacrata nel 1968, il guscio è calcestruzzo con casseratura a tavole dentro e fuori, piegato in guglie sfaccettate. La Wikipedia tedesca la ascrive al brutalismo; è la seconda chiesa per dimensioni dell\'arcidiocesi di Colonia dopo il duomo.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1982229', title: 'Nevigeser Wallfahrtsdom (Q1982229)', license: null },
+      { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Nevigeser_Wallfahrtsdom', title: 'Nevigeser Wallfahrtsdom', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Gottfried_B%C3%B6hm', title: 'Gottfried Böhm', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'olympiastadion-muenchen',
+    wikidataId: 'Q131610',
+    name: {
+      en: 'Munich Olympic Stadium',
+      es: 'Estadio Olímpico de Múnich',
+      it: 'Stadio Olimpico di Monaco di Baviera',
+    },
+    architectId: 'guenter-behnisch',
+    // Wikidata P84 (Q131610) credits three architects: Frei Otto, Behnisch &
+    // Partner (Günter Behnisch, architectId above) and Carlo Weber — not
+    // Behnisch alone. Jörg Schlaich is separately, correctly, credited as
+    // structural engineer (P631), a distinct role.
+    coArchitects: ['frei-otto', 'carlo-weber'],
+    location: { city: 'Munich', countryCode: 'DE', lat: 48.17306, lon: 11.54667 },
+    inception: 1967,
+    completed: 1972,
+    demolished: null,
+    typology: 'civic',
+    materials: ['steel-and-glass', 'concrete'],
+    structure: {
+      en: 'A point-supported prestressed cable net on a 75-centimetre grid, knotted on the ground and hoisted onto guyed pin-jointed masts, carries a scale-like skin of blue-grey translucent acrylic panels over a bowl cut two-thirds into the ground.',
+      es: 'Una red de cables pretensada de apoyo puntual con retícula de 75 centímetros, anudada en el suelo e izada sobre mástiles atirantados de nudo articulado, sostiene una piel escamada de placas traslúcidas de acrílico gris azulado sobre un vaso excavado en dos tercios de su altura.',
+      it: 'Una rete di cavi presollecitata a sostegni puntuali con maglia di 75 centimetri, annodata a terra e issata su alberi strallati con nodi a cerniera, regge una pelle a scaglie di lastre traslucide di acrilico grigio-azzurro sopra una conca incassata per due terzi nel terreno.',
+    },
+    program: {
+      en: 'The central arena of the 1972 Summer Olympics, built for the city of Munich on the former Oberwiesenfeld airfield together with an indoor arena, a swimming hall and a park.',
+      es: 'Arena central de los Juegos Olímpicos de verano de 1972, construida para la ciudad de Múnich en el antiguo aeródromo de Oberwiesenfeld junto con un pabellón, una piscina cubierta y un parque.',
+      it: 'Arena centrale dei Giochi olimpici estivi del 1972, costruita per la città di Monaco sull\'ex aerodromo di Oberwiesenfeld insieme a un palazzetto, una piscina coperta e un parco.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Open-air concert venue and athletics stadium; the football clubs left for the Allianz Arena in 2005. A protected monument, with the rest of the buildings under the tent roof, since 1997.',
+      es: 'Recinto de conciertos al aire libre y estadio de atletismo; los clubes de fútbol se marcharon al Allianz Arena en 2005. Protegido como monumento, junto con los demás edificios bajo la cubierta de lona, desde 1997.',
+      it: 'Sede di concerti all\'aperto e stadio di atletica; le squadre di calcio si trasferirono all\'Allianz Arena nel 2005. Monumento tutelato, insieme agli altri edifici sotto la copertura a tenda, dal 1997.',
+    },
+    detailRect: { x: 0.15, y: 0.19, w: 0.30, h: 0.28 },
+    image: {
+      commonsFile: 'File:Blick vom Olympiaberg auf das Olympiastadion.jpg',
+      photographer: 'Amrei-Marie',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Blick_vom_Olympiaberg_auf_das_Olympiastadion.jpg',
+      width: 1600,
+      height: 901,
+    },
+    dossier: {
+      en: 'The roof was an afterthought that became the building. Behnisch & Partner had modelled the stadium, arena and swimming hall side by side when a colleague, Cord Wehrse, having read a newspaper piece on Frei Otto\'s tent at Expo 67 in Montreal, proposed draping one canopy over all three; with Carlo Weber and Heinz Isler the competition model was finished using wooden rods and parts of a lady\'s stocking. Otto joined as development consultant, Fritz Leonhardt and Wolfhardt Andrä as engineers, Fritz Auer as planning lead. Otto worked by trial and error on ever larger physical models while Andrä and Leonhardt computed other parts. The canopy covers 74,800 square metres in all, 34,550 of them over the stadium, carried on two 70-metre masts and six smaller ones. Acrylic was chosen over concrete or timber because an opaque roof would have thrown shadows and ruined television pictures. The roof was completed on 21 April 1972 under the engineer Jörg Schlaich.',
+      es: 'La cubierta fue una ocurrencia tardía que acabó siendo el edificio. Behnisch & Partner habían maquetado el estadio, el pabellón y la piscina uno junto a otro cuando un colaborador, Cord Wehrse, que había leído un artículo de prensa sobre la carpa de Frei Otto en la Expo 67 de Montreal, propuso tender un solo toldo sobre los tres; con Carlo Weber y Heinz Isler la maqueta de concurso se remató con varillas de madera y trozos de una media de señora. Otto se incorporó como asesor de desarrollo, Fritz Leonhardt y Wolfhardt Andrä como ingenieros y Fritz Auer como jefe de planificación. Otto trabajó por ensayo y error con maquetas físicas cada vez mayores mientras Andrä y Leonhardt calculaban otras zonas. El toldo cubre 74.800 metros cuadrados en total, 34.550 de ellos sobre el estadio, sostenidos por dos mástiles de 70 metros y seis menores. Se eligió el acrílico frente al hormigón o la madera porque una cubierta opaca habría arrojado sombras y arruinado las imágenes de televisión. La cubierta se terminó el 21 de abril de 1972 bajo la dirección del ingeniero Jörg Schlaich.',
+      it: 'La copertura fu un ripensamento che divenne l\'edificio. Behnisch & Partner avevano modellato stadio, palazzetto e piscina affiancati quando un collaboratore, Cord Wehrse, che aveva letto un articolo di giornale sulla tenda di Frei Otto all\'Expo 67 di Montreal, propose di stendere un unico velario sopra tutti e tre; con Carlo Weber e Heinz Isler il modello di concorso fu completato con bacchette di legno e pezzi di una calza da donna. Otto entrò come consulente per lo sviluppo, Fritz Leonhardt e Wolfhardt Andrä come ingegneri, Fritz Auer come responsabile della progettazione. Otto procedette per tentativi su modelli fisici sempre più grandi mentre Andrä e Leonhardt calcolavano altre parti. Il velario copre in tutto 74.800 metri quadrati, 34.550 dei quali sopra lo stadio, sorretti da due alberi di 70 metri e sei minori. Si scelse l\'acrilico invece del calcestruzzo o del legno perché una copertura opaca avrebbe proiettato ombre e rovinato le riprese televisive. La copertura fu ultimata il 21 aprile 1972 sotto la direzione dell\'ingegnere Jörg Schlaich.',
+    },
+    context: {
+      body: {
+        en: 'The lightness was a political programme, and it had a cost. German Wikipedia states that the tent roof spans the stadium, the indoor arena, the swimming hall and the paths between them, and that the stadium is thereby meant to symbolise lightness, transparency and openness. The same encyclopedia records the consequence: on the morning of 5 September 1972 eight members of the Palestinian organisation Black September climbed the fence of the Olympic Village and entered the Israeli team\'s apartment at Connollystraße 31; they had no difficulty overpowering the athletes because the doors were unlocked and security during the Games had been deliberately kept loose in order to display the change Germany had undergone since the 1936 Berlin Olympics. Eleven members of the Israeli team were taken hostage and killed; a failed rescue attempt at Fürstenfeldbruck airfield left the remaining hostages, five of the attackers and a German policeman dead. The Games were continued after a day of mourning.',
+        es: 'La ligereza era un programa político, y tuvo un coste. La Wikipedia alemana afirma que la cubierta de lona abarca el estadio, el pabellón cubierto, la piscina y los caminos intermedios, y que con ello el estadio pretende simbolizar ligereza, transparencia y apertura. La misma enciclopedia recoge la consecuencia: la mañana del 5 de septiembre de 1972, ocho miembros de la organización palestina Septiembre Negro saltaron la valla de la villa olímpica y entraron en el apartamento del equipo israelí, en Connollystraße 31; no tuvieron dificultad en reducir a los deportistas porque las puertas no estaban cerradas con llave y las condiciones de seguridad durante los Juegos se habían mantenido laxas a propósito, para mostrar el cambio que Alemania había experimentado desde los Juegos de Berlín de 1936. Once miembros del equipo israelí fueron tomados como rehenes y asesinados; un intento fallido de liberación en el aeródromo de Fürstenfeldbruck acabó con la vida de los rehenes restantes, de cinco de los asaltantes y de un policía alemán. Los Juegos continuaron tras una jornada de luto.',
+        it: 'La leggerezza era un programma politico, e ha avuto un costo. La Wikipedia tedesca afferma che la copertura a tenda abbraccia lo stadio, il palazzetto, la piscina e i percorsi intermedi, e che lo stadio deve così simboleggiare leggerezza, trasparenza e apertura. La stessa enciclopedia registra la conseguenza: la mattina del 5 settembre 1972 otto membri dell\'organizzazione palestinese Settembre Nero scavalcarono la recinzione del villaggio olimpico ed entrarono nell\'appartamento della squadra israeliana, in Connollystraße 31; non ebbero difficoltà a sopraffare gli atleti perché le porte non erano chiuse a chiave e le misure di sicurezza durante i Giochi erano state tenute volutamente blande, per mostrare il cambiamento compiuto dalla Germania dopo le Olimpiadi di Berlino del 1936. Undici membri della squadra israeliana furono presi in ostaggio e uccisi; un tentativo fallito di liberazione all\'aeroporto di Fürstenfeldbruck costò la vita agli ostaggi rimasti, a cinque degli assalitori e a un poliziotto tedesco. I Giochi ripresero dopo una giornata di lutto.',
+      },
+      sources: [
+        { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Olympiastadion_M%C3%BCnchen', title: 'Olympiastadion München', license: 'CC BY-SA 4.0' },
+        { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Olympische_Sommerspiele_1972', title: 'Olympische Sommerspiele 1972 — Terroranschlag', license: 'CC BY-SA 4.0' },
+      ],
+    },
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q131610', title: 'Munich Olympic Stadium (Q131610)', license: null },
+      { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Olympiastadion_M%C3%BCnchen', title: 'Olympiastadion München', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/G%C3%BCnter_Behnisch', title: 'Günter Behnisch', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'haus-der-kultur-und-bildung-neubrandenburg',
+    wikidataId: 'Q6443263',
+    name: {
+      en: 'House of Culture and Education, Neubrandenburg',
+      es: 'Casa de la Cultura y la Educación de Neubrandenburgo',
+      it: 'Casa della Cultura e dell\'Istruzione di Neubrandenburg',
+    },
+    architectId: 'iris-grund',
+    location: { city: 'Neubrandenburg', countryCode: 'DE', lat: 53.55810, lon: 13.26030 },
+    inception: 1963,
+    completed: 1965,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['concrete', 'steel-and-glass'],
+    structure: {
+      en: 'A reinforced-concrete frame arranged as four wings of differing bulk around an inner courtyard, with a separate sixteen-storey steel-framed tower carrying curtain walls.',
+      es: 'Una estructura de hormigón armado dispuesta en cuatro alas de volumetría distinta en torno a un patio interior, con una torre exenta de dieciséis plantas de estructura de acero y muros cortina.',
+      it: 'Una struttura in cemento armato disposta in quattro ali di volumetria diversa attorno a una corte interna, con una torre autonoma di sedici piani in acciaio e pareti continue.',
+    },
+    program: {
+      en: 'A municipal cultural centre for the reconstructed centre of Neubrandenburg, combining an exhibition hall, a multi-purpose auditorium, club rooms and a library.',
+      es: 'Centro cultural municipal para el centro reconstruido de Neubrandenburgo, que reúne sala de exposiciones, auditorio polivalente, salas de club y biblioteca.',
+      it: 'Centro culturale comunale per il centro ricostruito di Neubrandenburg, che riunisce sala espositiva, auditorium polivalente, sale per circoli e biblioteca.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Cultural venue housing the regional library, an events hall, the tourist office, cafés and offices; refurbished by 2014 at a cost of around 44 million euros.',
+      es: 'Equipamiento cultural que alberga la biblioteca regional, una sala de actos, la oficina de turismo, cafeterías y oficinas; rehabilitado hasta 2014 por unos 44 millones de euros.',
+      it: 'Struttura culturale che ospita la biblioteca regionale, una sala per eventi, l\'ufficio turistico, caffè e uffici; ristrutturata entro il 2014 per circa 44 milioni di euro.',
+    },
+    detailRect: { x: 0.20, y: 0.08, w: 0.18, h: 0.35 },
+    image: {
+      commonsFile: 'File:Neubrandenburg-kulturfinger.jpg',
+      photographer: 'Mboesch',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Neubrandenburg-kulturfinger.jpg',
+      width: 1600,
+      height: 1067,
+    },
+    dossier: {
+      en: 'More than eighty per cent of Neubrandenburg\'s old town lay in ruins in 1945, and the centre was rebuilt between 1952 and the early 1960s. Iris Grund won the competition in 1959, aged twenty-six; construction began in 1963 and the centre opened in 1965 at a cost of thirteen million East German marks. Four wings of different bulk enclose a courtyard; the south side facing the market square is largely glazed, with a foyer and a 480-square-metre exhibition hall, while the windowless multi-purpose auditorium originally seated six hundred. Visual artists including Sieghard Dittner and Werner Schinko worked on the finishes, and in GDR times the building housed more than fifty clubs and study groups. The 56-metre tower on the Stargarder Straße, nicknamed the Kulturfinger, is Neubrandenburg\'s tallest structure after the Gothic Marienkirche. It was built without regard to the medieval street plan, and it narrowed the historic market square.',
+      es: 'Más del ochenta por ciento del casco antiguo de Neubrandenburgo estaba en ruinas en 1945, y el centro se reconstruyó entre 1952 y comienzos de los años sesenta. Iris Grund ganó el concurso en 1959, con veintiséis años; las obras empezaron en 1963 y el centro se inauguró en 1965 con un coste de trece millones de marcos de la RDA. Cuatro alas de volumetría distinta encierran un patio; el lado sur, hacia la plaza del mercado, está ampliamente acristalado, con vestíbulo y una sala de exposiciones de 480 metros cuadrados, mientras que el auditorio polivalente, sin ventanas, tenía en origen seiscientas plazas. Artistas plásticos como Sieghard Dittner y Werner Schinko intervinieron en los acabados, y en época de la RDA el edificio acogió más de cincuenta círculos y grupos de trabajo. La torre de 56 metros de la Stargarder Straße, apodada Kulturfinger, es la construcción más alta de la ciudad después de la gótica Marienkirche. Se levantó sin atender al trazado medieval y estrechó la plaza histórica del mercado.',
+      it: 'Più dell\'ottanta per cento del centro storico di Neubrandenburg era in rovina nel 1945, e il centro fu ricostruito fra il 1952 e i primi anni Sessanta. Iris Grund vinse il concorso nel 1959, a ventisei anni; i lavori cominciarono nel 1963 e il centro fu inaugurato nel 1965 con una spesa di tredici milioni di marchi della RDT. Quattro ali di volumetria diversa racchiudono una corte; il lato sud verso la piazza del mercato è ampiamente vetrato, con foyer e una sala espositiva di 480 metri quadrati, mentre l\'auditorium polivalente, privo di finestre, contava in origine seicento posti. Artisti visivi come Sieghard Dittner e Werner Schinko lavorarono alle finiture, e in epoca RDT l\'edificio ospitò più di cinquanta circoli e gruppi di studio. La torre di 56 metri sulla Stargarder Straße, soprannominata Kulturfinger, è la costruzione più alta della città dopo la gotica Marienkirche. Fu eretta senza riguardo per l\'impianto medievale e restrinse la piazza storica del mercato.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q6443263', title: 'Haus der Kultur und Bildung (Q6443263)', license: null },
+      { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Haus_der_Kultur_und_Bildung', title: 'Haus der Kultur und Bildung', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Iris_Grund', title: 'Iris Grund', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'deep',
+  },
+  {
+    id: 'bruder-klaus-feldkapelle',
+    wikidataId: 'Q992149',
+    name: {
+      en: 'Bruder Klaus Field Chapel',
+      es: 'Capilla de campo del Hermano Klaus',
+      it: 'Cappella campestre di Fratel Klaus',
+    },
+    architectId: 'peter-zumthor',
+    location: { city: 'Mechernich', countryCode: 'DE', lat: 50.59298, lon: 6.72739 },
+    inception: 2005,
+    completed: 2007,
+    demolished: null,
+    typology: 'sacral',
+    materials: ['concrete'],
+    structure: {
+      en: 'A windowless five-sided tower of rammed concrete twelve metres high, laid in twenty-four fifty-centimetre lifts around a tent-shaped inner formwork of 112 spruce trunks that was later burnt out.',
+      es: 'Una torre pentagonal sin ventanas de hormigón apisonado de doce metros de altura, ejecutada en veinticuatro tongadas de cincuenta centímetros en torno a un encofrado interior en forma de tienda hecho con 112 troncos de abeto que después se quemaron.',
+      it: 'Una torre pentagonale senza finestre in calcestruzzo costipato alta dodici metri, eseguita in ventiquattro strati da cinquanta centimetri attorno a una casseratura interna a tenda formata da 112 tronchi di abete rosso poi bruciati.',
+    },
+    program: {
+      en: 'A chapel privately endowed by the farming family Trudel and Hermann-Josef Scheidtweiler, built on their own field and dedicated to the Swiss peace saint Nicholas of Flüe.',
+      es: 'Capilla costeada por la familia de agricultores Trudel y Hermann-Josef Scheidtweiler, levantada en su propio campo y dedicada al santo suizo de la paz Nicolás de Flüe.',
+      it: 'Cappella finanziata privatamente dalla famiglia di agricoltori Trudel e Hermann-Josef Scheidtweiler, eretta su un loro campo e dedicata al santo svizzero della pace Nicolao della Flüe.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'A chapel for private meditation rather than parish worship, open daily except Mondays and held by a foundation set up to maintain it.',
+      es: 'Capilla para la meditación personal más que para el culto parroquial, abierta a diario salvo los lunes y gestionada por una fundación creada para conservarla.',
+      it: 'Cappella per la meditazione personale più che per il culto parrocchiale, aperta ogni giorno tranne il lunedì e gestita da una fondazione creata per mantenerla.',
+    },
+    detailRect: { x: 0.25, y: 0.45, w: 0.30, h: 0.35 },
+    image: {
+      commonsFile: 'File:2017-08-20-mechernich-bruder-klaus-kapelle-06.jpg',
+      photographer: 'Axel Kirch',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:2017-08-20-mechernich-bruder-klaus-kapelle-06.jpg',
+      width: 1600,
+      height: 1067,
+    },
+    // Wave V2-3, batch B8 (image pass only). Downloaded and visually
+    // confirmed the existing primary + detailRect crop genuinely frame
+    // exterior rammed-concrete fabric (tie-hole pattern, corner edge, the
+    // door's steel triangle) — no change needed. Added a wider full-context
+    // exterior shot as the second angle.
+    extraImages: [
+      {
+        commonsFile: 'File:Bruder Klaus Feldkapelle (18833789670).jpg',
+        photographer: 'Kenta Mabuchi',
+        license: 'CC BY-SA 2.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Bruder_Klaus_Feldkapelle_(18833789670).jpg',
+        width: 1600,
+        height: 1112,
+      },
+    ],
+    dossier: {
+      en: 'The Scheidtweilers approached Zumthor while he was building the Kolumba museum in Cologne, wanting to raise a chapel on their own land in thanks for a good life. Planning began in 2001 and construction ran from 2005 to 2007. The client felled 112 spruce trunks in a nearby wood and stood them as a tent-shaped inner formwork; around it a volunteer ramming crew, working with skilled tradesmen in the region\'s old tradition, laid the rammed-concrete body in fifty-centimetre lifts over twenty-four days to a height of twelve metres, using concrete, river gravel and reddish sand from the surrounding fields. In autumn 2006 a smouldering fire was kept burning inside for three weeks, charring the trunks and loosening them from the concrete so they could be drawn out. The floor is a tin-and-lead alloy melted and poured in place; 350 mouth-blown glass plugs stop the formwork tie holes. The chapel was blessed on 19 May 2007.',
+      es: 'Los Scheidtweiler se dirigieron a Zumthor mientras este construía el museo Kolumba de Colonia, con el deseo de levantar una capilla en su propia tierra en agradecimiento por una vida buena. La planificación comenzó en 2001 y las obras se desarrollaron entre 2005 y 2007. El promotor taló 112 troncos de abeto en un bosque cercano y los dispuso como encofrado interior en forma de tienda; a su alrededor, una cuadrilla de voluntarios, junto con artesanos especializados y siguiendo la vieja tradición de la comarca, apisonó el cuerpo de hormigón en tongadas de cincuenta centímetros a lo largo de veinticuatro días hasta los doce metros de altura, con hormigón, canto rodado de río y arena rojiza de los campos vecinos. En otoño de 2006 se mantuvo dentro un fuego lento durante tres semanas que carbonizó los troncos y los despegó del hormigón, de modo que pudieron extraerse. El suelo es una aleación de estaño y plomo fundida y vertida in situ; 350 tapones de vidrio soplado cierran los agujeros de los tensores del encofrado. La capilla se bendijo el 19 de mayo de 2007.',
+      it: 'Gli Scheidtweiler si rivolsero a Zumthor mentre costruiva il museo Kolumba a Colonia, volendo erigere una cappella sulla propria terra in ringraziamento per una vita buona. La progettazione cominciò nel 2001 e i lavori si svolsero fra il 2005 e il 2007. Il committente abbatté 112 tronchi di abete rosso in un bosco vicino e li dispose come casseratura interna a forma di tenda; attorno a essa una squadra di volontari, insieme ad artigiani specializzati e secondo l\'antica tradizione della zona, costipò il corpo in calcestruzzo in strati da cinquanta centimetri nell\'arco di ventiquattro giorni fino a dodici metri di altezza, con calcestruzzo, ciottoli di fiume e sabbia rossastra dei campi circostanti. Nell\'autunno del 2006 si tenne acceso all\'interno per tre settimane un fuoco lento che carbonizzò i tronchi staccandoli dal calcestruzzo, così da poterli estrarre. Il pavimento è una lega di stagno e piombo fusa e colata in opera; 350 tappi di vetro soffiato chiudono i fori dei tiranti. La cappella fu benedetta il 19 maggio 2007.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q992149', title: 'Bruder-Klaus-Feldkapelle (Q992149)', license: null },
+      { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Bruder-Klaus-Feldkapelle', title: 'Bruder-Klaus-Feldkapelle', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'umweltbundesamt-dessau',
+    wikidataId: 'Q111009013',
+    name: {
+      en: 'Federal Environment Agency, Dessau',
+      es: 'Agencia Federal de Medio Ambiente de Dessau',
+      it: 'Agenzia federale per l\'ambiente di Dessau',
+    },
+    architectId: 'louisa-hutton',
+    location: { city: 'Dessau-Roßlau', countryCode: 'DE', lat: 51.84234, lon: 12.23928 },
+    inception: 2002,
+    completed: 2005,
+    demolished: null,
+    typology: 'civic',
+    materials: ['timber', 'steel-and-glass'],
+    structure: {
+      en: 'A serpentine office slab wrapped around a naturally ventilated atrium, clad in a prototype prefabricated timber-element facade, with exposed bush-hammered concrete volumes inserted for the special rooms.',
+      es: 'Un bloque de oficinas serpenteante que envuelve un atrio de ventilación natural, revestido con una fachada prototípica de elementos prefabricados de madera y con volúmenes de hormigón visto abujardado insertados para las salas especiales.',
+      it: 'Un corpo per uffici serpentino avvolto attorno a un atrio a ventilazione naturale, rivestito da una facciata prototipale a elementi prefabbricati in legno, con volumi in calcestruzzo a vista bocciardato inseriti per le sale speciali.',
+    },
+    program: {
+      en: 'The headquarters of the German Environment Agency, commissioned by the Federal Republic of Germany, with offices, a public auditorium, a library and a restaurant across some 41,000 square metres.',
+      es: 'Sede de la Agencia Federal de Medio Ambiente alemana, encargada por la República Federal de Alemania, con oficinas, auditorio público, biblioteca y restaurante en unos 41.000 metros cuadrados.',
+      it: 'Sede dell\'Agenzia federale tedesca per l\'ambiente, commissionata dalla Repubblica Federale di Germania, con uffici, un auditorium pubblico, una biblioteca e un ristorante su circa 41.000 metri quadrati.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Working headquarters of the German Environment Agency, which moved its official seat to Dessau on 2 May 2005; a second office building was added in 2023.',
+      es: 'Sede en activo de la Agencia Federal de Medio Ambiente, que trasladó su sede oficial a Dessau el 2 de mayo de 2005; en 2023 se añadió un segundo edificio de oficinas.',
+      it: 'Sede operativa dell\'Agenzia federale tedesca per l\'ambiente, che trasferì la sede ufficiale a Dessau il 2 maggio 2005; nel 2023 è stato aggiunto un secondo edificio per uffici.',
+    },
+    detailRect: { x: 0.62, y: 0.34, w: 0.28, h: 0.26 },
+    image: {
+      commonsFile: 'File:Umweltbundesamt Dessau 2011.jpg',
+      photographer: 'M_H.DE',
+      license: 'CC BY 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Umweltbundesamt_Dessau_2011.jpg',
+      width: 1600,
+      height: 1200,
+    },
+    dossier: {
+      en: 'Sauerbruch Hutton won the competition in 1998 and built between 2002 and 2005 on a former gasworks quarter beside the Wörlitz railway station, a few minutes\' walk from Gropius\'s Bauhaus building. The plan is a long curved band that gathers the surviving industrial structures and the old station into one figure and folds around a glazed atrium; the connecting piece is given a slightly estranged brick skin in deference to that industrial fabric. The office wing is clad in a prefabricated timber-element facade, a prototype at this scale in Germany, its window panels set in a shifting spectrum of colour — the practice\'s long-running argument that colour is a building material rather than a finish. Inside, bush-hammered exposed-concrete volumes house the special rooms. The environmental brief was the point: heavy insulation, a very large air-to-ground heat exchanger, solar thermal and photovoltaic panels, and an atrium that drives natural ventilation. The building holds a DGNB Gold certificate.',
+      es: 'Sauerbruch Hutton ganó el concurso en 1998 y construyó entre 2002 y 2005 sobre un antiguo barrio gasista junto a la estación de Wörlitz, a pocos minutos a pie del edificio de la Bauhaus de Gropius. La planta es una larga banda curva que reúne en una sola figura las estructuras industriales conservadas y la vieja estación, y se pliega en torno a un atrio acristalado; la pieza de enlace recibe una piel de ladrillo levemente extrañada en deferencia a ese tejido industrial. El ala de oficinas se reviste con una fachada de elementos prefabricados de madera, prototípica a esta escala en Alemania, con los paneles de ventana dispuestos en un espectro cromático cambiante: el argumento sostenido del estudio de que el color es un material de construcción y no un acabado. Dentro, volúmenes de hormigón visto abujardado alojan las salas especiales. El encargo ambiental era la cuestión: aislamiento reforzado, un intercambiador aire-tierra de gran tamaño, colectores solares térmicos y fotovoltaicos, y un atrio que impulsa la ventilación natural. El edificio cuenta con el certificado DGNB Oro.',
+      it: 'Sauerbruch Hutton vinse il concorso nel 1998 e costruì fra il 2002 e il 2005 su un ex quartiere del gas accanto alla stazione di Wörlitz, a pochi minuti a piedi dall\'edificio del Bauhaus di Gropius. La pianta è una lunga fascia curva che raccoglie in un\'unica figura le strutture industriali superstiti e la vecchia stazione e si piega attorno a un atrio vetrato; il corpo di collegamento riceve una pelle in laterizio leggermente straniata, in omaggio a quel tessuto industriale. L\'ala per uffici è rivestita da una facciata a elementi prefabbricati in legno, prototipale a questa scala in Germania, con i pannelli delle finestre disposti in uno spettro cromatico mutevole: la tesi costante dello studio secondo cui il colore è un materiale da costruzione e non una finitura. All\'interno, volumi in calcestruzzo a vista bocciardato ospitano le sale speciali. Il tema ambientale era il punto: isolamento spinto, uno scambiatore aria-terra di grandi dimensioni, pannelli solari termici e fotovoltaici e un atrio che innesca la ventilazione naturale. L\'edificio ha il certificato DGNB Oro.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q111009013', title: 'Federal Environment Agency building (Q111009013)', license: null },
+      { kind: 'institution', url: 'https://www.sauerbruchhutton.de/de/project/uba', title: 'Sauerbruch Hutton — Umweltbundesamt, Dessau (project data: competition 1998, construction 2002–2005, 41,000 m², timber-element facade, air-to-ground heat exchanger, DGNB Gold)', license: null },
+      { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Umweltbundesamt_(Deutschland)', title: 'Umweltbundesamt (Deutschland)', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'deep',
+  },
+  {
+    // 13th building, added in the fix round: Schinkel died in 1841, long out of
+    // copyright with no FoP question, and lifts this slice's 1800-1945 era
+    // count from 3 to 4 (contract v2 §2 — that bucket is pool-tight). Chosen
+    // over the Konzerthaus for a cleanly re-verified Commons licence and a
+    // stronger detailRect candidate (the 18-column Ionic screen facade, framed
+    // frontally with roughly a third sky above and the staircase below).
+    id: 'altes-museum-berlin',
+    wikidataId: 'Q156722',
+    name: {
+      en: 'Altes Museum',
+      es: 'Altes Museum (Museo Antiguo de Berlín)',
+      it: 'Altes Museum di Berlino',
+    },
+    architectId: 'karl-friedrich-schinkel',
+    location: { city: 'Berlin', countryCode: 'DE', lat: 52.51944, lon: 13.39889 },
+    inception: 1825,
+    completed: 1830,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['stone'],
+    structure: {
+      en: 'A two-storey masonry block wraps a domed rotunda modelled on the Pantheon, screened from the Lustgarten by a continuous portico of eighteen fluted Ionic sandstone columns that masks the building\'s internal room divisions behind one unbroken colonnade.',
+      es: 'Un bloque de fábrica de dos plantas envuelve una rotonda abovedada inspirada en el Panteón, apantallada hacia el Lustgarten por un pórtico continuo de dieciocho columnas jónicas acanaladas de arenisca que oculta tras una sola columnata ininterrumpida la división interior en salas.',
+      it: 'Un blocco murario di due piani avvolge una rotonda a cupola ispirata al Pantheon, schermato verso il Lustgarten da un portico continuo di diciotto colonne ioniche scanalate in arenaria che nasconde dietro un unico colonnato ininterrotto la suddivisione interna in sale.',
+    },
+    program: {
+      en: 'The first purpose-built public art museum in Prussia, commissioned by King Frederick William III to house the royal collections of paintings and antiquities for public education and to complete the Lustgarten ensemble facing the royal palace.',
+      es: 'El primer museo de arte público construido ex profeso en Prusia, encargado por el rey Federico Guillermo III para albergar las colecciones reales de pintura y antigüedades destinadas a la educación pública, y para completar el conjunto del Lustgarten frente al palacio real.',
+      it: 'Il primo museo d\'arte pubblico appositamente costruito in Prussia, commissionato dal re Federico Guglielmo III per ospitare le collezioni reali di pittura e antichità destinate all\'istruzione pubblica, e per completare l\'insieme del Lustgarten di fronte al palazzo reale.',
+    },
+    heritage: 'unesco',
+    currentUse: {
+      en: 'Home of the Antikensammlung, the Berlin state collection of Greek and Roman antiquities, with the upper floor used for temporary exhibitions; part of the Museum Island ensemble.',
+      es: 'Sede de la Antikensammlung, la colección estatal berlinesa de antigüedades griegas y romanas, con la planta superior dedicada a exposiciones temporales; forma parte del conjunto de la Isla de los Museos.',
+      it: 'Sede dell\'Antikensammlung, la collezione statale berlinese di antichità greche e romane, con il piano superiore destinato a mostre temporanee; fa parte del complesso dell\'Isola dei Musei.',
+    },
+    detailRect: { x: 0.32, y: 0.30, w: 0.36, h: 0.28 },
+    image: {
+      commonsFile: 'File:Altes Museum in Berlin, Germany.jpg',
+      photographer: 'Osama Shukir Muhammed Amin FRCP(Glasg)',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Altes_Museum_in_Berlin,_Germany.jpg',
+      width: 1600,
+      height: 1068,
+    },
+    dossier: {
+      en: 'Schinkel had studied under Friedrich Gilly and began as a painter before Prussia\'s post-Napoleonic reconstruction gave him architecture as his real practice. King Frederick William III approved his design for a public museum on the Lustgarten in 1823; the cornerstone was laid on 9 July 1825 and the museum opened on 3 August 1830, the first in Prussia built expressly to display art to the public rather than a royal household. The plan sets a two-storey block, containing picture galleries above and antiquities below, behind a screen of eighteen fluted Ionic columns spanning the entire width of the façade — the portico is not an entrance porch but an open loggia, a place to stand and look back across the Lustgarten before entering. A broad open staircase rises between the columns to a terrace, and at its centre a top-lit rotunda twenty-three metres high, ringed by twenty Corinthian columns, quotes the Pantheon directly. Eighteen sandstone eagles crown the entablature. American bombing and a 1945 ammunition explosion gutted the building; it was rebuilt in stages from 1951 to 1966, and the rotunda\'s murals were restored in 1982. Museum Island became a UNESCO World Heritage Site in 1999.',
+      es: 'Schinkel se formó con Friedrich Gilly y empezó como pintor antes de que la reconstrucción prusiana tras las guerras napoleónicas le diera la arquitectura como oficio. Federico Guillermo III aprobó en 1823 el proyecto de museo público en el Lustgarten; la primera piedra se colocó el 9 de julio de 1825 y el museo abrió el 3 de agosto de 1830, el primero en Prusia concebido para mostrar arte al público y no a una casa real. La planta dispone un bloque de dos alturas, con pinacotecas arriba y antigüedades abajo, tras una pantalla de dieciocho columnas jónicas acanaladas que recorren todo el ancho de la fachada: el pórtico es una logia abierta para mirar el Lustgarten antes de entrar. Una escalinata sube entre las columnas hasta una terraza, y en el centro una rotonda cenital de veintitrés metros, rodeada de veinte columnas corintias, cita el Panteón. Dieciocho águilas de arenisca coronan el entablamento. El bombardeo estadounidense y una explosión de munición en 1945 arrasaron el edificio; se reconstruyó por fases entre 1951 y 1966, y los murales de la rotonda se restauraron en 1982. La Isla de los Museos es Patrimonio Mundial de la UNESCO desde 1999.',
+      it: 'Schinkel si formò con Friedrich Gilly e cominciò come pittore prima che la ricostruzione prussiana del dopo-Napoleone gli desse l\'architettura come mestiere. Il re Federico Guglielmo III approvò nel 1823 il progetto per un museo pubblico sul Lustgarten; la prima pietra fu posata il 9 luglio 1825 e il museo aprì il 3 agosto 1830, il primo in Prussia concepito per mostrare l\'arte al pubblico e non a una casa reale. La pianta dispone un blocco di due piani, con le gallerie di pittura sopra e le antichità sotto, dietro uno schermo di diciotto colonne ioniche scanalate che percorrono l\'intera larghezza della facciata: il portico è una loggia aperta da cui guardare il Lustgarten prima di entrare. Una scalinata sale tra le colonne fino a una terrazza, e al centro una rotonda a lucernario alta ventitré metri, cinta da venti colonne corinzie, cita il Pantheon. Diciotto aquile in arenaria coronano la trabeazione. Il bombardamento americano e un\'esplosione di munizioni nel 1945 devastarono l\'edificio; fu ricostruito per fasi fra il 1951 e il 1966, e gli affreschi della rotonda furono restaurati nel 1982. L\'Isola dei Musei è Patrimonio mondiale UNESCO dal 1999.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q156722', title: 'Altes Museum (Q156722)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Altes_Museum', title: 'Altes Museum', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Altes_Museum', title: 'Altes Museum', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'seagram-building',
+    wikidataId: 'Q737484',
+    name: {
+      en: 'Seagram Building',
+      es: 'Seagram Building',
+      it: 'Seagram Building',
+    },
+    architectId: 'mies-van-der-rohe',
+    coArchitects: ['philip-johnson'],
+    location: { city: 'New York, New York', countryCode: 'US', lat: 40.75861, lon: -73.97222 },
+    inception: 1955,
+    completed: 1958,
+    demolished: null,
+    typology: 'tower',
+    materials: ['steel-and-glass', 'stone'],
+    structure: {
+      en: 'A steel frame, concrete-encased for fire code, is faced with non-structural bronze I-beam mullions and bronze-tinted glass, set back thirty metres from the avenue behind an open granite plaza with two pools.',
+      es: 'Una estructura de acero, revestida de hormigón por normativa contra incendios, se reviste de perfiles no estructurales en I de bronce y vidrio tintado en bronce, retranqueada treinta metros respecto a la avenida tras una plaza abierta de granito con dos estanques.',
+      it: 'Una struttura d\'acciaio, rivestita in calcestruzzo per normativa antincendio, è rivestita da profili non strutturali a I in bronzo e vetro tinto bronzo, arretrata di trenta metri rispetto al viale dietro una piazza aperta di granito con due vasche.',
+    },
+    program: {
+      en: 'Headquarters commissioned by the Seagram Company, the Canadian distiller, at the initiative of Phyllis Lambert, daughter of its chairman.',
+      es: 'Sede encargada por la destilería canadiense Seagram Company, por iniciativa de Phyllis Lambert, hija de su presidente.',
+      it: 'Sede commissionata dalla distilleria canadese Seagram Company, per iniziativa di Phyllis Lambert, figlia del suo presidente.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Mixed-use office tower with ground-floor restaurants, owned by RFR Holding since 2000.',
+      es: 'Torre de oficinas de uso mixto con restaurantes en planta baja, propiedad de RFR Holding desde 2000.',
+      it: 'Torre per uffici a uso misto con ristoranti al piano terra, di proprietà di RFR Holding dal 2000.',
+    },
+    detailRect: { x: 0.44, y: 0.42, w: 0.30, h: 0.30 },
+    image: {
+      commonsFile: 'File:Seagram Building (4114889237).jpg',
+      photographer: 'Tom Ravenscrodt',
+      license: 'CC BY 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Seagram_Building_(4114889237).jpg',
+      width: 1600,
+      height: 1200,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Seagram Building.jpg',
+        photographer: 'Jo Baert',
+        license: 'CC BY-SA 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Seagram_Building.jpg',
+        width: 1600,
+        height: 1064,
+      },
+    ],
+    dossier: {
+      en: 'Mies received the commission in 1954 through Phyllis Lambert, the Seagram chairman\'s daughter, who rejected an earlier scheme and lobbied her father to hire Mies instead. His design set the tower back thirty metres from Park Avenue behind an open granite plaza with two pools — a use of ground plan that cost Seagram roughly a third of the site\'s buildable value and was copied so widely that New York\'s 1961 zoning code built plaza bonuses around it. The curtain wall reads as bronze and grey glass, but the visible I-beam mullions carry no load; fire code required Mies\'s real structural steel to be encased in concrete, so he applied non-structural bronze extrusions merely to keep the frame legible from outside, a compromise he accepted rather than build a blank fireproofed shaft. Johnson designed the lobby, elevators and the Four Seasons restaurant. At roughly two hundred dollars per square foot it was the most expensive office building of its time, and it became the reference point against which every glass tower after it was measured.',
+      es: 'Mies recibió el encargo en 1954 gracias a Phyllis Lambert, hija del presidente de Seagram, que rechazó un primer proyecto y convenció a su padre para contratarlo a él. Su diseño retranqueó la torre treinta metros respecto a Park Avenue, tras una plaza abierta de granito con dos estanques —una disposición que costó a Seagram cerca de un tercio del valor edificable del solar y que se copió tan ampliamente que el código de zonificación de Nueva York de 1961 incorporó bonificaciones a cambio de plazas siguiendo justo ese modelo—. El muro cortina se lee como bronce y vidrio gris, pero los perfiles en I visibles no cargan nada: la normativa contra incendios obligaba a revestir de hormigón el acero estructural real, así que Mies aplicó perfiles de bronce no estructurales solo para que la estructura siguiera siendo legible desde fuera, una concesión que aceptó antes que construir un cajón ciego ignífugo. Johnson proyectó el vestíbulo, los ascensores y el restaurante Four Seasons. Con unos doscientos dólares por pie cuadrado fue el edificio de oficinas más caro de su época, y se convirtió en la referencia frente a la que se midió cada torre de vidrio posterior.',
+      it: 'Mies ricevette l\'incarico nel 1954 grazie a Phyllis Lambert, figlia del presidente di Seagram, che respinse un primo progetto e convinse il padre ad assumere lui. Il suo disegno arretrò la torre di trenta metri rispetto a Park Avenue, dietro una piazza aperta di granito con due vasche — una disposizione che costò a Seagram circa un terzo del valore edificabile del lotto e che fu copiata così ampiamente che il codice urbanistico newyorchese del 1961 introdusse bonus in cambio di piazze proprio su questo modello. La parete vetrata si legge come bronzo e vetro grigio, ma i profili a I visibili non portano alcun carico: le norme antincendio imponevano di rivestire in calcestruzzo l\'acciaio strutturale reale, così Mies applicò profili di bronzo non strutturali solo per mantenere leggibile la struttura dall\'esterno, un compromesso che accettò piuttosto che costruire un blocco cieco ignifugo. Johnson progettò l\'atrio, gli ascensori e il ristorante Four Seasons. Con circa duecento dollari al piede quadrato fu l\'edificio per uffici più costoso della sua epoca, e divenne il riferimento rispetto a cui si misurò ogni torre di vetro successiva.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q737484', title: 'Seagram Building (Q737484)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Seagram_Building', title: 'Seagram Building', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'farnsworth-house',
+    wikidataId: 'Q1397013',
+    name: {
+      en: 'Farnsworth House',
+      es: 'Farnsworth House',
+      it: 'Farnsworth House',
+    },
+    architectId: 'mies-van-der-rohe',
+    location: { city: 'Plano, Illinois', countryCode: 'US', lat: 41.635, lon: -88.5357 },
+    inception: 1949,
+    completed: 1951,
+    demolished: null,
+    typology: 'domestic',
+    materials: ['steel-and-glass', 'stone'],
+    structure: {
+      en: 'A platform of white-painted steel is raised on eight wide-flange columns, welded to the floor and roof slabs from outside the glass skin so no post interrupts the interior, with a travertine floor set above the Fox River\'s flood line.',
+      es: 'Una plataforma de acero pintado de blanco se alza sobre ocho pilares de ala ancha, soldados a las losas de suelo y cubierta desde fuera de la piel de vidrio para que ningún soporte interrumpa el interior, con un suelo de travertino situado por encima de la línea de crecida del río Fox.',
+      it: 'Una piattaforma di acciaio verniciato di bianco è sollevata su otto pilastri ad ali larghe, saldati alle lastre di pavimento e copertura dall\'esterno della pelle vetrata così che nessun sostegno interrompa l\'interno, con un pavimento di travertino posto sopra la linea di piena del fiume Fox.',
+    },
+    program: {
+      en: 'A weekend retreat for the Chicago nephrologist Edith Farnsworth, commissioned in 1945 as a glass box removed from the city.',
+      es: 'Casa de fin de semana para la nefróloga de Chicago Edith Farnsworth, encargada en 1945 como una caja de vidrio alejada de la ciudad.',
+      it: 'Casa per il fine settimana della nefrologa di Chicago Edith Farnsworth, commissionata nel 1945 come scatola di vetro lontana dalla città.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'House museum operated by the National Trust for Historic Preservation, which acquired it in 2003.',
+      es: 'Casa museo gestionada por el National Trust for Historic Preservation, que la adquirió en 2003.',
+      it: 'Casa museo gestita dal National Trust for Historic Preservation, che l\'ha acquisita nel 2003.',
+    },
+    detailRect: { x: 0.24, y: 0.36, w: 0.30, h: 0.30 },
+    image: {
+      commonsFile: 'File:Farnsworth House Exterior 1.jpg',
+      photographer: 'Lessismore2020',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Farnsworth_House_Exterior_1.jpg',
+      width: 1600,
+      height: 1067,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Farnsworth House by Mies Van Der Rohe - exterior-2.jpg',
+        photographer: 'Victor Grigas',
+        license: 'CC BY-SA 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Farnsworth_House_by_Mies_Van_Der_Rohe_-_exterior-2.jpg',
+        width: 1600,
+        height: 1067,
+      },
+    ],
+    dossier: {
+      en: 'Farnsworth commissioned the house in 1945 wanting nothing more than a glass box to escape to on weekends from her Chicago medical practice, and Mies gave her a platform of white-painted steel raised on eight wide-flange columns, floating a travertine floor above the Fox River\'s flood line — a margin the river has since exceeded five times, most severely in 1996, when the water reached five feet inside. Two rectangular slabs, floor and roof, are welded to the columns from outside the glass skin so that no post interrupts the interior, which Mies divided only with a free-standing walnut core holding the kitchen, bathroom and a fireplace; every other wall is single-pane glass held by chrome-capped steel mullions. Costs roughly tripled over the estimate, and Mies sued Farnsworth for his fee while she countersued over the overruns and the house\'s now-famous discomforts — condensation, mosquitoes, heat. He won in court in 1953; the house\'s reputation, mostly independent of its client\'s ordeal, has only grown since.',
+      es: 'Farnsworth encargó la casa en 1945 sin pedir más que una caja de vidrio donde refugiarse los fines de semana lejos de su consulta médica en Chicago, y Mies le dio una plataforma de acero pintado de blanco alzada sobre ocho pilares de ala ancha, con un suelo de travertino flotando por encima de la línea de crecida del río Fox —un margen que el río ha superado ya cinco veces, la peor en 1996, cuando el agua alcanzó metro y medio dentro de la casa—. Dos losas rectangulares, suelo y cubierta, se sueldan a los pilares desde fuera de la piel de vidrio para que ningún soporte interrumpa el interior, que Mies dividió solo con un núcleo exento de nogal con la cocina, el baño y una chimenea; el resto de los muros es vidrio de una sola hoja sujeto por perfiles de acero rematados en cromo. El coste casi se triplicó sobre lo presupuestado, y Mies demandó a Farnsworth por sus honorarios mientras ella reconvenía por los sobrecostes y las ya célebres incomodidades de la casa —condensación, mosquitos, calor—. Él ganó el pleito en 1953; la reputación de la casa, en buena medida ajena al calvario de su clienta, no ha dejado de crecer desde entonces.',
+      it: 'Farnsworth commissionò la casa nel 1945 chiedendo soltanto una scatola di vetro in cui rifugiarsi nei fine settimana lontano dal proprio studio medico di Chicago, e Mies le diede una piattaforma di acciaio verniciato di bianco sollevata su otto pilastri ad ali larghe, con un pavimento di travertino sospeso sopra il livello di piena del fiume Fox — un margine che il fiume ha già superato cinque volte, la più grave nel 1996, quando l\'acqua raggiunse più di un metro all\'interno. Due lastre rettangolari, pavimento e copertura, sono saldate ai pilastri dall\'esterno della pelle vetrata così che nessun sostegno interrompa l\'interno, che Mies divise soltanto con un nucleo isolato in noce contenente cucina, bagno e camino; ogni altra parete è vetro monolastra tenuto da profili d\'acciaio con cappucci cromati. Il costo quasi triplicò rispetto al preventivo, e Mies fece causa a Farnsworth per il proprio compenso mentre lei controquerelò per gli extra-costi e per i ormai celebri disagi della casa — condensa, zanzare, caldo. Vinse la causa nel 1953; la reputazione della casa, in gran parte indipendente dal calvario della cliente, da allora è cresciuta soltanto.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1397013', title: 'Farnsworth House (Q1397013)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Farnsworth_House', title: 'Farnsworth House', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.farnsworthhouse.org/history/', title: 'Farnsworth House — History', license: null },
+    ],
+    tier: 'canon',
+  },
+{
+    id: 'vitra-design-museum',
+    wikidataId: 'Q700747',
+    name: {
+      en: 'Vitra Design Museum',
+      es: 'Vitra Design Museum',
+      it: 'Vitra Design Museum',
+    },
+    architectId: 'frank-gehry',
+    location: { city: 'Weil am Rhein', countryCode: 'DE', lat: 47.6068, lon: 7.5847 },
+    inception: 1987,
+    completed: 1989,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['concrete', 'mixed'],
+    structure: {
+      en: 'A white-plastered masonry and concrete volume breaks into interlocking cubes, ramps and a corkscrewing external staircase clad in zinc-titanium panels, all resolved geometrically around a golden-rectangle proportioning system rather than a single orthogonal grid.',
+      es: 'Un volumen de fábrica y hormigón enlucido en blanco se descompone en cubos entrelazados, rampas y una escalera exterior en tirabuzón revestida de paneles de cinc-titanio, resuelto geométricamente en torno a un sistema de proporción de rectángulo áureo y no a una sola retícula ortogonal.',
+      it: 'Un volume in muratura e cemento intonacato di bianco si scompone in cubi incastrati, rampe e una scala esterna a cavatappi rivestita in pannelli di zinco-titanio, risolto geometricamente attorno a un sistema proporzionale a rettangolo aureo anziché a un\'unica griglia ortogonale.',
+    },
+    program: {
+      en: 'A museum for the Vitra furniture company\'s design collection, commissioned by Rolf Fehlbaum after a 1981 factory fire, and Gehry\'s first built work outside North America.',
+      es: 'Museo para la colección de diseño de la empresa de mobiliario Vitra, encargado por Rolf Fehlbaum tras un incendio en la fábrica en 1981, y primera obra construida de Gehry fuera de Norteamérica.',
+      it: 'Museo per la collezione di design dell\'azienda di mobili Vitra, commissionato da Rolf Fehlbaum dopo un incendio in fabbrica nel 1981, e prima opera costruita da Gehry fuori dal Nordamerica.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Working design museum on the Vitra Campus, staging temporary exhibitions on furniture, architecture and design.',
+      es: 'Museo de diseño en activo en el Vitra Campus, con exposiciones temporales de mobiliario, arquitectura y diseño.',
+      it: 'Museo del design in attività nel Vitra Campus, con mostre temporanee di arredamento, architettura e design.',
+    },
+    detailRect: { x: 0.22, y: 0.1, w: 0.35, h: 0.4 },
+    image: {
+      commonsFile: 'File:Vitra Design Museum.JPG',
+      photographer: 'Wladyslaw',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Vitra_Design_Museum.JPG',
+      width: 1600,
+      height: 1067,
+    },
+    dossier: {
+      en: 'A 1981 fire destroyed several of Vitra\'s production buildings on its Weil am Rhein campus just across the Swiss and French borders, and the company\'s owner, Rolf Fehlbaum, used the rebuilding as an occasion to commission a museum for the furniture collection he had been assembling privately for years — his first call was to Gehry, whose Santa Monica house he had seen in photographs. The museum was Gehry\'s first building outside North America and, unusually for his later work, a masonry building rather than a metal-clad one: white-plastered walls in interlocking cubic and curved volumes, organized (at the recommendation of Gehry\'s then-collaborator, architect Michael Blattner) around a system of golden-rectangle proportions rather than a single grid, so no two rooms share quite the same geometry. A corkscrewing external stair wrapped in zinc-titanium panels connects the galleries on the outside of the building rather than within it. Fehlbaum went on to commission a small architectural campus around it — Zaha Hadid\'s first built work, the Vitra Fire Station, arrived four years later on the same grounds.',
+      es: 'Un incendio en 1981 destruyó varias naves de producción de Vitra en su campus de Weil am Rhein, junto a las fronteras suiza y francesa, y el propietario de la empresa, Rolf Fehlbaum, aprovechó la reconstrucción para encargar un museo para la colección de mobiliario que llevaba años reuniendo en privado: su primera llamada fue a Gehry, cuya casa de Santa Mónica había visto en fotografías. El museo fue el primer edificio de Gehry fuera de Norteamérica y, cosa inusual en su obra posterior, un edificio de fábrica y no de revestimiento metálico: muros enlucidos en blanco en volúmenes cúbicos y curvos entrelazados, organizados (por recomendación del entonces colaborador de Gehry, el arquitecto Michael Blattner) según un sistema de proporciones de rectángulo áureo y no una sola retícula, de modo que ninguna sala comparte del todo la misma geometría. Una escalera exterior en tirabuzón revestida de paneles de cinc-titanio conecta las salas por fuera del edificio y no por dentro. Fehlbaum encargó después un pequeño campus arquitectónico a su alrededor: la primera obra construida de Zaha Hadid, la Vitra Fire Station, llegó cuatro años después en el mismo recinto.',
+      it: 'Un incendio nel 1981 distrusse diversi capannoni di produzione Vitra nel suo campus di Weil am Rhein, appena oltre i confini svizzero e francese, e il proprietario dell\'azienda, Rolf Fehlbaum, colse l\'occasione della ricostruzione per commissionare un museo per la collezione di mobili che da anni raccoglieva privatamente: la sua prima chiamata fu a Gehry, di cui aveva visto in fotografia la casa di Santa Monica. Il museo fu il primo edificio di Gehry fuori dal Nordamerica e, cosa insolita per la sua opera successiva, un edificio in muratura anziché rivestito in metallo: muri intonacati di bianco in volumi cubici e curvi incastrati, organizzati (su raccomandazione dell\'allora collaboratore di Gehry, l\'architetto Michael Blattner) secondo un sistema di proporzioni a rettangolo aureo anziché un\'unica griglia, così che nessuna sala condivide del tutto la stessa geometria. Una scala esterna a cavatappi rivestita in pannelli di zinco-titanio collega le sale dall\'esterno dell\'edificio anziché dall\'interno. Fehlbaum commissionò in seguito un piccolo campus architettonico attorno ad esso: la prima opera costruita di Zaha Hadid, la Vitra Fire Station, arrivò quattro anni dopo nello stesso complesso.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q700747', title: 'Vitra Design Museum (Q700747)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Vitra_Design_Museum', title: 'Vitra Design Museum', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+
+{
+    // Wave V2-3 batch B5 top-up: Norman Foster is pre-assigned to
+    // europe-british.ts (wave5-contract-v2.md §3, europe-british owns
+    // architect ids for GB/IE practices). Foster's architect record lives
+    // there; this building is filed here per the wave 3 shared instructions
+    // ("place entries in the correct regional file... match how that
+    // region is already filed") because it is physically in Germany.
+    id: 'reichstag-dome',
+    wikidataId: 'Q4809837',
+    name: {
+      en: 'Reichstag Dome',
+      es: 'Cúpula del Reichstag',
+      it: 'Cupola del Reichstag',
+    },
+    architectId: 'norman-foster',
+    location: { city: 'Berlin', countryCode: 'DE', lat: 52.51861, lon: 13.37611 },
+    inception: 1995,
+    completed: 1999,
+    demolished: null,
+    typology: 'civic',
+    materials: ['steel-and-glass'],
+    structure: {
+      en: 'A fully transparent steel-and-glass drum holds a mirrored, funnel-shaped cone at its centre that reflects daylight into the debating chamber below and doubles as the chamber\'s ventilation exhaust.',
+      es: 'Un tambor de acero y vidrio totalmente transparente aloja en su centro un cono espejado en forma de embudo que refleja la luz natural hacia la sala de plenos y sirve a la vez de conducto de extracción de su ventilación.',
+      it: "Un tamburo d'acciaio e vetro completamente trasparente ospita al centro un cono a specchio a forma d'imbuto che riflette la luce naturale verso l'aula sottostante e funge insieme da condotto di estrazione della sua ventilazione.",
+    },
+    program: {
+      en: "Built as part of Foster's 1990s reconstruction of the Reichstag as the seat of the reunified Bundestag, the dome gives the public free access to an open-air platform directly above the debating chamber.",
+      es: 'Construida dentro de la reconstrucción del Reichstag por Foster en los años noventa como sede del Bundestag reunificado, la cúpula da al público acceso libre a una plataforma al aire libre justo encima de la sala de plenos.',
+      it: "Costruita nell'ambito della ricostruzione del Reichstag da parte di Foster negli anni Novanta come sede del Bundestag riunificato, la cupola offre al pubblico accesso libero a una piattaforma all'aperto proprio sopra l'aula.",
+    },
+    heritage: 'national',
+    currentUse: {
+      en: "Free public viewing platform and Berlin's most-visited architectural attraction, reached by timed online booking, above the working Bundestag chamber.",
+      es: 'Plataforma pública gratuita y la atracción arquitectónica más visitada de Berlín, con reserva previa en línea, sobre la cámara del Bundestag en funcionamiento.',
+      it: "Piattaforma pubblica gratuita e attrazione architettonica più visitata di Berlino, con prenotazione online, sopra l'aula del Bundestag in funzione.",
+    },
+    detailRect: { x: 0.30, y: 0.28, w: 0.35, h: 0.30 },
+    image: {
+      commonsFile: 'Glaskuppel des Reichstagsgebäude Deutscher Bundestag Berlin.JPG',
+      photographer: 'Schlaier',
+      license: 'PD',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Glaskuppel_des_Reichstagsgeb%C3%A4ude_Deutscher_Bundestag_Berlin.JPG',
+      width: 1600,
+      height: 1111,
+    },
+    extraImages: [
+      {
+        commonsFile: 'Reichstag building Berlin view from west before sunset.jpg',
+        photographer: 'Jürgen Matern',
+        license: 'CC BY-SA 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Reichstag_building_Berlin_view_from_west_before_sunset.jpg',
+        width: 1600,
+        height: 605,
+      },
+    ],
+    dossier: {
+      en: "Foster's practice won the international competition to rebuild the Reichstag in 1993, two years after the reunified German parliament voted to return to Berlin from Bonn, and the brief asked for both a working Bundestag chamber and a public symbol of change. The original 1894 dome, already gutted by the 1933 fire and further ruined in 1945, had been removed entirely in the 1950s; Foster's replacement is a fully transparent steel-and-glass drum holding a mirrored, funnel-shaped cone at its centre. The cone bounces daylight down into the debating chamber below while doubling as an exhaust duct for the ventilation system, and a motorised shade tracks the sun to cut glare and heat gain. Two ramps spiral up the inside of the glass in a double helix, letting visitors climb to an open-air platform directly above the chamber roof and look straight down on the elected members meeting beneath their feet — a literal reversal of the older arrangement, in which the public sat below, or outside, power. It opened in 1999 and has drawn queues of visitors ever since.",
+      es: 'El estudio de Foster ganó en 1993 el concurso internacional para reconstruir el Reichstag, dos años después de que el Parlamento alemán reunificado votara volver a Berlín desde Bonn, y el encargo pedía a la vez una cámara de trabajo para el Bundestag y un símbolo público de cambio. La cúpula original de 1894, ya vaciada por el incendio de 1933 y arruinada de nuevo en 1945, se había retirado por completo en los años cincuenta; la de Foster es un tambor de acero y vidrio totalmente transparente que aloja en su centro un cono espejado en forma de embudo. El cono refleja la luz natural hacia la sala de plenos y a la vez sirve de conducto de extracción para la ventilación, mientras una pantalla motorizada sigue al sol para reducir el deslumbramiento y el calor. Dos rampas ascienden en espiral por dentro del vidrio formando una doble hélice, y permiten al visitante subir hasta una plataforma al aire libre justo encima de la cámara y mirar hacia abajo, a los diputados reunidos bajo sus pies: una inversión literal del viejo orden, en el que el público se sentaba debajo, o fuera, del poder. Se inauguró en 1999 y desde entonces reúne colas de visitantes.',
+      it: "Lo studio di Foster vinse nel 1993 il concorso internazionale per ricostruire il Reichstag, due anni dopo che il parlamento tedesco riunificato votò di tornare a Berlino da Bonn, e l'incarico chiedeva insieme un'aula funzionante per il Bundestag e un simbolo pubblico di cambiamento. La cupola originale del 1894, già svuotata dall'incendio del 1933 e nuovamente rovinata nel 1945, era stata rimossa del tutto negli anni Cinquanta; quella di Foster è un tamburo d'acciaio e vetro completamente trasparente che ospita al centro un cono a specchio a forma d'imbuto. Il cono riflette la luce naturale verso l'aula sottostante e funge insieme da condotto di estrazione per la ventilazione, mentre uno schermo motorizzato segue il sole per ridurre l'abbagliamento e il calore. Due rampe salgono a spirale all'interno del vetro formando una doppia elica, e permettono al visitatore di salire fino a una piattaforma all'aperto proprio sopra l'aula e guardare in basso i deputati riuniti sotto i propri piedi: un rovesciamento letterale del vecchio ordine, in cui il pubblico sedeva sotto, o fuori, il potere. Aprì nel 1999 e da allora richiama file di visitatori.",
+    },
+    context: {
+      body: {
+        en: "The design is explicitly political: a transparent public dome sitting directly above the chamber where the Bundestag meets was conceived to dramatise the 1949 Basic Law's principle that sovereignty rests with the people, in deliberate contrast to the opaque, since-demolished 1894 dome under which the Nazi-era parliament last sat before the 1933 fire. Commentators and Foster himself have described the arrangement — visitors literally looking down on their elected representatives — as an architectural statement about accountable government after Nazism and division.",
+        es: 'El diseño es explícitamente político: una cúpula pública y transparente situada justo encima de la sala donde se reúne el Bundestag se concibió para dramatizar el principio de la Ley Fundamental de 1949 según el cual la soberanía reside en el pueblo, en contraste deliberado con la cúpula opaca de 1894, demolida, bajo la que se sentó por última vez el parlamento de la era nazi antes del incendio de 1933. Comentaristas y el propio Foster han descrito la disposición —los visitantes mirando literalmente hacia abajo a sus representantes electos— como una declaración arquitectónica sobre el gobierno responsable tras el nazismo y la división.',
+        it: "Il progetto è esplicitamente politico: una cupola pubblica e trasparente posta proprio sopra l'aula in cui si riunisce il Bundestag fu concepita per drammatizzare il principio della Legge fondamentale del 1949 secondo cui la sovranità appartiene al popolo, in contrasto deliberato con la cupola opaca del 1894, demolita, sotto la quale sedette per l'ultima volta il parlamento dell'era nazista prima dell'incendio del 1933. Commentatori e lo stesso Foster hanno descritto la disposizione — i visitatori che guardano letteralmente dall'alto verso i propri rappresentanti eletti — come una dichiarazione architettonica sul governo responsabile dopo il nazismo e la divisione.",
+      },
+      sources: [
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Reichstag_dome', title: 'Reichstag dome', license: 'CC BY-SA 4.0' },
+      ],
+    },
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q4809837', title: 'Reichstag dome (Q4809837)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Reichstag_dome', title: 'Reichstag dome', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    // Wave V2-3 batch B5 top-up: Zaha Hadid is pre-assigned to
+    // europe-british.ts (wave5-contract-v2.md §3, her architect record
+    // lives there). Filed here per the wave 3 shared instructions because
+    // the building is physically in Germany. Deliberately NOT adding the
+    // MAXXI Museum, Rome — Italy has no usable Freedom of Panorama and
+    // Hadid is in copyright to 2086; a real, verified drop for her
+    // specifically per the feasibility pass.
+    id: 'vitra-fire-station',
+    wikidataId: 'Q25455138',
+    name: {
+      en: 'Vitra Fire Station',
+      es: 'Estación de Bomberos de Vitra',
+      it: 'Stazione dei pompieri Vitra',
+    },
+    architectId: 'zaha-hadid',
+    location: { city: 'Weil am Rhein', countryCode: 'DE', lat: 47.60036, lon: 7.61468 },
+    inception: 1991,
+    completed: 1993,
+    demolished: null,
+    typology: 'civic',
+    materials: ['concrete'],
+    structure: {
+      en: 'A single cast-in-situ reinforced-concrete shell is folded into sharply raked, non-orthogonal planes that converge on a knife-thin edge, with no fixed front or back.',
+      es: 'Una única cáscara de hormigón armado vertido in situ se pliega en planos muy inclinados y no ortogonales que convergen en un filo agudísimo, sin frente ni trasera fijos.',
+      it: "Un unico guscio di cemento armato gettato in opera si piega in piani fortemente inclinati e non ortogonali che convergono in un bordo sottilissimo, senza una facciata anteriore o posteriore fissa.",
+    },
+    program: {
+      en: "Built as Vitra's own on-site fire brigade station after a 1981 lightning fire at its furniture factory, it now hosts exhibitions and events tied to the neighbouring Vitra Design Museum.",
+      es: 'Construida como estación del propio cuerpo de bomberos de Vitra tras un incendio provocado por un rayo en 1981 en su fábrica de muebles, hoy acoge exposiciones y actos ligados al vecino Vitra Design Museum.',
+      it: "Costruita come stazione del corpo di vigili del fuoco interno di Vitra dopo un incendio causato da un fulmine nel 1981 nella sua fabbrica di mobili, oggi ospita mostre ed eventi legati al vicino Vitra Design Museum.",
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Empty of its original fire brigade since the late 1990s, now used for exhibitions and events on the Vitra Campus.',
+      es: 'Vacía de su cuerpo de bomberos original desde finales de los noventa, hoy se usa para exposiciones y actos en el Vitra Campus.',
+      it: "Priva del suo corpo di vigili del fuoco originario dalla fine degli anni Novanta, oggi è usata per mostre ed eventi nel Vitra Campus.",
+    },
+    detailRect: { x: 0.55, y: 0.05, w: 0.35, h: 0.45 },
+    image: {
+      commonsFile: 'Baden-Württemberg Weil am Rhein Vitra Fire station 01.jpg',
+      photographer: 'Calips',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Baden-W%C3%BCrttemberg_Weil_am_Rhein_Vitra_Fire_station_01.jpg',
+      width: 1600,
+      height: 1068,
+    },
+    extraImages: [
+      {
+        commonsFile: 'Vitra Campus - Hadid Fire Station - full view, blue sky.jpg',
+        photographer: 'Marsupium',
+        license: 'CC0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Vitra_Campus_-_Hadid_Fire_Station_-_full_view,_blue_sky.jpg',
+        width: 1600,
+        height: 1200,
+      },
+    ],
+    dossier: {
+      en: 'A lightning strike in 1981 set fire to part of Vitra\'s furniture factory in Weil am Rhein, and the company responded by building its own on-site fire brigade; Rolf Fehlbaum, Vitra\'s chairman, then gave the commission for its station to Zaha Hadid, then known only for competition drawings and unbuilt projects shown at MoMA\'s 1988 Deconstructivist Architecture exhibition. Built between 1991 and 1993, it became her first constructed building. A single cast-in-situ concrete shell is folded and sliced into sharply raked planes that converge on a knife-thin edge, with no right angle anywhere and no clear front or back; Hadid later said the flat agricultural site around the Vitra campus offered no context to answer, "so we had to invent one." The finished building turned out to be awkward for its intended purpose — firefighters found the tight, angular plan hard to manoeuvre in — and the volunteer brigade disbanded within a few years of moving in. Vitra has since used the empty station for exhibitions, dinners and events tied to the neighbouring Vitra Design Museum.',
+      es: 'Un rayo incendió en 1981 parte de la fábrica de muebles de Vitra en Weil am Rhein, y la empresa respondió creando su propio cuerpo de bomberos in situ; Rolf Fehlbaum, presidente de Vitra, encargó entonces la estación a Zaha Hadid, conocida hasta entonces solo por dibujos de concurso y proyectos no construidos mostrados en la muestra Deconstructivist Architecture del MoMA en 1988. Construida entre 1991 y 1993, fue su primer edificio realizado. Una única cáscara de hormigón vertido in situ se pliega y corta en planos muy inclinados que convergen en un filo agudísimo, sin un ángulo recto en ningún sitio y sin frente ni trasera claros; Hadid dijo después que el llano entorno agrícola del campus Vitra no ofrecía ningún contexto que responder, «así que tuvimos que inventar uno». El edificio terminado resultó incómodo para su función: a los bomberos les costaba maniobrar en la planta estrecha y angulosa, y el cuerpo voluntario se disolvió pocos años después de instalarse. Desde entonces Vitra usa la estación vacía para exposiciones, cenas y actos ligados al vecino Vitra Design Museum.',
+      it: 'Un fulmine incendiò nel 1981 parte della fabbrica di mobili Vitra a Weil am Rhein, e l\'azienda rispose creando un proprio corpo di vigili del fuoco in loco; Rolf Fehlbaum, presidente di Vitra, affidò allora l\'incarico della stazione a Zaha Hadid, allora nota solo per disegni di concorso e progetti non realizzati esposti nella mostra Deconstructivist Architecture del MoMA nel 1988. Costruita fra il 1991 e il 1993, fu il suo primo edificio realizzato. Un unico guscio di cemento gettato in opera si piega e si taglia in piani fortemente inclinati che convergono in un bordo sottilissimo, senza un angolo retto da nessuna parte e senza una facciata anteriore o posteriore definita; Hadid disse in seguito che il piatto contesto agricolo attorno al campus Vitra non offriva alcun contesto a cui rispondere, «così abbiamo dovuto inventarne uno». L\'edificio finito si rivelò scomodo per la sua funzione: i vigili del fuoco faticavano a muoversi nella pianta stretta e angolosa, e il corpo volontario si sciolse pochi anni dopo il trasferimento. Da allora Vitra usa la stazione vuota per mostre, cene ed eventi legati al vicino Vitra Design Museum.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q25455138', title: 'Vitra Fire Station (Q25455138)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Vitra_Fire_Station', title: 'Vitra Fire Station', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+
+{
+    // Wave V2-3, batch B6 — Jean Nouvel featured curate. Switzerland has
+    // FoP; no living-architect concern. Note for future curators: the
+    // highest-resolution photo in this building's Commons category
+    // (Luzern_asv2022-10_Kultur-_und_Kongresszentrum.jpg) is Free Art
+    // Licence ONLY — not on the allowed list — and was discarded.
+    id: 'kkl-luzern',
+    wikidataId: 'Q665311',
+    name: {
+      en: 'KKL Luzern (Lucerne Culture and Congress Centre)',
+      es: 'KKL Luzern (Centro de Cultura y Congresos de Lucerna)',
+      it: 'KKL Luzern (Centro di Cultura e Congressi di Lucerna)',
+    },
+    architectId: 'jean-nouvel',
+    location: { city: 'Lucerne', countryCode: 'CH', lat: 47.0506, lon: 8.3097 },
+    inception: 1989,
+    completed: 2000,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['steel-and-glass', 'concrete'],
+    structure: {
+      en: 'Three largely independent buildings — concert hall, congress centre and art museum — share a single thin cantilevered steel roof, 110 by 105 metres, that projects out over the lake and a cut canal.',
+      es: 'Tres edificios en buena medida independientes —sala de conciertos, centro de congresos y museo de arte— comparten una única y delgada cubierta de acero en voladizo, de 110 por 105 metros, que se proyecta sobre el lago y un canal excavado.',
+      it: 'Tre edifici in gran parte indipendenti — sala da concerti, centro congressi e museo d\'arte — condividono un\'unica sottile copertura in acciaio a sbalzo, di 110 per 105 metri, che si proietta sul lago e su un canale scavato.',
+    },
+    program: {
+      en: 'A concert hall, congress centre and art museum for the city of Lucerne, replacing an acoustically inadequate nineteenth-century hall, won in a 1989 competition and built in phases around the functioning institution.',
+      es: 'Una sala de conciertos, un centro de congresos y un museo de arte para la ciudad de Lucerna, en sustitución de una sala decimonónica de acústica deficiente, ganados en un concurso de 1989 y construidos por fases en torno a la institución en funcionamiento.',
+      it: 'Una sala da concerti, un centro congressi e un museo d\'arte per la città di Lucerna, in sostituzione di una sala ottocentesca dall\'acustica carente, vinti in un concorso del 1989 e costruiti per fasi attorno all\'istituzione in funzione.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'In active use as Lucerne\'s concert hall, congress venue and the Kunstmuseum Luzern.',
+      es: 'En uso activo como sala de conciertos, sede de congresos y Kunstmuseum Luzern de la ciudad.',
+      it: 'In uso attivo come sala da concerti, sede congressuale e Kunstmuseum Luzern della città.',
+    },
+    detailRect: { x: 0.30, y: 0.30, w: 0.35, h: 0.22 },
+    image: {
+      commonsFile: 'File:Aerial view of KKL Luzern with Pilatus.jpg',
+      photographer: 'Beat Ruest',
+      license: 'CC BY 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Aerial_view_of_KKL_Luzern_with_Pilatus.jpg',
+      width: 1600,
+      height: 900,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Kultur- und Kongresszentrum Luzern.jpg',
+        photographer: 'Yair Haklai',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Kultur-_und_Kongresszentrum_Luzern.jpg',
+        width: 1600,
+        height: 900,
+      },
+    ],
+    dossier: {
+      en: "Lucerne's nineteenth-century concert hall was acoustically compromised and had to go, but the city also needed to keep hosting its summer music festival without a gap year, so Nouvel's replacement, won in a 1989 competition, had to be built in stages around a functioning institution on a tight lakefront site between the railway station and the water. His solution roofs three largely separate buildings — a 1,840-seat concert hall tuned by the acoustician Russell Johnson with a reverberation chamber behind the stage, a congress centre, and the Kunstmuseum Luzern art museum — under a single thin steel roof measuring 110 by 105 metres, cantilevered out over the lake and a cut canal so that water appears to run beneath the building itself. Construction proceeded in phases from 1995 so the concert hall could open in August 1998 while work continued elsewhere; the complex was completed in 2000. Nouvel's design earned Lucerne's Kultur- und Kongresszentrum the Borromini Prize in 2001.",
+      es: 'La sala de conciertos decimonónica de Lucerna tenía una acústica deficiente y debía desaparecer, pero la ciudad también necesitaba seguir acogiendo su festival de música de verano sin un año de interrupción, de modo que el edificio de Nouvel, ganador de un concurso de 1989, tuvo que construirse por fases en torno a una institución en pleno funcionamiento, en un solar estrecho junto al lago, entre la estación de tren y el agua. Su solución cubre tres edificios en buena medida independientes —una sala de conciertos de 1.840 butacas, afinada por el acústico Russell Johnson con una cámara de reverberación tras el escenario, un centro de congresos y el museo de arte Kunstmuseum Luzern— bajo una única y delgada cubierta de acero de 110 por 105 metros, en voladizo sobre el lago y un canal excavado de modo que el agua parece correr bajo el propio edificio. Las obras avanzaron por fases desde 1995 para que la sala de conciertos pudiera abrir en agosto de 1998 mientras proseguían los trabajos en el resto; el conjunto se terminó en 2000. El diseño de Nouvel valió al Kultur- und Kongresszentrum de Lucerna el Premio Borromini en 2001.',
+      it: 'La sala da concerti ottocentesca di Lucerna aveva un\'acustica compromessa e andava sostituita, ma la città doveva anche continuare a ospitare il proprio festival musicale estivo senza un anno di interruzione, cosicché l\'edificio di Nouvel, vincitore di un concorso del 1989, dovette essere costruito per fasi attorno a un\'istituzione in piena attività, su un sito stretto in riva al lago fra la stazione ferroviaria e l\'acqua. La sua soluzione copre tre edifici in gran parte indipendenti — una sala da concerto da 1.840 posti, calibrata dall\'acustico Russell Johnson con una camera di riverbero dietro il palco, un centro congressi e il museo d\'arte Kunstmuseum Luzern — sotto un\'unica sottile copertura in acciaio di 110 per 105 metri, a sbalzo sul lago e su un canale scavato in modo che l\'acqua sembri scorrere sotto l\'edificio stesso. I lavori procedettero per fasi dal 1995, così che la sala da concerto potesse aprire nell\'agosto 1998 mentre altrove i lavori proseguivano; il complesso fu completato nel 2000. Il progetto di Nouvel valse al Kultur- und Kongresszentrum di Lucerna il Premio Borromini nel 2001.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q665311', title: 'Lucerne Culture and Congress Centre (Q665311)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Lucerne_Culture_and_Congress_Centre', title: 'Lucerne Culture and Congress Centre — Wikipedia', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.kkl-luzern.ch/en', title: 'KKL Luzern — official site', license: null },
+    ],
+    tier: 'canon',
+  },
+
+];

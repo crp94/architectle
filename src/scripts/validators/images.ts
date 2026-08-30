@@ -25,48 +25,65 @@ function isCommonsUrl(url: string): boolean {
   return false;
 }
 
+// One check function applied to every image on a building — the primary
+// `image` AND each `extraImages` entry (design spec §6: extras carry the
+// same licence/photographer/dimensions obligations as the primary; the
+// e.g. `extraImages[0]` label lets a curator find the exact offending
+// entry, and reuses the SAME rule name as the primary check so
+// `--allow-missing-dimensions` in buildCuratedPool.ts downgrades both
+// without needing its own flag).
+function checkImage(image: ImageRecord, subject: string, label: string, out: Violation[]): void {
+  if (!ALLOWED_LICENSES.includes(image.license)) {
+    out.push({
+      rule: 'image-license-allowed',
+      subject,
+      detail: `${label} license "${image.license}" is not in the allowed set (${ALLOWED_LICENSES.join(', ')})`,
+    });
+  }
+
+  if (image.photographer.trim() === '') {
+    out.push({
+      rule: 'image-photographer-required',
+      subject,
+      detail: `${label}.photographer is empty`,
+    });
+  }
+
+  if (!isCommonsUrl(image.sourceUrl)) {
+    out.push({
+      rule: 'image-source-url',
+      subject,
+      detail: `${label} sourceUrl "${image.sourceUrl}" is not a Wikimedia Commons URL`,
+    });
+  }
+
+  if (image.width <= 0 || image.height <= 0) {
+    out.push({
+      rule: 'image-dimensions-recorded',
+      subject,
+      detail: `${label} dimensions ${image.width}x${image.height} are not both positive`,
+    });
+  }
+}
+
 export function validateImages(pool: Pool): Violation[] {
   const out: Violation[] = [];
   const buildingsByCommonsFile = new Map<string, string[]>();
 
   for (const b of pool.buildings) {
-    const { image } = b;
+    checkImage(b.image, b.id, 'image', out);
 
-    if (!ALLOWED_LICENSES.includes(image.license)) {
-      out.push({
-        rule: 'image-license-allowed',
-        subject: b.id,
-        detail: `license "${image.license}" is not in the allowed set (${ALLOWED_LICENSES.join(', ')})`,
-      });
+    const allFiles = [b.image.commonsFile];
+    for (const [i, extra] of (b.extraImages ?? []).entries()) {
+      checkImage(extra, b.id, `extraImages[${i}]`, out);
+      allFiles.push(extra.commonsFile);
     }
 
-    if (image.photographer.trim() === '') {
-      out.push({
-        rule: 'image-photographer-required',
-        subject: b.id,
-        detail: 'image.photographer is empty',
-      });
+    for (const commonsFile of allFiles) {
+      const ids = buildingsByCommonsFile.get(commonsFile) ?? [];
+      ids.push(b.id);
+      buildingsByCommonsFile.set(commonsFile, ids);
     }
-
-    if (!isCommonsUrl(image.sourceUrl)) {
-      out.push({
-        rule: 'image-source-url',
-        subject: b.id,
-        detail: `sourceUrl "${image.sourceUrl}" is not a Wikimedia Commons URL`,
-      });
-    }
-
-    if (image.width <= 0 || image.height <= 0) {
-      out.push({
-        rule: 'image-dimensions-recorded',
-        subject: b.id,
-        detail: `image dimensions ${image.width}x${image.height} are not both positive`,
-      });
-    }
-
-    const ids = buildingsByCommonsFile.get(image.commonsFile) ?? [];
-    ids.push(b.id);
-    buildingsByCommonsFile.set(image.commonsFile, ids);
   }
 
   for (const [commonsFile, ids] of buildingsByCommonsFile) {
