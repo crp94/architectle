@@ -5,11 +5,14 @@ import Image from 'next/image';
 import type { Building } from '@/types/building';
 import type { Architect } from '@/types/architect';
 import type { Comparison } from '@/lib/axes';
+import type { GameState } from '@/lib/storage';
 import { t, type Locale } from '@/lib/i18n';
 import { theme } from '@/lib/theme';
 import { shareText } from '@/lib/share';
 import { puzzleNumber } from '@/lib/daily';
-import { architectMovementLabel, architectSpan, buildFacts, provenanceLine } from '@/lib/facts';
+import {
+  architectMovementLabel, architectSpan, buildFacts, provenanceLine, statsSummary,
+} from '@/lib/facts';
 import { GalleryFrame } from '@/components/ui/GalleryFrame';
 import { SpecimenLabel } from '@/components/ui/SpecimenLabel';
 import { SectionRule } from '@/components/ui/SectionRule';
@@ -24,6 +27,15 @@ export type RevealProps = {
   guessesUsed: number | null;
   comparisons: Comparison[];
   locale?: Locale;
+  /**
+   * The daily round's up-to-date stats (design spec's own `GameState.stats`
+   * — played/wins/streak/maxStreak/distribution). Omit entirely for
+   * unlimited-mode rounds, which never track daily stats at all: the
+   * stats block (and the share text's streak line, which reads
+   * `stats.streak`) only renders when this is provided, rather than
+   * showing a misleading all-zero block for a mode with no real streak.
+   */
+  stats?: GameState['stats'];
 };
 
 /**
@@ -36,9 +48,10 @@ export type RevealProps = {
  * that `<GameBoard />` and its test suite depend on.
  */
 export function Reveal({
-  building, architect, solved, guessesUsed, comparisons, locale = 'en',
+  building, architect, solved, guessesUsed, comparisons, locale = 'en', stats,
 }: RevealProps) {
-  const [copied, setCopied] = useState(false);
+  const [shareCopied, setShareCopied] = useState(false);
+  const [copyCopied, setCopyCopied] = useState(false);
 
   const buildingName = building.name[locale] ?? building.name.en;
   const dossier = building.dossier[locale] ?? building.dossier.en;
@@ -47,20 +60,25 @@ export function Reveal({
   const extraImages = building.extraImages ?? [];
   const photoCredit = `${t(locale, 'provenancePhotographerLabel')}: ${building.image.photographer}`;
 
-  async function handleShare() {
-    // shareText's own signature has no architect/building parameter — it
-    // structurally cannot leak the answer (see src/lib/share.ts). Nothing
-    // below concatenates the name back in.
-    const text = shareText({
-      puzzleNumber: puzzleNumber(new Date()),
-      guessesUsed,
-      comparisons,
-      locale,
-    });
+  // Computed once per render and reused by both the visible share-preview
+  // block below and the actual share/copy actions, so a player previewing
+  // the text sees byte-for-byte what actually gets shared. shareText's own
+  // signature has no architect/building parameter — it structurally cannot
+  // leak the answer (see src/lib/share.ts) — and `stats` is optional, so
+  // an unlimited-mode round (no stats prop) simply omits the streak line.
+  const shareTextValue = shareText({
+    puzzleNumber: puzzleNumber(new Date()),
+    guessesUsed,
+    comparisons,
+    locale,
+    streak: stats?.streak,
+  });
+  const summary = stats ? statsSummary(stats) : null;
 
+  async function handleShare() {
     if (typeof navigator !== 'undefined' && typeof navigator.share === 'function') {
       try {
-        await navigator.share({ text });
+        await navigator.share({ text: shareTextValue });
         return;
       } catch (err) {
         // A user dismissing the native share sheet rejects with an
@@ -75,8 +93,21 @@ export function Reveal({
       }
     }
     if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
-      await navigator.clipboard.writeText(text);
-      setCopied(true);
+      await navigator.clipboard.writeText(shareTextValue);
+      setShareCopied(true);
+    }
+  }
+
+  // A second, explicit, always-visible copy affordance (spec: "many
+  // desktop users never get navigator.share"): the Share button above
+  // already falls back to the clipboard when the Web Share API doesn't
+  // exist, but that fallback is invisible until clicked — a plainly
+  // labelled "Copy" button next to it means a desktop player never has to
+  // guess what "Share" will actually do on their machine.
+  async function handleCopy() {
+    if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(shareTextValue);
+      setCopyCopied(true);
     }
   }
 
@@ -188,6 +219,69 @@ export function Reveal({
         </div>
       </div>
 
+      {summary && (
+        <>
+          <SectionRule label={t(locale, 'statsTitle')} />
+          <div data-testid="reveal-stats" className="flex flex-col gap-4">
+            <div className="flex flex-wrap gap-3">
+              <SpecimenLabel label={t(locale, 'statsPlayed')} value={String(summary.played)} />
+              <SpecimenLabel label={t(locale, 'statsWinPct')} value={summary.winPct} />
+              <SpecimenLabel label={t(locale, 'statsStreak')} value={String(summary.streak)} />
+              <SpecimenLabel label={t(locale, 'statsMaxStreak')} value={String(summary.maxStreak)} />
+            </div>
+            <div className="flex flex-col gap-1">
+              <p
+                className="text-[10px] uppercase tracking-[0.2em] text-ink/70"
+                style={{ fontFamily: theme.type.ui }}
+              >
+                {t(locale, 'statsDistribution')}
+              </p>
+              {summary.distribution.map((bar) => (
+                <div
+                  key={bar.guesses}
+                  data-testid={`reveal-stats-distribution-${bar.guesses}`}
+                  className="flex items-center gap-2 text-xs"
+                  style={{ fontFamily: theme.type.mono }}
+                >
+                  <span className="w-3 shrink-0">{bar.guesses}</span>
+                  <span className="h-3 flex-1 bg-mat">
+                    <span
+                      className="block h-full bg-ink"
+                      style={{ width: `${bar.pct}%` }}
+                    />
+                  </span>
+                  <span className="w-6 shrink-0 text-right">{bar.count}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </>
+      )}
+
+      <SectionRule label={t(locale, 'sharePreviewHeading')} />
+      <div className="flex flex-col gap-2">
+        <pre
+          data-testid="reveal-share-preview"
+          className="whitespace-pre-wrap break-words px-3 py-2 text-xs leading-relaxed"
+          style={{
+            fontFamily: theme.type.mono,
+            backgroundColor: theme.color.mat,
+            borderWidth: theme.rule.hairline,
+            borderStyle: 'solid',
+            borderColor: theme.color.frameLine,
+          }}
+        >
+          {shareTextValue}
+        </pre>
+        <p
+          data-testid="reveal-share-preview-note"
+          className="text-[10px] uppercase tracking-[0.15em] text-ink/70"
+          style={{ fontFamily: theme.type.ui }}
+        >
+          {t(locale, 'sharePreviewNote')}
+        </p>
+      </div>
+
       <SectionRule />
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p
@@ -197,15 +291,26 @@ export function Reveal({
         >
           {provenanceLine(building, locale)}
         </p>
-        <button
-          type="button"
-          data-testid="reveal-share"
-          onClick={handleShare}
-          className="bg-ink px-5 py-2 text-xs uppercase tracking-wide text-paper"
-          style={{ fontFamily: theme.type.ui }}
-        >
-          {copied ? t(locale, 'shareCopied') : t(locale, 'shareButton')}
-        </button>
+        <div className="flex gap-2">
+          <button
+            type="button"
+            data-testid="reveal-share"
+            onClick={handleShare}
+            className="bg-ink px-5 py-2 text-xs uppercase tracking-wide text-paper"
+            style={{ fontFamily: theme.type.ui }}
+          >
+            {shareCopied ? t(locale, 'shareCopied') : t(locale, 'shareButton')}
+          </button>
+          <button
+            type="button"
+            data-testid="reveal-copy"
+            onClick={handleCopy}
+            className="border px-5 py-2 text-xs uppercase tracking-wide text-ink"
+            style={{ fontFamily: theme.type.ui, borderColor: theme.color.frameLine, borderWidth: theme.rule.hairline }}
+          >
+            {copyCopied ? t(locale, 'shareCopied') : t(locale, 'shareCopyButton')}
+          </button>
+        </div>
       </div>
     </section>
   );

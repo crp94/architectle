@@ -274,6 +274,88 @@ describe('Reveal', () => {
     expect(await screen.findByText(/copied/i)).toBeTruthy();
   });
 
+  it('renders a share preview containing the exact share payload, unlabeled with the answer', async () => {
+    renderReveal();
+    const preview = screen.getByTestId('reveal-share-preview').textContent ?? '';
+    expect(preview).toContain('Architectle #');
+    expect(preview).not.toContain(architect.name);
+    expect(preview).not.toContain(baseBuilding.name.en);
+  });
+
+  it('shows a second, explicit Copy button that copies to the clipboard independently of navigator.share', async () => {
+    const shareMock = vi.fn().mockResolvedValue(undefined);
+    Object.defineProperty(navigator, 'share', { value: shareMock, configurable: true });
+    const writeText = vi.fn().mockResolvedValue(undefined);
+    Object.defineProperty(navigator, 'clipboard', { value: { writeText }, configurable: true });
+    renderReveal();
+
+    fireEvent.click(screen.getByTestId('reveal-copy'));
+
+    await waitFor(() => expect(writeText).toHaveBeenCalledTimes(1));
+    expect(shareMock).not.toHaveBeenCalled();
+    expect(await screen.findByText(/copied/i)).toBeTruthy();
+  });
+
+  it('omits the stats block entirely when no stats prop is given (e.g. unlimited mode)', () => {
+    renderReveal();
+    expect(screen.queryByTestId('reveal-stats')).toBeNull();
+  });
+
+  it('renders a compact stats block, including a scaled guess-distribution bar, when stats are given', () => {
+    const stats = {
+      played: 10, wins: 8, streak: 3, maxStreak: 5, distribution: [0, 1, 2, 3, 2, 0],
+    };
+    render(
+      <Reveal
+        building={baseBuilding}
+        architect={architect}
+        solved
+        guessesUsed={1}
+        comparisons={comparisons}
+        locale="en"
+        stats={stats}
+      />,
+    );
+
+    const block = screen.getByTestId('reveal-stats');
+    expect(block.textContent).toContain('10');
+    expect(block.textContent).toContain('80%');
+    expect(block.textContent).toContain('3');
+    expect(block.textContent).toContain('5');
+
+    // Six rows, one per guess count, each carrying its own count.
+    for (let n = 1; n <= 6; n += 1) {
+      expect(screen.getByTestId(`reveal-stats-distribution-${n}`)).toBeTruthy();
+    }
+    // The largest bucket (3, at guess 4) draws a full-width bar.
+    const row4 = screen.getByTestId('reveal-stats-distribution-4');
+    const bar4 = row4.querySelector('span > span') as HTMLElement;
+    expect(bar4.style.width).toBe('100%');
+  });
+
+  it("includes the player's streak inline in the share text once stats are given", async () => {
+    const shareMock = vi.fn().mockResolvedValue(undefined);
+    Object.defineProperty(navigator, 'share', { value: shareMock, configurable: true });
+    const stats = {
+      played: 6, wins: 6, streak: 6, maxStreak: 6, distribution: [0, 0, 0, 0, 0, 6],
+    };
+    render(
+      <Reveal
+        building={baseBuilding}
+        architect={architect}
+        solved
+        guessesUsed={2}
+        comparisons={comparisons}
+        locale="en"
+        stats={stats}
+      />,
+    );
+
+    fireEvent.click(screen.getByTestId('reveal-share'));
+    await waitFor(() => expect(shareMock).toHaveBeenCalledTimes(1));
+    expect(shareMock.mock.calls[0][0].text).toContain('🔥6');
+  });
+
   it('never lets the architect name reach the share payload, for a win or a loss', async () => {
     const shareMock = vi.fn().mockResolvedValue(undefined);
     Object.defineProperty(navigator, 'share', { value: shareMock, configurable: true });

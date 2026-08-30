@@ -18,6 +18,14 @@ function resolveLocale(raw: string | undefined): Locale {
   return (LOCALES as readonly string[]).includes(raw ?? "") ? (raw as Locale) : "en";
 }
 
+// `og:locale`/`og:locale:alternate` tags (spec item 5) — the underscore
+// region form Open Graph itself expects (e.g. `en_US`, not the bare BCP-47
+// `en` LocaleSwitcher.tsx's `?lang=` param carries). Only the home page has
+// a real per-request locale to report at all (every other route hardcodes
+// `LOCALE = 'en'` — see about/page.tsx's own comment on that pre-existing
+// convention), so this map lives here rather than in the shared i18n table.
+const OG_LOCALE: Record<Locale, string> = { en: "en_US", es: "es_ES", it: "it_IT" };
+
 /**
  * Home page metadata (design spec §7): a daily freshness signal — the
  * puzzle number and date — in the description, with zero hint of the
@@ -63,7 +71,14 @@ export async function generateMetadata({
         "x-default": `${SITE_URL}/`,
       },
     },
-    openGraph: { description, url: canonical, type: "website", siteName: "Architectle" },
+    openGraph: {
+      description,
+      url: canonical,
+      type: "website",
+      siteName: "Architectle",
+      locale: OG_LOCALE[locale],
+      alternateLocale: LOCALES.filter((l) => l !== locale).map((l) => OG_LOCALE[l]),
+    },
     twitter: { card: "summary_large_image", description },
   };
 }

@@ -225,6 +225,13 @@ export function GameBoard({ mode = 'daily', building, locale = 'en' }: GameBoard
         guessesUsed={solved ? guesses.length : null}
         comparisons={guesses.map((g) => g.comparison)}
         locale={locale}
+        // Unlimited mode never tracks daily stats (see the `mode === 'daily'`
+        // guard in handleGuess above) — `stats` would just be the unchanging
+        // all-zero `defaultStats()` there, which would render a misleading
+        // "Played: 0 / Streak: 0" block right after a round was just played.
+        // Reveal's stats block and share-text streak line both key off this
+        // prop being present at all, so unlimited mode omits it outright.
+        stats={mode === 'daily' ? stats : undefined}
       />
     );
   }

@@ -57,6 +57,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
       url,
       type: 'article',
       siteName: 'Architectle',
+      locale: 'en_US',
     },
     twitter: {
       card: 'summary_large_image',
