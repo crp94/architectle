@@ -21,6 +21,22 @@ export const metadata: Metadata = {
   description: "Guess the architect from a widening crop of a building photo.",
   openGraph: {
     siteName: "Architectle",
+    // The site-wide default `og:locale`. Every route below sets its own
+    // `openGraph` object (Next replaces rather than merges a child's
+    // `openGraph` against the parent's — see this same note at each call
+    // site) and repeats `locale` there for the two English-only page kinds:
+    // the archive/about pages (hardcoded `LOCALE = 'en'`, a pre-existing,
+    // documented convention — see about/page.tsx's own comment) get a bare
+    // `'en_US'`; the home page's own `generateMetadata` overrides this with
+    // whichever of en/es/it the `?lang=` param resolved to, plus the other
+    // two as `alternateLocale`.
+    locale: "en_US",
+  },
+  // `apple-mobile-web-app-title` (spec item 5) — the name iOS shows under a
+  // home-screen icon once a player adds this PWA, distinct from the tab
+  // <title> (which carries the "| Architectle" suffix on every route).
+  appleWebApp: {
+    title: "Architectle",
   },
 };
 

@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     url: ABOUT_URL,
     type: 'website',
     siteName: 'Architectle',
+    locale: 'en_US',
   },
   twitter: { card: 'summary_large_image', title: ABOUT_TITLE, description: ABOUT_DESCRIPTION },
 };
