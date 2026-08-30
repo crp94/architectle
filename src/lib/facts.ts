@@ -6,7 +6,7 @@
 // of the same `Building`/`Architect` fields.
 import type { Building } from '@/types/building';
 import type { Architect } from '@/types/architect';
-import type { Material, Typology } from '@/types/common';
+import type { ImageRecord, Material, Typology } from '@/types/common';
 import type { FamilyId } from '@/types/movement';
 import { t, type Locale } from '@/lib/i18n';
 import { MOVEMENTS } from '@/data/movements';
@@ -85,6 +85,25 @@ export const FAMILY_KEY: Record<FamilyId, string> = {
  * rather than titlecasing the raw enum id. */
 export function familyLabel(family: FamilyId, locale: Locale): string {
   return t(locale, FAMILY_KEY[family]);
+}
+
+/** Short in-game photographer credit (design spec §5: "photographer credit
+ * visible in-game" under the gallery frame, previously reveal-only) — just
+ * the photographer + licence, not the full `provenanceLine` (which also
+ * carries the Wikidata id and Commons filename, appropriate for the
+ * post-game reveal but too long for a caption shown during play). */
+export function imageCredit(image: ImageRecord, locale: Locale): string {
+  return `${t(locale, 'provenancePhotographerLabel')}: ${image.photographer} · ${t(locale, 'provenanceLicenseLabel')}: ${image.license}`;
+}
+
+/** One-line autocomplete descriptor (design spec §4: "primary movement +
+ * typology" — no new curated field, purely derived from data already on
+ * `Architect`). Reuses `architectMovementLabel`'s `unaffiliated` handling
+ * rather than inventing a movement label for an architect who has none. */
+export function architectDescriptor(architect: Architect, locale: Locale): string {
+  const movement = architectMovementLabel(architect, locale);
+  const typology = t(locale, TYPOLOGY_KEY[architect.primaryTypology]);
+  return `${movement} · ${typology}`;
 }
 
 export function provenanceLine(building: Building, locale: Locale): string {

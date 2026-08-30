@@ -167,6 +167,19 @@ const en = {
   familyPostmodernism: 'Postmodernism',
   familyContemporary: 'Contemporary',
   familyVernacular: 'Vernacular',
+
+  // Clue ladder ("case file" strip, design spec §4 — src/lib/clues.ts's
+  // CLUE_I18N_KEYS names one key per Clue['kind']; clueStripHeading and
+  // clueAlsoDesigned are additive UI labels the clue engine doesn't itself
+  // require). Additive-only — appended here, not interleaved above, to
+  // keep this an easy merge alongside any other agent's own additions.
+  clueStripHeading: 'Case file',
+  clueYear: 'Completed',
+  clueCountry: 'Country',
+  clueTypologyMaterial: 'Typology + material',
+  clueSecondPhoto: 'Second photograph',
+  clueMovementSibling: 'Movement',
+  clueAlsoDesigned: 'Also designed',
 };
 
 type Strings = typeof en;
@@ -312,6 +325,14 @@ const es: Strings = {
   familyPostmodernism: 'Posmodernismo',
   familyContemporary: 'Contemporánea',
   familyVernacular: 'Vernácula',
+
+  clueStripHeading: 'Expediente',
+  clueYear: 'Finalización',
+  clueCountry: 'País',
+  clueTypologyMaterial: 'Tipología y material',
+  clueSecondPhoto: 'Segunda fotografía',
+  clueMovementSibling: 'Movimiento',
+  clueAlsoDesigned: 'También diseñó',
 };
 
 const it: Strings = {
@@ -455,6 +476,14 @@ const it: Strings = {
   familyPostmodernism: 'Postmodernismo',
   familyContemporary: 'Contemporanea',
   familyVernacular: 'Vernacolare',
+
+  clueStripHeading: 'Fascicolo',
+  clueYear: 'Completamento',
+  clueCountry: 'Paese',
+  clueTypologyMaterial: 'Tipologia e materiale',
+  clueSecondPhoto: 'Seconda fotografia',
+  clueMovementSibling: 'Movimento',
+  clueAlsoDesigned: 'Ha anche progettato',
 };
 
 export const STRINGS: Record<Locale, Strings> = { en, es, it };
