@@ -74,6 +74,12 @@ export function CropStage({
           data-testid="crop-image"
           src={imageSrc}
           alt={imageAlt}
+          // This is the game's own hero image — the first, largest thing
+          // painted on every round and very likely the page's LCP element
+          // — so it gets the same eager/high-priority fetch next/image's
+          // `priority` prop would set, by hand, since this element can't
+          // use next/image at all (see the comment above).
+          fetchPriority="high"
           style={{
             position: 'absolute',
             width: `${imgWidthPct}%`,
