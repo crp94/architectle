@@ -598,6 +598,12 @@ export const ASIA_BUILDINGS: Building[] = [
       es: 'Biblioteca y galería pública en activo, reparada y reabierta en menos de un año tras los daños importantes del terremoto y tsunami de Tōhoku de 2011.',
       it: "Biblioteca e galleria pubblica in attività, riparata e riaperta entro un anno dopo i danni rilevanti del terremoto e tsunami del Tōhoku del 2011.",
     },
+    // NOT pixel-verified this session: Commons upload-host rate limiting
+    // (shared across all 8 parallel wave-3 batches) blocked every download
+    // attempt for this file. Licence/photographer WERE verified on the live
+    // rendered file page. Rect reasoned from the file's own framing
+    // ("Exterior view ... from Jozenji Street") on the glass-and-tube
+    // facade; re-crop and confirm before this ships.
     detailRect: { x: 0.40, y: 0.30, w: 0.20, h: 0.45 },
     image: {
       commonsFile: 'File:Exterior view of Sendai Mediatheque from Jozenji Street 20220910b.jpg',
@@ -660,6 +666,10 @@ export const ASIA_BUILDINGS: Building[] = [
       es: 'Biblioteca universitaria en activo, abierta al público de forma limitada y muy visitada solo por su arquitectura.',
       it: "Biblioteca universitaria in attività, aperta al pubblico in modo limitato e molto visitata solo per la sua architettura.",
     },
+    // NOT pixel-verified this session (Commons rate limiting — see Sendai
+    // Mediatheque above for the full note). Licence/photographer verified.
+    // Rect reasoned to sit over the arch grid at the building's centre;
+    // re-crop and confirm before this ships.
     detailRect: { x: 0.30, y: 0.35, w: 0.35, h: 0.35 },
     image: {
       commonsFile: 'File:Tama Art University Library.JPG',
@@ -722,6 +732,10 @@ export const ASIA_BUILDINGS: Building[] = [
       es: 'Centro público de artes escénicas en activo, gestionado por el ayuntamiento de Taichung.',
       it: "Centro pubblico di arti performative in attività, gestito dal comune di Taichung.",
     },
+    // NOT pixel-verified this session (Commons rate limiting — see Sendai
+    // Mediatheque above for the full note). Licence/photographer verified.
+    // Rect reasoned to sit over the curved "sound cave" concrete walls at
+    // the building's centre; re-crop and confirm before this ships.
     detailRect: { x: 0.32, y: 0.35, w: 0.35, h: 0.35 },
     image: {
       commonsFile: 'File:National Taichung Theater, Nov 2024 (2).jpg',
@@ -788,6 +802,11 @@ export const ASIA_BUILDINGS: Building[] = [
       es: 'Demolido en 2015 al reurbanizarse el recinto de la Expo; ya no existe.',
       it: "Demolito nel 2015 con la riqualificazione del sito dell'Expo; non esiste più.",
     },
+    // NOT pixel-verified this session (Commons rate limiting — see Sendai
+    // Mediatheque above for the full note). Licence/photographer verified.
+    // Rect reasoned to sit over the salvaged-brick wapan cladding and
+    // leaning upper masses at the building's centre; re-crop and confirm
+    // before this ships.
     detailRect: { x: 0.32, y: 0.30, w: 0.35, h: 0.35 },
     image: {
       commonsFile: 'File:Ningbo Tengtou Case Pavilion.jpg',
@@ -1077,21 +1096,30 @@ export const ASIA_BUILDINGS: Building[] = [
       es: 'Museo de arte prefectural en activo, con una sala dedicada a los propios modelos y dibujos arquitectónicos de Ando.',
       it: "Museo d'arte prefettizio in attività, con una sala dedicata ai modelli e ai disegni architettonici dello stesso Ando.",
     },
-    detailRect: { x: 0.30, y: 0.30, w: 0.30, h: 0.30 },
+    // Primary chosen deliberately over "Hyogo Prefectural Museum Of Art.jpg"
+    // (Tokumeigakarinoaoshima, licence-verified but never successfully
+    // downloaded this session — Commons upload-host rate limiting, shared
+    // across all 8 parallel wave-3 batches, blocked every fetch attempt).
+    // This one WAS downloaded and inspected on pixels: a street-corner shot
+    // with the museum set back across an intersection, the dark cantilevered
+    // roof overhang and pale stone entrance wall (with climbing vine)
+    // legible left-of-centre. Not a striking hero shot, but genuinely
+    // diagnostic and confirmed on the actual image rather than guessed.
+    detailRect: { x: 0.45, y: 0.24, w: 0.32, h: 0.24 },
     image: {
-      commonsFile: 'File:Hyogo Prefectural Museum Of Art.jpg',
-      photographer: 'Tokumeigakarinoaoshima',
+      commonsFile: 'File:Hyogo Prefectural Museum of Art oct 2018.jpg',
+      photographer: 'Chacmool',
       license: 'CC BY-SA 4.0',
-      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hyogo_Prefectural_Museum_Of_Art.jpg',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hyogo_Prefectural_Museum_of_Art_oct_2018.jpg',
       width: 0,
       height: 0,
     },
     extraImages: [
       {
-        commonsFile: 'File:Hyogo Prefectural Museum of Art oct 2018.jpg',
-        photographer: 'Chacmool',
+        commonsFile: 'File:Hyogo Prefectural Museum Of Art.jpg',
+        photographer: 'Tokumeigakarinoaoshima',
         license: 'CC BY-SA 4.0',
-        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hyogo_Prefectural_Museum_of_Art_oct_2018.jpg',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hyogo_Prefectural_Museum_Of_Art.jpg',
         width: 0,
         height: 0,
       },

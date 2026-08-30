@@ -396,6 +396,12 @@ export const WESTASIA_BUILDINGS: Building[] = [
       es: 'Mezquita congregacional en uso; varias de las antiguas madrazas del complejo albergan hoy una biblioteca, un hospital y el jardín-tumba del propio Sinan.',
       it: 'Moschea congregazionale in uso; diverse delle antiche madrase del complesso ospitano oggi una biblioteca, un ospedale e il giardino-tomba dello stesso Sinan.',
     },
+    // NOT pixel-verified this session: Commons upload-host rate limiting
+    // (shared across all 8 parallel wave-3 batches) blocked every download
+    // attempt for this file. Licence/photographer WERE verified on the live
+    // rendered file page (Dursun Sülük, CC BY-SA 4.0). Rect reasoned to sit
+    // over the dome/pier junction at the building's centre; re-crop and
+    // confirm before this ships.
     detailRect: { x: 0.32, y: 0.28, w: 0.32, h: 0.32 },
     image: {
       commonsFile: 'File:Süleymaniye Camii 2022.jpg',
@@ -459,6 +465,10 @@ export const WESTASIA_BUILDINGS: Building[] = [
       es: 'Mezquita congregacional en uso, con vistas a la terminal de transbordadores del Bósforo en Üsküdar.',
       it: 'Moschea congregazionale in uso, affacciata sul terminal dei traghetti del Bosforo a Üsküdar.',
     },
+    // NOT pixel-verified this session (Commons rate limiting — see
+    // Süleymaniye Mosque above for the full note). Licence/photographer
+    // verified. Rect reasoned to sit over the dome/window-tier junction at
+    // the building's centre; re-crop and confirm before this ships.
     detailRect: { x: 0.34, y: 0.30, w: 0.32, h: 0.35 },
     image: {
       commonsFile: 'File:Mihrimah Sultan Mosque Uskudar 9528.jpg',
