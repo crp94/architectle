@@ -5,13 +5,23 @@ import { test, expect, type Page } from '@playwright/test';
 // win/loss flow can't guess the real target deterministically. Instead we
 // use the `?e2eBuilding=` override page.tsx reads only when
 // `E2E_TEST_MODE=1` (set by playwright.config.ts's webServer) — never in
-// production — pinned to the same Villa La Rotonda / Andrea Palladio pair
-// e2e/archive.spec.ts already relies on as a fixed, known-good pool entry.
-const BUILDING = 'villa-la-rotonda';
-const CORRECT = 'Andrea Palladio';
-// A roster architect guaranteed not to be Palladio, so wrong guesses stay
+// production.
+//
+// v2 refocus (design spec §2): GuessField now validates guesses against
+// `featuredRoster()`, not the full-pool `roster()` — see src/lib/pool.ts.
+// This fixture WAS pinned to Villa La Rotonda / Andrea Palladio (still used
+// by e2e/archive.spec.ts, which reads the untouched full-pool archive and
+// needs no change), but Palladio holds only 1 building via architectId in
+// the current pool, so he isn't in the seeded FEATURED_ARCHITECT_IDS list
+// (src/scripts/curated/featured.ts) yet and a guess of "Andrea Palladio"
+// would be rejected as off-roster. Repinned to Therme Vals / Peter Zumthor
+// (2 buildings, seeded) — Luis Barragán (3 buildings, also seeded) is a
+// distinct, definitely-wrong featured architect for WRONG.
+const BUILDING = 'therme-vals';
+const CORRECT = 'Peter Zumthor';
+// A roster architect guaranteed not to be Zumthor, so wrong guesses stay
 // wrong regardless of how the curated pool grows around this fixture.
-const WRONG = 'Frank Lloyd Wright';
+const WRONG = 'Luis Barragán';
 const GIBBERISH = 'Zzyzx Notarealperson';
 
 function gameUrl(): string {

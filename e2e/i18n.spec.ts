@@ -5,12 +5,19 @@ import { test, expect, type Locator } from '@playwright/test';
 // `?lang=` searchParam) — Task 11 wired every translated string and a
 // `locale` prop on `GameBoard`, but nothing in the running app let a
 // player actually reach a non-English locale before this. Pinned to the
-// same fixed Villa La Rotonda / Andrea Palladio pair as game.spec.ts via
-// the `?e2eBuilding=` test-only override, purely so a guess can be
-// submitted to render axis chips — the win/loss outcome is irrelevant
-// here.
+// same fixed Villa La Rotonda building as game.spec.ts (and
+// e2e/archive.spec.ts) via the `?e2eBuilding=` test-only override, purely
+// so a guess can be submitted to render axis chips — the win/loss outcome
+// is irrelevant here, and the `building` prop override bypasses target
+// selection entirely, so the TARGET building need not be featured.
+//
+// WRONG, however, is submitted as a live guess through GuessField, which
+// as of the v2 refocus validates against `featuredRoster()` (see
+// src/lib/pool.ts) rather than the full-pool `roster()` — so it must name
+// a currently-seeded featured architect (src/scripts/curated/featured.ts)
+// or it would be rejected as off-roster and no axis chips would render.
 const BUILDING = 'villa-la-rotonda';
-const WRONG = 'Frank Lloyd Wright';
+const WRONG = 'Luis Barragán';
 
 type LocaleCode = 'en' | 'es' | 'it';
 
