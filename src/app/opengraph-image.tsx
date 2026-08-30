@@ -1,8 +1,12 @@
 import { ImageResponse } from 'next/og';
 import { theme } from '@/lib/theme';
+import { t } from '@/lib/i18n';
 import { logoDataUri } from '@/lib/brandArt';
 
-export const alt = 'Architectle — name the architect from a widening crop of a building photo. A new building every day.';
+// Routed through i18n.ts (codereview finding #7) — this used to be a
+// hardcoded English literal, risking silent drift from the equivalent copy
+// elsewhere (appTagline, metaHomeDescription) the next time either changed.
+export const alt = t('en', 'ogHomeAlt');
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 // `logoDataUri()` reads the brand SVG off disk and rasterizes it via
@@ -115,7 +119,9 @@ export default async function Image() {
             fontFamily: 'Arial, Helvetica, sans-serif',
           }}
         >
-          Name the architect from a widening crop.
+          {/* Byte-identical to appTagline today — reusing the same key
+              means the two can never drift apart silently (finding #7). */}
+          {t('en', 'appTagline')}
         </div>
         <div
           style={{
@@ -126,7 +132,7 @@ export default async function Image() {
             fontFamily: 'Arial, Helvetica, sans-serif',
           }}
         >
-          A new building, every day.
+          {t('en', 'ogDailyBuildingLine')}
         </div>
       </div>
     ),
