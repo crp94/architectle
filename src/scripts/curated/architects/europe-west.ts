@@ -6,7 +6,7 @@ import type { Architect } from '@/types/architect';
 // curation script derives both from each architect's buildings and overwrites
 // whatever is written here.
 export const EUROPE_WEST_ARCHITECTS: Architect[] = [
-  {
+{
     id: 'claude-nicolas-ledoux',
     wikidataId: 'Q552700',
     name: 'Claude-Nicolas Ledoux',
@@ -422,4 +422,43 @@ export const EUROPE_WEST_ARCHITECTS: Architect[] = [
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Gustave_Eiffel', title: 'Gustave Eiffel', license: 'CC BY-SA 4.0' },
     ],
   },
+{
+    // Wave V2-3, batch B6 — Italy/France featured top-up. Full curate: not
+    // previously in the pool. Living; France (and, for his non-featured
+    // work, the UAE and Qatar) have no FoP or block outright, ruling out
+    // his most photographed French buildings (Institut du Monde Arabe,
+    // Fondation Cartier) and the Gulf museums. The three buildings below
+    // are all in FoP-clear jurisdictions (Spain, Switzerland, US).
+    id: 'jean-nouvel',
+    wikidataId: 'Q214317',
+    name: 'Jean Nouvel',
+    alternativeNames: [],
+    gender: 'man',
+    born: 1945,
+    died: null,
+    floruit: { start: 1987, end: 2026, override: false },
+    // Nouvel explicitly rejects being read through a school or movement —
+    // "unaffiliated" per the project's own rule, not a gap left to fill:
+    // no reliable source groups him under a single label the way Foster or
+    // Rogers get 'high-tech'.
+    movements: 'unaffiliated',
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'steel-and-glass',
+    portrait: {
+      en: 'Nouvel was born in Fumel, in southwestern France, to two teachers, and topped the entrance examination for the École des Beaux-Arts in Paris in 1966. He co-founded the "Mars 1976" collective and France\'s first architects\' union before the Institut du Monde Arabe, its south facade a mechanical screen of light-sensing apertures modelled on a mashrabiya, made him internationally known in 1987. Nouvel has since resisted any fixed style or signature form, arguing instead that each building should answer its own site, culture and programme — a position that has produced buildings as different as the colour-shifting Torre Glòries in Barcelona, the lakefront concert hall of Lucerne\'s KKL and the dark, image-printed Guthrie Theater in Minneapolis. He received the Royal Gold Medal, the Praemium Imperiale and the Borromini Prize in 2001, the Wolf Prize in 2005, and the Pritzker Prize in 2008.',
+      es: 'Nouvel nació en Fumel, en el suroeste de Francia, hijo de dos profesores, y encabezó el examen de ingreso en la École des Beaux-Arts de París en 1966. Cofundó el colectivo "Mars 1976" y el primer sindicato de arquitectos de Francia antes de que el Instituto del Mundo Árabe, con su fachada sur convertida en una pantalla mecánica de aperturas sensibles a la luz inspirada en una mashrabiya, lo diera a conocer internacionalmente en 1987. Desde entonces Nouvel ha rehuido todo estilo o forma firmados, defendiendo en cambio que cada edificio debe responder a su propio emplazamiento, cultura y programa: una postura que ha dado edificios tan distintos como la cambiante Torre Glòries de Barcelona, la sala de conciertos junto al lago del KKL de Lucerna y el oscuro Guthrie Theater de Mineápolis, impreso con imágenes. Recibió la Royal Gold Medal, el Praemium Imperiale y el Premio Borromini en 2001, el Wolf Prize en 2005 y el Pritzker en 2008.',
+      it: 'Nouvel nacque a Fumel, nel sud-ovest della Francia, da due insegnanti, e risultò primo all\'esame di ammissione all\'École des Beaux-Arts di Parigi nel 1966. Cofondò il collettivo "Mars 1976" e il primo sindacato di architetti di Francia prima che l\'Institut du Monde Arabe, con la sua facciata sud trasformata in uno schermo meccanico di aperture sensibili alla luce ispirato a una mashrabiya, lo rendesse noto a livello internazionale nel 1987. Da allora Nouvel ha rifiutato ogni stile o forma firmati, sostenendo invece che ogni edificio debba rispondere al proprio sito, alla propria cultura e al proprio programma: una posizione che ha prodotto edifici diversissimi come la mutevole Torre Glòries di Barcellona, la sala da concerti sul lago del KKL di Lucerna e lo scuro Guthrie Theater di Minneapolis, stampato con immagini. Ricevette la Royal Gold Medal, il Praemium Imperiale e il Premio Borromini nel 2001, il Wolf Prize nel 2005 e il Pritzker nel 2008.',
+    },
+    awards: ['Royal Gold Medal (2001)', 'Praemium Imperiale (2001)', 'Borromini Prize (2001)', 'Wolf Prize in Arts (2005)', 'Pritzker Prize (2008)'],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q214317', title: 'Jean Nouvel (Q214317)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Jean_Nouvel', title: 'Jean Nouvel — Wikipedia', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.pritzkerprize.com/laureates/2008', title: 'Jean Nouvel — The Pritzker Architecture Prize', license: null },
+    ],
+  },
+
 ];

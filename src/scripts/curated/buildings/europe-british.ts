@@ -20,7 +20,7 @@ import type { Building } from '@/types/building';
 // defect — that check has since been tightened, and confirmed here by a
 // clean `data:curate` run to raise no warning for this pair.
 export const EUROPE_BRITISH_BUILDINGS: Building[] = [
-  {
+{
     id: 'st-pauls-cathedral',
     wikidataId: 'Q173882',
     name: {
@@ -1249,21 +1249,6 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
       width: 1600,
       height: 1067,
     },
-    // Wave V2-3 batch B5 image pass: kept the existing primary and
-    // detailRect (cropping it out shows the roof cladding meeting the
-    // curtain wall and railing cleanly — still diagnostic) and added one
-    // extraImage showing the whole building alongside the ArcelorMittal
-    // Orbit for scale/context.
-    extraImages: [
-      {
-        commonsFile: 'Orbit Tower - Aquatics Centre.jpg',
-        photographer: 'George Rex',
-        license: 'CC BY-SA 2.0',
-        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Orbit_Tower_-_Aquatics_Centre.jpg',
-        width: 0,
-        height: 0,
-      },
-    ],
     dossier: {
       en: "Hadid designed the Aquatics Centre in 2004, as part of London's bid for the 2012 Olympics, taking the fluid geometry of moving water as her formal starting point: a single steel roof, engineered with Arup and shaped by parametric modelling, sweeps in one continuous double curve from a low point at the diving pool to full height over the two fifty-metre competition pools, its underside lined with 30,000 sections of Red Louro timber. Ground was broken in July 2008 and Balfour Beatty completed the aluminium-clad, 3,200-tonne roof structure in July 2011, at a final cost of £269 million against an original 2005 estimate of £75 million. For the Games themselves, temporary steel-framed spectator wings, wrapped in white PVC, raised seating to 17,500 and hid much of Hadid's roofline; they were unbolted and removed once the Paralympics ended, and the building reopened to the public in March 2014 with a permanent capacity of 2,800, the wave now visible on all sides for the first time. It remains the sole swimming venue from the 2012 Games still in continuous public and elite use.",
       es: 'Hadid proyectó el Centro Acuático en 2004, dentro de la candidatura de Londres a los Juegos de 2012, con la geometría fluida del agua en movimiento como punto de partida formal: una única cubierta de acero, calculada con Arup y modelada por software paramétrico, describe una sola curva continua, baja junto a la piscina de saltos y de altura completa sobre las dos piscinas de competición de cincuenta metros, con el intradós revestido por 30.000 piezas de madera de louro rojo. Las obras comenzaron en julio de 2008 y Balfour Beatty terminó la cubierta, revestida de aluminio y de 3.200 toneladas, en julio de 2011, con un coste final de 269 millones de libras frente a los 75 millones estimados en 2005. Para los Juegos, unas alas provisionales de acero envueltas en PVC blanco elevaron el aforo a 17.500 localidades y ocultaron buena parte del perfil de Hadid; se desmontaron al concluir los Paralímpicos, y el edificio reabrió al público en marzo de 2014 con un aforo permanente de 2.800, con la ola visible por fin por todos sus lados. Sigue siendo la única sede de natación de 2012 en uso continuo, público y de alto rendimiento.',
@@ -1344,4 +1329,71 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
     ],
     tier: 'canon',
   },
+{
+    // Wave V2-3, batch B6 — Renzo Piano featured curate. UK has FoP; no
+    // living-architect concern here since the building is his own design,
+    // built and photographed with no jurisdictional block.
+    id: 'the-shard',
+    wikidataId: 'Q18536',
+    name: {
+      en: 'The Shard',
+      es: 'The Shard',
+      it: 'The Shard',
+    },
+    architectId: 'renzo-piano',
+    location: { city: 'London', countryCode: 'GB', lat: 51.5045, lon: -0.0865 },
+    inception: 2009,
+    completed: 2012,
+    demolished: null,
+    typology: 'tower',
+    materials: ['steel-and-glass', 'concrete'],
+    structure: {
+      en: 'A reinforced-concrete core rises the full height of the tower, with a steel-framed office, hotel and residential structure clad in eight inclined glass facets that taper toward an intentionally open apex.',
+      es: 'Un núcleo de hormigón armado recorre toda la altura de la torre, con una estructura de oficinas, hotel y viviendas en acero revestida por ocho facetas de vidrio inclinadas que se estrechan hacia un remate deliberadamente abierto.',
+      it: 'Un nucleo in cemento armato attraversa l\'intera altezza della torre, con una struttura in acciaio di uffici, hotel e abitazioni rivestita da otto facce di vetro inclinate che si restringono verso una sommità volutamente aperta.',
+    },
+    program: {
+      en: 'A mixed-use "vertical city" of offices, a five-star hotel, private apartments and a public viewing gallery, developed by Irvine Sellar with the State of Qatar on the site of the demolished 1970s Southwark Towers.',
+      es: 'Una "ciudad vertical" de uso mixto con oficinas, un hotel de cinco estrellas, viviendas privadas y un mirador público, promovida por Irvine Sellar junto con el Estado de Catar en el solar de las demolidas Southwark Towers de los años setenta.',
+      it: 'Una "città verticale" a uso misto con uffici, un hotel a cinque stelle, abitazioni private e un belvedere pubblico, promossa da Irvine Sellar insieme allo Stato del Qatar sul sito delle demolite Southwark Towers degli anni Settanta.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'In full commercial and residential use; the top floors house the View from The Shard public observation gallery.',
+      es: 'En pleno uso comercial y residencial; las plantas superiores albergan el mirador público View from The Shard.',
+      it: 'In pieno uso commerciale e residenziale; i piani superiori ospitano il belvedere pubblico View from The Shard.',
+    },
+    detailRect: { x: 0.35, y: 0.35, w: 0.35, h: 0.30 },
+    image: {
+      commonsFile: 'File:The Shard from the bottom.jpg',
+      photographer: 'Rafa Esteve',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:The_Shard_from_the_bottom.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:London - The Shard.jpg',
+        photographer: 'Fred Romero',
+        license: 'CC BY 2.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:London_-_The_Shard.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "Renzo Piano's first sketch for the site, reportedly drawn on a restaurant napkin during a 2000 lunch with the developer Irvine Sellar, showed a spire rising out of the railway tracks at London Bridge station like a shard of glass — the nickname stuck before the tower had a name. Construction began in 2009 on the site of the demolished 1970s Southwark Towers, and the building topped out at 309.6 metres in 2012, opening the following year as the tallest building in the United Kingdom and, briefly, the European Union. Eight sloping glass facets rise the full height of the tower without ever quite meeting at a single point, an intentionally 'unfinished' apex left open to the sky; inside, the tower stacks offices, a hotel, apartments and, above the 68th floor, a public viewing gallery reached by Europe's fastest lifts. The glass skin is double-glazed with a ventilated cavity to manage solar gain, an early example of the strategy at this scale.",
+      es: 'El primer boceto de Renzo Piano para el solar, dibujado —según se cuenta— en la servilleta de un restaurante durante un almuerzo de 2000 con el promotor Irvine Sellar, mostraba una aguja que brotaba de las vías de la estación de London Bridge como una esquirla de cristal; el apodo cuajó antes de que la torre tuviera nombre. Las obras comenzaron en 2009 sobre el solar de las demolidas Southwark Towers de los años setenta, y el edificio alcanzó su altura máxima de 309,6 metros en 2012, abriéndose al público al año siguiente como el edificio más alto del Reino Unido y, por un tiempo, de la Unión Europea. Ocho facetas de vidrio inclinadas suben toda la altura de la torre sin llegar a encontrarse del todo en un único punto, un remate deliberadamente "inacabado" y abierto al cielo; en el interior se apilan oficinas, un hotel, viviendas y, sobre la planta 68, un mirador público al que se llega en los ascensores más rápidos de Europa. La piel de vidrio es de doble acristalamiento con una cámara ventilada para controlar la ganancia solar, un ejemplo temprano de esta estrategia a esta escala.',
+      it: 'Il primo schizzo di Renzo Piano per il sito, disegnato — a quanto si racconta — sul tovagliolo di un ristorante durante un pranzo del 2000 con il promotore Irvine Sellar, mostrava una guglia che spuntava dai binari della stazione di London Bridge come una scheggia di vetro; il soprannome rimase prima ancora che la torre avesse un nome. I lavori iniziarono nel 2009 sul sito delle demolite Southwark Towers degli anni Settanta, e l\'edificio raggiunse l\'altezza massima di 309,6 metri nel 2012, aprendosi al pubblico l\'anno seguente come edificio più alto del Regno Unito e, per un periodo, dell\'Unione Europea. Otto facce di vetro inclinate salgono per l\'intera altezza della torre senza incontrarsi mai del tutto in un unico punto, una sommità volutamente "incompiuta" e aperta al cielo; all\'interno si susseguono uffici, un hotel, abitazioni e, sopra il 68° piano, un belvedere pubblico raggiunto dagli ascensori più veloci d\'Europa. La pelle vetrata è a doppio vetro con un\'intercapedine ventilata per gestire l\'apporto solare, un esempio precoce di questa strategia su questa scala.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q18536', title: 'The Shard (Q18536)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/The_Shard', title: 'The Shard — Wikipedia', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.fondazionerenzopiano.org/en/project/the-shard-london-bridge-tower/', title: 'The Shard — London Bridge Tower — Fondazione Renzo Piano', license: null },
+    ],
+    tier: 'canon',
+  },
+
 ];

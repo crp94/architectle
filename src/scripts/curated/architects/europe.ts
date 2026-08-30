@@ -25,7 +25,10 @@ export const EUROPE_ARCHITECTS: Architect[] = [
     gender: 'man',
     born: 1377,
     died: 1446,
-    floruit: { start: 1419, end: 1446, override: false },
+    // override: the Pazzi Chapel was not completed until 1478, thirty-two
+    // years after Brunelleschi's death — construction dragged on after he
+    // died, not a claim he was still working. See pazzi-chapel's dossier.
+    floruit: { start: 1419, end: 1478, override: true },
     movements: [{ id: 'renaissance', primary: true }],
     workRegions: [],
     workCentroid: { lat: 0, lon: 0 },
@@ -438,6 +441,74 @@ export const EUROPE_ARCHITECTS: Architect[] = [
       { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q440786', title: 'Amanda Levete (Q440786)', license: null },
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Amanda_Levete', title: 'Amanda Levete — Wikipedia', license: 'CC BY-SA 4.0' },
       { kind: 'institution', url: 'https://www.ala.uk.com/projects/maat/', title: 'MAAT — AL_A project page', license: null },
+    ],
+  },
+  {
+    // Wave V2-3, batch B6 — Italy/France featured top-up. Full curate: not
+    // previously in the pool as a primary architect (only mentioned in
+    // Richard Rogers' portrait re: Centre Pompidou). Living; Italy and
+    // France both have no FoP, which blocks his Italian and French work
+    // outright (Auditorium Parco della Musica, Centre Pompidou) — the three
+    // buildings below are all in FoP-clear jurisdictions (UK, US, Japan).
+    id: 'renzo-piano',
+    wikidataId: 'Q190148',
+    name: 'Renzo Piano',
+    alternativeNames: ['Renzo Piano Building Workshop'],
+    gender: 'man',
+    born: 1937,
+    died: null,
+    floruit: { start: 1971, end: 2026, override: false },
+    movements: [{ id: 'high-tech', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'steel-and-glass',
+    portrait: {
+      en: 'Piano was born in Genoa into a family of builders, studied at Milan Polytechnic, and worked briefly for Louis Kahn in Philadelphia before returning to Italy. His international reputation began at thirty-four, when he and Richard Rogers won the 1971 competition for the Centre Pompidou, turning a Paris museum inside out so its structure, escalators and ducts run up the exterior and the interior stays open, unencumbered floor. Piano founded the Renzo Piano Building Workshop in 1981, and its subsequent work runs from the Kansai International Airport terminal, engineered with Peter Rice to withstand typhoons and the settling of reclaimed land, to museums for the Menil Collection, the Beyeler Foundation and the Whitney. Piano resists being read as a stylist: each building is argued from its site, climate and structural logic rather than a signature form. He received the Pritzker Prize in 1998.',
+      es: 'Piano nació en Génova, en una familia de constructores, estudió en el Politécnico de Milán y trabajó brevemente para Louis Kahn en Filadelfia antes de volver a Italia. Su fama internacional empezó a los treinta y cuatro años, cuando él y Richard Rogers ganaron en 1971 el concurso del Centro Pompidou, volviendo del revés un museo parisino para que su estructura, escaleras mecánicas y conductos corrieran por el exterior y el interior quedara como una planta libre y despejada. Piano fundó el Renzo Piano Building Workshop en 1981, y su obra posterior va de la terminal del Aeropuerto Internacional de Kansai, calculada con Peter Rice para resistir tifones y el asiento de un terreno ganado al mar, a museos para la Colección Menil, la Fundación Beyeler y el Whitney. Piano rehúye ser leído como un estilista: cada edificio se argumenta desde su emplazamiento, su clima y su lógica estructural, y no desde una forma firmada. Recibió el Pritzker en 1998.',
+      it: "Piano nacque a Genova, in una famiglia di costruttori, studiò al Politecnico di Milano e lavorò brevemente per Louis Kahn a Filadelfia prima di tornare in Italia. La sua fama internazionale iniziò a trentaquattro anni, quando lui e Richard Rogers vinsero nel 1971 il concorso per il Centre Pompidou, rovesciando un museo parigino così che struttura, scale mobili e condotti corressero all'esterno e l'interno restasse una pianta libera e sgombra. Piano fondò il Renzo Piano Building Workshop nel 1981, e il suo lavoro successivo va dal terminal dell'Aeroporto Internazionale del Kansai, calcolato con Peter Rice per resistere ai tifoni e all'assestamento di un terreno di bonifica, ai musei per la Menil Collection, la Fondazione Beyeler e il Whitney. Piano rifugge l'etichetta di stilista: ogni edificio si argomenta a partire dal sito, dal clima e dalla logica strutturale, non da una forma firmata. Ricevette il Pritzker nel 1998.",
+    },
+    awards: ['Praemium Imperiale (1995)', 'Pritzker Prize (1998)', 'AIA Gold Medal (2008)'],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q190148', title: 'Renzo Piano (Q190148)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Renzo_Piano', title: 'Renzo Piano — Wikipedia', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.pritzkerprize.com/laureates/1998', title: 'Renzo Piano — The Pritzker Architecture Prize', license: null },
+    ],
+  },
+  {
+    // Wave V2-3, batch B6 — Michelangelo, full curate (new architect).
+    id: 'michelangelo',
+    wikidataId: 'Q5592',
+    name: 'Michelangelo',
+    alternativeNames: ['Michelangelo Buonarroti', 'Michelangelo di Lodovico Buonarroti Simoni'],
+    gender: 'man',
+    born: 1475,
+    died: 1564,
+    // override: all three curated buildings were finished by other hands
+    // after Michelangelo's death — the dome in 1590 (Giacomo della Porta),
+    // the Laurentian Library in 1571 (Ammannati/Vasari, from his model and
+    // letters), and the Campidoglio ensemble only in 1655 — the end of the
+    // span is the completion date of a work he designed, not a claim he was
+    // still building. See each building's dossier.
+    floruit: { start: 1520, end: 1655, override: true },
+    movements: [{ id: 'renaissance', primary: true }, { id: 'mannerism', primary: false }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'sacral',
+    signatureMaterial: 'stone',
+    portrait: {
+      en: 'Michelangelo Buonarroti trained as a sculptor and painter and came to architecture only in his forties, first as an amateur consultant on the facade of San Lorenzo — a commission from Pope Leo X that was never built — and then, decisively, in the 1520s at the same church\'s Laurentian Library, where he treated the wall itself as sculpted mass: recessed columns, blind tapering windows, and a cascading pietra serena staircase that reads as poured rather than built. Later commissions took him to Rome: a new civic square on the Capitoline Hill for Pope Paul III, and finally, in 1546 at the age of seventy-one, chief architect of St Peter\'s Basilica, where he returned Bramante\'s plan to a centralized Greek cross and designed the crossing dome, raised only after his death in 1564. His architecture is often read as Mannerism\'s beginning: rules quoted only to be strained against.',
+      es: 'Miguel Ángel Buonarroti se formó como escultor y pintor y no llegó a la arquitectura hasta los cuarenta años, primero como asesor aficionado para la fachada de San Lorenzo —un encargo del papa León X que nunca se construyó— y después, de forma decisiva, en la década de 1520 en la Biblioteca Laurenciana de esa misma iglesia, donde trató el propio muro como masa esculpida: columnas embutidas, ventanas ciegas y afiladas, y una escalinata de pietra serena en cascada que parece vertida antes que construida. Encargos posteriores lo llevaron a Roma: una nueva plaza cívica en el Capitolio para el papa Pablo III y, por fin, en 1546, a los setenta y un años, arquitecto jefe de la basílica de San Pedro, donde devolvió la planta de Bramante a una cruz griega centralizada y diseñó la cúpula del crucero, alzada solo tras su muerte en 1564. Su arquitectura suele leerse como el arranque del manierismo: reglas citadas solo para tensarlas.',
+      it: 'Michelangelo Buonarroti si formò come scultore e pittore e arrivò all\'architettura solo intorno ai quarant\'anni, dapprima come consulente dilettante per la facciata di San Lorenzo — una commessa di papa Leone X mai realizzata — e poi, in modo decisivo, negli anni \'20 del Cinquecento nella Biblioteca Laurenziana della stessa chiesa, dove trattò il muro stesso come massa scolpita: colonne incassate, finestre cieche e affusolate, e una scala a cascata in pietra serena che sembra colata anziché costruita. Commesse successive lo portarono a Roma: una nuova piazza civica sul Campidoglio per papa Paolo III e infine, nel 1546, a settantun anni, architetto capo della basilica di San Pietro, dove riportò la pianta di Bramante a una croce greca centralizzata e disegnò la cupola del tiburio, innalzata solo dopo la sua morte nel 1564. La sua architettura è spesso letta come l\'inizio del manierismo: regole citate solo per essere messe in tensione.',
+    },
+    awards: [],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q5592', title: 'Michelangelo (Q5592)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Michelangelo', title: 'Michelangelo — Wikipedia', license: 'CC BY-SA 4.0' },
     ],
   },
 ];

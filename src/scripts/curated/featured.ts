@@ -31,4 +31,9 @@ export const FEATURED_ARCHITECT_IDS: string[] = [
   'richard-rogers',
   'zaha-hadid',
   'christopher-wren',
+  'filippo-brunelleschi',
+  'andrea-palladio',
+  'michelangelo',
+  'renzo-piano',
+  'jean-nouvel',
 ];
