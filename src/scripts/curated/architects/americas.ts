@@ -404,4 +404,33 @@ export const AMERICAS_ARCHITECTS: Architect[] = [
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/I._M._Pei', title: 'I. M. Pei', license: 'CC BY-SA 4.0' },
     ],
   },
+  {
+    id: 'frank-gehry',
+    wikidataId: 'Q180374',
+    name: 'Frank Gehry',
+    alternativeNames: ['Frank Owen Gehry', 'Frank Owen Goldberg'],
+    gender: 'man',
+    born: 1929,
+    died: 2025,
+    floruit: { start: 1962, end: 2021, override: false },
+    movements: [
+      { id: 'deconstructivism', primary: true },
+    ],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'steel-and-glass',
+    portrait: {
+      en: 'Gehry was born Frank Goldberg in Toronto in 1929, moved with his family to Los Angeles at seventeen, and studied at USC and briefly at Harvard\'s Graduate School of Design before opening his own Los Angeles practice in 1962. For two decades he built modest, inexpensive work, most famously the 1978 remodel of his own Santa Monica bungalow in corrugated metal, plywood and chain-link fencing, materials chosen because a client\'s budget could afford them, not for effect. Computer-aided design borrowed from the aerospace industry let his later practice translate the same instinct for torqued, improvised-looking form into buildable curved metal at the scale of an entire museum, starting with Bilbao in 1997. He kept a working office into his nineties and died in Santa Monica in December 2025, having reshaped what a public building was allowed to look like more than once in a sixty-year career.',
+      es: 'Gehry nació como Frank Goldberg en Toronto en 1929, se trasladó con su familia a Los Ángeles a los diecisiete años y estudió en la USC y brevemente en la Graduate School of Design de Harvard antes de abrir su propio estudio en Los Ángeles en 1962. Durante dos décadas construyó obra modesta y barata, sobre todo la remodelación en 1978 de su propio bungaló de Santa Mónica en chapa ondulada, contrachapado y valla de tela metálica, materiales elegidos porque el presupuesto de un cliente podía pagarlos, no por efecto. El diseño asistido por ordenador, tomado prestado de la industria aeroespacial, permitió a su estudio posterior trasladar ese mismo instinto de forma retorcida y de aire improvisado a metal curvo construible a la escala de un museo entero, empezando por Bilbao en 1997. Mantuvo un estudio en activo hasta los noventa años y murió en Santa Mónica en diciembre de 2025, habiendo cambiado más de una vez, en una carrera de sesenta años, lo que se permitía que pareciera un edificio público.',
+      it: 'Gehry nacque come Frank Goldberg a Toronto nel 1929, si trasferì con la famiglia a Los Angeles a diciassette anni e studiò alla USC e brevemente alla Graduate School of Design di Harvard prima di aprire un proprio studio a Los Angeles nel 1962. Per due decenni costruì opere modeste ed economiche, in particolare la ristrutturazione del 1978 del proprio bungalow di Santa Monica in lamiera ondulata, compensato e rete metallica, materiali scelti perché il budget di un cliente poteva permetterseli, non per effetto. La progettazione assistita dal computer, presa in prestito dall\'industria aerospaziale, permise al suo studio successivo di tradurre lo stesso istinto per la forma ritorta e dall\'aria improvvisata in metallo curvo costruibile alla scala di un intero museo, a partire da Bilbao nel 1997. Mantenne uno studio attivo fino agli anni novanta e morì a Santa Monica nel dicembre 2025, avendo cambiato più di una volta, in una carriera di sessant\'anni, ciò che a un edificio pubblico era concesso somigliare.',
+    },
+    awards: ['Pritzker Architecture Prize (1989)', 'AIA Gold Medal (1999)', 'Presidential Medal of Freedom (2016)'],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q180374', title: 'Frank Gehry (Q180374)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Frank_Gehry', title: 'Frank Gehry', license: 'CC BY-SA 4.0' },
+    ],
+  },
 ];

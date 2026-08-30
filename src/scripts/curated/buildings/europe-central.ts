@@ -867,4 +867,79 @@ export const EUROPE_CENTRAL_BUILDINGS: Building[] = [
     ],
     tier: 'canon',
   },
+  {
+    // Cross-batch note (agent B2, americas): architectId 'frank-gehry' is
+    // defined in src/scripts/curated/architects/americas.ts (his practice
+    // base). This building is in Czechia, so it is filed here in the
+    // europe-central region file per the region-follows-building-location
+    // convention. Co-design credit: Wikipedia/Wikidata list the building's
+    // architect as "Vlado Milunić, Frank Gehry" — Milunić, a Czech
+    // architect, originated the commission and is equally credited, but he
+    // is not a featured architect and is not owned by any other batch's
+    // roster (grepped: no worktree defines a 'vlado-milunic' id). Rather
+    // than define a full architect record for a non-featured co-designer
+    // out of this batch's scope, he is credited by name in the dossier
+    // prose (sourced) instead of via `coArchitects`. Flagging for the
+    // controller in case a future pass wants to add him formally.
+    id: 'dancing-house',
+    wikidataId: 'Q244816',
+    name: {
+      en: 'Dancing House',
+      es: 'Casa Danzante',
+      it: 'Casa Danzante',
+    },
+    architectId: 'frank-gehry',
+    location: { city: 'Prague', countryCode: 'CZ', lat: 50.07556, lon: 14.41417 },
+    inception: 1992,
+    completed: 1996,
+    demolished: null,
+    typology: 'commercial',
+    materials: ['steel-and-glass', 'concrete'],
+    structure: {
+      en: 'A reinforced-concrete frame carries two towers on a corner site: a static, fully glazed cylinder of vertical piers, and a narrow-waisted glass-and-steel tower cast from ninety-nine uniquely shaped precast concrete panels that taper and twist as they rise, capped by a tangled steel "Medusa" dome.',
+      es: 'Una estructura de hormigón armado sostiene dos torres en un solar en esquina: un cilindro estático y totalmente acristalado de pilares verticales, y una torre de vidrio y acero de cintura estrecha, moldeada con noventa y nueve paneles de hormigón prefabricado de forma única que se afinan y retuercen al ascender, coronada por una cúpula de acero enmarañado apodada "Medusa".',
+      it: 'Una struttura in cemento armato sorregge due torri su un lotto d\'angolo: un cilindro statico e interamente vetrato di pilastri verticali, e una torre di vetro e acciaio dalla vita stretta, realizzata con novantanove pannelli prefabbricati in cemento di forma unica che si assottigliano e torcono salendo, coronata da una cupola d\'acciaio aggrovigliato soprannominata "Medusa".',
+    },
+    program: {
+      en: 'An office building for the Dutch insurer Nationale-Nederlanden on a riverfront lot left empty since a 1945 American bombing raid, commissioned at the personal urging of neighbour and Czech president Václav Havel, who wanted a lively cultural building rather than another office block on the site.',
+      es: 'Edificio de oficinas para la aseguradora neerlandesa Nationale-Nederlanden en un solar junto al río, vacío desde un bombardeo estadounidense en 1945, encargado a instancias personales del vecino y entonces presidente checo Václav Havel, que quería en ese solar un edificio culturalmente vivo y no otro bloque de oficinas.',
+      it: 'Edificio per uffici per l\'assicuratrice olandese Nationale-Nederlanden su un lotto sul fiume rimasto vuoto dopo un bombardamento americano del 1945, commissionato su sollecitazione personale del vicino e allora presidente ceco Václav Havel, che voleva in quel lotto un edificio culturalmente vivo e non un altro blocco di uffici.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Mixed offices, an art gallery, a rooftop restaurant and a boutique hotel that opened in the building in 2018.',
+      es: 'Uso mixto de oficinas, una galería de arte, un restaurante en la azotea y un hotel boutique abierto en el edificio en 2018.',
+      it: 'Uso misto di uffici, una galleria d\'arte, un ristorante panoramico e un hotel boutique aperto nell\'edificio nel 2018.',
+    },
+    detailRect: { x: 0.25, y: 0.45, w: 0.32, h: 0.28 },
+    image: {
+      commonsFile: 'File:Prague - Dancing House.jpg',
+      photographer: 'Maros Mraz',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Prague_-_Dancing_House.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Maison dansante Prague 1.jpg',
+        photographer: 'Chabe01',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Maison_dansante_Prague_1.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: 'The Czech architect Vlado Milunić had lived next door to the bomb-cleared corner lot for years and had already sketched a "yin and yang" pair of towers for it when his upstairs neighbour, freshly elected president Václav Havel, backed the project and helped bring in Gehry as a co-designer able to get an ambitious modern building built in a historic riverfront row. The two towers Milunić and Gehry built together read as a couple mid-step: a static glazed cylinder, nicknamed Ginger for its flared "skirt" of curved glass, leans into a rigid stone-toned tower nicknamed Fred, its waist pinched by a structural steel column embedded in the glass facade. Getting the tower\'s compound curves built at all required casting ninety-nine reinforced-concrete panels, no two alike, from custom formwork. The design split Czech opinion on completion in 1996 — a building this playful, on a site that still remembered wartime bombing, struck some critics as disrespectful of Prague\'s historic skyline — but it has since become one of the most photographed buildings in the country and appears on a 2005 Czech commemorative coin.',
+      es: 'El arquitecto checo Vlado Milunić llevaba años viviendo junto al solar en esquina, vacío desde el bombardeo, y ya había esbozado para él una pareja de torres "yin y yang" cuando su vecino de arriba, el recién elegido presidente Václav Havel, respaldó el proyecto y ayudó a incorporar a Gehry como codiseñador capaz de lograr que se construyera un edificio moderno y ambicioso en una hilera histórica junto al río. Las dos torres que Milunić y Gehry levantaron juntos se leen como una pareja a mitad de paso: un cilindro estático acristalado, apodado Ginger por su "falda" acampanada de vidrio curvo, se inclina hacia una torre rígida de tono pétreo apodada Fred, con la cintura ceñida por una columna estructural de acero incrustada en la fachada de vidrio. Construir siquiera las curvas compuestas de la torre exigió moldear noventa y nueve paneles de hormigón armado, ninguno igual a otro, con encofrados a medida. El diseño dividió la opinión checa al terminarse en 1996 —un edificio tan lúdico, en un solar que aún recordaba el bombardeo de guerra, pareció a algunos críticos una falta de respeto al perfil histórico de Praga— pero desde entonces se ha convertido en uno de los edificios más fotografiados del país y aparece en una moneda conmemorativa checa de 2005.',
+      it: 'L\'architetto ceco Vlado Milunić viveva da anni accanto al lotto d\'angolo sgombrato dalle macerie del bombardamento e aveva già abbozzato per esso una coppia di torri "yin e yang" quando il suo vicino di sopra, il neoeletto presidente Václav Havel, appoggiò il progetto e contribuì a coinvolgere Gehry come co-progettista capace di far costruire un edificio moderno e ambizioso in una cortina storica sul fiume. Le due torri che Milunić e Gehry costruirono insieme si leggono come una coppia a metà di un passo di danza: un cilindro statico vetrato, soprannominato Ginger per la sua "gonna" svasata di vetro curvo, si inclina verso una torre rigida dal tono pietroso soprannominata Fred, con la vita stretta da un pilastro strutturale in acciaio incassato nella facciata vetrata. Realizzare anche solo le curve composte della torre richiese di gettare novantanove pannelli in cemento armato, nessuno uguale all\'altro, con casseforme su misura. Il progetto divise l\'opinione pubblica ceca al suo completamento nel 1996 — un edificio così giocoso, su un lotto che ricordava ancora il bombardamento bellico, parve ad alcuni critici irrispettoso dello skyline storico di Praga — ma da allora è diventato uno degli edifici più fotografati del paese e compare su una moneta commemorativa ceca del 2005.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q244816', title: 'Dancing House (Q244816)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Dancing_House', title: 'Dancing House', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
 ];
