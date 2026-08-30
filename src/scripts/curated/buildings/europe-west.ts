@@ -231,8 +231,8 @@ export const EUROPE_WEST_BUILDINGS: Building[] = [
       photographer: 'EmDee',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Belgique_-_Bruxelles_-_H%C3%B4tel_Van_Eetvelde_-_01.jpg',
-      width: 0,
-      height: 0,
+      width: 920,
+      height: 1600,
     },
     extraImages: [
       {
@@ -304,8 +304,8 @@ export const EUROPE_WEST_BUILDINGS: Building[] = [
       photographer: 'Paul Louis',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hortamuseum.tif',
-      width: 0,
-      height: 0,
+      width: 1294,
+      height: 1600,
     },
     extraImages: [
       {
@@ -871,8 +871,8 @@ export const EUROPE_WEST_BUILDINGS: Building[] = [
       photographer: 'Benh Lieu Song',
       license: 'CC BY-SA 3.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Tour_Eiffel_Wikimedia_Commons.jpg',
-      width: 0,
-      height: 0,
+      width: 865,
+      height: 1600,
     },
     extraImages: [
       {
@@ -934,8 +934,8 @@ export const EUROPE_WEST_BUILDINGS: Building[] = [
       photographer: 'kitmasterbloke',
       license: 'CC BY 2.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:The_Garabit_Viaduct,_France_-_48050191718.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1067,
     },
     extraImages: [
       {

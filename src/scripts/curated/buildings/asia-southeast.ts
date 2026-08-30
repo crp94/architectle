@@ -1088,8 +1088,8 @@ export const ASIA_SOUTHEAST_BUILDINGS: Building[] = [
       photographer: 'Ralff Nestor Nacor',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Marina_Bay_Sands,_Singapore,_August_2023.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1205,
     },
     extraImages: [
       {

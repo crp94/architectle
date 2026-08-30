@@ -375,8 +375,8 @@ export const EUROPE_NORDIC_BUILDINGS: Building[] = [
       photographer: 'Leon Liao',
       license: 'CC BY 2.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Paimio_Sanatorium2.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1065,
     },
     extraImages: [
       {
@@ -439,8 +439,8 @@ export const EUROPE_NORDIC_BUILDINGS: Building[] = [
       photographer: 'Garrett A. Wollman',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Finlandia_Hall_east_side,_August_2017.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 642,
     },
     extraImages: [
       {
@@ -736,8 +736,8 @@ export const EUROPE_NORDIC_BUILDINGS: Building[] = [
       photographer: 'Roybb95~commonswiki',
       license: 'CC BY-SA 3.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Sydney_Opera_House_Sails.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1058,
     },
     extraImages: [
       {
@@ -798,8 +798,8 @@ export const EUROPE_NORDIC_BUILDINGS: Building[] = [
       photographer: 'Liberaler Humanist',
       license: 'CC BY-SA 3.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Utzon_Center,_Eastern_side,_Aalborg.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1067,
     },
     extraImages: [
       {

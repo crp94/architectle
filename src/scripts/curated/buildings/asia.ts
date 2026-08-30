@@ -646,8 +646,8 @@ export const ASIA_BUILDINGS: Building[] = [
       photographer: 'Peter Potrowl',
       license: 'CC BY 3.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Suzhou_Museum_-_new_buildings.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1200,
     },
     extraImages: [
       {
@@ -708,8 +708,8 @@ export const ASIA_BUILDINGS: Building[] = [
       photographer: '663highland',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:241119_MIHO_MUSEUM_Koga_Shiga_pref_Japan08s3.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1067,
     },
     dossier: {
       en: 'Local building codes on the Shigaraki mountainside where the Koyama sisters wanted their collection housed effectively forbade a conventional building, so Pei buried most of it: roughly eighty per cent of the museum\'s volume sits inside the ridge, and the excavated hillside was replanted after construction so that from a distance almost nothing is visible but a glass roofline among the pines. Pei told the sisters he had in mind the Chinese poet Tao Yuanming\'s "Peach Blossom Spring," in which a fisherman finds a hidden utopia by following a stream through a narrow, dark passage that suddenly opens onto light; visitors reach the museum the same way, on an electric cart or on foot along a curving tunnel bored through the mountain, over a cable-stayed bridge, and into a glazed steel-trussed hall clad inside in the same French limestone Pei had used at the Louvre. The geometric roof, triangulated glass over a repeating diamond lattice, is the one part of the building Pei allowed to declare itself; everything else is landscape first. It opened in 1997 and now holds nine Japanese Important Cultural Properties.',
@@ -760,8 +760,8 @@ export const ASIA_BUILDINGS: Building[] = [
       photographer: 'Choinowski',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Looking_up_to_the_Bank_of_China_Tower_in_Hong_Kong.jpg',
-      width: 0,
-      height: 0,
+      width: 1067,
+      height: 1600,
     },
     extraImages: [
       {
@@ -829,8 +829,8 @@ export const ASIA_BUILDINGS: Building[] = [
       photographer: 'Craddocktm',
       license: 'CC BY-SA 3.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:HSBC_HK_Headquarters.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1200,
     },
     extraImages: [
       {
@@ -904,8 +904,8 @@ export const ASIA_BUILDINGS: Building[] = [
       photographer: 'Mr a',
       license: 'CC BY 3.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Guangzhou_Opera_House(Near).JPG',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 900,
     },
     extraImages: [
       {
@@ -972,8 +972,8 @@ export const ASIA_BUILDINGS: Building[] = [
       photographer: 'sinndati8692',
       license: 'CC BY-SA 3.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:%E9%96%A2%E7%A9%BA%E7%AC%AC1%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB%E5%85%A8%E6%99%AF_-_panoramio.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1200,
     },
     extraImages: [
       {
@@ -1039,8 +1039,8 @@ export const ASIA_BUILDINGS: Building[] = [
       photographer: 'Alexelgayar',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Rolex_Learning_Center%2C_EPFL%2C_Vaud.jpg',
-      width: 0,
-      height: 0,
+      width: 828,
+      height: 616,
     },
     extraImages: [
       {
@@ -1108,8 +1108,8 @@ export const ASIA_BUILDINGS: Building[] = [
       photographer: '掬茶',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Exterior_view_of_Sendai_Mediatheque_from_Jozenji_Street_20220910b.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1067,
     },
     extraImages: [
       {
@@ -1174,8 +1174,8 @@ export const ASIA_BUILDINGS: Building[] = [
       photographer: 'Wiiii',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Tama_Art_University_Library.JPG',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1064,
     },
     extraImages: [
       {
@@ -1240,8 +1240,8 @@ export const ASIA_BUILDINGS: Building[] = [
       photographer: 'Ralff Nestor Nacor',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:National_Taichung_Theater%2C_Nov_2024_%282%29.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1205,
     },
     extraImages: [
       {
@@ -1311,8 +1311,8 @@ export const ASIA_BUILDINGS: Building[] = [
       photographer: 'Kimon Berlin',
       license: 'CC BY-SA 2.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Ningbo_Tengtou_Case_Pavilion.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 866,
     },
     dossier: {
       en: "Of the roughly eighty cases assembled in the 2010 Shanghai Expo's Urban Best Practices Area, only one represented a village rather than a city: Tengtou, in Ningbo's Fenghua district, whose model of eco-agriculture and rural tourism the Expo organisers wanted showcased. Wang Shu and Lu Wenyu, commissioned in 2009, built the pavilion on a narrow site using the same salvaged-material technique they had just tested at Ningbo Museum — brick and roof tile recovered from demolished village houses, laid up by hand in overlapping courses. Visitors moved through a sequence of self-similar spaces devoted to the sounds, sights and produce of Tengtou, arranged to feel deeper than the shallow site allowed. Unlike several Expo pavilions preserved afterward as a permanent cultural district, the Tengtou pavilion was demolished in March 2015 when the site was redeveloped, leaving Ningbo Museum as this partnership's only surviving public building of its kind.",
@@ -1364,8 +1364,8 @@ export const ASIA_BUILDINGS: Building[] = [
       photographer: 'antjeverena',
       license: 'CC BY-SA 2.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Church_of_the_Light_exterior.jpg',
-      width: 0,
-      height: 0,
+      width: 800,
+      height: 600,
     },
     extraImages: [
       {
@@ -1427,8 +1427,8 @@ export const ASIA_BUILDINGS: Building[] = [
       photographer: 'Fotointheworld',
       license: 'CC BY 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Chichu_Art_Museum_exterior_open_space_2025.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1200,
     },
     extraImages: [
       {
@@ -1499,8 +1499,8 @@ export const ASIA_BUILDINGS: Building[] = [
       photographer: 'Chacmool',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hyogo_Prefectural_Museum_of_Art_oct_2018.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1200,
     },
     extraImages: [
       {
@@ -1562,8 +1562,8 @@ export const ASIA_BUILDINGS: Building[] = [
       photographer: 'Suicasmo',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Yoyogi_National_Gymnasium_20200607.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1067,
     },
     extraImages: [
       {
@@ -1624,8 +1624,8 @@ export const ASIA_BUILDINGS: Building[] = [
       photographer: 'Kakidai',
       license: 'CC BY-SA 4.0',
       sourceUrl: "https://commons.wikimedia.org/wiki/File:2018_St._Mary%27s_Cathedral_Tokyo_1.jpg",
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1093,
     },
     extraImages: [
       {
@@ -1690,8 +1690,8 @@ export const ASIA_BUILDINGS: Building[] = [
       photographer: 'Kilian Evang',
       license: 'CC BY 2.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:CCTV_Headquarters_(Beijing,_China)_-_Flickr.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1201,
     },
     extraImages: [
       {

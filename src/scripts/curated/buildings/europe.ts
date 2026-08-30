@@ -731,8 +731,8 @@ export const EUROPE_BUILDINGS: Building[] = [
       photographer: 'Pedro Ribeiro Simões',
       license: 'CC BY 2.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Marco_Canavezes%27_Church_-_Alvaro_Siza_Vieira_(1933)_(197037227).jpg',
-      width: 0,
-      height: 0,
+      width: 1440,
+      height: 1600,
     },
     extraImages: [
       {
@@ -794,8 +794,8 @@ export const EUROPE_BUILDINGS: Building[] = [
       photographer: 'Felipe Gabaldón',
       license: 'CC BY 2.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:L%27Oceanografic_(Valencia,_Spain)_01.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1064,
     },
     extraImages: [
       {
@@ -1146,8 +1146,8 @@ export const EUROPE_BUILDINGS: Building[] = [
       photographer: 'Fred Romero',
       license: 'CC BY 2.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Bilbao_-_Guggenheim_Bilbao_Museoa_(28620586434).jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1067,
     },
     extraImages: [
       {
@@ -1210,8 +1210,8 @@ export const EUROPE_BUILDINGS: Building[] = [
       photographer: 'Bjørn Erik Pedersen',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Torre_Agbar_Barcelona_2015.jpg',
-      width: 0,
-      height: 0,
+      width: 1200,
+      height: 1600,
     },
     extraImages: [
       {
@@ -1276,8 +1276,8 @@ export const EUROPE_BUILDINGS: Building[] = [
       photographer: 'Txllxt TxllxT',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Firenze_-_Florence_-_Piazza_della_Santissima_Annunziata_-_View_East_on_Ospedale_degli_Innocenti_-_Hospital_for_Foundlings,_designed_by_Filippo_Brunelleschi_(1419-45)_-_Loggia_built_in_1432.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1067,
     },
     extraImages: [
       {
@@ -1339,8 +1339,8 @@ export const EUROPE_BUILDINGS: Building[] = [
       photographer: 'Armin Kleiner',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Florence,_Santa_Croce,_Cappella_dei_Pazzi,_1440s-70s.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1200,
     },
     dossier: {
       en: 'Andrea de\' Pazzi, head of the banking family that would later conspire against the Medici, put up the funds for this chapter house at Santa Croce in 1429, though construction did not begin until around 1442 and dragged on, unfinished at Brunelleschi\'s death in 1446, into the 1470s. Tradition credits the whole design to Brunelleschi, and the plan — a domed square behind a six-column portico, its pietra serena pilasters and roundels laid over plain masonry like drawn lines rather than load-bearing members — is consistent with his other Florentine work. But the attribution has never been fully secure: contemporary scholarship increasingly separates Brunelleschi\'s initial scheme from the building actually executed and detailed, crediting the portico and much of the ornament to other hands, Giuliano da Maiano\'s among the names proposed. Luca della Robbia\'s glazed terracotta roundels of the apostles inside are certain, and independently dated later still. What survives regardless is one of the clearest statements of Early Renaissance proportion in Florence, a chapter house built for Franciscan business meetings that has outlasted every one of them.',
@@ -1394,8 +1394,8 @@ export const EUROPE_BUILDINGS: Building[] = [
       photographer: 'Didier Descouens',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Basilica_Palladiana_(Vicenza)_-_facade_on_Piazza_dei_signori.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 984,
     },
     extraImages: [
       {
@@ -1457,8 +1457,8 @@ export const EUROPE_BUILDINGS: Building[] = [
       photographer: 'TeKappa',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:San_Giorgio_Maggiore_dal_campanile_di_San_Marco.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1064,
     },
     extraImages: [
       {
@@ -1526,8 +1526,8 @@ export const EUROPE_BUILDINGS: Building[] = [
       photographer: 'Fallaner',
       license: 'CC BY-SA 4.0',
       sourceUrl: "https://commons.wikimedia.org/wiki/File:Saint_Peter%27s_Basilica_Dome_2020_P01.jpg",
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1200,
     },
     dossier: {
       en: "When Pope Paul III appointed Michelangelo chief architect of St Peter's in 1547, at seventy-one, he inherited a rebuilding already a generation old and abandoned Antonio da Sangallo the Younger's model wholesale, returning to Bramante's original centralized Greek-cross plan and designing a single crossing dome to crown it: a double shell of brick and stone, sixteen ribs pairing an inner structural vault with an outer weathering skin, raised on a drum ringed by paired Corinthian columns and sixteen tall windows. Michelangelo left only a wooden model and drawings at his death in 1564; Giacomo della Porta, entrusted with construction, raised the profile from Michelangelo's flatter hemisphere to a taller, more pointed curve before completing it in 1590, a change scholars still debate as improvement or departure. The long nave and the travertine facade seen from the piazza are not this design at all: Carlo Maderno added them between 1607 and 1614, extending the plan and burying Michelangelo's centralized silhouette from ground level. Only from a distance, or from the Vatican gardens, does the dome read as his.",
@@ -1579,8 +1579,8 @@ export const EUROPE_BUILDINGS: Building[] = [
       photographer: 'Kameister',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Piazza_del_Campidoglio_2015.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1067,
     },
     dossier: {
       en: 'Pope Paul III commissioned Michelangelo to remake the summit of the Capitoline Hill in 1536, ahead of a state visit by Emperor Charles V, and the design that resulted turned Rome\'s ancient seat of government to face the wrong way: away from the Forum, toward St Peter\'s, across a trapezoidal piazza framed by three palace facades. Michelangelo gave the existing medieval Palazzo Senatorio a giant order of pilasters and a double stair, and had a matching Palazzo dei Conservatori rebuilt opposite an identical Palazzo Nuovo he planned but never saw begun; construction continued long past his death in 1564, the second palace not finished until 1654. His oval pavement, a twelve-pointed star radiating from an ancient equestrian statue of Marcus Aurelius, survives only as a drawing and an engraving by Étienne Dupérac; it was not actually laid until 1940, under Mussolini, three and a half centuries after Michelangelo drew it. The piazza today is Rome\'s city hall and the entrance to the Capitoline Museums.',
@@ -1631,8 +1631,8 @@ export const EUROPE_BUILDINGS: Building[] = [
       photographer: 'Richard Mortel',
       license: 'CC BY 2.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Staircase_of_the_Laurentian_LIbrary,_15th_century,_designed_by_Michelangelo;_Florence_(2)_(48768620157).jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1067,
     },
     extraImages: [
       {
@@ -1697,8 +1697,8 @@ export const EUROPE_BUILDINGS: Building[] = [
       photographer: 'Rafael Lemieszek (Rkieferbaum)',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Casa_da_M%C3%BAsica_-_Porto,_Portugal,_2012_-_001.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1045,
     },
     extraImages: [
       {
@@ -1763,8 +1763,8 @@ export const EUROPE_BUILDINGS: Building[] = [
       photographer: 'Wladyslaw (Taxiarchos228)',
       license: 'CC BY-SA 3.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Auditorio_de_Tenerife_Pano.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 763,
     },
     extraImages: [
       {
@@ -1825,8 +1825,8 @@ export const EUROPE_BUILDINGS: Building[] = [
       photographer: 'Blanca García Gil',
       license: 'CC BY-SA 2.0',
       sourceUrl: "https://commons.wikimedia.org/wiki/File:L'Hemisf%C3%A8ric_(Valencia)_01.jpg",
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1200,
     },
     extraImages: [
       {

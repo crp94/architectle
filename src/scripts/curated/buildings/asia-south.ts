@@ -506,8 +506,8 @@ export const ASIA_SOUTH_BUILDINGS: Building[] = [
       photographer: 'Vaishal Dalal',
       license: 'CC BY-SA 3.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Amdavad_ni_gufa.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 900,
     },
     extraImages: [
       {
@@ -1065,8 +1065,8 @@ export const ASIA_SOUTH_BUILDINGS: Building[] = [
       photographer: 'gb pandey',
       license: 'CC BY-SA 2.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Chandigarh_High_Court.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 669,
     },
     extraImages: [
       {
@@ -1130,8 +1130,8 @@ export const ASIA_SOUTH_BUILDINGS: Building[] = [
       photographer: 'Lian Chang',
       license: 'CC BY 2.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Secretariat_facade.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1065,
     },
     extraImages: [
       {
@@ -1258,8 +1258,8 @@ export const ASIA_SOUTH_BUILDINGS: Building[] = [
       photographer: 'Perspectives - The Photography Club, IIM Ahmedabad',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Louis_Kahn_Plaza,_IIM_Ahmedabad.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 900,
     },
     extraImages: [
       {

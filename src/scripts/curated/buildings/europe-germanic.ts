@@ -247,8 +247,8 @@ export const EUROPE_GERMANIC_BUILDINGS: Building[] = [
       photographer: 'Carsten Janssen',
       license: 'CC BY-SA 2.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Fagus_Gropius_Hauptgebaeude_200705_wiki_front.jpg',
-      width: 0,
-      height: 0,
+      width: 1000,
+      height: 600,
     },
     extraImages: [
       {
@@ -309,8 +309,8 @@ export const EUROPE_GERMANIC_BUILDINGS: Building[] = [
       photographer: 'Daderot',
       license: 'CC BY-SA 3.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Gropius_House,_Lincoln,_Massachusetts_-_Front_View.JPG',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1200,
     },
     extraImages: [
       {
@@ -984,8 +984,8 @@ export const EUROPE_GERMANIC_BUILDINGS: Building[] = [
       photographer: 'Tom Ravenscrodt',
       license: 'CC BY 2.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Seagram_Building_(4114889237).jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1200,
     },
     extraImages: [
       {
@@ -1046,8 +1046,8 @@ export const EUROPE_GERMANIC_BUILDINGS: Building[] = [
       photographer: 'Lessismore2020',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Farnsworth_House_Exterior_1.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1067,
     },
     extraImages: [
       {
@@ -1109,8 +1109,8 @@ export const EUROPE_GERMANIC_BUILDINGS: Building[] = [
       photographer: 'Wladyslaw',
       license: 'CC BY-SA 3.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Vitra_Design_Museum.JPG',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1067,
     },
     dossier: {
       en: 'A 1981 fire destroyed several of Vitra\'s production buildings on its Weil am Rhein campus just across the Swiss and French borders, and the company\'s owner, Rolf Fehlbaum, used the rebuilding as an occasion to commission a museum for the furniture collection he had been assembling privately for years — his first call was to Gehry, whose Santa Monica house he had seen in photographs. The museum was Gehry\'s first building outside North America and, unusually for his later work, a masonry building rather than a metal-clad one: white-plastered walls in interlocking cubic and curved volumes, organized (at the recommendation of Gehry\'s then-collaborator, architect Michael Blattner) around a system of golden-rectangle proportions rather than a single grid, so no two rooms share quite the same geometry. A corkscrewing external stair wrapped in zinc-titanium panels connects the galleries on the outside of the building rather than within it. Fehlbaum went on to commission a small architectural campus around it — Zaha Hadid\'s first built work, the Vitra Fire Station, arrived four years later on the same grounds.',
@@ -1168,8 +1168,8 @@ export const EUROPE_GERMANIC_BUILDINGS: Building[] = [
       photographer: 'Schlaier',
       license: 'PD',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Glaskuppel_des_Reichstagsgeb%C3%A4ude_Deutscher_Bundestag_Berlin.JPG',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1111,
     },
     extraImages: [
       {
@@ -1246,8 +1246,8 @@ export const EUROPE_GERMANIC_BUILDINGS: Building[] = [
       photographer: 'Calips',
       license: 'CC BY-SA 3.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Baden-W%C3%BCrttemberg_Weil_am_Rhein_Vitra_Fire_station_01.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1068,
     },
     extraImages: [
       {
@@ -1314,8 +1314,8 @@ export const EUROPE_GERMANIC_BUILDINGS: Building[] = [
       photographer: 'Beat Ruest',
       license: 'CC BY 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Aerial_view_of_KKL_Luzern_with_Pilatus.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 900,
     },
     extraImages: [
       {

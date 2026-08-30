@@ -917,8 +917,8 @@ export const EUROPE_CENTRAL_BUILDINGS: Building[] = [
       photographer: 'Maros Mraz',
       license: 'CC BY-SA 3.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Prague_-_Dancing_House.jpg',
-      width: 0,
-      height: 0,
+      width: 1200,
+      height: 1600,
     },
     extraImages: [
       {

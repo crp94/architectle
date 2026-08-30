@@ -487,8 +487,8 @@ export const AMERICAS_SOUTHERN_BUILDINGS: Building[] = [
       photographer: 'Matheus Carvalho Teixeira',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Fachada_frontal_da_Casa_de_Vidro.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1195,
     },
     extraImages: [
       {
@@ -625,8 +625,8 @@ export const AMERICAS_SOUTHERN_BUILDINGS: Building[] = [
       photographer: 'Tissiana de A. de Souza',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Catedral_Metropolitana_de_Brasilia.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1493,
     },
     extraImages: [
       {
@@ -688,8 +688,8 @@ export const AMERICAS_SOUTHERN_BUILDINGS: Building[] = [
       photographer: 'Maria Fátima Leite',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Vista_Frontal_do_MUSEU_DE_ARTE_CONTEMPOR%C3%82NEA_DE_NITER%C3%93I..._Projeto_de_Oscar_Niemeyer.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1067,
     },
     extraImages: [
       {

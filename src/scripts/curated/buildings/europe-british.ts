@@ -118,8 +118,8 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
       photographer: 'Txllxt TxllxT',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Greenwich_-_Grand_Square_-_View_South_on_Two_Domes_of_Greenwich_Hospital.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1071,
     },
     extraImages: [
       {
@@ -180,8 +180,8 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
       photographer: 'Julian Herzog',
       license: 'CC BY 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Sheldonian_Theatre_Oxford_2023_03.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1077,
     },
     extraImages: [
       {
@@ -242,8 +242,8 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
       photographer: "It's No Game",
       license: 'CC BY 2.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:St_Stephen_Walbrook_from_NNE.jpg',
-      width: 0,
-      height: 0,
+      width: 1209,
+      height: 1600,
     },
     extraImages: [
       {
@@ -480,8 +480,8 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
       photographer: 'Tony Hisgett',
       license: 'CC BY 2.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hill_House_1_(36698087814).jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1030,
     },
     extraImages: [
       {
@@ -543,8 +543,8 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
       photographer: 'Gunnar Klack',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:2002-05-Scotland-Street-School-Museum.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1307,
     },
     extraImages: [
       {
@@ -1007,8 +1007,8 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
       photographer: 'Keith Page',
       license: 'CC BY-SA 2.0',
       sourceUrl: "https://commons.wikimedia.org/wiki/File:Lloyd's_building_2025-04-03.jpg",
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1067,
     },
     extraImages: [
       {
@@ -1069,8 +1069,8 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
       photographer: 'Fred Romero',
       license: 'CC BY 2.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:London_-_The_O2_%E2%80%93_Millennium_Dome.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1067,
     },
     extraImages: [
       {
@@ -1319,8 +1319,8 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
       photographer: 'Aurelien Guichard',
       license: 'CC BY-SA 2.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:30_St_Mary_Axe_from_Leadenhall_Street.jpg',
-      width: 0,
-      height: 0,
+      width: 1280,
+      height: 853,
     },
     extraImages: [
       {
@@ -1384,8 +1384,8 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
       photographer: 'Rafa Esteve',
       license: 'CC BY-SA 3.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:The_Shard_from_the_bottom.jpg',
-      width: 0,
-      height: 0,
+      width: 1067,
+      height: 1600,
     },
     extraImages: [
       {
@@ -1454,8 +1454,8 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
       photographer: 'Ardfern',
       license: 'CC BY-SA 3.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Sainsbury_Wing,_National_Gallery,_London,_March_2015_(01).JPG',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1200,
     },
     extraImages: [
       {

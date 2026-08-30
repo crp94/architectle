@@ -408,8 +408,8 @@ export const WESTASIA_BUILDINGS: Building[] = [
       photographer: 'Dursun Sülük',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:S%C3%BCleymaniye_Camii_2022.jpg',
-      width: 0,
-      height: 0,
+      width: 1067,
+      height: 1600,
     },
     extraImages: [
       {
@@ -475,8 +475,8 @@ export const WESTASIA_BUILDINGS: Building[] = [
       photographer: 'Dosseman',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Mihrimah_Sultan_Mosque_Uskudar_9528.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1065,
     },
     extraImages: [
       {

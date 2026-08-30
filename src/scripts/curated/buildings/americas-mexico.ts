@@ -673,8 +673,8 @@ export const AMERICAS_MEXICO_BUILDINGS: Building[] = [
       photographer: 'Dge',
       license: 'CC BY-SA 3.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Restaurante_Los_Manantiales_07.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1200,
     },
     extraImages: [
       {

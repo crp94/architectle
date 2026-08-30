@@ -129,24 +129,23 @@ async function fetchOriginal(url: string): Promise<Buffer> {
 // replacement can never touch a different building that happens to share
 // the literal `width: 0, height: 0` text — every as-yet-unfetched image in
 // the pool does.
-//
-// `occurrenceIndex` picks WHICH placeholder within that block to replace,
-// by position: 0 is the primary `image`, 1 is `extraImages[0]`, 2 is
-// `extraImages[1]` — this relies on curators writing fields in the same
-// order Building's own type declares them (image, then extraImages), which
-// is also this project's established authoring convention.
 function updateDimensionsInSource(
-  slug: string, width: number, height: number, buildingsDir: string, occurrenceIndex: number = 0,
+  slug: string, width: number, height: number, buildingsDir: string, commonsFile: string,
 ): void {
   const files = readdirSync(buildingsDir).filter((f) => f.endsWith('.ts'));
   const idMarker = `    id: '${slug}',\n`;
   const nextBlockMarker = '\n  {\n    id: \'';
-  // Indentation-flexible: the primary `image` block indents its fields with
-  // 6 spaces, while entries nested inside `extraImages: [...]` sit 8 deep.
-  // Occurrences are counted across BOTH in source order (primary first, then
-  // extras), matching the caller's occurrenceIndex convention. Each match
-  // keeps its own indentation when replaced.
-  const placeholderRe = /^([ ]*)width: 0,\n([ ]*)height: 0,\n/gm;
+  // Anchored on the job's own `commonsFile` line rather than any positional
+  // occurrence counting: a partially-completed prior run leaves an arbitrary
+  // subset of placeholders already replaced, which made every purely
+  // positional scheme (both the original literal count and its
+  // indentation-flexible successor) mis-target under resume. The
+  // commonsFile string is unique within a building's block by construction
+  // (a building never lists the same file twice), so the first placeholder
+  // after it — indentation-flexible, before the next commonsFile — is
+  // exactly this image's own width/height pair.
+  const singleQuoted = `commonsFile: '${commonsFile.replace(/\\/g, '\\\\').replace(/'/g, "\\'")}'`;
+  const placeholderRe = /^([ ]*)width: 0,\n([ ]*)height: 0,\n/m;
 
   for (const file of files) {
     const filePath = path.join(buildingsDir, file);
@@ -158,21 +157,30 @@ function updateDimensionsInSource(
     const blockEnd = nextIdx === -1 ? content.length : nextIdx + 1;
     const block = content.slice(idIdx, blockEnd);
 
-    const matches = [...block.matchAll(placeholderRe)];
-    if (matches.length <= occurrenceIndex) {
+    const anchorIdx = block.indexOf(singleQuoted);
+    if (anchorIdx === -1) {
+      throw new Error(
+        `fetchImages: curated entry for "${slug}" in ${file} has no commonsFile line matching `
+        + `${JSON.stringify(commonsFile)} — refusing to guess at a replacement.`,
+      );
+    }
+    const nextAnchorIdx = block.indexOf('commonsFile:', anchorIdx + singleQuoted.length);
+    const imageBlock = block.slice(anchorIdx, nextAnchorIdx === -1 ? block.length : nextAnchorIdx);
+
+    const m = imageBlock.match(placeholderRe);
+    if (!m || m.index === undefined) {
       // Already recorded (idempotent re-run found the AVIF present, so this
       // function is never called for it) or the file's formatting doesn't
       // match what curators actually wrote — surface loudly either way.
       throw new Error(
-        `fetchImages: found curated entry for "${slug}" in ${file} but its image block has only `
-        + `${matches.length} "width: 0, height: 0" placeholder(s), expected at least ${occurrenceIndex + 1} `
-        + `(occurrenceIndex ${occurrenceIndex}) — refusing to guess at a replacement.`,
+        `fetchImages: image ${JSON.stringify(commonsFile)} of "${slug}" in ${file} has no `
+        + '"width: 0, height: 0" placeholder — refusing to guess at a replacement.',
       );
     }
 
-    const m = matches[occurrenceIndex];
     const replacement = `${m[1]}width: ${width},\n${m[2]}height: ${height},\n`;
-    const updatedBlock = block.slice(0, m.index) + replacement + block.slice(m.index! + m[0].length);
+    const absIdx = anchorIdx + m.index;
+    const updatedBlock = block.slice(0, absIdx) + replacement + block.slice(absIdx + m[0].length);
     const updatedContent = content.slice(0, idIdx) + updatedBlock + content.slice(blockEnd);
     writeFileSync(filePath, updatedContent);
     return;
@@ -194,7 +202,6 @@ type ImageJob = {
   label: string; // e.g. "villa-la-rotonda" or "villa-la-rotonda extraImages[0]"
   commonsFile: string;
   imageIndex: number;
-  occurrenceIndex: number;
 };
 
 function jobsForBuilding(building: Building): ImageJob[] {
@@ -203,7 +210,6 @@ function jobsForBuilding(building: Building): ImageJob[] {
     label: building.id,
     commonsFile: building.image.commonsFile,
     imageIndex: 1,
-    occurrenceIndex: 0,
   }];
   for (const [i, extra] of (building.extraImages ?? []).entries()) {
     jobs.push({
@@ -211,7 +217,6 @@ function jobsForBuilding(building: Building): ImageJob[] {
       label: `${building.id} extraImages[${i}]`,
       commonsFile: extra.commonsFile,
       imageIndex: i + 2,
-      occurrenceIndex: i + 1,
     });
   }
   return jobs;
@@ -252,7 +257,7 @@ async function main(): Promise<void> {
         .toBuffer({ resolveWithObject: true });
 
       writeFileSync(path.resolve(process.cwd(), targetPath(job.slug, job.imageIndex)), data);
-      updateDimensionsInSource(job.slug, info.width, info.height, buildingsDir, job.occurrenceIndex);
+      updateDimensionsInSource(job.slug, info.width, info.height, buildingsDir, job.commonsFile);
       done += 1;
       console.log(`[${n}/${total}] ${job.label} ... ${info.width}x${info.height} done`);
     } catch (err) {

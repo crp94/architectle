@@ -786,8 +786,8 @@ export const AMERICAS_BUILDINGS: Building[] = [
       photographer: 'lachrimae72',
       license: 'CC0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Fallingwater3.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1051,
     },
     extraImages: [
       {
@@ -849,8 +849,8 @@ export const AMERICAS_BUILDINGS: Building[] = [
       photographer: 'Warren LeMay',
       license: 'CC BY-SA 2.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Frederick_C._Robie_House,_Woodlawn_Avenue_and_58th_Street,_Hyde_Park,_Chicago,_IL.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1200,
     },
     extraImages: [
       {
@@ -912,8 +912,8 @@ export const AMERICAS_BUILDINGS: Building[] = [
       photographer: 'Beyond My Ken',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Carson,_Pirie,_Scott_and_Company_Building_1_South_State_Street_from_north.jpg',
-      width: 0,
-      height: 0,
+      width: 1197,
+      height: 1600,
     },
     extraImages: [
       {
@@ -975,8 +975,8 @@ export const AMERICAS_BUILDINGS: Building[] = [
       photographer: 'Reading Tom',
       license: 'CC BY 2.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Guaranty_Building,_Buffalo,_New_York,_October_2012_-_01.jpg',
-      width: 0,
-      height: 0,
+      width: 1200,
+      height: 1600,
     },
     extraImages: [
       {
@@ -1037,8 +1037,8 @@ export const AMERICAS_BUILDINGS: Building[] = [
       photographer: 'Epicgenius',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:TWA_Flight_Center_exterior_oblique_view.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1002,
     },
     extraImages: [
       {
@@ -1099,8 +1099,8 @@ export const AMERICAS_BUILDINGS: Building[] = [
       photographer: 'Lewis Hulbert',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Gateway_Arch,_St._Louis.jpg',
-      width: 0,
-      height: 0,
+      width: 1464,
+      height: 1600,
     },
     extraImages: [
       {
@@ -1170,8 +1170,8 @@ export const AMERICAS_BUILDINGS: Building[] = [
       photographer: 'Carol M. Highsmith',
       license: 'PD',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Glass_House_2006.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1145,
     },
     extraImages: [
       {
@@ -1233,8 +1233,8 @@ export const AMERICAS_BUILDINGS: Building[] = [
       photographer: 'Citizen59',
       license: 'CC BY 3.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:550_Madison_Avenue_July2015.JPG',
-      width: 0,
-      height: 0,
+      width: 1510,
+      height: 1365,
     },
     extraImages: [
       {
@@ -1295,8 +1295,8 @@ export const AMERICAS_BUILDINGS: Building[] = [
       photographer: 'Derek Jensen (Tysto)',
       license: 'PD',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Pittsburgh-pennsylvania-ppg-place-2007.jpg',
-      width: 0,
-      height: 0,
+      width: 1200,
+      height: 1600,
     },
     extraImages: [
       {
@@ -1357,8 +1357,8 @@ export const AMERICAS_BUILDINGS: Building[] = [
       photographer: 'Carol M. Highsmith',
       license: 'PD',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Kimbell_Art_Museum_Highsmith.jpg',
-      width: 0,
-      height: 0,
+      width: 900,
+      height: 1600,
     },
     extraImages: [
       {
@@ -1420,8 +1420,8 @@ export const AMERICAS_BUILDINGS: Building[] = [
       photographer: 'Difference engine',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:East_Building_of_the_National_Gallery_of_Art,_2019.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1067,
     },
     extraImages: [
       {
@@ -1483,8 +1483,8 @@ export const AMERICAS_BUILDINGS: Building[] = [
       photographer: 'Leviclancy',
       license: 'CC0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Walt_Disney_Concert_Hall_exterior_01.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1064,
     },
     extraImages: [
       {
@@ -1545,8 +1545,8 @@ export const AMERICAS_BUILDINGS: Building[] = [
       photographer: 'Glenda Altarejos',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Breuer2.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1068,
     },
     extraImages: [
       {
@@ -1607,8 +1607,8 @@ export const AMERICAS_BUILDINGS: Building[] = [
       photographer: "Bobak Ha'Eri",
       license: 'CC BY 3.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:2009-0522-MN-SJU-abbeychurch.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1200,
     },
     dossier: {
       en: "Abbot Baldwin Dworschak wanted a church built to outlast the twentieth century's fashions, and gave Breuer, his recent collaborator on UNESCO's Paris headquarters, a brief with almost no precedent to follow: reformed liturgy had not yet settled on a plan type for an American Benedictine church at this scale. Breuer's design turns the whole building around a single idea, that the bell tower need not sit on the church but in front of it: a freestanding trapezoidal slab, 34 metres tall and shaped by the engineer Pier Luigi Nervi's structural advice, stands clear of the church roof and is punched through with a cross-shaped opening that reads, depending on the light, as either void or symbol. Behind it a honeycomb wall of concrete hexagons, each fitted with a pane of stained glass by the monk-artist Brother Bronislaus Bak, forms the entire north facade and floods the nave with colored light. Monks did much of the concrete work themselves; the church was consecrated in 1961 as the centrepiece of a wider Breuer-designed monastic and university campus, and remains, more than sixty years on, in daily liturgical use.",
@@ -1660,8 +1660,8 @@ export const AMERICAS_BUILDINGS: Building[] = [
       photographer: 'Thomas Ledl',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Biosphere,_Montreal.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1536,
     },
     extraImages: [
       {
@@ -1722,8 +1722,8 @@ export const AMERICAS_BUILDINGS: Building[] = [
       photographer: 'Wmpearl',
       license: 'CC0',
       sourceUrl: "https://commons.wikimedia.org/wiki/File:Fly's_Eye_Dome_by_Buckminster_Fuller,_Crystal_Bridges_Museum.JPG",
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1067,
     },
     dossier: {
       en: 'Fuller had sketched dome shells punched with circular openings, which he called eyes, as early as 1965, but it took the surfboard manufacturer John Warren\'s expertise in moulding large curved fibreglass forms, and a young unlicensed architect named Norman Foster working in Fuller\'s circle, to get a buildable version off paper by the late 1970s. Three hand-built prototypes came out of that collaboration, at twelve, twenty-four and fifty feet across, the largest requiring dozens of unique moulded panels bolted together into a single self-supporting shell with no internal frame at all — the oculi are not windows cut into a wall but part of the monocoque structure itself, sized and placed to balance daylighting against the shell\'s remaining strength. This fifty-foot dome appeared at Los Angeles\'s 1981 bicentennial celebrations and then went into storage for over three decades before the architectural historian Robert Rubin restored it and Crystal Bridges Museum installed it permanently on its lawn in 2017, the only Fuller-designed structure on long-term public outdoor display east of the Mississippi.',
@@ -1778,8 +1778,8 @@ export const AMERICAS_BUILDINGS: Building[] = [
       photographer: 'Beyond My Ken',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Whitney_Museum_from_west.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1407,
     },
     extraImages: [
       {
@@ -1843,8 +1843,8 @@ export const AMERICAS_BUILDINGS: Building[] = [
       photographer: 'Michael Barera',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Minneapolis_April_2025_46_(Guthrie_Theater_from_Gold_Medal_Park).jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1600,
     },
     extraImages: [
       {
@@ -1910,8 +1910,8 @@ export const AMERICAS_BUILDINGS: Building[] = [
       photographer: 'Steven Pavlov',
       license: 'CC BY-SA 3.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:The_Seattle_Central_Library.jpg',
-      width: 0,
-      height: 0,
+      width: 1200,
+      height: 800,
     },
     extraImages: [
       {
@@ -1979,8 +1979,8 @@ export const AMERICAS_BUILDINGS: Building[] = [
       photographer: 'Donaldroszz',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Oculus_World_Trade_Center.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1065,
     },
     extraImages: [
       {
@@ -2044,8 +2044,8 @@ export const AMERICAS_BUILDINGS: Building[] = [
       photographer: 'Michel Rathwell',
       license: 'CC BY 2.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:The_National_Gallery_of_Canada_Ottawa_(39348014150).jpg',
-      width: 0,
-      height: 0,
+      width: 1066,
+      height: 1600,
     },
     extraImages: [
       {
@@ -2109,8 +2109,8 @@ export const AMERICAS_BUILDINGS: Building[] = [
       photographer: 'Carol M. Highsmith',
       license: 'PD',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Vanna_Venturi_House_in_Chestnut_Hill,_Philadelphia,_Pennsylvania_LCCN2011631388.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1250,
     },
     extraImages: [
       {
@@ -2177,8 +2177,8 @@ export const AMERICAS_BUILDINGS: Building[] = [
       photographer: 'Smallbones',
       license: 'CC0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Venturi_Guild_House.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1067,
     },
     extraImages: [
       {
@@ -2251,8 +2251,8 @@ export const AMERICAS_BUILDINGS: Building[] = [
       photographer: 'Cliff',
       license: 'CC BY 2.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Seattle_Art_Museum_(2891587322).jpg',
-      width: 0,
-      height: 0,
+      width: 1280,
+      height: 960,
     },
     extraImages: [
       {
