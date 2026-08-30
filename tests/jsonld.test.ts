@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { buildingJsonLd, architectJsonLd, movementJsonLd } from '@/lib/jsonld';
+import { buildingJsonLd, architectJsonLd, movementJsonLd, websiteJsonLd, breadcrumbJsonLd } from '@/lib/jsonld';
 import { SITE_URL } from '@/lib/site';
 import { architect } from './fixtures/architect';
 import type { Building } from '@/types/building';
@@ -73,10 +73,24 @@ describe('buildingJsonLd', () => {
     expect(node.creator).toEqual({
       '@type': 'Person',
       name: 'Filippo Brunelleschi',
+      jobTitle: 'Architect',
       sameAs: 'https://www.wikidata.org/wiki/Q154934',
       birthDate: String(a.born),
       deathDate: String(a.died),
     });
+  });
+
+  it('emits the building\'s own sameAs from wikidataId', () => {
+    const b = building({ wikidataId: 'Q3699556' });
+    const node = buildingJsonLd(b, architect());
+    expect(node.sameAs).toBe('https://www.wikidata.org/wiki/Q3699556');
+  });
+
+  it('omits sameAs gracefully when the building has no Wikidata item', () => {
+    const b = building({ wikidataId: null });
+    const node = buildingJsonLd(b, architect());
+    expect(node.sameAs).toBeUndefined();
+    expect('sameAs' in node).toBe(false);
   });
 
   it('falls back to inception when completed is null', () => {
@@ -102,6 +116,7 @@ describe('architectJsonLd', () => {
 
     expect(node['@type']).toBe('Person');
     expect(node.name).toBe('Lina Bo Bardi');
+    expect(node.jobTitle).toBe('Architect');
     expect(node.sameAs).toBe('https://www.wikidata.org/wiki/Q733498');
   });
 
@@ -123,16 +138,59 @@ describe('movementJsonLd', () => {
     expect(node.description).toBe(m.blurb.en);
     expect(node.url).toContain('/movement/renaissance');
   });
+
+  it('omits sameAs when no source in the movement is wikidata-kind', () => {
+    const m = movement();
+    expect(movementJsonLd(m).sameAs).toBeUndefined();
+    expect('sameAs' in movementJsonLd(m)).toBe(false);
+  });
+
+  it('surfaces sameAs from a recorded wikidata-kind source', () => {
+    const m = movement({
+      sources: [
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Renaissance_architecture', title: 'Renaissance architecture', license: 'CC BY-SA 4.0' },
+        { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q45604', title: 'Q45604', license: null },
+      ],
+    });
+    expect(movementJsonLd(m).sameAs).toBe('https://www.wikidata.org/wiki/Q45604');
+  });
+});
+
+describe('websiteJsonLd', () => {
+  it('emits a WebSite node with no fake SearchAction', () => {
+    const node = websiteJsonLd();
+    expect(node['@type']).toBe('WebSite');
+    expect(node.name).toBe('Architectle');
+    expect(node.url).toBe(SITE_URL);
+    expect('potentialAction' in node).toBe(false);
+  });
+});
+
+describe('breadcrumbJsonLd', () => {
+  it('emits a positioned BreadcrumbList from the given trail', () => {
+    const node = breadcrumbJsonLd([
+      { name: 'Architectle', url: SITE_URL },
+      { name: 'Buildings', url: `${SITE_URL}/buildings` },
+      { name: 'Dome of Santa Maria del Fiore', url: `${SITE_URL}/building/cupola-di-santa-maria-del-fiore` },
+    ]);
+
+    expect(node['@type']).toBe('BreadcrumbList');
+    expect(node.itemListElement).toHaveLength(3);
+    expect(node.itemListElement[0]).toEqual({ '@type': 'ListItem', position: 1, name: 'Architectle', item: SITE_URL });
+    expect(node.itemListElement[2].position).toBe(3);
+  });
 });
 
 describe('JSON-LD round-tripping', () => {
   it('every emitted object round-trips through JSON.parse(JSON.stringify(x)) unchanged', () => {
     const cases = [
       buildingJsonLd(building(), architect({ wikidataId: 'Q1' })),
-      buildingJsonLd(building(), architect({ wikidataId: null })),
+      buildingJsonLd(building({ wikidataId: null }), architect({ wikidataId: null })),
       architectJsonLd(architect({ wikidataId: 'Q1' })),
       architectJsonLd(architect({ wikidataId: null, born: null, died: null })),
       movementJsonLd(movement()),
+      websiteJsonLd(),
+      breadcrumbJsonLd([{ name: 'Architectle', url: SITE_URL }]),
     ];
 
     for (const node of cases) {
