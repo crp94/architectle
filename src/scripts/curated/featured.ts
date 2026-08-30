@@ -22,6 +22,13 @@ export const FEATURED_ARCHITECT_IDS: string[] = [
   'lina-bo-bardi', // 2 buildings (americas-southern.ts)
   'peter-zumthor', // 2 buildings (europe-germanic.ts), incl. Therme Vals
 
+  // --- Wave V2-3 batch B5 top-ups (europe-british.ts's pre-assigned
+  //     architects, wave5-contract-v2.md §3) ---
+  'norman-foster', // 4 buildings: europe-british.ts + europe-germanic.ts + asia.ts
+  'richard-rogers', // 3 buildings, all europe-british.ts
+  'zaha-hadid', // 3 buildings: europe-british.ts + europe-germanic.ts + asia.ts
+  'christopher-wren', // 4 buildings, all europe-british.ts
+
   // --- PENDING (Wave V2-3 curation fan-out fills these gaps) -------------
   // Every id below EITHER:
   //   (a) already exists in the pool but currently holds exactly 1
@@ -37,16 +44,16 @@ export const FEATURED_ARCHITECT_IDS: string[] = [
   //
   // (a) exists, currently 1 building:
   // 'antoni-gaudi', 'frank-lloyd-wright', 'le-corbusier',
-  // 'mies-van-der-rohe', 'zaha-hadid', 'norman-foster', 'oscar-niemeyer',
+  // 'mies-van-der-rohe', 'oscar-niemeyer',
   // 'alvar-aalto', 'louis-kahn', 'jorn-utzon', 'kenzo-tange',
   // 'filippo-brunelleschi', 'andrea-palladio', 'mimar-sinan',
   // 'walter-gropius', 'kazuyo-sejima', 'victor-horta',
-  // 'charles-rennie-mackintosh', 'moshe-safdie', 'richard-rogers',
+  // 'charles-rennie-mackintosh', 'moshe-safdie',
   // 'felix-candela', 'balkrishna-doshi',
   //
   // (b) not yet curated as a primary architect at all:
   // 'renzo-piano', 'tadao-ando', 'frank-gehry', 'rem-koolhaas', 'i-m-pei',
-  // 'christopher-wren', 'santiago-calatrava', 'eero-saarinen',
+  // 'santiago-calatrava', 'eero-saarinen',
   // 'louis-sullivan', 'jean-nouvel', 'alvaro-siza' (NB: already curated as
   // a NON-featured pool architect — check building count before adding),
   // 'toyo-ito', 'marcel-breuer', 'philip-johnson', 'buckminster-fuller',
