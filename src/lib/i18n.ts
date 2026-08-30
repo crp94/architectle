@@ -76,6 +76,11 @@ const en = {
   shareButton: 'Share',
   shareCopyButton: 'Copy',
   shareCopied: 'Copied to clipboard',
+  // Shown instead of shareCopied when a clipboard write itself rejects
+  // (codereview finding #4: denied permission, an insecure context, or the
+  // API simply being unavailable) — a visible failure state rather than a
+  // silently swallowed, unhandled rejection.
+  shareCopyFailed: "Couldn't copy",
   sharePreviewHeading: 'What gets shared',
   sharePreviewNote: 'Spoiler-free — no architect or building name.',
   playAgain: 'Play unlimited',
@@ -173,6 +178,15 @@ const en = {
   // architect (design spec §7, Task w4c).
   metaHomeDescription: 'Daily architecture puzzle #{n} ({date}) — name the architect from a widening crop of a building photo. A new building every day.',
   metaAboutDescription: 'What Architectle is, where its data comes from, and the honest limitations of a hand-curated pool of buildings and architects.',
+  // Root opengraph-image.tsx's `alt` export and second tagline line
+  // (codereview finding #7) — previously hardcoded English, now routed
+  // through `t('en', ...)` like every other player-facing string, so it
+  // can't silently drift from the rest of the app's copy.
+  ogHomeAlt: 'Architectle — name the architect from a widening crop of a building photo. A new building every day.',
+  ogDailyBuildingLine: 'A new building, every day.',
+  // The small "ARCHITECTLE ARCHIVE" eyebrow row shared by the architect and
+  // movement OG specimen-card routes (src/lib/ogSpecimenCard.tsx).
+  ogArchiveLabel: 'Architectle Archive',
 
   // Movement family labels (Movement.family, src/types/movement.ts)
   familyClassical: 'Classical',
@@ -202,6 +216,12 @@ const en = {
   clueSecondPhoto: 'Second photograph',
   clueMovementSibling: 'Movement',
   clueAlsoDesigned: 'Also designed',
+
+  // Alt text for the crop-stage photo and the clue strip's second photo
+  // while a round is unresolved (codereview finding #2: the real building
+  // name must never reach a screen reader before the round is solved/lost —
+  // Reveal.tsx's own photo keeps the real name, correctly, post-resolution).
+  mysteryBuildingAlt: 'Mystery building — cropped detail',
 };
 
 type Strings = typeof en;
@@ -267,6 +287,7 @@ const es: Strings = {
   shareButton: 'Compartir',
   shareCopyButton: 'Copiar',
   shareCopied: 'Copiado al portapapeles',
+  shareCopyFailed: 'No se pudo copiar',
   sharePreviewHeading: 'Qué se comparte',
   sharePreviewNote: 'Sin spoilers — sin el nombre del arquitecto ni del edificio.',
   playAgain: 'Jugar sin límite',
@@ -345,6 +366,9 @@ const es: Strings = {
   metaMovementsIndexDescription: 'Todos los movimientos arquitectónicos presentes en el listado de Architectle — {count} movimientos, con sus arquitectos y edificios.',
   metaHomeDescription: 'Puzle diario de arquitectura n.º {n} ({date}) — adivina el arquitecto a partir de un recorte que se va ampliando de la foto de un edificio. Un edificio nuevo cada día.',
   metaAboutDescription: 'Qué es Architectle, de dónde vienen sus datos y las limitaciones honestas de un listado de edificios y arquitectos curado a mano.',
+  ogHomeAlt: 'Architectle — adivina al arquitecto a partir de un encuadre que se abre poco a poco de la foto de un edificio. Un edificio nuevo cada día.',
+  ogDailyBuildingLine: 'Un edificio nuevo, cada día.',
+  ogArchiveLabel: 'Archivo de Architectle',
 
   familyClassical: 'Clásica',
   familyMedieval: 'Medieval',
@@ -364,6 +388,8 @@ const es: Strings = {
   clueSecondPhoto: 'Segunda fotografía',
   clueMovementSibling: 'Movimiento',
   clueAlsoDesigned: 'También diseñó',
+
+  mysteryBuildingAlt: 'Edificio misterioso — detalle recortado',
 };
 
 const it: Strings = {
@@ -427,6 +453,7 @@ const it: Strings = {
   shareButton: 'Condividi',
   shareCopyButton: 'Copia',
   shareCopied: 'Copiato negli appunti',
+  shareCopyFailed: 'Copia non riuscita',
   sharePreviewHeading: 'Cosa viene condiviso',
   sharePreviewNote: 'Senza spoiler — niente nome dell’architetto o dell’edificio.',
   playAgain: 'Gioca senza limiti',
@@ -505,6 +532,9 @@ const it: Strings = {
   metaMovementsIndexDescription: 'Tutti i movimenti architettonici presenti nel catalogo di Architectle — {count} movimenti, con i loro architetti ed edifici.',
   metaHomeDescription: "Puzzle quotidiano di architettura n. {n} ({date}) — indovina l'architetto da un ritaglio che si allarga della foto di un edificio. Un edificio nuovo ogni giorno.",
   metaAboutDescription: "Cos'è Architectle, da dove vengono i suoi dati e i limiti onesti di un catalogo di edifici e architetti curato a mano.",
+  ogHomeAlt: "Architectle — indovina l'architetto da un'inquadratura che si allarga poco a poco della foto di un edificio. Un edificio nuovo ogni giorno.",
+  ogDailyBuildingLine: 'Un nuovo edificio, ogni giorno.',
+  ogArchiveLabel: 'Archivio di Architectle',
 
   familyClassical: 'Classica',
   familyMedieval: 'Medievale',
@@ -524,6 +554,8 @@ const it: Strings = {
   clueSecondPhoto: 'Seconda fotografia',
   clueMovementSibling: 'Movimento',
   clueAlsoDesigned: 'Ha anche progettato',
+
+  mysteryBuildingAlt: 'Edificio misterioso — dettaglio ritagliato',
 };
 
 export const STRINGS: Record<Locale, Strings> = { en, es, it };
