@@ -358,6 +358,20 @@ export const EUROPE_GERMANIC_BUILDINGS: Building[] = [
       width: 1600,
       height: 1401,
     },
+    // Wave V2-3, batch B1: image pass on the existing entry. Downloaded and
+    // looked at the current primary above (kept — clean, diagnostic
+    // roof-plate/column composition) and added one corner elevation showing
+    // the granite plinth and column base up close.
+    extraImages: [
+      {
+        commonsFile: 'File:Berlin-Neue Nationalgalerie-06-Ludwig Mies van der Rohe-2016-gje.jpg',
+        photographer: 'Gerd Eichmann',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Berlin-Neue_Nationalgalerie-06-Ludwig_Mies_van_der_Rohe-2016-gje.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
     dossier: {
       en: 'Mies was seventy-six when the commission arrived in 1962, and he answered it with a design he had already made twice and never built: the unrealised Bacardi headquarters for Santiago de Cuba of 1957 and the Georg Schäfer museum for Schweinfurt of 1960–63, both a roof on eight columns over an interior without supports. He asked his friend Frei Otto to help with the statics of the 1,260-tonne roof, and Otto replaced the four central piers with two on each side. The pavilion sits on a granite terrace 105 by 110 metres that takes up the fall towards the Landwehrkanal; the glass walls are set back 7.2 metres on every side, so the roof reads as a free plate. It was assembled at working height on the plinth and lifted by twenty-four synchronised jacks. Construction began on 23 September 1965 and finished in 1968, a year before Mies died.',
       es: 'Mies tenía setenta y seis años cuando llegó el encargo, en 1962, y respondió con un proyecto que ya había hecho dos veces sin llegar a construirlo: la sede de Bacardí para Santiago de Cuba de 1957 y el museo Georg Schäfer de Schweinfurt de 1960-63, ambos una cubierta sobre ocho pilares sobre un interior sin apoyos. Pidió a su amigo Frei Otto ayuda con el cálculo de la cubierta de 1.260 toneladas, y Otto sustituyó los cuatro pilares centrales por dos en cada lado. El pabellón se asienta sobre una terraza de granito de 105 por 110 metros que salva el desnivel hacia el Landwehrkanal; los cerramientos de vidrio se retranquean 7,2 metros en todos los lados, de modo que la cubierta se lee como una placa exenta. Se montó a la altura de trabajo sobre el zócalo y se izó con veinticuatro gatos sincronizados. Las obras empezaron el 23 de septiembre de 1965 y acabaron en 1968, un año antes de la muerte de Mies.',
@@ -758,6 +772,139 @@ export const EUROPE_GERMANIC_BUILDINGS: Building[] = [
       { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q156722', title: 'Altes Museum (Q156722)', license: null },
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Altes_Museum', title: 'Altes Museum', license: 'CC BY-SA 4.0' },
       { kind: 'wikipedia', url: 'https://de.wikipedia.org/wiki/Altes_Museum', title: 'Altes Museum', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  // --- Wave V2-3, batch B1 (US classic-modern top-up) ---
+  // Filed here, not in americas.ts, to match how mies-van-der-rohe is
+  // already filed (Neue Nationalgalerie, above) — both his US works below
+  // sit alongside his existing entry rather than splitting his buildings
+  // across two regional files. US FoP is unconditional for buildings
+  // regardless of the architect's death year; both entries are exteriors
+  // in any case.
+  {
+    id: 'seagram-building',
+    wikidataId: 'Q737484',
+    name: {
+      en: 'Seagram Building',
+      es: 'Seagram Building',
+      it: 'Seagram Building',
+    },
+    architectId: 'mies-van-der-rohe',
+    coArchitects: ['philip-johnson'],
+    location: { city: 'New York, New York', countryCode: 'US', lat: 40.75861, lon: -73.97222 },
+    inception: 1955,
+    completed: 1958,
+    demolished: null,
+    typology: 'tower',
+    materials: ['steel-and-glass', 'stone'],
+    structure: {
+      en: 'A steel frame, concrete-encased for fire code, is faced with non-structural bronze I-beam mullions and bronze-tinted glass, set back thirty metres from the avenue behind an open granite plaza with two pools.',
+      es: 'Una estructura de acero, revestida de hormigón por normativa contra incendios, se reviste de perfiles no estructurales en I de bronce y vidrio tintado en bronce, retranqueada treinta metros respecto a la avenida tras una plaza abierta de granito con dos estanques.',
+      it: 'Una struttura d\'acciaio, rivestita in calcestruzzo per normativa antincendio, è rivestita da profili non strutturali a I in bronzo e vetro tinto bronzo, arretrata di trenta metri rispetto al viale dietro una piazza aperta di granito con due vasche.',
+    },
+    program: {
+      en: 'Headquarters commissioned by the Seagram Company, the Canadian distiller, at the initiative of Phyllis Lambert, daughter of its chairman.',
+      es: 'Sede encargada por la destilería canadiense Seagram Company, por iniciativa de Phyllis Lambert, hija de su presidente.',
+      it: 'Sede commissionata dalla distilleria canadese Seagram Company, per iniziativa di Phyllis Lambert, figlia del suo presidente.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Mixed-use office tower with ground-floor restaurants, owned by RFR Holding since 2000.',
+      es: 'Torre de oficinas de uso mixto con restaurantes en planta baja, propiedad de RFR Holding desde 2000.',
+      it: 'Torre per uffici a uso misto con ristoranti al piano terra, di proprietà di RFR Holding dal 2000.',
+    },
+    detailRect: { x: 0.44, y: 0.42, w: 0.30, h: 0.30 },
+    image: {
+      commonsFile: 'File:Seagram Building (4114889237).jpg',
+      photographer: 'Tom Ravenscrodt',
+      license: 'CC BY 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Seagram_Building_(4114889237).jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Seagram Building.jpg',
+        photographer: 'Jo Baert',
+        license: 'CC BY-SA 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Seagram_Building.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: 'Mies received the commission in 1954 through Phyllis Lambert, the Seagram chairman\'s daughter, who rejected an earlier scheme and lobbied her father to hire Mies instead. His design set the tower back thirty metres from Park Avenue behind an open granite plaza with two pools — a use of ground plan that cost Seagram roughly a third of the site\'s buildable value and was copied so widely that New York\'s 1961 zoning code built plaza bonuses around it. The curtain wall reads as bronze and grey glass, but the visible I-beam mullions carry no load; fire code required Mies\'s real structural steel to be encased in concrete, so he applied non-structural bronze extrusions merely to keep the frame legible from outside, a compromise he accepted rather than build a blank fireproofed shaft. Johnson designed the lobby, elevators and the Four Seasons restaurant. At roughly two hundred dollars per square foot it was the most expensive office building of its time, and it became the reference point against which every glass tower after it was measured.',
+      es: 'Mies recibió el encargo en 1954 gracias a Phyllis Lambert, hija del presidente de Seagram, que rechazó un primer proyecto y convenció a su padre para contratarlo a él. Su diseño retranqueó la torre treinta metros respecto a Park Avenue, tras una plaza abierta de granito con dos estanques —una disposición que costó a Seagram cerca de un tercio del valor edificable del solar y que se copió tan ampliamente que el código de zonificación de Nueva York de 1961 incorporó bonificaciones a cambio de plazas siguiendo justo ese modelo—. El muro cortina se lee como bronce y vidrio gris, pero los perfiles en I visibles no cargan nada: la normativa contra incendios obligaba a revestir de hormigón el acero estructural real, así que Mies aplicó perfiles de bronce no estructurales solo para que la estructura siguiera siendo legible desde fuera, una concesión que aceptó antes que construir un cajón ciego ignífugo. Johnson proyectó el vestíbulo, los ascensores y el restaurante Four Seasons. Con unos doscientos dólares por pie cuadrado fue el edificio de oficinas más caro de su época, y se convirtió en la referencia frente a la que se midió cada torre de vidrio posterior.',
+      it: 'Mies ricevette l\'incarico nel 1954 grazie a Phyllis Lambert, figlia del presidente di Seagram, che respinse un primo progetto e convinse il padre ad assumere lui. Il suo disegno arretrò la torre di trenta metri rispetto a Park Avenue, dietro una piazza aperta di granito con due vasche — una disposizione che costò a Seagram circa un terzo del valore edificabile del lotto e che fu copiata così ampiamente che il codice urbanistico newyorchese del 1961 introdusse bonus in cambio di piazze proprio su questo modello. La parete vetrata si legge come bronzo e vetro grigio, ma i profili a I visibili non portano alcun carico: le norme antincendio imponevano di rivestire in calcestruzzo l\'acciaio strutturale reale, così Mies applicò profili di bronzo non strutturali solo per mantenere leggibile la struttura dall\'esterno, un compromesso che accettò piuttosto che costruire un blocco cieco ignifugo. Johnson progettò l\'atrio, gli ascensori e il ristorante Four Seasons. Con circa duecento dollari al piede quadrato fu l\'edificio per uffici più costoso della sua epoca, e divenne il riferimento rispetto a cui si misurò ogni torre di vetro successiva.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q737484', title: 'Seagram Building (Q737484)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Seagram_Building', title: 'Seagram Building', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'farnsworth-house',
+    wikidataId: 'Q1397013',
+    name: {
+      en: 'Farnsworth House',
+      es: 'Farnsworth House',
+      it: 'Farnsworth House',
+    },
+    architectId: 'mies-van-der-rohe',
+    location: { city: 'Plano, Illinois', countryCode: 'US', lat: 41.635, lon: -88.5357 },
+    inception: 1949,
+    completed: 1951,
+    demolished: null,
+    typology: 'domestic',
+    materials: ['steel-and-glass', 'stone'],
+    structure: {
+      en: 'A platform of white-painted steel is raised on eight wide-flange columns, welded to the floor and roof slabs from outside the glass skin so no post interrupts the interior, with a travertine floor set above the Fox River\'s flood line.',
+      es: 'Una plataforma de acero pintado de blanco se alza sobre ocho pilares de ala ancha, soldados a las losas de suelo y cubierta desde fuera de la piel de vidrio para que ningún soporte interrumpa el interior, con un suelo de travertino situado por encima de la línea de crecida del río Fox.',
+      it: 'Una piattaforma di acciaio verniciato di bianco è sollevata su otto pilastri ad ali larghe, saldati alle lastre di pavimento e copertura dall\'esterno della pelle vetrata così che nessun sostegno interrompa l\'interno, con un pavimento di travertino posto sopra la linea di piena del fiume Fox.',
+    },
+    program: {
+      en: 'A weekend retreat for the Chicago nephrologist Edith Farnsworth, commissioned in 1945 as a glass box removed from the city.',
+      es: 'Casa de fin de semana para la nefróloga de Chicago Edith Farnsworth, encargada en 1945 como una caja de vidrio alejada de la ciudad.',
+      it: 'Casa per il fine settimana della nefrologa di Chicago Edith Farnsworth, commissionata nel 1945 come scatola di vetro lontana dalla città.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'House museum operated by the National Trust for Historic Preservation, which acquired it in 2003.',
+      es: 'Casa museo gestionada por el National Trust for Historic Preservation, que la adquirió en 2003.',
+      it: 'Casa museo gestita dal National Trust for Historic Preservation, che l\'ha acquisita nel 2003.',
+    },
+    detailRect: { x: 0.24, y: 0.36, w: 0.30, h: 0.30 },
+    image: {
+      commonsFile: 'File:Farnsworth House Exterior 1.jpg',
+      photographer: 'Lessismore2020',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Farnsworth_House_Exterior_1.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Farnsworth House by Mies Van Der Rohe - exterior-2.jpg',
+        photographer: 'Victor Grigas',
+        license: 'CC BY-SA 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Farnsworth_House_by_Mies_Van_Der_Rohe_-_exterior-2.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: 'Farnsworth commissioned the house in 1945 wanting nothing more than a glass box to escape to on weekends from her Chicago medical practice, and Mies gave her a platform of white-painted steel raised on eight wide-flange columns, floating a travertine floor above the Fox River\'s flood line — a margin the river has since exceeded five times, most severely in 1996, when the water reached five feet inside. Two rectangular slabs, floor and roof, are welded to the columns from outside the glass skin so that no post interrupts the interior, which Mies divided only with a free-standing walnut core holding the kitchen, bathroom and a fireplace; every other wall is single-pane glass held by chrome-capped steel mullions. Costs roughly tripled over the estimate, and Mies sued Farnsworth for his fee while she countersued over the overruns and the house\'s now-famous discomforts — condensation, mosquitoes, heat. He won in court in 1953; the house\'s reputation, mostly independent of its client\'s ordeal, has only grown since.',
+      es: 'Farnsworth encargó la casa en 1945 sin pedir más que una caja de vidrio donde refugiarse los fines de semana lejos de su consulta médica en Chicago, y Mies le dio una plataforma de acero pintado de blanco alzada sobre ocho pilares de ala ancha, con un suelo de travertino flotando por encima de la línea de crecida del río Fox —un margen que el río ha superado ya cinco veces, la peor en 1996, cuando el agua alcanzó metro y medio dentro de la casa—. Dos losas rectangulares, suelo y cubierta, se sueldan a los pilares desde fuera de la piel de vidrio para que ningún soporte interrumpa el interior, que Mies dividió solo con un núcleo exento de nogal con la cocina, el baño y una chimenea; el resto de los muros es vidrio de una sola hoja sujeto por perfiles de acero rematados en cromo. El coste casi se triplicó sobre lo presupuestado, y Mies demandó a Farnsworth por sus honorarios mientras ella reconvenía por los sobrecostes y las ya célebres incomodidades de la casa —condensación, mosquitos, calor—. Él ganó el pleito en 1953; la reputación de la casa, en buena medida ajena al calvario de su clienta, no ha dejado de crecer desde entonces.',
+      it: 'Farnsworth commissionò la casa nel 1945 chiedendo soltanto una scatola di vetro in cui rifugiarsi nei fine settimana lontano dal proprio studio medico di Chicago, e Mies le diede una piattaforma di acciaio verniciato di bianco sollevata su otto pilastri ad ali larghe, con un pavimento di travertino sospeso sopra il livello di piena del fiume Fox — un margine che il fiume ha già superato cinque volte, la più grave nel 1996, quando l\'acqua raggiunse più di un metro all\'interno. Due lastre rettangolari, pavimento e copertura, sono saldate ai pilastri dall\'esterno della pelle vetrata così che nessun sostegno interrompa l\'interno, che Mies divise soltanto con un nucleo isolato in noce contenente cucina, bagno e camino; ogni altra parete è vetro monolastra tenuto da profili d\'acciaio con cappucci cromati. Il costo quasi triplicò rispetto al preventivo, e Mies fece causa a Farnsworth per il proprio compenso mentre lei controquerelò per gli extra-costi e per i ormai celebri disagi della casa — condensa, zanzare, caldo. Vinse la causa nel 1953; la reputazione della casa, in gran parte indipendente dal calvario della cliente, da allora è cresciuta soltanto.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1397013', title: 'Farnsworth House (Q1397013)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Farnsworth_House', title: 'Farnsworth House', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.farnsworthhouse.org/history/', title: 'Farnsworth House — History', license: null },
     ],
     tier: 'canon',
   },
