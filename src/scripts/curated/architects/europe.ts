@@ -113,7 +113,11 @@ export const EUROPE_ARCHITECTS: Architect[] = [
     gender: 'man',
     born: 1852,
     died: 1926,
-    floruit: { start: 1883, end: 1926, override: false },
+    // Start moved to 1882 (from 1883) by wave v2-3 batch b3: Sagrada Família's
+    // own inception year is 1882 (cornerstone laid under the original
+    // architect Villar, months before Gaudí took over), and floruit-consistent
+    // keys on a building's completed ?? inception.
+    floruit: { start: 1882, end: 1926, override: false },
     movements: [{ id: 'art-nouveau', primary: true }],
     workRegions: [],
     workCentroid: { lat: 0, lon: 0 },

@@ -19,8 +19,12 @@ export const FEATURED_ARCHITECT_IDS: string[] = [
   // --- Seeded (verified: id exists AND already holds >=2 buildings via
   //     architectId in the current pool, as of this task) ---
   'luis-barragan', // 3 buildings (americas-mexico.ts)
-  'lina-bo-bardi', // 2 buildings (americas-southern.ts)
+  'lina-bo-bardi', // 3 buildings (americas-southern.ts), incl. Casa de Vidro (b3)
   'peter-zumthor', // 2 buildings (europe-germanic.ts), incl. Therme Vals
+  'antoni-gaudi', // 4 buildings (europe.ts), topped up by b3
+  'felix-candela', // 3 buildings (americas-mexico.ts + europe.ts), topped up by b3
+  'oscar-niemeyer', // 3 buildings (americas-southern.ts), topped up by b3
+  'alvaro-siza', // 3 buildings (europe.ts), topped up by b3
 
   // --- PENDING (Wave V2-3 curation fan-out fills these gaps) -------------
   // Every id below EITHER:
@@ -36,21 +40,22 @@ export const FEATURED_ARCHITECT_IDS: string[] = [
   // before moving it up to the seeded list above.
   //
   // (a) exists, currently 1 building:
-  // 'antoni-gaudi', 'frank-lloyd-wright', 'le-corbusier',
-  // 'mies-van-der-rohe', 'zaha-hadid', 'norman-foster', 'oscar-niemeyer',
+  // 'frank-lloyd-wright', 'le-corbusier',
+  // 'mies-van-der-rohe', 'zaha-hadid', 'norman-foster',
   // 'alvar-aalto', 'louis-kahn', 'jorn-utzon', 'kenzo-tange',
   // 'filippo-brunelleschi', 'andrea-palladio', 'mimar-sinan',
   // 'walter-gropius', 'kazuyo-sejima', 'victor-horta',
   // 'charles-rennie-mackintosh', 'moshe-safdie', 'richard-rogers',
-  // 'felix-candela', 'balkrishna-doshi',
+  // 'balkrishna-doshi',
   //
   // (b) not yet curated as a primary architect at all:
   // 'renzo-piano', 'tadao-ando', 'frank-gehry', 'rem-koolhaas', 'i-m-pei',
   // 'christopher-wren', 'santiago-calatrava', 'eero-saarinen',
-  // 'louis-sullivan', 'jean-nouvel', 'alvaro-siza' (NB: already curated as
-  // a NON-featured pool architect — check building count before adding),
+  // 'louis-sullivan', 'jean-nouvel',
   // 'toyo-ito', 'marcel-breuer', 'philip-johnson', 'buckminster-fuller',
   // 'michelangelo', 'gustave-eiffel', 'antonin-raymond', 'wang-shu' (also
   // already in the pool — check building count), 'denise-scott-brown',
   // 'robert-venturi',
+  // antoni-gaudi, felix-candela, oscar-niemeyer and alvaro-siza moved to the
+  // seeded list above by wave v2-3 batch b3 (2026-08-30).
 ];

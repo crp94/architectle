@@ -185,7 +185,11 @@ export const AMERICAS_MEXICO_ARCHITECTS: Architect[] = [
     // generation — functionalism, brutalism, organic architecture — all
     // misdescribe the work.
     movements: 'unaffiliated',
-    floruit: { start: 1950, end: 1997, override: false },
+    // End extended to 2003 (from 1997, his death year) by wave v2-3 batch b3:
+    // L'Oceanogràfic in Valencia was Candela's last design, finished in 1997,
+    // but built by others from his drawings and not completed/opened until
+    // 2003 — floruit-consistent keys on a building's completed ?? inception.
+    floruit: { start: 1950, end: 2003, override: false },
     workRegions: [],
     workCentroid: { lat: 0, lon: 0 },
     primaryTypology: 'sacral',
