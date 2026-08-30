@@ -32,4 +32,29 @@ describe('AxisChip (region)', () => {
     const chip = screen.getByTestId('axis-chip-region');
     expect(chip.getAttribute('aria-label')).toContain('noreste');
   });
+
+  it('renders via the SpecimenLabel primitive, tinting only the value text (no accent-fill/ink-text pairing)', () => {
+    // v2 re-skin (design spec §5): AxisChip is now a thin wrapper around
+    // `<SpecimenLabel />`. A 'partial' match must tint just the VALUE in
+    // `accent` on plain `paper` — never fill a background with `accent`
+    // behind `ink` text (the under-contrast pairing flagged in the t2b
+    // design-system report).
+    const result: RegionResult = { match: 'REGION', bearing: null };
+    render(<AxisChip axis="region" result={result} locale="en" />);
+
+    const chip = screen.getByTestId('axis-chip-region');
+    expect(chip.getAttribute('data-tone')).toBe('partial');
+    const specimen = screen.getByTestId('specimen-label');
+    expect(specimen.className).not.toContain('bg-accent');
+    expect(screen.getByTestId('specimen-label-value').className).toContain('text-accent');
+  });
+
+  it('knocks the label out (ink fill, paper text) for an exact match', () => {
+    const result: RegionResult = { match: 'EXACT', bearing: null };
+    render(<AxisChip axis="region" result={result} locale="en" />);
+
+    expect(screen.getByTestId('axis-chip-region').getAttribute('data-tone')).toBe('exact');
+    expect(screen.getByTestId('specimen-label').className).toContain('bg-ink');
+    expect(screen.getByTestId('specimen-label-value').className).toContain('text-paper');
+  });
 });

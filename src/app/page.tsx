@@ -34,11 +34,20 @@ export default async function Home({
 
   return (
     <main className="flex flex-1 flex-col bg-paper">
+      {/* Museum/gallery editorial re-skin (design spec §5). v1's header was
+          a filled `bg-accent` banner with `text-ink` set directly on top of
+          it — the t2b design-system report flags that pairing as a genuine
+          contrast regression once `accent` became a deep oxblood (~1.7:1,
+          nowhere near AA), not just a style mismatch. This header now stays
+          on the plain paper ground with a quiet hairline close, the same
+          idiom `<SectionRule />` uses elsewhere — `accent` never appears as
+          a fill behind `ink` text anywhere in this file. */}
       <div
-        className="flex flex-col items-center gap-2 border-ink bg-accent px-8 py-6"
+        className="flex flex-col items-center gap-2 px-8 py-6"
         style={{
-          borderBottomWidth: theme.rule.thick,
-          borderStyle: "solid",
+          borderBottomWidth: theme.rule.hairline,
+          borderBottomColor: theme.color.frameLine,
+          borderBottomStyle: "solid",
           fontFamily: theme.type.display,
         }}
       >
@@ -46,8 +55,8 @@ export default async function Home({
           {t(locale, "appTitle")}
         </h1>
         <p
-          className="text-sm normal-case tracking-normal text-ink"
-          style={{ fontFamily: theme.type.body }}
+          className="text-sm normal-case tracking-normal text-ink/70"
+          style={{ fontFamily: theme.type.ui }}
         >
           {t(locale, "appTagline")}
         </p>

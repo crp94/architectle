@@ -1,8 +1,8 @@
 import type { EraResult, MovementResult, RegionResult, TypologyResult } from '@/lib/axes';
 import { t, type Locale } from '@/lib/i18n';
-import { theme } from '@/lib/theme';
+import { SpecimenLabel, type SpecimenLabelState } from '@/components/ui/SpecimenLabel';
 
-type Tone = 'exact' | 'partial' | 'none';
+type Tone = SpecimenLabelState;
 
 type AxisChipProps =
   | { axis: 'era'; result: EraResult; locale: Locale }
@@ -10,18 +10,19 @@ type AxisChipProps =
   | { axis: 'region'; result: RegionResult; locale: Locale }
   | { axis: 'typology'; result: TypologyResult; locale: Locale };
 
-type ChipView = { tone: Tone; label: string; glyph: string; aria: string };
+type ChipView = { tone: Tone; axisLabel: string; label: string; glyph: string; aria: string };
 
 const COMPASS_KEY: Record<string, string> = {
   N: 'compassN', NE: 'compassNE', E: 'compassE', SE: 'compassSE',
   S: 'compassS', SW: 'compassSW', W: 'compassW', NW: 'compassNW',
 };
 
-// Acid-yellow (`bg-accent`) is reserved for a genuine partial match; a
-// normal "no relation" chip stays in the plain paper/ink palette. Red is
-// deliberately never used here — the design spec reserves it for the
-// reveal/loss state (design spec §3), which is Task 12's `<Reveal />`, not
-// this mid-round chip.
+// `SpecimenLabel`'s `partial` state tints only the VALUE text in `accent`
+// on a plain `paper` background (9.18:1) — never `accent` as a fill behind
+// `ink` text, which is the exact under-contrast pairing (~1.7:1) v1's flat
+// `bg-accent`/`text-ink` chip used to render (see the t2b design-system
+// report). Red is deliberately never used here — the design spec reserves
+// it for the reveal/loss state, not this mid-round chip.
 function eraView(result: EraResult, locale: Locale): ChipView {
   const bucketKey = result.bucket === 'CONTEMPORARY' ? 'eraContemporary'
     : result.bucket === 'NEAR' ? 'eraNear' : 'eraFar';
@@ -38,7 +39,7 @@ function eraView(result: EraResult, locale: Locale): ChipView {
       direction: t(locale, result.direction === 'earlier' ? 'eraDirectionEarlier' : 'eraDirectionLater'),
     });
   const glyph = result.direction === 'earlier' ? '←' : result.direction === 'later' ? '→' : '=';
-  return { tone, label, glyph, aria };
+  return { tone, axisLabel: axis, label, glyph, aria };
 }
 
 function movementView(result: MovementResult, locale: Locale): ChipView {
@@ -48,7 +49,9 @@ function movementView(result: MovementResult, locale: Locale): ChipView {
   const tone: Tone = result === 'EXACT' ? 'exact' : result === 'NONE' ? 'none' : 'partial';
   const label = t(locale, key);
   const axis = t(locale, 'axisMovement');
-  return { tone, label, glyph: '◆', aria: t(locale, 'movementChipAria', { axis, result: label }) };
+  return {
+    tone, axisLabel: axis, label, glyph: '◆', aria: t(locale, 'movementChipAria', { axis, result: label }),
+  };
 }
 
 function regionView(result: RegionResult, locale: Locale): ChipView {
@@ -61,7 +64,9 @@ function regionView(result: RegionResult, locale: Locale): ChipView {
     ? t(locale, 'regionChipAriaBearing', { axis, result: label, bearing: t(locale, COMPASS_KEY[result.bearing]) })
     : t(locale, 'regionChipAria', { axis, result: label });
   const bearingLabel = result.bearing ? t(locale, COMPASS_KEY[result.bearing]) : null;
-  return { tone, label: bearingLabel ? `${label} · ${bearingLabel}` : label, glyph: '◈', aria };
+  return {
+    tone, axisLabel: axis, label: bearingLabel ? `${label} · ${bearingLabel}` : label, glyph: '◈', aria,
+  };
 }
 
 function typologyView(result: TypologyResult, locale: Locale): ChipView {
@@ -70,21 +75,21 @@ function typologyView(result: TypologyResult, locale: Locale): ChipView {
   const tone: Tone = result.match === 'EXACT' ? 'exact' : result.match === 'PARTIAL' ? 'partial' : 'none';
   const label = t(locale, key);
   const axis = t(locale, 'axisTypology');
-  return { tone, label, glyph: '▧', aria: t(locale, 'typologyChipAria', { axis, result: label }) };
+  return {
+    tone, axisLabel: axis, label, glyph: '▧', aria: t(locale, 'typologyChipAria', { axis, result: label }),
+  };
 }
 
-const TONE_CLASS: Record<Tone, string> = {
-  exact: 'bg-ink text-paper',
-  partial: 'bg-accent text-ink',
-  none: 'bg-paper text-ink',
-};
-
 /**
- * Renders exactly one axis result: a decorative glyph, a short visible
- * label, and a full sentence on `aria-label` — the chips are the game's
- * primary information channel (design spec §4.4), so the accessible name
- * carries the whole comparison, not just the short label a sighted player
- * sees.
+ * Renders exactly one axis result as a `<SpecimenLabel />`: a decorative
+ * glyph folded into the visible value, a short visible label, and a full
+ * sentence on `aria-label` — the chips are the game's primary information
+ * channel (design spec §4.4), so the accessible name carries the whole
+ * comparison, not just the short label a sighted player sees. `role="img"`
+ * on the outer wrapper replaces the whole subtree's accessible name with
+ * `aria-label`, so folding the glyph into the visible text (rather than a
+ * separately `aria-hidden` span, as v1 did) changes nothing for assistive
+ * tech while letting the value render through `SpecimenLabel`'s own markup.
  */
 export function AxisChip(props: AxisChipProps) {
   const view = props.axis === 'era' ? eraView(props.result, props.locale)
@@ -93,16 +98,13 @@ export function AxisChip(props: AxisChipProps) {
         : typologyView(props.result, props.locale);
 
   return (
-    <span
+    <div
       role="img"
       aria-label={view.aria}
       data-testid={`axis-chip-${props.axis}`}
       data-tone={view.tone}
-      className={`inline-flex items-center gap-1 border-2 border-ink px-2 py-1 text-xs uppercase tracking-wide ${TONE_CLASS[view.tone]}`}
-      style={{ fontFamily: theme.type.mono }}
     >
-      <span aria-hidden="true">{view.glyph}</span>
-      <span>{view.label}</span>
-    </span>
+      <SpecimenLabel label={view.axisLabel} value={`${view.glyph} ${view.label}`} state={view.tone} />
+    </div>
   );
 }
