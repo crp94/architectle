@@ -19,7 +19,7 @@ import type { Architect } from '@/types/architect';
 import { m49For } from '@/lib/m49';
 import { centroid } from '@/lib/geo';
 import {
-  validateSchema, validateCrossRefs, validateImages, validateProvenance, validateCoverage,
+  validateSchema, validateCrossRefs, validateImages, validateProvenance, validateCoverage, validateFeatured,
   ERA_MIN, GEOGRAPHY_MAX, GEOGRAPHY_MIN, GENDER_MIN, MAX_BUILDINGS_PER_ARCHITECT, CANON_TIER_MIN,
   yearOf, eraOf, geographyBucketOf,
 } from './validators';
@@ -27,6 +27,10 @@ import type { Violation, Era, GeographyBucket } from './validators';
 import { CURATED_BUILDINGS, CURATED_ARCHITECTS } from './curated';
 
 const DIMENSIONS_RULE = 'image-dimensions-recorded';
+// The two hard gates over FEATURED_ARCHITECT_IDS (src/scripts/validators/
+// featured.ts) — downgraded together by `--allow-featured-gaps` while Wave
+// V2-3's curation fan-out is still topping architects up to 2+ buildings.
+const FEATURED_RULES = new Set(['featured-architect-exists', 'featured-min-buildings']);
 // M49 spec §4.4: "keep every subregion holding ≥15% of an architect's output."
 const WORK_REGION_THRESHOLD = 0.15;
 const EPSILON = 1e-9;
@@ -104,12 +108,13 @@ export function deriveArchitectGeography(architectId: string, buildings: Buildin
 }
 
 // --- CLI args ---------------------------------------------------------------
-type Args = { allowMissingDimensions: boolean; skipCoverage: boolean };
+type Args = { allowMissingDimensions: boolean; skipCoverage: boolean; allowFeaturedGaps: boolean };
 
 function parseArgs(argv: string[]): Args {
   return {
     allowMissingDimensions: argv.includes('--allow-missing-dimensions'),
     skipCoverage: argv.includes('--skip-coverage'),
+    allowFeaturedGaps: argv.includes('--allow-featured-gaps'),
   };
 }
 
@@ -133,12 +138,19 @@ function printViolations(violations: Violation[]): void {
 }
 
 // --- Coverage summary ---------------------------------------------------------
+// `gate` distinguishes rows `data:curate` actually fails on ('hard') from
+// the eleven representativeness rows v2 demoted to report-only ('info') —
+// see design spec §3 and coverage.ts. The table stays exactly as
+// informative as before the demotion; only the Gate column and each
+// info row's rule-name prefix are new, so a curator can tell at a glance
+// which numbers are still enforced.
 type SummaryRow = {
   rule: string;
   label: string;
   measured: string;
   threshold: string;
   margin: string;
+  gate: 'hard' | 'info';
 };
 
 function pct(n: number): string {
@@ -150,17 +162,21 @@ function pct(n: number): string {
 // further the pool can move before this rule fails" — positive is safe,
 // negative means the rule is already violated (only ever printed here on the
 // success path, so it should never actually be negative in practice).
-function minRow(rule: string, label: string, count: number, total: number, min: number): SummaryRow {
+function minRow(
+  rule: string, label: string, count: number, total: number, min: number, gate: 'hard' | 'info' = 'info',
+): SummaryRow {
   const ratio = total > 0 ? count / total : 0;
   return {
-    rule, label, measured: `${pct(ratio)} (${count}/${total})`, threshold: `≥${pct(min)}`, margin: `${((ratio - min) * 100).toFixed(1)}pp`,
+    rule, label, measured: `${pct(ratio)} (${count}/${total})`, threshold: `≥${pct(min)}`, margin: `${((ratio - min) * 100).toFixed(1)}pp`, gate,
   };
 }
 
-function maxRow(rule: string, label: string, count: number, total: number, max: number): SummaryRow {
+function maxRow(
+  rule: string, label: string, count: number, total: number, max: number, gate: 'hard' | 'info' = 'info',
+): SummaryRow {
   const ratio = total > 0 ? count / total : 0;
   return {
-    rule, label, measured: `${pct(ratio)} (${count}/${total})`, threshold: `≤${pct(max)}`, margin: `${((max - ratio) * 100).toFixed(1)}pp`,
+    rule, label, measured: `${pct(ratio)} (${count}/${total})`, threshold: `≤${pct(max)}`, margin: `${((max - ratio) * 100).toFixed(1)}pp`, gate,
   };
 }
 
@@ -213,13 +229,15 @@ function buildCoverageSummary(buildings: Building[], architects: Architect[]): S
       measured: `${maxHeldByOneArchitect}`,
       threshold: `≤${MAX_BUILDINGS_PER_ARCHITECT}`,
       margin: `${MAX_BUILDINGS_PER_ARCHITECT - maxHeldByOneArchitect}`,
+      gate: 'hard',
     },
     {
-      rule: '(info) geography-other-unmapped',
+      rule: 'geography-other-unmapped',
       label: 'Oceania + Central Asia + unmapped countries — not gated by any rule',
       measured: `${pct(otherUnmappedRatio)} (${otherUnmapped}/${total}) [other: ${geoCounts.other}, unmapped: ${geoCounts.unmapped}]`,
       threshold: 'n/a — informational only',
       margin: 'n/a',
+      gate: 'info',
     },
   ];
 }
@@ -227,21 +245,30 @@ function buildCoverageSummary(buildings: Building[], architects: Architect[]): S
 function printCoverageSummary(buildings: Building[], architects: Architect[]): void {
   const rows = buildCoverageSummary(buildings, architects);
   console.log(`\ndata:curate OK — ${buildings.length} buildings, ${architects.length} architects.\n`);
-  console.log('Coverage summary (margin = headroom before the rule fails):\n');
+  console.log(
+    'Coverage summary (margin = headroom before the rule fails; Gate "info" rows are printed for '
+    + 'visibility only — v2 demoted era/geography/gender/canon-tier from hard failures to report-only, '
+    + 'design spec §3 — Gate "hard" rows still fail data:curate):\n',
+  );
   console.table(
     rows.map((r) => ({
-      Rule: r.rule, What: r.label, Measured: r.measured, Threshold: r.threshold, Margin: r.margin,
+      Rule: r.rule, What: r.label, Measured: r.measured, Threshold: r.threshold, Margin: r.margin, Gate: r.gate,
     })),
   );
 }
 
 // --- Main --------------------------------------------------------------------
 function main(): void {
-  const { allowMissingDimensions, skipCoverage } = parseArgs(process.argv.slice(2));
+  const { allowMissingDimensions, skipCoverage, allowFeaturedGaps } = parseArgs(process.argv.slice(2));
 
   const pool = { buildings: CURATED_BUILDINGS, architects: CURATED_ARCHITECTS };
 
-  const perItemViolations = PER_ITEM_VALIDATORS.flatMap((v) => v(pool));
+  // validateFeatured runs unconditionally (not gated by --skip-coverage,
+  // which is specifically about the pool-global era/geography/gender/
+  // canon-tier/max-buildings-per-architect rules in coverage.ts) — it uses
+  // its default argument, the real FEATURED_ARCHITECT_IDS from
+  // src/scripts/curated/featured.ts.
+  const perItemViolations = [...PER_ITEM_VALIDATORS.flatMap((v) => v(pool)), ...validateFeatured(pool)];
   const allViolations = skipCoverage ? perItemViolations : [...perItemViolations, ...validateCoverage(pool)];
 
   if (skipCoverage) {
@@ -251,11 +278,21 @@ function main(): void {
 
   let hardViolations = allViolations;
   if (allowMissingDimensions) {
-    const downgraded = allViolations.filter((v) => v.rule === DIMENSIONS_RULE);
-    hardViolations = allViolations.filter((v) => v.rule !== DIMENSIONS_RULE);
+    const downgraded = hardViolations.filter((v) => v.rule === DIMENSIONS_RULE);
+    hardViolations = hardViolations.filter((v) => v.rule !== DIMENSIONS_RULE);
     if (downgraded.length > 0) {
-      console.warn(`\n*** --allow-missing-dimensions is active: "${DIMENSIONS_RULE}" downgraded to a warning (${downgraded.length} building(s)) ***`);
+      console.warn(`\n*** --allow-missing-dimensions is active: "${DIMENSIONS_RULE}" downgraded to a warning (${downgraded.length} building(s), including extraImages entries) ***`);
       console.warn('*** This pool has zeroed image dimensions and MUST NOT ship until Task 10 records real ones. ***\n');
+      for (const v of downgraded) console.warn(`  [WARNING] ${v.subject}: ${v.detail}`);
+    }
+  }
+
+  if (allowFeaturedGaps) {
+    const downgraded = hardViolations.filter((v) => FEATURED_RULES.has(v.rule));
+    hardViolations = hardViolations.filter((v) => !FEATURED_RULES.has(v.rule));
+    if (downgraded.length > 0) {
+      console.warn(`\n*** --allow-featured-gaps is active: "featured-architect-exists"/"featured-min-buildings" downgraded to warnings (${downgraded.length} issue(s)) ***`);
+      console.warn('*** Valid ONLY while Wave V2-3\'s curation fan-out is still topping featured architects up to >=2 buildings. The bare `data:curate` (no flags) used by `npm run check` MUST pass before this wave is complete. ***\n');
       for (const v of downgraded) console.warn(`  [WARNING] ${v.subject}: ${v.detail}`);
     }
   }
