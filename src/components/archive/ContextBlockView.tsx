@@ -1,6 +1,7 @@
 import type { ContextBlock } from '@/types/common';
 import { t, type Locale } from '@/lib/i18n';
 import { theme } from '@/lib/theme';
+import { SectionRule } from '@/components/ui/SectionRule';
 
 /** The optional deeper-context block (design spec §4.6 / §8): its prose
  * plus the sources it's drawn from. Mirrors the reveal's rendering of the
@@ -8,11 +9,9 @@ import { theme } from '@/lib/theme';
  * callers should only mount this when they have one. */
 export function ContextBlockView({ context, locale }: { context: ContextBlock; locale: Locale }) {
   return (
-    <div data-testid="archive-context" className="flex flex-col gap-2 border-t-2 border-ink pt-3">
-      <h3 className="text-xs uppercase tracking-wide" style={{ fontFamily: theme.type.mono }}>
-        {t(locale, 'revealContext')}
-      </h3>
-      <p className="text-sm leading-relaxed" style={{ fontFamily: theme.type.body }}>
+    <div data-testid="archive-context" className="flex flex-col gap-3">
+      <SectionRule label={t(locale, 'revealContext')} />
+      <p className="max-w-[70ch] text-sm leading-relaxed" style={{ fontFamily: theme.type.body }}>
         {context.body[locale] ?? context.body.en}
       </p>
       <ul
@@ -22,7 +21,7 @@ export function ContextBlockView({ context, locale }: { context: ContextBlock; l
       >
         {context.sources.map((source) => (
           <li key={source.url}>
-            <a href={source.url} target="_blank" rel="noreferrer" className="underline">
+            <a href={source.url} target="_blank" rel="noreferrer" className="text-accent underline">
               {source.title}
             </a>
           </li>
