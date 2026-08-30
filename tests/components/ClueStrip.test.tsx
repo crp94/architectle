@@ -79,7 +79,7 @@ describe('ClueStrip', () => {
     const clues = cluesAt(building, architect, [siblingBuilding], 0);
 
     render(
-      <ClueStrip locale="en" clues={clues} buildingId={building.id} buildingName="Target Building" />,
+      <ClueStrip locale="en" clues={clues} buildingId={building.id} />,
     );
 
     expect(screen.queryByTestId('clue-strip')).toBeNull();
@@ -100,7 +100,7 @@ describe('ClueStrip', () => {
       cleanup();
       const clues = cluesAt(building, architect, [siblingBuilding], missCount);
       render(
-        <ClueStrip locale="en" clues={clues} buildingId={building.id} buildingName="Target Building" />,
+        <ClueStrip locale="en" clues={clues} buildingId={building.id} />,
       );
     }
 
@@ -140,7 +140,7 @@ describe('ClueStrip', () => {
     const clues = cluesAt(building, architect, [siblingBuilding], 4);
 
     render(
-      <ClueStrip locale="en" clues={clues} buildingId={building.id} buildingName="Target Building" />,
+      <ClueStrip locale="en" clues={clues} buildingId={building.id} />,
     );
 
     expect(screen.queryByTestId('clue-second-photo')).toBeNull();
@@ -165,13 +165,17 @@ describe('ClueStrip', () => {
     const clues = cluesAt(building, architect, [siblingBuilding], 4);
 
     render(
-      <ClueStrip locale="en" clues={clues} buildingId={building.id} buildingName="Target Building" />,
+      <ClueStrip locale="en" clues={clues} buildingId={building.id} />,
     );
 
     expect(screen.getAllByTestId('gallery-frame')).toHaveLength(1);
     const img = screen.getByTestId('clue-second-photo-image');
     expect(img.getAttribute('src')).toBe('/buildings/target-building-2.avif');
-    expect(img.getAttribute('alt')).toBe('Target Building');
+    // Codereview finding #2: the round is still unresolved at this point —
+    // the alt text must NOT name the real building.
+    expect(img.getAttribute('alt')).not.toBe('Target Building');
+    expect(img.getAttribute('alt')).not.toContain('Target Building');
+    expect(img.getAttribute('alt')?.length).toBeGreaterThan(0);
     const caption = screen.getByTestId('gallery-frame-caption');
     expect(caption.textContent).toContain('Extra Photographer');
     expect(caption.textContent).toContain('CC0');
@@ -183,7 +187,7 @@ describe('ClueStrip', () => {
     const clues = cluesAt(building, architect, [siblingBuilding], 5);
 
     render(
-      <ClueStrip locale="en" clues={clues} buildingId={building.id} buildingName="Target Building" />,
+      <ClueStrip locale="en" clues={clues} buildingId={building.id} />,
     );
 
     expect(screen.getByTestId('clue-movement-sibling').textContent).toContain('Unaffiliated');
@@ -195,7 +199,7 @@ describe('ClueStrip', () => {
     const clues = cluesAt(building, architect, [siblingBuilding], 1);
 
     render(
-      <ClueStrip locale="en" clues={clues} buildingId={building.id} buildingName="Target Building" />,
+      <ClueStrip locale="en" clues={clues} buildingId={building.id} />,
     );
 
     const yearClue = screen.getByTestId('clue-year');
@@ -213,7 +217,7 @@ describe('ClueStrip', () => {
     const clues = cluesAt(building, architect, [siblingBuilding], 1);
 
     render(
-      <ClueStrip locale="en" clues={clues} buildingId={building.id} buildingName="Target Building" />,
+      <ClueStrip locale="en" clues={clues} buildingId={building.id} />,
     );
 
     const yearClue = screen.getByTestId('clue-year');
@@ -230,7 +234,7 @@ describe('ClueStrip', () => {
     const clues = cluesAt(building, architect, [building], 5);
 
     render(
-      <ClueStrip locale="en" clues={clues} buildingId={building.id} buildingName="Target Building" />,
+      <ClueStrip locale="en" clues={clues} buildingId={building.id} />,
     );
 
     const movementClue = screen.getByTestId('clue-movement-sibling');

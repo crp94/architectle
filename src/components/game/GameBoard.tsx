@@ -6,7 +6,9 @@ import { buildingsByArchitect } from '@/lib/archive';
 import { dailyIndex, puzzleNumber } from '@/lib/daily';
 import { compareArchitects, type Comparison } from '@/lib/axes';
 import { cluesAt } from '@/lib/clues';
-import { clearState, loadState, saveState, type GameState } from '@/lib/storage';
+import {
+  clearState, loadState, saveState, loadStats, saveStats, defaultStats, nextStats, type Stats,
+} from '@/lib/storage';
 import { t, type Locale } from '@/lib/i18n';
 import { theme } from '@/lib/theme';
 import { imageCredit } from '@/lib/facts';
@@ -44,23 +46,6 @@ export type GameBoardProps = {
 };
 
 type GuessEntry = { architect: Architect; comparison: Comparison };
-
-function defaultStats(): GameState['stats'] {
-  return { played: 0, wins: 0, streak: 0, maxStreak: 0, distribution: [0, 0, 0, 0, 0, 0] };
-}
-
-function nextStats(prev: GameState['stats'], solved: boolean, guessesUsed: number): GameState['stats'] {
-  const distribution = [...prev.distribution];
-  if (solved) distribution[guessesUsed - 1] = (distribution[guessesUsed - 1] ?? 0) + 1;
-  const streak = solved ? prev.streak + 1 : 0;
-  return {
-    played: prev.played + 1,
-    wins: prev.wins + (solved ? 1 : 0),
-    streak,
-    maxStreak: Math.max(prev.maxStreak, streak),
-    distribution,
-  };
-}
 
 function pickDailyBuilding(): Building {
   const pool = featuredBuildings();
@@ -126,7 +111,27 @@ export function GameBoard({ mode = 'daily', building, locale = 'en' }: GameBoard
   const [guesses, setGuesses] = useState<GuessEntry[]>([]);
   const [solved, setSolved] = useState(false);
   const [finished, setFinished] = useState(false);
-  const [stats, setStats] = useState<GameState['stats']>(defaultStats());
+  const [stats, setStats] = useState<Stats>(defaultStats());
+
+  // Loads the PERSISTENT stats record exactly once (codereview finding #1:
+  // stats used to live embedded in the day-keyed GameState below, so they
+  // were rebuilt from `defaultStats()` every day `loadState()` returned null
+  // for anything but today — played could never exceed 1, streak could
+  // never reach 2). Independent of the round-restore effect below: unlike a
+  // round, stats don't depend on `target`/`targetArchitect` resolving first,
+  // and unlimited mode never touches them at all (see the `mode === 'daily'`
+  // guard in handleGuess), so this simply does nothing there.
+  const statsLoadedRef = useRef(false);
+  /* eslint-disable react-hooks/set-state-in-effect -- localStorage is an
+   * external, non-React store read once after mount; see the restore effect
+   * below for the same justification. */
+  useEffect(() => {
+    if (statsLoadedRef.current) return;
+    if (mode !== 'daily') return;
+    statsLoadedRef.current = true;
+    setStats(loadStats());
+  }, [mode]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   // Restores an in-progress daily round exactly once. Guarded with a ref
   // (rather than an empty dependency array) so the effect still declares
@@ -176,7 +181,9 @@ export function GameBoard({ mode = 'daily', building, locale = 'en' }: GameBoard
       clearState();
       return;
     }
-    setStats(saved.stats);
+    // Stats are restored separately (see the `statsLoadedRef` effect above)
+    // — `saved` (the daily round) no longer carries an embedded `stats`
+    // field at all (codereview finding #1).
     setGuesses(restored);
     setSolved(saved.solved);
     setFinished(saved.finished);
@@ -203,16 +210,22 @@ export function GameBoard({ mode = 'daily', building, locale = 'en' }: GameBoard
     if (isFinished) setFinished(true);
 
     if (mode === 'daily') {
-      const updatedStats = isFinished ? nextStats(stats, isSolved, nextGuesses.length) : stats;
-      if (isFinished) setStats(updatedStats);
+      const pNum = puzzleNumber(new Date());
       saveState({
-        puzzleNumber: puzzleNumber(new Date()),
+        puzzleNumber: pNum,
         buildingId: target.id,
         guesses: nextGuesses.map((g) => g.architect.id),
         solved: isSolved,
         finished: isFinished,
-        stats: updatedStats,
       });
+      // Stats are a separate, persistent record (codereview finding #1) —
+      // only updated (and only written to storage) once the round actually
+      // finishes, never on every intermediate guess.
+      if (isFinished) {
+        const updatedStats = nextStats(stats, isSolved, nextGuesses.length, pNum);
+        setStats(updatedStats);
+        saveStats(updatedStats);
+      }
     }
   }
 
@@ -237,7 +250,6 @@ export function GameBoard({ mode = 'daily', building, locale = 'en' }: GameBoard
   }
 
   const currentGuessNumber = Math.min(guesses.length + 1, TOTAL_GUESSES);
-  const buildingName = target.name[locale] ?? target.name.en;
 
   // Every guess still in `guesses` while the round is in progress is a
   // WRONG one (a correct guess sets `finished` and the branch above already
@@ -261,7 +273,14 @@ export function GameBoard({ mode = 'daily', building, locale = 'en' }: GameBoard
       >
         <CropStage
           imageSrc={`/buildings/${target.id}.avif`}
-          imageAlt={buildingName}
+          // codereview finding #2: while the round is unresolved, the alt
+          // text must NOT name the real building (a screen-reader player
+          // would hear the answer from guess 1) — a neutral, translated
+          // placeholder stands in until the round resolves, where Reveal.tsx
+          // already uses the real name correctly. The slug-bearing image URL
+          // above remains a lesser, accepted leak surface (the archive
+          // itself is public, so the id isn't secret — just not read aloud).
+          imageAlt={t(locale, 'mysteryBuildingAlt')}
           imageWidth={target.image.width}
           imageHeight={target.image.height}
           detailRect={target.detailRect}
@@ -278,7 +297,7 @@ export function GameBoard({ mode = 'daily', building, locale = 'en' }: GameBoard
         >
           {t(locale, 'guessCounter', { n: currentGuessNumber, total: TOTAL_GUESSES })}
         </p>
-        <ClueStrip locale={locale} clues={clues} buildingId={target.id} buildingName={buildingName} />
+        <ClueStrip locale={locale} clues={clues} buildingId={target.id} />
         <GuessField locale={locale} onGuess={handleGuess} disabled={finished} />
         <div className="flex flex-col">
           {guesses.map((g, i) => (

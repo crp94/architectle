@@ -263,4 +263,71 @@ describe('GameBoard', () => {
     // again.
     expect(localStorage.getItem('architectle:v1')).toBeNull();
   });
+
+  it('does not name the target building in the crop-stage alt text during an active round (codereview finding #2)', () => {
+    render(<GameBoard building={targetBuilding} mode="daily" locale="en" />);
+    const alt = screen.getByTestId('crop-image').getAttribute('alt') ?? '';
+    expect(alt).not.toContain(targetBuilding.name.en);
+    expect(alt.length).toBeGreaterThan(0);
+  });
+
+  it('does not name the target building in the second-photo clue alt text either', () => {
+    render(<GameBoard building={targetBuilding} mode="daily" locale="en" />);
+    const input = screen.getByLabelText('Name the architect');
+    // Four misses unlocks the second-photo clue (see cluesAt's schedule).
+    for (let i = 0; i < 4; i += 1) submit(input, 'Wrong Architect');
+    const img = screen.queryByTestId('clue-second-photo-image');
+    if (img) {
+      expect(img.getAttribute('alt') ?? '').not.toContain(targetBuilding.name.en);
+    }
+  });
+
+  it("persists a win to the PERSISTENT stats record, independent of the day-keyed round save (codereview finding #1)", () => {
+    render(<GameBoard building={targetBuilding} mode="daily" locale="en" />);
+    const input = screen.getByLabelText('Name the architect');
+
+    submit(input, 'Target Architect');
+
+    const raw = localStorage.getItem('architectle:v1:stats');
+    expect(raw).not.toBeNull();
+    const stats = JSON.parse(raw!);
+    expect(stats).toMatchObject({ played: 1, wins: 1, streak: 1, maxStreak: 1 });
+    expect(stats.distribution[0]).toBe(1);
+
+    // The day-keyed round save itself no longer embeds a `stats` field.
+    const round = JSON.parse(localStorage.getItem('architectle:v1')!);
+    expect(round.stats).toBeUndefined();
+  });
+
+  it('never writes to the persistent stats record in unlimited mode', () => {
+    render(<GameBoard building={targetBuilding} mode="unlimited" locale="en" />);
+    const input = screen.getByLabelText('Name the architect');
+
+    submit(input, 'Target Architect');
+
+    expect(localStorage.getItem('architectle:v1:stats')).toBeNull();
+    expect(localStorage.getItem('architectle:v1')).toBeNull();
+  });
+
+  it('carries stats forward from a prior win, correctly continuing the streak (finding #1)', () => {
+    localStorage.setItem('architectle:v1:stats', JSON.stringify({
+      played: 2,
+      wins: 2,
+      streak: 2,
+      maxStreak: 2,
+      distribution: [0, 1, 1, 0, 0, 0],
+      // "Yesterday" relative to today's real puzzleNumber, so today's win
+      // continues the streak to 3 rather than restarting it at 1.
+      lastWinPuzzle: puzzleNumber(new Date()) - 1,
+    }));
+
+    render(<GameBoard building={targetBuilding} mode="daily" locale="en" />);
+    const input = screen.getByLabelText('Name the architect');
+    submit(input, 'Target Architect');
+
+    const stats = JSON.parse(localStorage.getItem('architectle:v1:stats')!);
+    expect(stats.streak).toBe(3);
+    expect(stats.maxStreak).toBe(3);
+    expect(stats.played).toBe(3);
+  });
 });

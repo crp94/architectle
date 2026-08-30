@@ -3,7 +3,9 @@ import type { MovementId } from '@/types/movement';
 import { t, type Locale } from '@/lib/i18n';
 import { theme } from '@/lib/theme';
 import { MOVEMENTS } from '@/data/movements';
-import { imageCredit, MATERIAL_KEY, TYPOLOGY_KEY } from '@/lib/facts';
+import {
+  extraImageSrc, imageCredit, MATERIAL_KEY, TYPOLOGY_KEY,
+} from '@/lib/facts';
 import { SpecimenLabel } from '@/components/ui/SpecimenLabel';
 import { SectionRule } from '@/components/ui/SectionRule';
 import { GalleryFrame } from '@/components/ui/GalleryFrame';
@@ -11,12 +13,9 @@ import { GalleryFrame } from '@/components/ui/GalleryFrame';
 export type ClueStripProps = {
   locale: Locale;
   clues: Clue[];
-  /** The target building's id — used only to build the second-photo's
-   * `<img>` src (`/buildings/<id>-2.avif`, matching `fetchImages.ts`'s
-   * `extraImages[0]` suffix convention). Never displayed. */
+  /** The target building's id — passed through to `extraImageSrc` (src/lib/
+   * facts.ts) to build the second-photo's `<img>` src. Never displayed. */
   buildingId: string;
-  /** Localized building name, reused as the second photo's `alt` text. */
-  buildingName: string;
 };
 
 function movementLabel(movementId: MovementId | null, locale: Locale): string {
@@ -34,7 +33,7 @@ function movementLabel(movementId: MovementId | null, locale: Locale): string {
  * ones are present.
  */
 export function ClueStrip({
-  locale, clues, buildingId, buildingName,
+  locale, clues, buildingId,
 }: ClueStripProps) {
   if (clues.length === 0) return null;
 
@@ -48,7 +47,6 @@ export function ClueStrip({
             clue={clue}
             locale={locale}
             buildingId={buildingId}
-            buildingName={buildingName}
           />
         ))}
       </div>
@@ -57,8 +55,8 @@ export function ClueStrip({
 }
 
 function ClueEntry({
-  clue, locale, buildingId, buildingName,
-}: { clue: Clue; locale: Locale; buildingId: string; buildingName: string }) {
+  clue, locale, buildingId,
+}: { clue: Clue; locale: Locale; buildingId: string }) {
   switch (clue.kind) {
     case 'year':
       return (
@@ -106,8 +104,13 @@ function ClueEntry({
                 sizing machinery is overkill for this thumbnail. */}
             <img
               data-testid="clue-second-photo-image"
-              src={`/buildings/${buildingId}-2.avif`}
-              alt={buildingName}
+              src={extraImageSrc(buildingId, 0)}
+              // codereview finding #2: this used to repeat the real
+              // building name here too — a screen-reader player hearing it
+              // on the SECOND miss, well before the round resolves. Same
+              // neutral, translated placeholder as the crop stage; the real
+              // name returns in Reveal.tsx post-resolution.
+              alt={t(locale, 'mysteryBuildingAlt')}
               style={{
                 position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
               }}
