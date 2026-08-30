@@ -688,4 +688,138 @@ export const AMERICAS_BUILDINGS: Building[] = [
     ],
     tier: 'deep',
   },
+  {
+    // Wave V2-3, batch B8. `rem-koolhaas` is defined in
+    // architects/europe-west.ts (practice base, Rotterdam); referenced here,
+    // not redefined.
+    id: 'seattle-central-library',
+    wikidataId: 'Q2531939',
+    name: {
+      en: 'Seattle Central Library',
+      es: 'Biblioteca Central de Seattle',
+      it: 'Biblioteca centrale di Seattle',
+    },
+    architectId: 'rem-koolhaas',
+    location: { city: 'Seattle, Washington', countryCode: 'US', lat: 47.60669, lon: -122.33211 },
+    inception: 2002,
+    completed: 2004,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['steel-and-glass'],
+    structure: {
+      en: 'A steel-and-glass diagrid skin wraps a stack of discrete rectilinear "platforms" that shift and cantilever against one another, so the diamond-braced facade is the only element that reads as continuous from outside.',
+      es: 'Una piel de acero y vidrio en retícula diagonal envuelve un apilamiento de "plataformas" rectilíneas discretas que se desplazan y vuelan unas respecto de otras, de modo que la fachada en rombos arriostrados es lo único que se lee como continuo desde fuera.',
+      it: 'Una pelle di acciaio e vetro a griglia diagonale avvolge un impilamento di "piattaforme" rettilinee distinte che si sfalsano e sporgono l\'una rispetto all\'altra, cosicché la facciata a losanghe controventate è l\'unico elemento che si legge come continuo dall\'esterno.',
+    },
+    program: {
+      en: 'Flagship of the Seattle Public Library system, rebuilding the collection and reading rooms lost when the 1960 Central Library was demolished, funded by a 1998 bond measure ("Libraries for All").',
+      es: 'Buque insignia del sistema de bibliotecas públicas de Seattle, que reconstruyó la colección y las salas de lectura perdidas con la demolición de la Biblioteca Central de 1960, financiado por una emisión de bonos de 1998 ("Libraries for All").',
+      it: "Ammiraglia del sistema delle biblioteche pubbliche di Seattle, che ricostruì la collezione e le sale di lettura perdute con la demolizione della Biblioteca Centrale del 1960, finanziata da un'emissione obbligazionaria del 1998 (\"Libraries for All\").",
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Working public library, the central branch of the Seattle Public Library.',
+      es: 'Biblioteca pública en funcionamiento, sede central de la Seattle Public Library.',
+      it: 'Biblioteca pubblica in funzione, sede centrale della Seattle Public Library.',
+    },
+    detailRect: { x: 0.36, y: 0.06, w: 0.34, h: 0.34 },
+    image: {
+      commonsFile: 'File:The Seattle Central Library.jpg',
+      photographer: 'Steven Pavlov',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:The_Seattle_Central_Library.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Central Library, Seattle (2014) - 01.JPG',
+        photographer: 'Another Believer',
+        license: 'CC BY-SA 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Central_Library,_Seattle_(2014)_-_01.JPG',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "Koolhaas and Joshua Prince-Ramus, working with the Seattle firm LMN, threw out the idea that a library is rooms arranged along corridors and instead sorted its functions — parking, staff, meeting rooms, the \"mixing chamber\" reference desk, book stacks, reading room, administration — into five separate rectilinear platforms stacked at different depths and angles, connected by four sloped \"in-between\" zones. The stacks sit on a continuous spiral ramp, a single run of shelving four storeys tall that never dead-ends, sized with room for the collection to grow for decades. Around all of it wraps a steel-and-glass diagrid skin, a structural net that lets the platforms cantilever out where the plan needs them to. It opened on 23 May 2004 at a construction cost of about $169 million, replacing a 1960 Central Library the city had outgrown, and won the AIA National Honor Award for Architecture in 2005.",
+      es: 'Koolhaas y Joshua Prince-Ramus, trabajando con el estudio local LMN, descartaron la idea de que una biblioteca son salas ordenadas a lo largo de pasillos y, en su lugar, repartieron sus funciones —aparcamiento, personal, salas de reuniones, la "cámara de mezcla" del mostrador de referencia, depósito de libros, sala de lectura, administración— en cinco plataformas rectilíneas independientes, apiladas a distinta profundidad y ángulo, y conectadas por cuatro zonas inclinadas "intermedias". El depósito se asienta sobre una rampa espiral continua, un único recorrido de estanterías de cuatro plantas de altura que nunca termina en un fondo de saco, dimensionado para que la colección pueda crecer durante décadas. Todo ello queda envuelto por una piel de acero y vidrio en retícula diagonal, una red estructural que permite a las plataformas volar donde la planta lo exige. Se inauguró el 23 de mayo de 2004 con un coste de construcción de unos 169 millones de dólares, sustituyendo a una Biblioteca Central de 1960 que la ciudad había desbordado, y ganó el AIA National Honor Award for Architecture en 2005.',
+      it: "Koolhaas e Joshua Prince-Ramus, lavorando con lo studio locale LMN, scartarono l'idea che una biblioteca sia un insieme di stanze allineate lungo corridoi e distribuirono invece le sue funzioni — parcheggio, personale, sale riunioni, la \"camera di miscelazione\" del bancone informazioni, deposito libri, sala di lettura, amministrazione — in cinque piattaforme rettilinee distinte, impilate a profondità e angolazioni diverse e collegate da quattro zone inclinate \"intermedie\". Il deposito poggia su una rampa a spirale continua, un unico percorso di scaffalature alto quattro piani che non termina mai in un vicolo cieco, dimensionato perché la collezione possa crescere per decenni. Il tutto è avvolto da una pelle di acciaio e vetro a griglia diagonale, una rete strutturale che permette alle piattaforme di sporgere dove la pianta lo richiede. Aprì il 23 maggio 2004 con un costo di costruzione di circa 169 milioni di dollari, sostituendo una Biblioteca Centrale del 1960 che la città aveva ormai superato, e vinse l'AIA National Honor Award for Architecture nel 2005.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q2531939', title: 'Seattle Central Library (Q2531939)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Seattle_Central_Library', title: 'Seattle Central Library', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.spl.org/about-spl/central-library/central-library-architecture', title: 'Central Library Architecture — Seattle Public Library', license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    // Wave V2-3, batch B8. `santiago-calatrava` is defined in
+    // architects/europe.ts (Spanish national, practice founded in Zurich);
+    // referenced here, not redefined. His cost-overrun/delay/litigation
+    // record — the largest single factor behind this building's own
+    // seven-year schedule slip — is documented in his portrait, not
+    // repeated here as allegation against him personally.
+    id: 'oculus-wtc-transportation-hub',
+    wikidataId: 'Q2001751',
+    name: {
+      en: 'Oculus (World Trade Center Transportation Hub)',
+      es: 'Oculus (Centro de Transporte del World Trade Center)',
+      it: 'Oculus (World Trade Center Transportation Hub)',
+    },
+    architectId: 'santiago-calatrava',
+    location: { city: 'New York City', countryCode: 'US', lat: 40.71128, lon: -74.01057 },
+    inception: 2004,
+    completed: 2016,
+    demolished: null,
+    typology: 'infrastructure',
+    materials: ['steel-and-glass'],
+    structure: {
+      en: 'Paired arched steel ribs, painted white and spread open like wings, carry a full-length glazed skylight over a column-free concourse that spans the working PATH tracks below without touching them.',
+      es: 'Costillas de acero arqueadas y pareadas, pintadas de blanco y abiertas como alas, sostienen un lucernario acristalado de principio a fin sobre un vestíbulo sin columnas que salva las vías de PATH en servicio de abajo sin tocarlas.',
+      it: "Costole d'acciaio arcuate e appaiate, dipinte di bianco e aperte come ali, sorreggono un lucernario vetrato per l'intera lunghezza sopra un atrio privo di colonne che scavalca i binari PATH in servizio sottostanti senza toccarli.",
+    },
+    program: {
+      en: 'A PATH-and-subway transportation hub and retail concourse for Lower Manhattan, commissioned by the Port Authority of New York and New Jersey as part of the World Trade Center site\'s post-9/11 rebuilding.',
+      es: 'Intercambiador de PATH y metro y galería comercial para el bajo Manhattan, encargado por la Autoridad Portuaria de Nueva York y Nueva Jersey dentro de la reconstrucción del solar del World Trade Center tras el 11-S.',
+      it: "Interscambio PATH-metropolitana e galleria commerciale per la Lower Manhattan, commissionato dalla Port Authority di New York e New Jersey nell'ambito della ricostruzione del sito del World Trade Center dopo l'11 settembre.",
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Working transportation hub (PATH terminus, subway connections, ferry link) and home to the Westfield World Trade Center shopping mall.',
+      es: 'Intercambiador de transporte en funcionamiento (terminal de PATH, conexiones de metro, enlace de ferry) y sede del centro comercial Westfield World Trade Center.',
+      it: 'Interscambio di trasporto in funzione (capolinea PATH, collegamenti con la metropolitana, collegamento coi traghetti) e sede del centro commerciale Westfield World Trade Center.',
+    },
+    detailRect: { x: 0.30, y: 0.15, w: 0.32, h: 0.32 },
+    image: {
+      commonsFile: 'File:Oculus World Trade Center.jpg',
+      photographer: 'Donaldroszz',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Oculus_World_Trade_Center.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Westfield World Trade Center - The Oculus.jpg',
+        photographer: 'Nadia Eimandoust',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Westfield_World_Trade_Center_-_The_Oculus.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "Calatrava's brief was a PATH-and-subway interchange for Lower Manhattan, and he gave it a single image: a white steel rib cage, 107 metres long, opening like two wings around a glazed skylight running the length of the main hall. The ribs were engineered to let a section of the roof slide open on the anniversary of the September 11 attacks, a gesture cut for cost before completion. Structural steel went up from 2010 over the working PATH tracks it had to span without interrupting service, a sequencing problem that drove much of a nearly seven-year delay past the original 2009 target. The finished hub, called the Oculus for its oval plan, opened on 3 March 2016 at a total cost close to $4 billion — more than triple the original budget — making it one of the most expensive train stations ever built and a fixture in the later reporting on Calatrava's cost overruns generally. It links PATH trains, the New York City Subway, the Battery Park City ferry terminal and a shopping concourse beneath the World Trade Center site.",
+      es: 'El encargo de Calatrava era un intercambiador de PATH y metro para el bajo Manhattan, y le dio una sola imagen: una caja torácica de acero blanco, de 107 metros de largo, que se abre como dos alas en torno a un lucernario acristalado que recorre toda la sala principal. Las costillas se calcularon para que un tramo de la cubierta pudiera deslizarse y abrirse en el aniversario de los atentados del 11 de septiembre, un gesto recortado por coste antes de terminar la obra. La estructura de acero se levantó desde 2010 sobre las vías de PATH en servicio, que había que salvar sin interrumpir el tráfico, un problema de secuenciación que causó buena parte de un retraso de casi siete años sobre el objetivo original de 2009. La terminal acabada, llamada Oculus por su planta ovalada, se inauguró el 3 de marzo de 2016 con un coste total cercano a los 4.000 millones de dólares —más del triple del presupuesto original—, lo que la convierte en una de las estaciones de tren más caras jamás construidas y en un caso recurrente en la crítica posterior a los sobrecostes de Calatrava en general. Conecta los trenes de PATH, el metro de Nueva York, el ferry de Battery Park City y una galería comercial bajo el solar del World Trade Center.',
+      it: "L'incarico di Calatrava era un interscambio PATH-metropolitana per la Lower Manhattan, e vi diede un'unica immagine: una gabbia toracica in acciaio bianco, lunga 107 metri, che si apre come due ali attorno a un lucernario vetrato che percorre l'intera sala principale. Le costole furono calcolate perché una sezione del tetto potesse scorrere e aprirsi nell'anniversario degli attentati dell'11 settembre, un gesto tagliato per motivi di costo prima del completamento. La struttura in acciaio fu innalzata a partire dal 2010 sopra i binari PATH in servizio, che bisognava scavalcare senza interromperne l'esercizio, un problema di sequenza che causò buona parte di un ritardo di quasi sette anni sull'obiettivo originario del 2009. Il terminal finito, chiamato Oculus per la sua pianta ovale, aprì il 3 marzo 2016 con un costo totale vicino ai 4 miliardi di dollari — più del triplo del budget originario — rendendolo una delle stazioni ferroviarie più costose mai costruite e un caso ricorrente nella critica successiva ai costi lievitati di Calatrava in generale. Collega i treni PATH, la metropolitana di New York, il traghetto di Battery Park City e una galleria commerciale sotto il sito del World Trade Center.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q2001751', title: 'World Trade Center Transportation Hub (Q2001751)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/World_Trade_Center_Transportation_Hub', title: 'World Trade Center Transportation Hub', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
 ];

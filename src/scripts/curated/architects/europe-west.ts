@@ -385,4 +385,38 @@ export const EUROPE_WEST_ARCHITECTS: Architect[] = [
       { kind: 'wikipedia', url: 'https://nl.wikipedia.org/wiki/Paul_Robbrecht', title: 'Paul Robbrecht', license: 'CC BY-SA 4.0' },
     ],
   },
+  {
+    // Wave V2-3, batch B8. Living (b. 1944) — checked for a contested
+    // personal-conduct allegation and found none; OMA's client-selection
+    // controversies (CCTV Beijing above all) are political criticism of
+    // commissions, not the kind of allegation the living-person policy is
+    // aimed at. Featured buildings live in asia.ts (CCTV, China),
+    // americas.ts (Seattle Central Library, US) and europe.ts (Casa da
+    // Música, Portugal) per each building's own region file.
+    id: 'rem-koolhaas',
+    wikidataId: 'Q232364',
+    name: 'Rem Koolhaas',
+    alternativeNames: ['Remment Lucas Koolhaas'],
+    gender: 'man',
+    born: 1944,
+    died: null,
+    floruit: { start: 1978, end: 2025, override: false },
+    movements: [{ id: 'deconstructivism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'steel-and-glass',
+    portrait: {
+      en: "Koolhaas trained first as a journalist and screenwriter — he wrote for the Haagse Post and co-wrote a film script — before enrolling at London's Architectural Association in 1968. His 1978 book Delirious New York read Manhattan's skyscrapers as an unplanned \"culture of congestion,\" and gave him a theoretical language before he had built almost anything. He founded the Office for Metropolitan Architecture in Rotterdam in 1975 with Elia and Zoe Zenghelis and Madelon Vriesendorp, joined briefly by Zaha Hadid, and later set up its research arm AMO to work on projects with no building client at all. S,M,L,XL (1995), a 1,344-page compilation of built work, theory and inventory, argued that architecture had to answer to a scale and to market forces it could no longer pretend to control. He won the Pritzker Prize in 2000.",
+      es: 'Koolhaas se formó primero como periodista y guionista —escribió para el Haagse Post y coescribió un guion de cine— antes de matricularse en 1968 en la Architectural Association de Londres. Su libro de 1978 Delirious New York leyó los rascacielos de Manhattan como una «cultura de la congestión» no planificada, y le dio un lenguaje teórico antes de haber construido casi nada. Fundó la Office for Metropolitan Architecture en Róterdam en 1975 junto con Elia y Zoe Zenghelis y Madelon Vriesendorp, a la que se sumó brevemente Zaha Hadid, y creó después su brazo de investigación AMO para trabajar en proyectos sin ningún cliente edificatorio. S,M,L,XL (1995), una compilación de 1.344 páginas de obra construida, teoría e inventario, sostenía que la arquitectura debía responder a una escala y a unas fuerzas de mercado que ya no podía fingir controlar. Ganó el Premio Pritzker en 2000.',
+      it: "Koolhaas si formò prima come giornalista e sceneggiatore — scrisse per lo Haagse Post e coscrisse una sceneggiatura cinematografica — prima di iscriversi nel 1968 alla Architectural Association di Londra. Il suo libro del 1978, Delirious New York, lesse i grattacieli di Manhattan come una «cultura della congestione» non pianificata, dandogli un linguaggio teorico prima ancora di aver costruito quasi nulla. Fondò l'Office for Metropolitan Architecture a Rotterdam nel 1975 insieme a Elia e Zoe Zenghelis e Madelon Vriesendorp, cui si unì brevemente Zaha Hadid, e creò poi il suo braccio di ricerca AMO per lavorare a progetti privi di qualunque committente edilizio. S,M,L,XL (1995), una raccolta di 1.344 pagine di opere costruite, teoria e inventario, sosteneva che l'architettura dovesse rispondere a una scala e a forze di mercato che non poteva più fingere di controllare. Vinse il Premio Pritzker nel 2000.",
+    },
+    awards: ['Pritzker Architecture Prize (2000)', 'Praemium Imperiale (2003)', 'Royal Gold Medal (2004)'],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q232364', title: 'Rem Koolhaas (Q232364)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Rem_Koolhaas', title: 'Rem Koolhaas', license: 'CC BY-SA 4.0' },
+    ],
+  },
 ];

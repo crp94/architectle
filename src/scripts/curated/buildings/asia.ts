@@ -569,4 +569,70 @@ export const ASIA_BUILDINGS: Building[] = [
     ],
     tier: 'canon',
   },
+  {
+    // Wave V2-3, batch B8. China's building FoP covers commercial use
+    // (confirmed against Commons' country table) so a living architect's
+    // 2012 work is licensable here without an age exemption.
+    id: 'cctv-headquarters',
+    wikidataId: 'Q754321',
+    name: {
+      en: 'CCTV Headquarters',
+      es: 'Sede de la CCTV',
+      it: 'Sede della CCTV',
+    },
+    architectId: 'rem-koolhaas',
+    location: { city: 'Beijing', countryCode: 'CN', lat: 39.91330, lon: 116.45810 },
+    inception: 2004,
+    completed: 2012,
+    demolished: null,
+    typology: 'tower',
+    materials: ['steel-and-glass', 'concrete'],
+    structure: {
+      en: "Two leaning steel-framed L-shaped towers rise from a shared podium and lock together under an overhanging cantilever; their skin is an irregular diagonal steel grid whose density Arup's engineers set directly from calculated seismic and gravity stress rather than drawing it as pattern.",
+      es: 'Dos torres inclinadas en forma de ele, de estructura de acero, se alzan sobre un podio común y quedan trabadas bajo un voladizo superior; su piel es una retícula diagonal de acero cuya densidad los ingenieros de Arup fijaron directamente a partir del esfuerzo sísmico y gravitatorio calculado, no como dibujo decorativo.',
+      it: "Due torri inclinate a elle, con struttura in acciaio, si innalzano da un podio comune e si serrano sotto uno sbalzo superiore; la loro pelle è una griglia diagonale d'acciaio la cui densità gli ingegneri di Arup fissarono direttamente in base allo sforzo sismico e gravitazionale calcolato, non come disegno decorativo.",
+    },
+    program: {
+      en: 'Headquarters and production complex commissioned by China Central Television to consolidate its administration, newsrooms, studios and broadcasting operations on a single Beijing site, won by OMA in a 2002 international competition.',
+      es: 'Sede y complejo de producción encargado por la Televisión Central de China para reunir en un único emplazamiento de Pekín su administración, redacciones, estudios y operaciones de emisión; la propuesta de OMA ganó el concurso internacional de 2002.',
+      it: "Sede e complesso di produzione commissionato dalla Televisione Centrale Cinese per riunire in un unico sito di Pechino amministrazione, redazioni, studi e attività di trasmissione; la proposta di OMA vinse il concorso internazionale del 2002.",
+    },
+    heritage: 'none',
+    currentUse: {
+      en: "Headquarters of China Media Group, the state broadcaster formed by CCTV's 2018 merger with China National Radio and China Radio International.",
+      es: 'Sede de China Media Group, la radiotelevisión estatal surgida en 2018 de la fusión de la CCTV con la Radio Nacional de China y China Radio International.',
+      it: "Sede di China Media Group, l'emittente statale nata nel 2018 dalla fusione della CCTV con China National Radio e China Radio International.",
+    },
+    detailRect: { x: 0.05, y: 0.55, w: 0.35, h: 0.35 },
+    image: {
+      commonsFile: 'File:CCTV Headquarters (Beijing, China) - Flickr.jpg',
+      photographer: 'Kilian Evang',
+      license: 'CC BY 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:CCTV_Headquarters_(Beijing,_China)_-_Flickr.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:CCTV Headquarters 20170801 091706(0).jpg',
+        photographer: 'SecretName101',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:CCTV_Headquarters_20170801_091706(0).jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "OMA's winning 2002 competition entry rejected the usual skyscraper — a single tower straining upward — for a closed loop: two leaning towers, one holding administration and offices and the other production and broadcasting, joined at the top by an overhanging cantilever and at the base by a shared podium. The result reads less as a building than as a tube bent back on itself, its structure exposed as an irregular diagonal grid, denser wherever seismic and gravity loads run highest. At 234 metres, the two towers lean toward each other at six degrees and meet 162 metres above the ground; a public loop lets visitors walk the cantilever itself, ending in a view over the Beijing CBD. Construction began in 2004 and the façade was finished by January 2008, in time for the Olympics, though fit-out continued to 2012. An adjoining building in the same complex, the Television Cultural Center, burned down in February 2009 after fireworks ignited its skin during a Lunar New Year celebration, killing one firefighter; the headquarters itself was undamaged. It has been renamed China Media Group Headquarters since CCTV's 2018 merger into the new state broadcaster.",
+      es: 'La propuesta ganadora de OMA en el concurso de 2002 rechazó el rascacielos habitual —una sola torre tensada hacia arriba— por un bucle cerrado: dos torres inclinadas, una con la administración y las oficinas y la otra con producción y emisión, unidas en lo alto por un voladizo y en la base por un podio común. El resultado se lee menos como un edificio que como un tubo doblado sobre sí mismo, con la estructura expuesta en una retícula diagonal irregular, más densa allí donde las cargas sísmicas y gravitatorias son mayores. Con 234 metros de altura, las dos torres se inclinan la una hacia la otra seis grados y se encuentran a 162 metros del suelo; un recorrido público permite a los visitantes caminar por el propio voladizo, que termina con una vista sobre el distrito central de negocios de Pekín. Las obras comenzaron en 2004 y la fachada se terminó en enero de 2008, a tiempo para los Juegos Olímpicos, aunque los acabados continuaron hasta 2012. Un edificio contiguo del mismo complejo, el Television Cultural Center, ardió en febrero de 2009 cuando unos fuegos artificiales incendiaron su piel durante una celebración del Año Nuevo chino, y murió un bombero; la sede central no sufrió daños. Ha pasado a llamarse China Media Group Headquarters desde la fusión de la CCTV en la nueva radiotelevisión estatal en 2018.',
+      it: "La proposta vincitrice di OMA nel concorso del 2002 respinse il grattacielo consueto — un'unica torre tesa verso l'alto — per un anello chiuso: due torri inclinate, una con l'amministrazione e gli uffici e l'altra con la produzione e la messa in onda, unite in alto da uno sbalzo e alla base da un podio comune. Il risultato si legge meno come un edificio che come un tubo ripiegato su se stesso, con la struttura esposta in una griglia diagonale irregolare, più fitta dove i carichi sismici e gravitazionali sono maggiori. Alte 234 metri, le due torri si inclinano l'una verso l'altra di sei gradi e si incontrano a 162 metri da terra; un percorso pubblico permette ai visitatori di camminare sullo sbalzo stesso, che termina con una vista sul quartiere centrale degli affari di Pechino. I lavori iniziarono nel 2004 e la facciata fu completata nel gennaio 2008, in tempo per le Olimpiadi, sebbene le finiture interne proseguissero fino al 2012. Un edificio adiacente dello stesso complesso, il Television Cultural Center, bruciò nel febbraio 2009 quando dei fuochi d'artificio incendiarono il suo rivestimento durante i festeggiamenti per il Capodanno cinese, causando la morte di un vigile del fuoco; la sede centrale non subì danni. Dal 2018, dopo la fusione della CCTV nella nuova emittente statale, è stata rinominata China Media Group Headquarters.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q754321', title: 'China Media Group Guanghua Road Office Area (Q754321)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/CCTV_Headquarters', title: 'CCTV Headquarters', license: 'CC BY-SA 4.0' },
+      { kind: 'publication', url: 'https://www.designboom.com/architecture/oma-cctv-headquarters-now-complete/', title: 'OMA: CCTV Headquarters now complete — Designboom', license: null },
+    ],
+    tier: 'canon',
+  },
 ];
