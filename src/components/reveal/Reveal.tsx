@@ -39,6 +39,7 @@ export type RevealProps = {
    */
   stats?: Stats;
   unlimitedHref?: string;
+  onPlayAgain?: () => void;
 };
 
 /**
@@ -57,7 +58,7 @@ export type RevealProps = {
 type CopyState = 'share' | 'copy' | 'failed-share' | 'failed-copy' | null;
 
 export function Reveal({
-  building, architect, solved, guessesUsed, comparisons, locale = 'en', stats, unlimitedHref = '/?mode=unlimited&lang=en',
+  building, architect, solved, guessesUsed, comparisons, locale = 'en', stats, unlimitedHref = '/?mode=unlimited&lang=en', onPlayAgain,
 }: RevealProps) {
   const [copied, setCopied] = useState<CopyState>(null);
 
@@ -307,13 +308,24 @@ export function Reveal({
       </div>
 
       <SectionRule />
-      <Link
-        href={unlimitedHref}
-        className="self-start bg-accent px-5 py-3 text-xs uppercase tracking-wide text-paper"
-        style={{ fontFamily: theme.type.ui }}
-      >
-        {t(locale, 'playAgain')}
-      </Link>
+      {onPlayAgain ? (
+        <button
+          type="button"
+          onClick={onPlayAgain}
+          className="self-start bg-accent px-5 py-3 text-xs uppercase tracking-wide text-paper"
+          style={{ fontFamily: theme.type.ui }}
+        >
+          {t(locale, 'playAgain')}
+        </button>
+      ) : (
+        <Link
+          href={unlimitedHref}
+          className="self-start bg-accent px-5 py-3 text-xs uppercase tracking-wide text-paper"
+          style={{ fontFamily: theme.type.ui }}
+        >
+          {t(locale, 'playAgain')}
+        </Link>
+      )}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p
           data-testid="reveal-provenance"

@@ -99,7 +99,7 @@ function ClueEntry({
           <GalleryFrame
             aspectRatio={clue.image.width / clue.image.height}
             caption={imageCredit(clue.image, locale)}
-            className="w-40 sm:w-48"
+            className="w-full max-w-md"
           >
             {/* eslint-disable-next-line @next/next/no-img-element -- a
                 fixed extra angle, shown small; next/image's responsive

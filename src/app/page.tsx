@@ -153,7 +153,7 @@ export default async function Home({
           {t(locale, 'playAgain')}
         </Link>
       </div>
-      <GameBoard mode={mode} locale={locale} building={building} unlimitedHref={localeHref('/?mode=unlimited', locale)} />
+      <GameBoard key={mode} mode={mode} locale={locale} building={building} unlimitedHref={localeHref('/?mode=unlimited', locale)} />
     </main>
   );
 }

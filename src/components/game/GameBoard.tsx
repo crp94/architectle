@@ -54,6 +54,13 @@ function pickDailyBuilding(): Building {
   return pool[idx];
 }
 
+function pickUnlimitedBuilding(excludeId?: string): Building {
+  const pool = featuredBuildings();
+  const candidates = excludeId ? pool.filter((building) => building.id !== excludeId) : pool;
+  const choices = candidates.length > 0 ? candidates : pool;
+  return choices[Math.floor(Math.random() * choices.length)];
+}
+
 /**
  * Orchestrates one round: picks the target building, renders the crop and
  * guess field, wires each guess through `compareArchitects`, persists daily
@@ -93,8 +100,7 @@ export function GameBoard({ mode = 'daily', building, locale = 'en', unlimitedHr
 
   useEffect(() => {
     if (building || mode !== 'unlimited') return;
-    const pool = featuredBuildings();
-    setUnlimitedBuilding(pool[Math.floor(Math.random() * pool.length)]);
+    setUnlimitedBuilding(pickUnlimitedBuilding());
   }, [building, mode]);
   /* eslint-enable react-hooks/set-state-in-effect */
 
@@ -230,6 +236,14 @@ export function GameBoard({ mode = 'daily', building, locale = 'en', unlimitedHr
     }
   }
 
+  function handleUnlimitedReplay() {
+    if (mode !== 'unlimited') return;
+    setGuesses([]);
+    setSolved(false);
+    setFinished(false);
+    setUnlimitedBuilding(pickUnlimitedBuilding(target?.id));
+  }
+
   if (finished) {
     return (
       <Reveal
@@ -240,6 +254,7 @@ export function GameBoard({ mode = 'daily', building, locale = 'en', unlimitedHr
         comparisons={guesses.map((g) => g.comparison)}
         locale={locale}
         unlimitedHref={unlimitedHref}
+        onPlayAgain={mode === 'unlimited' ? handleUnlimitedReplay : undefined}
         // Unlimited mode never tracks daily stats (see the `mode === 'daily'`
         // guard in handleGuess above) — `stats` would just be the unchanging
         // all-zero `defaultStats()` there, which would render a misleading

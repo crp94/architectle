@@ -108,4 +108,15 @@ test.describe('game flow', () => {
     await expect(page.getByTestId('guess-row').first()).toContainText(WRONG);
     await expect(page.getByText('Guess 2 of 6')).toBeVisible();
   });
+
+  test('starts a fresh round when replaying unlimited mode', async ({ page }) => {
+    await page.goto(`${gameUrl()}&mode=unlimited`);
+    await submitGuess(page, CORRECT);
+    await expect(page.getByTestId('reveal')).toBeVisible();
+
+    await page.getByRole('button', { name: 'Play unlimited', exact: true }).click();
+    await expect(page.getByTestId('game-board')).toBeVisible();
+    await expect(page.getByText('Guess 1 of 6')).toBeVisible();
+    await expect(page.getByTestId('guess-row')).toHaveCount(0);
+  });
 });
