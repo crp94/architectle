@@ -145,13 +145,31 @@ export default async function Home({
           {t(locale, "appTagline")}
         </p>
         <LocaleSwitcher locale={locale} pathname="/" searchParams={params} />
-        <Link
-          href={localeHref('/?mode=unlimited', locale)}
-          className="mt-1 bg-accent px-4 py-2 text-xs uppercase tracking-wide text-paper"
-          style={{ fontFamily: theme.type.ui }}
-        >
-          {t(locale, 'playAgain')}
-        </Link>
+        {mode === 'unlimited' ? (
+          <div className="mt-1 flex flex-col items-center gap-2">
+            <p className="text-xs uppercase tracking-[0.2em] text-accent" style={{ fontFamily: theme.type.ui }}>
+              {t(locale, 'unlimitedEyebrow')}
+            </p>
+            <p className="max-w-md text-center text-xs text-ink/70" style={{ fontFamily: theme.type.body }}>
+              {t(locale, 'unlimitedNote')}
+            </p>
+            <Link
+              href={localeHref('/', locale)}
+              className="border border-frame-line px-4 py-2 text-xs uppercase tracking-wide text-ink"
+              style={{ borderWidth: theme.rule.hairline, fontFamily: theme.type.ui }}
+            >
+              {t(locale, 'dailyGame')}
+            </Link>
+          </div>
+        ) : (
+          <Link
+            href={localeHref('/?mode=unlimited', locale)}
+            className="mt-1 bg-accent px-4 py-2 text-xs uppercase tracking-wide text-paper"
+            style={{ fontFamily: theme.type.ui }}
+          >
+            {t(locale, 'playAgain')}
+          </Link>
+        )}
       </div>
       <GameBoard key={mode} mode={mode} locale={locale} building={building} unlimitedHref={localeHref('/?mode=unlimited', locale)} />
     </main>

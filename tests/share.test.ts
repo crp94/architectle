@@ -61,6 +61,14 @@ describe('shareText', () => {
     expect(t).not.toContain('🔥');
   });
 
+  it('labels an unlimited result as practice rather than a numbered daily puzzle', () => {
+    const text = shareText({
+      puzzleNumber: 128, guessesUsed: 4, comparisons: [cmp('FAR', 'NONE', 'NONE', 'NONE')], locale: 'en', mode: 'unlimited',
+    });
+    expect(text).toContain('Architectle Unlimited 4/6');
+    expect(text).not.toContain('#128');
+  });
+
   it('never leaks the architect or building name for a solved round, in any locale', () => {
     // These are stand-ins for whatever the answer happens to be: shareText receives
     // only Comparison[], puzzleNumber, guessesUsed and locale, so it has no channel

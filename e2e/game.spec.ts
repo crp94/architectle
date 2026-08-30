@@ -111,8 +111,13 @@ test.describe('game flow', () => {
 
   test('starts a fresh round when replaying unlimited mode', async ({ page }) => {
     await page.goto(`${gameUrl()}&mode=unlimited`);
+    await expect(page.getByText('Unlimited practice', { exact: true })).toBeVisible();
+    await expect(page.getByText('Unlimited rounds do not affect daily statistics or streaks.', { exact: true })).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Daily puzzle', exact: true })).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Play unlimited', exact: true })).toHaveCount(0);
     await submitGuess(page, CORRECT);
     await expect(page.getByTestId('reveal')).toBeVisible();
+    await expect(page.getByTestId('reveal-share-preview')).toContainText('Architectle Unlimited');
 
     await page.getByRole('button', { name: 'Play unlimited', exact: true }).click();
     await expect(page.getByTestId('game-board')).toBeVisible();

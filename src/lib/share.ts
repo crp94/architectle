@@ -1,5 +1,6 @@
 import type { Comparison } from '@/lib/axes';
 import type { Locale } from '@/lib/i18n';
+import { t } from '@/lib/i18n';
 
 const SHARE_URL = 'architectle.carlosrodriguezpardo.es';
 
@@ -57,12 +58,6 @@ export function shareGrid(comparisons: Comparison[]): string {
     .join('\n');
 }
 
-const HEADER: Record<Locale, (puzzleNumber: number, score: string) => string> = {
-  en: (n, score) => `Architectle #${n} ${score}`,
-  es: (n, score) => `Architectle #${n} ${score}`,
-  it: (n, score) => `Architectle #${n} ${score}`,
-};
-
 /**
  * Builds the text a player pastes into social media. Takes only the comparison
  * grid, puzzle number, guess count and locale — it has no access to the
@@ -73,6 +68,8 @@ export function shareText(o: {
   guessesUsed: number | null;
   comparisons: Comparison[];
   locale: Locale;
+  /** Unlimited rounds are random practice, never the numbered daily puzzle. */
+  mode?: 'daily' | 'unlimited';
   /**
    * The player's current daily win streak (`GameState.stats.streak`) after
    * this round, if tracked. A bare integer — same "cannot leak the answer"
@@ -89,7 +86,11 @@ export function shareText(o: {
 }): string {
   const score = o.guessesUsed === null ? `X/${MAX_GUESSES}` : `${o.guessesUsed}/${MAX_GUESSES}`;
   const streakSuffix = o.streak !== undefined && o.streak >= 2 ? ` 🔥${o.streak}` : '';
-  const header = HEADER[o.locale](o.puzzleNumber, score) + streakSuffix;
+  const header = t(
+    o.locale,
+    o.mode === 'unlimited' ? 'shareUnlimitedHeader' : 'shareDailyHeader',
+    { n: o.puzzleNumber, score },
+  ) + streakSuffix;
   const grid = shareGrid(o.comparisons);
   return [header, grid, SHARE_URL].filter(Boolean).join('\n\n');
 }

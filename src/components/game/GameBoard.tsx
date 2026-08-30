@@ -255,6 +255,7 @@ export function GameBoard({ mode = 'daily', building, locale = 'en', unlimitedHr
         locale={locale}
         unlimitedHref={unlimitedHref}
         onPlayAgain={mode === 'unlimited' ? handleUnlimitedReplay : undefined}
+        mode={mode}
         // Unlimited mode never tracks daily stats (see the `mode === 'daily'`
         // guard in handleGuess above) — `stats` would just be the unchanging
         // all-zero `defaultStats()` there, which would render a misleading

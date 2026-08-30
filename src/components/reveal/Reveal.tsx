@@ -40,6 +40,7 @@ export type RevealProps = {
   stats?: Stats;
   unlimitedHref?: string;
   onPlayAgain?: () => void;
+  mode?: 'daily' | 'unlimited';
 };
 
 /**
@@ -58,7 +59,7 @@ export type RevealProps = {
 type CopyState = 'share' | 'copy' | 'failed-share' | 'failed-copy' | null;
 
 export function Reveal({
-  building, architect, solved, guessesUsed, comparisons, locale = 'en', stats, unlimitedHref = '/?mode=unlimited&lang=en', onPlayAgain,
+  building, architect, solved, guessesUsed, comparisons, locale = 'en', stats, unlimitedHref = '/?mode=unlimited&lang=en', onPlayAgain, mode = 'daily',
 }: RevealProps) {
   const [copied, setCopied] = useState<CopyState>(null);
 
@@ -80,6 +81,7 @@ export function Reveal({
     guessesUsed,
     comparisons,
     locale,
+    mode,
     streak: stats?.streak,
   });
   const summary = stats ? statsSummary(stats) : null;
