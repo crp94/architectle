@@ -551,4 +551,84 @@ export const AMERICAS_ARCHITECTS: Architect[] = [
     ],
   },
 
+{
+    // Wave V2-3, batch B8. Robert Venturi died 2018; no living-person
+    // concern. Two ids for one partnership, per the feasibility
+    // resolution: `robert-venturi` carries the pre-partnership solo-era
+    // work (both buildings below predate Denise Scott Brown's involvement
+    // in the firm — Guild House is documented as "Venturi and Rauch",
+    // with no Scott Brown credit, per its own Wikipedia article).
+    // `denise-scott-brown` (defined next, also in this file) carries the
+    // firm-era joint commissions, with Venturi cross-linked via
+    // `coArchitects` there rather than erased — this is the split
+    // recommended by wave 1's feasibility report and is not a gender-
+    // quota pick in either direction: v2's validators don't gate on
+    // gender at all (see design spec §3), and Venturi still gets full,
+    // independent representation via this id.
+    id: 'robert-venturi',
+    wikidataId: 'Q212312',
+    name: 'Robert Venturi',
+    alternativeNames: ['Robert Charles Venturi Jr.'],
+    gender: 'man',
+    born: 1925,
+    died: 2018,
+    floruit: { start: 1959, end: 1966, override: false },
+    movements: [{ id: 'postmodern-classicism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'domestic',
+    signatureMaterial: 'brick',
+    portrait: {
+      en: "Venturi trained at Princeton and worked for Louis Kahn and Eero Saarinen before opening his own Philadelphia practice, whose first built commission was a house for his own mother, Vanna Venturi, and second a subsidised apartment block for elderly residents, Guild House. His 1966 book Complexity and Contradiction in Architecture argued for a \"both-and\" architecture of quotation, ornament and deliberately unresolved form against the reductive slogans of late Modernism — \"less is a bore\" answered Mies's \"less is more\" — and made him architecture's first postmodern theorist before he had built much at all. From the late 1960s his practice and his life were an equal partnership with Denise Scott Brown, whom he married in 1967; together they wrote Learning from Las Vegas (1972) and built the firm's larger institutional work as Venturi, Scott Brown and Associates. The 1991 Pritzker Prize went to Venturi alone, a decision Scott Brown herself protested and architecture historians still contest.",
+      es: 'Venturi se formó en Princeton y trabajó para Louis Kahn y Eero Saarinen antes de abrir su propio estudio en Filadelfia, cuyo primer encargo construido fue una casa para su propia madre, Vanna Venturi, y el segundo un bloque de apartamentos subvencionados para mayores, Guild House. Su libro de 1966 Complejidad y contradicción en la arquitectura defendía una arquitectura del «esto y aquello», de cita, ornamento y forma deliberadamente irresuelta, frente a los eslóganes reductores del modernismo tardío —«menos es aburrido» respondía al «menos es más» de Mies— y lo convirtió en el primer teórico del posmodernismo antes de que hubiera construido apenas nada. Desde finales de los años sesenta su estudio y su vida fueron una sociedad igualitaria con Denise Scott Brown, con quien se casó en 1967; juntos escribieron Learning from Las Vegas (1972) y levantaron los encargos institucionales mayores del estudio como Venturi, Scott Brown and Associates. El Pritzker de 1991 recayó solo en Venturi, una decisión que la propia Scott Brown rechazó y que los historiadores de la arquitectura siguen discutiendo.',
+      it: "Venturi si formò a Princeton e lavorò per Louis Kahn e Eero Saarinen prima di aprire un proprio studio a Filadelfia, il cui primo incarico costruito fu una casa per sua madre, Vanna Venturi, e il secondo un edificio di appartamenti sovvenzionati per anziani, Guild House. Il suo libro del 1966, Complessità e contraddizioni nell'architettura, sosteneva un'architettura del «sia... sia», fatta di citazione, ornamento e forma deliberatamente irrisolta, contro gli slogan riduttivi del tardo modernismo — «less is a bore» rispondeva al «less is more» di Mies — e ne fece il primo teorico del postmoderno prima ancora che avesse costruito quasi nulla. Dalla fine degli anni Sessanta il suo studio e la sua vita furono una società paritaria con Denise Scott Brown, che sposò nel 1967; insieme scrissero Learning from Las Vegas (1972) e realizzarono le maggiori commesse istituzionali dello studio come Venturi, Scott Brown and Associates. Il Pritzker del 1991 andò al solo Venturi, una decisione che la stessa Scott Brown contestò e che gli storici dell'architettura discutono ancora.",
+    },
+    awards: ['Pritzker Architecture Prize (1991)', 'AIA Gold Medal (1985, jointly with Denise Scott Brown)', 'Royal Gold Medal (1992, jointly with Denise Scott Brown)'],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q212312', title: 'Robert Venturi (Q212312)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Robert_Venturi', title: 'Robert Venturi', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    // Wave V2-3, batch B8. Living (b. 1931) — the only documented
+    // controversy is the 1991 Pritzker committee's decision not to
+    // recognise her alongside Venturi, a professional-credit dispute, not
+    // a personal-conduct allegation; does not trigger the living-person
+    // policy. `robert-venturi` (previous entry, same file) carries the
+    // pre-partnership solo work; the two firm-era buildings below credit
+    // `denise-scott-brown` as `architectId` with Venturi cross-linked via
+    // `coArchitects`, per the documented record that she was principal-
+    // in-charge alongside him on the firm's larger institutional work
+    // (Wikipedia: she "served as principal-in-charge with Robert Venturi
+    // on the firm's larger architectural projects, including the
+    // Sainsbury Wing of London's National Gallery").
+    id: 'denise-scott-brown',
+    wikidataId: 'Q457718',
+    name: 'Denise Scott Brown',
+    alternativeNames: ['Denise Lakofski'],
+    gender: 'woman',
+    born: 1931,
+    died: null,
+    floruit: { start: 1967, end: 1991, override: false },
+    movements: [{ id: 'postmodern-classicism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'brick',
+    portrait: {
+      en: 'Scott Brown was born in Nkana, Northern Rhodesia (now Zambia), studied architecture at the University of the Witwatersrand and the Architectural Association in London, then planning at Penn under Louis Kahn, where she met Robert Venturi. She joined his Philadelphia practice as a design partner in the late 1960s and became an equal creative force in its urban and institutional work, from the Las Vegas strip surveys behind Learning from Las Vegas (1972, with Venturi and Steven Izenour) to the larger public commissions built as Venturi, Scott Brown and Associates, including the Sainsbury Wing of London\'s National Gallery and the Seattle Art Museum. When the 1991 Pritzker Prize went to Venturi alone, Scott Brown declined to attend rather than accept recognition that excluded her share of the work; a 2013 student petition asking the jury to add her name retroactively was declined.',
+      es: 'Scott Brown nació en Nkana, Rodesia del Norte (hoy Zambia), estudió arquitectura en la Universidad de Witwatersrand y en la Architectural Association de Londres, y después urbanismo en Penn con Louis Kahn, donde conoció a Robert Venturi. Se incorporó a su estudio de Filadelfia como socia de diseño a finales de los años sesenta y se convirtió en una fuerza creativa igual a la suya en la obra urbanística e institucional del estudio, desde los estudios de campo sobre la avenida de Las Vegas que dieron lugar a Learning from Las Vegas (1972, con Venturi y Steven Izenour) hasta los grandes encargos públicos construidos como Venturi, Scott Brown and Associates, entre ellos el Sainsbury Wing de la National Gallery de Londres y el Seattle Art Museum. Cuando el Pritzker de 1991 recayó solo en Venturi, Scott Brown declinó asistir a la ceremonia antes que aceptar un reconocimiento que excluía su parte del trabajo; una petición estudiantil de 2013 para que el jurado añadiera su nombre retroactivamente fue rechazada.',
+      it: "Scott Brown nacque a Nkana, nella Rhodesia del Nord (oggi Zambia), studiò architettura all'Università di Witwatersrand e alla Architectural Association di Londra, e poi pianificazione urbana alla Penn con Louis Kahn, dove conobbe Robert Venturi. Entrò nel suo studio di Filadelfia come socia di progettazione alla fine degli anni Sessanta e divenne una forza creativa alla pari nell'opera urbanistica e istituzionale dello studio, dagli studi sul campo lungo la Las Vegas Strip che diedero origine a Learning from Las Vegas (1972, con Venturi e Steven Izenour) fino alle maggiori commesse pubbliche realizzate come Venturi, Scott Brown and Associates, fra cui il Sainsbury Wing della National Gallery di Londra e il Seattle Art Museum. Quando il Pritzker del 1991 andò al solo Venturi, Scott Brown rifiutò di partecipare alla cerimonia piuttosto che accettare un riconoscimento che escludeva la sua parte di lavoro; una petizione studentesca del 2013 perché la giuria aggiungesse retroattivamente il suo nome fu respinta.",
+    },
+    awards: ['AIA Gold Medal (1985, jointly with Robert Venturi)', 'Royal Gold Medal (1992, jointly with Robert Venturi)', 'Jane Drew Prize (2017)', 'Soane Medal (2018)'],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q457718', title: 'Denise Scott Brown (Q457718)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Denise_Scott_Brown', title: 'Denise Scott Brown', license: 'CC BY-SA 4.0' },
+    ],
+  },
+
 ];

@@ -559,6 +559,27 @@ export const EUROPE_GERMANIC_BUILDINGS: Building[] = [
       width: 1600,
       height: 1254,
     },
+    // Wave V2-3, batch B8 (image pass only — Zumthor was already at the
+    // 2-building floor). Downloaded and visually confirmed the existing
+    // primary is genuinely exterior (stone-banded facade against the
+    // hillside, not an interior bathing hall) before leaving it in place.
+    // Rejected two higher-resolution alternates in this building's Commons
+    // category (`Therme Vals roof...jpg`, `Therme Vals panoramic view...jpg`)
+    // because their licence box reads as photographer Micha L. Rieser's own
+    // bespoke "attribution only" terms, not one of the exhaustively allowed
+    // CC0/CC BY/CC BY-SA/PD licences; also rejected `Therme Vals Winter.JPG`
+    // after viewing it — it shows the neighbouring 1960s hotel tower through
+    // trees, not Zumthor's baths building.
+    extraImages: [
+      {
+        commonsFile: 'File:Therme Vals facade, Vals, Graubünden, Switzerland - 20051009.jpg',
+        photographer: 'Roland Zumbühl',
+        license: 'CC BY-SA 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Therme_Vals_facade,_Vals,_Graub%C3%BCnden,_Switzerland_-_20051009.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
     dossier: {
       en: 'The baths opened in 1996, half buried in the hillside above the village. The governing image, stated by the architect, is a quarry: a mass from which blocks have been cut, so that what remains and the voids between are the building. Some sixty thousand slabs of Valser gneiss, each a metre long, were quarried nearby and laid in courses of three varying heights, which is why the wall reads as geology rather than as masonry. Zumthor reduced the programme to bathing itself — a hot bath, a cold bath, a flower bath, steam rooms — and refused every leisure-pool device: no slides, no jets. Water comes from the Saint Peter spring. The commune of Vals owned the complex when it was built; the baths won the European Union Prize for Contemporary Architecture in 1998, the year they were placed under cantonal monument protection.',
       es: 'Las termas se inauguraron en 1996, medio enterradas en la ladera sobre el pueblo. La imagen rectora, formulada por el arquitecto, es la de una cantera: una masa de la que se han extraído bloques, de modo que lo que queda y los huecos intermedios constituyen el edificio. Unas sesenta mil losas de gneis de Vals, de un metro de largo cada una, se extrajeron de la cantera cercana y se colocaron en hiladas de tres alturas distintas, y por eso el muro se lee como geología antes que como fábrica. Zumthor redujo el programa al baño mismo —baño caliente, baño frío, baño de flores, salas de vapor— y rechazó todo artificio de piscina lúdica: ni toboganes ni chorros. El agua procede del manantial de San Pedro. El municipio de Vals era propietario del complejo cuando se construyó; las termas ganaron el Premio de Arquitectura Contemporánea de la Unión Europea en 1998, el mismo año en que quedaron protegidas como monumento cantonal.',
@@ -786,6 +807,21 @@ export const EUROPE_GERMANIC_BUILDINGS: Building[] = [
       width: 1600,
       height: 1067,
     },
+    // Wave V2-3, batch B8 (image pass only). Downloaded and visually
+    // confirmed the existing primary + detailRect crop genuinely frame
+    // exterior rammed-concrete fabric (tie-hole pattern, corner edge, the
+    // door's steel triangle) — no change needed. Added a wider full-context
+    // exterior shot as the second angle.
+    extraImages: [
+      {
+        commonsFile: 'File:Bruder Klaus Feldkapelle (18833789670).jpg',
+        photographer: 'Kenta Mabuchi',
+        license: 'CC BY-SA 2.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Bruder_Klaus_Feldkapelle_(18833789670).jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
     dossier: {
       en: 'The Scheidtweilers approached Zumthor while he was building the Kolumba museum in Cologne, wanting to raise a chapel on their own land in thanks for a good life. Planning began in 2001 and construction ran from 2005 to 2007. The client felled 112 spruce trunks in a nearby wood and stood them as a tent-shaped inner formwork; around it a volunteer ramming crew, working with skilled tradesmen in the region\'s old tradition, laid the rammed-concrete body in fifty-centimetre lifts over twenty-four days to a height of twelve metres, using concrete, river gravel and reddish sand from the surrounding fields. In autumn 2006 a smouldering fire was kept burning inside for three weeks, charring the trunks and loosening them from the concrete so they could be drawn out. The floor is a tin-and-lead alloy melted and poured in place; 350 mouth-blown glass plugs stop the formwork tie holes. The chapel was blessed on 19 May 2007.',
       es: 'Los Scheidtweiler se dirigieron a Zumthor mientras este construía el museo Kolumba de Colonia, con el deseo de levantar una capilla en su propia tierra en agradecimiento por una vida buena. La planificación comenzó en 2001 y las obras se desarrollaron entre 2005 y 2007. El promotor taló 112 troncos de abeto en un bosque cercano y los dispuso como encofrado interior en forma de tienda; a su alrededor, una cuadrilla de voluntarios, junto con artesanos especializados y siguiendo la vieja tradición de la comarca, apisonó el cuerpo de hormigón en tongadas de cincuenta centímetros a lo largo de veinticuatro días hasta los doce metros de altura, con hormigón, canto rodado de río y arena rojiza de los campos vecinos. En otoño de 2006 se mantuvo dentro un fuego lento durante tres semanas que carbonizó los troncos y los despegó del hormigón, de modo que pudieron extraerse. El suelo es una aleación de estaño y plomo fundida y vertida in situ; 350 tapones de vidrio soplado cierran los agujeros de los tensores del encofrado. La capilla se bendijo el 19 de mayo de 2007.',

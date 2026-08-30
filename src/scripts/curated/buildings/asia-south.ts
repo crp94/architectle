@@ -421,7 +421,14 @@ export const ASIA_SOUTH_BUILDINGS: Building[] = [
       es: 'Campus universitario en uso.',
       it: 'Campus universitario in uso.',
     },
-    detailRect: { x: 0.08, y: 0.07, w: 0.30, h: 0.28 },
+    // Wave V2-3, batch B8 (image pass on Doshi's existing entry, topped
+    // up elsewhere this batch with Amdavad ni Gufa). The inherited
+    // detailRect (0.08, 0.07, 0.30, 0.28) was a real instance of the
+    // pattern this contract warns about: cropping it showed almost
+    // nothing but creeper foliage, no readable architecture. Re-derived
+    // from the actual image — this rect frames the coursed-granite
+    // corridor columns and pergola beam the dossier describes.
+    detailRect: { x: 0.03, y: 0.32, w: 0.22, h: 0.30 },
     image: {
       commonsFile: 'Indian Institute of Management Bangalore, Central Pergola in 2015.jpg',
       photographer: 'Burhan.nameer',
@@ -430,6 +437,16 @@ export const ASIA_SOUTH_BUILDINGS: Building[] = [
       width: 1600,
       height: 1000,
     },
+    extraImages: [
+      {
+        commonsFile: 'File:Indian Institute of Management Bangalore, Entrance Main Block.jpg',
+        photographer: 'Apb2693',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Indian_Institute_of_Management_Bangalore,_Entrance_Main_Block.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
     dossier: {
       en: 'Doshi looked at Fatehpur Sikri and took from it a lesson about corridors. Rather than a building with rooms off a passage, IIM Bangalore is a ladder of parallel blocks strung along covered pedestrian streets, and the streets are the architecture: they widen and narrow, open to courts and gardens, and are roofed in alternating stretches of concrete pergola and glazed skylight, so the light through them shifts hour by hour and never twice the same. Everything is faced in rough local granite laid in courses, warm and slightly coarse to the hand, and the creepers were planted from the start to grow across the pergolas. There is no facade in the usual sense and no front door of consequence; the section, not the elevation, does the work. Designed from 1977, with the original scheme complete by 1983 and construction continuing to about 1985.',
       es: 'Doshi miró Fatehpur Sikri y extrajo de allí una lección sobre corredores. Más que un edificio con habitaciones a un pasillo, el IIM de Bangalore es una escalera de bloques paralelos ensartados en calles peatonales cubiertas, y las calles son la arquitectura: se ensanchan y estrechan, se abren a patios y jardines y se cubren por tramos alternos de pérgola de hormigón y lucernario acristalado, de modo que la luz que las atraviesa cambia hora a hora y nunca se repite. Todo va revestido de granito local en bruto colocado a hiladas, cálido y algo áspero al tacto, y las trepadoras se plantaron desde el principio para que ganaran las pérgolas. No hay fachada en el sentido habitual ni puerta principal de importancia: el trabajo lo hace la sección, no el alzado. Proyectado desde 1977, con el esquema original terminado en 1983 y obras hasta 1985 aproximadamente.',
@@ -440,6 +457,77 @@ export const ASIA_SOUTH_BUILDINGS: Building[] = [
       { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q46021', title: 'Indian Institute of Management, Bengaluru (Q46021)', license: null },
       { kind: 'institution', url: 'https://www.iimb.ac.in/about-institute/architecture', title: 'Architecture — Indian Institute of Management Bangalore', license: null },
       { kind: 'institution', url: 'https://www.pritzkerprize.com/laureates/balkrishna-doshi', title: 'Balkrishna Doshi — 2018 Pritzker Architecture Prize Laureate', license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    // Wave V2-3, batch B8. `balkrishna-doshi` defined above in this file
+    // (IIM Bangalore); referenced here, not redefined. Doshi died 24
+    // January 2023 — under 70 years in copyright, so India's FoP
+    // (s.52(1)(s)) plus strict exterior-only framing is what clears this
+    // entry; the primary and extraImage below were hand-checked to
+    // confirm they show only the above-ground mound, never the gallery's
+    // underground interior, which Husain's paintings would make a clear
+    // interior-derivative-work problem regardless of the building's own
+    // licence status.
+    id: 'amdavad-ni-gufa',
+    wikidataId: 'Q1744232',
+    name: {
+      en: 'Amdavad ni Gufa',
+      es: 'Amdavad ni Gufa',
+      it: 'Amdavad ni Gufa',
+    },
+    architectId: 'balkrishna-doshi',
+    location: { city: 'Ahmedabad', countryCode: 'IN', lat: 23.03611, lon: 72.54944 },
+    inception: 1992,
+    completed: 1995,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['concrete'],
+    structure: {
+      en: 'A cluster of interlocking underground domes and vaults, cast in one-inch ferrocement over a mesh of branching steel rods with no columns and no conventional foundation, breaking the surface only as mosaic-tiled mounds pierced by conical skylights.',
+      es: 'Un racimo de cúpulas y bóvedas subterráneas entrelazadas, vaciadas en ferrocemento de una pulgada sobre una malla de varillas de acero ramificadas, sin columnas ni cimentación convencional, que solo asoma en superficie como montículos revestidos de mosaico perforados por lucernarios cónicos.',
+      it: 'Un grappolo di cupole e volte sotterranee incastrate, gettate in ferrocemento spesso un pollice su una maglia di tondini d\'acciaio ramificati, senza colonne né fondazioni convenzionali, che affiora in superficie solo come tumuli rivestiti di mosaico forati da lucernari conici.',
+    },
+    program: {
+      en: 'A permanent gallery designed by Doshi at the request of the painter M. F. Husain to exhibit Husain\'s work, built with no client but the two artists themselves.',
+      es: 'Galería permanente proyectada por Doshi a petición del pintor M. F. Husain para exponer su obra, construida sin más promotor que los dos artistas.',
+      it: 'Galleria permanente progettata da Doshi su richiesta del pittore M. F. Husain per esporre la sua opera, costruita senza altro committente che i due artisti stessi.',
+    },
+    heritage: 'regional',
+    currentUse: {
+      en: 'Working art gallery, still displaying M. F. Husain\'s paintings and sculptural reliefs and hosting rotating exhibitions.',
+      es: 'Galería de arte en funcionamiento, que sigue exhibiendo las pinturas y relieves escultóricos de M. F. Husain y acoge exposiciones temporales.',
+      it: 'Galleria d\'arte in funzione, che continua a esporre i dipinti e i rilievi scultorei di M. F. Husain e ospita mostre temporanee.',
+    },
+    detailRect: { x: 0.30, y: 0.15, w: 0.35, h: 0.35 },
+    image: {
+      commonsFile: 'File:Amdavad ni gufa.jpg',
+      photographer: 'Vaishal Dalal',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Amdavad_ni_gufa.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Amdavad ni Gufa, Ahmedabad.JPG',
+        photographer: 'Shailya Dalal',
+        license: 'CC BY-SA 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Amdavad_ni_Gufa,_Ahmedabad.JPG',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: 'Doshi built this as M. F. Husain\'s permanent gallery, at the painter\'s own request, after Husain had covered the walls of Doshi\'s earlier art centre with murals during a visit. What resulted is barely a building in the ordinary sense: a cluster of interlocking domes and vaults, cast in one-inch-thick ferrocement over a mesh of thin steel-rod branches Doshi likened to tree roots, with no columns and no conventional foundation — the whole shell rests on a bed of wire mesh and mortar laid directly on the ground. Above ground, only the domes break the surface, their exteriors clad in a mosaic of broken white china and crockery, pierced by conical skylights Doshi called "snouts," each one throwing a moving disc of sunlight across the space beneath as the day passes. Construction ran from 1992 to 1995, the gallery built first and the surrounding amenities after. Below, the entire interior surface — walls, columns, ceiling — is covered in Husain\'s paintings, drawings and sculptural reliefs, made specifically for these curved surfaces.',
+      es: 'Doshi construyó esto como galería permanente de M. F. Husain, a petición del propio pintor, después de que Husain cubriera de murales las paredes de un centro de arte anterior de Doshi durante una visita. El resultado apenas es un edificio en el sentido habitual: un racimo de cúpulas y bóvedas entrelazadas, vaciadas en ferrocemento de una pulgada de espesor sobre una malla de finas varillas de acero que Doshi comparaba con raíces de árbol, sin columnas ni cimentación convencional: toda la cáscara descansa sobre un lecho de malla metálica y mortero tendido directamente sobre el terreno. Sobre el nivel del suelo solo asoman las cúpulas, revestidas por fuera de un mosaico de porcelana y vajilla rota, perforadas por lucernarios cónicos que Doshi llamaba «hocicos», cada uno proyectando un disco de luz solar en movimiento sobre el espacio de abajo a medida que avanza el día. Las obras se desarrollaron entre 1992 y 1995, primero la galería y después las instalaciones circundantes. Abajo, toda la superficie interior —muros, columnas, techo— está cubierta de pinturas, dibujos y relieves escultóricos de Husain, hechos expresamente para estas superficies curvas.',
+      it: 'Doshi costruì questo spazio come galleria permanente di M. F. Husain, su richiesta dello stesso pittore, dopo che Husain aveva coperto di murales le pareti di un precedente centro d\'arte di Doshi durante una visita. Il risultato è a stento un edificio nel senso consueto: un grappolo di cupole e volte incastrate, gettate in ferrocemento spesso un pollice su una maglia di sottili tondini d\'acciaio che Doshi paragonava a radici d\'albero, senza colonne né fondazioni convenzionali: l\'intero guscio poggia su un letto di rete metallica e malta steso direttamente sul terreno. In superficie affiorano solo le cupole, rivestite all\'esterno da un mosaico di porcellana e stoviglie rotte, forate da lucernari conici che Doshi chiamava «musi», ciascuno dei quali proietta un disco di luce solare in movimento sullo spazio sottostante col passare della giornata. I lavori si svolsero fra il 1992 e il 1995, prima la galleria e poi gli spazi accessori. Sotto, l\'intera superficie interna — pareti, colonne, soffitto — è ricoperta di dipinti, disegni e rilievi scultorei di Husain, realizzati appositamente per queste superfici curve.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1744232', title: 'Amdavad ni Gufa (Q1744232)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Amdavad_ni_Gufa', title: 'Amdavad ni Gufa', license: 'CC BY-SA 4.0' },
     ],
     tier: 'canon',
   },
@@ -898,6 +986,20 @@ export const ASIA_SOUTH_BUILDINGS: Building[] = [
       width: 1600,
       height: 1280,
     },
+    // Wave V2-3, batch B8 (image pass on Le Corbusier's existing entry,
+    // topped up elsewhere this batch with the Secretariat and the High
+    // Court, both also in the Chandigarh Capitol Complex). Re-verified the
+    // primary licence live; added one extraImage.
+    extraImages: [
+      {
+        commonsFile: 'File:Palace of Assembly Chandigarh 2006.jpg',
+        photographer: 'duncid',
+        license: 'CC BY-SA 2.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Palace_of_Assembly_Chandigarh_2006.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
     dossier: {
       en: 'The plan starts as a rectangle and is immediately broken open: a deep, unglazed portico runs the width of the entrance front, and behind it two forms collide rather than align — a stepped pyramidal block of committee rooms and offices, and the drum of the assembly chamber itself, its roof punched by a hyperbolic-paraboloid tower that Le Corbusier likened in silhouette to a cooling tower and, before that, to the cupola of a Mughal pavilion. Members move between floors on ramps rather than stairs. A ten-foot enamelled door, its grid of squares filled with cosmic and biological symbols Le Corbusier designed himself, opens onto a forum lit by cannon-shaped light scoops cut through the roof slab. Built in raw board-marked concrete — béton brut — between 1951 and 1962 and inaugurated on 15 April 1964, the Assembly still seats two separate legislatures rather than the one it was designed for. It was inscribed with sixteen other Le Corbusier sites across seven countries as a UNESCO World Heritage property in 2016.',
       es: 'La planta arranca de un rectángulo y se rompe de inmediato: un pórtico profundo y sin acristalar recorre todo el frente de acceso, y detrás chocan dos formas en vez de alinearse: un bloque piramidal escalonado con las salas de comisiones y las oficinas, y el tambor de la propia sala de plenos, cuya cubierta perfora una torre hiperbólico-parabólica que Le Corbusier comparó en silueta con una torre de refrigeración y, antes, con la cúpula de un pabellón mogol. Los diputados se mueven entre plantas por rampas, no por escaleras. Una puerta esmaltada de tres metros, con su retícula de cuadros llenos de símbolos cósmicos y biológicos que el propio Le Corbusier dibujó, se abre a un foro iluminado por lucernarios en forma de cañón recortados en la losa de cubierta. Construida en hormigón bruto encofrado en tablas —béton brut— entre 1951 y 1962 e inaugurada el 15 de abril de 1964, la Asamblea sigue albergando dos legislaturas separadas en vez de la única para la que se proyectó. Fue inscrita junto a otras dieciséis obras de Le Corbusier en siete países como Patrimonio Mundial de la UNESCO en 2016.',
@@ -919,6 +1021,138 @@ export const ASIA_SOUTH_BUILDINGS: Building[] = [
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Palace_of_Assembly', title: 'Palace of Assembly', license: 'CC BY-SA 4.0' },
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Chandigarh_Capitol_Complex', title: 'Chandigarh Capitol Complex', license: 'CC BY-SA 4.0' },
       { kind: 'institution', url: 'https://whc.unesco.org/en/list/1321/', title: 'The Architectural Work of Le Corbusier, an Outstanding Contribution to the Modern Movement — UNESCO World Heritage Centre', license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    // Wave V2-3, batch B8. `le-corbusier` defined in this same file above
+    // (Palace of Assembly); referenced here and by the Secretariat entry
+    // below, not redefined. Same Chandigarh Capitol Complex UNESCO
+    // property, India s.52(1)(s) FoP.
+    id: 'punjab-haryana-high-court',
+    wikidataId: 'Q130502',
+    name: {
+      en: 'Punjab and Haryana High Court',
+      es: 'Tribunal Superior de Punyab y Haryana',
+      it: "Alta Corte del Punjab e dell'Haryana",
+    },
+    architectId: 'le-corbusier',
+    location: { city: 'Chandigarh', countryCode: 'IN', lat: 30.754167, lon: 76.801111 },
+    inception: 1951,
+    completed: 1955,
+    demolished: null,
+    typology: 'civic',
+    materials: ['concrete'],
+    structure: {
+      en: 'A deep, unglazed concrete portico — a parasol roof structurally independent of the block below — runs the width of the entrance front on three tapering, brightly painted pylons, shading eight stacked courtrooms reached by ramp rather than stair.',
+      es: 'Un pórtico profundo de hormigón sin acristalar —una cubierta parasol estructuralmente independiente del bloque de abajo— recorre todo el frente de acceso sobre tres pilonos cónicos pintados de colores vivos, dando sombra a ocho salas apiladas a las que se llega por rampa y no por escalera.',
+      it: "Un portico profondo in cemento senza vetrate — una copertura a parasole strutturalmente indipendente dal blocco sottostante — corre lungo tutto il fronte d'ingresso su tre piloni conici dipinti a colori vivaci, ombreggiando otto aule impilate raggiunte da una rampa anziché da una scala.",
+    },
+    program: {
+      en: "Seat of the High Court of East Punjab, part of Le Corbusier's Chandigarh Capitol Complex commissioned by Jawaharlal Nehru to replace the judiciary's temporary post-Partition home in Shimla.",
+      es: 'Sede del Tribunal Superior de Punyab Oriental, parte del Capitolio de Chandigarh de Le Corbusier, encargado por Jawaharlal Nehru para sustituir la sede provisional de la judicatura en Simla tras la Partición.',
+      it: "Sede dell'Alta Corte del Punjab orientale, parte del Campidoglio di Chandigarh di Le Corbusier, commissionato da Jawaharlal Nehru per sostituire la sede provvisoria della magistratura a Shimla dopo la Partizione.",
+    },
+    heritage: 'unesco',
+    currentUse: {
+      en: 'Working joint High Court for the states of Punjab and Haryana and the union territory of Chandigarh.',
+      es: 'Tribunal Superior conjunto en funcionamiento para los estados de Punyab y Haryana y el territorio de la Unión de Chandigarh.',
+      it: "Alta Corte congiunta in funzione per gli stati del Punjab e dell'Haryana e per il territorio dell'Unione di Chandigarh.",
+    },
+    detailRect: { x: 0.15, y: 0.20, w: 0.30, h: 0.35 },
+    image: {
+      commonsFile: 'File:Chandigarh High Court.jpg',
+      photographer: 'gb pandey',
+      license: 'CC BY-SA 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Chandigarh_High_Court.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Punjab and Haryana High Court , Chandigarh.jpg',
+        photographer: 'Harvinder Chandigarh',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Punjab_and_Haryana_High_Court_,_Chandigarh.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "The court was the first of the Capitol's three buildings to be occupied, moving from Shimla to Chandigarh in January 1955 and inaugurated by Nehru that March. Le Corbusier gave it a single deep, unglazed portico that runs the whole width of the entrance front — a parasol roof independent of the block below it, shading the courtrooms behind from the Punjab sun and shedding monsoon rain clear of the walls. Three tapering pylons carry the portico at the entrance, painted green, yellow and vermilion, the only saturated colour on an otherwise raw-concrete building; judges reach their chambers by a ramp rather than a stair, a processional route Le Corbusier used across the whole Capitol. Eight courtrooms and their attendant offices sit behind the shading screen in a straightforward stacked block. It shares its UNESCO inscription with the Palace of Assembly and the Secretariat as one property, listed in 2016, and still serves as the joint High Court for Punjab, Haryana and the union territory of Chandigarh.",
+      es: 'El tribunal fue el primero de los tres edificios del Capitolio en entrar en servicio: se trasladó de Simla a Chandigarh en enero de 1955 y Nehru lo inauguró ese mismo marzo. Le Corbusier le dio un único pórtico profundo y sin acristalar que recorre todo el frente de acceso —una cubierta parasol independiente del bloque de abajo—, que protege del sol punyabí las salas y evacúa la lluvia del monzón lejos de los muros. Tres pilonos cónicos sostienen el pórtico en la entrada, pintados de verde, amarillo y bermellón, el único color saturado de un edificio por lo demás en hormigón bruto; los jueces llegan a sus despachos por una rampa y no por una escalera, recorrido procesional que Le Corbusier empleó en todo el Capitolio. Ocho salas y sus oficinas anejas se alinean tras la pantalla de sombra en un bloque apilado sin complicaciones. Comparte su inscripción de la UNESCO con el Palacio de la Asamblea y la Secretaría como un único bien, listado en 2016, y sigue funcionando como Tribunal Superior conjunto de Punyab, Haryana y el territorio de la Unión de Chandigarh.',
+      it: "Il tribunale fu il primo dei tre edifici del Campidoglio a entrare in funzione: si trasferì da Shimla a Chandigarh nel gennaio 1955 e Nehru lo inaugurò quello stesso marzo. Le Corbusier gli diede un unico portico profondo e senza vetrate che corre lungo tutto il fronte d'ingresso — una copertura a parasole indipendente dal blocco sottostante — che ripara le aule dal sole del Punjab e allontana dai muri la pioggia monsonica. Tre piloni conici sorreggono il portico all'ingresso, dipinti di verde, giallo e vermiglio, l'unico colore saturo in un edificio altrimenti in cemento grezzo; i giudici raggiungono i propri uffici tramite una rampa anziché una scala, percorso processionale che Le Corbusier impiegò in tutto il Campidoglio. Otto aule e i relativi uffici si allineano dietro lo schermo d'ombra in un blocco impilato senza complicazioni. Condivide la propria iscrizione UNESCO con il Palazzo dell'Assemblea e il Segretariato come un unico bene, iscritto nel 2016, e serve tuttora come Alta Corte congiunta di Punjab, Haryana e del territorio dell'Unione di Chandigarh.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q130502', title: 'Punjab and Haryana High Court (Q130502)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Punjab_and_Haryana_High_Court', title: 'Punjab and Haryana High Court', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Chandigarh_Capitol_Complex', title: 'Chandigarh Capitol Complex', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    // Wave V2-3, batch B8. `le-corbusier` defined above in this file
+    // (Palace of Assembly); referenced here, not redefined.
+    id: 'secretariat-building-chandigarh',
+    wikidataId: 'Q7444209',
+    name: {
+      en: 'Secretariat Building, Chandigarh',
+      es: 'Edificio de la Secretaría, Chandigarh',
+      it: 'Edificio del Segretariato, Chandigarh',
+    },
+    architectId: 'le-corbusier',
+    location: { city: 'Chandigarh', countryCode: 'IN', lat: 30.76111, lon: 76.80056 },
+    inception: 1952,
+    completed: 1958,
+    demolished: null,
+    typology: 'civic',
+    materials: ['concrete'],
+    structure: {
+      en: "A 254-metre, eight-storey slab wrapped in a continuous grid of concrete brise-soleil sized differently per facade for each elevation's actual sun exposure, climbed by two car-width ramps in place of a lift core.",
+      es: 'Una losa de 254 metros y ocho plantas envuelta en una retícula continua de brise-soleil de hormigón dimensionada de forma distinta en cada fachada según la exposición solar real de cada una, recorrida por dos rampas del ancho de un coche en lugar de un núcleo de ascensores.',
+      it: "Una lastra di 254 metri e otto piani avvolta in una griglia continua di brise-soleil in cemento dimensionata in modo diverso su ogni fronte secondo l'esposizione solare reale di ciascuno, percorsa da due rampe larghe quanto un'automobile al posto di un nucleo ascensori.",
+    },
+    program: {
+      en: "Ministry offices for the Punjab state government, the third and largest building of Le Corbusier's Chandigarh Capitol Complex, commissioned alongside the Assembly and High Court.",
+      es: 'Oficinas ministeriales del gobierno del estado de Punyab, el tercer y mayor edificio del Capitolio de Chandigarh de Le Corbusier, encargado junto con la Asamblea y el Tribunal Superior.',
+      it: "Uffici ministeriali del governo dello stato del Punjab, il terzo e più grande edificio del Campidoglio di Chandigarh di Le Corbusier, commissionato insieme all'Assemblea e all'Alta Corte.",
+    },
+    heritage: 'unesco',
+    currentUse: {
+      en: 'Working government offices, its floors divided since 1966 between the Punjab and Haryana state administrations.',
+      es: 'Oficinas gubernamentales en funcionamiento, con sus plantas repartidas desde 1966 entre las administraciones de los estados de Punyab y Haryana.',
+      it: "Uffici governativi in funzione, con i piani ripartiti dal 1966 tra le amministrazioni degli stati del Punjab e dell'Haryana.",
+    },
+    detailRect: { x: 0.30, y: 0.25, w: 0.32, h: 0.35 },
+    image: {
+      commonsFile: 'File:Secretariat facade.jpg',
+      photographer: 'Lian Chang',
+      license: 'CC BY 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Secretariat_facade.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Chandigarh Capitol Complex - Le Corbusier - Secretariat front elevation.jpg',
+        photographer: 'Nicholas.iyadurai',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Chandigarh_Capitol_Complex_-_Le_Corbusier_-_Secretariat_front_elevation.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "The Secretariat is the largest single element of the Capitol: a slab 254 metres long and eight storeys high, wrapped its full length in a continuous grid of concrete brise-soleil that Le Corbusier sized differently on each face to match the sun each elevation actually receives. Two ramps, wide enough for a car, climb the building's end in place of a lift core, and the roof carries a garden and a ventilation stack shaped like the horn motif of the Modulor figure that recurs across the whole Capitol. It was built to hold the ministries of the joint Punjab government of the 1950s, floor after floor of open-plan offices behind the sun-breaking screen, with construction running from the early 1950s to the building's completion around 1958. After the 1966 Reorganisation split Punjab and created Haryana, the two states divided the Secretariat's floors between their administrations rather than each building a new one, and it remains in that shared use today, inscribed with the rest of the Capitol Complex as a UNESCO World Heritage property in 2016.",
+      es: 'La Secretaría es el elemento más grande del Capitolio: una losa de 254 metros de largo y ocho plantas de alto, envuelta en toda su longitud por una retícula continua de brise-soleil de hormigón que Le Corbusier dimensionó de forma distinta en cada fachada según el sol que realmente recibe cada orientación. Dos rampas, anchas como para un coche, suben por el extremo del edificio en lugar de un núcleo de ascensores, y la cubierta lleva un jardín y una chimenea de ventilación con el motivo del cuerno de la figura del Modulor que reaparece en todo el Capitolio. Se construyó para albergar los ministerios del gobierno conjunto del Punyab de los años cincuenta, planta tras planta de oficinas diáfanas tras la pantalla parasol, con obras que se desarrollaron desde principios de los años cincuenta hasta la conclusión del edificio hacia 1958. Tras la Reorganización de 1966, que dividió el Punyab y creó Haryana, los dos estados se repartieron las plantas de la Secretaría entre sus administraciones en vez de construir cada uno la suya, y sigue en ese uso compartido hoy, inscrita junto al resto del Capitolio como Patrimonio Mundial de la UNESCO en 2016.',
+      it: "Il Segretariato è l'elemento più grande del Campidoglio: una lastra lunga 254 metri e alta otto piani, avvolta per tutta la sua lunghezza in una griglia continua di brise-soleil in cemento che Le Corbusier dimensionò in modo diverso su ogni fronte secondo il sole che ciascun prospetto riceve davvero. Due rampe, larghe quanto basta per un'automobile, salgono all'estremità dell'edificio al posto di un nucleo ascensori, e la copertura porta un giardino e una ciminiera di ventilazione con il motivo del corno della figura del Modulor che ricompare in tutto il Campidoglio. Fu costruito per ospitare i ministeri del governo congiunto del Punjab degli anni Cinquanta, piano dopo piano di uffici a pianta aperta dietro lo schermo parasole, con lavori che si svolsero dai primi anni Cinquanta al completamento dell'edificio verso il 1958. Dopo la Riorganizzazione del 1966, che divise il Punjab e creò l'Haryana, i due stati si spartirono i piani del Segretariato fra le rispettive amministrazioni anziché costruirne uno ciascuno, e resta oggi in quell'uso condiviso, iscritto insieme al resto del Campidoglio come Patrimonio Mondiale UNESCO nel 2016.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q7444209', title: 'Secretariat Building (Q7444209)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Secretariat_Building,_Chandigarh', title: 'Secretariat Building, Chandigarh', license: 'CC BY-SA 4.0' },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Chandigarh_Capitol_Complex', title: 'Chandigarh Capitol Complex', license: 'CC BY-SA 4.0' },
     ],
     tier: 'canon',
   },

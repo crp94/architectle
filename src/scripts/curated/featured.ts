@@ -42,4 +42,11 @@ export const FEATURED_ARCHITECT_IDS: string[] = [
   'toyo-ito',
   'wang-shu',
   'mimar-sinan',
+  'rem-koolhaas',
+  'santiago-calatrava',
+  'moshe-safdie',
+  'le-corbusier',
+  'balkrishna-doshi',
+  'denise-scott-brown',
+  'robert-venturi',
 ];

@@ -17,7 +17,7 @@ import type { Architect } from '@/types/architect';
 // field (display-only; `architectId` is unchanged and remains the answer
 // key) — see the comments on those two buildings in europe.ts (buildings).
 export const EUROPE_ARCHITECTS: Architect[] = [
-  {
+{
     id: 'filippo-brunelleschi',
     wikidataId: 'Q174330',
     name: 'Filippo Brunelleschi',
@@ -511,4 +511,40 @@ export const EUROPE_ARCHITECTS: Architect[] = [
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Michelangelo', title: 'Michelangelo — Wikipedia', license: 'CC BY-SA 4.0' },
     ],
   },
+{
+    // Wave V2-3, batch B8. Living (b. 1951) — checked for a contested
+    // personal-conduct allegation and found none; his well-documented
+    // controversies (cost overruns, structural-defect lawsuits) are
+    // professional/engineering-liability disputes, not the kind of
+    // allegation the living-person policy is aimed at, and are recorded as
+    // content on the Oculus/WTC Transportation Hub entry (americas.ts).
+    // Auditorio de Tenerife and L'Hemisfèric are also below, in this file;
+    // the Oculus is in americas.ts (US).
+    id: 'santiago-calatrava',
+    wikidataId: 'Q168482',
+    name: 'Santiago Calatrava',
+    alternativeNames: ['Santiago Calatrava Valls'],
+    gender: 'man',
+    born: 1951,
+    died: null,
+    floruit: { start: 1984, end: 2016, override: false },
+    movements: [{ id: 'neo-futurism', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'infrastructure',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: "Calatrava trained twice: first at Valencia's Polytechnic in architecture, then at ETH Zurich in civil engineering, completing a 1981 doctoral thesis on the folding of three-dimensional space-frame structures. He opened his own practice in Zurich the same year, working first on small bridges and stations for Swiss railways before the Bac de Roda Bridge in Barcelona (1984–87) set his signature: single leaning pylons, cable stays, structure bared as ornament. His buildings since have pursued the same argument in white concrete and steel — ribbed shells that read as skeletal or organic, roofs that open like wings. Since the 2010s several of his largest commissions have drawn sustained criticism for cost overruns, delays and structural-maintenance disputes — the Oculus and the Bridge of Strings in Jerusalem among them — criticism that concerns engineering and public spending, not his personal conduct.",
+      es: "Calatrava se formó dos veces: primero en arquitectura en la Politécnica de Valencia, después en ingeniería civil en la ETH de Zúrich, con una tesis doctoral de 1981 sobre el plegado de estructuras espaciales tridimensionales. Abrió su propio estudio en Zúrich ese mismo año, trabajando primero en pequeños puentes y estaciones para los ferrocarriles suizos, antes de que el puente de Bac de Roda en Barcelona (1984-87) fijara su firma: pilonos únicos e inclinados, tirantes de cable, la estructura desnuda como ornamento. Sus obras posteriores han perseguido el mismo argumento en hormigón blanco y acero: cáscaras nervadas que se leen como esqueléticas u orgánicas, cubiertas que se abren como alas. Desde la década de 2010 varios de sus mayores encargos han recibido críticas sostenidas por sobrecostes, retrasos y litigios de mantenimiento estructural —el Oculus y el Puente de las Cuerdas en Jerusalén entre ellos—, críticas que atañen a la ingeniería y al gasto público, no a su conducta personal.",
+      it: "Calatrava si formò due volte: prima in architettura al Politecnico di Valencia, poi in ingegneria civile al Politecnico federale di Zurigo (ETH), con una tesi di dottorato del 1981 sulla piegatura di strutture spaziali tridimensionali. Aprì il proprio studio a Zurigo lo stesso anno, lavorando dapprima a piccoli ponti e stazioni per le ferrovie svizzere, prima che il ponte di Bac de Roda a Barcellona (1984-87) fissasse la sua firma: piloni singoli e inclinati, tiranti in cavo, la struttura messa a nudo come ornamento. Le sue opere successive hanno perseguito lo stesso argomento in cemento bianco e acciaio: gusci nervati che si leggono come scheletrici o organici, coperture che si aprono come ali. Dagli anni 2010 diversi dei suoi incarichi maggiori hanno ricevuto critiche sostenute per costi lievitati, ritardi e contenziosi di manutenzione strutturale — l'Oculus e il Ponte delle Corde a Gerusalemme fra questi — critiche che riguardano l'ingegneria e la spesa pubblica, non la sua condotta personale.",
+    },
+    awards: ['AIA Gold Medal (2005)', 'Prince of Asturias Award for the Arts (1999)', 'European Prize for Architecture', 'Gold Medal, Institution of Structural Engineers (1992)'],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q168482', title: 'Santiago Calatrava (Q168482)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Santiago_Calatrava', title: 'Santiago Calatrava', license: 'CC BY-SA 4.0' },
+    ],
+  },
+
 ];
