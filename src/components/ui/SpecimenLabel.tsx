@@ -25,10 +25,15 @@ const CONTAINER_TONE: Record<SpecimenLabelState, string> = {
   none: 'bg-paper border-frame-line',
 };
 
+// `/60` opacity on ink-over-paper measures 4.46:1 — just under the 4.5:1
+// AA floor for this 10px label text (confirmed by e2e/a11y.spec.ts against
+// the real rendered archive pages). `/70` clears it comfortably (~6.2:1),
+// matching the `opacity-70` convention already used elsewhere in the app
+// for this exact kind of quiet secondary text.
 const LABEL_TONE: Record<SpecimenLabelState, string> = {
   exact: 'text-paper/70',
-  partial: 'text-ink/60',
-  none: 'text-ink/60',
+  partial: 'text-ink/70',
+  none: 'text-ink/70',
 };
 
 const VALUE_TONE: Record<SpecimenLabelState, string> = {

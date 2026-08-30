@@ -5,13 +5,21 @@ import { theme } from '@/lib/theme';
 /** Thin top bar every archive page shares: back to the game, and across to
  * the three catalogue indexes. Keeps `/buildings`, `/architects` and
  * `/movements` reachable from anywhere in the archive, not just from
- * whichever cross-link happened to lead here. */
+ * whichever cross-link happened to lead here. A quiet hairline replaces
+ * v1's heavy filled `bg-accent` banner — that pairing put `text-ink`
+ * directly on a filled `accent` background, clearing only ~1.7:1 contrast
+ * (see t2b-report.md §1) — so this bar carries no accent fill at all. */
 export function ArchiveNav({ locale }: { locale: Locale }) {
   return (
     <nav
       data-testid="archive-nav"
-      className="flex flex-wrap gap-4 border-b-[3px] border-ink bg-accent px-4 py-3 text-xs uppercase tracking-wide text-ink"
-      style={{ fontFamily: theme.type.mono }}
+      className="flex flex-wrap gap-4 bg-paper px-4 py-3 text-xs uppercase tracking-[0.15em] text-ink"
+      style={{
+        fontFamily: theme.type.ui,
+        borderBottomWidth: theme.rule.hairline,
+        borderBottomStyle: 'solid',
+        borderBottomColor: theme.color.frameLine,
+      }}
     >
       <Link href="/" className="underline">
         {t(locale, 'appTitle')}

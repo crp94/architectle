@@ -10,7 +10,7 @@ export function Dossier({ text, locale }: { text: LocalizedString; locale: Local
   return (
     <div
       data-testid="archive-dossier"
-      className="text-sm leading-relaxed sm:columns-2 sm:gap-6"
+      className="max-w-[70ch] text-sm leading-relaxed"
       style={{ fontFamily: theme.type.body }}
     >
       <p>{body}</p>

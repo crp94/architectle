@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { theme } from '@/lib/theme';
 import { t, type Locale } from '@/lib/i18n';
+import { SectionRule } from '@/components/ui/SectionRule';
+import { SpecimenLabel } from '@/components/ui/SpecimenLabel';
 import { ABOUT_SECTIONS, type AboutSection, type CoverageGateRow } from './content';
 
 // No dynamic locale routing exists yet anywhere in the app (src/app/page.tsx
@@ -19,32 +21,20 @@ export const metadata: Metadata = {
 
 function GateRow({ row }: { row: CoverageGateRow }) {
   return (
-    <div className="flex flex-col gap-1 bg-paper p-3">
-      <dt
-        className="text-[10px] uppercase tracking-wide opacity-70"
-        style={{ fontFamily: theme.type.mono }}
-      >
-        {row.label[LOCALE] ?? row.label.en}
-      </dt>
-      <dd className="flex items-baseline gap-2 text-sm uppercase" style={{ fontFamily: theme.type.display }}>
-        <span>{row.target}</span>
-        <span className="text-xs opacity-70" style={{ fontFamily: theme.type.mono }}>
-          / {row.actual}
-        </span>
-      </dd>
-    </div>
+    <SpecimenLabel
+      label={row.label[LOCALE] ?? row.label.en}
+      value={`${row.actual} (${row.target})`}
+    />
   );
 }
 
 function Section({ section }: { section: AboutSection }) {
   const [firstParagraph, ...rest] = section.paragraphs;
   return (
-    <section
-      id={section.id}
-      className="flex flex-col gap-4 border-t-2 border-ink pt-6"
-    >
+    <section id={section.id} className="flex flex-col gap-4">
+      <SectionRule />
       <h2
-        className="text-xl uppercase leading-tight md:text-2xl"
+        className="text-xl leading-tight md:text-2xl"
         style={{ fontFamily: theme.type.display }}
       >
         {section.heading[LOCALE] ?? section.heading.en}
@@ -57,11 +47,11 @@ function Section({ section }: { section: AboutSection }) {
       )}
 
       {section.gates && (
-        <dl className="grid grid-cols-2 gap-px border-2 border-ink bg-ink sm:grid-cols-3 lg:grid-cols-4">
+        <div className="flex flex-wrap gap-3">
           {section.gates.map((row) => (
             <GateRow key={row.id} row={row} />
           ))}
-        </dl>
+        </div>
       )}
 
       {rest.map((paragraph, i) => (
@@ -78,32 +68,32 @@ export default function AboutPage() {
   return (
     <main className="flex flex-1 flex-col bg-paper">
       <div
-        className="flex flex-col items-start gap-2 border-ink bg-accent px-8 py-6"
+        className="flex flex-col items-start gap-2 bg-mat px-6 py-8 md:px-10 md:py-10"
         style={{
-          borderBottomWidth: theme.rule.thick,
+          borderBottomWidth: theme.rule.hairline,
           borderStyle: 'solid',
-          fontFamily: theme.type.display,
+          borderBottomColor: theme.color.frameLine,
         }}
       >
         <Link
           href="/"
-          className="text-xs uppercase tracking-wide text-ink no-underline"
-          style={{ fontFamily: theme.type.mono }}
+          className="text-xs uppercase tracking-[0.2em] text-accent no-underline"
+          style={{ fontFamily: theme.type.ui }}
         >
           {t(LOCALE, 'appTitle')}
         </Link>
-        <h1 className="text-3xl uppercase tracking-tight text-ink md:text-4xl">
+        <h1 className="text-3xl leading-tight text-ink md:text-4xl" style={{ fontFamily: theme.type.display }}>
           {t(LOCALE, 'navAbout')}
         </h1>
         <p
-          className="text-sm normal-case tracking-normal text-ink"
+          className="text-sm text-ink"
           style={{ fontFamily: theme.type.body }}
         >
           {t(LOCALE, 'appTagline')}
         </p>
       </div>
 
-      <div className="flex flex-col gap-8 px-6 py-8 md:px-10 md:py-10">
+      <div className="flex flex-col gap-10 px-6 py-8 md:px-10 md:py-10">
         {ABOUT_SECTIONS.map((section) => (
           <Section key={section.id} section={section} />
         ))}
