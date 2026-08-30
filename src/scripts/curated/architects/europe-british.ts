@@ -36,7 +36,7 @@ export const EUROPE_BRITISH_ARCHITECTS: Architect[] = [
     gender: 'man',
     born: 1632,
     died: 1723,
-    floruit: { start: 1665, end: 1711, override: false },
+    floruit: { start: 1665, end: 1712, override: false },
     movements: 'unaffiliated',
     workRegions: [],
     workCentroid: { lat: 0, lon: 0 },
