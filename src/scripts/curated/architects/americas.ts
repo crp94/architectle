@@ -375,4 +375,76 @@ export const AMERICAS_ARCHITECTS: Architect[] = [
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Thom_Mayne', title: 'Thom Mayne', license: 'CC BY-SA 4.0' },
     ],
   },
+  // --- Wave V2-3, batch B1 (US classic-modern top-up) ---
+  // Dankmar Adler is defined here (never anyone else's roster per the id-
+  // discipline grep) purely to carry the coArchitects credit on Louis
+  // Sullivan's Wainwright and Guaranty buildings, both firm-era
+  // Adler & Sullivan works. He is never an architectId/answer-key target.
+  {
+    id: 'dankmar-adler',
+    wikidataId: 'Q76573',
+    name: 'Dankmar Adler',
+    alternativeNames: [],
+    gender: 'man',
+    born: 1844,
+    died: 1900,
+    floruit: { start: 1869, end: 1895, override: false },
+    movements: 'unaffiliated',
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'commercial',
+    signatureMaterial: 'brick',
+    portrait: {
+      en: 'Adler trained as a draftsman rather than in a school of architecture, working in Chicago from the 1860s and building a practice known for structural engineering and, above all, acoustics — the auditoriums he designed were prized for how their halls carried sound. His partnership with Louis Sullivan, formed in 1883, paired that engineering command with Sullivan\'s ornament and design sense: Adler worked out the steel framing and, at the Auditorium Building, the raked seating and adjustable ceiling that made its hall renowned, while Sullivan drew the surfaces. The partnership dissolved in 1895 after the 1893 financial panic emptied their order book, and Adler briefly left architecture for elevator engineering. He returned to independent practice with his sons and died in Chicago in 1900.',
+      es: 'Adler se formó como delineante y no en una escuela de arquitectura, trabajó en Chicago desde la década de 1860 y desarrolló una práctica reconocida por la ingeniería estructural y, sobre todo, por la acústica: los auditorios que proyectaba eran apreciados por cómo transmitían el sonido sus salas. Su sociedad con Louis Sullivan, formada en 1883, unió ese dominio técnico con el sentido del ornamento y del diseño de Sullivan: Adler resolvió el entramado de acero y, en el Auditorium Building, el aforo escalonado y el techo regulable que hicieron célebre su sala, mientras Sullivan dibujaba las superficies. La sociedad se disolvió en 1895, tras vaciar el pánico financiero de 1893 su cartera de encargos, y Adler abandonó brevemente la arquitectura por la ingeniería de ascensores. Volvió al ejercicio independiente junto a sus hijos y murió en Chicago en 1900.',
+      it: 'Adler si formò come disegnatore e non in una scuola di architettura, lavorò a Chicago dagli anni Sessanta dell\'Ottocento e sviluppò una pratica nota per l\'ingegneria strutturale e, soprattutto, per l\'acustica: gli auditori che progettava erano apprezzati per come le loro sale trasmettevano il suono. La sua società con Louis Sullivan, formata nel 1883, unì quel dominio tecnico al senso dell\'ornato e del disegno di Sullivan: Adler risolse l\'intelaiatura d\'acciaio e, nell\'Auditorium Building, la platea degradante e il soffitto regolabile che resero celebre la sua sala, mentre Sullivan disegnava le superfici. La società si sciolse nel 1895, dopo che il panico finanziario del 1893 aveva svuotato il portafoglio di commesse, e Adler lasciò brevemente l\'architettura per l\'ingegneria degli ascensori. Tornò alla pratica indipendente insieme ai figli e morì a Chicago nel 1900.',
+    },
+    awards: [],
+    tier: 'deep',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q76573', title: 'Dankmar Adler (Q76573)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Dankmar_Adler', title: 'Dankmar Adler', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    id: 'philip-johnson',
+    wikidataId: 'Q183528',
+    name: 'Philip Johnson',
+    alternativeNames: ['Philip Cortelyou Johnson'],
+    gender: 'man',
+    born: 1906,
+    died: 2005,
+    floruit: { start: 1949, end: 1996, override: false },
+    movements: [
+      { id: 'international-style', primary: false },
+      { id: 'postmodern-classicism', primary: true },
+    ],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'tower',
+    signatureMaterial: 'steel-and-glass',
+    portrait: {
+      en: 'Johnson trained in classics at Harvard, not architecture, and in 1930 used his family\'s fortune to found and curate the Museum of Modern Art\'s architecture department; the 1932 "Modern Architecture" show he organised with Henry-Russell Hitchcock, and the book that named it the International Style, introduced Bauhaus-derived modernism to an American audience before Johnson had designed a building of his own. After the political detour documented below, he returned to architecture in the 1940s, studying under Marcel Breuer and Walter Gropius at Harvard and building himself the Glass House at forty-three. From the late 1970s, in partnership with John Burgee, he abandoned the glass-box vocabulary he had championed for decades and turned to a historically referential Postmodernism, most visibly at 550 Madison Avenue. He was the first Pritzker Prize laureate, in 1979, and worked into his nineties.',
+      es: 'Johnson se formó en clásicas en Harvard, no en arquitectura, y en 1930 empleó la fortuna familiar para fundar y comisariar el departamento de arquitectura del MoMA; la muestra «Modern Architecture» de 1932, organizada junto con Henry-Russell Hitchcock, y el libro que le dio nombre, International Style, presentaron el modernismo derivado de la Bauhaus al público estadounidense antes de que Johnson hubiera proyectado un solo edificio propio. Tras el episodio político documentado más abajo, volvió a la arquitectura en los años cuarenta, estudiando con Marcel Breuer y Walter Gropius en Harvard, y se construyó la Glass House a los cuarenta y tres años. Desde finales de los setenta, en sociedad con John Burgee, abandonó el vocabulario de caja de vidrio que había defendido durante décadas y se pasó a un posmodernismo de referencias históricas, visible sobre todo en el 550 de Madison Avenue. Fue el primer premio Pritzker, en 1979, y siguió trabajando hasta pasados los noventa años.',
+      it: 'Johnson si formò in studi classici a Harvard, non in architettura, e nel 1930 usò il patrimonio di famiglia per fondare e curare il dipartimento di architettura del MoMA; la mostra «Modern Architecture» del 1932, organizzata con Henry-Russell Hitchcock, e il libro che le diede il nome, International Style, presentarono al pubblico americano il modernismo derivato dal Bauhaus prima ancora che Johnson avesse progettato un solo edificio proprio. Dopo la parentesi politica documentata più sotto, tornò all\'architettura negli anni Quaranta, studiando con Marcel Breuer e Walter Gropius a Harvard, e si costruì la Glass House a quarantatré anni. Dalla fine degli anni Settanta, in società con John Burgee, abbandonò il vocabolario della scatola di vetro che aveva difeso per decenni e passò a un postmodernismo di riferimenti storici, visibile soprattutto al 550 di Madison Avenue. Fu il primo vincitore del Pritzker, nel 1979, e continuò a lavorare fino a oltre novant\'anni.',
+    },
+    awards: ['Pritzker Architecture Prize (1979)', 'AIA Gold Medal (1978)'],
+    tier: 'canon',
+    context: {
+      body: {
+        en: 'In the 1930s, before his return to architecture, Johnson organised a uniformed group modelled on Nazi Brownshirts, attended a Nuremberg rally in 1932 and described being "caught up in the excitement" of Hitler\'s speech, and worked as a journalist for Father Charles Coughlin\'s antisemitic newspaper Social Justice, for which he wrote admiringly of the 1939 German invasion of Poland and dismissed reports of Nazi atrocities against Poles as "misinformed." Writing elsewhere in the same period, he blamed national weakness on Jewish influence. He also founded a short-lived political party, campaigned to recruit the Louisiana populist Huey Long to lead it, and financed the antisemitic street organiser Joe McWilliams. The FBI investigated him during the Second World War for possible ties to the German government; he was never charged, and he served in the U.S. Army from 1943. He later called the episode "the stupidest thing I ever did," while in private correspondence as late as 1964 he was still writing that Hitler was "better than Roosevelt." In 2020 Harvard removed his name from a building over the record.',
+        es: 'En los años treinta, antes de volver a la arquitectura, Johnson organizó un grupo uniformado inspirado en las camisas pardas nazis, asistió a un mitin de Núremberg en 1932 y describió sentirse «arrastrado por la excitación» del discurso de Hitler, y trabajó como periodista para Social Justice, el periódico antisemita del padre Charles Coughlin, en el que escribió con admiración sobre la invasión alemana de Polonia de 1939 y calificó de «mal informados» los relatos de atrocidades nazis contra los polacos. En otros escritos de la misma época atribuyó la debilidad nacional a la influencia judía. Fundó además un partido político de vida breve, hizo campaña para atraer a su liderazgo al populista de Luisiana Huey Long, y financió al agitador callejero antisemita Joe McWilliams. El FBI lo investigó durante la Segunda Guerra Mundial por posibles vínculos con el gobierno alemán; nunca fue procesado, y sirvió en el ejército de EE. UU. desde 1943. Más tarde calificó el episodio de «lo más estúpido que hice jamás», aunque en correspondencia privada de 1964 seguía escribiendo que Hitler era «mejor que Roosevelt». En 2020, Harvard retiró su nombre de un edificio a la vista de estos hechos.',
+        it: 'Negli anni Trenta, prima di tornare all\'architettura, Johnson organizzò un gruppo in uniforme ispirato alle camicie brune naziste, partecipò a un raduno di Norimberga nel 1932 e descrisse di essersi sentito «travolto dall\'eccitazione» del discorso di Hitler, e lavorò come giornalista per Social Justice, il giornale antisemita di padre Charles Coughlin, sul quale scrisse con ammirazione dell\'invasione tedesca della Polonia del 1939 e definì «mal informati» i resoconti sulle atrocità naziste contro i polacchi. In altri scritti dello stesso periodo attribuì la debolezza nazionale all\'influenza ebraica. Fondò inoltre un partito politico di breve durata, fece campagna per portarne alla guida il populista della Louisiana Huey Long, e finanziò l\'agitatore di strada antisemita Joe McWilliams. L\'FBI lo indagò durante la Seconda guerra mondiale per possibili legami con il governo tedesco; non fu mai incriminato, e prestò servizio nell\'esercito statunitense dal 1943. In seguito definì l\'episodio «la cosa più stupida che abbia mai fatto», mentre in corrispondenza privata ancora nel 1964 scriveva che Hitler era «meglio di Roosevelt». Nel 2020 Harvard ha rimosso il suo nome da un edificio alla luce di questi fatti.',
+      },
+      sources: [
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Philip_Johnson', title: 'Philip Johnson', license: 'CC BY-SA 4.0' },
+        { kind: 'publication', url: 'https://www.newyorker.com/culture/cultural-comment/philip-johnsons-evil-magnetism', title: 'Nikil Saval, "Philip Johnson\'s Evil Magnetism," The New Yorker (2018)', license: null },
+      ],
+    },
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q183528', title: 'Philip Johnson (Q183528)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Philip_Johnson', title: 'Philip Johnson', license: 'CC BY-SA 4.0' },
+    ],
+  },
 ];
