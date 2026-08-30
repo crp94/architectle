@@ -22,6 +22,9 @@ const CORRECT = 'Peter Zumthor';
 // A roster architect guaranteed not to be Zumthor, so wrong guesses stay
 // wrong regardless of how the curated pool grows around this fixture.
 const WRONG = 'Luis Barragán';
+const WRONG_GUESSES = [
+  'Luis Barragán', 'Lina Bo Bardi', 'Frank Lloyd Wright', 'Ludwig Mies van der Rohe', 'Philip Johnson', 'Louis Sullivan',
+];
 const GIBBERISH = 'Zzyzx Notarealperson';
 
 function gameUrl(): string {
@@ -76,9 +79,7 @@ test.describe('game flow', () => {
   test('loses after six wrong guesses and names the architect in the reveal', async ({ page }) => {
     await page.goto(gameUrl());
 
-    for (let i = 0; i < 6; i += 1) {
-      await submitGuess(page, WRONG);
-    }
+    for (const guess of WRONG_GUESSES) await submitGuess(page, guess);
 
     await expect(page.getByTestId('reveal')).toBeVisible();
     await expect(page.getByTestId('reveal-message')).toContainText(CORRECT);
@@ -106,5 +107,21 @@ test.describe('game flow', () => {
     await expect(page.getByTestId('guess-row')).toHaveCount(1);
     await expect(page.getByTestId('guess-row').first()).toContainText(WRONG);
     await expect(page.getByText('Guess 2 of 6')).toBeVisible();
+  });
+
+  test('starts a fresh round when replaying unlimited mode', async ({ page }) => {
+    await page.goto(`${gameUrl()}&mode=unlimited`);
+    await expect(page.getByText('Unlimited practice', { exact: true })).toBeVisible();
+    await expect(page.getByText('Unlimited rounds do not affect daily statistics or streaks.', { exact: true })).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Daily puzzle', exact: true })).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Play unlimited', exact: true })).toHaveCount(0);
+    await submitGuess(page, CORRECT);
+    await expect(page.getByTestId('reveal')).toBeVisible();
+    await expect(page.getByTestId('reveal-share-preview')).toContainText('Architectle Unlimited');
+
+    await page.getByRole('button', { name: 'Play unlimited', exact: true }).click();
+    await expect(page.getByTestId('game-board')).toBeVisible();
+    await expect(page.getByText('Guess 1 of 6')).toBeVisible();
+    await expect(page.getByTestId('guess-row')).toHaveCount(0);
   });
 });

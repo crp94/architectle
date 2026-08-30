@@ -1,16 +1,16 @@
 import { describe, it, expect } from 'vitest';
-import { cropAt, easeOutCubic, fitRectToAspect } from '@/lib/crop';
+import { cropAt, easeOutGentle, fitRectToAspect } from '@/lib/crop';
 
 const DETAIL = { x: 0.4, y: 0.4, w: 0.2, h: 0.2 };
 const SQUARE = 1;
 
-describe('easeOutCubic', () => {
+describe('easeOutGentle', () => {
   it('pins the endpoints', () => {
-    expect(easeOutCubic(0)).toBe(0);
-    expect(easeOutCubic(1)).toBe(1);
+    expect(easeOutGentle(0)).toBe(0);
+    expect(easeOutGentle(1)).toBe(1);
   });
   it('opens up faster than linear', () => {
-    expect(easeOutCubic(0.5)).toBeGreaterThan(0.5);
+    expect(easeOutGentle(0.5)).toBeGreaterThan(0.5);
   });
 });
 

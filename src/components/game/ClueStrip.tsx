@@ -69,9 +69,11 @@ function ClueEntry({
       );
 
     case 'country':
+      const country = new Intl.DisplayNames([locale], { type: 'region' }).of(clue.countryCode)
+        ?? clue.countryCode;
       return (
         <div data-testid="clue-country">
-          <SpecimenLabel label={t(locale, 'clueCountry')} value={clue.countryCode} />
+          <SpecimenLabel label={t(locale, 'clueCountry')} value={country} />
         </div>
       );
 
@@ -97,7 +99,7 @@ function ClueEntry({
           <GalleryFrame
             aspectRatio={clue.image.width / clue.image.height}
             caption={imageCredit(clue.image, locale)}
-            className="w-40 sm:w-48"
+            className="w-full max-w-md"
           >
             {/* eslint-disable-next-line @next/next/no-img-element -- a
                 fixed extra angle, shown small; next/image's responsive

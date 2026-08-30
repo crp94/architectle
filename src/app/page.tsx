@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { theme } from "@/lib/theme";
-import { t, LOCALES, type Locale } from "@/lib/i18n";
+import { t, LOCALES } from "@/lib/i18n";
+import { localeHref, OG_LOCALE, resolveLocale } from "@/lib/locale";
+import Link from "next/link";
 import { GameBoard } from "@/components/game/GameBoard";
 import { LocaleSwitcher } from "@/components/game/LocaleSwitcher";
 import { buildingBySlug } from "@/lib/pool";
@@ -12,20 +14,10 @@ import { websiteJsonLd } from "@/lib/jsonld";
 // keeps this type assignable to LocaleSwitcher's `searchParams` prop, which
 // must preserve whatever OTHER params the current URL happens to carry
 // (e.g. `?e2eBuilding=`) rather than knowing their names up front.
-type SearchParams = { lang?: string; e2eBuilding?: string; [key: string]: string | string[] | undefined };
+type SearchParams = { lang?: string; mode?: string; e2eBuilding?: string; [key: string]: string | string[] | undefined };
 
-function resolveLocale(raw: string | undefined): Locale {
-  return (LOCALES as readonly string[]).includes(raw ?? "") ? (raw as Locale) : "en";
-}
-
-// `og:locale`/`og:locale:alternate` tags (spec item 5) — the underscore
-// region form Open Graph itself expects (e.g. `en_US`, not the bare BCP-47
-// `en` LocaleSwitcher.tsx's `?lang=` param carries). Only the home page has
-// a real per-request locale to report at all (every other route hardcodes
-// `LOCALE = 'en'` — see about/page.tsx's own comment on that pre-existing
-// convention), so this map lives here rather than in the shared i18n table.
-const OG_LOCALE: Record<Locale, string> = { en: "en_US", es: "es_ES", it: "it_IT" };
-
+// `og:locale`/`og:locale:alternate` tags use the underscore region form
+// Open Graph expects (e.g. `en_US`, not the bare BCP-47 `en` query value).
 /**
  * Home page metadata (design spec §7): a daily freshness signal — the
  * puzzle number and date — in the description, with zero hint of the
@@ -91,6 +83,7 @@ export default async function Home({
 }) {
   const params = await searchParams;
   const locale = resolveLocale(params.lang);
+  const mode = params.mode === 'unlimited' ? 'unlimited' : 'daily';
 
   // e2e-only escape hatch: pins a known building/architect pair so the
   // e2e game suite (e2e/game.spec.ts) can script a deterministic win/loss
@@ -151,9 +144,34 @@ export default async function Home({
         >
           {t(locale, "appTagline")}
         </p>
-        <LocaleSwitcher locale={locale} searchParams={params} />
+        <LocaleSwitcher locale={locale} pathname="/" searchParams={params} />
+        {mode === 'unlimited' ? (
+          <div className="mt-1 flex flex-col items-center gap-2">
+            <p className="text-xs uppercase tracking-[0.2em] text-accent" style={{ fontFamily: theme.type.ui }}>
+              {t(locale, 'unlimitedEyebrow')}
+            </p>
+            <p className="max-w-md text-center text-xs text-ink/70" style={{ fontFamily: theme.type.body }}>
+              {t(locale, 'unlimitedNote')}
+            </p>
+            <Link
+              href={localeHref('/', locale)}
+              className="border border-frame-line px-4 py-2 text-xs uppercase tracking-wide text-ink"
+              style={{ borderWidth: theme.rule.hairline, fontFamily: theme.type.ui }}
+            >
+              {t(locale, 'dailyGame')}
+            </Link>
+          </div>
+        ) : (
+          <Link
+            href={localeHref('/?mode=unlimited', locale)}
+            className="mt-1 bg-accent px-4 py-2 text-xs uppercase tracking-wide text-paper"
+            style={{ fontFamily: theme.type.ui }}
+          >
+            {t(locale, 'playAgain')}
+          </Link>
+        )}
       </div>
-      <GameBoard mode="daily" locale={locale} building={building} />
+      <GameBoard key={mode} mode={mode} locale={locale} building={building} unlimitedHref={localeHref('/?mode=unlimited', locale)} />
     </main>
   );
 }

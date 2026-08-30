@@ -13,14 +13,14 @@ import { test, expect } from '@playwright/test';
 
 test.describe('archive navigation', () => {
   test('walks building -> architect -> movement with headline, provenance and image credit at each stop', async ({ page }) => {
-    await page.goto('/buildings');
+    await page.goto('/buildings?lang=en');
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
 
-    const buildingLink = page.locator('a[href="/building/villa-la-rotonda"]').first();
+    const buildingLink = page.locator('a[href="/building/villa-la-rotonda?lang=en"]').first();
     await expect(buildingLink).toBeVisible();
     await buildingLink.click();
 
-    await expect(page).toHaveURL(/\/building\/villa-la-rotonda$/);
+    await expect(page).toHaveURL(/\/building\/villa-la-rotonda\?lang=en$/);
     const buildingHeadline = page.getByTestId('archive-headline');
     await expect(buildingHeadline).toBeVisible();
     await expect(buildingHeadline).toContainText('Rotonda');
@@ -34,7 +34,7 @@ test.describe('archive navigation', () => {
     await expect(architectLink).toBeVisible();
     await architectLink.click();
 
-    await expect(page).toHaveURL(/\/architect\/andrea-palladio$/);
+    await expect(page).toHaveURL(/\/architect\/andrea-palladio\?lang=en$/);
     const architectHeadline = page.getByTestId('archive-headline');
     await expect(architectHeadline).toBeVisible();
     await expect(architectHeadline).toContainText('Palladio');
@@ -46,11 +46,11 @@ test.describe('archive navigation', () => {
     await expect(architectProvenance).toContainText('Photo:');
     await expect(architectProvenance).toContainText('Licence:');
 
-    const movementLink = page.locator('a[href^="/movement/"]').first();
+    const movementLink = page.locator('a[href^="/movement/"][href$="?lang=en"]').first();
     await expect(movementLink).toBeVisible();
     await movementLink.click();
 
-    await expect(page).toHaveURL(/\/movement\//);
+    await expect(page).toHaveURL(/\/movement\/.*\?lang=en$/);
     const movementHeadline = page.getByTestId('archive-headline');
     await expect(movementHeadline).toBeVisible();
 

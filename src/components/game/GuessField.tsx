@@ -11,6 +11,7 @@ import { architectDescriptor, architectSpan } from '@/lib/facts';
 export type GuessFieldProps = {
   locale: Locale;
   onGuess: (architect: Architect) => void;
+  guessedIds?: ReadonlySet<string>;
   disabled?: boolean;
 };
 
@@ -51,7 +52,7 @@ function resolve(architects: Architect[], input: string): Architect | undefined 
  * substring against the full name or any documented alternative name, so
  * "Le Corbusier" is reachable by typing "Jeanneret".
  */
-export function GuessField({ locale, onGuess, disabled = false }: GuessFieldProps) {
+export function GuessField({ locale, onGuess, guessedIds = new Set(), disabled = false }: GuessFieldProps) {
   const [value, setValue] = useState('');
   const [rejected, setRejected] = useState<string | null>(null);
   const architects = featuredRoster();
@@ -60,10 +61,11 @@ export function GuessField({ locale, onGuess, disabled = false }: GuessFieldProp
   const suggestions = useMemo(() => {
     const query = fold(value);
     if (!query) return [];
-    return architects.filter((a) => matches(a, query)).slice(0, MAX_SUGGESTIONS);
-  }, [architects, value]);
+    return architects.filter((a) => !guessedIds.has(a.id) && matches(a, query)).slice(0, MAX_SUGGESTIONS);
+  }, [architects, guessedIds, value]);
 
   function handleSelect(architect: Architect) {
+    if (guessedIds.has(architect.id)) return;
     onGuess(architect);
     setValue('');
     setRejected(null);
@@ -79,7 +81,7 @@ export function GuessField({ locale, onGuess, disabled = false }: GuessFieldProp
     const trimmed = input.trim();
     if (!trimmed) return;
     const match = resolve(architects, trimmed);
-    if (match) {
+    if (match && !guessedIds.has(match.id)) {
       handleSelect(match);
     } else {
       setRejected(trimmed);
@@ -108,9 +110,15 @@ export function GuessField({ locale, onGuess, disabled = false }: GuessFieldProp
             setValue(e.target.value);
             setRejected(null);
           }}
+          onKeyDown={(event) => {
+            if (event.key === 'ArrowDown' && suggestions.length > 0) {
+              event.preventDefault();
+              document.getElementById(`architect-suggestion-${suggestions[0].id}`)?.focus();
+            }
+          }}
           placeholder={t(locale, 'guessFieldPlaceholder')}
           autoComplete="off"
-          className="flex-1 border border-frame-line bg-paper px-3 py-2 text-ink"
+          className="min-w-0 flex-1 border border-frame-line bg-paper px-3 py-2 text-ink"
           style={{ borderWidth: theme.rule.hairline, fontFamily: theme.type.ui }}
         />
         <button
@@ -139,8 +147,20 @@ export function GuessField({ locale, onGuess, disabled = false }: GuessFieldProp
             return (
               <li key={a.id}>
                 <button
+                  id={`architect-suggestion-${a.id}`}
                   type="button"
                   onClick={() => handleSelect(a)}
+                  onKeyDown={(event) => {
+                    const index = suggestions.indexOf(a);
+                    if (event.key === 'ArrowDown' && index < suggestions.length - 1) {
+                      event.preventDefault();
+                      document.getElementById(`architect-suggestion-${suggestions[index + 1].id}`)?.focus();
+                    } else if (event.key === 'ArrowUp') {
+                      event.preventDefault();
+                      if (index === 0) inputRef.current?.focus();
+                      else document.getElementById(`architect-suggestion-${suggestions[index - 1].id}`)?.focus();
+                    }
+                  }}
                   aria-label={descriptor}
                   className="flex w-full flex-col gap-0.5 border-b border-frame-line px-3 py-2 text-left last:border-b-0 hover:bg-paper-alt"
                   style={{ borderBottomWidth: theme.rule.hairline }}

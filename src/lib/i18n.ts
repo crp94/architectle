@@ -13,6 +13,11 @@ const en = {
   navArchive: 'Archive',
   navAbout: 'About',
   navArchitectsLink: 'Architects',
+  languageLabel: 'Language',
+  languageEnglish: 'English',
+  languageSpanish: 'Spanish',
+  languageItalian: 'Italian',
+  dailyGame: 'Daily puzzle',
 
   // Round / guess field
   guessCounter: 'Guess {n} of {total}',
@@ -84,6 +89,10 @@ const en = {
   sharePreviewHeading: 'What gets shared',
   sharePreviewNote: 'Spoiler-free — no architect or building name.',
   playAgain: 'Play unlimited',
+  unlimitedEyebrow: 'Unlimited practice',
+  unlimitedNote: 'Unlimited rounds do not affect daily statistics or streaks.',
+  shareDailyHeader: 'Architectle #{n} {score}',
+  shareUnlimitedHeader: 'Architectle Unlimited {score}',
 
   // Stats
   statsTitle: 'Statistics',
@@ -232,6 +241,11 @@ const es: Strings = {
   navArchive: 'Archivo',
   navAbout: 'Acerca de',
   navArchitectsLink: 'Arquitectos',
+  languageLabel: 'Idioma',
+  languageEnglish: 'Inglés',
+  languageSpanish: 'Español',
+  languageItalian: 'Italiano',
+  dailyGame: 'Puzzle diario',
 
   guessCounter: 'Intento {n} de {total}',
   guessFieldLabel: 'Nombra al arquitecto',
@@ -291,6 +305,10 @@ const es: Strings = {
   sharePreviewHeading: 'Qué se comparte',
   sharePreviewNote: 'Sin spoilers — sin el nombre del arquitecto ni del edificio.',
   playAgain: 'Jugar sin límite',
+  unlimitedEyebrow: 'Práctica sin límite',
+  unlimitedNote: 'Las partidas sin límite no afectan a las estadísticas ni a la racha diarias.',
+  shareDailyHeader: 'Architectle #{n} {score}',
+  shareUnlimitedHeader: 'Architectle sin límite {score}',
 
   statsTitle: 'Estadísticas',
   statsPlayed: 'Jugadas',
@@ -398,6 +416,11 @@ const it: Strings = {
   navArchive: 'Archivio',
   navAbout: 'Informazioni',
   navArchitectsLink: 'Architetti',
+  languageLabel: 'Lingua',
+  languageEnglish: 'Inglese',
+  languageSpanish: 'Spagnolo',
+  languageItalian: 'Italiano',
+  dailyGame: 'Puzzle quotidiano',
 
   guessCounter: 'Tentativo {n} di {total}',
   guessFieldLabel: "Nomina l'architetto",
@@ -457,6 +480,10 @@ const it: Strings = {
   sharePreviewHeading: 'Cosa viene condiviso',
   sharePreviewNote: 'Senza spoiler — niente nome dell’architetto o dell’edificio.',
   playAgain: 'Gioca senza limiti',
+  unlimitedEyebrow: 'Pratica senza limiti',
+  unlimitedNote: 'Le partite senza limiti non influenzano statistiche o serie giornaliere.',
+  shareDailyHeader: 'Architectle #{n} {score}',
+  shareUnlimitedHeader: 'Architectle senza limiti {score}',
 
   statsTitle: 'Statistiche',
   statsPlayed: 'Partite',

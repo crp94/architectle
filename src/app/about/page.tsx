@@ -2,37 +2,35 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { theme } from '@/lib/theme';
 import { t, type Locale } from '@/lib/i18n';
+import { localeHref, resolveLocale, type LocaleSearchParams } from '@/lib/locale';
+import { LocaleSwitcher } from '@/components/game/LocaleSwitcher';
 import { SectionRule } from '@/components/ui/SectionRule';
 import { SITE_URL } from '@/lib/site';
 import { ABOUT_SECTIONS, type AboutSection } from './content';
 
-// No dynamic locale routing exists yet anywhere in the app (src/app/page.tsx
-// hardcodes the same constant) — this is the same convention, not a
-// regression. Every string this page renders is nonetheless authored
-// trilingually in ./content.ts so switching this constant, or threading a
-// real locale through once routing exists, is a one-line change here.
-const LOCALE: Locale = 'en';
-
-const ABOUT_TITLE = t(LOCALE, 'navAbout');
-const ABOUT_DESCRIPTION = t(LOCALE, 'metaAboutDescription');
 const ABOUT_URL = `${SITE_URL}/about`;
 
-export const metadata: Metadata = {
-  title: ABOUT_TITLE,
-  description: ABOUT_DESCRIPTION,
-  alternates: { canonical: ABOUT_URL },
-  openGraph: {
-    title: ABOUT_TITLE,
-    description: ABOUT_DESCRIPTION,
+export async function generateMetadata({ searchParams }: { searchParams: Promise<LocaleSearchParams> }): Promise<Metadata> {
+  const locale = resolveLocale((await searchParams).lang);
+  const title = t(locale, 'navAbout');
+  const description = t(locale, 'metaAboutDescription');
+  return {
+    title,
+    description,
+    alternates: { canonical: ABOUT_URL },
+    openGraph: {
+    title,
+    description,
     url: ABOUT_URL,
     type: 'website',
     siteName: 'Architectle',
     locale: 'en_US',
-  },
-  twitter: { card: 'summary_large_image', title: ABOUT_TITLE, description: ABOUT_DESCRIPTION },
-};
+    },
+    twitter: { card: 'summary_large_image', title, description },
+  };
+}
 
-function Section({ section }: { section: AboutSection }) {
+function Section({ section, locale }: { section: AboutSection; locale: Locale }) {
   const [firstParagraph, ...rest] = section.paragraphs;
   return (
     <section id={section.id} className="flex flex-col gap-4">
@@ -41,12 +39,12 @@ function Section({ section }: { section: AboutSection }) {
         className="text-xl leading-tight md:text-2xl"
         style={{ fontFamily: theme.type.display }}
       >
-        {section.heading[LOCALE] ?? section.heading.en}
+        {section.heading[locale] ?? section.heading.en}
       </h2>
 
       {firstParagraph && (
         <p className="max-w-[70ch] text-sm leading-relaxed" style={{ fontFamily: theme.type.body }}>
-          {firstParagraph[LOCALE] ?? firstParagraph.en}
+          {firstParagraph[locale] ?? firstParagraph.en}
         </p>
       )}
 
@@ -54,14 +52,16 @@ function Section({ section }: { section: AboutSection }) {
       {rest.map((paragraph, i) => (
         // Paragraphs never reorder within a section, so index keys are stable.
         <p key={i} className="max-w-[70ch] text-sm leading-relaxed" style={{ fontFamily: theme.type.body }}>
-          {paragraph[LOCALE] ?? paragraph.en}
+          {paragraph[locale] ?? paragraph.en}
         </p>
       ))}
     </section>
   );
 }
 
-export default function AboutPage() {
+export default async function AboutPage({ searchParams }: { searchParams: Promise<LocaleSearchParams> }) {
+  const params = await searchParams;
+  const LOCALE = resolveLocale(params.lang);
   return (
     <main className="flex flex-1 flex-col bg-paper">
       <div
@@ -73,7 +73,7 @@ export default function AboutPage() {
         }}
       >
         <Link
-          href="/"
+          href={localeHref('/', LOCALE)}
           className="text-xs uppercase tracking-[0.2em] text-accent no-underline"
           style={{ fontFamily: theme.type.ui }}
         >
@@ -88,11 +88,12 @@ export default function AboutPage() {
         >
           {t(LOCALE, 'appTagline')}
         </p>
+        <LocaleSwitcher locale={LOCALE} pathname="/about" searchParams={params} />
       </div>
 
       <div className="flex flex-col gap-10 px-6 py-8 md:px-10 md:py-10">
         {ABOUT_SECTIONS.map((section) => (
-          <Section key={section.id} section={section} />
+          <Section key={section.id} section={section} locale={LOCALE} />
         ))}
       </div>
     </main>

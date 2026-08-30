@@ -52,14 +52,22 @@ const wrongArchitect: Architect = {
   sources: [],
 };
 
-const FIXTURE_ARCHITECTS: Architect[] = [targetArchitect, wrongArchitect];
+const wrongArchitects: Architect[] = [
+  wrongArchitect,
+  ...Array.from({ length: 5 }, (_, index) => ({
+    ...wrongArchitect,
+    id: `wrong-architect-${index + 2}`,
+    name: `Wrong Architect ${index + 2}`,
+  })),
+];
+const FIXTURE_ARCHITECTS: Architect[] = [targetArchitect, ...wrongArchitects];
 
 const targetBuilding: Building = {
   id: 'target-building',
   wikidataId: 'Q100',
   name: ls('Target Hall', 'Target Hall (es)', 'Target Hall (it)'),
   architectId: 'target-architect',
-  location: { city: 'Testville', countryCode: 'XX', lat: 0, lon: 0 },
+  location: { city: 'Testville', countryCode: 'FR', lat: 0, lon: 0 },
   inception: 1960,
   completed: 1965,
   demolished: null,
@@ -161,10 +169,10 @@ describe('GameBoard', () => {
     expect(screen.getByTestId('clue-year').textContent).toContain('1965');
     expect(screen.queryByTestId('clue-country')).toBeNull();
 
-    submit(input, 'Wrong Architect');
-    // Miss 2: country joins the year clue. targetBuilding's countryCode is 'XX'.
+    submit(input, 'Wrong Architect 2');
+    // Miss 2: country joins the year clue with a human-readable label.
     expect(screen.getByTestId('clue-year')).toBeTruthy();
-    expect(screen.getByTestId('clue-country').textContent).toContain('XX');
+    expect(screen.getByTestId('clue-country').textContent).toContain('France');
     expect(screen.queryByTestId('clue-typology-material')).toBeNull();
   });
 
@@ -216,9 +224,7 @@ describe('GameBoard', () => {
     render(<GameBoard building={targetBuilding} mode="daily" locale="en" />);
     const input = screen.getByLabelText('Name the architect');
 
-    for (let i = 0; i < 6; i += 1) {
-      submit(input, 'Wrong Architect');
-    }
+    wrongArchitects.forEach((architect) => submit(input, architect.name));
 
     expect(screen.getByTestId('reveal')).toBeTruthy();
     expect(screen.getByTestId('reveal-message').textContent).toContain('Target Architect');

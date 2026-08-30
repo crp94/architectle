@@ -58,7 +58,9 @@ export type FactCell = { key: string; label: string; value: string };
 
 export function buildFacts(building: Building, locale: Locale): FactCell[] {
   const completed = building.completed !== null ? String(building.completed) : '—';
-  const location = `${building.location.city}, ${building.location.countryCode}`;
+  const country = new Intl.DisplayNames([locale], { type: 'region' }).of(building.location.countryCode)
+    ?? building.location.countryCode;
+  const location = `${building.location.city}, ${country}`;
   const typology = t(locale, TYPOLOGY_KEY[building.typology]);
   const material = building.materials.map((m) => t(locale, MATERIAL_KEY[m])).join(' / ');
   return [

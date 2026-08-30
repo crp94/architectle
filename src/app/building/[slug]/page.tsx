@@ -6,6 +6,7 @@ import { BUILDINGS, architectById, buildingBySlug } from '@/lib/pool';
 import { breadcrumbJsonLd, buildingJsonLd } from '@/lib/jsonld';
 import { SITE_URL } from '@/lib/site';
 import { t } from '@/lib/i18n';
+import { localeHref, resolveLocale, type LocaleSearchParams } from '@/lib/locale';
 import { theme } from '@/lib/theme';
 import { ArchiveNav } from '@/components/archive/ArchiveNav';
 import { FactStrip } from '@/components/archive/FactStrip';
@@ -15,8 +16,6 @@ import { Provenance } from '@/components/archive/Provenance';
 import { ImageGallery } from '@/components/archive/ImageGallery';
 import { GalleryFrame } from '@/components/ui/GalleryFrame';
 import { SectionRule } from '@/components/ui/SectionRule';
-
-const LOCALE = 'en' as const;
 
 type Params = { slug: string };
 
@@ -29,7 +28,8 @@ export function generateStaticParams() {
   return BUILDINGS.map((b) => ({ slug: b.id }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
+export async function generateMetadata({ params, searchParams }: { params: Promise<Params>; searchParams: Promise<LocaleSearchParams> }): Promise<Metadata> {
+  const locale = resolveLocale((await searchParams).lang);
   const { slug } = await params;
   const building = buildingBySlug(slug);
   if (!building) return {};
@@ -37,8 +37,8 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const name = building.name.en;
   // "{building} — {architect}" (design spec §7's own example title
   // pattern) — the root layout's `title.template` appends "| Architectle".
-  const title = t(LOCALE, 'metaBuildingTitle', { building: name, architect: architect.name });
-  const description = building.dossier.en.slice(0, 155);
+  const title = t(locale, 'metaBuildingTitle', { building: building.name[locale] ?? name, architect: architect.name });
+  const description = (building.dossier[locale] ?? building.dossier.en).slice(0, 155);
   const url = `${SITE_URL}/building/${building.id}`;
 
   return {
@@ -68,7 +68,9 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   };
 }
 
-export default async function BuildingPage({ params }: { params: Promise<Params> }) {
+export default async function BuildingPage({ params, searchParams }: { params: Promise<Params>; searchParams: Promise<LocaleSearchParams> }) {
+  const localeParams = await searchParams;
+  const LOCALE = resolveLocale(localeParams.lang);
   const { slug } = await params;
   const building = buildingBySlug(slug);
   if (!building) notFound();
@@ -80,7 +82,7 @@ export default async function BuildingPage({ params }: { params: Promise<Params>
 
   return (
     <main className="flex flex-1 flex-col bg-paper">
-      <ArchiveNav locale={LOCALE} />
+      <ArchiveNav locale={LOCALE} pathname={`/building/${slug}`} searchParams={localeParams} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(buildingJsonLd(building, architect)) }}
@@ -108,7 +110,7 @@ export default async function BuildingPage({ params }: { params: Promise<Params>
             {buildingName}
           </h1>
           <p className="text-sm" style={{ fontFamily: theme.type.body }}>
-            <Link href={`/architect/${architect.id}`} className="underline" data-testid="archive-architect-link">
+            <Link href={localeHref(`/architect/${architect.id}`, LOCALE)} className="underline" data-testid="archive-architect-link">
               {architect.name}
             </Link>
             {coArchitects.length > 0 && (
@@ -118,7 +120,7 @@ export default async function BuildingPage({ params }: { params: Promise<Params>
                 {coArchitects.map((a, i) => (
                   <span key={a.id}>
                     {i > 0 ? ', ' : ''}
-                    <Link href={`/architect/${a.id}`} className="underline">
+                    <Link href={localeHref(`/architect/${a.id}`, LOCALE)} className="underline">
                       {a.name}
                     </Link>
                   </span>

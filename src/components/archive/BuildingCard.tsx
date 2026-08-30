@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { Building } from '@/types/building';
 import type { Locale } from '@/lib/i18n';
+import { localeHref } from '@/lib/locale';
 import { theme } from '@/lib/theme';
 import { GalleryFrame } from '@/components/ui/GalleryFrame';
 import { Provenance } from './Provenance';
@@ -16,7 +17,7 @@ export function BuildingCard({ building, locale }: { building: Building; locale:
   const name = building.name[locale] ?? building.name.en;
   return (
     <li className="flex flex-col gap-2">
-      <Link href={`/building/${building.id}`} className="flex flex-col gap-2">
+      <Link href={localeHref(`/building/${building.id}`, locale)} className="flex flex-col gap-2">
         <GalleryFrame width={building.image.width} height={building.image.height} className="p-2 sm:p-3">
           <Image
             src={`/buildings/${building.id}.avif`}

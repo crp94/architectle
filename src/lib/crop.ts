@@ -3,9 +3,13 @@ import type { Rect } from '@/types/common';
 const FULL_FRAME: Rect = { x: 0, y: 0, w: 1, h: 1 };
 const DEFAULT_TOTAL_GUESSES = 6;
 
-/** Cubic ease-out: fast start, slow finish. Pins easeOutCubic(0) = 0 and easeOutCubic(1) = 1. */
-export function easeOutCubic(t: number): number {
-  return 1 - (1 - t) ** 3;
+/**
+ * A restrained ease-out ladder. The former cubic curve exposed nearly half
+ * the image after a single miss and over 93% by miss three; this keeps each
+ * of the six attempts visually meaningful while still widening every time.
+ */
+export function easeOutGentle(t: number): number {
+  return 1 - (1 - t) ** 1.5;
 }
 
 function lerp(a: number, b: number, t: number): number {
@@ -100,7 +104,7 @@ export function cropAt(
   total: number = DEFAULT_TOTAL_GUESSES,
 ): Rect {
   const clampedGuess = Math.min(Math.max(guess, 1), total);
-  const t = total <= 1 ? 1 : easeOutCubic((clampedGuess - 1) / (total - 1));
+  const t = total <= 1 ? 1 : easeOutGentle((clampedGuess - 1) / (total - 1));
 
   const interpolated: Rect = {
     x: lerp(detail.x, FULL_FRAME.x, t),

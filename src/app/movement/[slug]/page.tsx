@@ -4,14 +4,13 @@ import { architectsByMovement, buildingsByMovement, movementById, referencedMove
 import { breadcrumbJsonLd, movementJsonLd } from '@/lib/jsonld';
 import { SITE_URL } from '@/lib/site';
 import { t } from '@/lib/i18n';
+import { resolveLocale, type LocaleSearchParams } from '@/lib/locale';
 import { theme } from '@/lib/theme';
 import { familyLabel } from '@/lib/facts';
 import { ArchiveNav } from '@/components/archive/ArchiveNav';
 import { BuildingCard } from '@/components/archive/BuildingCard';
 import { LinkList } from '@/components/archive/LinkList';
 import { SectionRule } from '@/components/ui/SectionRule';
-
-const LOCALE = 'en' as const;
 
 type Params = { slug: string };
 
@@ -23,13 +22,14 @@ export function generateStaticParams() {
   return referencedMovementIds().map((id) => ({ slug: id }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
+export async function generateMetadata({ params, searchParams }: { params: Promise<Params>; searchParams: Promise<LocaleSearchParams> }): Promise<Metadata> {
+  const locale = resolveLocale((await searchParams).lang);
   const { slug } = await params;
   const movement = movementById(slug);
   if (!movement) return {};
 
-  const title = t(LOCALE, 'metaArchiveTitle', { name: movement.name });
-  const description = movement.blurb.en.slice(0, 155);
+  const title = t(locale, 'metaArchiveTitle', { name: movement.name });
+  const description = (movement.blurb[locale] ?? movement.blurb.en).slice(0, 155);
   const url = `${SITE_URL}/movement/${movement.id}`;
 
   return {
@@ -41,7 +41,9 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   };
 }
 
-export default async function MovementPage({ params }: { params: Promise<Params> }) {
+export default async function MovementPage({ params, searchParams }: { params: Promise<Params>; searchParams: Promise<LocaleSearchParams> }) {
+  const localeParams = await searchParams;
+  const LOCALE = resolveLocale(localeParams.lang);
   const { slug } = await params;
   const movement = movementById(slug);
   if (!movement) notFound();
@@ -52,7 +54,7 @@ export default async function MovementPage({ params }: { params: Promise<Params>
 
   return (
     <main className="flex flex-1 flex-col bg-paper">
-      <ArchiveNav locale={LOCALE} />
+      <ArchiveNav locale={LOCALE} pathname={`/movement/${slug}`} searchParams={localeParams} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(movementJsonLd(movement)) }}
@@ -93,6 +95,7 @@ export default async function MovementPage({ params }: { params: Promise<Params>
           {architects.length > 0 ? (
             <LinkList
               testId="archive-movement-architects"
+              locale={LOCALE}
               items={architects.map((a) => ({ href: `/architect/${a.id}`, label: a.name }))}
             />
           ) : (
