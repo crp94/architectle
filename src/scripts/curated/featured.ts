@@ -21,4 +21,10 @@ export const FEATURED_ARCHITECT_IDS: string[] = [
   'felix-candela',
   'oscar-niemeyer',
   'alvaro-siza',
+  'alvar-aalto',
+  'walter-gropius',
+  'victor-horta',
+  'charles-rennie-mackintosh',
+  'gustave-eiffel',
+  'jorn-utzon',
 ];
