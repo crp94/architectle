@@ -76,19 +76,25 @@ affiliation outright, and the taxonomy is contested by nature. If a movement
 label is uncertain, leave the architect `unaffiliated` and say so in prose,
 rather than picking one to tidy the mechanic.
 
-## Coverage targets are hard gates, not aspirations
+## Coverage reporting, and the gates that remain hard
 
-`npm run data:curate` validates every change against the numeric targets in
-`src/scripts/validators/coverage.ts` (era distribution, geography
-floors/ceilings, ≥20% women-or-non-binary architects, ≥60% canon-tier, max 3
-buildings credited to one architect). These are hard failures. Do not add a
-building or architect that would push the pool below/above a threshold
-without also fixing the shortfall elsewhere, and never pad a quota with a
-fabricated or thinly-sourced fact — the fix for a missed target is more
-real research, never invented content. Run `npm run data:curate` and read
-the coverage summary table it prints — that live output, not `/about` (which
-no longer republishes it), is the current measured numbers against each
-target and their margins.
+Since the v2 refocus (spec `docs/superpowers/specs/2026-08-30-architectle-v2-
+refocus-design.md` §3), the representativeness targets in
+`src/scripts/validators/coverage.ts` — era distribution, geography
+floors/ceilings, the ≥20% women-or-non-binary share, ≥60% canon-tier — are
+**report-only**: they print in `data:curate`'s coverage table (tagged
+`info`) but no longer fail the build. The curator dropped them as gates
+deliberately, trading representativeness for guessability in the featured
+game roster; the full archive remains. Rules that stay HARD: max **6**
+buildings credited to one architect, `featured-architect-exists`,
+`featured-min-buildings` (≥2 per featured architect), and every
+correctness rule (licence, provenance, schema, id-uniqueness, chronology,
+duplicate-site, image dimensions). Never pad any number with a fabricated
+or thinly-sourced fact — the fix for a shortfall is more real research,
+never invented content. Run `npm run data:curate` and read the coverage
+summary table it prints — that live output, not `/about` (which no longer
+republishes it), is the current measured numbers against each target and
+their margins.
 
 Watch specifically for the attribution-pressure failure mode: a gender quota
 combined with this game's single-`architectId`-per-building answer key can
