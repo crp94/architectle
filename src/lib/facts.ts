@@ -8,6 +8,7 @@ import type { Building } from '@/types/building';
 import type { Architect } from '@/types/architect';
 import type { ImageRecord, Material, Typology } from '@/types/common';
 import type { FamilyId } from '@/types/movement';
+import type { GameState } from '@/lib/storage';
 import { t, type Locale } from '@/lib/i18n';
 import { MOVEMENTS } from '@/data/movements';
 
@@ -128,4 +129,44 @@ export function provenanceLine(building: Building, locale: Locale): string {
  */
 export function extraImageSrc(buildingId: string, index: number): string {
   return `/buildings/${buildingId}-${index + 2}.avif`;
+}
+
+/** A guess count (1..6) paired with how many finished daily rounds took
+ * exactly that many guesses — one row of the reveal's distribution bar. */
+export type DistributionBar = { guesses: number; count: number; pct: number };
+
+export type StatsSummary = {
+  played: number;
+  winPct: string;
+  streak: number;
+  maxStreak: number;
+  distribution: DistributionBar[];
+};
+
+/**
+ * Derives the reveal's stats-block display values from raw
+ * `GameState.stats` (played/wins/streak/maxStreak/distribution counts) —
+ * pure formatting, no game logic of its own. `winPct` is a bare
+ * `"{n}%"` string (like `architectSpan`'s bare year range above): a
+ * formatted statistic, not a sentence, so it isn't routed through
+ * `t()`. Each distribution bar's `pct` is scaled against the single
+ * largest bucket (never against `played`), so the most-common guess count
+ * always draws a full-width bar and the rest read relative to it — the
+ * same "distribution shape", not raw share of games played.
+ */
+export function statsSummary(stats: GameState['stats']): StatsSummary {
+  const winPct = stats.played > 0 ? Math.round((stats.wins / stats.played) * 100) : 0;
+  const max = Math.max(1, ...stats.distribution);
+  const distribution = stats.distribution.map((count, i) => ({
+    guesses: i + 1,
+    count,
+    pct: Math.round((count / max) * 100),
+  }));
+  return {
+    played: stats.played,
+    winPct: `${winPct}%`,
+    streak: stats.streak,
+    maxStreak: stats.maxStreak,
+    distribution,
+  };
 }

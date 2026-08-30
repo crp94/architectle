@@ -73,9 +73,23 @@ export function shareText(o: {
   guessesUsed: number | null;
   comparisons: Comparison[];
   locale: Locale;
+  /**
+   * The player's current daily win streak (`GameState.stats.streak`) after
+   * this round, if tracked. A bare integer — same "cannot leak the answer"
+   * guarantee as everything else this function reads, since a streak count
+   * says nothing about who today's architect is. Rendered inline on the
+   * header line (not a separate line) to keep the whole payload short —
+   * long share texts don't get posted. Shown only once the player has
+   * actually strung two-plus wins together: a single win is a win, not yet
+   * "a streak" worth flagging, and omitting it there keeps the header
+   * exactly as short as it always was for a first-time or occasional
+   * player. Omit entirely for unlimited-mode rounds, which never track one.
+   */
+  streak?: number;
 }): string {
   const score = o.guessesUsed === null ? `X/${MAX_GUESSES}` : `${o.guessesUsed}/${MAX_GUESSES}`;
-  const header = HEADER[o.locale](o.puzzleNumber, score);
+  const streakSuffix = o.streak !== undefined && o.streak >= 2 ? ` 🔥${o.streak}` : '';
+  const header = HEADER[o.locale](o.puzzleNumber, score) + streakSuffix;
   const grid = shareGrid(o.comparisons);
   return [header, grid, SHARE_URL].filter(Boolean).join('\n\n');
 }

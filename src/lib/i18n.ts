@@ -74,7 +74,10 @@ const en = {
   lossTitle: 'Out of guesses',
   lossMessage: 'The architect was {name}.',
   shareButton: 'Share',
+  shareCopyButton: 'Copy',
   shareCopied: 'Copied to clipboard',
+  sharePreviewHeading: 'What gets shared',
+  sharePreviewNote: 'Spoiler-free — no architect or building name.',
   playAgain: 'Play unlimited',
 
   // Stats
@@ -257,7 +260,10 @@ const es: Strings = {
   lossTitle: 'Sin intentos',
   lossMessage: 'El arquitecto era {name}.',
   shareButton: 'Compartir',
+  shareCopyButton: 'Copiar',
   shareCopied: 'Copiado al portapapeles',
+  sharePreviewHeading: 'Qué se comparte',
+  sharePreviewNote: 'Sin spoilers — sin el nombre del arquitecto ni del edificio.',
   playAgain: 'Jugar sin límite',
 
   statsTitle: 'Estadísticas',
@@ -413,7 +419,10 @@ const it: Strings = {
   lossTitle: 'Tentativi esauriti',
   lossMessage: "L'architetto era {name}.",
   shareButton: 'Condividi',
+  shareCopyButton: 'Copia',
   shareCopied: 'Copiato negli appunti',
+  sharePreviewHeading: 'Cosa viene condiviso',
+  sharePreviewNote: 'Senza spoiler — niente nome dell’architetto o dell’edificio.',
   playAgain: 'Gioca senza limiti',
 
   statsTitle: 'Statistiche',

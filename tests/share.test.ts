@@ -40,6 +40,27 @@ describe('shareText', () => {
     expect(t).toContain('X/6');
   });
 
+  it('appends a streak line when the streak is 2 or more', () => {
+    const t = shareText({
+      puzzleNumber: 128, guessesUsed: 4, comparisons: [cmp('FAR','NONE','NONE','NONE')], locale: 'en', streak: 5,
+    });
+    expect(t).toContain('🔥5');
+    // Stays on the header line, not a whole extra line — keeps the payload short.
+    expect(t.split('\n\n')[0]).toBe('Architectle #128 4/6 🔥5');
+  });
+
+  it('omits the streak line for a streak of 1 (a single win is not yet "a streak")', () => {
+    const t = shareText({
+      puzzleNumber: 128, guessesUsed: 4, comparisons: [cmp('FAR','NONE','NONE','NONE')], locale: 'en', streak: 1,
+    });
+    expect(t).not.toContain('🔥');
+  });
+
+  it('omits the streak line entirely when streak is not passed (e.g. unlimited mode)', () => {
+    const t = shareText({ puzzleNumber: 128, guessesUsed: 4, comparisons: [cmp('FAR','NONE','NONE','NONE')], locale: 'en' });
+    expect(t).not.toContain('🔥');
+  });
+
   it('never leaks the architect or building name for a solved round, in any locale', () => {
     // These are stand-ins for whatever the answer happens to be: shareText receives
     // only Comparison[], puzzleNumber, guessesUsed and locale, so it has no channel
