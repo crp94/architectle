@@ -3,9 +3,8 @@ import Link from 'next/link';
 import { theme } from '@/lib/theme';
 import { t, type Locale } from '@/lib/i18n';
 import { SectionRule } from '@/components/ui/SectionRule';
-import { SpecimenLabel } from '@/components/ui/SpecimenLabel';
 import { SITE_URL } from '@/lib/site';
-import { ABOUT_SECTIONS, type AboutSection, type CoverageGateRow } from './content';
+import { ABOUT_SECTIONS, type AboutSection } from './content';
 
 // No dynamic locale routing exists yet anywhere in the app (src/app/page.tsx
 // hardcodes the same constant) — this is the same convention, not a
@@ -32,15 +31,6 @@ export const metadata: Metadata = {
   twitter: { card: 'summary_large_image', title: ABOUT_TITLE, description: ABOUT_DESCRIPTION },
 };
 
-function GateRow({ row }: { row: CoverageGateRow }) {
-  return (
-    <SpecimenLabel
-      label={row.label[LOCALE] ?? row.label.en}
-      value={`${row.actual} (${row.target})`}
-    />
-  );
-}
-
 function Section({ section }: { section: AboutSection }) {
   const [firstParagraph, ...rest] = section.paragraphs;
   return (
@@ -59,13 +49,6 @@ function Section({ section }: { section: AboutSection }) {
         </p>
       )}
 
-      {section.gates && (
-        <div className="flex flex-wrap gap-3">
-          {section.gates.map((row) => (
-            <GateRow key={row.id} row={row} />
-          ))}
-        </div>
-      )}
 
       {rest.map((paragraph, i) => (
         // Paragraphs never reorder within a section, so index keys are stable.
