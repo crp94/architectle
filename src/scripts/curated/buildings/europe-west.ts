@@ -171,6 +171,16 @@ export const EUROPE_WEST_BUILDINGS: Building[] = [
       width: 1013,
       height: 1600,
     },
+    extraImages: [
+      {
+        commonsFile: 'Tassel House stairway.JPG',
+        photographer: 'Henry Townsend',
+        license: 'PD',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Tassel_House_stairway.JPG',
+        width: 0,
+        height: 0,
+      },
+    ],
     dossier: {
       en: 'The Brussels town house of the 1890s was a fixed thing: a narrow deep plot, three rooms in a row down one side, a corridor and stair on the other, and a dining room in the middle with no window. Horta broke it by treating the middle of the plot as a lit void. He put a steel-framed, top-lit hall where the dark room used to be, wound the stair around it, and let the floors step in half-levels so that the house has no single storey height. The iron is left visible and turned decorative: slender columns whose capitals spray into painted tendrils that run on across the mosaic floor and the wall stencilling, so structure and ornament are the same drawing. Émile Tassel, a scientist and university professor, wanted somewhere to give lectures, and got a house organised around the act of looking upward. It was listed in 1976 and inscribed by UNESCO in 2000.',
       es: 'La casa burguesa bruselense de los años noventa del siglo XIX era un tipo fijo: parcela estrecha y profunda, tres piezas en hilera a un lado, corredor y escalera al otro, y en medio un comedor sin ventana. Horta la rompió tratando el centro de la parcela como un vacío iluminado. Colocó donde estaba la pieza oscura un vestíbulo con estructura de acero y luz cenital, enroscó a su alrededor la escalera y dejó que los forjados escalonaran a media altura, de modo que la casa carece de una altura de planta única. El hierro queda a la vista y se vuelve ornamento: columnas esbeltas cuyos capiteles se desflecan en zarcillos pintados que continúan por el mosaico del suelo y el estarcido de los muros, de manera que estructura y decoración son el mismo dibujo. Émile Tassel, científico y profesor universitario, quería un lugar donde dar conferencias, y obtuvo una casa organizada en torno al acto de mirar hacia arriba. Fue protegida en 1976 e inscrita por la UNESCO en 2000.',
@@ -180,6 +190,142 @@ export const EUROPE_WEST_BUILDINGS: Building[] = [
     sources: [
       { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1881679', title: 'Hôtel Tassel (Q1881679)', license: null },
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/H%C3%B4tel_Tassel', title: 'Hôtel Tassel', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://whc.unesco.org/en/list/1005/', title: 'Major Town Houses of the Architect Victor Horta (Brussels) — UNESCO World Heritage Centre', license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'hotel-van-eetvelde',
+    wikidataId: 'Q1818182',
+    name: {
+      en: 'Hôtel van Eetvelde',
+      es: 'Hôtel van Eetvelde',
+      it: 'Hôtel van Eetvelde',
+    },
+    architectId: 'victor-horta',
+    location: { city: 'Brussels', countryCode: 'BE', lat: 50.84717, lon: 4.38039 },
+    inception: 1895,
+    completed: 1898,
+    demolished: null,
+    typology: 'domestic',
+    materials: ['steel-and-glass', 'stone', 'brick'],
+    structure: {
+      en: 'An octagonal rotunda at the centre of the plan is ringed by slender cast-iron columns rising unsupported by any masonry wall to a stained-glass cupola, and the street facade itself hangs from a steel frame rather than resting on it.',
+      es: 'Una rotonda octogonal en el centro de la planta está rodeada de esbeltas columnas de hierro fundido que se elevan sin apoyo de muro alguno hasta una cúpula de vidrio emplomado, y la propia fachada a la calle cuelga de un armazón de acero en vez de apoyarse en él.',
+      it: "Una rotonda ottagonale al centro della pianta è cinta da esili colonne in ghisa che si elevano senza appoggio di alcun muro fino a una cupola di vetro piombato, e la stessa facciata sulla strada è appesa a un'intelaiatura d'acciaio anziché portata da essa.",
+    },
+    program: {
+      en: "A town house for Edmond van Eetvelde, who ran the Congo Free State's administration from Brussels, combining family apartments with rooms for receiving colonial business.",
+      es: 'Casa urbana para Edmond van Eetvelde, que dirigía desde Bruselas la administración del Estado Libre del Congo, combinando las estancias familiares con salas para recibir los negocios coloniales.',
+      it: "Casa urbana per Edmond van Eetvelde, che dirigeva da Bruxelles l'amministrazione dello Stato Libero del Congo, che combina gli appartamenti di famiglia con sale per ricevere gli affari coloniali.",
+    },
+    heritage: 'unesco',
+    currentUse: {
+      en: 'In private hands and used as offices; not generally open to the public.',
+      es: 'En manos privadas y usada como oficinas; no suele estar abierta al público.',
+      it: "In mani private e adibita a uffici; di norma non è aperta al pubblico.",
+    },
+    detailRect: { x: 0.08, y: 0.15, w: 0.55, h: 0.14 },
+    image: {
+      commonsFile: 'Belgique - Bruxelles - Hôtel Van Eetvelde - 01.jpg',
+      photographer: 'EmDee',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Belgique_-_Bruxelles_-_H%C3%B4tel_Van_Eetvelde_-_01.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'Hotel van Eetvelde 2012-06 --3.jpg',
+        photographer: 'Zinneke',
+        license: 'CC BY-SA 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hotel_van_Eetvelde_2012-06_--3.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: 'Edmond van Eetvelde ran the day-to-day administration of Leopold II\'s Congo Free State from Brussels, and asked Horta for a house that could double as an office for receiving colonial business alongside family life. Horta answered by hollowing the plan around an octagonal rotunda, its ring of slender cast-iron columns rising unsupported by any masonry wall to a stained-glass cupola three storeys up; the whole street facade is hung from a steel frame rather than carried on it, so the window bays step forward past the structural line in a way solid brick or stone construction could never allow. Built in two campaigns, 1895–98 and 1898–1901, it was Horta\'s most technically daring town house and one of the earliest Brussels facades to trust steel and glass over masonry for its public face. It has been in continuous private office use since the twentieth century and was inscribed by UNESCO in 2000 alongside Hôtel Tassel, Hôtel Solvay and Horta\'s own house as the "Major Town Houses of Victor Horta".',
+      es: 'Edmond van Eetvelde dirigía desde Bruselas la administración diaria del Estado Libre del Congo de Leopoldo II, y pidió a Horta una casa que sirviera a la vez de oficina para recibir los negocios coloniales y de vivienda familiar. Horta respondió vaciando la planta en torno a una rotonda octogonal, cuyo anillo de esbeltas columnas de hierro fundido se eleva sin apoyo de muro alguno hasta una cúpula de vidrio emplomado tres plantas más arriba; toda la fachada a la calle cuelga de un armazón de acero en vez de apoyarse en él, de modo que los miradores avanzan por delante de la línea estructural como jamás permitiría una fábrica maciza de ladrillo o piedra. Construida en dos campañas, 1895-98 y 1898-1901, fue la casa urbana técnicamente más audaz de Horta y una de las primeras fachadas bruselenses en confiar en el acero y el vidrio antes que en la fábrica para su cara pública. Sigue en uso continuo como oficinas privadas desde el siglo XX, y fue inscrita por la UNESCO en 2000 junto al Hôtel Tassel, el Hôtel Solvay y la propia casa de Horta como las «Principales casas urbanas del arquitecto Victor Horta».',
+      it: "Edmond van Eetvelde dirigeva da Bruxelles l'amministrazione quotidiana dello Stato Libero del Congo di Leopoldo II, e chiese a Horta una casa che fungesse insieme da ufficio per ricevere gli affari coloniali e da abitazione familiare. Horta rispose svuotando la pianta attorno a una rotonda ottagonale, il cui anello di esili colonne in ghisa si eleva senza appoggio di alcun muro fino a una cupola di vetro piombato tre piani più in alto; l'intera facciata sulla strada è appesa a un'intelaiatura d'acciaio anziché portata da essa, così che le bow-window avanzano oltre la linea strutturale come una muratura piena di mattoni o pietra non permetterebbe mai. Costruita in due campagne, 1895-98 e 1898-1901, fu la casa urbana tecnicamente più audace di Horta e una delle prime facciate bruxellesi ad affidarsi ad acciaio e vetro anziché alla muratura per il proprio volto pubblico. È rimasta in uso continuo come uffici privati dal Novecento, e fu iscritta dall'UNESCO nel 2000 insieme a Hôtel Tassel, Hôtel Solvay e la casa dello stesso Horta come le «Principali case urbane dell'architetto Victor Horta».",
+    },
+    context: {
+      body: {
+        en: 'Edmond van Eetvelde was general administrator of foreign affairs for the Congo Free State from 1885, and in practice ran its administration in Brussels on Leopold II\'s behalf: when two fellow administrators resigned in 1890 in protest at the king\'s decision to impose a state monopoly on ivory and rubber, van Eetvelde stayed on and absorbed their responsibilities too, remaining in post until 1900 and later serving as the Congo Free State\'s Minister of State from 1901. His tenure therefore spans the years in which forced rubber collection under that monopoly became the documented atrocity that eventually forced Leopold to cede the territory to Belgium in 1908. The house he commissioned from Horta was funded by a fortune built on that administration.',
+        es: 'Edmond van Eetvelde fue administrador general de asuntos exteriores del Estado Libre del Congo desde 1885, y en la práctica dirigía su administración desde Bruselas en nombre de Leopoldo II: cuando otros dos administradores dimitieron en 1890 en protesta por la decisión del rey de imponer un monopolio estatal sobre el marfil y el caucho, van Eetvelde permaneció en el cargo y asumió también sus funciones, hasta 1900, y más tarde fue ministro de Estado del Estado Libre del Congo desde 1901. Su mandato abarca por tanto los años en que la recolección forzada de caucho bajo ese monopolio se convirtió en la atrocidad documentada que acabaría forzando a Leopoldo a ceder el territorio a Bélgica en 1908. La casa que encargó a Horta se financió con una fortuna construida sobre esa administración.',
+        it: "Edmond van Eetvelde fu amministratore generale degli affari esteri dello Stato Libero del Congo dal 1885, e di fatto ne dirigeva l'amministrazione da Bruxelles per conto di Leopoldo II: quando altri due amministratori si dimisero nel 1890 per protesta contro la decisione del re di imporre un monopolio statale su avorio e caucciù, van Eetvelde restò al suo posto assumendone anche le funzioni, fino al 1900, e fu poi ministro di Stato dello Stato Libero del Congo dal 1901. Il suo mandato copre dunque gli anni in cui la raccolta forzata del caucciù sotto quel monopolio divenne l'atrocità documentata che avrebbe infine costretto Leopoldo a cedere il territorio al Belgio nel 1908. La casa commissionata a Horta fu finanziata da una fortuna costruita su quell'amministrazione.",
+      },
+      sources: [
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Edmond_van_Eetvelde', title: 'Edmond van Eetvelde', license: 'CC BY-SA 4.0' },
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Congo_Free_State', title: 'Congo Free State', license: 'CC BY-SA 4.0' },
+      ],
+    },
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1818182', title: 'Hôtel van Eetvelde (Q1818182)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/H%C3%B4tel_van_Eetvelde', title: 'Hôtel van Eetvelde', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://whc.unesco.org/en/list/1005/', title: 'Major Town Houses of the Architect Victor Horta (Brussels) — UNESCO World Heritage Centre', license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'horta-museum',
+    wikidataId: 'Q1995367',
+    name: {
+      en: 'Horta Museum',
+      es: 'Museo Horta',
+      it: 'Museo Horta',
+    },
+    architectId: 'victor-horta',
+    location: { city: 'Brussels', countryCode: 'BE', lat: 50.82417, lon: 4.35472 },
+    inception: 1898,
+    completed: 1901,
+    demolished: null,
+    typology: 'domestic',
+    materials: ['steel-and-glass', 'stone', 'brick'],
+    structure: {
+      en: "A narrow stone facade carries whiplash wrought-iron cresting over paired dormers, and inside a top-lit stair well lined in mirror and glazed tile pulls daylight from the roof down through the full height of the house.",
+      es: 'Una fachada estrecha de piedra lleva un remate de hierro forjado en volutas sobre un par de buhardillas, y dentro un hueco de escalera iluminado cenitalmente, forrado de espejo y azulejo vidriado, conduce la luz del techo por toda la altura de la casa.',
+      it: "Una stretta facciata in pietra porta una cresta in ferro battuto a volute sopra una coppia di abbaini, e all'interno un vano scala illuminato dall'alto, rivestito di specchio e piastrelle invetriate, conduce la luce del tetto per l'intera altezza della casa.",
+    },
+    program: {
+      en: "Horta's own house and adjoining studio, built for himself and his family; the house is now a museum of his life and work.",
+      es: 'Casa propia de Horta y estudio anexo, construidos para él y su familia; la casa es hoy un museo de su vida y obra.',
+      it: 'Casa propria di Horta e attiguo studio, costruiti per sé e la propria famiglia; la casa è oggi un museo della sua vita e della sua opera.',
+    },
+    heritage: 'unesco',
+    currentUse: {
+      en: 'The Horta Museum, dedicated to Victor Horta and his work; a 2013 restoration won the European Union Prize for Cultural Heritage in 2014.',
+      es: 'El Museo Horta, dedicado a Victor Horta y su obra; una restauración de 2013 recibió el Premio de la Unión Europea de Patrimonio Cultural en 2014.',
+      it: "Il Museo Horta, dedicato a Victor Horta e alla sua opera; un restauro del 2013 ha vinto il Premio dell'Unione Europea per il patrimonio culturale nel 2014.",
+    },
+    detailRect: { x: 0.08, y: 0.14, w: 0.42, h: 0.22 },
+    image: {
+      commonsFile: 'Hortamuseum.tif',
+      photographer: 'Paul Louis',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hortamuseum.tif',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'Belgique - Bruxelles - Maison Horta - 01.jpg',
+        photographer: 'EmDee',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Belgique_-_Bruxelles_-_Maison_Horta_-_01.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "Horta built himself a house at 25 rue Américaine in 1898, then in 1901 bought the plot next door and built a studio, later merging the two behind a single street presentation while keeping the studio's own entrance. He tested his ideas on his own money before offering them to clients: the stair hall rises through the full height of the house lit from a glazed roof, its walls doubled in mirror so the daylight bounces rather than simply falling, and every hinge, radiator grille and door handle was drawn by Horta himself. He lived and worked here until financial difficulty after the First World War forced him to sell in 1919. The house became a museum in 1969, was restored between 2010 and 2013, and was inscribed by UNESCO in 2000 with Hôtel Tassel, Hôtel Solvay and Hôtel van Eetvelde as the \"Major Town Houses of Victor Horta\".",
+      es: 'Horta se construyó una casa en el número 25 de la rue Américaine en 1898, y en 1901 compró la parcela contigua para levantar un estudio, que más tarde fundió con la casa tras una única fachada a la calle conservando el estudio su propia entrada. Probó sus ideas con su propio dinero antes de ofrecérselas a los clientes: el hueco de la escalera sube por toda la altura de la casa iluminado desde una cubierta acristalada, con los muros doblados en espejo para que la luz rebote en lugar de caer sin más, y cada bisagra, rejilla de radiador y tirador de puerta los dibujó el propio Horta. Vivió y trabajó aquí hasta que las dificultades económicas de la posguerra lo obligaron a vender en 1919. La casa se convirtió en museo en 1969, se restauró entre 2010 y 2013, y fue inscrita por la UNESCO en 2000 junto al Hôtel Tassel, el Hôtel Solvay y el Hôtel van Eetvelde como las «Principales casas urbanas del arquitecto Victor Horta».',
+      it: "Horta si costruì una casa al numero 25 di rue Américaine nel 1898, e nel 1901 acquistò il lotto attiguo per costruirvi uno studio, poi fuso con la casa dietro un'unica facciata sulla strada pur conservando lo studio un proprio ingresso. Mise alla prova le proprie idee con il proprio denaro prima di offrirle ai clienti: il vano scala sale per l'intera altezza della casa illuminato da una copertura vetrata, con le pareti raddoppiate a specchio perché la luce rimbalzi anziché cadere e basta, e ogni cerniera, griglia del radiatore e maniglia furono disegnate dallo stesso Horta. Vi visse e lavorò finché le difficoltà finanziarie del dopoguerra non lo costrinsero a vendere nel 1919. La casa divenne museo nel 1969, fu restaurata tra il 2010 e il 2013, e fu iscritta dall'UNESCO nel 2000 insieme a Hôtel Tassel, Hôtel Solvay e Hôtel van Eetvelde come le «Principali case urbane dell'architetto Victor Horta».",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1995367', title: 'Horta Museum (Q1995367)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Horta_Museum', title: 'Horta Museum', license: 'CC BY-SA 4.0' },
       { kind: 'institution', url: 'https://whc.unesco.org/en/list/1005/', title: 'Major Town Houses of the Architect Victor Horta (Brussels) — UNESCO World Heritage Centre', license: null },
     ],
     tier: 'canon',
@@ -677,5 +823,130 @@ export const EUROPE_WEST_BUILDINGS: Building[] = [
       { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q19827882', title: 'Kaap Skil (Q19827882)', license: null },
     ],
     tier: 'deep',
+  },
+  // --- Gustave Eiffel (Wave V2-3, batch B4) ------------------------------
+  // France has no usable Freedom of Panorama, but Eiffel died in 1923 — over
+  // 100 years ago, well past even the strict life+70 term — so his work is
+  // out of copyright by age regardless. The one live caveat: the Eiffel
+  // Tower's night-time illumination is a separately copyrighted lighting
+  // design (confirmed on Commons:Copyright rules by territory/France — the
+  // operating company SETE claims copyright over lit-up night images via the
+  // lighting designer's rights). Both images below were verified, by
+  // actually viewing the downloaded file, to be DAYTIME photographs with no
+  // illumination visible.
+  {
+    id: 'eiffel-tower',
+    wikidataId: 'Q243',
+    name: {
+      en: 'Eiffel Tower',
+      es: 'Torre Eiffel',
+      it: 'Torre Eiffel',
+    },
+    architectId: 'gustave-eiffel',
+    location: { city: 'Paris', countryCode: 'FR', lat: 48.85837, lon: 2.29448 },
+    inception: 1887,
+    completed: 1889,
+    demolished: null,
+    typology: 'tower',
+    materials: ['steel-and-glass'],
+    structure: {
+      en: 'A four-legged wrought-iron lattice tower, its legs curving inward from splayed masonry piers to converge on a single shaft, stiffened by two intermediate platforms and some 2.5 million rivets.',
+      es: 'Torre de celosía de hierro forjado con cuatro patas que se curvan hacia dentro desde macizos pilares de fábrica hasta converger en un único fuste, rigidizada por dos plataformas intermedias y unos 2,5 millones de remaches.',
+      it: 'Torre a traliccio di ferro battuto con quattro gambe che si incurvano verso l\'interno da massicci pilastri in muratura fino a convergere in un unico fusto, irrigidita da due piattaforme intermedie e circa 2,5 milioni di ribattini.',
+    },
+    program: {
+      en: 'Built as the entrance arch and centrepiece of the 1889 Exposition Universelle in Paris, marking the centenary of the French Revolution; it now serves as an observation tower and telecommunications mast.',
+      es: 'Construida como arco de entrada y pieza central de la Exposición Universal de París de 1889, en el centenario de la Revolución Francesa; hoy funciona como torre mirador y mástil de telecomunicaciones.',
+      it: 'Costruita come arco d\'ingresso e fulcro dell\'Esposizione Universale di Parigi del 1889, nel centenario della Rivoluzione francese; oggi funge da torre panoramica e antenna per telecomunicazioni.',
+    },
+    heritage: 'unesco',
+    currentUse: {
+      en: 'Operated as a paid observation tower and broadcasting mast by the Société d\'Exploitation de la Tour Eiffel on behalf of the City of Paris, which owns it.',
+      es: 'Gestionada como torre mirador de pago y mástil de radiodifusión por la Société d\'Exploitation de la Tour Eiffel, en nombre de la ciudad de París, propietaria del monumento.',
+      it: 'Gestita come torre panoramica a pagamento e antenna di radiodiffusione dalla Société d\'Exploitation de la Tour Eiffel, per conto della città di Parigi, che ne è proprietaria.',
+    },
+    detailRect: { x: 0.35, y: 0.50, w: 0.30, h: 0.20 },
+    image: {
+      commonsFile: 'Tour Eiffel Wikimedia Commons.jpg',
+      photographer: 'Benh Lieu Song',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Tour_Eiffel_Wikimedia_Commons.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'Eiffel Tower, November 15, 2011.jpg',
+        photographer: 'couscouschocolat',
+        license: 'CC BY 2.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Eiffel_Tower,_November_15,_2011.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: 'Eiffel\'s engineering firm won an 1886 competition for a centrepiece to the 1889 Exposition Universelle, marking the centenary of the French Revolution. The design itself was not personally his: senior engineers Maurice Koechlin and Émile Nouguier produced the first calculations and sketch — four latticed iron legs curving inward to meet a single shaft — and Stephen Sauvestre, head of Eiffel\'s architecture office, added the decorative arches at the base, the glazed first-floor pavilions and other ornament that made the engineering presentable to a Beaux-Arts jury. Eiffel bought the patent from his own employees and built it under his company\'s name in twenty-six months, using some 18,000 prefabricated wrought-iron parts and two and a half million rivets, most fitted on site by riveting teams working from movable scaffolding. Parisian critics condemned it as a "truly tragic street lamp" before construction finished; it was kept beyond its planned twenty-year demolition only because the army found it useful for radio transmission. Classified a monument historique in 1964 and inscribed within the UNESCO listing for the banks of the Seine in 1991.',
+      es: 'La empresa de Eiffel ganó en 1886 el concurso para la pieza central de la Exposición Universal de 1889, que conmemoraba el centenario de la Revolución Francesa. El diseño no fue suyo personalmente: los ingenieros Maurice Koechlin y Émile Nouguier hicieron los primeros cálculos y el boceto —cuatro patas de celosía de hierro que se curvan hacia dentro hasta unirse en un solo fuste— y Stephen Sauvestre, jefe del departamento de arquitectura de Eiffel, añadió los arcos decorativos de la base, los pabellones acristalados del primer piso y otros adornos que hicieron presentable la ingeniería ante un jurado de Beaux-Arts. Eiffel compró la patente a sus propios empleados y la construyó bajo el nombre de su empresa en veintiséis meses, con unas 18.000 piezas prefabricadas de hierro forjado y dos millones y medio de remaches, la mayoría colocados in situ por equipos de remachadores desde andamios móviles. La crítica parisina la condenó como una «verdaderamente trágica farola» antes de que acabaran las obras; se salvó de la demolición prevista a los veinte años solo porque el ejército la encontró útil para la radiotransmisión. Fue clasificada monumento histórico en 1964 e inscrita en la lista de la UNESCO de las orillas del Sena en 1991.',
+      it: 'L\'impresa di Eiffel vinse nel 1886 il concorso per il fulcro dell\'Esposizione Universale del 1889, che celebrava il centenario della Rivoluzione francese. Il progetto non fu suo personalmente: gli ingegneri Maurice Koechlin ed Émile Nouguier realizzarono i primi calcoli e lo schizzo — quattro gambe reticolari di ferro che si incurvano verso l\'interno fino a unirsi in un unico fusto — e Stephen Sauvestre, capo del reparto di architettura di Eiffel, aggiunse gli archi decorativi alla base, i padiglioni vetrati del primo piano e altri ornamenti che resero presentabile l\'ingegneria a una giuria Beaux-Arts. Eiffel acquistò il brevetto dai propri dipendenti e la costruì sotto il nome della sua impresa in ventisei mesi, con circa 18.000 pezzi prefabbricati di ferro battuto e due milioni e mezzo di ribattini, in gran parte fissati in cantiere da squadre di ribaditori su impalcature mobili. La critica parigina la condannò come un «lampione veramente tragico» prima ancora che finissero i lavori; fu risparmiata dalla demolizione prevista dopo vent\'anni solo perché l\'esercito la trovò utile per la radiotrasmissione. Fu classificata monumento storico nel 1964 e iscritta nell\'elenco UNESCO delle rive della Senna nel 1991.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q243', title: 'Eiffel Tower (Q243)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Eiffel_Tower', title: 'Eiffel Tower', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://commons.wikimedia.org/wiki/Commons:Copyright_rules_by_territory/France', title: 'Commons:Copyright rules by territory/France', license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'garabit-viaduct',
+    wikidataId: 'Q1333442',
+    name: {
+      en: 'Garabit Viaduct',
+      es: 'Viaducto de Garabit',
+      it: 'Viadotto di Garabit',
+    },
+    architectId: 'gustave-eiffel',
+    location: { city: 'Ruynes-en-Margeride', countryCode: 'FR', lat: 44.97540, lon: 3.17722 },
+    inception: 1882,
+    completed: 1884,
+    demolished: null,
+    typology: 'infrastructure',
+    materials: ['steel-and-glass'],
+    structure: {
+      en: 'A two-hinged parabolic arch of latticed wrought iron spanning 165 metres, with the railway deck carried on piers rising from the crown of the arch rather than resting on it directly.',
+      es: 'Arco parabólico biarticulado de hierro forjado en celosía con un vano de 165 metros, cuyo tablero ferroviario se apoya en pilares que arrancan de la clave del arco y no directamente sobre él.',
+      it: 'Arco parabolico biarticolato di ferro battuto reticolare con una campata di 165 metri, il cui impalcato ferroviario poggia su piloni che si innalzano dalla chiave dell\'arco e non direttamente su di esso.',
+    },
+    program: {
+      en: 'A railway viaduct built for the Compagnie des chemins de fer du Midi to carry the Marvejols–Neussargues line across the Truyère gorge in the Cantal.',
+      es: 'Viaducto ferroviario construido para la Compagnie des chemins de fer du Midi para llevar la línea Marvejols-Neussargues a través del desfiladero del Truyère, en el Cantal.',
+      it: 'Viadotto ferroviario costruito per la Compagnie des chemins de fer du Midi per portare la linea Marvejols-Neussargues attraverso la gola della Truyère, nel Cantal.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Still carries occasional passenger rail traffic across the gorge, under a permanent reduced speed limit imposed after cracks were found in a foundation pier in 2009.',
+      es: 'Todavía lleva tráfico ferroviario de pasajeros ocasional a través del desfiladero, bajo un límite de velocidad reducido y permanente impuesto tras hallarse grietas en un pilar de cimentación en 2009.',
+      it: 'Porta ancora traffico ferroviario passeggeri occasionale attraverso la gola, con un limite di velocità ridotto e permanente imposto dopo il ritrovamento di crepe in un pilastro di fondazione nel 2009.',
+    },
+    detailRect: { x: 0.45, y: 0.20, w: 0.30, h: 0.35 },
+    image: {
+      commonsFile: 'The Garabit Viaduct, France - 48050191718.jpg',
+      photographer: 'kitmasterbloke',
+      license: 'CC BY 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:The_Garabit_Viaduct,_France_-_48050191718.jpg',
+      width: 0,
+      height: 0,
+    },
+    dossier: {
+      en: 'Gustave Eiffel\'s engineering firm built the Garabit Viaduct between 1882 and 1884 to carry the railway from Marvejols to Neussargues across the Truyère gorge in the Cantal, on a single track 122 metres above the river. The structure is a two-hinged parabolic arch of latticed wrought iron, its longest span 165 metres, that was for a time the highest bridge in the world; the deck rides on iron piers rising from the arch\'s crown rather than resting directly on the arch itself, letting the whole structure flex under load and temperature. Chief engineer Maurice Koechlin, who had worked out the calculations for what became the Eiffel Tower five years later, is credited with the design; Garabit is often read as a proof of the same wind-load and lattice principles the Tower would apply at a different scale. Opened to traffic in 1885, the line still carries occasional passenger trains, though cracks discovered in a foundation pier in 2009 led to a lasting reduced speed limit of 10 km/h across the crossing. It is a classified monument historique.',
+      es: 'La empresa de ingeniería de Gustave Eiffel construyó el viaducto de Garabit entre 1882 y 1884 para llevar la línea de ferrocarril de Marvejols a Neussargues a través del desfiladero del Truyère, en el Cantal, sobre una única vía a 122 metros sobre el río. La estructura es un arco parabólico biarticulado de hierro forjado en celosía, con un vano principal de 165 metros, que fue durante un tiempo el puente más alto del mundo; el tablero se apoya en pilares de hierro que arrancan de la clave del arco en lugar de descansar directamente sobre él, lo que permite que toda la estructura flexione con la carga y la temperatura. Se atribuye el diseño al ingeniero jefe Maurice Koechlin, que había hecho los cálculos de lo que cinco años después sería la Torre Eiffel; Garabit suele leerse como el ensayo de los mismos principios de carga de viento y celosía que la Torre aplicaría a otra escala. Abierto al tráfico en 1885, la línea aún lleva trenes de pasajeros ocasionales, aunque unas grietas halladas en un pilar de cimentación en 2009 obligaron a un límite de velocidad reducido y permanente de 10 km/h en el cruce. Es monumento histórico clasificado.',
+      it: 'L\'impresa di ingegneria di Gustave Eiffel costruì il viadotto di Garabit tra il 1882 e il 1884 per portare la linea ferroviaria da Marvejols a Neussargues attraverso la gola della Truyère, nel Cantal, su un unico binario a 122 metri sul fiume. La struttura è un arco parabolico biarticolato di ferro battuto reticolare, con una campata massima di 165 metri, che fu per un certo periodo il ponte più alto del mondo; l\'impalcato poggia su piloni di ferro che si innalzano dalla chiave dell\'arco anziché appoggiare direttamente su di esso, il che permette all\'intera struttura di flettere sotto il carico e la temperatura. Il progetto è attribuito all\'ingegnere capo Maurice Koechlin, che aveva elaborato i calcoli di quella che cinque anni dopo sarebbe diventata la Torre Eiffel; Garabit è spesso letto come la verifica degli stessi principi di carico del vento e di reticolo che la Torre avrebbe applicato a un\'altra scala. Aperto al traffico nel 1885, la linea porta ancora treni passeggeri occasionali, sebbene alcune crepe scoperte in un pilastro di fondazione nel 2009 abbiano imposto un limite di velocità ridotto e permanente di 10 km/h sull\'attraversamento. È monumento storico classificato.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1333442', title: 'Garabit Viaduct (Q1333442)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Garabit_viaduct', title: 'Garabit viaduct', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
   },
 ];

@@ -385,4 +385,41 @@ export const EUROPE_WEST_ARCHITECTS: Architect[] = [
       { kind: 'wikipedia', url: 'https://nl.wikipedia.org/wiki/Paul_Robbrecht', title: 'Paul Robbrecht', license: 'CC BY-SA 4.0' },
     ],
   },
+  {
+    // Wave V2-3, batch B4. Eiffel was a civil engineer, not an architect by
+    // training or self-identification (see portrait). Included per the v2
+    // spec's candidate list on the judgement that a guessing game about
+    // famous structures should not apply a stricter credentialing test than
+    // the public's own idea of "iconic architecture" already does — the same
+    // reasoning the spec applies to Buckminster Fuller. `movements` is
+    // 'unaffiliated': none of src/data/movements.ts's ~40 ids fit a
+    // nineteenth-century structural engineer, and inventing one just to give
+    // him a comparison result is exactly what this project's own contract
+    // forbids.
+    id: 'gustave-eiffel',
+    wikidataId: 'Q20882',
+    name: 'Gustave Eiffel',
+    alternativeNames: ['Alexandre Gustave Bonickhausen dit Eiffel'],
+    gender: 'man',
+    born: 1832,
+    died: 1923,
+    floruit: { start: 1858, end: 1889, override: false },
+    movements: 'unaffiliated',
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'infrastructure',
+    signatureMaterial: 'steel-and-glass',
+    portrait: {
+      en: 'Gustave Eiffel trained as a chemist, not an architect: he graduated from the École Centrale des Arts et Manufactures in 1855 and learned metal construction on the job, first as Charles Nepveu\'s assistant, then running research for the Compagnie Belge de Matériels de Chemin de Fer, where he built the Bordeaux railway bridge using compressed-air caissons. He set up his own consultancy in 1865 and, from 1868, the firm Eiffel et Cie, which built the Maria Pia Bridge at Porto, the exposed ironwork of Budapest\'s Nyugati station, and the internal armature of the Statue of Liberty before the Tower made him famous. He is included here as an engineer whose structures, built with named architect-collaborators, are as central to the public idea of "iconic architecture" as any building by a licensed architect.',
+      es: 'Gustave Eiffel se formó como químico, no como arquitecto: se graduó en la École Centrale des Arts et Manufactures en 1855 y aprendió la construcción metálica en el oficio, primero como ayudante de Charles Nepveu y después dirigiendo la investigación de la Compagnie Belge de Matériels de Chemin de Fer, donde levantó el puente ferroviario de Burdeos con cajones de aire comprimido. Montó su propia consultoría en 1865 y, desde 1868, la firma Eiffel et Cie, que construyó el puente Maria Pia de Oporto, la ferretería vista de la estación Nyugati de Budapest y el armazón interno de la Estatua de la Libertad antes de que la Torre lo hiciera célebre. Se le incluye aquí como ingeniero cuyas estructuras, construidas con arquitectos colaboradores con nombre propio, pesan en la idea pública de «arquitectura icónica» tanto como cualquier edificio de un arquitecto titulado.',
+      it: 'Gustave Eiffel si formò come chimico, non come architetto: si laureò all\'École Centrale des Arts et Manufactures nel 1855 e imparò la costruzione metallica sul campo, prima come assistente di Charles Nepveu e poi dirigendo la ricerca per la Compagnie Belge de Matériels de Chemin de Fer, dove costruì il ponte ferroviario di Bordeaux con cassoni ad aria compressa. Avviò una propria attività di consulenza nel 1865 e, dal 1868, la ditta Eiffel et Cie, che costruì il ponte Maria Pia a Porto, la ferramenta a vista della stazione Nyugati di Budapest e l\'armatura interna della Statua della Libertà prima che la Torre lo rendesse celebre. È incluso qui come ingegnere le cui strutture, costruite con architetti collaboratori nominati, pesano nell\'idea pubblica di «architettura iconica» quanto qualunque edificio di un architetto abilitato.',
+    },
+    awards: [],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q20882', title: 'Gustave Eiffel (Q20882)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Gustave_Eiffel', title: 'Gustave Eiffel', license: 'CC BY-SA 4.0' },
+    ],
+  },
 ];
