@@ -36,6 +36,15 @@ export function SiteFooter({ locale = 'en' as Locale }: { locale?: Locale }) {
           {link.label}
         </Link>
       ))}
+      {/* External: the author's site — a plain anchor, not next/link. */}
+      <a
+        data-testid="footer-link-author"
+        href="https://carlosrodriguezpardo.es"
+        rel="author"
+        className="underline"
+      >
+        carlosrodriguezpardo.es
+      </a>
     </footer>
   );
 }
