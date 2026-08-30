@@ -17,4 +17,8 @@ export const FEATURED_ARCHITECT_IDS: string[] = [
   'buckminster-fuller',
   'frank-gehry',
   'i-m-pei',
+  'antoni-gaudi',
+  'felix-candela',
+  'oscar-niemeyer',
+  'alvaro-siza',
 ];
