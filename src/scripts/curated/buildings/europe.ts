@@ -684,4 +684,69 @@ export const EUROPE_BUILDINGS: Building[] = [
     ],
     tier: 'deep',
   },
+  {
+    // Wave V2-3, batch B6 — Jean Nouvel featured curate. Spain has FoP; no
+    // living-architect concern.
+    id: 'torre-glories',
+    wikidataId: 'Q336246',
+    name: {
+      en: 'Torre Glòries',
+      es: 'Torre Glòries',
+      it: 'Torre Glòries',
+    },
+    architectId: 'jean-nouvel',
+    location: { city: 'Barcelona', countryCode: 'ES', lat: 41.4034, lon: 2.1895 },
+    inception: 1999,
+    completed: 2005,
+    demolished: null,
+    typology: 'tower',
+    materials: ['concrete', 'steel-and-glass'],
+    structure: {
+      en: 'Two concentric reinforced-concrete cylinders, one structural and one a wind-bracing inner skin, carry the tower\'s smooth-topped mass, wrapped in a perforated aluminium louvre screen over a coloured glazed facade.',
+      es: 'Dos cilindros concéntricos de hormigón armado, uno estructural y otro como piel interior de arriostramiento frente al viento, sostienen la masa de remate curvo de la torre, envuelta en una pantalla de lamas de aluminio perforado sobre una fachada acristalada de color.',
+      it: 'Due cilindri concentrici in cemento armato, uno strutturale e uno come pelle interna di controventamento contro il vento, sostengono la massa dalla sommità curva della torre, avvolta in uno schermo di lamelle di alluminio forato sopra una facciata vetrata colorata.',
+    },
+    program: {
+      en: 'Headquarters tower for the Barcelona water utility Agbar (Aigües de Barcelona), commissioned in the late 1990s; sold in 2017 and reopened with public viewing floors.',
+      es: 'Torre sede de la compañía de aguas de Barcelona Agbar (Aigües de Barcelona), encargada a finales de los años noventa; vendida en 2017 y reabierta con plantas de mirador público.',
+      it: 'Torre sede della società idrica di Barcellona Agbar (Aigües de Barcelona), commissionata alla fine degli anni Novanta; venduta nel 2017 e riaperta con piani di belvedere pubblico.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Offices and, since 2022, a public viewing space and events venue ("La Cloud") on its upper floors.',
+      es: 'Oficinas y, desde 2022, un espacio de mirador público y eventos ("La Cloud") en sus plantas superiores.',
+      it: 'Uffici e, dal 2022, uno spazio di belvedere pubblico ed eventi ("La Cloud") ai piani superiori.',
+    },
+    detailRect: { x: 0.25, y: 0.40, w: 0.40, h: 0.28 },
+    image: {
+      commonsFile: 'File:Torre Agbar Barcelona 2015.jpg',
+      photographer: 'Bjørn Erik Pedersen',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Torre_Agbar_Barcelona_2015.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Barcelona - Torre Glòries.jpg',
+        photographer: 'Fred Romero',
+        license: 'CC BY 2.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Barcelona_-_Torre_Gl%C3%B2ries.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "Nouvel described the tower's silhouette as recalling a geyser rising from the ground, though Barcelona quickly read it instead as an echo of Gaudí's nearby Sagrada Família spires, and the double debate followed the building from its 1999 groundbreaking to its 2005 opening as the headquarters of the water utility Agbar. Two concentric cylinders of reinforced concrete, one structural and one not, carry a smooth-topped tower wrapped in a perforated aluminium screen of 4,500 operable louvres set over a glazed inner skin in some forty shades of red, orange and blue; the louvres open and close with the sun and, since 2010, the whole surface can also carry a programmed LED light show of nearly 4,500 points after dark. Agbar sold the tower in 2017 to the real-estate group Merlin Properties, which renamed it Torre Glòries for the plaza at its foot and reopened its upper floors to the public as an urban viewing space and events venue in 2022.",
+      es: 'Nouvel describió la silueta de la torre como el recuerdo de un géiser brotando del suelo, aunque Barcelona la leyó enseguida como un eco de las torres de la cercana Sagrada Família de Gaudí, y ese doble debate acompañó al edificio desde la primera piedra, en 1999, hasta su apertura en 2005 como sede de la compañía de aguas Agbar. Dos cilindros concéntricos de hormigón armado, uno estructural y otro no, sostienen una torre de remate curvo envuelta en una pantalla de aluminio perforado con 4.500 lamas practicables dispuestas sobre una piel interior de vidrio en unas cuarenta tonalidades de rojo, naranja y azul; las lamas se abren y cierran con el sol y, desde 2010, toda la superficie puede además representar un espectáculo de luces LED programado con casi 4.500 puntos tras el anochecer. Agbar vendió la torre en 2017 al grupo inmobiliario Merlin Properties, que la rebautizó Torre Glòries por la plaza situada a sus pies y reabrió sus plantas superiores al público en 2022 como mirador urbano y espacio de eventos.',
+      it: 'Nouvel descrisse la sagoma della torre come il ricordo di un geyser che sgorga dal suolo, anche se Barcellona la lesse subito come un\'eco delle vicine guglie della Sagrada Família di Gaudí, e questo doppio dibattito accompagnò l\'edificio dalla posa della prima pietra, nel 1999, alla sua apertura nel 2005 come sede della società idrica Agbar. Due cilindri concentrici in cemento armato, uno strutturale e uno no, sostengono una torre dalla sommità curva avvolta in uno schermo di alluminio forato con 4.500 lamelle apribili disposte sopra una pelle vetrata interna in una quarantina di tonalità di rosso, arancione e blu; le lamelle si aprono e si chiudono seguendo il sole e, dal 2010, l\'intera superficie può anche proiettare uno spettacolo di luci LED programmato con quasi 4.500 punti dopo il tramonto. Agbar vendette la torre nel 2017 al gruppo immobiliare Merlin Properties, che la ribattezzò Torre Glòries dalla piazza ai suoi piedi e nel 2022 ne riaprì i piani superiori al pubblico come belvedere urbano e spazio per eventi.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q336246', title: 'Torre Glòries (Q336246)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Torre_Gl%C3%B2ries', title: 'Torre Glòries — Wikipedia', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.jeannouvel.com/en/projects/tour-agbar/', title: 'Torre Agbar — Ateliers Jean Nouvel', license: null },
+    ],
+    tier: 'canon',
+  },
 ];

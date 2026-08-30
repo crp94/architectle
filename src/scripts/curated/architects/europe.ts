@@ -436,4 +436,38 @@ export const EUROPE_ARCHITECTS: Architect[] = [
       { kind: 'institution', url: 'https://www.ala.uk.com/projects/maat/', title: 'MAAT — AL_A project page', license: null },
     ],
   },
+  {
+    // Wave V2-3, batch B6 — Italy/France featured top-up. Full curate: not
+    // previously in the pool as a primary architect (only mentioned in
+    // Richard Rogers' portrait re: Centre Pompidou). Living; Italy and
+    // France both have no FoP, which blocks his Italian and French work
+    // outright (Auditorium Parco della Musica, Centre Pompidou) — the three
+    // buildings below are all in FoP-clear jurisdictions (UK, US, Japan).
+    id: 'renzo-piano',
+    wikidataId: 'Q190148',
+    name: 'Renzo Piano',
+    alternativeNames: ['Renzo Piano Building Workshop'],
+    gender: 'man',
+    born: 1937,
+    died: null,
+    floruit: { start: 1971, end: 2026, override: false },
+    movements: [{ id: 'high-tech', primary: true }],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'steel-and-glass',
+    portrait: {
+      en: 'Piano was born in Genoa into a family of builders, studied at Milan Polytechnic, and worked briefly for Louis Kahn in Philadelphia before returning to Italy. His international reputation began at thirty-four, when he and Richard Rogers won the 1971 competition for the Centre Pompidou, turning a Paris museum inside out so its structure, escalators and ducts run up the exterior and the interior stays open, unencumbered floor. Piano founded the Renzo Piano Building Workshop in 1981, and its subsequent work runs from the Kansai International Airport terminal, engineered with Peter Rice to withstand typhoons and the settling of reclaimed land, to museums for the Menil Collection, the Beyeler Foundation and the Whitney. Piano resists being read as a stylist: each building is argued from its site, climate and structural logic rather than a signature form. He received the Pritzker Prize in 1998.',
+      es: 'Piano nació en Génova, en una familia de constructores, estudió en el Politécnico de Milán y trabajó brevemente para Louis Kahn en Filadelfia antes de volver a Italia. Su fama internacional empezó a los treinta y cuatro años, cuando él y Richard Rogers ganaron en 1971 el concurso del Centro Pompidou, volviendo del revés un museo parisino para que su estructura, escaleras mecánicas y conductos corrieran por el exterior y el interior quedara como una planta libre y despejada. Piano fundó el Renzo Piano Building Workshop en 1981, y su obra posterior va de la terminal del Aeropuerto Internacional de Kansai, calculada con Peter Rice para resistir tifones y el asiento de un terreno ganado al mar, a museos para la Colección Menil, la Fundación Beyeler y el Whitney. Piano rehúye ser leído como un estilista: cada edificio se argumenta desde su emplazamiento, su clima y su lógica estructural, y no desde una forma firmada. Recibió el Pritzker en 1998.',
+      it: "Piano nacque a Genova, in una famiglia di costruttori, studiò al Politecnico di Milano e lavorò brevemente per Louis Kahn a Filadelfia prima di tornare in Italia. La sua fama internazionale iniziò a trentaquattro anni, quando lui e Richard Rogers vinsero nel 1971 il concorso per il Centre Pompidou, rovesciando un museo parigino così che struttura, scale mobili e condotti corressero all'esterno e l'interno restasse una pianta libera e sgombra. Piano fondò il Renzo Piano Building Workshop nel 1981, e il suo lavoro successivo va dal terminal dell'Aeroporto Internazionale del Kansai, calcolato con Peter Rice per resistere ai tifoni e all'assestamento di un terreno di bonifica, ai musei per la Menil Collection, la Fondazione Beyeler e il Whitney. Piano rifugge l'etichetta di stilista: ogni edificio si argomenta a partire dal sito, dal clima e dalla logica strutturale, non da una forma firmata. Ricevette il Pritzker nel 1998.",
+    },
+    awards: ['Praemium Imperiale (1995)', 'Pritzker Prize (1998)', 'AIA Gold Medal (2008)'],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q190148', title: 'Renzo Piano (Q190148)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Renzo_Piano', title: 'Renzo Piano — Wikipedia', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.pritzkerprize.com/laureates/1998', title: 'Renzo Piano — The Pritzker Architecture Prize', license: null },
+    ],
+  },
 ];

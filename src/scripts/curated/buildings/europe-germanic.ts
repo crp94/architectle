@@ -761,4 +761,72 @@ export const EUROPE_GERMANIC_BUILDINGS: Building[] = [
     ],
     tier: 'canon',
   },
+  {
+    // Wave V2-3, batch B6 — Jean Nouvel featured curate. Switzerland has
+    // FoP; no living-architect concern. Note for future curators: the
+    // highest-resolution photo in this building's Commons category
+    // (Luzern_asv2022-10_Kultur-_und_Kongresszentrum.jpg) is Free Art
+    // Licence ONLY — not on the allowed list — and was discarded.
+    id: 'kkl-luzern',
+    wikidataId: 'Q665311',
+    name: {
+      en: 'KKL Luzern (Lucerne Culture and Congress Centre)',
+      es: 'KKL Luzern (Centro de Cultura y Congresos de Lucerna)',
+      it: 'KKL Luzern (Centro di Cultura e Congressi di Lucerna)',
+    },
+    architectId: 'jean-nouvel',
+    location: { city: 'Lucerne', countryCode: 'CH', lat: 47.0506, lon: 8.3097 },
+    inception: 1989,
+    completed: 2000,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['steel-and-glass', 'concrete'],
+    structure: {
+      en: 'Three largely independent buildings — concert hall, congress centre and art museum — share a single thin cantilevered steel roof, 110 by 105 metres, that projects out over the lake and a cut canal.',
+      es: 'Tres edificios en buena medida independientes —sala de conciertos, centro de congresos y museo de arte— comparten una única y delgada cubierta de acero en voladizo, de 110 por 105 metros, que se proyecta sobre el lago y un canal excavado.',
+      it: 'Tre edifici in gran parte indipendenti — sala da concerti, centro congressi e museo d\'arte — condividono un\'unica sottile copertura in acciaio a sbalzo, di 110 per 105 metri, che si proietta sul lago e su un canale scavato.',
+    },
+    program: {
+      en: 'A concert hall, congress centre and art museum for the city of Lucerne, replacing an acoustically inadequate nineteenth-century hall, won in a 1989 competition and built in phases around the functioning institution.',
+      es: 'Una sala de conciertos, un centro de congresos y un museo de arte para la ciudad de Lucerna, en sustitución de una sala decimonónica de acústica deficiente, ganados en un concurso de 1989 y construidos por fases en torno a la institución en funcionamiento.',
+      it: 'Una sala da concerti, un centro congressi e un museo d\'arte per la città di Lucerna, in sostituzione di una sala ottocentesca dall\'acustica carente, vinti in un concorso del 1989 e costruiti per fasi attorno all\'istituzione in funzione.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'In active use as Lucerne\'s concert hall, congress venue and the Kunstmuseum Luzern.',
+      es: 'En uso activo como sala de conciertos, sede de congresos y Kunstmuseum Luzern de la ciudad.',
+      it: 'In uso attivo come sala da concerti, sede congressuale e Kunstmuseum Luzern della città.',
+    },
+    detailRect: { x: 0.30, y: 0.30, w: 0.35, h: 0.22 },
+    image: {
+      commonsFile: 'File:Aerial view of KKL Luzern with Pilatus.jpg',
+      photographer: 'Beat Ruest',
+      license: 'CC BY 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Aerial_view_of_KKL_Luzern_with_Pilatus.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Kultur- und Kongresszentrum Luzern.jpg',
+        photographer: 'Yair Haklai',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Kultur-_und_Kongresszentrum_Luzern.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "Lucerne's nineteenth-century concert hall was acoustically compromised and had to go, but the city also needed to keep hosting its summer music festival without a gap year, so Nouvel's replacement, won in a 1989 competition, had to be built in stages around a functioning institution on a tight lakefront site between the railway station and the water. His solution roofs three largely separate buildings — a 1,840-seat concert hall tuned by the acoustician Russell Johnson with a reverberation chamber behind the stage, a congress centre, and the Kunstmuseum Luzern art museum — under a single thin steel roof measuring 110 by 105 metres, cantilevered out over the lake and a cut canal so that water appears to run beneath the building itself. Construction proceeded in phases from 1995 so the concert hall could open in August 1998 while work continued elsewhere; the complex was completed in 2000. Nouvel's design earned Lucerne's Kultur- und Kongresszentrum the Borromini Prize in 2001.",
+      es: 'La sala de conciertos decimonónica de Lucerna tenía una acústica deficiente y debía desaparecer, pero la ciudad también necesitaba seguir acogiendo su festival de música de verano sin un año de interrupción, de modo que el edificio de Nouvel, ganador de un concurso de 1989, tuvo que construirse por fases en torno a una institución en pleno funcionamiento, en un solar estrecho junto al lago, entre la estación de tren y el agua. Su solución cubre tres edificios en buena medida independientes —una sala de conciertos de 1.840 butacas, afinada por el acústico Russell Johnson con una cámara de reverberación tras el escenario, un centro de congresos y el museo de arte Kunstmuseum Luzern— bajo una única y delgada cubierta de acero de 110 por 105 metros, en voladizo sobre el lago y un canal excavado de modo que el agua parece correr bajo el propio edificio. Las obras avanzaron por fases desde 1995 para que la sala de conciertos pudiera abrir en agosto de 1998 mientras proseguían los trabajos en el resto; el conjunto se terminó en 2000. El diseño de Nouvel valió al Kultur- und Kongresszentrum de Lucerna el Premio Borromini en 2001.',
+      it: 'La sala da concerti ottocentesca di Lucerna aveva un\'acustica compromessa e andava sostituita, ma la città doveva anche continuare a ospitare il proprio festival musicale estivo senza un anno di interruzione, cosicché l\'edificio di Nouvel, vincitore di un concorso del 1989, dovette essere costruito per fasi attorno a un\'istituzione in piena attività, su un sito stretto in riva al lago fra la stazione ferroviaria e l\'acqua. La sua soluzione copre tre edifici in gran parte indipendenti — una sala da concerto da 1.840 posti, calibrata dall\'acustico Russell Johnson con una camera di riverbero dietro il palco, un centro congressi e il museo d\'arte Kunstmuseum Luzern — sotto un\'unica sottile copertura in acciaio di 110 per 105 metri, a sbalzo sul lago e su un canale scavato in modo che l\'acqua sembri scorrere sotto l\'edificio stesso. I lavori procedettero per fasi dal 1995, così che la sala da concerto potesse aprire nell\'agosto 1998 mentre altrove i lavori proseguivano; il complesso fu completato nel 2000. Il progetto di Nouvel valse al Kultur- und Kongresszentrum di Lucerna il Premio Borromini nel 2001.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q665311', title: 'Lucerne Culture and Congress Centre (Q665311)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Lucerne_Culture_and_Congress_Centre', title: 'Lucerne Culture and Congress Centre — Wikipedia', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.kkl-luzern.ch/en', title: 'KKL Luzern — official site', license: null },
+    ],
+    tier: 'canon',
+  },
 ];

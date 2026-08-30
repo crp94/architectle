@@ -569,4 +569,72 @@ export const ASIA_BUILDINGS: Building[] = [
     ],
     tier: 'canon',
   },
+  {
+    // Wave V2-3, batch B6 — Renzo Piano featured curate. Japan has FoP; no
+    // living-architect concern. No distinct Wikidata item exists for the
+    // terminal building itself (Q193682 covers the whole airport), so
+    // wikidataId is null with 2 non-wiki/non-Wikipedia sources per the
+    // provenance rule.
+    id: 'kansai-airport-terminal-1',
+    wikidataId: null,
+    name: {
+      en: 'Kansai International Airport, Terminal 1',
+      es: 'Aeropuerto Internacional de Kansai, Terminal 1',
+      it: 'Aeroporto Internazionale del Kansai, Terminal 1',
+    },
+    architectId: 'renzo-piano',
+    location: { city: 'Izumisano, Osaka', countryCode: 'JP', lat: 34.4342, lon: 135.2441 },
+    inception: 1988,
+    completed: 1994,
+    demolished: null,
+    typology: 'infrastructure',
+    materials: ['steel-and-glass'],
+    structure: {
+      en: 'A steel-trussed toroidal roof, curved in section like an aircraft wing and clad in 82,000 identical stainless-steel panels, spans the terminal without internal ductwork; the whole structure rests on jacks that correct for the uneven settlement of the reclaimed island beneath it.',
+      es: 'Una cubierta toroidal de celosía de acero, curvada en sección como el ala de un avión y revestida con 82.000 paneles idénticos de acero inoxidable, cubre la terminal sin conductos internos; toda la estructura se apoya en gatos que corrigen el asiento desigual de la isla artificial sobre la que se levanta.',
+      it: 'Una copertura toroidale a traliccio d\'acciaio, curva in sezione come l\'ala di un aereo e rivestita da 82.000 pannelli identici in acciaio inossidabile, copre il terminal senza condotte interne; l\'intera struttura poggia su martinetti che correggono l\'assestamento non uniforme dell\'isola di bonifica sottostante.',
+    },
+    program: {
+      en: 'The passenger terminal of an international airport built on an artificial island in Osaka Bay, commissioned by the Kansai International Airport Company after a 1988 international design competition.',
+      es: 'La terminal de pasajeros de un aeropuerto internacional construido en una isla artificial de la bahía de Osaka, encargada por la Kansai International Airport Company tras un concurso internacional de 1988.',
+      it: 'Il terminal passeggeri di un aeroporto internazionale costruito su un\'isola artificiale nella baia di Osaka, commissionato dalla Kansai International Airport Company dopo un concorso internazionale del 1988.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'In continuous operation as Kansai International Airport\'s Terminal 1.',
+      es: 'En funcionamiento continuo como Terminal 1 del Aeropuerto Internacional de Kansai.',
+      it: 'In funzionamento continuo come Terminal 1 dell\'Aeroporto Internazionale del Kansai.',
+    },
+    detailRect: { x: 0.45, y: 0.28, w: 0.40, h: 0.28 },
+    image: {
+      commonsFile: 'File:関空第1ターミナル全景 - panoramio.jpg',
+      photographer: 'sinndati8692',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:%E9%96%A2%E7%A9%BA%E7%AC%AC1%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB%E5%85%A8%E6%99%AF_-_panoramio.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Kansai Airport terminal 1 ,from the top of observation hall "sky view" (16041786233).jpg',
+        photographer: 'lasta29',
+        license: 'CC BY 2.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Kansai_Airport_terminal_1_,from_the_top_of_observation_hall_%22sky_view%22_(16041786233).jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "Kansai International Airport was built to relieve overcrowded Osaka air traffic without the noise disputes that had plagued the city's inland airport, and its site is the reason the terminal looks the way it does: a 4-kilometre artificial island built in Osaka Bay, chosen so flights could operate around the clock over open water. Renzo Piano won the 1988 design competition and, working with the engineers Peter Rice and Tom Barker of Ove Arup and with Nikken Sekkei, resolved the airport's central problem — moving vast volumes of conditioned air through a mile-long shed — into its form: a single toroidal roof surface, curved in section like an aircraft wing, that channels air along its underside from mechanical rooms at the terminal's centre out to its far ends, needing no ductwork at all. The 1.7-kilometre terminal, clad in 82,000 identical stainless-steel panels, opened in September 1994 and has since settled unevenly on its reclaimed ground, exactly as its engineers anticipated when they designed the structure's jacking system to correct for it.",
+      es: 'El Aeropuerto Internacional de Kansai se construyó para aliviar la saturación aérea de Osaka sin repetir los conflictos por ruido que habían acosado al aeropuerto interior de la ciudad, y ese emplazamiento explica la forma de la terminal: una isla artificial de 4 kilómetros construida en la bahía de Osaka, elegida para poder operar vuelos las veinticuatro horas sobre mar abierto. Renzo Piano ganó el concurso de 1988 y, junto con los ingenieros Peter Rice y Tom Barker, de Ove Arup, y con Nikken Sekkei, resolvió el problema central del aeropuerto —mover enormes volúmenes de aire acondicionado a lo largo de un cobertizo de más de un kilómetro— convirtiéndolo en su propia forma: una única cubierta toroidal, curvada en sección como el ala de un avión, que conduce el aire por su cara inferior desde las salas técnicas del centro de la terminal hasta sus extremos, sin necesidad de conductos. La terminal, de 1,7 kilómetros y revestida con 82.000 paneles idénticos de acero inoxidable, abrió en septiembre de 1994 y desde entonces se ha asentado de forma desigual sobre el terreno ganado al mar, tal como previeron sus ingenieros, que diseñaron el sistema de gatos hidráulicos de la estructura precisamente para corregirlo.',
+      it: 'L\'Aeroporto Internazionale del Kansai fu costruito per alleggerire il traffico aereo di Osaka senza ripetere i conflitti per il rumore che avevano afflitto l\'aeroporto cittadino nell\'entroterra, e proprio quel sito spiega la forma del terminal: un\'isola artificiale di 4 chilometri costruita nella baia di Osaka, scelta per poter operare voli ventiquattr\'ore su ventiquattro sul mare aperto. Renzo Piano vinse il concorso del 1988 e, insieme agli ingegneri Peter Rice e Tom Barker di Ove Arup e allo studio Nikken Sekkei, risolse il problema centrale dell\'aeroporto — spostare enormi volumi d\'aria condizionata lungo un capannone lungo oltre un chilometro — trasformandolo nella sua stessa forma: un\'unica copertura toroidale, curva in sezione come l\'ala di un aereo, che convoglia l\'aria sul suo intradosso dalle centrali tecniche al centro del terminal fino alle estremità, senza bisogno di condotte. Il terminal, lungo 1,7 chilometri e rivestito con 82.000 pannelli identici in acciaio inossidabile, aprì nel settembre 1994 e da allora si è assestato in modo non uniforme sul terreno di bonifica, esattamente come previsto dagli ingegneri, che progettarono il sistema di martinetti della struttura proprio per correggerlo.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Kansai_International_Airport', title: 'Kansai International Airport — Wikipedia', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.rpbw.com/project/kansai-international-airport-terminal', title: 'Kansai International Airport Terminal — RPBW', license: null },
+      { kind: 'publication', url: 'https://www.britannica.com/topic/Terminal-1-at-Kansai-International-Airport', title: 'Terminal 1 at Kansai International Airport — Encyclopaedia Britannica', license: null },
+    ],
+    tier: 'canon',
+  },
 ];
