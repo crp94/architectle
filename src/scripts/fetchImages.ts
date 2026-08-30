@@ -122,19 +122,6 @@ async function fetchOriginal(url: string): Promise<Buffer> {
   throw lastError instanceof Error ? lastError : new Error(String(lastError));
 }
 
-// Replaces the (0-based) `n`th occurrence of `search` in `text` with
-// `replacement`. Returns `text` unchanged if there is no such occurrence —
-// the caller is responsible for distinguishing "not found" from "found and
-// replaced" (see the explicit count check in `updateDimensionsInSource`).
-function replaceNthOccurrence(text: string, search: string, replacement: string, n: number): string {
-  let idx = -1;
-  for (let i = 0; i <= n; i += 1) {
-    idx = text.indexOf(search, idx + 1);
-    if (idx === -1) return text;
-  }
-  return text.slice(0, idx) + replacement + text.slice(idx + search.length);
-}
-
 // Rewrites a single building's `image.width`/`image.height` OR one
 // `extraImages[i].width`/`.height` in its curated source file, in place.
 // Scoped to that building's own object literal (from its `id: '<slug>',`
@@ -154,7 +141,12 @@ function updateDimensionsInSource(
   const files = readdirSync(buildingsDir).filter((f) => f.endsWith('.ts'));
   const idMarker = `    id: '${slug}',\n`;
   const nextBlockMarker = '\n  {\n    id: \'';
-  const placeholder = '      width: 0,\n      height: 0,\n';
+  // Indentation-flexible: the primary `image` block indents its fields with
+  // 6 spaces, while entries nested inside `extraImages: [...]` sit 8 deep.
+  // Occurrences are counted across BOTH in source order (primary first, then
+  // extras), matching the caller's occurrenceIndex convention. Each match
+  // keeps its own indentation when replaced.
+  const placeholderRe = /^([ ]*)width: 0,\n([ ]*)height: 0,\n/gm;
 
   for (const file of files) {
     const filePath = path.join(buildingsDir, file);
@@ -166,21 +158,21 @@ function updateDimensionsInSource(
     const blockEnd = nextIdx === -1 ? content.length : nextIdx + 1;
     const block = content.slice(idIdx, blockEnd);
 
-    const occurrenceCount = block.split(placeholder).length - 1;
-    if (occurrenceCount <= occurrenceIndex) {
+    const matches = [...block.matchAll(placeholderRe)];
+    if (matches.length <= occurrenceIndex) {
       // Already recorded (idempotent re-run found the AVIF present, so this
       // function is never called for it) or the file's formatting doesn't
       // match what curators actually wrote — surface loudly either way.
       throw new Error(
         `fetchImages: found curated entry for "${slug}" in ${file} but its image block has only `
-        + `${occurrenceCount} "width: 0, height: 0" placeholder(s), expected at least ${occurrenceIndex + 1} `
+        + `${matches.length} "width: 0, height: 0" placeholder(s), expected at least ${occurrenceIndex + 1} `
         + `(occurrenceIndex ${occurrenceIndex}) — refusing to guess at a replacement.`,
       );
     }
 
-    const updatedBlock = replaceNthOccurrence(
-      block, placeholder, `      width: ${width},\n      height: ${height},\n`, occurrenceIndex,
-    );
+    const m = matches[occurrenceIndex];
+    const replacement = `${m[1]}width: ${width},\n${m[2]}height: ${height},\n`;
+    const updatedBlock = block.slice(0, m.index) + replacement + block.slice(m.index! + m[0].length);
     const updatedContent = content.slice(0, idIdx) + updatedBlock + content.slice(blockEnd);
     writeFileSync(filePath, updatedContent);
     return;

@@ -107,3 +107,22 @@ describe('needsFetch', () => {
     expect(needsFetch('some-building', 2)).toBe(false);
   });
 });
+
+// Regression: extraImages entries nest their fields at 8-space indentation
+// (vs the primary image's 6) — the dimension write-back must match both.
+// See the v2 ledger: the first full extras run failed on every extra
+// because the placeholder pattern hardcoded 6-space indentation.
+import { describe as describe2, it as it2, expect as expect2 } from 'vitest';
+describe2('updateDimensionsInSource indentation flexibility', () => {
+  it2('matches both 6-space (primary) and 8-space (extraImages) placeholders', () => {
+    const placeholderRe = /^([ ]*)width: 0,\n([ ]*)height: 0,\n/gm;
+    const block = [
+      "    id: 'x',", '    image: {', '      width: 0,', '      height: 0,', '    },',
+      '    extraImages: [', '      {', '        width: 0,', '        height: 0,', '      },', '    ],',
+    ].join('\n') + '\n';
+    const matches = [...block.matchAll(placeholderRe)];
+    expect2(matches).toHaveLength(2);
+    expect2(matches[0][1]).toBe('      ');
+    expect2(matches[1][1]).toBe('        ');
+  });
+});

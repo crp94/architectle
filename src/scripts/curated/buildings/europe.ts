@@ -276,8 +276,8 @@ export const EUROPE_BUILDINGS: Building[] = [
       photographer: 'Canaan',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:SF_maig_2026.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1104,
     },
     extraImages: [
       {
@@ -348,8 +348,8 @@ export const EUROPE_BUILDINGS: Building[] = [
       photographer: 'Bernard Gagnon',
       license: 'CC BY-SA 3.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Park_G%C3%BCell_02.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1206,
     },
     extraImages: [
       {
@@ -419,8 +419,8 @@ export const EUROPE_BUILDINGS: Building[] = [
       photographer: 'ChristianSchd',
       license: 'CC BY-SA 3.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Casa_Batllo_Overview_Barcelona_Spain_cut.jpg',
-      width: 0,
-      height: 0,
+      width: 1299,
+      height: 1600,
     },
     extraImages: [
       {
@@ -669,8 +669,8 @@ export const EUROPE_BUILDINGS: Building[] = [
       photographer: 'theginjaninja1979',
       license: 'CC BY-SA 2.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Museu_Serralves_exterior_(Porto).jpg',
-      width: 0,
-      height: 0,
+      width: 1200,
+      height: 1600,
     },
     extraImages: [
       {
