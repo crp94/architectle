@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { BUILDINGS, architectById, canonBuildings } from '@/lib/pool';
+import { architectById, featuredBuildings } from '@/lib/pool';
 import { dailyIndex, puzzleNumber } from '@/lib/daily';
 import { compareArchitects, type Comparison } from '@/lib/axes';
 import { clearState, loadState, saveState, type GameState } from '@/lib/storage';
@@ -17,9 +17,11 @@ import { Reveal } from '@/components/reveal/Reveal';
 const TOTAL_GUESSES = 6;
 
 export type GameBoardProps = {
-  /** 'daily' (default) selects from the canon-tier pool via `dailyIndex`;
-   * 'unlimited' draws from the whole pool and — per design spec §4.5 —
-   * never reads or writes daily stats/streak/localStorage. */
+  /** 'daily' (default) selects from the v2 featured-roster pool
+   * (`featuredBuildings()` — design spec §2: "the whole featured set IS
+   * the canon now") via `dailyIndex`; 'unlimited' draws from that same
+   * featured pool and — per design spec §4.5 — never reads or writes daily
+   * stats/streak/localStorage. */
   mode?: 'daily' | 'unlimited';
   /**
    * Overrides the target building instead of deriving one from `mode`.
@@ -50,7 +52,7 @@ function nextStats(prev: GameState['stats'], solved: boolean, guessesUsed: numbe
 }
 
 function pickDailyBuilding(): Building {
-  const pool = canonBuildings();
+  const pool = featuredBuildings();
   const idx = dailyIndex(new Date(), pool.length);
   return pool[idx];
 }
@@ -94,7 +96,8 @@ export function GameBoard({ mode = 'daily', building, locale = 'en' }: GameBoard
 
   useEffect(() => {
     if (building || mode !== 'unlimited') return;
-    setUnlimitedBuilding(BUILDINGS[Math.floor(Math.random() * BUILDINGS.length)]);
+    const pool = featuredBuildings();
+    setUnlimitedBuilding(pool[Math.floor(Math.random() * pool.length)]);
   }, [building, mode]);
   /* eslint-enable react-hooks/set-state-in-effect */
 

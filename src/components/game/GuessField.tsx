@@ -2,7 +2,7 @@
 
 import { useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
-import { roster } from '@/lib/pool';
+import { featuredRoster } from '@/lib/pool';
 import type { Architect } from '@/types/architect';
 import { t, type Locale } from '@/lib/i18n';
 
@@ -43,15 +43,16 @@ function resolve(architects: Architect[], input: string): Architect | undefined 
 
 /**
  * The only place the game refuses a player (design spec §4.3): guesses are
- * limited to `roster()` — every architect referenced by at least one
- * building — matched by a diacritic-folded substring against the full name
- * or any documented alternative name, so "Le Corbusier" is reachable by
- * typing "Jeanneret".
+ * limited to `featuredRoster()` — the v2 hand-picked featured architects
+ * actually referenced by a featured building (design spec §2), NOT the
+ * full-pool `roster()` the archive uses — matched by a diacritic-folded
+ * substring against the full name or any documented alternative name, so
+ * "Le Corbusier" is reachable by typing "Jeanneret".
  */
 export function GuessField({ locale, onGuess, disabled = false }: GuessFieldProps) {
   const [value, setValue] = useState('');
   const [rejected, setRejected] = useState<string | null>(null);
-  const architects = roster();
+  const architects = featuredRoster();
   const inputRef = useRef<HTMLInputElement>(null);
 
   const suggestions = useMemo(() => {

@@ -28,7 +28,7 @@ const architectOne: Architect = {
 };
 
 vi.mock('@/lib/pool', () => ({
-  roster: () => [architectOne],
+  featuredRoster: () => [architectOne],
 }));
 
 const { GuessField } = await import('@/components/game/GuessField');

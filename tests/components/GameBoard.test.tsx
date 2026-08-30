@@ -93,8 +93,9 @@ vi.mock('@/lib/pool', () => ({
     return found;
   },
   buildingBySlug: (slug: string) => (slug === targetBuilding.id ? targetBuilding : undefined),
-  canonBuildings: () => [targetBuilding],
+  featuredBuildings: () => [targetBuilding],
   roster: () => FIXTURE_ARCHITECTS,
+  featuredRoster: () => FIXTURE_ARCHITECTS,
 }));
 
 const { GameBoard } = await import('@/components/game/GameBoard');
