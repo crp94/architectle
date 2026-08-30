@@ -44,6 +44,13 @@ export type Building = {
   currentUse: LocalizedString | null;
   detailRect: Rect;
   image: ImageRecord;
+  // 0-2 additional hand-picked angles of the same building (design spec §6),
+  // populated only for featured buildings. Optional and capped at 2 —
+  // `extra-images-max` in src/scripts/validators/schema.ts enforces the cap.
+  // The first entry is what src/lib/clues.ts's miss-4 "second photo" clue
+  // shows; archive-only (non-featured) entries are untouched and simply
+  // never carry this field.
+  extraImages?: ImageRecord[];
   dossier: LocalizedString;
   context: ContextBlock | null;
   sources: Source[];
