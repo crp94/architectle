@@ -290,10 +290,10 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
     },
     extraImages: [
       {
-        commonsFile: 'The Hill House, Helensburgh 03.jpg',
-        photographer: 'Unknown author',
-        license: 'PD',
-        sourceUrl: 'https://commons.wikimedia.org/wiki/File:The_Hill_House,_Helensburgh_03.jpg',
+        commonsFile: 'The Hill House, Helensburgh - geograph.org.uk - 1570955.jpg',
+        photographer: "Anthony O'Neil",
+        license: 'CC BY-SA 2.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:The_Hill_House,_Helensburgh_-_geograph.org.uk_-_1570955.jpg',
         width: 0,
         height: 0,
       },
