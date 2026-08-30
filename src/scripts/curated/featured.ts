@@ -27,4 +27,8 @@ export const FEATURED_ARCHITECT_IDS: string[] = [
   'charles-rennie-mackintosh',
   'gustave-eiffel',
   'jorn-utzon',
+  'norman-foster',
+  'richard-rogers',
+  'zaha-hadid',
+  'christopher-wren',
 ];

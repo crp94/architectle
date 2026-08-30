@@ -6,7 +6,7 @@ import type { Building } from '@/types/building';
 // `image.sourceUrl`, not inferred from the file being hosted on Commons.
 // `image.width`/`height` are left at 0 for Task 10 to record.
 export const ASIA_BUILDINGS: Building[] = [
-  {
+{
     id: 'hwaseong-fortress',
     wikidataId: 'Q482423',
     name: {
@@ -745,4 +745,149 @@ export const ASIA_BUILDINGS: Building[] = [
     ],
     tier: 'canon',
   },
+{
+    // Wave V2-3 batch B5 top-up: Norman Foster is pre-assigned to
+    // europe-british.ts (wave5-contract-v2.md §3; his architect record
+    // lives there). Filed here per the wave 3 shared instructions because
+    // the building itself is in Hong Kong. Hong Kong's Freedom of Panorama
+    // covers commercial use of buildings (Copyright Ordinance s.71),
+    // independently re-verified on Wikipedia's Freedom of panorama article
+    // during this pass.
+    id: 'hsbc-main-building-hong-kong',
+    wikidataId: 'Q1372014',
+    name: {
+      en: 'HSBC Main Building',
+      es: 'Edificio principal del HSBC, Hong Kong',
+      it: 'Sede principale HSBC, Hong Kong',
+    },
+    architectId: 'norman-foster',
+    location: { city: 'Hong Kong', countryCode: 'HK', lat: 22.28000, lon: 114.15944 },
+    inception: 1981,
+    completed: 1985,
+    demolished: null,
+    typology: 'commercial',
+    materials: ['steel-and-glass'],
+    structure: {
+      en: 'Eight clusters of four aluminium-clad steel masts carry five storeys of suspension trusses from which the floor modules hang in sections, leaving the plan entirely free of a central core.',
+      es: 'Ocho grupos de cuatro mástiles de acero revestidos de aluminio sostienen cinco niveles de cerchas de suspensión de las que cuelgan por tramos los módulos de forjado, dejando la planta completamente libre de núcleo central.',
+      it: "Otto gruppi di quattro montanti d'acciaio rivestiti d'alluminio portano cinque livelli di capriate di sospensione da cui pendono a sezioni i moduli dei solai, lasciando la pianta completamente libera da un nucleo centrale.",
+    },
+    program: {
+      en: "Built as the Hongkong and Shanghai Banking Corporation's headquarters, prefabricated in modules in a British shipyard and assembled over a public ground-floor plaza kept open on feng shui advice.",
+      es: 'Construido como sede de la Hongkong and Shanghai Banking Corporation, prefabricado en módulos en un astillero británico y montado sobre una plaza pública en planta baja mantenida abierta por consejo de feng shui.',
+      it: "Costruito come sede della Hongkong and Shanghai Banking Corporation, prefabbricato in moduli in un cantiere navale britannico e montato sopra una piazza pubblica al piano terra mantenuta aperta su consiglio del feng shui.",
+    },
+    heritage: 'none',
+    currentUse: {
+      en: "Still HSBC's Hong Kong headquarters, with its ground-floor plaza kept open as a public route between Statue Square and Des Voeux Road.",
+      es: 'Sigue siendo la sede del HSBC en Hong Kong, con su plaza en planta baja abierta como paso público entre Statue Square y Des Voeux Road.',
+      it: 'È tuttora la sede HSBC di Hong Kong, con la piazza al piano terra mantenuta aperta come passaggio pubblico fra Statue Square e Des Voeux Road.',
+    },
+    detailRect: { x: 0.32, y: 0.30, w: 0.36, h: 0.28 },
+    image: {
+      commonsFile: 'File:HSBC HK Headquarters.jpg',
+      photographer: 'Craddocktm',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:HSBC_HK_Headquarters.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:HK HSBC Main Building 2008.jpg',
+        photographer: 'WiNG',
+        license: 'CC BY 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:HK_HSBC_Main_Building_2008.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "Foster won the commission in 1979 to replace a third headquarters that itself stood on the site of the bank's first Hong Kong office, and the result abandoned almost everything conventional about a tower. There is no central concrete core: eight clusters of four aluminium-clad steel masts run up the building's edges, carrying five storeys' worth of enormous suspension trusses from which the floor modules are hung in sections, the way a bridge deck hangs from its cables. Steel components were prefabricated by a shipyard on the Clyde and floated out to Hong Kong for assembly, and mirrored 'sunscoops' on the south face bounce daylight down through a ten-storey atrium onto the plaza below. That ground-level plaza, kept open on feng shui advice, still doubles as a public route between Statue Square and Des Voeux Road, guarded by the bank's two bronze lions, Stephen and Stitt, cast in 1935 and rubbed shiny by passers-by touching them for luck. At roughly £500 million it was, briefly, the most expensive building ever constructed.",
+      es: "Foster ganó en 1979 el encargo de sustituir una tercera sede que a su vez ocupaba el solar de la primera oficina del banco en Hong Kong, y el resultado abandonó casi todo lo convencional en una torre. No hay núcleo central de hormigón: ocho grupos de cuatro mástiles de acero revestidos de aluminio suben por los bordes del edificio, sosteniendo cinco niveles de enormes cerchas de suspensión de las que cuelgan los módulos de forjado por tramos, como el tablero de un puente cuelga de sus cables. Los componentes de acero se prefabricaron en un astillero del Clyde y se transportaron por mar hasta Hong Kong para su montaje, y unos 'captadores de sol' espejados en la fachada sur reflejan la luz natural a través de un atrio de diez plantas hasta la plaza inferior. Esa plaza, mantenida abierta por consejo de feng shui, sigue sirviendo de paso público entre Statue Square y Des Voeux Road, custodiada por los dos leones de bronce del banco, Stephen y Stitt, fundidos en 1935 y pulidos a fuerza de que los transeúntes los toquen por suerte. Con unos 500 millones de libras, fue brevemente el edificio más caro jamás construido.",
+      it: "Foster vinse nel 1979 l'incarico di sostituire una terza sede che a sua volta occupava il sito del primo ufficio della banca a Hong Kong, e il risultato abbandonò quasi tutto ciò che è convenzionale in una torre. Non esiste un nucleo centrale in cemento: otto gruppi di quattro montanti d'acciaio rivestiti d'alluminio salgono lungo i bordi dell'edificio, portando cinque livelli di enormi capriate di sospensione da cui pendono a sezioni i moduli dei solai, come l'impalcato di un ponte pende dai suoi cavi. I componenti d'acciaio furono prefabbricati in un cantiere navale sul Clyde e trasportati via mare a Hong Kong per il montaggio, e degli specchi 'raccoglisole' sulla facciata sud riflettono la luce naturale attraverso un atrio di dieci piani fino alla piazza sottostante. Quella piazza, mantenuta aperta su consiglio del feng shui, funge tuttora da passaggio pubblico fra Statue Square e Des Voeux Road, custodita dai due leoni di bronzo della banca, Stephen e Stitt, fusi nel 1935 e resi lucidi dal tocco portafortuna dei passanti. Con circa 500 milioni di sterline, fu per breve tempo l'edificio più costoso mai costruito.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1372014', title: 'HSBC Building (Q1372014)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/HSBC_Building_(Hong_Kong)', title: 'HSBC Building (Hong Kong)', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    // Wave V2-3 batch B5 top-up: Zaha Hadid is pre-assigned to
+    // europe-british.ts (wave5-contract-v2.md §3; her architect record
+    // lives there). Filed here per the wave 3 shared instructions because
+    // the building is physically in China. China's Freedom of Panorama
+    // covers commercial use of buildings (Copyright Law art. 24(10)),
+    // independently re-verified on Wikipedia's Freedom of panorama article
+    // during this pass. Heydar Aliyev Center (Baku) was researched for this
+    // batch and DROPPED: Azerbaijan has no Freedom of Panorama for
+    // buildings at all (Commons COM:FOP Azerbaijan shows a hard ✗ for
+    // buildings/3D/2D artwork/public interiors), so no freely-licensed
+    // commercial-use photo of it can be used with the building as the main
+    // subject — verified directly against the Commons policy page, not
+    // assumed.
+    id: 'guangzhou-opera-house',
+    wikidataId: 'Q3354553',
+    name: {
+      en: 'Guangzhou Opera House',
+      es: 'Ópera de Guangzhou',
+      it: "Teatro dell'Opera di Guangzhou",
+    },
+    architectId: 'zaha-hadid',
+    location: { city: 'Guangzhou', countryCode: 'CN', lat: 23.11056, lon: 113.31889 },
+    inception: 2005,
+    completed: 2010,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['concrete', 'steel-and-glass', 'stone'],
+    structure: {
+      en: 'A freestanding, double-curved concrete auditorium shell sits inside an independent steel frame clad in triangulated granite and glass panels that dissolve into faceted glazing toward the river.',
+      es: 'Una cáscara de hormigón de doble curvatura para el auditorio, exenta, se aloja dentro de una estructura de acero independiente revestida de paneles triangulados de granito y vidrio que se disuelven en vidriera facetada hacia el río.',
+      it: "Un guscio di cemento a doppia curvatura per l'auditorium, autoportante, è alloggiato dentro una struttura d'acciaio indipendente rivestita di pannelli triangolati in granito e vetro che si dissolvono in una vetrata sfaccettata verso il fiume.",
+    },
+    program: {
+      en: 'Built for the Guangzhou municipal government to anchor the Zhujiang New Town cultural axis on the Pearl River, it holds a 1,804-seat opera hall and a smaller multipurpose theatre.',
+      es: 'Construida para el gobierno municipal de Guangzhou como ancla del eje cultural de Zhujiang New Town junto al río de las Perlas, alberga una sala de ópera de 1.804 butacas y un teatro multiusos más pequeño.',
+      it: "Costruita per il governo municipale di Guangzhou come ancoraggio dell'asse culturale di Zhujiang New Town sul Fiume delle Perle, ospita una sala d'opera da 1.804 posti e un teatro multiuso più piccolo.",
+    },
+    heritage: 'none',
+    currentUse: {
+      en: "Working opera house and performing arts venue on Guangzhou's Pearl River waterfront.",
+      es: 'Ópera y sala de artes escénicas en activo, en el frente fluvial del río de las Perlas en Guangzhou.',
+      it: "Teatro dell'opera e sala per le arti performative in attività, sul lungofiume del Fiume delle Perle a Guangzhou.",
+    },
+    detailRect: { x: 0.45, y: 0.15, w: 0.35, h: 0.50 },
+    image: {
+      commonsFile: 'File:Guangzhou Opera House(Near).JPG',
+      photographer: 'Mr a',
+      license: 'CC BY 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Guangzhou_Opera_House(Near).JPG',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Guangzhou Opera House overview.JPG',
+        photographer: '圍棋一級',
+        license: 'CC BY-SA 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Guangzhou_Opera_House_overview.JPG',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "Hadid won the international competition for Guangzhou's new opera house in November 2002, beating entries from Rem Koolhaas and Coop Himmelb(l)au for a site on the Pearl River intended to anchor the city's new Zhujiang New Town cultural axis. Her scheme reads as two irregular boulders, one large and one small, set as if washed downriver and left on the bank — a freestanding, double-curved concrete auditorium shell sits inside an independent steel frame clad in triangulated granite and glass panels that tighten and dissolve into faceted glazing where the building meets the water. Ground was broken in 2005 and the building opened in May 2010 at a cost of roughly 1.38 billion yuan, its inaugural production a staging of Puccini's Turandot, a work banned in China for decades over its stereotyped depiction of a Chinese princess. Construction quality became a point of controversy in the Chinese press, with cracking granite panels and water damage reported within a few years of opening, problems the venue's operators have since worked to repair.",
+      es: 'Hadid ganó en noviembre de 2002 el concurso internacional para la nueva ópera de Guangzhou, superando propuestas de Rem Koolhaas y Coop Himmelb(l)au, para un solar junto al río de las Perlas destinado a anclar el nuevo eje cultural de Zhujiang New Town. Su proyecto se lee como dos rocas irregulares, una grande y otra pequeña, como arrastradas río abajo y depositadas en la orilla: una cáscara de hormigón de doble curvatura para el auditorio, exenta, se aloja dentro de una estructura de acero independiente revestida de paneles triangulados de granito y vidrio que se estrechan y se disuelven en vidriera facetada donde el edificio toca el agua. Las obras empezaron en 2005 y el edificio se inauguró en mayo de 2010 con un coste de unos 1.380 millones de yuanes, con Turandot de Puccini como producción inaugural, una obra prohibida en China durante décadas por su retrato estereotipado de una princesa china. La calidad de la construcción se convirtió en motivo de polémica en la prensa china, con paneles de granito agrietados y daños por agua señalados pocos años después de la apertura, problemas que los gestores del recinto han ido reparando.',
+      it: "Hadid vinse nel novembre 2002 il concorso internazionale per il nuovo teatro dell'opera di Guangzhou, superando le proposte di Rem Koolhaas e Coop Himmelb(l)au, per un sito sul Fiume delle Perle destinato ad ancorare il nuovo asse culturale di Zhujiang New Town. Il suo progetto si legge come due rocce irregolari, una grande e una piccola, come trascinate dal fiume e depositate sulla riva: un guscio di cemento a doppia curvatura per l'auditorium, autoportante, è alloggiato dentro una struttura d'acciaio indipendente rivestita di pannelli triangolati in granito e vetro che si restringono e si dissolvono in una vetrata sfaccettata dove l'edificio incontra l'acqua. I lavori iniziarono nel 2005 e l'edificio aprì nel maggio 2010 con un costo di circa 1,38 miliardi di yuan, con la Turandot di Puccini come produzione inaugurale, un'opera vietata in Cina per decenni a causa del suo ritratto stereotipato di una principessa cinese. La qualità costruttiva divenne motivo di polemica sulla stampa cinese, con pannelli di granito incrinati e danni da infiltrazioni segnalati pochi anni dopo l'apertura, problemi che i gestori del luogo hanno da allora riparato.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q3354553', title: 'Guangzhou Opera House (Q3354553)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Guangzhou_Opera_House', title: 'Guangzhou Opera House', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+
 ];

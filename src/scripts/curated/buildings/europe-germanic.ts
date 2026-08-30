@@ -1089,4 +1089,151 @@ export const EUROPE_GERMANIC_BUILDINGS: Building[] = [
     tier: 'canon',
   },
 
+{
+    // Wave V2-3 batch B5 top-up: Norman Foster is pre-assigned to
+    // europe-british.ts (wave5-contract-v2.md §3, europe-british owns
+    // architect ids for GB/IE practices). Foster's architect record lives
+    // there; this building is filed here per the wave 3 shared instructions
+    // ("place entries in the correct regional file... match how that
+    // region is already filed") because it is physically in Germany.
+    id: 'reichstag-dome',
+    wikidataId: 'Q4809837',
+    name: {
+      en: 'Reichstag Dome',
+      es: 'Cúpula del Reichstag',
+      it: 'Cupola del Reichstag',
+    },
+    architectId: 'norman-foster',
+    location: { city: 'Berlin', countryCode: 'DE', lat: 52.51861, lon: 13.37611 },
+    inception: 1995,
+    completed: 1999,
+    demolished: null,
+    typology: 'civic',
+    materials: ['steel-and-glass'],
+    structure: {
+      en: 'A fully transparent steel-and-glass drum holds a mirrored, funnel-shaped cone at its centre that reflects daylight into the debating chamber below and doubles as the chamber\'s ventilation exhaust.',
+      es: 'Un tambor de acero y vidrio totalmente transparente aloja en su centro un cono espejado en forma de embudo que refleja la luz natural hacia la sala de plenos y sirve a la vez de conducto de extracción de su ventilación.',
+      it: "Un tamburo d'acciaio e vetro completamente trasparente ospita al centro un cono a specchio a forma d'imbuto che riflette la luce naturale verso l'aula sottostante e funge insieme da condotto di estrazione della sua ventilazione.",
+    },
+    program: {
+      en: "Built as part of Foster's 1990s reconstruction of the Reichstag as the seat of the reunified Bundestag, the dome gives the public free access to an open-air platform directly above the debating chamber.",
+      es: 'Construida dentro de la reconstrucción del Reichstag por Foster en los años noventa como sede del Bundestag reunificado, la cúpula da al público acceso libre a una plataforma al aire libre justo encima de la sala de plenos.',
+      it: "Costruita nell'ambito della ricostruzione del Reichstag da parte di Foster negli anni Novanta come sede del Bundestag riunificato, la cupola offre al pubblico accesso libero a una piattaforma all'aperto proprio sopra l'aula.",
+    },
+    heritage: 'national',
+    currentUse: {
+      en: "Free public viewing platform and Berlin's most-visited architectural attraction, reached by timed online booking, above the working Bundestag chamber.",
+      es: 'Plataforma pública gratuita y la atracción arquitectónica más visitada de Berlín, con reserva previa en línea, sobre la cámara del Bundestag en funcionamiento.',
+      it: "Piattaforma pubblica gratuita e attrazione architettonica più visitata di Berlino, con prenotazione online, sopra l'aula del Bundestag in funzione.",
+    },
+    detailRect: { x: 0.30, y: 0.28, w: 0.35, h: 0.30 },
+    image: {
+      commonsFile: 'Glaskuppel des Reichstagsgebäude Deutscher Bundestag Berlin.JPG',
+      photographer: 'Schlaier',
+      license: 'PD',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Glaskuppel_des_Reichstagsgeb%C3%A4ude_Deutscher_Bundestag_Berlin.JPG',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'Reichstag building Berlin view from west before sunset.jpg',
+        photographer: 'Jürgen Matern',
+        license: 'CC BY-SA 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Reichstag_building_Berlin_view_from_west_before_sunset.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "Foster's practice won the international competition to rebuild the Reichstag in 1993, two years after the reunified German parliament voted to return to Berlin from Bonn, and the brief asked for both a working Bundestag chamber and a public symbol of change. The original 1894 dome, already gutted by the 1933 fire and further ruined in 1945, had been removed entirely in the 1950s; Foster's replacement is a fully transparent steel-and-glass drum holding a mirrored, funnel-shaped cone at its centre. The cone bounces daylight down into the debating chamber below while doubling as an exhaust duct for the ventilation system, and a motorised shade tracks the sun to cut glare and heat gain. Two ramps spiral up the inside of the glass in a double helix, letting visitors climb to an open-air platform directly above the chamber roof and look straight down on the elected members meeting beneath their feet — a literal reversal of the older arrangement, in which the public sat below, or outside, power. It opened in 1999 and has drawn queues of visitors ever since.",
+      es: 'El estudio de Foster ganó en 1993 el concurso internacional para reconstruir el Reichstag, dos años después de que el Parlamento alemán reunificado votara volver a Berlín desde Bonn, y el encargo pedía a la vez una cámara de trabajo para el Bundestag y un símbolo público de cambio. La cúpula original de 1894, ya vaciada por el incendio de 1933 y arruinada de nuevo en 1945, se había retirado por completo en los años cincuenta; la de Foster es un tambor de acero y vidrio totalmente transparente que aloja en su centro un cono espejado en forma de embudo. El cono refleja la luz natural hacia la sala de plenos y a la vez sirve de conducto de extracción para la ventilación, mientras una pantalla motorizada sigue al sol para reducir el deslumbramiento y el calor. Dos rampas ascienden en espiral por dentro del vidrio formando una doble hélice, y permiten al visitante subir hasta una plataforma al aire libre justo encima de la cámara y mirar hacia abajo, a los diputados reunidos bajo sus pies: una inversión literal del viejo orden, en el que el público se sentaba debajo, o fuera, del poder. Se inauguró en 1999 y desde entonces reúne colas de visitantes.',
+      it: "Lo studio di Foster vinse nel 1993 il concorso internazionale per ricostruire il Reichstag, due anni dopo che il parlamento tedesco riunificato votò di tornare a Berlino da Bonn, e l'incarico chiedeva insieme un'aula funzionante per il Bundestag e un simbolo pubblico di cambiamento. La cupola originale del 1894, già svuotata dall'incendio del 1933 e nuovamente rovinata nel 1945, era stata rimossa del tutto negli anni Cinquanta; quella di Foster è un tamburo d'acciaio e vetro completamente trasparente che ospita al centro un cono a specchio a forma d'imbuto. Il cono riflette la luce naturale verso l'aula sottostante e funge insieme da condotto di estrazione per la ventilazione, mentre uno schermo motorizzato segue il sole per ridurre l'abbagliamento e il calore. Due rampe salgono a spirale all'interno del vetro formando una doppia elica, e permettono al visitatore di salire fino a una piattaforma all'aperto proprio sopra l'aula e guardare in basso i deputati riuniti sotto i propri piedi: un rovesciamento letterale del vecchio ordine, in cui il pubblico sedeva sotto, o fuori, il potere. Aprì nel 1999 e da allora richiama file di visitatori.",
+    },
+    context: {
+      body: {
+        en: "The design is explicitly political: a transparent public dome sitting directly above the chamber where the Bundestag meets was conceived to dramatise the 1949 Basic Law's principle that sovereignty rests with the people, in deliberate contrast to the opaque, since-demolished 1894 dome under which the Nazi-era parliament last sat before the 1933 fire. Commentators and Foster himself have described the arrangement — visitors literally looking down on their elected representatives — as an architectural statement about accountable government after Nazism and division.",
+        es: 'El diseño es explícitamente político: una cúpula pública y transparente situada justo encima de la sala donde se reúne el Bundestag se concibió para dramatizar el principio de la Ley Fundamental de 1949 según el cual la soberanía reside en el pueblo, en contraste deliberado con la cúpula opaca de 1894, demolida, bajo la que se sentó por última vez el parlamento de la era nazi antes del incendio de 1933. Comentaristas y el propio Foster han descrito la disposición —los visitantes mirando literalmente hacia abajo a sus representantes electos— como una declaración arquitectónica sobre el gobierno responsable tras el nazismo y la división.',
+        it: "Il progetto è esplicitamente politico: una cupola pubblica e trasparente posta proprio sopra l'aula in cui si riunisce il Bundestag fu concepita per drammatizzare il principio della Legge fondamentale del 1949 secondo cui la sovranità appartiene al popolo, in contrasto deliberato con la cupola opaca del 1894, demolita, sotto la quale sedette per l'ultima volta il parlamento dell'era nazista prima dell'incendio del 1933. Commentatori e lo stesso Foster hanno descritto la disposizione — i visitatori che guardano letteralmente dall'alto verso i propri rappresentanti eletti — come una dichiarazione architettonica sul governo responsabile dopo il nazismo e la divisione.",
+      },
+      sources: [
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Reichstag_dome', title: 'Reichstag dome', license: 'CC BY-SA 4.0' },
+      ],
+    },
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q4809837', title: 'Reichstag dome (Q4809837)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Reichstag_dome', title: 'Reichstag dome', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    // Wave V2-3 batch B5 top-up: Zaha Hadid is pre-assigned to
+    // europe-british.ts (wave5-contract-v2.md §3, her architect record
+    // lives there). Filed here per the wave 3 shared instructions because
+    // the building is physically in Germany. Deliberately NOT adding the
+    // MAXXI Museum, Rome — Italy has no usable Freedom of Panorama and
+    // Hadid is in copyright to 2086; a real, verified drop for her
+    // specifically per the feasibility pass.
+    id: 'vitra-fire-station',
+    wikidataId: 'Q25455138',
+    name: {
+      en: 'Vitra Fire Station',
+      es: 'Estación de Bomberos de Vitra',
+      it: 'Stazione dei pompieri Vitra',
+    },
+    architectId: 'zaha-hadid',
+    location: { city: 'Weil am Rhein', countryCode: 'DE', lat: 47.60036, lon: 7.61468 },
+    inception: 1991,
+    completed: 1993,
+    demolished: null,
+    typology: 'civic',
+    materials: ['concrete'],
+    structure: {
+      en: 'A single cast-in-situ reinforced-concrete shell is folded into sharply raked, non-orthogonal planes that converge on a knife-thin edge, with no fixed front or back.',
+      es: 'Una única cáscara de hormigón armado vertido in situ se pliega en planos muy inclinados y no ortogonales que convergen en un filo agudísimo, sin frente ni trasera fijos.',
+      it: "Un unico guscio di cemento armato gettato in opera si piega in piani fortemente inclinati e non ortogonali che convergono in un bordo sottilissimo, senza una facciata anteriore o posteriore fissa.",
+    },
+    program: {
+      en: "Built as Vitra's own on-site fire brigade station after a 1981 lightning fire at its furniture factory, it now hosts exhibitions and events tied to the neighbouring Vitra Design Museum.",
+      es: 'Construida como estación del propio cuerpo de bomberos de Vitra tras un incendio provocado por un rayo en 1981 en su fábrica de muebles, hoy acoge exposiciones y actos ligados al vecino Vitra Design Museum.',
+      it: "Costruita come stazione del corpo di vigili del fuoco interno di Vitra dopo un incendio causato da un fulmine nel 1981 nella sua fabbrica di mobili, oggi ospita mostre ed eventi legati al vicino Vitra Design Museum.",
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Empty of its original fire brigade since the late 1990s, now used for exhibitions and events on the Vitra Campus.',
+      es: 'Vacía de su cuerpo de bomberos original desde finales de los noventa, hoy se usa para exposiciones y actos en el Vitra Campus.',
+      it: "Priva del suo corpo di vigili del fuoco originario dalla fine degli anni Novanta, oggi è usata per mostre ed eventi nel Vitra Campus.",
+    },
+    detailRect: { x: 0.55, y: 0.05, w: 0.35, h: 0.45 },
+    image: {
+      commonsFile: 'Baden-Württemberg Weil am Rhein Vitra Fire station 01.jpg',
+      photographer: 'Calips',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Baden-W%C3%BCrttemberg_Weil_am_Rhein_Vitra_Fire_station_01.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'Vitra Campus - Hadid Fire Station - full view, blue sky.jpg',
+        photographer: 'Marsupium',
+        license: 'CC0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Vitra_Campus_-_Hadid_Fire_Station_-_full_view,_blue_sky.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: 'A lightning strike in 1981 set fire to part of Vitra\'s furniture factory in Weil am Rhein, and the company responded by building its own on-site fire brigade; Rolf Fehlbaum, Vitra\'s chairman, then gave the commission for its station to Zaha Hadid, then known only for competition drawings and unbuilt projects shown at MoMA\'s 1988 Deconstructivist Architecture exhibition. Built between 1991 and 1993, it became her first constructed building. A single cast-in-situ concrete shell is folded and sliced into sharply raked planes that converge on a knife-thin edge, with no right angle anywhere and no clear front or back; Hadid later said the flat agricultural site around the Vitra campus offered no context to answer, "so we had to invent one." The finished building turned out to be awkward for its intended purpose — firefighters found the tight, angular plan hard to manoeuvre in — and the volunteer brigade disbanded within a few years of moving in. Vitra has since used the empty station for exhibitions, dinners and events tied to the neighbouring Vitra Design Museum.',
+      es: 'Un rayo incendió en 1981 parte de la fábrica de muebles de Vitra en Weil am Rhein, y la empresa respondió creando su propio cuerpo de bomberos in situ; Rolf Fehlbaum, presidente de Vitra, encargó entonces la estación a Zaha Hadid, conocida hasta entonces solo por dibujos de concurso y proyectos no construidos mostrados en la muestra Deconstructivist Architecture del MoMA en 1988. Construida entre 1991 y 1993, fue su primer edificio realizado. Una única cáscara de hormigón vertido in situ se pliega y corta en planos muy inclinados que convergen en un filo agudísimo, sin un ángulo recto en ningún sitio y sin frente ni trasera claros; Hadid dijo después que el llano entorno agrícola del campus Vitra no ofrecía ningún contexto que responder, «así que tuvimos que inventar uno». El edificio terminado resultó incómodo para su función: a los bomberos les costaba maniobrar en la planta estrecha y angulosa, y el cuerpo voluntario se disolvió pocos años después de instalarse. Desde entonces Vitra usa la estación vacía para exposiciones, cenas y actos ligados al vecino Vitra Design Museum.',
+      it: 'Un fulmine incendiò nel 1981 parte della fabbrica di mobili Vitra a Weil am Rhein, e l\'azienda rispose creando un proprio corpo di vigili del fuoco in loco; Rolf Fehlbaum, presidente di Vitra, affidò allora l\'incarico della stazione a Zaha Hadid, allora nota solo per disegni di concorso e progetti non realizzati esposti nella mostra Deconstructivist Architecture del MoMA nel 1988. Costruita fra il 1991 e il 1993, fu il suo primo edificio realizzato. Un unico guscio di cemento gettato in opera si piega e si taglia in piani fortemente inclinati che convergono in un bordo sottilissimo, senza un angolo retto da nessuna parte e senza una facciata anteriore o posteriore definita; Hadid disse in seguito che il piatto contesto agricolo attorno al campus Vitra non offriva alcun contesto a cui rispondere, «così abbiamo dovuto inventarne uno». L\'edificio finito si rivelò scomodo per la sua funzione: i vigili del fuoco faticavano a muoversi nella pianta stretta e angolosa, e il corpo volontario si sciolse pochi anni dopo il trasferimento. Da allora Vitra usa la stazione vuota per mostre, cene ed eventi legati al vicino Vitra Design Museum.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q25455138', title: 'Vitra Fire Station (Q25455138)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Vitra_Fire_Station', title: 'Vitra Fire Station', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+
 ];

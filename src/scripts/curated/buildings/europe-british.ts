@@ -73,6 +73,201 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
     tier: 'canon',
   },
   {
+    // Wave V2-3 batch B5 top-up: Christopher Wren, centuries out of
+    // copyright — no FoP question at all, pure image-quality selection.
+    // architectId stays sole 'christopher-wren' per this slice's existing
+    // St Paul's convention; Wikidata (Q1753590) also lists John Webb,
+    // Nicholas Hawksmoor and John Vanbrugh as P84 co-credits (Hawksmoor and
+    // Vanbrugh completed later ranges after Wren's death), but neither id
+    // is defined anywhere in the pool yet, so coArchitects is left unset
+    // rather than inventing new architect records outside this batch's
+    // assigned roster.
+    id: 'royal-naval-college-greenwich',
+    wikidataId: 'Q1753590',
+    name: {
+      en: 'Old Royal Naval College, Greenwich',
+      es: 'Antiguo Real Colegio Naval de Greenwich',
+      it: 'Old Royal Naval College di Greenwich',
+    },
+    architectId: 'christopher-wren',
+    location: { city: 'London', countryCode: 'GB', lat: 51.48361, lon: -0.00583 },
+    inception: 1696,
+    completed: 1712,
+    demolished: null,
+    typology: 'civic',
+    materials: ['stone'],
+    structure: {
+      en: 'Paired domed pavilions and colonnaded ranges in Portland stone are split into two symmetrical blocks along the river, deliberately leaving the sightline from the Queen\'s House to the Thames open down the centre.',
+      es: 'Pabellones cupulados pareados y cuerpos porticados de piedra de Portland se dividen en dos bloques simétricos junto al río, dejando deliberadamente abierta por el centro la vista de la Queen\'s House hacia el Támesis.',
+      it: "Padiglioni cupolati accoppiati e corpi colonnati in pietra di Portland sono divisi in due blocchi simmetrici lungo il fiume, lasciando deliberatamente aperta al centro la vista dalla Queen's House verso il Tamigi.",
+    },
+    program: {
+      en: "Built as the Royal Hospital for Seamen at Greenwich on the orders of Mary II, for retired and injured sailors; the complex became the Royal Naval College in 1873 and today houses the University of Greenwich and Trinity Laban Conservatoire.",
+      es: 'Construido como Royal Hospital for Seamen de Greenwich por orden de María II, para marineros retirados y heridos; el conjunto se convirtió en el Royal Naval College en 1873 y hoy alberga la Universidad de Greenwich y el conservatorio Trinity Laban.',
+      it: 'Costruito come Royal Hospital for Seamen di Greenwich per ordine di Maria II, per marinai in pensione e feriti; il complesso divenne il Royal Naval College nel 1873 e oggi ospita la University of Greenwich e il conservatorio Trinity Laban.',
+    },
+    heritage: 'unesco',
+    currentUse: {
+      en: 'University of Greenwich and Trinity Laban Conservatoire campus; the Painted Hall and chapel remain open to the public.',
+      es: 'Campus de la Universidad de Greenwich y del conservatorio Trinity Laban; el Painted Hall y la capilla siguen abiertos al público.',
+      it: 'Campus della University of Greenwich e del conservatorio Trinity Laban; la Painted Hall e la cappella restano aperte al pubblico.',
+    },
+    detailRect: { x: 0.10, y: 0.05, w: 0.28, h: 0.45 },
+    image: {
+      commonsFile: 'Greenwich - Grand Square - View South on Two Domes of Greenwich Hospital.jpg',
+      photographer: 'Txllxt TxllxT',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Greenwich_-_Grand_Square_-_View_South_on_Two_Domes_of_Greenwich_Hospital.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'Greenwich - East Gate, Park Row - View WSW - Old Royal Naval College.jpg',
+        photographer: 'Txllxt TxllxT',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Greenwich_-_East_Gate,_Park_Row_-_View_WSW_-_Old_Royal_Naval_College.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: 'Mary II ordered a hospital for wounded and worn-out sailors after seeing the casualties of the 1692 Battle of La Hogue come home, and Wren, as Surveyor of the King\'s Works, gave his services for free, working from 1696 alongside his assistant Nicholas Hawksmoor. The site already held the Queen\'s House, Inigo Jones\'s small Palladian villa set back from the river, and Wren\'s most consequential decision was structural in the loosest sense: rather than build one grand block across the axis, he split the hospital into two symmetrical pairs of courts, keeping the sightline from the Queen\'s House to the Thames open down the middle. Twin domed towers, each carrying a clock, close the composition at the riverfront. Wren\'s own part of the work ran until 1712; Vanbrugh and Hawksmoor completed later ranges, and James "Athenian" Stuart finished the chapel in 1789 after a fire. Sir James Thornhill\'s vast painted ceiling in the Painted Hall, begun in 1707, took nineteen years to finish; Nelson\'s body lay in state beneath it in 1806. The complex became the Royal Naval College in 1873 and now houses the University of Greenwich and Trinity Laban Conservatoire.',
+      es: 'María II encargó un hospital para los marineros heridos y agotados tras ver regresar a los heridos de la batalla de La Hougue de 1692, y Wren, como Surveyor of the King\'s Works, ofreció sus servicios gratis, trabajando desde 1696 junto a su ayudante Nicholas Hawksmoor. El solar ya albergaba la Queen\'s House, la pequeña villa palladiana de Inigo Jones retranqueada del río, y la decisión más importante de Wren fue estructural en sentido amplio: en vez de levantar un solo bloque cruzando el eje, dividió el hospital en dos parejas simétricas de patios, dejando abierta por el centro la vista de la Queen\'s House hacia el Támesis. Dos torres gemelas con cúpula, cada una con un reloj, cierran la composición hacia el río. La parte de Wren se prolongó hasta 1712; Vanbrugh y Hawksmoor completaron alas posteriores, y James «Athenian» Stuart terminó la capilla en 1789 tras un incendio. El vasto techo pintado por James Thornhill en el Painted Hall, empezado en 1707, tardó diecinueve años en concluirse; el cuerpo de Nelson yació bajo él en 1806. El conjunto se convirtió en el Royal Naval College en 1873 y hoy alberga la Universidad de Greenwich y el conservatorio Trinity Laban.',
+      it: 'Maria II ordinò un ospedale per i marinai feriti e logorati dopo aver visto tornare i feriti della battaglia di La Hougue del 1692, e Wren, come Surveyor of the King\'s Works, offrì i propri servizi gratuitamente, lavorando dal 1696 accanto al suo assistente Nicholas Hawksmoor. Il sito ospitava già la Queen\'s House, la piccola villa palladiana di Inigo Jones arretrata rispetto al fiume, e la decisione più importante di Wren fu strutturale in senso lato: anziché costruire un unico grande corpo lungo l\'asse, divise l\'ospedale in due coppie simmetriche di cortili, lasciando aperta al centro la vista dalla Queen\'s House verso il Tamigi. Due torri gemelle con cupola, ciascuna con un orologio, chiudono la composizione verso il fiume. La parte realizzata da Wren proseguì fino al 1712; Vanbrugh e Hawksmoor completarono le ali successive, e James «Athenian» Stuart terminò la cappella nel 1789 dopo un incendio. Il vasto soffitto dipinto da James Thornhill nella Painted Hall, iniziato nel 1707, richiese diciannove anni per essere completato; il corpo di Nelson vi giacque sotto in stato nel 1806. Il complesso divenne il Royal Naval College nel 1873 e oggi ospita la University of Greenwich e il conservatorio Trinity Laban.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1753590', title: 'Old Royal Naval College (Q1753590)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Old_Royal_Naval_College', title: 'Old Royal Naval College', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'sheldonian-theatre',
+    wikidataId: 'Q83874',
+    name: {
+      en: 'Sheldonian Theatre',
+      es: 'Sheldonian Theatre',
+      it: 'Sheldonian Theatre',
+    },
+    architectId: 'christopher-wren',
+    location: { city: 'Oxford', countryCode: 'GB', lat: 51.75430, lon: -1.25500 },
+    inception: 1664,
+    completed: 1669,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['stone', 'timber'],
+    structure: {
+      en: 'A wide auditorium is roofed by a grid of short trussed timbers, engineered with the mathematician John Wallis, that together act as a single flat, self-supporting truss with no internal columns.',
+      es: 'Una amplia sala está cubierta por una retícula de vigas cortas y entrelazadas, calculada con el matemático John Wallis, que en conjunto actúan como una única armadura plana autoportante sin columnas interiores.',
+      it: "Un'ampia sala è coperta da una griglia di travi corte e incastrate, calcolata con il matematico John Wallis, che nel loro insieme agiscono come un'unica capriata piana autoportante priva di colonne interne.",
+    },
+    program: {
+      en: "Built for Oxford University's degree ceremonies and press licensing business, funded by Gilbert Sheldon, Archbishop of Canterbury, so they could move out of the University Church.",
+      es: 'Construido para las ceremonias de graduación y el negocio de licencias de la imprenta de la Universidad de Oxford, financiado por Gilbert Sheldon, arzobispo de Canterbury, para sacarlos de la iglesia universitaria.',
+      it: "Costruito per le cerimonie di laurea e l'attività di licenza della stamperia dell'Università di Oxford, finanziato da Gilbert Sheldon, arcivescovo di Canterbury, per farli uscire dalla chiesa universitaria.",
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Still used for Oxford University degree ceremonies, concerts and lectures.',
+      es: 'Sigue usándose para las ceremonias de graduación, conciertos y conferencias de la Universidad de Oxford.',
+      it: "È ancora usato per le cerimonie di laurea, i concerti e le conferenze dell'Università di Oxford.",
+    },
+    detailRect: { x: 0.30, y: 0.05, w: 0.35, h: 0.45 },
+    image: {
+      commonsFile: 'Sheldonian Theatre Oxford 2023 03.jpg',
+      photographer: 'Julian Herzog',
+      license: 'CC BY 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Sheldonian_Theatre_Oxford_2023_03.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'Upper facade of Sheldonian Theatre, Oxford.jpg',
+        photographer: 'Decan',
+        license: 'CC BY-SA 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Upper_facade_of_Sheldonian_Theatre,_Oxford.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "Gilbert Sheldon, Archbishop of Canterbury and Warden of All Souls, paid for a ceremonial hall so that Oxford's degree congregations and the university press's licensing business could move out of the University Church, where they had become disruptively secular. It was Wren's first major building, designed while he still held the Savilian Chair of Astronomy at Oxford rather than any architectural post, and its central problem was structural rather than stylistic: a room some seventy feet wide needed a roof with no supporting columns to block sightlines. Wren solved it with the mathematician John Wallis, using a grid of short trussed timbers keyed together so that the whole roof behaves as a single flat, self-supporting truss, a design later engineers judged sound enough that it needed no repair for two centuries. Robert Streater's ceiling, painted in 1669 and restored between 2004 and 2008, shows Truth descending to expel Ignorance from the Arts and Sciences. Outside, a fence of grotesque carved stone heads faces Broad Street, popularly called the Emperors' Heads, though no one has ever securely identified which emperors, if any, they represent.",
+      es: 'Gilbert Sheldon, arzobispo de Canterbury y Warden de All Souls, costeó una sala ceremonial para que las graduaciones de Oxford y el negocio de licencias de la imprenta universitaria salieran de la iglesia de la universidad, donde resultaban cada vez más impropiamente seculares. Fue el primer edificio importante de Wren, proyectado mientras aún ocupaba la cátedra saviliana de Astronomía en Oxford y no ningún cargo de arquitecto, y su problema central fue estructural antes que estilístico: una sala de unos veintiún metros de ancho necesitaba una cubierta sin columnas que cortaran la visión. Wren lo resolvió con el matemático John Wallis, mediante una retícula de vigas cortas entrelazadas que hace que toda la cubierta funcione como una única armadura plana autoportante, un diseño que ingenieros posteriores consideraron tan sólido que no necesitó reparación en dos siglos. El techo de Robert Streater, pintado en 1669 y restaurado entre 2004 y 2008, muestra a la Verdad descendiendo para expulsar a la Ignorancia de las Artes y las Ciencias. Fuera, una verja de cabezas de piedra talladas y grotescas mira a Broad Street, llamadas popularmente las Cabezas de los Emperadores, aunque nadie ha identificado con certeza a qué emperadores, si a alguno, representan.',
+      it: "Gilbert Sheldon, arcivescovo di Canterbury e Warden di All Souls, finanziò una sala cerimoniale perché le lauree di Oxford e l'attività di licenza della stamperia universitaria uscissero dalla chiesa dell'università, dove risultavano sempre più impropriamente secolari. Fu il primo edificio importante di Wren, progettato mentre occupava ancora la cattedra saviliana di Astronomia a Oxford e non alcun incarico di architetto, e il suo problema centrale fu strutturale prima che stilistico: una sala larga circa ventun metri richiedeva una copertura priva di colonne che tagliassero la vista. Wren lo risolse con il matematico John Wallis, con una griglia di travi corte incastrate fra loro in modo che l'intera copertura funzioni come un'unica capriata piana autoportante, un progetto che ingegneri successivi giudicarono così solido da non richiedere riparazioni per due secoli. Il soffitto di Robert Streater, dipinto nel 1669 e restaurato fra il 2004 e il 2008, mostra la Verità che scende a scacciare l'Ignoranza dalle Arti e dalle Scienze. Fuori, una cancellata di teste di pietra scolpite e grottesche guarda Broad Street, chiamate popolarmente le Teste degli Imperatori, sebbene nessuno abbia mai identificato con certezza quali imperatori, se alcuno, rappresentino.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q83874', title: 'Sheldonian Theatre (Q83874)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Sheldonian_Theatre', title: 'Sheldonian Theatre', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'st-stephen-walbrook',
+    wikidataId: 'Q952386',
+    name: {
+      en: 'St Stephen Walbrook',
+      es: 'St Stephen Walbrook',
+      it: 'St Stephen Walbrook',
+    },
+    architectId: 'christopher-wren',
+    location: { city: 'London', countryCode: 'GB', lat: 51.51263, lon: -0.08992 },
+    inception: 1672,
+    completed: 1679,
+    demolished: null,
+    typology: 'sacral',
+    materials: ['stone'],
+    structure: {
+      en: "Eight arches rise from twelve free-standing Corinthian columns to carry a lantern-lit coffered dome, Wren's working trial for St Paul's, hidden inside an otherwise plain rectangular parish-church box.",
+      es: 'Ocho arcos se alzan sobre doce columnas corintias exentas para sostener una cúpula artesonada iluminada por una linterna, ensayo previo de Wren para San Pablo, oculta dentro de una caja parroquial por lo demás sencilla y rectangular.',
+      it: "Otto archi si elevano su dodici colonne corinzie indipendenti per reggere una cupola a cassettoni illuminata da un lanternino, prova pratica di Wren per San Paolo, nascosta dentro una scatola parrocchiale altrimenti semplice e rettangolare.",
+    },
+    program: {
+      en: "Rebuilt for the parish after the medieval church burned in the Great Fire of 1666, it became the Lord Mayor of London's official parish church once the neighbouring Mansion House was built.",
+      es: 'Reconstruida para la parroquia tras el incendio de la iglesia medieval en el Gran Incendio de 1666, se convirtió en la iglesia parroquial oficial del alcalde de Londres una vez construida la vecina Mansion House.',
+      it: "Ricostruita per la parrocchia dopo l'incendio della chiesa medievale nel Grande Incendio del 1666, divenne la chiesa parrocchiale ufficiale del sindaco di Londra una volta costruita la vicina Mansion House.",
+    },
+    heritage: 'national',
+    currentUse: {
+      en: "Working Anglican parish church and the Lord Mayor of London's official church, hemmed in and barely visible among later City buildings.",
+      es: 'Iglesia parroquial anglicana en uso y templo oficial del alcalde de Londres, encajonada y apenas visible entre edificios posteriores de la City.',
+      it: 'Chiesa parrocchiale anglicana in uso e chiesa ufficiale del sindaco di Londra, stretta e appena visibile fra edifici successivi della City.',
+    },
+    detailRect: { x: 0.50, y: 0.30, w: 0.25, h: 0.30 },
+    image: {
+      commonsFile: 'St Stephen Walbrook from NNE.jpg',
+      photographer: "It's No Game",
+      license: 'CC BY 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:St_Stephen_Walbrook_from_NNE.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'St Stephen Walbrook, dome ceiling with chandelier.jpg',
+        photographer: 'AndyScott',
+        license: 'CC0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:St_Stephen_Walbrook,_dome_ceiling_with_chandelier.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "St Stephen Walbrook's medieval predecessor burned in the Great Fire of 1666, and Wren's replacement, built between 1672 and 1679, is where he first worked out in built form the dome he would later scale up for St Paul's. Inside a plain rectangular parish-church box, barely visible from the street because later buildings crowd around it on every side, eight arches rise from twelve free-standing Corinthian columns to carry a coffered dome lit by a lantern, turning what looks from outside like just another City church into a fully domed centralised space. As the parish next to the Mansion House, built decades later, it became the Lord Mayor of London's official church. In 1953 its rector, Chad Varah, founded the Samaritans, the telephone helpline for the suicidal and despairing, in the crypt below, before the charity outgrew the space and moved elsewhere. In 1987 a smooth stone altar by the sculptor Henry Moore was installed directly under the dome, a placement so unorthodox for an English parish church that the Court of Ecclesiastical Causes Reserved had to approve it.",
+      es: 'La iglesia medieval que precedió a St Stephen Walbrook ardió en el Gran Incendio de 1666, y la que Wren construyó entre 1672 y 1679 fue donde ensayó por primera vez, ya construida, la cúpula que después ampliaría para San Pablo. Dentro de una caja rectangular de iglesia parroquial corriente, apenas visible desde la calle porque edificios posteriores la rodean por todos lados, ocho arcos se alzan sobre doce columnas corintias exentas para sostener una cúpula artesonada iluminada por una linterna, convirtiendo lo que desde fuera parece una iglesia más de la City en un espacio centralizado y abovedado por completo. Al ser la parroquia contigua a la Mansion House, construida décadas más tarde, se convirtió en la iglesia oficial del alcalde de Londres. En 1953 su párroco, Chad Varah, fundó los Samaritans, el teléfono de ayuda para personas suicidas o desesperadas, en la cripta de debajo, antes de que la organización creciera y se trasladara. En 1987 se instaló bajo la cúpula un altar de piedra lisa del escultor Henry Moore, una colocación tan poco ortodoxa para una parroquia inglesa que tuvo que aprobarla el Tribunal de Causas Eclesiásticas Reservadas.',
+      it: "La chiesa medievale che precedette St Stephen Walbrook bruciò nel Grande Incendio del 1666, e quella che Wren costruì fra il 1672 e il 1679 fu dove sperimentò per la prima volta, in forma costruita, la cupola che avrebbe poi ampliato per San Paolo. Dentro una semplice scatola rettangolare da chiesa parrocchiale, appena visibile dalla strada perché edifici successivi la stringono da ogni lato, otto archi si elevano su dodici colonne corinzie indipendenti per reggere una cupola a cassettoni illuminata da un lanternino, trasformando quella che dall'esterno sembra un'ennesima chiesa della City in uno spazio centralizzato e interamente cupolato. Essendo la parrocchia accanto alla Mansion House, costruita decenni dopo, divenne la chiesa ufficiale del sindaco di Londra. Nel 1953 il suo rettore, Chad Varah, fondò i Samaritans, il telefono d'aiuto per le persone suicide o disperate, nella cripta sottostante, prima che l'organizzazione crescesse e si trasferisse altrove. Nel 1987 fu installato sotto la cupola un altare in pietra liscia dello scultore Henry Moore, una collocazione così poco ortodossa per una parrocchia inglese che dovette approvarla la Court of Ecclesiastical Causes Reserved.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q952386', title: 'St Stephen Walbrook (Q952386)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/St_Stephen_Walbrook', title: 'St Stephen Walbrook', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
     id: 'custom-house-dublin',
     wikidataId: 'Q2300561',
     name: {
@@ -635,6 +830,21 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
       width: 1600,
       height: 926,
     },
+    // Wave V2-3 batch B5 image pass: kept the existing primary (its dark
+    // frameless glass wall and corner curve, cropped at the existing
+    // detailRect, still reads as diagnostic architecture on inspection) and
+    // added one extraImage — a rare aerial view that shows the free-curve
+    // plan and turfed roof garden the ground-level photo cannot.
+    extraImages: [
+      {
+        commonsFile: 'The Willis Towers Watson building, Ipswich, Suffolk (37026322353).jpg',
+        photographer: 'John Fielding',
+        license: 'CC BY 2.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:The_Willis_Towers_Watson_building,_Ipswich,_Suffolk_(37026322353).jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
     dossier: {
       en: "Willis, Faber & Dumas wanted to move its staff out of London and then keep them, so the brief included a swimming pool on the ground floor, a gymnasium and a turfed roof garden with a restaurant. Foster Associates took a site hemmed in by road junctions and simply filled it: the plan is a free curve following the pavement lines, with no corners anywhere. The wall is the argument. Panels of dark solar glass hang from the roof edge, bolted at their corners and jointed with silicone, so that from outside there are no mullions at all — by day a black mirror of the surrounding town, by night a transparent section through three open-plan floors linked by escalators. Behind it, deep waffle slabs cantilever from a fourteen-metre column grid, leaving the perimeter clear. Opened in June 1975, it was listed Grade I in 1991, when it was one of only two listed buildings in Britain under thirty years old. The pool was floored over in 1994 but never filled in.",
       es: 'Willis, Faber & Dumas quería sacar a su plantilla de Londres y luego retenerla, así que el encargo incluía una piscina en planta baja, un gimnasio y una cubierta ajardinada con restaurante. Foster Associates tomó un solar encajonado entre cruces de calles y sencillamente lo colmató: la planta es una curva libre que sigue la línea de las aceras, sin una sola esquina. El muro es el argumento. Los paneles de vidrio solar oscuro cuelgan del borde de cubierta, atornillados por las esquinas y sellados con silicona, de manera que desde fuera no hay montantes: de día, un espejo negro de la ciudad; de noche, una sección transparente de tres plantas diáfanas enlazadas por escaleras mecánicas. Detrás, unos gruesos forjados reticulares vuelan desde una retícula de pilares a catorce metros y dejan libre todo el perímetro. Inaugurado en junio de 1975, fue protegido en grado I en 1991, cuando era uno de los dos únicos edificios protegidos de Gran Bretaña con menos de treinta años.',
@@ -751,6 +961,136 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
     sources: [
       { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q3309562', title: 'Senedd building (Q3309562)', license: null },
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Senedd_building', title: 'Senedd building', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    // Wave V2-3 batch B5 top-up: Richard Rogers, pre-assigned to this slice
+    // (wave5-contract-v2.md §3). Deliberately NOT adding Centre Pompidou
+    // (Paris) — France has no Freedom of Panorama and Rogers is in
+    // copyright to 2091; this is the same "Pompidou trap" the v1 ledger
+    // records avoiding. Lloyd's + Millennium Dome bring Rogers to 3 total
+    // alongside the existing Senedd, matching feasibility's verdict.
+    id: 'lloyds-building',
+    wikidataId: 'Q1814818',
+    name: {
+      en: "Lloyd's Building",
+      es: "Edificio de Lloyd's",
+      it: "Edificio Lloyd's",
+    },
+    architectId: 'richard-rogers',
+    location: { city: 'London', countryCode: 'GB', lat: 51.51306, lon: -0.08236 },
+    inception: 1978,
+    completed: 1986,
+    demolished: null,
+    typology: 'commercial',
+    materials: ['concrete', 'steel-and-glass'],
+    structure: {
+      en: 'A reinforced-concrete frame carries the office floors while lifts, stairs, lavatories and ductwork are pushed outside into stainless-steel pods and towers, leaving a single stepped atrium lit by a barrel-vaulted glass roof at the centre.',
+      es: 'Una estructura de hormigón armado sostiene las plantas de oficinas mientras ascensores, escaleras, aseos y conductos quedan fuera, en cápsulas y torres de acero inoxidable, dejando un único atrio escalonado iluminado por una cubierta de vidrio abovedada en el centro.',
+      it: "Una struttura in cemento armato regge i piani per uffici mentre ascensori, scale, servizi igienici e condotti sono spinti fuori, in capsule e torri d'acciaio inossidabile, lasciando un unico atrio a gradoni illuminato al centro da una copertura vetrata a botte.",
+    },
+    program: {
+      en: "Built to replace Lloyd's of London's outgrown 1928 headquarters on the same site, incorporating that building's original entrance, it houses the insurance market's underwriting Room in galleries around a central atrium.",
+      es: 'Construido para sustituir la sede de Lloyd’s of London de 1928, ya insuficiente, en el mismo solar e incorporando su entrada original, alberga la Sala de suscripción del mercado asegurador en galerías en torno a un atrio central.',
+      it: "Costruito per sostituire la sede di Lloyd's of London del 1928, ormai insufficiente, sullo stesso sito e incorporandone l'ingresso originale, ospita la Room di sottoscrizione del mercato assicurativo in gallerie attorno a un atrio centrale.",
+    },
+    heritage: 'national',
+    currentUse: {
+      en: "Working home of the Lloyd's of London insurance market's underwriting Room, Grade I listed since 2011.",
+      es: 'Sede en activo de la Sala de suscripción del mercado asegurador Lloyd’s of London, protegida en grado I desde 2011.',
+      it: "Sede operativa della Room di sottoscrizione del mercato assicurativo Lloyd's of London, vincolata in grado I dal 2011.",
+    },
+    detailRect: { x: 0.05, y: 0.05, w: 0.35, h: 0.55 },
+    image: {
+      commonsFile: "Lloyd's building 2025-04-03.jpg",
+      photographer: 'Keith Page',
+      license: 'CC BY-SA 2.0',
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Lloyd's_building_2025-04-03.jpg",
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: "Lloyd's Building.jpg",
+        photographer: 'Derek Finch',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Lloyd's_Building.jpg",
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "Rogers won the competition to replace Lloyd's outgrown 1928 headquarters in 1978, eight years before Bovis handed over the finished building in 1986, the year London's markets were transformed by the 'Big Bang' deregulation. The design repeats the argument he had made with Renzo Piano at the Pompidou a decade earlier, at greater intensity: lifts, stairs, lavatories, and mechanical ducts are all pushed outside the concrete frame in stainless-steel pods and towers, leaving the interior as a single stepped atrium lit from a barrel-vaulted glass roof, so that the underwriting 'Room' at its base can grow or shrink across the surrounding galleries without touching a fixed structural wall. The original 1928 entrance at 12 Leadenhall Street survives, oddly grafted onto the new facade. Weathering the external steelwork proved far costlier to maintain than anyone predicted, but the building was Grade I listed in 2011, the youngest structure in Britain ever to receive the designation. Inside, the salvaged Lutine Bell, rung to announce major shipping losses since the eighteenth century, still hangs at the Room's centre.",
+      es: 'Rogers ganó en 1978 el concurso para sustituir la sede de Lloyd’s de 1928, ya insuficiente, ocho años antes de que Bovis entregara el edificio terminado en 1986, el mismo año en que el «Big Bang» desreguló los mercados de Londres. El diseño repite, con mayor intensidad, el argumento que había planteado con Renzo Piano en el Pompidou una década antes: ascensores, escaleras, aseos y conductos mecánicos quedan todos fuera de la estructura de hormigón, en cápsulas y torres de acero inoxidable, dejando el interior como un único atrio escalonado iluminado por una cubierta de vidrio abovedada, de modo que la «Sala» de suscripción de la planta baja pueda crecer o encogerse por las galerías circundantes sin tocar un muro estructural fijo. La antigua entrada de 1928 en el número 12 de Leadenhall Street sobrevive, injertada de forma extraña en la nueva fachada. El desgaste del acero exterior resultó mucho más caro de mantener de lo previsto, pero el edificio fue protegido en grado I en 2011, la construcción más joven de Gran Bretaña en recibir esa distinción. Dentro, la campana Lutine, rescatada y tocada desde el siglo XVIII para anunciar grandes pérdidas navieras, sigue colgando en el centro de la Sala.',
+      it: "Rogers vinse nel 1978 il concorso per sostituire la sede di Lloyd's del 1928, ormai insufficiente, otto anni prima che Bovis consegnasse l'edificio finito nel 1986, lo stesso anno in cui il 'Big Bang' deregolamentò i mercati di Londra. Il progetto ripete, con maggiore intensità, l'argomento sostenuto con Renzo Piano al Pompidou un decennio prima: ascensori, scale, servizi igienici e condotti meccanici sono tutti spinti fuori dalla struttura in cemento, in capsule e torri d'acciaio inossidabile, lasciando l'interno come un unico atrio a gradoni illuminato da una copertura vetrata a botte, così che la 'Room' di sottoscrizione al piano terra possa crescere o restringersi nelle gallerie circostanti senza toccare un muro strutturale fisso. L'ingresso originale del 1928 al numero 12 di Leadenhall Street sopravvive, innestato in modo curioso sulla nuova facciata. Il logorio dell'acciaio esterno si rivelò molto più costoso da mantenere del previsto, ma l'edificio fu vincolato in grado I nel 2011, la costruzione più giovane della Gran Bretagna a ricevere quella distinzione. All'interno, la campana Lutine, recuperata e suonata dal Settecento per annunciare grandi perdite marittime, pende ancora al centro della Room.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1814818', title: "Lloyd's building (Q1814818)", license: null },
+      { kind: 'wikipedia', url: "https://en.wikipedia.org/wiki/Lloyd%27s_building", title: "Lloyd's building", license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'millennium-dome',
+    wikidataId: 'Q29014',
+    name: {
+      en: 'Millennium Dome',
+      es: 'Millennium Dome (Cúpula del Milenio)',
+      it: 'Millennium Dome (Cupola del Millennio)',
+    },
+    architectId: 'richard-rogers',
+    location: { city: 'London', countryCode: 'GB', lat: 51.50278, lon: 0.00306 },
+    inception: 1997,
+    completed: 1999,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['mixed'],
+    structure: {
+      en: 'Twelve 100-metre steel masts, ringed and raked outward, carry a tensioned steel cable net supporting seventy-two PTFE-coated fibreglass fabric panels, 365 metres across and 52 metres high at the centre.',
+      es: 'Doce mástiles de acero de 100 metros, dispuestos en anillo e inclinados hacia fuera, sostienen una red de cables de acero tensados que soporta setenta y dos paneles de fibra de vidrio revestidos de PTFE, de 365 metros de diámetro y 52 de altura en el centro.',
+      it: "Dodici piloni d'acciaio alti 100 metri, disposti in anello e inclinati verso l'esterno, reggono una rete di cavi d'acciaio tesi che sostiene settantadue pannelli in fibra di vetro rivestiti in PTFE, larghi 365 metri e alti 52 al centro.",
+    },
+    program: {
+      en: "Built for the government's Millennium Experience exhibition of 2000 on reclaimed gasworks land at Greenwich, the shell was converted in 2005–2007 into The O2, a commercial indoor arena and entertainment complex.",
+      es: 'Construida para la exposición gubernamental Millennium Experience del año 2000 sobre un antiguo solar de gasómetros en Greenwich, la envolvente se reconvirtió entre 2005 y 2007 en The O2, un recinto cubierto comercial y complejo de ocio.',
+      it: "Costruita per la mostra governativa Millennium Experience dell'anno 2000 su un ex terreno di gasometri a Greenwich, il guscio fu riconvertito fra il 2005 e il 2007 in The O2, un'arena coperta commerciale e complesso per l'intrattenimento.",
+    },
+    heritage: 'none',
+    currentUse: {
+      en: "Indoor arena, concert venue and entertainment complex (The O2), among the world's busiest music venues.",
+      es: 'Recinto cubierto, sala de conciertos y complejo de ocio (The O2), uno de los locales musicales más concurridos del mundo.',
+      it: 'Arena coperta, sala concerti e complesso per l’intrattenimento (The O2), fra i locali musicali più frequentati al mondo.',
+    },
+    detailRect: { x: 0.30, y: 0.30, w: 0.30, h: 0.35 },
+    image: {
+      commonsFile: 'London - The O2 – Millennium Dome.jpg',
+      photographer: 'Fred Romero',
+      license: 'CC BY 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:London_-_The_O2_%E2%80%93_Millennium_Dome.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'Greenwich - Royal Observatory - View North towards Millennium Dome 2000 Richard Rogers.jpg',
+        photographer: 'Txllxt TxllxT',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Greenwich_-_Royal_Observatory_-_View_North_towards_Millennium_Dome_2000_Richard_Rogers.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "The Blair government commissioned the Richard Rogers Partnership in 1996 to house the Millennium Experience, a year-long exhibition marking the year 2000 on a stretch of former gasworks land at Greenwich that badly needed a use. Engineered with Buro Happold, the dome is really a tent: twelve 100-metre steel masts, arranged in a ring and raked outward, carry a web of tensioned steel cables that in turn support a lightweight fabric roof of seventy-two PTFE-coated fibreglass panels, 365 metres across (a metre for every day of the year) and rising 52 metres at the centre (a metre for every week). Built in just fifteen months for £43 million, the shell itself came in on budget and ahead of schedule; the exhibition it covered did not, running to £789 million of largely lottery money against forecasts the visitor numbers never matched, and the resulting political embarrassment briefly cost two cabinet careers. The dome stood empty for years afterward until a 2005–2007 conversion turned it into The O2, an indoor arena, and it now hosts more concerts than any other venue of its kind in the world.",
+      es: 'El gobierno de Blair encargó a la Richard Rogers Partnership en 1996 alojar el Millennium Experience, una exposición de un año que celebraba el año 2000 en un antiguo terreno de gasómetros en Greenwich que necesitaba un uso urgente. Calculada con Buro Happold, la cúpula es en realidad una tienda de campaña: doce mástiles de acero de 100 metros, dispuestos en anillo e inclinados hacia fuera, sostienen una red de cables de acero tensados que a su vez soportan una cubierta ligera de setenta y dos paneles de fibra de vidrio revestidos de PTFE, de 365 metros de diámetro (un metro por cada día del año) y 52 metros de altura en el centro (un metro por cada semana). Construida en solo quince meses por 43 millones de libras, la envolvente en sí llegó dentro de presupuesto y por delante del calendario; la exposición que cubría no, con un coste de 789 millones de libras, en gran parte de la lotería nacional, frente a unas previsiones de visitantes que nunca se cumplieron, y el consiguiente bochorno político costó brevemente dos carreras ministeriales. La cúpula quedó vacía durante años hasta que una reconversión de 2005-2007 la convirtió en The O2, un recinto cubierto, que hoy acoge más conciertos que ningún otro local de su tipo en el mundo.',
+      it: "Il governo Blair incaricò nel 1996 la Richard Rogers Partnership di ospitare il Millennium Experience, una mostra di un anno che celebrava l'anno 2000 su un ex terreno di gasometri a Greenwich che aveva urgente bisogno di un uso. Calcolata con Buro Happold, la cupola è in realtà una tenda: dodici piloni d'acciaio alti 100 metri, disposti in anello e inclinati verso l'esterno, reggono una rete di cavi d'acciaio tesi che a loro volta sostengono una copertura leggera di settantadue pannelli in fibra di vetro rivestiti in PTFE, larga 365 metri (un metro per ogni giorno dell'anno) e alta 52 metri al centro (un metro per ogni settimana). Costruito in soli quindici mesi per 43 milioni di sterline, il guscio arrivò entro il budget e in anticipo sui tempi; la mostra che ospitava no, costando 789 milioni di sterline, in gran parte della lotteria nazionale, contro previsioni di visitatori mai raggiunte, e il conseguente imbarazzo politico costò per breve tempo due carriere ministeriali. La cupola rimase vuota per anni finché una riconversione del 2005-2007 la trasformò in The O2, un'arena coperta, che oggi ospita più concerti di qualunque altro locale dello stesso tipo al mondo.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q29014', title: 'Millennium Dome (Q29014)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Millennium_Dome', title: 'Millennium Dome', license: 'CC BY-SA 4.0' },
     ],
     tier: 'canon',
   },
@@ -909,6 +1249,21 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
       width: 1600,
       height: 1067,
     },
+    // Wave V2-3 batch B5 image pass: kept the existing primary and
+    // detailRect (cropping it out shows the roof cladding meeting the
+    // curtain wall and railing cleanly — still diagnostic) and added one
+    // extraImage showing the whole building alongside the ArcelorMittal
+    // Orbit for scale/context.
+    extraImages: [
+      {
+        commonsFile: 'Orbit Tower - Aquatics Centre.jpg',
+        photographer: 'George Rex',
+        license: 'CC BY-SA 2.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Orbit_Tower_-_Aquatics_Centre.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
     dossier: {
       en: "Hadid designed the Aquatics Centre in 2004, as part of London's bid for the 2012 Olympics, taking the fluid geometry of moving water as her formal starting point: a single steel roof, engineered with Arup and shaped by parametric modelling, sweeps in one continuous double curve from a low point at the diving pool to full height over the two fifty-metre competition pools, its underside lined with 30,000 sections of Red Louro timber. Ground was broken in July 2008 and Balfour Beatty completed the aluminium-clad, 3,200-tonne roof structure in July 2011, at a final cost of £269 million against an original 2005 estimate of £75 million. For the Games themselves, temporary steel-framed spectator wings, wrapped in white PVC, raised seating to 17,500 and hid much of Hadid's roofline; they were unbolted and removed once the Paralympics ended, and the building reopened to the public in March 2014 with a permanent capacity of 2,800, the wave now visible on all sides for the first time. It remains the sole swimming venue from the 2012 Games still in continuous public and elite use.",
       es: 'Hadid proyectó el Centro Acuático en 2004, dentro de la candidatura de Londres a los Juegos de 2012, con la geometría fluida del agua en movimiento como punto de partida formal: una única cubierta de acero, calculada con Arup y modelada por software paramétrico, describe una sola curva continua, baja junto a la piscina de saltos y de altura completa sobre las dos piscinas de competición de cincuenta metros, con el intradós revestido por 30.000 piezas de madera de louro rojo. Las obras comenzaron en julio de 2008 y Balfour Beatty terminó la cubierta, revestida de aluminio y de 3.200 toneladas, en julio de 2011, con un coste final de 269 millones de libras frente a los 75 millones estimados en 2005. Para los Juegos, unas alas provisionales de acero envueltas en PVC blanco elevaron el aforo a 17.500 localidades y ocultaron buena parte del perfil de Hadid; se desmontaron al concluir los Paralímpicos, y el edificio reabrió al público en marzo de 2014 con un aforo permanente de 2.800, con la ola visible por fin por todos sus lados. Sigue siendo la única sede de natación de 2012 en uso continuo, público y de alto rendimiento.',
@@ -918,6 +1273,74 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
     sources: [
       { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q308874', title: 'London Aquatics Centre (Q308874)', license: null },
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/London_Aquatics_Centre', title: 'London Aquatics Centre', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    // Wave V2-3 batch B5 top-up: Norman Foster is pre-assigned to this slice
+    // (wave5-contract-v2.md §3). Adds 30 St Mary Axe to bring Foster to 4
+    // buildings total (Willis Faber & Dumas already here; Reichstag Dome in
+    // europe-germanic.ts and HSBC Main Building in asia.ts, both filed by
+    // building location per the wave 3 shared instructions, not by architect
+    // ownership).
+    id: '30-st-mary-axe',
+    wikidataId: 'Q191161',
+    name: {
+      en: '30 St Mary Axe (the Gherkin)',
+      es: '30 St Mary Axe (el Gherkin)',
+      it: '30 St Mary Axe (il Gherkin)',
+    },
+    architectId: 'norman-foster',
+    location: { city: 'London', countryCode: 'GB', lat: 51.51444, lon: -0.08028 },
+    inception: 2001,
+    completed: 2004,
+    demolished: null,
+    typology: 'tower',
+    materials: ['steel-and-glass'],
+    structure: {
+      en: 'A fully triangulated perimeter diagrid of steel, engineered with Arup, removes internal corner columns and lets six spiralling triangular light wells draw daylight and natural ventilation up through the 41 floors.',
+      es: 'Una retícula perimetral de acero totalmente triangulada, calculada con Arup, elimina los pilares de esquina interiores y deja que seis pozos de luz triangulares en espiral lleven luz natural y ventilación por las 41 plantas.',
+      it: "Una griglia perimetrale d'acciaio interamente triangolata, calcolata con Arup, elimina i pilastri d'angolo interni e lascia che sei pozzi di luce triangolari a spirale portino luce naturale e ventilazione attraverso i 41 piani.",
+    },
+    program: {
+      en: "Built speculatively for Swiss Re on the bombed-out site of the Baltic Exchange, it now lets office floors to multiple City tenants above a public ground-floor plaza and a members' bar and restaurant under the crowning dome.",
+      es: 'Construido especulativamente para Swiss Re sobre el solar bombardeado de la Baltic Exchange, hoy alquila sus plantas de oficinas a varios inquilinos de la City sobre una plaza pública en planta baja y un bar-restaurante bajo la cúpula que lo corona.',
+      it: "Costruito speculativamente per Swiss Re sul sito bombardato della Baltic Exchange, oggi affitta i piani per uffici a diversi inquilini della City sopra una piazza pubblica al piano terra e un bar-ristorante sotto la cupola che lo corona.",
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Multi-tenant office tower with a public ground-floor plaza and a private bar and restaurant at the top.',
+      es: 'Torre de oficinas multiarrendatario con plaza pública en planta baja y bar-restaurante privado en la parte superior.',
+      it: 'Torre per uffici multi-inquilino con piazza pubblica al piano terra e bar-ristorante privato in cima.',
+    },
+    detailRect: { x: 0.35, y: 0.15, w: 0.32, h: 0.28 },
+    image: {
+      commonsFile: '30 St Mary Axe from Leadenhall Street.jpg',
+      photographer: 'Aurelien Guichard',
+      license: 'CC BY-SA 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:30_St_Mary_Axe_from_Leadenhall_Street.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: '30 St Mary Axe 2012-08-18.jpg',
+        photographer: 'Richardjo53',
+        license: 'CC BY-SA 2.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:30_St_Mary_Axe_2012-08-18.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "Foster and Partners won the commission in 1997 for a site that had stood empty since April 1992, when an IRA bomb devastated the Baltic Exchange building that previously occupied it. Rather than repeat the orthodox point-block tower plan, engineer Arup and the design team wrapped the 180-metre, 41-storey office in a diagonally braced steel diagrid, doing away with internal corner columns and letting the skin itself carry lateral load. The plan swells outward from a narrow base and tapers again toward the crown, a bulging profile driven less by whimsy than by wind engineering: the curve reduces downdraughts at street level and lets six triangular light wells spiral up through the floors, drawing daylight deep into the plan and ventilating the offices naturally for part of the year. London nicknamed it the Gherkin before it opened in April 2004, and the name stuck harder than the building's registered one, Swiss Re, the reinsurer that first occupied it. It became an instant fixture of the City skyline and one of the most photographed towers in Europe.",
+      es: 'Foster and Partners ganó el concurso en 1997 para un solar que llevaba vacío desde abril de 1992, cuando una bomba del IRA destruyó el edificio de la Baltic Exchange que antes lo ocupaba. En vez de repetir la torre ortodoxa de planta puntual, el estudio y el ingeniero Arup envolvieron la oficina de 180 metros y 41 plantas en una retícula diagonal de acero, eliminando los pilares de esquina interiores y dejando que la propia piel resistiera las cargas laterales. La planta se ensancha desde una base estrecha y vuelve a estrecharse hacia la coronación, un perfil abombado impuesto más por la ingeniería del viento que por el capricho: la curva reduce las corrientes descendentes a nivel de calle y permite que seis pozos de luz triangulares asciendan en espiral por las plantas, llevando luz natural al interior y ventilando las oficinas sin mecánica durante parte del año. Londres la llamó el Gherkin (el pepinillo) antes de su apertura en abril de 2004, y el apodo se impuso al nombre registrado, Swiss Re, la reaseguradora que la ocupó primero. Se convirtió al instante en una pieza fija del perfil de la City y en una de las torres más fotografiadas de Europa.',
+      it: "Foster and Partners vinse il concorso nel 1997 per un lotto rimasto vuoto dall'aprile 1992, quando una bomba dell'IRA distrusse l'edificio della Baltic Exchange che vi sorgeva. Anziché ripetere la torre ortodossa a pianta puntuale, lo studio e l'ingegnere Arup avvolsero l'edificio per uffici, alto 180 metri su 41 piani, in una griglia diagonale d'acciaio, eliminando i pilastri d'angolo interni e lasciando che fosse la stessa pelle a portare i carichi laterali. La pianta si allarga da una base stretta e si restringe di nuovo verso la sommità, un profilo rigonfio imposto più dall'ingegneria del vento che dal capriccio: la curva riduce le correnti discendenti a livello stradale e permette a sei pozzi di luce triangolari di salire a spirale attraverso i piani, portando luce naturale in profondità e ventilando gli uffici senza impianti per parte dell'anno. Londra lo battezzò il Gherkin (il cetriolino) prima dell'apertura nell'aprile 2004, e il soprannome si impose sul nome registrato, Swiss Re, la compagnia di riassicurazione che lo occupò per prima. Divenne subito un punto fermo dello skyline della City e una delle torri più fotografate d'Europa.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q191161', title: '30 St Mary Axe (Q191161)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/30_St_Mary_Axe', title: '30 St Mary Axe', license: 'CC BY-SA 4.0' },
     ],
     tier: 'canon',
   },
