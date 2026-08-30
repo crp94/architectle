@@ -44,7 +44,11 @@ describe('GuessField', () => {
     const input = screen.getByLabelText('Name the architect');
 
     fireEvent.change(input, { target: { value: 'Architect' } });
-    const suggestion = screen.getByRole('button', { name: 'Architect One' });
+    // The suggestion's accessible name is now the full descriptor sentence
+    // (design spec §4.3 QoL: name + life dates + movement/typology), not
+    // just the bare name — see the next test for the visible-text version
+    // of this same assertion.
+    const suggestion = screen.getByRole('button', { name: 'Architect One, 1920–1990, Brutalism · Civic' });
     fireEvent.click(suggestion);
 
     expect(onGuess).toHaveBeenCalledWith(architectOne);
@@ -53,5 +57,21 @@ describe('GuessField', () => {
     // screen-reader user must not be left with focus dropped to
     // `document.body`; it must return to the guess input.
     expect(document.activeElement).toBe(input);
+  });
+
+  it('shows life dates and a movement/typology descriptor on each suggestion row', () => {
+    // Autocomplete QoL (design spec §4.3): no new curated field — the
+    // descriptor is derived from the architect's existing primary
+    // movement + typology (architectOne: brutalism/civic fixture above).
+    render(<GuessField locale="en" onGuess={vi.fn()} />);
+    const input = screen.getByLabelText('Name the architect');
+
+    fireEvent.change(input, { target: { value: 'Architect' } });
+
+    const row = screen.getByRole('listitem');
+    expect(row.textContent).toContain('Architect One');
+    expect(row.textContent).toContain('1920–1990');
+    expect(row.textContent).toContain('Brutalism');
+    expect(row.textContent).toContain('Civic');
   });
 });
