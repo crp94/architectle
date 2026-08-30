@@ -391,6 +391,21 @@ export const AMERICAS_BUILDINGS: Building[] = [
       width: 1600,
       height: 1075,
     },
+    // Wave V2-3, batch B8 (image pass on Safdie's existing entry, topped
+    // up elsewhere this batch with Marina Bay Sands and the National
+    // Gallery of Canada). Re-verified the primary licence live and
+    // confirmed the detailRect still frames the stepped-box massing, not
+    // sky or water; added one extraImage, a different ground-level angle.
+    extraImages: [
+      {
+        commonsFile: 'File:Habitat 67 Montreal, QC.jpg',
+        photographer: 'Shawn M. Kent',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Habitat_67_Montreal,_QC.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
     dossier: {
       en: 'Safdie\'s master\'s thesis at McGill asked whether prefabrication could give an apartment the two things a suburban house has and a slab block does not: a garden and daylight from more than one side. Habitat 67 is that thesis built, on a pier in the Saint Lawrence, for the world\'s fair, by an architect of twenty-eight. Three hundred and fifty-four concrete boxes were cast on site, fitted out complete with bathrooms and kitchens on the ground, craned into place and post-tensioned together by the engineer August Komendant into a stepped mass twelve storeys high. The stagger is the whole argument: each of the 158 dwellings as built takes the roof of the box below as a private terrace and gets light from several directions, and walkways thread through the block. The last section was not finished until 1970. The economics never repeated, since the units cost far more than public housing could carry, but the building filled and stayed full. Montréal cited it as a heritage building in 2007 and Québec classified it in 2009.',
       es: 'La tesis de máster de Safdie en McGill se preguntaba si la prefabricación podía dar a un piso las dos cosas que tiene una casa suburbana y no tiene un bloque en lámina: jardín y luz por más de un lado. Habitat 67 es esa tesis construida, sobre un espigón del San Lorenzo, para la exposición universal, por un arquitecto de veintiocho años. Trescientas cincuenta y cuatro cajas de hormigón se fundieron en obra, se equiparon a pie de suelo con baños y cocinas, se izaron con grúa y las unió mediante postesado el ingeniero August Komendant en una masa escalonada de doce plantas. El escalonamiento es todo el argumento: cada una de las 158 viviendas construidas toma como terraza privada la cubierta de la caja inferior y recibe luz por varios lados, y pasarelas peatonales atraviesan el conjunto. La última sección no se terminó hasta 1970. Los números no volvieron a cuadrar —cada unidad costó mucho más de lo que la vivienda pública podía asumir—, pero el edificio se ocupó y siguió ocupado. Montreal lo citó como inmueble patrimonial en 2007 y Quebec lo clasificó en 2009.',
@@ -819,6 +834,71 @@ export const AMERICAS_BUILDINGS: Building[] = [
     sources: [
       { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q2001751', title: 'World Trade Center Transportation Hub (Q2001751)', license: null },
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/World_Trade_Center_Transportation_Hub', title: 'World Trade Center Transportation Hub', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    // Wave V2-3, batch B8. `moshe-safdie` defined above in this same file
+    // (Habitat 67); referenced here, not redefined. Marina Bay Sands
+    // (Singapore) is in asia-southeast.ts.
+    id: 'national-gallery-of-canada',
+    wikidataId: 'Q1068063',
+    name: {
+      en: 'National Gallery of Canada',
+      es: 'Galería Nacional de Canadá',
+      it: 'Galleria Nazionale del Canada',
+    },
+    architectId: 'moshe-safdie',
+    location: { city: 'Ottawa, Ontario', countryCode: 'CA', lat: 45.42944, lon: -75.69889 },
+    inception: 1985,
+    completed: 1988,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['steel-and-glass', 'stone'],
+    structure: {
+      en: "A faceted glazed tower of steel and glass, echoing the Parliament Library's spire across the street, rises over solid pink-granite galleries; a diagonal glazed Great Hall and a 116-metre colonnaded ramp orient the whole plan toward Parliament Hill.",
+      es: 'Una torre acristalada facetada de acero y vidrio, que evoca la aguja de la Biblioteca del Parlamento al otro lado de la calle, se alza sobre las salas macizas de granito rosa; un Gran Salón acristalado en diagonal y una rampa columnada de 116 metros orientan toda la planta hacia Parliament Hill.',
+      it: 'Una torre vetrata sfaccettata in acciaio e vetro, che richiama la guglia della Library of Parliament dall\'altra parte della strada, si eleva sopra le sale piene in granito rosa; una Great Hall vetrata in diagonale e una rampa colonnata di 116 metri orientano l\'intera pianta verso Parliament Hill.',
+    },
+    program: {
+      en: "Canada's national art museum, built by the federal government to replace an overcrowded 1960s gallery and give the national collection a purpose-built home facing Parliament Hill across the Ottawa River.",
+      es: 'Museo nacional de arte de Canadá, construido por el gobierno federal para sustituir una galería de los años sesenta ya desbordada y dar a la colección nacional una sede construida a propósito, frente a Parliament Hill al otro lado del río Ottawa.',
+      it: "Museo nazionale d'arte del Canada, costruito dal governo federale per sostituire una galleria degli anni Sessanta ormai sovraffollata e dare alla collezione nazionale una sede appositamente costruita, di fronte a Parliament Hill al di là del fiume Ottawa.",
+    },
+    heritage: 'none',
+    currentUse: {
+      en: "Working national art museum, Canada's principal collecting institution for historical and contemporary art.",
+      es: 'Museo nacional de arte en funcionamiento, la principal institución de Canadá para la colección de arte histórico y contemporáneo.',
+      it: "Museo nazionale d'arte in funzione, la principale istituzione del Canada per la raccolta di arte storica e contemporanea.",
+    },
+    detailRect: { x: 0.28, y: 0.15, w: 0.42, h: 0.30 },
+    image: {
+      commonsFile: 'File:The National Gallery of Canada Ottawa (39348014150).jpg',
+      photographer: 'Michel Rathwell',
+      license: 'CC BY 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:The_National_Gallery_of_Canada_Ottawa_(39348014150).jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:National Gallery of Canada, Ottawa, Ontario (30035252696).jpg',
+        photographer: 'Ken Lund',
+        license: 'CC BY-SA 2.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:National_Gallery_of_Canada,_Ottawa,_Ontario_(30035252696).jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "Safdie's competition-winning design of 1983 turned the gallery's site on Nepean Point into a single controlling gesture: a great glazed tower, faceted and stepped like a crystal, that repeats in miniature the copper-clad spire of the Library of Parliament visible across the street, so the museum and the seat of government appear to be in conversation. Pink granite quarried in Saguenay clads the solid portions of the building; the glazed Great Hall behind the tower runs on a diagonal axis toward the Parliament Buildings, and a 116-metre colonnaded ramp leads visitors up from the entrance in a deliberate, processional ascent. An interior courtyard, the Water Court, and a landscaped Garden Court reference the Canadian wilderness inside the museum. Built for the federal government to replace an over-crowded 1960s gallery, it opened on 21 May 1988 at a construction cost of about $162 million and now holds more than 93,000 works, including the country's largest collection of Canadian and Indigenous art.",
+      es: 'El proyecto ganador de Safdie en el concurso de 1983 convirtió el emplazamiento de la galería en Nepean Point en un único gesto rector: una gran torre acristalada, facetada y escalonada como un cristal, que repite en miniatura la aguja de cobre de la Biblioteca del Parlamento visible al otro lado de la calle, de modo que el museo y la sede de gobierno parecen dialogar entre sí. El granito rosa, extraído en Saguenay, reviste las partes macizas del edificio; el Gran Salón acristalado tras la torre corre en diagonal hacia los edificios del Parlamento, y una rampa columnada de 116 metros lleva a los visitantes desde la entrada en un ascenso deliberadamente procesional. Un patio interior, la Water Court, y un Garden Court ajardinado evocan dentro del museo la naturaleza salvaje canadiense. Construido por el gobierno federal para sustituir una galería de los años sesenta ya desbordada, se inauguró el 21 de mayo de 1988 con un coste de obra de unos 162 millones de dólares y hoy conserva más de 93.000 obras, entre ellas la mayor colección de arte canadiense e indígena del país.',
+      it: "Il progetto vincitore di Safdie nel concorso del 1983 trasformò il sito della galleria su Nepean Point in un unico gesto dominante: una grande torre vetrata, sfaccettata e a gradoni come un cristallo, che ripete in miniatura la guglia di rame della Library of Parliament visibile dall'altra parte della strada, così che il museo e la sede del governo sembrano dialogare fra loro. Il granito rosa, cavato a Saguenay, riveste le parti piene dell'edificio; la Great Hall vetrata dietro la torre corre in diagonale verso gli edifici del Parlamento, e una rampa colonnata di 116 metri conduce i visitatori dall'ingresso in un'ascesa volutamente processionale. Una corte interna, la Water Court, e un Garden Court paesaggistico richiamano all'interno del museo la natura selvaggia canadese. Costruito dal governo federale per sostituire una galleria degli anni Sessanta ormai sovraffollata, aprì il 21 maggio 1988 con un costo di costruzione di circa 162 milioni di dollari e conserva oggi più di 93.000 opere, fra cui la maggiore collezione di arte canadese e indigena del paese.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1068063', title: 'National Gallery of Canada (Q1068063)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/National_Gallery_of_Canada', title: 'National Gallery of Canada', license: 'CC BY-SA 4.0' },
     ],
     tier: 'canon',
   },

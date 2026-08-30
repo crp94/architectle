@@ -1045,4 +1045,72 @@ export const ASIA_SOUTHEAST_BUILDINGS: Building[] = [
     ],
     tier: 'canon',
   },
+  {
+    // Wave V2-3, batch B8. `moshe-safdie` is defined in
+    // architects/americas.ts (Habitat 67 is his first appearance in the
+    // pool); referenced here, not redefined. Singapore's building FoP
+    // covers commercial use (confirmed against this file's own header
+    // note and Commons' country table), which is what clears a 2011 work
+    // by a living architect.
+    id: 'marina-bay-sands',
+    wikidataId: 'Q548679',
+    name: {
+      en: 'Marina Bay Sands',
+      es: 'Marina Bay Sands',
+      it: 'Marina Bay Sands',
+    },
+    architectId: 'moshe-safdie',
+    location: { city: 'Singapore', countryCode: 'SG', lat: 1.28356, lon: 103.86058 },
+    inception: 2006,
+    completed: 2011,
+    demolished: null,
+    typology: 'commercial',
+    materials: ['steel-and-glass', 'concrete'],
+    structure: {
+      en: 'Three 55-storey towers share a single steel-hulled SkyPark deck across their roofs, prefabricated off-site in fourteen sections and lifted into place, cantilevering 65.5 metres beyond the north tower with no visible support below.',
+      es: 'Tres torres de 55 plantas comparten una única plataforma SkyPark de casco de acero sobre sus cubiertas, prefabricada fuera de obra en catorce secciones e izada ya montada, que vuela 65,5 metros más allá de la torre norte sin apoyo visible.',
+      it: "Tre torri di 55 piani condividono un'unica piattaforma SkyPark dallo scafo d'acciaio sopra le loro coperture, prefabbricata fuori opera in quattordici sezioni e issata già montata, che sbalza di 65,5 metri oltre la torre nord senza sostegno visibile sottostante.",
+    },
+    program: {
+      en: "An integrated casino resort for Las Vegas Sands — hotel, casino, convention centre, museum, theatres and shopping mall — built on reclaimed land in Marina Bay as the government's flagship project to diversify Singapore's tourism economy.",
+      es: 'Complejo integrado de casino para Las Vegas Sands —hotel, casino, centro de convenciones, museo, teatros y centro comercial— construido sobre terrenos ganados al mar en Marina Bay como proyecto insignia del gobierno para diversificar la economía turística de Singapur.',
+      it: "Resort integrato con casinò per Las Vegas Sands — hotel, casinò, centro congressi, museo, teatri e centro commerciale — costruito su terreno bonificato a Marina Bay come progetto di punta del governo per diversificare l'economia turistica di Singapore.",
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Operating integrated resort (hotel, casino, convention centre, ArtScience Museum, shopping mall) and a fixture of the Singapore skyline.',
+      es: 'Complejo integrado en funcionamiento (hotel, casino, centro de convenciones, ArtScience Museum, centro comercial) y elemento fijo del perfil urbano de Singapur.',
+      it: 'Resort integrato in funzione (hotel, casinò, centro congressi, ArtScience Museum, centro commerciale) ed elemento fisso dello skyline di Singapore.',
+    },
+    detailRect: { x: 0.28, y: 0.14, w: 0.35, h: 0.25 },
+    image: {
+      commonsFile: 'File:Marina Bay Sands, Singapore, August 2023.jpg',
+      photographer: 'Ralff Nestor Nacor',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Marina_Bay_Sands,_Singapore,_August_2023.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Marina Bay Sands viewed from the river.jpg',
+        photographer: 'Crannofonix',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Marina_Bay_Sands_viewed_from_the_river.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: "Safdie's brief from Las Vegas Sands was a single building that could hold two casino-hotel towers' worth of program and still read, from across the bay, as one image. The answer sets three 55-storey towers side by side and locks them together at the top with a single cantilevered platform — the SkyPark — whose steel hull was prefabricated in fourteen sections and lifted into place, top-heavy engineering that reads, from below, as a boat balanced on three columns. The deck carries the world's largest rooftop infinity pool, a public observation deck and restaurants, cantilevering 65.5 metres past the north tower with no visible support. Below, an inverted-lotus-shaped pavilion holds the ArtScience Museum, and a wavy glass-and-steel canopy roofs the casino and shopping podium along the waterfront. Construction ran from 2006, delayed past its original 2009 target by the 2008 financial crisis and materials shortages, and the resort opened in phases from April 2010 to a full opening on 17 February 2011, at a total cost of roughly S$8 billion.",
+      es: 'El encargo de Las Vegas Sands a Safdie era un solo edificio capaz de contener el programa de dos torres hotel-casino y aun así leerse, desde el otro lado de la bahía, como una sola imagen. La respuesta coloca tres torres de 55 plantas una junto a otra y las traba en lo alto con una única plataforma en voladizo —el SkyPark—, cuyo casco de acero se prefabricó en catorce secciones y se izó ya hecho, una ingeniería top-heavy que desde abajo se lee como un barco equilibrado sobre tres columnas. La cubierta alberga la piscina infinita de azotea más grande del mundo, un mirador público y restaurantes, y vuela 65,5 metros más allá de la torre norte sin apoyo visible. Abajo, un pabellón con forma de loto invertido alberga el ArtScience Museum, y una marquesina ondulada de vidrio y acero cubre el podio de casino y comercio a lo largo del muelle. Las obras comenzaron en 2006, se retrasaron respecto al objetivo original de 2009 por la crisis financiera de 2008 y la escasez de materiales, y el complejo se inauguró por fases desde abril de 2010 hasta su apertura completa el 17 de febrero de 2011, con un coste total de unos 8.000 millones de dólares singapurenses.',
+      it: "L'incarico di Las Vegas Sands a Safdie era un unico edificio capace di contenere il programma di due torri hotel-casinò e leggersi comunque, dall'altra parte della baia, come un'unica immagine. La risposta accosta tre torri di 55 piani e le serra in alto con un'unica piattaforma a sbalzo — lo SkyPark — il cui scafo d'acciaio fu prefabbricato in quattordici sezioni e issato già assemblato, un'ingegneria top-heavy che dal basso si legge come una barca in equilibrio su tre colonne. La piattaforma ospita la piscina a sfioro sul tetto più grande del mondo, un belvedere pubblico e ristoranti, e sbalza di 65,5 metri oltre la torre nord senza sostegno visibile. Sotto, un padiglione a forma di loto rovesciato ospita l'ArtScience Museum, e una pensilina ondulata di vetro e acciaio copre il podio del casinò e dei negozi lungo il molo. I lavori iniziarono nel 2006, slittarono rispetto all'obiettivo originario del 2009 per la crisi finanziaria del 2008 e la scarsità di materiali, e il resort aprì per fasi dall'aprile 2010 fino all'apertura completa il 17 febbraio 2011, con un costo totale di circa 8 miliardi di dollari di Singapore.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q548679', title: 'Marina Bay Sands (Q548679)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Marina_Bay_Sands', title: 'Marina Bay Sands', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
 ];
