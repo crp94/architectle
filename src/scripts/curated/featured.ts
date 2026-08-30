@@ -22,6 +22,14 @@ export const FEATURED_ARCHITECT_IDS: string[] = [
   'lina-bo-bardi', // 2 buildings (americas-southern.ts)
   'peter-zumthor', // 2 buildings (europe-germanic.ts), incl. Therme Vals
 
+  // --- Added by Wave V2-3 batch B7 (asia) ---
+  'tadao-ando', // 3 buildings, new (asia.ts)
+  'kenzo-tange', // 3 buildings (asia.ts)
+  'kazuyo-sejima', // 3 buildings (asia.ts)
+  'toyo-ito', // 3 buildings, new (asia.ts)
+  'wang-shu', // 2 buildings (asia.ts)
+  'mimar-sinan', // 3 buildings (westasia.ts)
+
   // --- PENDING (Wave V2-3 curation fan-out fills these gaps) -------------
   // Every id below EITHER:
   //   (a) already exists in the pool but currently holds exactly 1
@@ -38,19 +46,18 @@ export const FEATURED_ARCHITECT_IDS: string[] = [
   // (a) exists, currently 1 building:
   // 'antoni-gaudi', 'frank-lloyd-wright', 'le-corbusier',
   // 'mies-van-der-rohe', 'zaha-hadid', 'norman-foster', 'oscar-niemeyer',
-  // 'alvar-aalto', 'louis-kahn', 'jorn-utzon', 'kenzo-tange',
-  // 'filippo-brunelleschi', 'andrea-palladio', 'mimar-sinan',
-  // 'walter-gropius', 'kazuyo-sejima', 'victor-horta',
+  // 'alvar-aalto', 'louis-kahn', 'jorn-utzon',
+  // 'filippo-brunelleschi', 'andrea-palladio',
+  // 'walter-gropius', 'victor-horta',
   // 'charles-rennie-mackintosh', 'moshe-safdie', 'richard-rogers',
   // 'felix-candela', 'balkrishna-doshi',
   //
   // (b) not yet curated as a primary architect at all:
-  // 'renzo-piano', 'tadao-ando', 'frank-gehry', 'rem-koolhaas', 'i-m-pei',
+  // 'renzo-piano', 'frank-gehry', 'rem-koolhaas', 'i-m-pei',
   // 'christopher-wren', 'santiago-calatrava', 'eero-saarinen',
   // 'louis-sullivan', 'jean-nouvel', 'alvaro-siza' (NB: already curated as
   // a NON-featured pool architect — check building count before adding),
-  // 'toyo-ito', 'marcel-breuer', 'philip-johnson', 'buckminster-fuller',
-  // 'michelangelo', 'gustave-eiffel', 'antonin-raymond', 'wang-shu' (also
-  // already in the pool — check building count), 'denise-scott-brown',
-  // 'robert-venturi',
+  // 'marcel-breuer', 'philip-johnson', 'buckminster-fuller',
+  // 'michelangelo', 'gustave-eiffel', 'antonin-raymond',
+  // 'denise-scott-brown', 'robert-venturi',
 ];
