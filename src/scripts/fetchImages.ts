@@ -144,7 +144,13 @@ function updateDimensionsInSource(
   // (a building never lists the same file twice), so the first placeholder
   // after it — indentation-flexible, before the next commonsFile — is
   // exactly this image's own width/height pair.
-  const singleQuoted = `commonsFile: '${commonsFile.replace(/\\/g, '\\\\').replace(/'/g, "\\'")}'`;
+  // Curators quote with single quotes by convention, but switch to double
+  // quotes when the filename itself contains an apostrophe (e.g.
+  // "Lloyd's Building.jpg") — accept either form as the anchor.
+  const anchors = [
+    `commonsFile: '${commonsFile.replace(/\\/g, '\\\\').replace(/'/g, "\\'")}'`,
+    `commonsFile: "${commonsFile.replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"`,
+  ];
   const placeholderRe = /^([ ]*)width: 0,\n([ ]*)height: 0,\n/m;
 
   for (const file of files) {
@@ -157,14 +163,17 @@ function updateDimensionsInSource(
     const blockEnd = nextIdx === -1 ? content.length : nextIdx + 1;
     const block = content.slice(idIdx, blockEnd);
 
-    const anchorIdx = block.indexOf(singleQuoted);
-    if (anchorIdx === -1) {
+    const found = anchors
+      .map((a) => ({ anchor: a, idx: block.indexOf(a) }))
+      .find(({ idx }) => idx !== -1);
+    if (!found) {
       throw new Error(
         `fetchImages: curated entry for "${slug}" in ${file} has no commonsFile line matching `
         + `${JSON.stringify(commonsFile)} — refusing to guess at a replacement.`,
       );
     }
-    const nextAnchorIdx = block.indexOf('commonsFile:', anchorIdx + singleQuoted.length);
+    const { anchor, idx: anchorIdx } = found;
+    const nextAnchorIdx = block.indexOf('commonsFile:', anchorIdx + anchor.length);
     const imageBlock = block.slice(anchorIdx, nextAnchorIdx === -1 ? block.length : nextAnchorIdx);
 
     const m = imageBlock.match(placeholderRe);

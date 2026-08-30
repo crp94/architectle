@@ -412,8 +412,8 @@ export const AMERICAS_MEXICO_BUILDINGS: Building[] = [
         photographer: 'Thomas Ledl',
         license: 'CC BY-SA 4.0',
         sourceUrl: 'https://commons.wikimedia.org/wiki/File:Luis_Barrag%C3%A1n_House_and_Studio_Street_view.JPG',
-        width: 0,
-        height: 0,
+        width: 1600,
+        height: 1067,
       },
     ],
     dossier: {
@@ -486,8 +486,8 @@ export const AMERICAS_MEXICO_BUILDINGS: Building[] = [
         photographer: 'Anna Bertho',
         license: 'CC BY-SA 4.0',
         sourceUrl: 'https://commons.wikimedia.org/wiki/File:Cuadra_San_Cristobal,_Mexico_City.jpg',
-        width: 0,
-        height: 0,
+        width: 1600,
+        height: 1067,
       },
     ],
     dossier: {
@@ -539,8 +539,8 @@ export const AMERICAS_MEXICO_BUILDINGS: Building[] = [
       photographer: 'TSolange',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Casa_Gilardi_de_Luis_Barrag%C3%A1n,_2024.jpg',
-      width: 0,
-      height: 0,
+      width: 960,
+      height: 1280,
     },
     extraImages: [
       {
@@ -548,8 +548,8 @@ export const AMERICAS_MEXICO_BUILDINGS: Building[] = [
         photographer: 'Arudana',
         license: 'CC BY-SA 4.0',
         sourceUrl: 'https://commons.wikimedia.org/wiki/File:Casa_gilardi.jpg',
-        width: 0,
-        height: 0,
+        width: 1600,
+        height: 1200,
       },
     ],
     dossier: {
@@ -610,8 +610,8 @@ export const AMERICAS_MEXICO_BUILDINGS: Building[] = [
         photographer: 'ProtoplasmaKid',
         license: 'CC BY-SA 4.0',
         sourceUrl: 'https://commons.wikimedia.org/wiki/File:Vista_a%C3%A9rea_del_Palacio_de_los_Deportes_01.jpg',
-        width: 0,
-        height: 0,
+        width: 1600,
+        height: 900,
       },
     ],
     dossier: {
@@ -682,8 +682,8 @@ export const AMERICAS_MEXICO_BUILDINGS: Building[] = [
         photographer: 'Dge',
         license: 'CC BY-SA 3.0',
         sourceUrl: 'https://commons.wikimedia.org/wiki/File:Restaurante_Los_Manantiales_02.jpg',
-        width: 0,
-        height: 0,
+        width: 1600,
+        height: 1200,
       },
     ],
     dossier: {

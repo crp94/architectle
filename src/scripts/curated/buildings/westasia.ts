@@ -51,8 +51,8 @@ export const WESTASIA_BUILDINGS: Building[] = [
         photographer: 'Dosseman',
         license: 'CC BY-SA 4.0',
         sourceUrl: 'https://commons.wikimedia.org/wiki/File:Selimiye_Mosque_025.jpg',
-        width: 0,
-        height: 0,
+        width: 1600,
+        height: 1021,
       },
     ],
     dossier: {
@@ -417,8 +417,8 @@ export const WESTASIA_BUILDINGS: Building[] = [
         photographer: 'Arild Vågen',
         license: 'CC BY-SA 3.0',
         sourceUrl: 'https://commons.wikimedia.org/wiki/File:S%C3%BCleymaniye_Mosque_February_2013_01.jpg',
-        width: 0,
-        height: 0,
+        width: 1600,
+        height: 1174,
       },
     ],
     dossier: {
@@ -484,8 +484,8 @@ export const WESTASIA_BUILDINGS: Building[] = [
         photographer: 'Yahia.Mokhtar',
         license: 'CC BY-SA 4.0',
         sourceUrl: 'https://commons.wikimedia.org/wiki/File:Mihrimah_Sultan_Mosque_(%C3%9Csk%C3%BCdar)_(26).jpg',
-        width: 0,
-        height: 0,
+        width: 1600,
+        height: 1200,
       },
     ],
     dossier: {

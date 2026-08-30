@@ -1097,8 +1097,8 @@ export const ASIA_SOUTHEAST_BUILDINGS: Building[] = [
         photographer: 'Crannofonix',
         license: 'CC BY-SA 4.0',
         sourceUrl: 'https://commons.wikimedia.org/wiki/File:Marina_Bay_Sands_viewed_from_the_river.jpg',
-        width: 0,
-        height: 0,
+        width: 1600,
+        height: 1200,
       },
     ],
     dossier: {

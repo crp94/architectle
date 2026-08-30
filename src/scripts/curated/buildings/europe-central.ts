@@ -926,8 +926,8 @@ export const EUROPE_CENTRAL_BUILDINGS: Building[] = [
         photographer: 'Chabe01',
         license: 'CC BY-SA 4.0',
         sourceUrl: 'https://commons.wikimedia.org/wiki/File:Maison_dansante_Prague_1.jpg',
-        width: 0,
-        height: 0,
+        width: 1067,
+        height: 1600,
       },
     ],
     dossier: {
