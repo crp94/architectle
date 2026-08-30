@@ -421,7 +421,14 @@ export const ASIA_SOUTH_BUILDINGS: Building[] = [
       es: 'Campus universitario en uso.',
       it: 'Campus universitario in uso.',
     },
-    detailRect: { x: 0.08, y: 0.07, w: 0.30, h: 0.28 },
+    // Wave V2-3, batch B8 (image pass on Doshi's existing entry, topped
+    // up elsewhere this batch with Amdavad ni Gufa). The inherited
+    // detailRect (0.08, 0.07, 0.30, 0.28) was a real instance of the
+    // pattern this contract warns about: cropping it showed almost
+    // nothing but creeper foliage, no readable architecture. Re-derived
+    // from the actual image — this rect frames the coursed-granite
+    // corridor columns and pergola beam the dossier describes.
+    detailRect: { x: 0.03, y: 0.32, w: 0.22, h: 0.30 },
     image: {
       commonsFile: 'Indian Institute of Management Bangalore, Central Pergola in 2015.jpg',
       photographer: 'Burhan.nameer',
@@ -430,6 +437,16 @@ export const ASIA_SOUTH_BUILDINGS: Building[] = [
       width: 1600,
       height: 1000,
     },
+    extraImages: [
+      {
+        commonsFile: 'File:Indian Institute of Management Bangalore, Entrance Main Block.jpg',
+        photographer: 'Apb2693',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Indian_Institute_of_Management_Bangalore,_Entrance_Main_Block.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
     dossier: {
       en: 'Doshi looked at Fatehpur Sikri and took from it a lesson about corridors. Rather than a building with rooms off a passage, IIM Bangalore is a ladder of parallel blocks strung along covered pedestrian streets, and the streets are the architecture: they widen and narrow, open to courts and gardens, and are roofed in alternating stretches of concrete pergola and glazed skylight, so the light through them shifts hour by hour and never twice the same. Everything is faced in rough local granite laid in courses, warm and slightly coarse to the hand, and the creepers were planted from the start to grow across the pergolas. There is no facade in the usual sense and no front door of consequence; the section, not the elevation, does the work. Designed from 1977, with the original scheme complete by 1983 and construction continuing to about 1985.',
       es: 'Doshi miró Fatehpur Sikri y extrajo de allí una lección sobre corredores. Más que un edificio con habitaciones a un pasillo, el IIM de Bangalore es una escalera de bloques paralelos ensartados en calles peatonales cubiertas, y las calles son la arquitectura: se ensanchan y estrechan, se abren a patios y jardines y se cubren por tramos alternos de pérgola de hormigón y lucernario acristalado, de modo que la luz que las atraviesa cambia hora a hora y nunca se repite. Todo va revestido de granito local en bruto colocado a hiladas, cálido y algo áspero al tacto, y las trepadoras se plantaron desde el principio para que ganaran las pérgolas. No hay fachada en el sentido habitual ni puerta principal de importancia: el trabajo lo hace la sección, no el alzado. Proyectado desde 1977, con el esquema original terminado en 1983 y obras hasta 1985 aproximadamente.',
@@ -440,6 +457,77 @@ export const ASIA_SOUTH_BUILDINGS: Building[] = [
       { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q46021', title: 'Indian Institute of Management, Bengaluru (Q46021)', license: null },
       { kind: 'institution', url: 'https://www.iimb.ac.in/about-institute/architecture', title: 'Architecture — Indian Institute of Management Bangalore', license: null },
       { kind: 'institution', url: 'https://www.pritzkerprize.com/laureates/balkrishna-doshi', title: 'Balkrishna Doshi — 2018 Pritzker Architecture Prize Laureate', license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    // Wave V2-3, batch B8. `balkrishna-doshi` defined above in this file
+    // (IIM Bangalore); referenced here, not redefined. Doshi died 24
+    // January 2023 — under 70 years in copyright, so India's FoP
+    // (s.52(1)(s)) plus strict exterior-only framing is what clears this
+    // entry; the primary and extraImage below were hand-checked to
+    // confirm they show only the above-ground mound, never the gallery's
+    // underground interior, which Husain's paintings would make a clear
+    // interior-derivative-work problem regardless of the building's own
+    // licence status.
+    id: 'amdavad-ni-gufa',
+    wikidataId: 'Q1744232',
+    name: {
+      en: 'Amdavad ni Gufa',
+      es: 'Amdavad ni Gufa',
+      it: 'Amdavad ni Gufa',
+    },
+    architectId: 'balkrishna-doshi',
+    location: { city: 'Ahmedabad', countryCode: 'IN', lat: 23.03611, lon: 72.54944 },
+    inception: 1992,
+    completed: 1995,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['concrete'],
+    structure: {
+      en: 'A cluster of interlocking underground domes and vaults, cast in one-inch ferrocement over a mesh of branching steel rods with no columns and no conventional foundation, breaking the surface only as mosaic-tiled mounds pierced by conical skylights.',
+      es: 'Un racimo de cúpulas y bóvedas subterráneas entrelazadas, vaciadas en ferrocemento de una pulgada sobre una malla de varillas de acero ramificadas, sin columnas ni cimentación convencional, que solo asoma en superficie como montículos revestidos de mosaico perforados por lucernarios cónicos.',
+      it: 'Un grappolo di cupole e volte sotterranee incastrate, gettate in ferrocemento spesso un pollice su una maglia di tondini d\'acciaio ramificati, senza colonne né fondazioni convenzionali, che affiora in superficie solo come tumuli rivestiti di mosaico forati da lucernari conici.',
+    },
+    program: {
+      en: 'A permanent gallery designed by Doshi at the request of the painter M. F. Husain to exhibit Husain\'s work, built with no client but the two artists themselves.',
+      es: 'Galería permanente proyectada por Doshi a petición del pintor M. F. Husain para exponer su obra, construida sin más promotor que los dos artistas.',
+      it: 'Galleria permanente progettata da Doshi su richiesta del pittore M. F. Husain per esporre la sua opera, costruita senza altro committente che i due artisti stessi.',
+    },
+    heritage: 'regional',
+    currentUse: {
+      en: 'Working art gallery, still displaying M. F. Husain\'s paintings and sculptural reliefs and hosting rotating exhibitions.',
+      es: 'Galería de arte en funcionamiento, que sigue exhibiendo las pinturas y relieves escultóricos de M. F. Husain y acoge exposiciones temporales.',
+      it: 'Galleria d\'arte in funzione, che continua a esporre i dipinti e i rilievi scultorei di M. F. Husain e ospita mostre temporanee.',
+    },
+    detailRect: { x: 0.30, y: 0.15, w: 0.35, h: 0.35 },
+    image: {
+      commonsFile: 'File:Amdavad ni gufa.jpg',
+      photographer: 'Vaishal Dalal',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Amdavad_ni_gufa.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Amdavad ni Gufa, Ahmedabad.JPG',
+        photographer: 'Shailya Dalal',
+        license: 'CC BY-SA 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Amdavad_ni_Gufa,_Ahmedabad.JPG',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: 'Doshi built this as M. F. Husain\'s permanent gallery, at the painter\'s own request, after Husain had covered the walls of Doshi\'s earlier art centre with murals during a visit. What resulted is barely a building in the ordinary sense: a cluster of interlocking domes and vaults, cast in one-inch-thick ferrocement over a mesh of thin steel-rod branches Doshi likened to tree roots, with no columns and no conventional foundation — the whole shell rests on a bed of wire mesh and mortar laid directly on the ground. Above ground, only the domes break the surface, their exteriors clad in a mosaic of broken white china and crockery, pierced by conical skylights Doshi called "snouts," each one throwing a moving disc of sunlight across the space beneath as the day passes. Construction ran from 1992 to 1995, the gallery built first and the surrounding amenities after. Below, the entire interior surface — walls, columns, ceiling — is covered in Husain\'s paintings, drawings and sculptural reliefs, made specifically for these curved surfaces.',
+      es: 'Doshi construyó esto como galería permanente de M. F. Husain, a petición del propio pintor, después de que Husain cubriera de murales las paredes de un centro de arte anterior de Doshi durante una visita. El resultado apenas es un edificio en el sentido habitual: un racimo de cúpulas y bóvedas entrelazadas, vaciadas en ferrocemento de una pulgada de espesor sobre una malla de finas varillas de acero que Doshi comparaba con raíces de árbol, sin columnas ni cimentación convencional: toda la cáscara descansa sobre un lecho de malla metálica y mortero tendido directamente sobre el terreno. Sobre el nivel del suelo solo asoman las cúpulas, revestidas por fuera de un mosaico de porcelana y vajilla rota, perforadas por lucernarios cónicos que Doshi llamaba «hocicos», cada uno proyectando un disco de luz solar en movimiento sobre el espacio de abajo a medida que avanza el día. Las obras se desarrollaron entre 1992 y 1995, primero la galería y después las instalaciones circundantes. Abajo, toda la superficie interior —muros, columnas, techo— está cubierta de pinturas, dibujos y relieves escultóricos de Husain, hechos expresamente para estas superficies curvas.',
+      it: 'Doshi costruì questo spazio come galleria permanente di M. F. Husain, su richiesta dello stesso pittore, dopo che Husain aveva coperto di murales le pareti di un precedente centro d\'arte di Doshi durante una visita. Il risultato è a stento un edificio nel senso consueto: un grappolo di cupole e volte incastrate, gettate in ferrocemento spesso un pollice su una maglia di sottili tondini d\'acciaio che Doshi paragonava a radici d\'albero, senza colonne né fondazioni convenzionali: l\'intero guscio poggia su un letto di rete metallica e malta steso direttamente sul terreno. In superficie affiorano solo le cupole, rivestite all\'esterno da un mosaico di porcellana e stoviglie rotte, forate da lucernari conici che Doshi chiamava «musi», ciascuno dei quali proietta un disco di luce solare in movimento sullo spazio sottostante col passare della giornata. I lavori si svolsero fra il 1992 e il 1995, prima la galleria e poi gli spazi accessori. Sotto, l\'intera superficie interna — pareti, colonne, soffitto — è ricoperta di dipinti, disegni e rilievi scultorei di Husain, realizzati appositamente per queste superfici curve.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1744232', title: 'Amdavad ni Gufa (Q1744232)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Amdavad_ni_Gufa', title: 'Amdavad ni Gufa', license: 'CC BY-SA 4.0' },
     ],
     tier: 'canon',
   },
