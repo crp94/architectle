@@ -18,8 +18,10 @@ languages, MIT-licensed, deployed on Vercel with zero secrets required to
 build.
 
 Full disclosure on the data, the curation policy and this project's own
-honest limitations lives at `/about` in the running app — read that before
-citing anything here as fact.
+honest limitations lives right here in this README (see "Data status"
+below) and in `AGENTS.md`'s curation contract — `/about` in the running app
+is deliberately reduced to what-the-game-is/how-to-play and no longer
+republishes it. Read the sources below before citing anything as fact.
 
 ## Languages
 
@@ -85,8 +87,11 @@ non-binary architects, ≥60% canon-tier, max 3 buildings credited to one
 architect — see `src/scripts/validators/coverage.ts`). None of it is scraped
 automatically and none of it ships without passing `data:curate`.
 
-It is a curated selection, not a research dataset, and it says so plainly at
-`/about`, which is the authoritative source for the following and much more:
+It is a curated selection, not a research dataset, and the findings below
+are the honest account of that — this README and `AGENTS.md`'s curation
+contract are the authoritative, up to date sources for it (`/about` used to
+carry this account too, but was deliberately reduced to what-the-game-is/
+how-to-play and no longer does):
 
 - **Copyright law removes real architects from an open-licensed pool.**
   France has no Freedom of Panorama for architecture, so there is no Le
@@ -110,7 +115,10 @@ It is a curated selection, not a research dataset, and it says so plainly at
   disclosed, not just the flattering one.
 - The geography targets count where a building stands, not who is credited
   for designing it — a gap that is real and only partially fixed (see the
-  Kenyatta International Conference Centre / David Mutiso case at `/about`).
+  Kenyatta International Conference Centre / David Mutiso case above).
 
-Read `/about` for the full account, including the exact wording used for
-each finding and why it's worded that way.
+See `AGENTS.md`'s curation contract for the rules each of these findings
+produced, and the SDD ledgers under `.superpowers/sdd/` (in particular
+`2026-08-26-architectle/progress.md` and
+`2026-08-30-architectle-v2/progress.md`) for the full task-by-task record of
+how each was found and fixed.

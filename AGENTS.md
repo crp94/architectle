@@ -13,10 +13,15 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 This project's real product is trust in the data as much as the game itself.
 The rules below are not style preferences — each one exists because it is
 the fix for a defect that actually happened during curation (see
-`.superpowers/sdd/2026-08-26-architectle/progress.md` for the full ledger,
-and `/about` in the running app for the reader-facing account). Follow them
-on every change that touches `src/scripts/curated/**`, the validators, or any
-UI that renders curated data.
+`.superpowers/sdd/2026-08-26-architectle/progress.md` for v1's full ledger
+and `.superpowers/sdd/2026-08-30-architectle-v2/progress.md` for v2's, plus
+the design specs and plans under `docs/superpowers/specs/` and
+`docs/superpowers/plans/`, for the complete findings record — `/about` in
+the running app is deliberately reduced to what-this-is/how-to-play and no
+longer carries this; README.md's Data status section carries the short,
+reader-facing account instead). Follow them on every change that touches
+`src/scripts/curated/**`, the validators, or any UI that renders curated
+data.
 
 ## Licence verification
 
@@ -80,8 +85,10 @@ buildings credited to one architect). These are hard failures. Do not add a
 building or architect that would push the pool below/above a threshold
 without also fixing the shortfall elsewhere, and never pad a quota with a
 fabricated or thinly-sourced fact — the fix for a missed target is more
-real research, never invented content. See `/about` for the current
-measured numbers against each target and their margins.
+real research, never invented content. Run `npm run data:curate` and read
+the coverage summary table it prints — that live output, not `/about` (which
+no longer republishes it), is the current measured numbers against each
+target and their margins.
 
 Watch specifically for the attribution-pressure failure mode: a gender quota
 combined with this game's single-`architectId`-per-building answer key can

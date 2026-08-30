@@ -7,8 +7,9 @@
 //
 // v2.1: reduced at the curator's request to exactly two sections — what the
 // game is, and how to play it. The project's full data/methodology
-// disclosures live in the repo (README, AGENTS.md, docs/) rather than in
-// player-facing copy.
+// disclosures live in the repo instead of in player-facing copy — see
+// README.md's "Data status" section for the reader-facing findings and
+// AGENTS.md's curation contract for the rules those findings produced.
 
 import type { LocalizedString } from '@/types/common';
 
