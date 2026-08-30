@@ -937,6 +937,16 @@ export const EUROPE_WEST_BUILDINGS: Building[] = [
       width: 0,
       height: 0,
     },
+    extraImages: [
+      {
+        commonsFile: 'Garabit-Viadukt, Viaduc de Garabit, Brückentrog.JPG',
+        photographer: 'Güwy',
+        license: 'CC0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Garabit-Viadukt,_Viaduc_de_Garabit,_Br%C3%BCckentrog.JPG',
+        width: 0,
+        height: 0,
+      },
+    ],
     dossier: {
       en: 'Gustave Eiffel\'s engineering firm built the Garabit Viaduct between 1882 and 1884 to carry the railway from Marvejols to Neussargues across the Truyère gorge in the Cantal, on a single track 122 metres above the river. The structure is a two-hinged parabolic arch of latticed wrought iron, its longest span 165 metres, that was for a time the highest bridge in the world; the deck rides on iron piers rising from the arch\'s crown rather than resting directly on the arch itself, letting the whole structure flex under load and temperature. Chief engineer Maurice Koechlin, who had worked out the calculations for what became the Eiffel Tower five years later, is credited with the design; Garabit is often read as a proof of the same wind-load and lattice principles the Tower would apply at a different scale. Opened to traffic in 1885, the line still carries occasional passenger trains, though cracks discovered in a foundation pier in 2009 led to a lasting reduced speed limit of 10 km/h across the crossing. It is a classified monument historique.',
       es: 'La empresa de ingeniería de Gustave Eiffel construyó el viaducto de Garabit entre 1882 y 1884 para llevar la línea de ferrocarril de Marvejols a Neussargues a través del desfiladero del Truyère, en el Cantal, sobre una única vía a 122 metros sobre el río. La estructura es un arco parabólico biarticulado de hierro forjado en celosía, con un vano principal de 165 metros, que fue durante un tiempo el puente más alto del mundo; el tablero se apoya en pilares de hierro que arrancan de la clave del arco en lugar de descansar directamente sobre él, lo que permite que toda la estructura flexione con la carga y la temperatura. Se atribuye el diseño al ingeniero jefe Maurice Koechlin, que había hecho los cálculos de lo que cinco años después sería la Torre Eiffel; Garabit suele leerse como el ensayo de los mismos principios de carga de viento y celosía que la Torre aplicaría a otra escala. Abierto al tráfico en 1885, la línea aún lleva trenes de pasajeros ocasionales, aunque unas grietas halladas en un pilar de cimentación en 2009 obligaron a un límite de velocidad reducido y permanente de 10 km/h en el cruce. Es monumento histórico clasificado.',

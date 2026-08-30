@@ -311,8 +311,8 @@ export const EUROPE_NORDIC_BUILDINGS: Building[] = [
       photographer: 'Tiia Monto',
       license: 'CC BY-SA 4.0',
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:S%C3%A4yn%C3%A4tsalon_kunnantalo_2.jpg',
-      width: 0,
-      height: 0,
+      width: 1600,
+      height: 1150,
     },
     extraImages: [
       {
