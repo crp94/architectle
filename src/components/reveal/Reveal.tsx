@@ -5,11 +5,11 @@ import Image from 'next/image';
 import type { Building } from '@/types/building';
 import type { Architect } from '@/types/architect';
 import type { Comparison } from '@/lib/axes';
-import type { GameState } from '@/lib/storage';
+import type { Stats } from '@/lib/storage';
 import { t, type Locale } from '@/lib/i18n';
 import { theme } from '@/lib/theme';
 import { shareText } from '@/lib/share';
-import { puzzleNumber } from '@/lib/daily';
+import { displayPuzzleNumber } from '@/lib/daily';
 import {
   architectMovementLabel, architectSpan, buildFacts, provenanceLine, statsSummary,
 } from '@/lib/facts';
@@ -28,14 +28,15 @@ export type RevealProps = {
   comparisons: Comparison[];
   locale?: Locale;
   /**
-   * The daily round's up-to-date stats (design spec's own `GameState.stats`
-   * — played/wins/streak/maxStreak/distribution). Omit entirely for
-   * unlimited-mode rounds, which never track daily stats at all: the
-   * stats block (and the share text's streak line, which reads
-   * `stats.streak`) only renders when this is provided, rather than
-   * showing a misleading all-zero block for a mode with no real streak.
+   * The daily round's up-to-date persistent stats (src/lib/storage.ts's
+   * `Stats` — played/wins/streak/maxStreak/distribution, kept independently
+   * of any single day's `GameState`). Omit entirely for unlimited-mode
+   * rounds, which never track daily stats at all: the stats block (and the
+   * share text's streak line, which reads `stats.streak`) only renders when
+   * this is provided, rather than showing a misleading all-zero block for a
+   * mode with no real streak.
    */
-  stats?: GameState['stats'];
+  stats?: Stats;
 };
 
 /**
@@ -47,11 +48,16 @@ export type RevealProps = {
  * signature and the `data-testid="reveal"` root / `"reveal-message"` node
  * that `<GameBoard />` and its test suite depend on.
  */
+// Which of the two clipboard-writing buttons last resolved, and how
+// (codereview findings #4/#10): the two separate `shareCopied`/`copyCopied`
+// booleans, and their duplicated "did the write throw?" guard blocks, are
+// collapsed into one state driven by a single shared helper below.
+type CopyState = 'share' | 'copy' | 'failed-share' | 'failed-copy' | null;
+
 export function Reveal({
   building, architect, solved, guessesUsed, comparisons, locale = 'en', stats,
 }: RevealProps) {
-  const [shareCopied, setShareCopied] = useState(false);
-  const [copyCopied, setCopyCopied] = useState(false);
+  const [copied, setCopied] = useState<CopyState>(null);
 
   const buildingName = building.name[locale] ?? building.name.en;
   const dossier = building.dossier[locale] ?? building.dossier.en;
@@ -67,13 +73,35 @@ export function Reveal({
   // leak the answer (see src/lib/share.ts) — and `stats` is optional, so
   // an unlimited-mode round (no stats prop) simply omits the streak line.
   const shareTextValue = shareText({
-    puzzleNumber: puzzleNumber(new Date()),
+    puzzleNumber: displayPuzzleNumber(new Date()),
     guessesUsed,
     comparisons,
     locale,
     streak: stats?.streak,
   });
   const summary = stats ? statsSummary(stats) : null;
+
+  // Shared by both handleShare's fallback path and the explicit Copy button
+  // below (codereview finding #4): writes `shareTextValue` to the clipboard
+  // and sets `copied` to the success or failure variant for `kind`. Wrapped
+  // in try/catch — `navigator.clipboard.writeText` rejects for real (denied
+  // permission, an insecure context, a browser quirk), and an unhandled
+  // rejection there must never reach the console, let alone crash anything.
+  // Missing API support (`navigator.clipboard?.writeText` absent entirely)
+  // degrades the same way a genuine write failure does: a visible "couldn't
+  // copy" state, not silence.
+  async function copyToClipboard(kind: 'share' | 'copy') {
+    try {
+      if (typeof navigator === 'undefined' || !navigator.clipboard?.writeText) {
+        setCopied(kind === 'share' ? 'failed-share' : 'failed-copy');
+        return;
+      }
+      await navigator.clipboard.writeText(shareTextValue);
+      setCopied(kind);
+    } catch {
+      setCopied(kind === 'share' ? 'failed-share' : 'failed-copy');
+    }
+  }
 
   async function handleShare() {
     if (typeof navigator !== 'undefined' && typeof navigator.share === 'function') {
@@ -92,10 +120,7 @@ export function Reveal({
         if (err instanceof Error && err.name === 'AbortError') return;
       }
     }
-    if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
-      await navigator.clipboard.writeText(shareTextValue);
-      setShareCopied(true);
-    }
+    await copyToClipboard('share');
   }
 
   // A second, explicit, always-visible copy affordance (spec: "many
@@ -105,10 +130,7 @@ export function Reveal({
   // labelled "Copy" button next to it means a desktop player never has to
   // guess what "Share" will actually do on their machine.
   async function handleCopy() {
-    if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
-      await navigator.clipboard.writeText(shareTextValue);
-      setCopyCopied(true);
-    }
+    await copyToClipboard('copy');
   }
 
   return (
@@ -299,7 +321,9 @@ export function Reveal({
             className="bg-ink px-5 py-2 text-xs uppercase tracking-wide text-paper"
             style={{ fontFamily: theme.type.ui }}
           >
-            {shareCopied ? t(locale, 'shareCopied') : t(locale, 'shareButton')}
+            {copied === 'share' && t(locale, 'shareCopied')}
+            {copied === 'failed-share' && t(locale, 'shareCopyFailed')}
+            {copied !== 'share' && copied !== 'failed-share' && t(locale, 'shareButton')}
           </button>
           <button
             type="button"
@@ -308,7 +332,9 @@ export function Reveal({
             className="border px-5 py-2 text-xs uppercase tracking-wide text-ink"
             style={{ fontFamily: theme.type.ui, borderColor: theme.color.frameLine, borderWidth: theme.rule.hairline }}
           >
-            {copyCopied ? t(locale, 'shareCopied') : t(locale, 'shareCopyButton')}
+            {copied === 'copy' && t(locale, 'shareCopied')}
+            {copied === 'failed-copy' && t(locale, 'shareCopyFailed')}
+            {copied !== 'copy' && copied !== 'failed-copy' && t(locale, 'shareCopyButton')}
           </button>
         </div>
       </div>

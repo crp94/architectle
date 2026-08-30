@@ -104,6 +104,10 @@ describe('Reveal', () => {
     const img = screen.getByTestId('reveal-photo');
     const src = img.getAttribute('src') ?? '';
     expect(decodeURIComponent(src)).toContain(`/buildings/${baseBuilding.id}.avif`);
+    // Codereview finding #2: the crop stage and clue strip hide the real
+    // name behind a neutral placeholder until the round resolves — but once
+    // it HAS resolved, the reveal is the one place the real name belongs.
+    expect(img.getAttribute('alt')).toBe(baseBuilding.name.en);
     expect(img.getAttribute('width')).toBe(String(baseBuilding.image.width));
     expect(img.getAttribute('height')).toBe(String(baseBuilding.image.height));
     // Task 11's CropStage zooms in by inflating the <img> past 100% width/
@@ -296,6 +300,44 @@ describe('Reveal', () => {
     expect(await screen.findByText(/copied/i)).toBeTruthy();
   });
 
+  it('shows a visible failure state (not an unhandled rejection) when the clipboard write itself rejects, via the Copy button', async () => {
+    Object.defineProperty(navigator, 'share', { value: undefined, configurable: true });
+    const writeText = vi.fn().mockRejectedValue(new Error('clipboard blocked'));
+    Object.defineProperty(navigator, 'clipboard', { value: { writeText }, configurable: true });
+    renderReveal();
+
+    fireEvent.click(screen.getByTestId('reveal-copy'));
+
+    await waitFor(() => expect(writeText).toHaveBeenCalledTimes(1));
+    expect(await screen.findByText(/couldn.t copy/i)).toBeTruthy();
+    // The other button's label is unaffected by the Copy button's failure.
+    expect(screen.getByTestId('reveal-share').textContent).toBe('Share');
+  });
+
+  it('shows the same visible failure state when navigator.share falls through to a rejecting clipboard write', async () => {
+    const shareMock = vi.fn().mockRejectedValue(new Error('no share targets available'));
+    Object.defineProperty(navigator, 'share', { value: shareMock, configurable: true });
+    const writeText = vi.fn().mockRejectedValue(new Error('clipboard blocked'));
+    Object.defineProperty(navigator, 'clipboard', { value: { writeText }, configurable: true });
+    renderReveal();
+
+    fireEvent.click(screen.getByTestId('reveal-share'));
+
+    await waitFor(() => expect(shareMock).toHaveBeenCalledTimes(1));
+    await waitFor(() => expect(writeText).toHaveBeenCalledTimes(1));
+    expect(await screen.findByText(/couldn.t copy/i)).toBeTruthy();
+  });
+
+  it('shows a failure state when the clipboard API is entirely unavailable', async () => {
+    Object.defineProperty(navigator, 'share', { value: undefined, configurable: true });
+    Object.defineProperty(navigator, 'clipboard', { value: undefined, configurable: true });
+    renderReveal();
+
+    fireEvent.click(screen.getByTestId('reveal-copy'));
+
+    expect(await screen.findByText(/couldn.t copy/i)).toBeTruthy();
+  });
+
   it('omits the stats block entirely when no stats prop is given (e.g. unlimited mode)', () => {
     renderReveal();
     expect(screen.queryByTestId('reveal-stats')).toBeNull();
@@ -303,7 +345,7 @@ describe('Reveal', () => {
 
   it('renders a compact stats block, including a scaled guess-distribution bar, when stats are given', () => {
     const stats = {
-      played: 10, wins: 8, streak: 3, maxStreak: 5, distribution: [0, 1, 2, 3, 2, 0],
+      played: 10, wins: 8, streak: 3, maxStreak: 5, distribution: [0, 1, 2, 3, 2, 0], lastWinPuzzle: 100,
     };
     render(
       <Reveal
@@ -337,7 +379,7 @@ describe('Reveal', () => {
     const shareMock = vi.fn().mockResolvedValue(undefined);
     Object.defineProperty(navigator, 'share', { value: shareMock, configurable: true });
     const stats = {
-      played: 6, wins: 6, streak: 6, maxStreak: 6, distribution: [0, 0, 0, 0, 0, 6],
+      played: 6, wins: 6, streak: 6, maxStreak: 6, distribution: [0, 0, 0, 0, 0, 6], lastWinPuzzle: 100,
     };
     render(
       <Reveal

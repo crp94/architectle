@@ -5,7 +5,7 @@ import { GameBoard } from "@/components/game/GameBoard";
 import { LocaleSwitcher } from "@/components/game/LocaleSwitcher";
 import { buildingBySlug } from "@/lib/pool";
 import { SITE_URL } from "@/lib/site";
-import { puzzleNumber } from "@/lib/daily";
+import { displayPuzzleNumber } from "@/lib/daily";
 import { websiteJsonLd } from "@/lib/jsonld";
 
 // The index signature (beyond the two named fields this page itself reads)
@@ -49,11 +49,12 @@ export async function generateMetadata({
   const params = await searchParams;
   const locale = resolveLocale(params.lang);
   const now = new Date();
-  // `puzzleNumber` runs negative/zero before `EPOCH` (src/lib/daily.ts) —
-  // real for any environment (a preview deploy, a pre-launch build) whose
-  // clock reads before launch day. Clamped to 1 so a description meant to
-  // read as a freshness SIGNAL never reads as a visible bug instead.
-  const n = Math.max(1, puzzleNumber(now));
+  // `displayPuzzleNumber` (src/lib/daily.ts) clamps the raw, possibly
+  // negative/zero pre-EPOCH `puzzleNumber` to 1 so a description meant to
+  // read as a freshness SIGNAL never reads as a visible bug instead — the
+  // same clamp Reveal.tsx's share/preview text uses, defined once so the two
+  // can't drift apart.
+  const n = displayPuzzleNumber(now);
   const description = t(locale, "metaHomeDescription", {
     n,
     date: new Intl.DateTimeFormat(locale, { dateStyle: "long" }).format(now),
