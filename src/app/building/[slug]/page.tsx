@@ -12,6 +12,9 @@ import { FactStrip } from '@/components/archive/FactStrip';
 import { Dossier } from '@/components/archive/Dossier';
 import { ContextBlockView } from '@/components/archive/ContextBlockView';
 import { Provenance } from '@/components/archive/Provenance';
+import { ImageGallery } from '@/components/archive/ImageGallery';
+import { GalleryFrame } from '@/components/ui/GalleryFrame';
+import { SectionRule } from '@/components/ui/SectionRule';
 
 const LOCALE = 'en' as const;
 
@@ -75,14 +78,14 @@ export default async function BuildingPage({ params }: { params: Promise<Params>
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(buildingJsonLd(building, architect)) }}
       />
-      <article className="flex flex-col gap-6 p-4 md:p-8">
+      <article className="flex flex-col gap-8 p-4 md:p-8">
         <div className="flex flex-col gap-1">
-          <p className="text-xs uppercase tracking-wide text-warn" style={{ fontFamily: theme.type.mono }}>
+          <p className="text-xs uppercase tracking-[0.2em] text-accent" style={{ fontFamily: theme.type.ui }}>
             {t(LOCALE, 'navBuildingsLink')}
           </p>
           <h1
             data-testid="archive-headline"
-            className="text-3xl uppercase leading-none md:text-4xl"
+            className="text-3xl leading-none md:text-5xl"
             style={{ fontFamily: theme.type.display }}
           >
             {buildingName}
@@ -109,8 +112,12 @@ export default async function BuildingPage({ params }: { params: Promise<Params>
         </div>
 
         <div className="flex flex-col gap-6 md:flex-row">
-          <div className="md:w-1/2">
-            <div className="relative w-full" style={{ boxShadow: theme.shadow.hard }}>
+          <div className="flex flex-col gap-3 md:w-1/2">
+            <GalleryFrame
+              caption={`${buildingName} · ${t(LOCALE, 'provenancePhotographerLabel')}: ${building.image.photographer}`}
+              width={building.image.width}
+              height={building.image.height}
+            >
               <Image
                 data-testid="archive-photo"
                 src={`/buildings/${building.id}.avif`}
@@ -120,12 +127,12 @@ export default async function BuildingPage({ params }: { params: Promise<Params>
                 sizes="(min-width: 768px) 50vw, 100vw"
                 style={{ width: '100%', height: 'auto' }}
               />
-            </div>
+            </GalleryFrame>
             <a
               href={mapHref}
               target="_blank"
               rel="noreferrer"
-              className="mt-2 inline-block text-xs underline"
+              className="inline-block text-xs underline"
               style={{ fontFamily: theme.type.mono }}
             >
               {t(LOCALE, 'archiveViewOnMap')}
@@ -139,7 +146,20 @@ export default async function BuildingPage({ params }: { params: Promise<Params>
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 border-t-2 border-ink pt-3">
+        {building.extraImages && building.extraImages.length > 0 && (
+          <div data-testid="archive-extra-images" className="flex flex-col gap-3">
+            <SectionRule label={t(LOCALE, 'archiveMoreViews')} />
+            <ImageGallery
+              buildingId={building.id}
+              buildingName={buildingName}
+              images={building.extraImages}
+              locale={LOCALE}
+            />
+          </div>
+        )}
+
+        <SectionRule />
+        <div className="flex flex-col gap-3">
           <Provenance building={building} locale={LOCALE} />
         </div>
       </article>

@@ -9,6 +9,7 @@ import { familyLabel } from '@/lib/facts';
 import { ArchiveNav } from '@/components/archive/ArchiveNav';
 import { BuildingCard } from '@/components/archive/BuildingCard';
 import { LinkList } from '@/components/archive/LinkList';
+import { SectionRule } from '@/components/ui/SectionRule';
 
 const LOCALE = 'en' as const;
 
@@ -55,31 +56,29 @@ export default async function MovementPage({ params }: { params: Promise<Params>
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(movementJsonLd(movement)) }}
       />
-      <article className="flex flex-col gap-6 p-4 md:p-8">
+      <article className="flex flex-col gap-8 p-4 md:p-8">
         <div className="flex flex-col gap-1">
-          <p className="text-xs uppercase tracking-wide text-warn" style={{ fontFamily: theme.type.mono }}>
+          <p className="text-xs uppercase tracking-[0.2em] text-accent" style={{ fontFamily: theme.type.ui }}>
             {t(LOCALE, 'navMovementsLink')}
           </p>
           <h1
             data-testid="archive-headline"
-            className="text-3xl uppercase leading-none md:text-4xl"
+            className="text-3xl leading-none md:text-5xl"
             style={{ fontFamily: theme.type.display }}
           >
             {movement.name}
           </h1>
-          <p className="text-xs uppercase tracking-wide opacity-70" style={{ fontFamily: theme.type.mono }}>
+          <p className="text-xs uppercase tracking-wide opacity-70" style={{ fontFamily: theme.type.ui }}>
             {t(LOCALE, 'archiveFamily')}: {familyLabel(movement.family, LOCALE)} · {t(LOCALE, 'archiveApproxSpan')}: {span}
           </p>
         </div>
 
-        <p className="text-sm leading-relaxed" style={{ fontFamily: theme.type.body }}>
+        <p className="max-w-[70ch] text-sm leading-relaxed" style={{ fontFamily: theme.type.body }}>
           {movement.blurb[LOCALE] ?? movement.blurb.en}
         </p>
 
-        <section className="flex flex-col gap-2 border-t-2 border-ink pt-3">
-          <h2 className="text-xs uppercase tracking-wide" style={{ fontFamily: theme.type.mono }}>
-            {t(LOCALE, 'navArchitectsLink')}
-          </h2>
+        <section className="flex flex-col gap-3">
+          <SectionRule label={t(LOCALE, 'navArchitectsLink')} />
           {architects.length > 0 ? (
             <LinkList
               testId="archive-movement-architects"
@@ -90,10 +89,8 @@ export default async function MovementPage({ params }: { params: Promise<Params>
           )}
         </section>
 
-        <section className="flex flex-col gap-2 border-t-2 border-ink pt-3">
-          <h2 className="text-xs uppercase tracking-wide" style={{ fontFamily: theme.type.mono }}>
-            {t(LOCALE, 'navBuildingsLink')}
-          </h2>
+        <section className="flex flex-col gap-3">
+          <SectionRule label={t(LOCALE, 'navBuildingsLink')} />
           {buildings.length > 0 ? (
             <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
               {buildings.map((b) => (

@@ -28,10 +28,10 @@ export default function ArchitectsIndexPage() {
     <main className="flex flex-1 flex-col bg-paper">
       <ArchiveNav locale={LOCALE} />
       <div className="flex flex-col gap-1 p-4 md:p-8">
-        <h1 className="text-3xl uppercase" style={{ fontFamily: theme.type.display }}>
+        <h1 className="text-3xl md:text-4xl" style={{ fontFamily: theme.type.display }}>
           {t(LOCALE, 'navArchitectsLink')}
         </h1>
-        <p className="text-xs uppercase tracking-wide opacity-70" style={{ fontFamily: theme.type.mono }}>
+        <p className="text-xs uppercase tracking-wide opacity-70" style={{ fontFamily: theme.type.ui }}>
           {t(LOCALE, 'archiveArchitectsCount', { count: architects.length })}
         </p>
       </div>
