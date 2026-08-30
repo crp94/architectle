@@ -55,11 +55,14 @@ export const EUROPE_ARCHITECTS: Architect[] = [
     gender: 'man',
     born: 1508,
     died: 1580,
-    // override: La Rotonda was completed in 1605, twenty-five years after
-    // Palladio's death, first by Vincenzo Scamozzi and then by the Capra
-    // brothers. The end of the span is the completion date of a work he
-    // designed, not a claim that he was still building in 1605.
-    floruit: { start: 1540, end: 1605, override: true },
+    // override: floruit is Palladio's real active span, ending at his own
+    // death in 1580, not stretched to cover posthumous completions. Three
+    // of his designs were finished by others after he died: La Rotonda
+    // (completed 1605, by Vincenzo Scamozzi and then the Capra brothers),
+    // San Giorgio Maggiore (completed 1610) and the Basilica Palladiana
+    // (completed 1614). The override carries all three; it is not a claim
+    // Palladio himself was still building decades after his death.
+    floruit: { start: 1540, end: 1580, override: true },
     movements: [
       { id: 'renaissance', primary: true },
       { id: 'palladianism', primary: false },
@@ -116,11 +119,15 @@ export const EUROPE_ARCHITECTS: Architect[] = [
     gender: 'man',
     born: 1852,
     died: 1926,
-    // Start moved to 1882 (from 1883) by wave v2-3 batch b3: Sagrada Família's
-    // own inception year is 1882 (cornerstone laid under the original
-    // architect Villar, months before Gaudí took over), and floruit-consistent
-    // keys on a building's completed ?? inception.
-    floruit: { start: 1882, end: 1926, override: false },
+    // override: Sagrada Família's own recorded `inception` is 1882, the
+    // year construction began under the *original* architect, Francisco de
+    // Paula del Villar — Gaudí did not take over the project until 1883,
+    // as his own dossier for the building states. 1882 is not a year of
+    // Gaudí's own work, so the floruit stays 1883-1926 (his real active
+    // span) and this one building is carried via the override rather than
+    // by stretching the architect's own floruit to cover someone else's
+    // start date.
+    floruit: { start: 1883, end: 1926, override: true },
     movements: [{ id: 'art-nouveau', primary: true }],
     workRegions: [],
     workCentroid: { lat: 0, lon: 0 },
