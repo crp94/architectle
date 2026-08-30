@@ -48,10 +48,25 @@ describe('commonsOriginalUrl', () => {
 });
 
 describe('targetPath', () => {
-  it('returns the public/buildings/<slug>.avif path', () => {
+  it('returns the public/buildings/<slug>.avif path for the primary image (no index, or index 1)', () => {
     expect(targetPath('cupola-di-santa-maria-del-fiore')).toBe(
       'public/buildings/cupola-di-santa-maria-del-fiore.avif',
     );
+    expect(targetPath('cupola-di-santa-maria-del-fiore', 1)).toBe(
+      'public/buildings/cupola-di-santa-maria-del-fiore.avif',
+    );
+  });
+
+  // Design spec §6: extraImages[0] -> <slug>-2.avif, extraImages[1] ->
+  // <slug>-3.avif (the primary is implicitly "image 1" but keeps its
+  // unsuffixed filename for backward compatibility with every already-
+  // fetched building).
+  it('returns the <slug>-2.avif path for extraImages[0] (index 2)', () => {
+    expect(targetPath('villa-la-rotonda', 2)).toBe('public/buildings/villa-la-rotonda-2.avif');
+  });
+
+  it('returns the <slug>-3.avif path for extraImages[1] (index 3)', () => {
+    expect(targetPath('villa-la-rotonda', 3)).toBe('public/buildings/villa-la-rotonda-3.avif');
   });
 });
 
@@ -81,5 +96,14 @@ describe('needsFetch', () => {
   it('is false once the target AVIF exists on disk', () => {
     writeFileSync(path.join(tmpDir, 'public', 'buildings', 'some-building.avif'), 'fake-avif-bytes');
     expect(needsFetch('some-building')).toBe(false);
+  });
+
+  it('checks the suffixed extraImages path independently of the primary', () => {
+    expect(needsFetch('some-building', 2)).toBe(true);
+    writeFileSync(path.join(tmpDir, 'public', 'buildings', 'some-building.avif'), 'fake-avif-bytes');
+    // The primary now exists, but extraImages[0] (-2.avif) still doesn't.
+    expect(needsFetch('some-building', 2)).toBe(true);
+    writeFileSync(path.join(tmpDir, 'public', 'buildings', 'some-building-2.avif'), 'fake-avif-bytes');
+    expect(needsFetch('some-building', 2)).toBe(false);
   });
 });

@@ -22,6 +22,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
+import type { Building } from '@/types/building';
 import { CURATED_BUILDINGS } from './curated';
 
 // Wikimedia's User-Agent policy (https://meta.wikimedia.org/wiki/User-Agent_policy)
@@ -76,12 +77,19 @@ export function commonsOriginalUrl(commonsFile: string): string {
 // data:images`, and tests exercise this against a temp directory by
 // chdir-ing into it rather than by threading a base-dir parameter through
 // every call site.
-export function targetPath(slug: string): string {
-  return `${OUTPUT_DIR_REL}/${slug}.avif`;
+//
+// `imageIndex` picks which of a building's images this path is for: 1 (the
+// default) is the primary `image` and keeps the original unsuffixed
+// filename for backward compatibility with every already-fetched building;
+// 2/3 are `extraImages[0]`/`extraImages[1]` (design spec §6), suffixed
+// `<slug>-2.avif`/`<slug>-3.avif`.
+export function targetPath(slug: string, imageIndex: number = 1): string {
+  const suffix = imageIndex === 1 ? '' : `-${imageIndex}`;
+  return `${OUTPUT_DIR_REL}/${slug}${suffix}.avif`;
 }
 
-export function needsFetch(slug: string): boolean {
-  return !existsSync(targetPath(slug));
+export function needsFetch(slug: string, imageIndex: number = 1): boolean {
+  return !existsSync(targetPath(slug, imageIndex));
 }
 
 // --- Real pipeline ---------------------------------------------------------
@@ -114,13 +122,35 @@ async function fetchOriginal(url: string): Promise<Buffer> {
   throw lastError instanceof Error ? lastError : new Error(String(lastError));
 }
 
-// Rewrites a single building's `image.width`/`image.height` in its curated
-// source file, in place. Scoped to that building's own object literal (from
-// its `id: '<slug>',` line up to the next building's `  {` in the same
-// file) so the replacement can never touch a different building that
-// happens to share the literal `width: 0, height: 0` text — every
-// as-yet-unfetched building in the pool does.
-function updateDimensionsInSource(slug: string, width: number, height: number, buildingsDir: string): void {
+// Replaces the (0-based) `n`th occurrence of `search` in `text` with
+// `replacement`. Returns `text` unchanged if there is no such occurrence —
+// the caller is responsible for distinguishing "not found" from "found and
+// replaced" (see the explicit count check in `updateDimensionsInSource`).
+function replaceNthOccurrence(text: string, search: string, replacement: string, n: number): string {
+  let idx = -1;
+  for (let i = 0; i <= n; i += 1) {
+    idx = text.indexOf(search, idx + 1);
+    if (idx === -1) return text;
+  }
+  return text.slice(0, idx) + replacement + text.slice(idx + search.length);
+}
+
+// Rewrites a single building's `image.width`/`image.height` OR one
+// `extraImages[i].width`/`.height` in its curated source file, in place.
+// Scoped to that building's own object literal (from its `id: '<slug>',`
+// line up to the next building's `  {` in the same file) so the
+// replacement can never touch a different building that happens to share
+// the literal `width: 0, height: 0` text — every as-yet-unfetched image in
+// the pool does.
+//
+// `occurrenceIndex` picks WHICH placeholder within that block to replace,
+// by position: 0 is the primary `image`, 1 is `extraImages[0]`, 2 is
+// `extraImages[1]` — this relies on curators writing fields in the same
+// order Building's own type declares them (image, then extraImages), which
+// is also this project's established authoring convention.
+function updateDimensionsInSource(
+  slug: string, width: number, height: number, buildingsDir: string, occurrenceIndex: number = 0,
+): void {
   const files = readdirSync(buildingsDir).filter((f) => f.endsWith('.ts'));
   const idMarker = `    id: '${slug}',\n`;
   const nextBlockMarker = '\n  {\n    id: \'';
@@ -136,18 +166,21 @@ function updateDimensionsInSource(slug: string, width: number, height: number, b
     const blockEnd = nextIdx === -1 ? content.length : nextIdx + 1;
     const block = content.slice(idIdx, blockEnd);
 
-    if (!block.includes(placeholder)) {
+    const occurrenceCount = block.split(placeholder).length - 1;
+    if (occurrenceCount <= occurrenceIndex) {
       // Already recorded (idempotent re-run found the AVIF present, so this
       // function is never called for it) or the file's formatting doesn't
       // match what curators actually wrote — surface loudly either way.
       throw new Error(
-        `fetchImages: found curated entry for "${slug}" in ${file} but its image block `
-        + 'does not contain the expected "width: 0, height: 0" placeholder — refusing to '
-        + 'guess at a replacement.',
+        `fetchImages: found curated entry for "${slug}" in ${file} but its image block has only `
+        + `${occurrenceCount} "width: 0, height: 0" placeholder(s), expected at least ${occurrenceIndex + 1} `
+        + `(occurrenceIndex ${occurrenceIndex}) — refusing to guess at a replacement.`,
       );
     }
 
-    const updatedBlock = block.replace(placeholder, `      width: ${width},\n      height: ${height},\n`);
+    const updatedBlock = replaceNthOccurrence(
+      block, placeholder, `      width: ${width},\n      height: ${height},\n`, occurrenceIndex,
+    );
     const updatedContent = content.slice(0, idIdx) + updatedBlock + content.slice(blockEnd);
     writeFileSync(filePath, updatedContent);
     return;
@@ -158,27 +191,62 @@ function updateDimensionsInSource(slug: string, width: number, height: number, b
 
 type Failure = { slug: string; commonsFile: string; error: string };
 
+// One fetch/resize/write/dimensions-writeback job for a single image on a
+// single building — either the primary `image` (imageIndex 1, occurrenceIndex
+// 0) or one `extraImages[i]` entry (imageIndex i+2, occurrenceIndex i+1).
+// Design spec §6: extraImages get the exact same idempotent/1-per-sec/
+// AVIF-q62 pipeline as the primary, just fetched to a suffixed filename and
+// written back to a later placeholder occurrence in the same curated block.
+type ImageJob = {
+  slug: string;
+  label: string; // e.g. "villa-la-rotonda" or "villa-la-rotonda extraImages[0]"
+  commonsFile: string;
+  imageIndex: number;
+  occurrenceIndex: number;
+};
+
+function jobsForBuilding(building: Building): ImageJob[] {
+  const jobs: ImageJob[] = [{
+    slug: building.id,
+    label: building.id,
+    commonsFile: building.image.commonsFile,
+    imageIndex: 1,
+    occurrenceIndex: 0,
+  }];
+  for (const [i, extra] of (building.extraImages ?? []).entries()) {
+    jobs.push({
+      slug: building.id,
+      label: `${building.id} extraImages[${i}]`,
+      commonsFile: extra.commonsFile,
+      imageIndex: i + 2,
+      occurrenceIndex: i + 1,
+    });
+  }
+  return jobs;
+}
+
 async function main(): Promise<void> {
   const buildingsDir = path.resolve(process.cwd(), BUILDINGS_DIR_REL);
   const outDir = path.resolve(process.cwd(), OUTPUT_DIR_REL);
   mkdirSync(outDir, { recursive: true });
 
-  const total = CURATED_BUILDINGS.length;
+  const jobs = CURATED_BUILDINGS.flatMap(jobsForBuilding);
+  const total = jobs.length;
   const failures: Failure[] = [];
   let done = 0;
   let skipped = 0;
 
   for (let i = 0; i < total; i += 1) {
-    const building = CURATED_BUILDINGS[i];
+    const job = jobs[i];
     const n = i + 1;
 
-    if (!needsFetch(building.id)) {
+    if (!needsFetch(job.slug, job.imageIndex)) {
       skipped += 1;
-      console.log(`[${n}/${total}] ${building.id} ... already present, skipped`);
+      console.log(`[${n}/${total}] ${job.label} ... already present, skipped`);
       continue;
     }
 
-    const url = commonsOriginalUrl(building.image.commonsFile);
+    const url = commonsOriginalUrl(job.commonsFile);
     try {
       const original = await fetchOriginal(url);
       const { data, info } = await sharp(original)
@@ -186,20 +254,20 @@ async function main(): Promise<void> {
         .avif({ quality: AVIF_QUALITY })
         .toBuffer({ resolveWithObject: true });
 
-      writeFileSync(path.resolve(process.cwd(), targetPath(building.id)), data);
-      updateDimensionsInSource(building.id, info.width, info.height, buildingsDir);
+      writeFileSync(path.resolve(process.cwd(), targetPath(job.slug, job.imageIndex)), data);
+      updateDimensionsInSource(job.slug, info.width, info.height, buildingsDir, job.occurrenceIndex);
       done += 1;
-      console.log(`[${n}/${total}] ${building.id} ... ${info.width}x${info.height} done`);
+      console.log(`[${n}/${total}] ${job.label} ... ${info.width}x${info.height} done`);
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);
-      console.error(`[${n}/${total}] ${building.id} ... FAILED: ${message}`);
-      failures.push({ slug: building.id, commonsFile: building.image.commonsFile, error: message });
+      console.error(`[${n}/${total}] ${job.label} ... FAILED: ${message}`);
+      failures.push({ slug: job.label, commonsFile: job.commonsFile, error: message });
     }
 
     await sleep(RATE_LIMIT_MS);
   }
 
-  console.log(`\n${done} fetched, ${skipped} already present, ${failures.length} failed (of ${total}).`);
+  console.log(`\n${done} fetched, ${skipped} already present, ${failures.length} failed (of ${total} images across ${CURATED_BUILDINGS.length} buildings).`);
 
   if (failures.length > 0) {
     console.error(`\n${failures.length} image(s) failed after ${MAX_ATTEMPTS} attempts each:\n`);
