@@ -1,20 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #141414;
-  --color-paper: #d9d6d0;
-  --color-paper-alt: #c8c4bc;
-  --color-accent: #e8dc50;
-  /* #d4321e (the spec's original brutalist red) is only 3.38:1 against
-     --color-paper — every current use is small mono-spaced kicker text
-     (building/architect/movement archive pages, Reveal), which needs the
-     WCAG AA text minimum of 4.5:1. Darkened to #a3271a (5.06:1 against
-     paper) rather than dropped: see e2e/a11y.spec.ts and tests/theme.test.ts. */
-  --color-warn: #a3271a;
+  /* Museum/gallery editorial palette (v2 refocus, design spec §5). Kept in
+     sync BY HAND with src/lib/theme.ts, which is the single source of
+     truth and carries the full contrast-math commentary; tests/theme.test.ts
+     asserts these values against theme.ts's exports directly. */
+  --color-ink: #1b1712;
+  --color-paper: #f5f0e6;
+  --color-paper-alt: #e3d8c4;
+  --color-mat: #e6ddc7;
+  --color-frame-line: #c7bca4;
+  --color-accent: #6e2a1f;
+  --color-warn: #6e2a1f;
 }
 
 body {
   background: var(--color-paper);
   color: var(--color-ink);
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-ui), Inter, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
