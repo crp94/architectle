@@ -375,4 +375,33 @@ export const AMERICAS_ARCHITECTS: Architect[] = [
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Thom_Mayne', title: 'Thom Mayne', license: 'CC BY-SA 4.0' },
     ],
   },
+  {
+    id: 'i-m-pei',
+    wikidataId: 'Q46868',
+    name: 'I. M. Pei',
+    alternativeNames: ['Ieoh Ming Pei', 'Pei Ieoh Ming', '貝聿銘'],
+    gender: 'man',
+    born: 1917,
+    died: 2019,
+    floruit: { start: 1955, end: 2006, override: false },
+    movements: [
+      { id: 'international-style', primary: true },
+    ],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'stone',
+    portrait: {
+      en: 'Pei was born in Guangzhou in 1917 to a prominent banking family, emigrated to the United States in 1935 and trained at MIT and then at Harvard\'s Graduate School of Design under Walter Gropius and Marcel Breuer. A decade spent shaping speculative urban redevelopment for the New York developer William Zeckendorf taught him to work within a client\'s numbers before he opened his own practice in 1955; by the time he retired from day-to-day management in 1990 that practice had built some of the most recognisable museums in the world. Pei\'s buildings return again and again to hard geometric volumes — triangles, rhombuses, knife-edge angles — resolved in stone, granite or glass, and to the problem of setting a modern building beside a historically loaded one without either apologising for it or overpowering it. He won the Pritzker Prize in 1983 and the Presidential Medal of Freedom in 1992, and kept accepting museum commissions into his late eighties and nineties, ending his working life, as it had begun, in China.',
+      es: 'Pei nació en Cantón en 1917 en el seno de una destacada familia de banqueros, emigró a Estados Unidos en 1935 y se formó en el MIT y después en la Graduate School of Design de Harvard bajo Walter Gropius y Marcel Breuer. Una década dedicada a dar forma a la reurbanización urbana especulativa para el promotor neoyorquino William Zeckendorf le enseñó a trabajar dentro de las cuentas de un cliente antes de abrir su propio estudio en 1955; para cuando se retiró de la gestión diaria en 1990, ese estudio había construido algunos de los museos más reconocibles del mundo. La arquitectura de Pei vuelve una y otra vez a volúmenes geométricos duros —triángulos, rombos, ángulos de filo de cuchillo— resueltos en piedra, granito o vidrio, y al problema de situar un edificio moderno junto a otro cargado de historia sin disculparse por ello ni imponerse sobre él. Ganó el Premio Pritzker en 1983 y la Medalla Presidencial de la Libertad en 1992, y siguió aceptando encargos de museos hasta bien entrados los ochenta y noventa años, cerrando su vida profesional, como la había empezado, en China.',
+      it: 'Pei nacque a Canton nel 1917 in una famiglia di banchieri di rilievo, emigrò negli Stati Uniti nel 1935 e si formò al MIT e poi alla Graduate School of Design di Harvard sotto Walter Gropius e Marcel Breuer. Un decennio passato a dare forma alla riqualificazione urbana speculativa per l\'imprenditore newyorkese William Zeckendorf gli insegnò a lavorare entro i conti di un committente prima di aprire un proprio studio nel 1955; quando si ritirò dalla gestione quotidiana nel 1990, quello studio aveva costruito alcuni dei musei più riconoscibili al mondo. L\'architettura di Pei torna ripetutamente a volumi geometrici rigorosi — triangoli, rombi, spigoli a lama di coltello — risolti in pietra, granito o vetro, e al problema di collocare un edificio moderno accanto a uno carico di storia senza scusarsene né sovrastarlo. Vinse il Premio Pritzker nel 1983 e la Presidential Medal of Freedom nel 1992, e continuò ad accettare incarichi museali fino a oltre gli ottant\'anni e i novant\'anni, chiudendo la propria vita professionale, come l\'aveva iniziata, in Cina.',
+    },
+    awards: ['Pritzker Architecture Prize (1983)', 'AIA Gold Medal (1979)', 'Presidential Medal of Freedom (1992)', 'Praemium Imperiale (1989)'],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q46868', title: 'I. M. Pei (Q46868)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/I._M._Pei', title: 'I. M. Pei', license: 'CC BY-SA 4.0' },
+    ],
+  },
 ];
