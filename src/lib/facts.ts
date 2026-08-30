@@ -8,7 +8,7 @@ import type { Building } from '@/types/building';
 import type { Architect } from '@/types/architect';
 import type { ImageRecord, Material, Typology } from '@/types/common';
 import type { FamilyId } from '@/types/movement';
-import type { GameState } from '@/lib/storage';
+import type { Stats } from '@/lib/storage';
 import { t, type Locale } from '@/lib/i18n';
 import { MOVEMENTS } from '@/data/movements';
 
@@ -144,9 +144,11 @@ export type StatsSummary = {
 };
 
 /**
- * Derives the reveal's stats-block display values from raw
- * `GameState.stats` (played/wins/streak/maxStreak/distribution counts) —
- * pure formatting, no game logic of its own. `winPct` is a bare
+ * Derives the reveal's stats-block display values from the raw, persistent
+ * `Stats` record (src/lib/storage.ts — played/wins/streak/maxStreak/
+ * distribution counts, kept independently of any single day's `GameState`
+ * so they survive past the daily round that produced them) — pure
+ * formatting, no game logic of its own. `winPct` is a bare
  * `"{n}%"` string (like `architectSpan`'s bare year range above): a
  * formatted statistic, not a sentence, so it isn't routed through
  * `t()`. Each distribution bar's `pct` is scaled against the single
@@ -154,7 +156,7 @@ export type StatsSummary = {
  * always draws a full-width bar and the rest read relative to it — the
  * same "distribution shape", not raw share of games played.
  */
-export function statsSummary(stats: GameState['stats']): StatsSummary {
+export function statsSummary(stats: Stats): StatsSummary {
   const winPct = stats.played > 0 ? Math.round((stats.wins / stats.played) * 100) : 0;
   const max = Math.max(1, ...stats.distribution);
   const distribution = stats.distribution.map((count, i) => ({

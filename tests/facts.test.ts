@@ -1,10 +1,10 @@
 import { describe, it, expect } from 'vitest';
 import { statsSummary } from '@/lib/facts';
-import type { GameState } from '@/lib/storage';
+import type { Stats } from '@/lib/storage';
 
-function makeStats(overrides: Partial<GameState['stats']> = {}): GameState['stats'] {
+function makeStats(overrides: Partial<Stats> = {}): Stats {
   return {
-    played: 0, wins: 0, streak: 0, maxStreak: 0, distribution: [0, 0, 0, 0, 0, 0], ...overrides,
+    played: 0, wins: 0, streak: 0, maxStreak: 0, distribution: [0, 0, 0, 0, 0, 0], lastWinPuzzle: null, ...overrides,
   };
 }
 
