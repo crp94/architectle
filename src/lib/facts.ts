@@ -99,3 +99,14 @@ export function provenanceLine(building: Building, locale: Locale): string {
   ];
   return parts.join(' · ');
 }
+
+/**
+ * Public path to one of a building's `extraImages` entries (design spec
+ * §6). Mirrors `fetchImages.ts`'s `targetPath` convention exactly:
+ * `extraImages[0]` is fetched to `<id>-2.avif`, `extraImages[1]` to
+ * `<id>-3.avif` — the primary `image` keeps the unsuffixed `<id>.avif` and
+ * is addressed directly by callers, not through this helper.
+ */
+export function extraImageSrc(buildingId: string, index: number): string {
+  return `/buildings/${buildingId}-${index + 2}.avif`;
+}

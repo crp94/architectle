@@ -91,6 +91,10 @@ const en = {
   revealSources: 'Sources',
   revealArchitect: 'Architect',
   revealContext: 'Context',
+  // Caption/heading for a building's extraImages (design spec §6) — shown
+  // both in the post-game reveal and on the building's archive page.
+  revealAnotherAngle: 'Another angle',
+  archiveMoreViews: 'More views',
 
   // Reveal fact-strip labels
   factCompleted: 'Completed',
@@ -245,6 +249,8 @@ const es: Strings = {
   revealSources: 'Fuentes',
   revealArchitect: 'Arquitecto',
   revealContext: 'Contexto',
+  revealAnotherAngle: 'Otro ángulo',
+  archiveMoreViews: 'Más vistas',
 
   factCompleted: 'Finalización',
   factLocation: 'Ubicación',
@@ -388,6 +394,8 @@ const it: Strings = {
   revealSources: 'Fonti',
   revealArchitect: 'Architetto',
   revealContext: 'Contesto',
+  revealAnotherAngle: 'Un altro punto di vista',
+  archiveMoreViews: 'Altre vedute',
 
   factCompleted: 'Completamento',
   factLocation: 'Posizione',
