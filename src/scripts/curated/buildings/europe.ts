@@ -684,4 +684,70 @@ export const EUROPE_BUILDINGS: Building[] = [
     ],
     tier: 'deep',
   },
+  {
+    // Cross-batch note (agent B2, americas): architectId 'frank-gehry' is
+    // defined in src/scripts/curated/architects/americas.ts (his practice
+    // base). This building is in Spain, so it is filed here in the europe
+    // region file per the region-follows-building-location convention.
+    id: 'guggenheim-museum-bilbao',
+    wikidataId: 'Q179199',
+    name: {
+      en: 'Guggenheim Museum Bilbao',
+      es: 'Museo Guggenheim Bilbao',
+      it: 'Museo Guggenheim Bilbao',
+    },
+    architectId: 'frank-gehry',
+    location: { city: 'Bilbao', countryCode: 'ES', lat: 43.26861, lon: -2.93389 },
+    inception: 1991,
+    completed: 1997,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['steel-and-glass', 'stone'],
+    structure: {
+      en: 'A galvanized-steel frame, modelled entirely in the aerospace software CATIA to translate Gehry\'s paper and cardboard studies into buildable geometry, is wrapped in roughly 33,000 thin, irregularly sized titanium panels rolled with a slight batter so their surface catches light rather than reflecting it flatly, over a base of Basque limestone.',
+      es: 'Una estructura de acero galvanizado, modelada por completo con el software aeroespacial CATIA para traducir los estudios en papel y cartón de Gehry a una geometría construible, se envuelve en unos 33.000 paneles de titanio delgados y de tamaño irregular, laminados con un ligero abombado para que su superficie capte la luz en vez de reflejarla de forma plana, sobre un zócalo de piedra caliza vasca.',
+      it: 'Una struttura in acciaio zincato, modellata interamente con il software aerospaziale CATIA per tradurre in geometria costruibile gli studi di Gehry in carta e cartone, è avvolta in circa 33.000 pannelli di titanio sottili e di dimensioni irregolari, laminati con una leggera curvatura perché la superficie catturi la luce invece di rifletterla in modo piatto, su un basamento in pietra calcarea basca.',
+    },
+    program: {
+      en: 'A satellite of the Solomon R. Guggenheim Foundation, commissioned by the Basque regional government as the anchor of a broader plan to regenerate Bilbao\'s derelict industrial riverfront after the decline of its shipyards and steelworks.',
+      es: 'Sede satélite de la Fundación Solomon R. Guggenheim, encargada por el Gobierno Vasco como ancla de un plan más amplio para regenerar el frente fluvial industrial degradado de Bilbao tras el declive de sus astilleros y acerías.',
+      it: 'Sede satellite della Fondazione Solomon R. Guggenheim, commissionata dal governo basco come punto di ancoraggio di un piano più ampio per rigenerare il fronte fluviale industriale degradato di Bilbao dopo il declino dei suoi cantieri navali e delle sue acciaierie.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Working art museum and the anchor building of Bilbao\'s regenerated Abandoibarra riverfront district.',
+      es: 'Museo de arte en activo y edificio ancla del distrito regenerado de Abandoibarra, en el frente fluvial de Bilbao.',
+      it: 'Museo d\'arte in attività ed edificio-simbolo del distretto rigenerato di Abandoibarra, sul lungofiume di Bilbao.',
+    },
+    detailRect: { x: 0.45, y: 0.10, w: 0.35, h: 0.40 },
+    image: {
+      commonsFile: 'File:Bilbao - Guggenheim Bilbao Museoa (28620586434).jpg',
+      photographer: 'Fred Romero',
+      license: 'CC BY 2.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Bilbao_-_Guggenheim_Bilbao_Museoa_(28620586434).jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Bilbao - Guggenheim 01.jpg',
+        photographer: 'Zarateman',
+        license: 'CC0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Bilbao_-_Guggenheim_01.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: 'The Basque regional government paid for the building and much of its collection outright, an arrangement unheard of among Guggenheim\'s other franchises, in exchange for a competition limited to three architects; Gehry\'s scheme beat Isozaki\'s and Coop Himmelb(l)au\'s partly because his office could prove, with CATIA software borrowed from Dassault\'s jet-fighter division, that the curved titanium skin could actually be fabricated and installed on budget. The panels are only half a millimetre thick, cut to unique shapes and hung like fish scales so the surface flexes slightly and never reads as a flat plane; Gehry chose titanium over the originally specified stainless steel after seeing a sample catch the grey Bilbao light on an overcast test day. The museum opened in October 1997 to reviews that called it the building of the century, and Bilbao\'s post-industrial waterfront, largely abandoned since the 1980s, filled with hotels and offices within a decade of a single museum\'s opening — a turnaround economists and planners still cite as the "Bilbao effect," for better and worse.',
+      es: 'El Gobierno Vasco pagó directamente el edificio y buena parte de su colección, un arreglo inaudito entre las demás sedes del Guggenheim, a cambio de un concurso limitado a tres arquitectos; el proyecto de Gehry venció a los de Isozaki y Coop Himmelb(l)au en parte porque su estudio pudo demostrar, con el software CATIA tomado de la división de cazas de Dassault, que la piel curva de titanio podía fabricarse e instalarse dentro del presupuesto. Los paneles tienen solo medio milímetro de espesor, se cortan con formas únicas y se cuelgan como escamas de pez, de modo que la superficie flexiona ligeramente y nunca se lee como un plano liso; Gehry sustituyó el acero inoxidable previsto por titanio tras ver cómo una muestra captaba la luz gris de Bilbao en un día nublado de prueba. El museo abrió en octubre de 1997 con críticas que lo llamaron el edificio del siglo, y el frente fluvial posindustrial de Bilbao, en gran parte abandonado desde los años ochenta, se llenó de hoteles y oficinas en menos de una década, un vuelco que economistas y urbanistas siguen citando como el "efecto Bilbao", para bien y para mal.',
+      it: 'Il governo basco pagò direttamente l\'edificio e buona parte della sua collezione, un accordo inaudito fra le altre sedi del Guggenheim, in cambio di un concorso limitato a tre architetti; il progetto di Gehry batté quelli di Isozaki e Coop Himmelb(l)au anche perché il suo studio poté dimostrare, con il software CATIA preso in prestito dalla divisione caccia di Dassault, che la pelle curva in titanio poteva essere fabbricata e installata entro il budget. I pannelli sono spessi solo mezzo millimetro, tagliati in forme uniche e appesi come squame di pesce, così che la superficie flette leggermente e non si legge mai come un piano liscio; Gehry sostituì l\'acciaio inossidabile inizialmente previsto con il titanio dopo aver visto un campione catturare la luce grigia di Bilbao in una giornata nuvolosa di prova. Il museo aprì nell\'ottobre 1997 fra recensioni che lo definirono l\'edificio del secolo, e il fronte fluviale postindustriale di Bilbao, in gran parte abbandonato dagli anni Ottanta, si riempì di alberghi e uffici in meno di un decennio, una svolta che economisti e urbanisti citano ancora come "effetto Bilbao", nel bene e nel male.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q179199', title: 'Guggenheim Museum Bilbao (Q179199)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Guggenheim_Museum_Bilbao', title: 'Guggenheim Museum Bilbao', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
 ];

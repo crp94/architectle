@@ -11,7 +11,7 @@ import type { Building } from '@/types/building';
 // the real pixel dimensions. Each `detailRect` was placed by looking at the
 // actual photograph, not inferred from its description.
 export const AMERICAS_BUILDINGS: Building[] = [
-  {
+{
     id: 'monticello',
     wikidataId: 'Q199618',
     name: {
@@ -363,7 +363,7 @@ export const AMERICAS_BUILDINGS: Building[] = [
       es: 'Instituto de investigación en activo en biología, genética y neurociencia.',
       it: 'Istituto di ricerca in attività in biologia, genetica e neuroscienze.',
     },
-    detailRect: { x: 0.12, y: 0.05, w: 0.22, h: 0.45 },
+    detailRect: { x: 0.14, y: 0.18, w: 0.22, h: 0.38 },
     image: {
       commonsFile: 'File:Louis Kahn\'s Salk Institute - 3040455466.jpg',
       photographer: 'Jason Taellious',
@@ -372,6 +372,16 @@ export const AMERICAS_BUILDINGS: Building[] = [
       width: 1600,
       height: 935,
     },
+    extraImages: [
+      {
+        commonsFile: 'File:2019 Salk Institute from west plaza level.jpg',
+        photographer: 'Beyond My Ken',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:2019_Salk_Institute_from_west_plaza_level.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
     dossier: {
       en: 'Salk gave Kahn two instructions: laboratories that could be rebuilt without stopping the science, and somewhere he would be willing to invite Picasso. Kahn answered the first by putting a full-height truss floor above every laboratory, so that pipes and ducts could be rerun overhead without touching the benches, and by removing the offices from the labs altogether into separate study towers, each turned forty-five degrees so its teak-framed window catches the Pacific. He answered the second with the court between the two blocks. It was to be a garden until Luis Barragán, brought in to advise, told him to plant nothing: the space should be a plaza, a facade to the sky. What is there instead is travertine, a single narrow channel of water running west, and the horizon. The concrete was poured with volcanic ash and left exactly as the formwork released it, tie-holes and board marks included. The AIA gave the building its Twenty-five Year Award in 1992.',
       es: 'Salk dio a Kahn dos instrucciones: laboratorios que pudieran rehacerse sin detener la investigación, y un lugar al que no le diera reparo invitar a Picasso. A lo primero respondió colocando sobre cada laboratorio un piso entero de vigas por el que rehacer conductos e instalaciones sin tocar las mesas de trabajo, y sacando los despachos de los laboratorios a torres de estudio independientes, giradas cuarenta y cinco grados para que su ventana enmarcada en teca mire al Pacífico. A lo segundo respondió con el patio entre los dos bloques. Iba a ser un jardín hasta que Luis Barragán, llamado como asesor, le dijo que no plantara nada: aquello debía ser una plaza, una fachada al cielo. Lo que hay es travertino, un solo canal estrecho de agua corriendo hacia el oeste y el horizonte. El hormigón se vertió con ceniza volcánica y se dejó tal como lo soltó el encofrado, con los agujeros de los tirantes y las marcas de las tablas. El AIA le dio en 1992 su Premio de los Veinticinco Años.',
@@ -568,18 +578,6 @@ export const AMERICAS_BUILDINGS: Building[] = [
     ],
     tier: 'canon',
   },
-  // --- Fix round (era-bucket quota): pre-1800 and post-2000 additions ---
-  // Review found this slice delivered 0-4-4-1 against N=9 (needed pre-1800
-  // >= 2, post-2000 >= 2) with no honest-gap disclosure. Checked against
-  // progress.md's full-pool dry run (173 buildings, era buckets already
-  // holding pool-globally) — genuinely fixable rather than structurally
-  // thin, so fixed directly: two colonial buildings with individually
-  // documented architects (not the patron/master-mason thin-attribution
-  // pattern flagged elsewhere in the wave) plus one post-2000 building,
-  // bringing this slice to 2-4-4-2 against N=12. All three are >280 km
-  // from every other building in this file and from each other, so none
-  // trip even the OLD (unfixed, any-two-buildings-within-25km)
-  // possible-duplicate-site rule this branch still runs under.
   {
     id: 'touro-synagogue',
     wikidataId: 'Q1355822',
@@ -736,10 +734,6 @@ export const AMERICAS_BUILDINGS: Building[] = [
     ],
     tier: 'deep',
   },
-  // --- Wave V2-3, batch B1 (US classic-modern top-up) ---
-  // Every Q-number read off the live Wikidata entity page and every image
-  // licence read off the live Commons file page on 2026-08-30. detailRects
-  // were placed by downloading and looking at the actual photograph.
   {
     id: 'fallingwater',
     wikidataId: 'Q463179',
@@ -1311,4 +1305,423 @@ export const AMERICAS_BUILDINGS: Building[] = [
     ],
     tier: 'canon',
   },
+{
+    id: 'kimbell-art-museum',
+    wikidataId: 'Q1741629',
+    name: {
+      en: 'Kimbell Art Museum',
+      es: 'Museo de Arte Kimbell',
+      it: 'Kimbell Art Museum',
+    },
+    architectId: 'louis-kahn',
+    location: { city: 'Fort Worth, Texas', countryCode: 'US', lat: 32.748611, lon: -97.365 },
+    inception: 1966,
+    completed: 1972,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['concrete', 'stone'],
+    structure: {
+      en: 'Sixteen post-tensioned concrete cycloid-vault shells, each roughly thirty metres long and six metres wide, bear on four corner points per bay so the perimeter walls carry no load; a continuous slot at the crown of every vault admits daylight onto a perforated aluminum reflector that scatters it across the underside of the concrete.',
+      es: 'Dieciséis cáscaras de bóveda cicloidal de hormigón postesado, de unos treinta metros de largo y seis de ancho cada una, se apoyan en cuatro puntos de esquina por crujía, de modo que los muros perimetrales no cargan peso; una ranura continua en la cumbrera de cada bóveda deja entrar la luz sobre un reflector de aluminio perforado que la dispersa por el intradós de hormigón.',
+      it: 'Sedici gusci di volta cicloidale in calcestruzzo post-teso, lunghi circa trenta metri e larghi sei ciascuno, poggiano su quattro punti d\'angolo per campata, così che i muri perimetrali non portano alcun carico; una fessura continua al colmo di ogni volta lascia entrare la luce su un riflettore di alluminio forato che la diffonde sull\'intradosso in calcestruzzo.',
+    },
+    program: {
+      en: 'An art museum built for the Kimbell Art Foundation, endowed by the will of Fort Worth grain merchant Kay Kimbell, to house and grow his and Velma Kimbell\'s collection under Kahn\'s own condition that the light itself be the building\'s subject.',
+      es: 'Museo de arte construido para la Kimbell Art Foundation, dotada por el testamento del comerciante de grano de Fort Worth Kay Kimbell, para albergar y ampliar la colección suya y de Velma Kimbell, bajo la condición del propio Kahn de que la luz misma fuera el tema del edificio.',
+      it: 'Museo d\'arte costruito per la Kimbell Art Foundation, dotata per testamento dal commerciante di grano di Fort Worth Kay Kimbell, per ospitare e accrescere la collezione sua e di Velma Kimbell, alla condizione posta dallo stesso Kahn che la luce fosse il vero soggetto dell\'edificio.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Working art museum, now paired with a separate 2013 Renzo Piano-designed pavilion across the lawn; Kahn\'s original building is otherwise unaltered.',
+      es: 'Museo de arte en activo, ahora emparejado con un pabellón independiente de Renzo Piano de 2013 al otro lado del césped; el edificio original de Kahn permanece por lo demás sin alterar.',
+      it: 'Museo d\'arte in attività, oggi affiancato da un padiglione indipendente di Renzo Piano del 2013 al di là del prato; l\'edificio originale di Kahn resta per il resto inalterato.',
+    },
+    detailRect: { x: 0.55, y: 0.35, w: 0.35, h: 0.35 },
+    image: {
+      commonsFile: 'File:Kimbell Art Museum Highsmith.jpg',
+      photographer: 'Carol M. Highsmith',
+      license: 'PD',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Kimbell_Art_Museum_Highsmith.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Kimbell museum, Louis Kahn (17350270166).jpg',
+        photographer: 'Payton Chung',
+        license: 'CC BY 2.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Kimbell_museum,_Louis_Kahn_(17350270166).jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: 'The Kimbell Art Foundation hired Kahn in October 1966 with an unusual brief: design toward natural light, not toward a floor plan. He answered with sixteen parallel cycloid vaults, each a shallow concrete arch just over one hundred feet long, resting on slender travertine-clad piers at four points so that the walls beneath carry nothing and can open freely to the entry courts at either end. A narrow skylight runs the length of every vault\'s crown; rather than let sun strike the galleries directly, Kahn hung a perforated aluminum reflector, shaped like an airplane wing in cross-section, just beneath the slot, so the light that finally reaches the polished concrete ceiling has already been scattered twice. The effect changes with the hour and the weather outside, and the museum has kept it uncovered by climate-control ductwork, which runs instead through the narrow gaps between vaults. Kahn died in 1974, two years after the building opened, without seeing what critics would call it: the AIA\'s Twenty-five Year Award came in 1998, and the architecture critic Robert Campbell named it the best American building of the second half of the twentieth century. When the museum needed more space, in 2013, it built an entirely separate pavilion by Renzo Piano across the lawn rather than touch Kahn\'s original.',
+      es: 'La Kimbell Art Foundation contrató a Kahn en octubre de 1966 con un encargo poco habitual: proyectar a partir de la luz natural, no de una planta. Él respondió con dieciséis bóvedas cicloidales paralelas, cada una un arco de hormigón poco profundo de algo más de treinta metros de largo, apoyado en esbeltos pilares revestidos de travertino en cuatro puntos, de modo que los muros bajo ellas no cargan nada y pueden abrirse libremente a los patios de entrada de cada extremo. Un lucernario estrecho recorre la cumbrera de cada bóveda; en vez de dejar que el sol incida directamente sobre las salas, Kahn colgó bajo la ranura un reflector de aluminio perforado, con sección de ala de avión, de modo que la luz que finalmente llega al techo de hormigón pulido ya se ha dispersado dos veces. El efecto cambia con la hora y el clima exterior, y el museo lo ha mantenido libre de conductos de climatización, que discurren en cambio por los estrechos huecos entre bóvedas. Kahn murió en 1974, dos años después de la inauguración, sin ver lo que la crítica diría de ella: el Premio de los Veinticinco Años del AIA llegó en 1998, y el crítico Robert Campbell la llamó el mejor edificio estadounidense de la segunda mitad del siglo veinte. Cuando el museo necesitó más espacio, en 2013, construyó un pabellón completamente independiente de Renzo Piano al otro lado del césped en vez de tocar el original de Kahn.',
+      it: 'La Kimbell Art Foundation assunse Kahn nell\'ottobre 1966 con un incarico insolito: progettare a partire dalla luce naturale, non da una pianta. Egli rispose con sedici volte cicloidali parallele, ciascuna un arco di calcestruzzo poco profondo di poco più di trenta metri, appoggiato su esili pilastri rivestiti di travertino in quattro punti, così che i muri sottostanti non portano alcun carico e possono aprirsi liberamente sulle corti d\'ingresso a ciascuna estremità. Un lucernario stretto corre lungo il colmo di ogni volta; invece di lasciare che il sole colpisse direttamente le sale, Kahn appese sotto la fessura un riflettore di alluminio forato, a sezione d\'ala d\'aereo, cosicché la luce che raggiunge infine il soffitto in calcestruzzo levigato si è già dispersa due volte. L\'effetto cambia con l\'ora e il clima esterno, e il museo lo ha tenuto libero da condotti di climatizzazione, che corrono invece nei sottili spazi fra le volte. Kahn morì nel 1974, due anni dopo l\'apertura, senza vedere ciò che la critica ne avrebbe detto: il Twenty-five Year Award dell\'AIA arrivò nel 1998, e il critico Robert Campbell la definì il miglior edificio statunitense della seconda metà del Novecento. Quando il museo ebbe bisogno di più spazio, nel 2013, costruì un padiglione interamente separato di Renzo Piano al di là del prato invece di toccare l\'originale di Kahn.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q1741629', title: 'Kimbell Art Museum (Q1741629)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Kimbell_Art_Museum', title: 'Kimbell Art Museum', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://kimbellart.org/art-architecture/architecture/kahn-building', title: 'Kimbell Art Museum — Louis I. Kahn Building', license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'national-gallery-east-building',
+    wikidataId: 'Q118314575',
+    name: {
+      en: 'National Gallery of Art, East Building',
+      es: 'Galería Nacional de Arte, Edificio Este',
+      it: 'National Gallery of Art, East Building',
+    },
+    architectId: 'i-m-pei',
+    location: { city: 'Washington, D.C.', countryCode: 'US', lat: 38.8913, lon: -77.0199 },
+    inception: 1968,
+    completed: 1978,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['stone', 'concrete'],
+    structure: {
+      en: 'A trapezoidal site is split into two triangles — public galleries and a study centre — each clad in three-inch pink Tennessee marble panels hung without mortar joints on a cast-concrete core, meeting at an acute corner just under two degrees off a knife edge.',
+      es: 'Un solar trapezoidal se divide en dos triángulos —galerías públicas y centro de estudio— revestidos ambos con paneles de mármol rosa de Tennessee de ocho centímetros colgados sin juntas de mortero sobre un núcleo de hormigón, que se encuentran en una esquina aguda a apenas dos grados de ser un filo de cuchillo.',
+      it: 'Un lotto trapezoidale è diviso in due triangoli — gallerie pubbliche e centro studi — entrambi rivestiti in pannelli di marmo rosa del Tennessee spessi otto centimetri, appesi senza giunti di malta su un nucleo in calcestruzzo, che si incontrano in uno spigolo acuto a poco meno di due gradi da un filo di lama.',
+    },
+    program: {
+      en: 'A modern and contemporary art wing for the National Gallery of Art, commissioned and funded by Paul Mellon and Ailsa Mellon Bruce to sit on the last trapezoidal parcel of the National Mall\'s original plan.',
+      es: 'Ala de arte moderno y contemporáneo de la National Gallery of Art, encargada y financiada por Paul Mellon y Ailsa Mellon Bruce para ocupar la última parcela trapezoidal del plan original del National Mall.',
+      it: 'Ala di arte moderna e contemporanea della National Gallery of Art, commissionata e finanziata da Paul Mellon e Ailsa Mellon Bruce per occupare l\'ultimo lotto trapezoidale del piano originario del National Mall.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Working museum wing housing the National Gallery\'s modern and contemporary collection.',
+      es: 'Ala de museo en funcionamiento que alberga la colección de arte moderno y contemporáneo de la National Gallery.',
+      it: 'Ala museale in attività che ospita la collezione di arte moderna e contemporanea della National Gallery.',
+    },
+    detailRect: { x: 0.76, y: 0.3, w: 0.2, h: 0.32 },
+    image: {
+      commonsFile: 'File:East Building of the National Gallery of Art, 2019.jpg',
+      photographer: 'Difference engine',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:East_Building_of_the_National_Gallery_of_Art,_2019.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:East Building of the National Gallery of Art.jpg',
+        photographer: 'Difference engine',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:East_Building_of_the_National_Gallery_of_Art.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: 'Paul Mellon and his sister Ailsa Mellon Bruce gave the National Gallery a second building and a nearly impossible site to put it on: a trapezoid wedged between Pennsylvania Avenue and the Mall\'s axis, left over from Pierre L\'Enfant\'s original city plan. Pei\'s solution was to draw a single diagonal line across the trapezoid, splitting it into an isosceles triangle for the public galleries and a right triangle for the library and offices, then to let the geometry run all the way up through the elevations rather than hiding it in the plan. Toward Pennsylvania Avenue the two triangles meet at an angle of 19 degrees 19 minutes, clad in the same pink Tennessee marble Pei had matched, by reopening the original quarry, to the West Building next door; the resulting corner is famous enough that visitors touch it smooth, and thin enough that light shows through the marble\'s veins at its very point. Inside, a skylit central court hung with an Alexander Calder mobile commissioned for the space connects the galleries on the diagonal. A 2011-2016 facade restoration replaced every one of the marble panels\' original steel anchors, which had corroded, with anodized aluminum, without altering the building\'s appearance.',
+      es: 'Paul Mellon y su hermana Ailsa Mellon Bruce dieron a la National Gallery un segundo edificio y un solar casi imposible en el que levantarlo: un trapezoide encajado entre la avenida Pensilvania y el eje del Mall, sobrante del plan original de la ciudad de Pierre L\'Enfant. La solución de Pei fue trazar una única línea diagonal a través del trapezoide, dividiéndolo en un triángulo isósceles para las galerías públicas y un triángulo rectángulo para la biblioteca y las oficinas, y dejar que la geometría subiera hasta los alzados en vez de esconderla en la planta. Hacia la avenida Pensilvania los dos triángulos se encuentran en un ángulo de 19 grados 19 minutos, revestidos con el mismo mármol rosa de Tennessee que Pei había igualado, reabriendo la cantera original, al del Edificio Oeste contiguo; la esquina resultante es tan célebre que los visitantes la tocan hasta pulirla, y tan fina que la luz atraviesa las vetas del mármol en su mismo vértice. En el interior, un patio central iluminado cenitalmente del que cuelga un móvil de Alexander Calder encargado para el espacio conecta las galerías en diagonal. Una restauración de la fachada entre 2011 y 2016 sustituyó todos los anclajes de acero originales de los paneles de mármol, corroídos, por aluminio anodizado, sin alterar el aspecto del edificio.',
+      it: 'Paul Mellon e sua sorella Ailsa Mellon Bruce donarono alla National Gallery un secondo edificio e un lotto quasi impossibile su cui costruirlo: un trapezio incuneato fra Pennsylvania Avenue e l\'asse del Mall, residuo del piano originario della città di Pierre L\'Enfant. La soluzione di Pei fu tracciare un\'unica linea diagonale attraverso il trapezio, dividendolo in un triangolo isoscele per le gallerie pubbliche e un triangolo rettangolo per biblioteca e uffici, e lasciare che la geometria salisse fino ai prospetti invece di nasconderla in pianta. Verso Pennsylvania Avenue i due triangoli si incontrano a un angolo di 19 gradi e 19 minuti, rivestiti dello stesso marmo rosa del Tennessee che Pei aveva intonato, riaprendo la cava originaria, a quello dell\'Edificio Ovest accanto; lo spigolo risultante è talmente celebre che i visitatori lo toccano fino a lucidarlo, ed è così sottile che la luce attraversa le venature del marmo nel suo stesso vertice. All\'interno, una corte centrale illuminata dall\'alto, con un mobile di Alexander Calder commissionato per lo spazio, collega le gallerie lungo la diagonale. Un restauro della facciata fra il 2011 e il 2016 sostituì tutti gli ancoraggi in acciaio originari dei pannelli di marmo, corrosi, con alluminio anodizzato, senza alterare l\'aspetto dell\'edificio.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q118314575', title: 'East Building of the National Gallery of Art (Q118314575)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/East_Building', title: 'East Building', license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.nga.gov/research/publications/east-building-national-gallery-art-profile', title: 'National Gallery of Art — East Building: A Profile', license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'walt-disney-concert-hall',
+    wikidataId: 'Q474326',
+    name: {
+      en: 'Walt Disney Concert Hall',
+      es: 'Walt Disney Concert Hall',
+      it: 'Walt Disney Concert Hall',
+    },
+    architectId: 'frank-gehry',
+    location: { city: 'Los Angeles, California', countryCode: 'US', lat: 34.055278, lon: -118.25 },
+    inception: 1987,
+    completed: 2003,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['steel-and-glass', 'stone'],
+    structure: {
+      en: 'A steel frame carries a shell of curved, brushed stainless-steel panels wrapped around a wood-lined concert chamber built as an independent structure inside it, isolated from the skin by an air gap so that street noise and the building\'s own metal skin cannot reach the auditorium.',
+      es: 'Una estructura de acero soporta una envolvente de paneles curvos de acero inoxidable cepillado, enrollada en torno a una sala de conciertos revestida de madera construida como estructura independiente en su interior, aislada de la piel por una cámara de aire para que ni el ruido de la calle ni la propia envolvente metálica lleguen al auditorio.',
+      it: 'Una struttura in acciaio sorregge un involucro di pannelli curvi in acciaio inossidabile spazzolato, avvolto attorno a una sala da concerto rivestita in legno costruita come struttura indipendente al suo interno, isolata dall\'involucro da un\'intercapedine d\'aria affinché né il rumore della strada né la stessa pelle metallica raggiungano l\'auditorium.',
+    },
+    program: {
+      en: 'A home for the Los Angeles Philharmonic and the Los Angeles Master Chorale, funded in large part by a $50 million gift from Lillian Disney in memory of her husband Walt, on a site above the Music Center that had sat as a parking lot for over a decade after the commission stalled.',
+      es: 'Sede de la Filarmónica de Los Ángeles y del Los Angeles Master Chorale, financiada en gran parte con una donación de 50 millones de dólares de Lillian Disney en memoria de su esposo Walt, en un solar sobre el Music Center que fue aparcamiento durante más de una década mientras el encargo quedaba paralizado.',
+      it: 'Sede della Los Angeles Philharmonic e del Los Angeles Master Chorale, finanziata in gran parte da una donazione di 50 milioni di dollari di Lillian Disney in memoria del marito Walt, su un lotto sopra il Music Center rimasto un parcheggio per oltre un decennio mentre l\'incarico restava bloccato.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Working concert hall, home of the Los Angeles Philharmonic.',
+      es: 'Sala de conciertos en activo, sede de la Filarmónica de Los Ángeles.',
+      it: 'Sala da concerto in attività, sede della Los Angeles Philharmonic.',
+    },
+    detailRect: { x: 0.28, y: 0.08, w: 0.35, h: 0.35 },
+    image: {
+      commonsFile: 'File:Walt Disney Concert Hall exterior 01.jpg',
+      photographer: 'Leviclancy',
+      license: 'CC0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Walt_Disney_Concert_Hall_exterior_01.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Walt Disney Concert Hall exterior 02.jpg',
+        photographer: 'Leviclancy',
+        license: 'CC0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Walt_Disney_Concert_Hall_exterior_02.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: 'Lillian Disney gave $50 million toward a concert hall in 1987, on the condition it be a gift to the musicians as much as the public; Gehry won the invited competition the same year, but financing, engineering and a public backlash over the projected cladding cost stalled construction so completely that the site sat as a parking garage for a decade before ground finally broke in 1999. The most consequential decision was made backwards from the acoustics rather than the facade: the Japanese acoustician Yasuhisa Toyota designed a vineyard-style chamber in wood, and Gehry\'s steel-shell exterior was then wrapped around it as an independent, structurally isolated building-within-a-building, so the curved metal skin everyone photographs plays no part in shaping the sound inside. An early limestone cladding scheme was replaced by brushed stainless steel after cost overruns on Bilbao\'s titanium proved the material could be handled at this scale, and after the completed hall\'s first polished panels were found to reflect sunlight hot enough to raise nearby sidewalk temperatures and blind drivers, forcing a re-buffing of the whole exterior in 2005. Frank Gehry called it, on completion in 2003, the best work of his career.',
+      es: 'Lillian Disney donó 50 millones de dólares para una sala de conciertos en 1987, con la condición de que fuera un regalo tanto para los músicos como para el público; Gehry ganó el concurso restringido ese mismo año, pero la financiación, la ingeniería y una reacción pública contra el coste previsto del revestimiento paralizaron tanto la obra que el solar quedó como aparcamiento durante una década antes de que por fin se iniciaran las obras en 1999. La decisión más determinante se tomó al revés que la fachada, partiendo de la acústica: el acústico japonés Yasuhisa Toyota diseñó una sala tipo "viñedo" en madera, y el exterior de acero de Gehry se envolvió después en torno a ella como un edificio independiente y estructuralmente aislado dentro de otro, de modo que la piel metálica curva que todos fotografían no interviene en el sonido interior. Un primer revestimiento de piedra caliza se sustituyó por acero inoxidable cepillado tras demostrar los sobrecostes de Bilbao que el titanio podía manejarse a esta escala, y después de que los primeros paneles pulidos de la sala terminada resultaran reflejar luz solar lo bastante caliente como para elevar la temperatura de las aceras vecinas y deslumbrar a los conductores, lo que obligó a repulir todo el exterior en 2005. Frank Gehry la llamó, al terminarla en 2003, la mejor obra de su carrera.',
+      it: 'Lillian Disney donò 50 milioni di dollari per una sala da concerto nel 1987, a condizione che fosse un dono tanto ai musicisti quanto al pubblico; Gehry vinse il concorso a inviti quello stesso anno, ma finanziamenti, ingegneria e una reazione pubblica contro il costo previsto del rivestimento bloccarono i lavori al punto che il lotto restò un parcheggio per un decennio prima che si desse finalmente inizio ai lavori nel 1999. La decisione più determinante fu presa al contrario rispetto alla facciata, partendo dall\'acustica: l\'acustico giapponese Yasuhisa Toyota progettò una sala a "vigneto" in legno, e l\'esterno in acciaio di Gehry fu poi avvolto attorno ad essa come un edificio indipendente e strutturalmente isolato dentro un altro, cosicché la pelle metallica curva che tutti fotografano non ha alcun ruolo nel definire il suono interno. Un primo rivestimento in pietra calcarea fu sostituito con acciaio inossidabile spazzolato dopo che i costi eccessivi di Bilbao dimostrarono che il titanio poteva essere gestito a questa scala, e dopo che i primi pannelli lucidati della sala completata si rivelarono capaci di riflettere luce solare abbastanza calda da innalzare la temperatura dei marciapiedi vicini e abbagliare gli automobilisti, costringendo a rilevigare tutto l\'esterno nel 2005. Frank Gehry la definì, al suo completamento nel 2003, la migliore opera della sua carriera.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q474326', title: 'Walt Disney Concert Hall (Q474326)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Walt_Disney_Concert_Hall', title: 'Walt Disney Concert Hall', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: '945-madison-avenue',
+    wikidataId: 'Q105724647',
+    name: {
+      en: '945 Madison Avenue (Whitney Museum building / Met Breuer / Frick Madison)',
+      es: '945 Madison Avenue (edificio del Whitney Museum / Met Breuer / Frick Madison)',
+      it: '945 Madison Avenue (edificio del Whitney Museum / Met Breuer / Frick Madison)',
+    },
+    architectId: 'marcel-breuer',
+    location: { city: 'New York, New York', countryCode: 'US', lat: 40.7733, lon: -73.9639 },
+    inception: 1963,
+    completed: 1966,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['stone', 'concrete'],
+    structure: {
+      en: 'A reinforced-concrete frame is faced in fifteen hundred slabs of grey granite hung on an inverted-ziggurat section, each upper floor cantilevering roughly four metres past the one below it, and pierced by trapezoidal windows angled twenty to twenty-five degrees to keep direct sun off the galleries.',
+      es: 'Una estructura de hormigón armado se reviste con mil quinientas losas de granito gris colgadas en una sección de zigurat invertido, cada planta superior en voladizo unos cuatro metros respecto a la de abajo, y perforada por ventanas trapezoidales inclinadas entre veinte y veinticinco grados para mantener el sol directo fuera de las salas.',
+      it: 'Una struttura in cemento armato è rivestita da millecinquecento lastre di granito grigio appese in una sezione a ziggurat invertito, ogni piano superiore a sbalzo di circa quattro metri rispetto a quello sottostante, e perforata da finestre trapezoidali inclinate fra i venti e i venticinque gradi per tenere il sole diretto lontano dalle sale.',
+    },
+    program: {
+      en: 'A purpose-built home for the Whitney Museum of American Art\'s move uptown from Greenwich Village, on a corner site Breuer and the museum\'s director chose specifically because its awkward shape and small footprint forced an unconventional building.',
+      es: 'Sede construida a propósito para el traslado del Whitney Museum of American Art desde Greenwich Village, en un solar en esquina que Breuer y el director del museo eligieron precisamente porque su forma incómoda y su pequeña huella forzaban un edificio poco convencional.',
+      it: 'Sede costruita appositamente per il trasferimento del Whitney Museum of American Art da Greenwich Village, su un lotto d\'angolo che Breuer e il direttore del museo scelsero proprio perché la forma scomoda e la pianta ridotta imponevano un edificio non convenzionale.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Sotheby\'s auction house headquarters since 2024, after runs as the Whitney (1966–2014), the Met\'s "Met Breuer" branch (2016–2020) and the Frick Collection\'s temporary "Frick Madison" home (2021–2024); a National Register-listed contributing building and a full New York City exterior-and-interior landmark.',
+      es: 'Sede de la casa de subastas Sotheby\'s desde 2024, tras haber sido el Whitney (1966-2014), la sede "Met Breuer" del Met (2016-2020) y la sede temporal "Frick Madison" de la Frick Collection (2021-2024); edificio contribuyente en el Registro Nacional y monumento histórico municipal de Nueva York, exterior e interiores.',
+      it: 'Sede della casa d\'aste Sotheby\'s dal 2024, dopo essere stato il Whitney (1966-2014), la sede "Met Breuer" del Met (2016-2020) e la sede temporanea "Frick Madison" della Frick Collection (2021-2024); edificio contribuente nel Registro Nazionale e monumento storico cittadino di New York, esterno e interni.',
+    },
+    detailRect: { x: 0.28, y: 0.30, w: 0.35, h: 0.35 },
+    image: {
+      commonsFile: 'File:Breuer2.jpg',
+      photographer: 'Glenda Altarejos',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Breuer2.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:6 16 2021 Frick old Whitney building 945 Madison Avenue NYC.jpg',
+        photographer: 'Wil540 art',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:6_16_2021_Frick_old_Whitney_building_945_Madison_Avenue_NYC.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: 'The Whitney\'s director, Lloyd Goodrich, wanted a building that looked like a museum rather than a monument to its architect, and picked a difficult, trapezoidal corner site on Madison Avenue at 75th Street partly to keep the design honest to its constraints. Breuer\'s answer inverted the setback-tower logic that zoning normally imposed on New York buildings: instead of stepping back as it rose, the granite mass steps forward, cantilevering further over the sidewalk with each floor so the top of the building looms some four metres past its own front door, an idea Breuer had first tried, at far smaller scale, on his own furniture. The trapezoidal "eye" windows, cut at odd angles rather than set flush and square, function as skylights as much as windows, throwing daylight down onto the gallery walls without letting direct sun fall on the art. A moat and footbridge across it separate the building from the street at ground level, an unusual defensive gesture for a public museum that reads, in retrospect, as one part of the board\'s hesitation about the whole design — before construction, several trustees had lobbied to reject Breuer\'s scheme outright.',
+      es: 'El director del Whitney, Lloyd Goodrich, quería un edificio que pareciera un museo y no un monumento a su arquitecto, y eligió un solar difícil, trapezoidal, en la esquina de Madison Avenue con la calle 75, en parte para que el diseño fuera honesto con sus condicionantes. Breuer respondió invirtiendo la lógica de retranqueo escalonado que la normativa urbanística solía imponer a los edificios neoyorquinos: en vez de retranquearse al subir, la masa de granito avanza, en voladizo creciente sobre la acera en cada planta, de modo que la coronación del edificio sobresale unos cuatro metros más allá de su propia puerta, una idea que Breuer había ensayado antes, a escala mucho menor, en su mobiliario. Las ventanas trapezoidales en forma de "ojo", cortadas en ángulos irregulares y no a escuadra, funcionan tanto de lucernarios como de ventanas, arrojando luz natural sobre los muros de las salas sin dejar que el sol directo incida en las obras. Un foso con pasarela separa el edificio de la calle a nivel del suelo, un gesto defensivo poco habitual en un museo público que, visto con perspectiva, refleja las dudas de la junta ante todo el proyecto: antes de construirse, varios patronos habían presionado para rechazar de plano el diseño de Breuer.',
+      it: 'Il direttore del Whitney, Lloyd Goodrich, voleva un edificio che sembrasse un museo e non un monumento al proprio architetto, e scelse un lotto difficile, trapezoidale, all\'angolo fra Madison Avenue e la 75ª strada, in parte perché il progetto restasse onesto rispetto ai propri vincoli. Breuer rispose invertendo la logica dell\'arretramento a gradoni che la normativa urbanistica imponeva di norma agli edifici newyorkesi: invece di arretrare salendo, la massa in granito avanza, a sbalzo crescente sul marciapiede a ogni piano, così che la sommità dell\'edificio sporge di circa quattro metri oltre la propria porta d\'ingresso, un\'idea che Breuer aveva già provato, su scala molto più piccola, nei propri mobili. Le finestre trapezoidali a "occhio", tagliate ad angoli irregolari anziché a squadro, funzionano tanto da lucernari quanto da finestre, gettando luce naturale sulle pareti delle sale senza lasciare che il sole diretto colpisca le opere. Un fossato con passerella separa l\'edificio dalla strada a livello del suolo, un gesto difensivo insolito per un museo pubblico che, visto in retrospettiva, riflette le esitazioni del consiglio sull\'intero progetto: prima della costruzione, diversi amministratori avevano fatto pressione per respingere del tutto il progetto di Breuer.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q105724647', title: '945 Madison Avenue (Q105724647)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/945_Madison_Avenue', title: '945 Madison Avenue', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'saint-johns-abbey-church',
+    wikidataId: null,
+    name: {
+      en: "Saint John's Abbey Church",
+      es: 'Iglesia de la Abadía de San Juan',
+      it: "Chiesa dell'Abbazia di Saint John",
+    },
+    architectId: 'marcel-breuer',
+    location: { city: 'Collegeville, Minnesota', countryCode: 'US', lat: 45.5803, lon: -94.3922 },
+    inception: 1958,
+    completed: 1961,
+    demolished: null,
+    typology: 'sacral',
+    materials: ['concrete'],
+    structure: {
+      en: 'A cast-in-place concrete bell "banner," a trapezoidal slab roughly thirty-four metres tall pierced with a cross-shaped opening, stands free of the church behind it and frames a north wall built as a honeycomb of concrete hexagons set with stained glass, a form Breuer developed with the engineer Pier Luigi Nervi.',
+      es: 'Un "banner" campanario de hormigón in situ, una losa trapezoidal de unos treinta y cuatro metros de altura perforada por una abertura en forma de cruz, se levanta exento frente a la iglesia y enmarca un muro norte construido como un panal de hexágonos de hormigón con vidrieras, forma que Breuer desarrolló con el ingeniero Pier Luigi Nervi.',
+      it: 'Un "banner" campanario in calcestruzzo gettato in opera, una lastra trapezoidale alta circa trentaquattro metri e forata da un\'apertura a forma di croce, si erge staccato davanti alla chiesa e incornicia un muro nord costruito come un alveare di esagoni in calcestruzzo con vetrate, forma che Breuer sviluppò con l\'ingegnere Pier Luigi Nervi.',
+    },
+    program: {
+      en: "A new abbey church and monastic wing for the Benedictine community at Saint John's University, commissioned in 1953 after Breuer's recent work on UNESCO's Paris headquarters had also brought him into contact with Nervi.",
+      es: 'Nueva iglesia abacial y ala monástica para la comunidad benedictina de la Saint John\'s University, encargada en 1953 tras el trabajo reciente de Breuer en la sede parisina de la UNESCO, que también lo había puesto en contacto con Nervi.',
+      it: 'Nuova chiesa abbaziale e ala monastica per la comunità benedettina della Saint John\'s University, commissionata nel 1953 dopo il recente lavoro di Breuer per la sede parigina dell\'UNESCO, che lo aveva messo in contatto anche con Nervi.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: "Working church, the principal liturgical space of the monastic community and Saint John's University; part of a National Register-listed historic district.",
+      es: 'Iglesia en activo, principal espacio litúrgico de la comunidad monástica y de la Saint John\'s University; forma parte de un distrito histórico incluido en el Registro Nacional.',
+      it: 'Chiesa in attività, principale spazio liturgico della comunità monastica e della Saint John\'s University; parte di un distretto storico iscritto al Registro Nazionale.',
+    },
+    detailRect: { x: 0.3, y: 0.1, w: 0.4, h: 0.45 },
+    image: {
+      commonsFile: 'File:2009-0522-MN-SJU-abbeychurch.jpg',
+      photographer: "Bobak Ha'Eri",
+      license: 'CC BY 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:2009-0522-MN-SJU-abbeychurch.jpg',
+      width: 0,
+      height: 0,
+    },
+    dossier: {
+      en: "Abbot Baldwin Dworschak wanted a church built to outlast the twentieth century's fashions, and gave Breuer, his recent collaborator on UNESCO's Paris headquarters, a brief with almost no precedent to follow: reformed liturgy had not yet settled on a plan type for an American Benedictine church at this scale. Breuer's design turns the whole building around a single idea, that the bell tower need not sit on the church but in front of it: a freestanding trapezoidal slab, 34 metres tall and shaped by the engineer Pier Luigi Nervi's structural advice, stands clear of the church roof and is punched through with a cross-shaped opening that reads, depending on the light, as either void or symbol. Behind it a honeycomb wall of concrete hexagons, each fitted with a pane of stained glass by the monk-artist Brother Bronislaus Bak, forms the entire north facade and floods the nave with colored light. Monks did much of the concrete work themselves; the church was consecrated in 1961 as the centrepiece of a wider Breuer-designed monastic and university campus, and remains, more than sixty years on, in daily liturgical use.",
+      es: 'El abad Baldwin Dworschak quería una iglesia construida para sobrevivir a las modas del siglo veinte, y encargó a Breuer, su reciente colaborador en la sede parisina de la UNESCO, un programa casi sin precedentes: la liturgia reformada aún no había fijado un tipo de planta para una iglesia benedictina estadounidense de esta escala. El diseño de Breuer gira en torno a una sola idea, que el campanario no tiene por qué apoyarse en la iglesia sino levantarse delante de ella: una losa trapezoidal exenta, de treinta y cuatro metros de altura y perfilada con el asesoramiento estructural del ingeniero Pier Luigi Nervi, se alza separada de la cubierta de la iglesia y está perforada por una abertura en forma de cruz que se lee, según la luz, como vacío o como símbolo. Detrás, un muro en panal de hexágonos de hormigón, cada uno con una vidriera del monje artista Bronislaus Bak, forma toda la fachada norte e inunda la nave de luz de color. Los propios monjes realizaron buena parte del hormigonado; la iglesia se consagró en 1961 como pieza central de un campus monástico y universitario más amplio, también de Breuer, y sigue hoy, más de sesenta años después, en uso litúrgico diario.',
+      it: "L'abate Baldwin Dworschak voleva una chiesa costruita per sopravvivere alle mode del Novecento, e affidò a Breuer, suo recente collaboratore per la sede parigina dell'UNESCO, un incarico quasi senza precedenti: la liturgia riformata non aveva ancora fissato una tipologia planimetrica per una chiesa benedettina statunitense di questa scala. Il progetto di Breuer ruota attorno a un'unica idea, che il campanile non debba poggiare sulla chiesa ma sorgere davanti ad essa: una lastra trapezoidale indipendente, alta trentaquattro metri e definita con la consulenza strutturale dell'ingegnere Pier Luigi Nervi, si erge staccata dalla copertura della chiesa ed è forata da un'apertura a forma di croce che si legge, a seconda della luce, come vuoto o come simbolo. Dietro di essa, un muro ad alveare di esagoni in calcestruzzo, ciascuno dotato di una vetrata del monaco artista Bronislaus Bak, forma l'intera facciata nord e inonda la navata di luce colorata. I monaci stessi eseguirono buona parte dei getti in calcestruzzo; la chiesa fu consacrata nel 1961 come fulcro di un più ampio campus monastico e universitario, anch'esso di Breuer, e resta oggi, oltre sessant'anni dopo, in uso liturgico quotidiano.",
+    },
+    context: null,
+    sources: [
+      { kind: 'wikipedia', url: "https://en.wikipedia.org/wiki/Saint_John's_Abbey,_Collegeville", title: "Saint John's Abbey, Collegeville", license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://www.docomomo-us.org/register/st-john-s-abbey-church', title: "Docomomo US — St. John's Abbey Church", license: null },
+      { kind: 'publication', url: 'https://sah-archipedia.org/buildings/MN-01-145-0007-01', title: "SAH Archipedia — Saint John's Abbey Church", license: null },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'montreal-biosphere',
+    wikidataId: 'Q864789',
+    name: {
+      en: 'Montreal Biosphère',
+      es: 'Biosfera de Montreal',
+      it: 'Biosfera di Montreal',
+    },
+    architectId: 'buckminster-fuller',
+    location: { city: 'Montreal, Quebec', countryCode: 'CA', lat: 45.5141, lon: -73.5315 },
+    inception: 1965,
+    completed: 1967,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['steel-and-glass'],
+    structure: {
+      en: 'A three-quarter steel geodesic sphere, seventy-six metres across, triangulates its entire surface into a double layer of struts so that wind and snow loads pass through the whole lattice rather than any single member; the original acrylic-cushion skin that once regulated its interior climate burned off in a 1976 fire, leaving the bare frame exposed.',
+      es: 'Una esfera geodésica de acero de tres cuartos, de setenta y seis metros de diámetro, triangula toda su superficie en una doble capa de barras para que las cargas de viento y nieve se repartan por toda la retícula y no por un único elemento; la piel original de cojines acrílicos que regulaba el clima interior ardió en un incendio en 1976, dejando la estructura desnuda al descubierto.',
+      it: 'Una sfera geodetica in acciaio di tre quarti, larga settantasei metri, triangola l\'intera superficie in un doppio strato di aste così che i carichi di vento e neve si distribuiscano su tutto il reticolo anziché su un singolo elemento; la pelle originaria a cuscini acrilici che regolava il clima interno bruciò in un incendio nel 1976, lasciando a vista la sola struttura.',
+    },
+    program: {
+      en: 'The United States Pavilion for Expo 67, commissioned by the US Information Agency to demonstrate Fuller\'s geodesic principle at full scale on the world stage.',
+      es: 'Pabellón de Estados Unidos para la Expo 67, encargado por la Agencia de Información de Estados Unidos para demostrar a escala real el principio geodésico de Fuller ante el mundo.',
+      it: 'Padiglione degli Stati Uniti per l\'Expo 67, commissionato dalla United States Information Agency per dimostrare su scala reale, davanti al mondo, il principio geodetico di Fuller.',
+    },
+    heritage: 'national',
+    currentUse: {
+      en: 'Environment museum ("Biosphère") operated by Space for Life, Montreal\'s natural science museum network, within Parc Jean-Drapeau.',
+      es: 'Museo del medio ambiente ("Biosphère") gestionado por Espace pour la vie, la red de museos de ciencias naturales de Montreal, dentro del Parc Jean-Drapeau.',
+      it: 'Museo dell\'ambiente ("Biosphère") gestito da Espace pour la vie, la rete di musei di scienze naturali di Montreal, all\'interno del Parc Jean-Drapeau.',
+    },
+    detailRect: { x: 0.3, y: 0.15, w: 0.4, h: 0.35 },
+    image: {
+      commonsFile: 'File:Biosphere, Montreal.jpg',
+      photographer: 'Thomas Ledl',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Biosphere,_Montreal.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: "File:Biosphere de l'Île Sainte-Hélène.jpg",
+        photographer: 'Jazmin Million',
+        license: 'CC BY-SA 2.0',
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Biosphere_de_l'%C3%8Ele_Sainte-H%C3%A9l%C3%A8ne.jpg",
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: 'The US Information Agency wanted a pavilion that would out-argue the Soviet Union\'s own Expo 67 exhibit simply by being the most advanced structure on the site, and gave Fuller a budget and a deadline rather than a design brief. His answer scaled up a principle he had spent two decades refining: triangulate a sphere\'s surface into a doubled lattice of steel struts and the loads that would buckle a single dome member instead distribute themselves across thousands, letting the structure enclose twenty storeys of unobstructed volume on four slender legs. An outer skin of inflatable acrylic cushions, each with a motorized sunshade, was meant to let the building regulate its own interior climate automatically as the sun moved — genuinely experimental technology that never worked quite as promised even before a 1976 welding accident set the whole skin on fire during renovation work, burning it away entirely and leaving only the steel frame, which nobody removed. Canada bought the shell from the departing US government in 1990 and, after a decade of study, converted it into an environmental museum that opened in 1995; UNESCO and other bodies have repeatedly cited the bare structure, not the vanished skin, as one of the twentieth century\'s defining works of engineering.',
+      es: 'La Agencia de Información de Estados Unidos quería un pabellón que superara en argumentos al de la Unión Soviética en la misma Expo 67 simplemente siendo la estructura más avanzada del recinto, y dio a Fuller un presupuesto y un plazo, no un programa de diseño. Su respuesta escaló un principio que llevaba dos décadas puliendo: triangular la superficie de una esfera en una retícula doble de barras de acero, de modo que las cargas que pandearían un único elemento de cúpula se repartan entre miles, permitiendo que la estructura encierre veinte plantas de volumen libre sobre cuatro patas esbeltas. Una piel exterior de cojines inflables de acrílico, cada uno con parasol motorizado, debía dejar que el edificio regulara automáticamente su clima interior según el movimiento del sol —una tecnología genuinamente experimental que nunca funcionó del todo como se prometió, incluso antes de que un accidente de soldadura en 1976 incendiara toda la piel durante unas obras de renovación, quemándola por completo y dejando solo la estructura de acero, que nadie llegó a retirar. Canadá compró la cáscara al gobierno estadounidense saliente en 1990 y, tras una década de estudios, la convirtió en un museo ambiental que abrió en 1995; la UNESCO y otros organismos han citado repetidamente la estructura desnuda, no la piel desaparecida, como una de las obras de ingeniería que definen el siglo veinte.',
+      it: 'La United States Information Agency voleva un padiglione capace di superare, con la sola forza dell\'esibizione, quello sovietico alla stessa Expo 67, semplicemente essendo la struttura più avanzata del sito, e diede a Fuller un budget e una scadenza anziché un programma progettuale. La sua risposta portò su scala maggiore un principio che affinava da due decenni: triangolare la superficie di una sfera in un reticolo doppio di aste d\'acciaio, cosicché i carichi che farebbero collassare un singolo elemento di cupola si distribuiscano su migliaia di essi, permettendo alla struttura di racchiudere venti piani di volume libero su quattro esili sostegni. Una pelle esterna di cuscini acrilici gonfiabili, ciascuno con schermo solare motorizzato, doveva permettere all\'edificio di regolare automaticamente il proprio clima interno seguendo il movimento del sole — tecnologia genuinamente sperimentale che non funzionò mai del tutto come promesso, ancor prima che un incidente di saldatura nel 1976 incendiasse l\'intera pelle durante lavori di ristrutturazione, bruciandola del tutto e lasciando solo la struttura d\'acciaio, che nessuno rimosse. Il Canada acquistò il guscio dal governo statunitense uscente nel 1990 e, dopo un decennio di studi, lo trasformò in un museo ambientale aperto nel 1995; l\'UNESCO e altri organismi hanno più volte citato la struttura nuda, non la pelle scomparsa, come una delle opere di ingegneria che definiscono il Novecento.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q864789', title: 'Montreal Biosphère (Q864789)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Montreal_Biosphere', title: 'Montreal Biosphere', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+  {
+    id: 'flys-eye-dome-crystal-bridges',
+    wikidataId: 'Q11333440',
+    name: {
+      en: "Fly's Eye Dome (Crystal Bridges Museum)",
+      es: "Cúpula Fly's Eye (Museo Crystal Bridges)",
+      it: "Fly's Eye Dome (Crystal Bridges Museum)",
+    },
+    architectId: 'buckminster-fuller',
+    location: { city: 'Bentonville, Arkansas', countryCode: 'US', lat: 36.3729, lon: -94.2088 },
+    inception: 1979,
+    completed: 1981,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['mixed'],
+    structure: {
+      en: 'A monocoque dome of moulded fibreglass-reinforced-plastic panels, fifteen metres across, is punched with dozens of circular "eye" oculi of varying size that admit light and air without any separate window frame, the whole shell self-supporting on a shallow ring foundation.',
+      es: 'Una cúpula monocasco de paneles moldeados de plástico reforzado con fibra de vidrio, de quince metros de diámetro, está perforada por docenas de óculos circulares de tamaño variable que dejan pasar luz y aire sin marco de ventana separado, con toda la cáscara autoportante sobre una cimentación anular poco profunda.',
+      it: 'Una cupola monoscocca in pannelli stampati di plastica rinforzata con fibra di vetro, larga quindici metri, è perforata da decine di oculi circolari di dimensione variabile che lasciano passare luce e aria senza alcun telaio di finestra separato, con l\'intero guscio autoportante su una fondazione anulare poco profonda.',
+    },
+    program: {
+      en: 'The largest of three hand-built prototypes (twelve, twenty-four and fifty feet across) Fuller developed with surfboard manufacturer John Warren and a young Norman Foster to test a mass-producible fibreglass dome shell; this fifty-foot prototype now stands as a permanent outdoor installation on the north lawn of Crystal Bridges Museum of American Art.',
+      es: 'El mayor de tres prototipos hechos a mano (de doce, veinticuatro y quince metros de diámetro) que Fuller desarrolló con el fabricante de tablas de surf John Warren y un joven Norman Foster para ensayar una cáscara de fibra de vidrio producible en serie; este prototipo de quince metros se conserva hoy como instalación permanente al aire libre en el césped norte del Crystal Bridges Museum of American Art.',
+      it: 'Il maggiore di tre prototipi realizzati a mano (di dodici, ventiquattro e quindici metri di diametro) che Fuller sviluppò con il produttore di tavole da surf John Warren e un giovane Norman Foster per sperimentare un guscio in fibra di vetro producibile in serie; questo prototipo da quindici metri si conserva oggi come installazione permanente all\'aperto sul prato nord del Crystal Bridges Museum of American Art.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Permanent outdoor sculpture-installation on the museum grounds, open to the public as walk-through architecture.',
+      es: 'Instalación escultórica permanente al aire libre en los terrenos del museo, abierta al público como arquitectura transitable.',
+      it: 'Installazione scultorea permanente all\'aperto nei terreni del museo, aperta al pubblico come architettura percorribile.',
+    },
+    detailRect: { x: 0.35, y: 0.15, w: 0.35, h: 0.35 },
+    image: {
+      commonsFile: "File:Fly's Eye Dome by Buckminster Fuller, Crystal Bridges Museum.JPG",
+      photographer: 'Wmpearl',
+      license: 'CC0',
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Fly's_Eye_Dome_by_Buckminster_Fuller,_Crystal_Bridges_Museum.JPG",
+      width: 0,
+      height: 0,
+    },
+    dossier: {
+      en: 'Fuller had sketched dome shells punched with circular openings, which he called eyes, as early as 1965, but it took the surfboard manufacturer John Warren\'s expertise in moulding large curved fibreglass forms, and a young unlicensed architect named Norman Foster working in Fuller\'s circle, to get a buildable version off paper by the late 1970s. Three hand-built prototypes came out of that collaboration, at twelve, twenty-four and fifty feet across, the largest requiring dozens of unique moulded panels bolted together into a single self-supporting shell with no internal frame at all — the oculi are not windows cut into a wall but part of the monocoque structure itself, sized and placed to balance daylighting against the shell\'s remaining strength. This fifty-foot dome appeared at Los Angeles\'s 1981 bicentennial celebrations and then went into storage for over three decades before the architectural historian Robert Rubin restored it and Crystal Bridges Museum installed it permanently on its lawn in 2017, the only Fuller-designed structure on long-term public outdoor display east of the Mississippi.',
+      es: 'Fuller había esbozado ya en 1965 cáscaras de cúpula perforadas con aberturas circulares, a las que llamaba ojos, pero hizo falta la pericia del fabricante de tablas de surf John Warren en moldear grandes formas curvas de fibra de vidrio, y un joven arquitecto sin licencia llamado Norman Foster que se movía en el círculo de Fuller, para que a finales de los setenta una versión construible saliera del papel. De esa colaboración salieron tres prototipos hechos a mano, de doce, veinticuatro y quince metros de diámetro, el mayor de los cuales exigió docenas de paneles moldeados únicos atornillados entre sí en una sola cáscara autoportante sin estructura interior alguna: los óculos no son ventanas abiertas en un muro, sino parte de la propia estructura monocasco, dimensionados y situados para equilibrar la entrada de luz con la resistencia restante de la cáscara. Esta cúpula de quince metros apareció en las celebraciones del bicentenario de Los Ángeles en 1981 y pasó luego más de tres décadas almacenada, hasta que el historiador de la arquitectura Robert Rubin la restauró y el Crystal Bridges Museum la instaló de forma permanente en su césped en 2017, la única estructura de Fuller expuesta al aire libre de forma permanente al este del Misisipi.',
+      it: 'Fuller aveva già abbozzato nel 1965 gusci di cupola perforati da aperture circolari, che chiamava occhi, ma ci vollero la perizia del produttore di tavole da surf John Warren nel modellare grandi forme curve in fibra di vetro, e un giovane architetto senza abilitazione di nome Norman Foster, che gravitava nella cerchia di Fuller, perché entro la fine degli anni Settanta una versione costruibile uscisse dalla carta. Da quella collaborazione nacquero tre prototipi realizzati a mano, di dodici, ventiquattro e quindici metri di diametro, il maggiore dei quali richiese decine di pannelli stampati unici imbullonati insieme in un unico guscio autoportante privo di qualsiasi struttura interna: gli oculi non sono finestre ritagliate in un muro, ma parte della struttura monoscocca stessa, dimensionati e collocati per bilanciare l\'illuminazione naturale con la resistenza residua del guscio. Questa cupola da quindici metri comparve alle celebrazioni del bicentenario di Los Angeles nel 1981 e restò poi in magazzino per oltre tre decenni, finché lo storico dell\'architettura Robert Rubin la restaurò e il Crystal Bridges Museum la installò permanentemente sul proprio prato nel 2017, l\'unica struttura di Fuller in mostra permanente all\'aperto a est del Mississippi.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q11333440', title: "Fly's Eye Dome (Q11333440)", license: null },
+      { kind: 'wikipedia', url: "https://en.wikipedia.org/wiki/Fly's_Eye_Dome", title: "Fly's Eye Dome", license: 'CC BY-SA 4.0' },
+      { kind: 'institution', url: 'https://crystalbridges.org/architecture/flys-eye-dome', title: "Crystal Bridges Museum of American Art — Fly's Eye Dome", license: null },
+    ],
+    tier: 'canon',
+  },
+
 ];

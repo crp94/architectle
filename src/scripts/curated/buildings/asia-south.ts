@@ -982,4 +982,80 @@ export const ASIA_SOUTH_BUILDINGS: Building[] = [
     ],
     tier: 'deep',
   },
+  {
+    // Cross-batch note (agent B2, americas): architectId 'louis-kahn' is
+    // defined in src/scripts/curated/architects/americas.ts (his practice
+    // base). This building itself sits in India, so it is filed here in the
+    // India/asia-south region file per the region-follows-building-location
+    // convention, not in americas.ts.
+    id: 'iim-ahmedabad',
+    wikidataId: 'Q46027',
+    name: {
+      en: 'Indian Institute of Management Ahmedabad (Louis Kahn Plaza)',
+      es: 'Instituto Indio de Gestión de Ahmedabad (Louis Kahn Plaza)',
+      it: 'Indian Institute of Management di Ahmedabad (Louis Kahn Plaza)',
+    },
+    architectId: 'louis-kahn',
+    location: { city: 'Ahmedabad, Gujarat', countryCode: 'IN', lat: 23.0334, lon: 72.5344 },
+    inception: 1962,
+    completed: 1974,
+    demolished: null,
+    typology: 'educational',
+    materials: ['brick', 'concrete'],
+    structure: {
+      en: 'Load-bearing walls of locally made exposed brick, tied together with reinforced-concrete lintels, beams and slabs, are cut with tall arched openings and oversized circular voids that carry no load themselves but relieve the masonry above them and pull deep shade and cross-ventilation into the covered walkways below.',
+      es: 'Muros de carga de ladrillo visto de fabricación local, trabados con dinteles, vigas y forjados de hormigón armado, están recortados con grandes vanos en arco y enormes vacíos circulares que no cargan peso pero alivian la fábrica que tienen encima y llevan sombra profunda y ventilación cruzada a las galerías cubiertas de abajo.',
+      it: 'Muri portanti in mattone a vista di produzione locale, legati da architravi, travi e solai in cemento armato, sono tagliati da grandi aperture ad arco e da enormi vuoti circolari che non portano carico ma alleggeriscono la muratura sovrastante e portano ombra profonda e ventilazione incrociata ai passaggi coperti sottostanti.',
+    },
+    program: {
+      en: 'A campus of academic blocks, a library, faculty housing and student dormitories for India\'s first postgraduate management institute, founded in 1961 with Harvard Business School\'s advice and Gujarati industrialists\' funding.',
+      es: 'Campus de bloques académicos, biblioteca, vivienda de profesorado y residencias de estudiantes para el primer instituto de posgrado en gestión de la India, fundado en 1961 con el asesoramiento de la Harvard Business School y financiación de industriales gujaratíes.',
+      it: 'Campus di blocchi accademici, biblioteca, alloggi per i docenti e residenze per gli studenti del primo istituto post-laurea di management dell\'India, fondato nel 1961 con la consulenza della Harvard Business School e il finanziamento di industriali del Gujarat.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Working business school campus; the library and academic blocks are in active use, and a 2019 restoration of the library won a UNESCO Asia-Pacific Award for Cultural Heritage Conservation.',
+      es: 'Campus universitario de gestión en activo; la biblioteca y los bloques académicos siguen en uso, y una restauración de la biblioteca en 2019 recibió un Premio UNESCO Asia-Pacífico de Conservación del Patrimonio Cultural.',
+      it: 'Campus universitario di management in attività; la biblioteca e i blocchi accademici restano in uso, e un restauro della biblioteca nel 2019 ha vinto un premio UNESCO Asia-Pacific per la conservazione del patrimonio culturale.',
+    },
+    detailRect: { x: 0.80, y: 0.20, w: 0.19, h: 0.35 },
+    image: {
+      commonsFile: 'File:Louis Kahn Plaza, IIM Ahmedabad.jpg',
+      photographer: 'Perspectives - The Photography Club, IIM Ahmedabad',
+      license: 'CC BY-SA 4.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Louis_Kahn_Plaza,_IIM_Ahmedabad.jpg',
+      width: 0,
+      height: 0,
+    },
+    extraImages: [
+      {
+        commonsFile: 'File:Indian Institute of Management Ahmedabad, panorama.jpg',
+        photographer: 'Mahargh Shah',
+        license: 'CC BY-SA 3.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Indian_Institute_of_Management_Ahmedabad,_panorama.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
+    dossier: {
+      en: 'Kahn was hired in 1962 on the recommendation of the same Harvard Business School advisers who helped found the institute, and he built a campus around a single generative geometry: the circle and the square cut into thick brick walls, scaled from a doorway to the nine-metre diameter opening on the library facade that overlooks what is now called Louis Kahn Plaza. The dormitories, teaching blocks and faculty housing all share the same construction logic, brick with concrete tie-beams poured at the springing of every arch, chosen partly because it was what local labor and materials could deliver without imported steel. Kahn continued revising the campus until his death in 1974, and his associate Anant Raje oversaw further construction into the 1990s. In December 2020, the institute told alumni it planned to demolish fourteen of the campus\'s eighteen dormitory blocks, citing structural decay; the plan drew formal objections from ICOMOS, the Society of Architectural Historians and members of Kahn\'s own family, and the board withdrew it the following month. The plaza and academic core Kahn built have not been touched.',
+      es: 'Kahn fue contratado en 1962 por recomendación de los mismos asesores de la Harvard Business School que ayudaron a fundar el instituto, y construyó un campus en torno a una única geometría generadora: el círculo y el cuadrado recortados en gruesos muros de ladrillo, a escalas que van de una puerta a la abertura de nueve metros de diámetro de la fachada de la biblioteca que da a lo que hoy se llama Louis Kahn Plaza. Las residencias, los bloques docentes y la vivienda del profesorado comparten la misma lógica constructiva, ladrillo con vigas de atado de hormigón vertidas en el arranque de cada arco, elegida en parte porque era lo que la mano de obra y los materiales locales podían ofrecer sin acero importado. Kahn siguió revisando el campus hasta su muerte en 1974, y su asociado Anant Raje supervisó nuevas construcciones hasta los años noventa. En diciembre de 2020, el instituto anunció a sus antiguos alumnos que planeaba demoler catorce de los dieciocho bloques de residencias del campus, alegando deterioro estructural; el plan recibió objeciones formales de ICOMOS, la Society of Architectural Historians y miembros de la propia familia de Kahn, y la junta lo retiró al mes siguiente. La plaza y el núcleo académico que construyó Kahn no se han tocado.',
+      it: 'Kahn fu incaricato nel 1962 su raccomandazione degli stessi consulenti della Harvard Business School che avevano contribuito a fondare l\'istituto, e costruì un campus attorno a un\'unica geometria generatrice: il cerchio e il quadrato ritagliati in spessi muri di mattoni, a scale che vanno da una porta all\'apertura di nove metri di diametro sulla facciata della biblioteca che si affaccia su quella che oggi si chiama Louis Kahn Plaza. I dormitori, i blocchi didattici e gli alloggi per i docenti condividono la stessa logica costruttiva, mattone con travi di collegamento in cemento gettate all\'imposta di ogni arco, scelta in parte perché era ciò che manodopera e materiali locali potevano offrire senza acciaio importato. Kahn continuò a rivedere il campus fino alla morte, nel 1974, e il suo collaboratore Anant Raje seguì ulteriori costruzioni fino agli anni Novanta. Nel dicembre 2020 l\'istituto annunciò agli ex studenti l\'intenzione di demolire quattordici dei diciotto blocchi dormitorio del campus, citando il degrado strutturale; il piano suscitò obiezioni formali da ICOMOS, dalla Society of Architectural Historians e da membri della stessa famiglia di Kahn, e il consiglio lo ritirò il mese successivo. La piazza e il nucleo accademico costruiti da Kahn non sono stati toccati.',
+    },
+    context: {
+      body: {
+        en: 'The 2020–21 dormitory demolition dispute is documented, resolved history, not a live controversy: it tested whether a working institution\'s claim of structural necessity could override conservation objections to a modern-movement landmark, and the institute reversed course under public and professional pressure rather than proceeding.',
+        es: 'La disputa de 2020-21 por la demolición de las residencias es historia documentada y resuelta, no una polémica en curso: puso a prueba si la afirmación de necesidad estructural de una institución en funcionamiento podía imponerse a las objeciones conservacionistas sobre un hito del movimiento moderno, y el instituto rectificó ante la presión pública y profesional en lugar de seguir adelante.',
+        it: 'La disputa del 2020-21 sulla demolizione dei dormitori è storia documentata e risolta, non una polemica in corso: mise alla prova se la dichiarazione di necessità strutturale di un\'istituzione in attività potesse prevalere sulle obiezioni conservative relative a un monumento del movimento moderno, e l\'istituto fece marcia indietro sotto la pressione pubblica e professionale invece di proseguire.',
+      },
+      sources: [
+        { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Indian_Institute_of_Management_Ahmedabad', title: 'Indian Institute of Management Ahmedabad', license: 'CC BY-SA 4.0' },
+      ],
+    },
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q46027', title: 'Indian Institute of Management Ahmedabad (Q46027)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Indian_Institute_of_Management_Ahmedabad', title: 'Indian Institute of Management Ahmedabad', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
 ];

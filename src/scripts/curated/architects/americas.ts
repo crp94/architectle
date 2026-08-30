@@ -12,7 +12,7 @@ import type { Architect } from '@/types/architect';
 // also spans Israel and Singapore. If the westasia or asia curator needs him,
 // they should reference `moshe-safdie` rather than redefining him.
 export const AMERICAS_ARCHITECTS: Architect[] = [
-  {
+{
     id: 'thomas-jefferson',
     wikidataId: 'Q11812',
     name: 'Thomas Jefferson',
@@ -281,13 +281,6 @@ export const AMERICAS_ARCHITECTS: Architect[] = [
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Jeanne_Gang', title: 'Jeanne Gang', license: 'CC BY-SA 4.0' },
     ],
   },
-  // --- Fix round (era-bucket quota): pre-1800 and post-2000 additions ---
-  // wave5-contract-v2.md quotas for N=9 required pre-1800 >= 2 and
-  // post-2000 >= 2; the initial slice delivered 0 and 1. Added below:
-  // two colonial architects with individually documented attributions
-  // (not the patron/master-mason thin-attribution pattern the contract
-  // warns against) and one post-2000 architect, all with a practice base
-  // in the United States (owned by this slice per contract §3).
   {
     id: 'peter-harrison',
     wikidataId: 'Q1178933',
@@ -375,11 +368,6 @@ export const AMERICAS_ARCHITECTS: Architect[] = [
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Thom_Mayne', title: 'Thom Mayne', license: 'CC BY-SA 4.0' },
     ],
   },
-  // --- Wave V2-3, batch B1 (US classic-modern top-up) ---
-  // Dankmar Adler is defined here (never anyone else's roster per the id-
-  // discipline grep) purely to carry the coArchitects credit on Louis
-  // Sullivan's Wainwright and Guaranty buildings, both firm-era
-  // Adler & Sullivan works. He is never an architectId/answer-key target.
   {
     id: 'dankmar-adler',
     wikidataId: 'Q76573',
@@ -447,4 +435,120 @@ export const AMERICAS_ARCHITECTS: Architect[] = [
       { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Philip_Johnson', title: 'Philip Johnson', license: 'CC BY-SA 4.0' },
     ],
   },
+{
+    id: 'i-m-pei',
+    wikidataId: 'Q46868',
+    name: 'I. M. Pei',
+    alternativeNames: ['Ieoh Ming Pei', 'Pei Ieoh Ming', '貝聿銘'],
+    gender: 'man',
+    born: 1917,
+    died: 2019,
+    floruit: { start: 1955, end: 2006, override: false },
+    movements: [
+      { id: 'international-style', primary: true },
+    ],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'stone',
+    portrait: {
+      en: 'Pei was born in Guangzhou in 1917 to a prominent banking family, emigrated to the United States in 1935 and trained at MIT and then at Harvard\'s Graduate School of Design under Walter Gropius and Marcel Breuer. A decade spent shaping speculative urban redevelopment for the New York developer William Zeckendorf taught him to work within a client\'s numbers before he opened his own practice in 1955; by the time he retired from day-to-day management in 1990 that practice had built some of the most recognisable museums in the world. Pei\'s buildings return again and again to hard geometric volumes — triangles, rhombuses, knife-edge angles — resolved in stone, granite or glass, and to the problem of setting a modern building beside a historically loaded one without either apologising for it or overpowering it. He won the Pritzker Prize in 1983 and the Presidential Medal of Freedom in 1992, and kept accepting museum commissions into his late eighties and nineties, ending his working life, as it had begun, in China.',
+      es: 'Pei nació en Cantón en 1917 en el seno de una destacada familia de banqueros, emigró a Estados Unidos en 1935 y se formó en el MIT y después en la Graduate School of Design de Harvard bajo Walter Gropius y Marcel Breuer. Una década dedicada a dar forma a la reurbanización urbana especulativa para el promotor neoyorquino William Zeckendorf le enseñó a trabajar dentro de las cuentas de un cliente antes de abrir su propio estudio en 1955; para cuando se retiró de la gestión diaria en 1990, ese estudio había construido algunos de los museos más reconocibles del mundo. La arquitectura de Pei vuelve una y otra vez a volúmenes geométricos duros —triángulos, rombos, ángulos de filo de cuchillo— resueltos en piedra, granito o vidrio, y al problema de situar un edificio moderno junto a otro cargado de historia sin disculparse por ello ni imponerse sobre él. Ganó el Premio Pritzker en 1983 y la Medalla Presidencial de la Libertad en 1992, y siguió aceptando encargos de museos hasta bien entrados los ochenta y noventa años, cerrando su vida profesional, como la había empezado, en China.',
+      it: 'Pei nacque a Canton nel 1917 in una famiglia di banchieri di rilievo, emigrò negli Stati Uniti nel 1935 e si formò al MIT e poi alla Graduate School of Design di Harvard sotto Walter Gropius e Marcel Breuer. Un decennio passato a dare forma alla riqualificazione urbana speculativa per l\'imprenditore newyorkese William Zeckendorf gli insegnò a lavorare entro i conti di un committente prima di aprire un proprio studio nel 1955; quando si ritirò dalla gestione quotidiana nel 1990, quello studio aveva costruito alcuni dei musei più riconoscibili al mondo. L\'architettura di Pei torna ripetutamente a volumi geometrici rigorosi — triangoli, rombi, spigoli a lama di coltello — risolti in pietra, granito o vetro, e al problema di collocare un edificio moderno accanto a uno carico di storia senza scusarsene né sovrastarlo. Vinse il Premio Pritzker nel 1983 e la Presidential Medal of Freedom nel 1992, e continuò ad accettare incarichi museali fino a oltre gli ottant\'anni e i novant\'anni, chiudendo la propria vita professionale, come l\'aveva iniziata, in Cina.',
+    },
+    awards: ['Pritzker Architecture Prize (1983)', 'AIA Gold Medal (1979)', 'Presidential Medal of Freedom (1992)', 'Praemium Imperiale (1989)'],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q46868', title: 'I. M. Pei (Q46868)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/I._M._Pei', title: 'I. M. Pei', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    id: 'frank-gehry',
+    wikidataId: 'Q180374',
+    name: 'Frank Gehry',
+    alternativeNames: ['Frank Owen Gehry', 'Frank Owen Goldberg'],
+    gender: 'man',
+    born: 1929,
+    died: 2025,
+    floruit: { start: 1962, end: 2021, override: false },
+    movements: [
+      { id: 'deconstructivism', primary: true },
+    ],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'steel-and-glass',
+    portrait: {
+      en: 'Gehry was born Frank Goldberg in Toronto in 1929, moved with his family to Los Angeles at seventeen, and studied at USC and briefly at Harvard\'s Graduate School of Design before opening his own Los Angeles practice in 1962. For two decades he built modest, inexpensive work, most famously the 1978 remodel of his own Santa Monica bungalow in corrugated metal, plywood and chain-link fencing, materials chosen because a client\'s budget could afford them, not for effect. Computer-aided design borrowed from the aerospace industry let his later practice translate the same instinct for torqued, improvised-looking form into buildable curved metal at the scale of an entire museum, starting with Bilbao in 1997. He kept a working office into his nineties and died in Santa Monica in December 2025, having reshaped what a public building was allowed to look like more than once in a sixty-year career.',
+      es: 'Gehry nació como Frank Goldberg en Toronto en 1929, se trasladó con su familia a Los Ángeles a los diecisiete años y estudió en la USC y brevemente en la Graduate School of Design de Harvard antes de abrir su propio estudio en Los Ángeles en 1962. Durante dos décadas construyó obra modesta y barata, sobre todo la remodelación en 1978 de su propio bungaló de Santa Mónica en chapa ondulada, contrachapado y valla de tela metálica, materiales elegidos porque el presupuesto de un cliente podía pagarlos, no por efecto. El diseño asistido por ordenador, tomado prestado de la industria aeroespacial, permitió a su estudio posterior trasladar ese mismo instinto de forma retorcida y de aire improvisado a metal curvo construible a la escala de un museo entero, empezando por Bilbao en 1997. Mantuvo un estudio en activo hasta los noventa años y murió en Santa Mónica en diciembre de 2025, habiendo cambiado más de una vez, en una carrera de sesenta años, lo que se permitía que pareciera un edificio público.',
+      it: 'Gehry nacque come Frank Goldberg a Toronto nel 1929, si trasferì con la famiglia a Los Angeles a diciassette anni e studiò alla USC e brevemente alla Graduate School of Design di Harvard prima di aprire un proprio studio a Los Angeles nel 1962. Per due decenni costruì opere modeste ed economiche, in particolare la ristrutturazione del 1978 del proprio bungalow di Santa Monica in lamiera ondulata, compensato e rete metallica, materiali scelti perché il budget di un cliente poteva permetterseli, non per effetto. La progettazione assistita dal computer, presa in prestito dall\'industria aerospaziale, permise al suo studio successivo di tradurre lo stesso istinto per la forma ritorta e dall\'aria improvvisata in metallo curvo costruibile alla scala di un intero museo, a partire da Bilbao nel 1997. Mantenne uno studio attivo fino agli anni novanta e morì a Santa Monica nel dicembre 2025, avendo cambiato più di una volta, in una carriera di sessant\'anni, ciò che a un edificio pubblico era concesso somigliare.',
+    },
+    awards: ['Pritzker Architecture Prize (1989)', 'AIA Gold Medal (1999)', 'Presidential Medal of Freedom (2016)'],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q180374', title: 'Frank Gehry (Q180374)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Frank_Gehry', title: 'Frank Gehry', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    id: 'marcel-breuer',
+    wikidataId: 'Q57588',
+    name: 'Marcel Breuer',
+    alternativeNames: ['Marcel Lajos Breuer'],
+    gender: 'man',
+    born: 1902,
+    died: 1981,
+    floruit: { start: 1938, end: 1980, override: false },
+    movements: [
+      { id: 'brutalism', primary: true },
+      { id: 'bauhaus', primary: false },
+    ],
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'concrete',
+    portrait: {
+      en: 'Breuer left home in Pécs, Hungary, at eighteen to study art in Vienna, lasted a few weeks, and enrolled instead at the new Bauhaus in Weimar in 1920, one of its first and youngest students. Walter Gropius made him head of the carpentry workshop at twenty-two; the tubular-steel Wassily and Cesca chairs he designed there, borrowing the idea from bicycle handlebars, remain in production a century later. He left for London in 1935 as the school\'s politics soured, then followed Gropius again in 1937, this time to Harvard\'s Graduate School of Design, where the two ran a joint practice designing houses before Breuer opened his own office in New York in 1946. His architecture, unlike his furniture, grew heavier and rougher with time: raw and board-marked concrete, sculpted into cantilevers and folded planes, on buildings for the United Nations, UNESCO and a run of American college and corporate clients. He won the AIA Gold Medal in 1968.',
+      es: 'Breuer dejó su casa en Pécs, Hungría, a los dieciocho años para estudiar arte en Viena, aguantó unas semanas y se matriculó en cambio en la recién fundada Bauhaus de Weimar en 1920, uno de sus alumnos más jóvenes y tempranos. Walter Gropius lo puso al frente del taller de carpintería a los veintidós años; las sillas Wassily y Cesca de acero tubular que diseñó allí, tomando la idea del manillar de bicicleta, siguen fabricándose un siglo después. Se marchó a Londres en 1935 cuando la política de la escuela se agrió, y siguió de nuevo a Gropius en 1937, esta vez a la Graduate School of Design de Harvard, donde ambos dirigieron un estudio conjunto diseñando casas antes de que Breuer abriera su propia oficina en Nueva York en 1946. Su arquitectura, a diferencia de sus muebles, se hizo más pesada y rugosa con el tiempo: hormigón en bruto y con marcas de encofrado, esculpido en voladizos y planos plegados, en edificios para las Naciones Unidas, la UNESCO y una serie de clientes universitarios y corporativos estadounidenses. Ganó la Medalla de Oro del AIA en 1968.',
+      it: 'Breuer lasciò la propria casa a Pécs, in Ungheria, a diciotto anni per studiare arte a Vienna, resistette poche settimane e si iscrisse invece al neonato Bauhaus di Weimar nel 1920, tra i suoi allievi più giovani e precoci. Walter Gropius lo mise a capo dell\'officina di falegnameria a ventidue anni; le sedie in acciaio tubolare Wassily e Cesca che vi progettò, riprendendo l\'idea dal manubrio di una bicicletta, restano in produzione un secolo dopo. Partì per Londra nel 1935 quando il clima politico della scuola peggiorò, e seguì di nuovo Gropius nel 1937, questa volta alla Graduate School of Design di Harvard, dove i due gestirono uno studio comune progettando case prima che Breuer aprisse un proprio studio a New York nel 1946. La sua architettura, a differenza dei mobili, si fece più pesante e ruvida col tempo: calcestruzzo grezzo e segnato dal cassero, scolpito in sbalzi e piani piegati, in edifici per le Nazioni Unite, l\'UNESCO e una serie di committenti universitari e aziendali statunitensi. Vinse la AIA Gold Medal nel 1968.',
+    },
+    awards: ['AIA Gold Medal (1968)'],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q57588', title: 'Marcel Breuer (Q57588)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Marcel_Breuer', title: 'Marcel Breuer', license: 'CC BY-SA 4.0' },
+    ],
+  },
+  {
+    id: 'buckminster-fuller',
+    wikidataId: 'Q102289',
+    name: 'Buckminster Fuller',
+    alternativeNames: ['Richard Buckminster Fuller', 'R. Buckminster Fuller'],
+    gender: 'man',
+    born: 1895,
+    died: 1983,
+    floruit: { start: 1949, end: 1981, override: false },
+    movements: 'unaffiliated',
+    workRegions: [],
+    workCentroid: { lat: 0, lon: 0 },
+    primaryTypology: 'cultural',
+    signatureMaterial: 'steel-and-glass',
+    portrait: {
+      en: 'Fuller never finished a degree — Harvard expelled him twice — and never held an architecture licence, which makes him an outlier on any roster of architects and, by his own account, the point: he called himself a "comprehensive anticipatory design scientist" and worked from mathematics and materials efficiency rather than architectural training. A failed business and the death of a daughter brought him to the edge of suicide in 1927; he described what followed as a decision to treat his own life as an experiment in what one individual, stripped of inherited assumptions, could contribute. Working largely outside any single professional discipline, he patented the geodesic dome in 1954 — a structural principle, triangulating a sphere\'s surface so that stress is distributed across the whole shell rather than carried by any single member, that let a dome enclose enormous unsupported spans at a fraction of the material a conventional roof would need. He held twenty-eight US patents, wrote more than thirty books, and received the Presidential Medal of Freedom the year he died.',
+      es: 'Fuller nunca terminó una carrera —Harvard lo expulsó dos veces— y nunca tuvo licencia de arquitecto, lo que lo convierte en un caso aparte en cualquier lista de arquitectos y, según él mismo, esa era la cuestión: se llamaba a sí mismo "científico del diseño anticipatorio integral" y trabajaba desde las matemáticas y la eficiencia de materiales, no desde una formación arquitectónica. Un negocio fallido y la muerte de una hija lo llevaron al borde del suicidio en 1927; describió lo que vino después como la decisión de tratar su propia vida como un experimento sobre lo que un individuo, despojado de supuestos heredados, podía aportar. Trabajando en gran medida al margen de cualquier disciplina profesional única, patentó la cúpula geodésica en 1954 —un principio estructural que triangula la superficie de una esfera para repartir la tensión por toda la cáscara en vez de cargarla sobre un solo elemento— que permitía a una cúpula cubrir enormes luces sin apoyos con una fracción del material que exigiría una cubierta convencional. Tuvo veintiocho patentes estadounidenses, escribió más de treinta libros y recibió la Medalla Presidencial de la Libertad el año de su muerte.',
+      it: 'Fuller non completò mai una laurea — Harvard lo espulse due volte — e non ebbe mai un\'abilitazione da architetto, il che lo rende un caso a parte in qualunque elenco di architetti e, a suo dire, era proprio quello il punto: si definiva un "comprehensive anticipatory design scientist" e lavorava a partire dalla matematica e dall\'efficienza dei materiali, non da una formazione architettonica. Un\'attività fallita e la morte di una figlia lo portarono sull\'orlo del suicidio nel 1927; descrisse ciò che seguì come la decisione di trattare la propria vita come un esperimento su ciò che un singolo individuo, spogliato di assunti ereditati, potesse offrire. Lavorando in gran parte al di fuori di una disciplina professionale unica, brevettò la cupola geodetica nel 1954 — un principio strutturale che triangola la superficie di una sfera per distribuire lo sforzo sull\'intero guscio anziché su un singolo elemento — che permetteva a una cupola di coprire luci enormi senza appoggi con una frazione del materiale richiesto da una copertura convenzionale. Detenne ventotto brevetti statunitensi, scrisse più di trenta libri e ricevette la Presidential Medal of Freedom l\'anno della sua morte.',
+    },
+    awards: ['AIA Gold Medal (1970)', 'Presidential Medal of Freedom (1983)'],
+    tier: 'canon',
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q102289', title: 'Buckminster Fuller (Q102289)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Buckminster_Fuller', title: 'Buckminster Fuller', license: 'CC BY-SA 4.0' },
+    ],
+  },
+
 ];

@@ -13,7 +13,7 @@ import type { Building } from '@/types/building';
 // sub-national only (Therme Vals, cantonal); 'none' where the building is not
 // listed.
 export const EUROPE_GERMANIC_BUILDINGS: Building[] = [
-  {
+{
     id: 'karlskirche-vienna',
     wikidataId: 'Q408847',
     name: {
@@ -775,13 +775,6 @@ export const EUROPE_GERMANIC_BUILDINGS: Building[] = [
     ],
     tier: 'canon',
   },
-  // --- Wave V2-3, batch B1 (US classic-modern top-up) ---
-  // Filed here, not in americas.ts, to match how mies-van-der-rohe is
-  // already filed (Neue Nationalgalerie, above) — both his US works below
-  // sit alongside his existing entry rather than splitting his buildings
-  // across two regional files. US FoP is unconditional for buildings
-  // regardless of the architect's death year; both entries are exteriors
-  // in any case.
   {
     id: 'seagram-building',
     wikidataId: 'Q737484',
@@ -908,4 +901,57 @@ export const EUROPE_GERMANIC_BUILDINGS: Building[] = [
     ],
     tier: 'canon',
   },
+{
+    id: 'vitra-design-museum',
+    wikidataId: 'Q700747',
+    name: {
+      en: 'Vitra Design Museum',
+      es: 'Vitra Design Museum',
+      it: 'Vitra Design Museum',
+    },
+    architectId: 'frank-gehry',
+    location: { city: 'Weil am Rhein', countryCode: 'DE', lat: 47.6068, lon: 7.5847 },
+    inception: 1987,
+    completed: 1989,
+    demolished: null,
+    typology: 'cultural',
+    materials: ['concrete', 'mixed'],
+    structure: {
+      en: 'A white-plastered masonry and concrete volume breaks into interlocking cubes, ramps and a corkscrewing external staircase clad in zinc-titanium panels, all resolved geometrically around a golden-rectangle proportioning system rather than a single orthogonal grid.',
+      es: 'Un volumen de fábrica y hormigón enlucido en blanco se descompone en cubos entrelazados, rampas y una escalera exterior en tirabuzón revestida de paneles de cinc-titanio, resuelto geométricamente en torno a un sistema de proporción de rectángulo áureo y no a una sola retícula ortogonal.',
+      it: 'Un volume in muratura e cemento intonacato di bianco si scompone in cubi incastrati, rampe e una scala esterna a cavatappi rivestita in pannelli di zinco-titanio, risolto geometricamente attorno a un sistema proporzionale a rettangolo aureo anziché a un\'unica griglia ortogonale.',
+    },
+    program: {
+      en: 'A museum for the Vitra furniture company\'s design collection, commissioned by Rolf Fehlbaum after a 1981 factory fire, and Gehry\'s first built work outside North America.',
+      es: 'Museo para la colección de diseño de la empresa de mobiliario Vitra, encargado por Rolf Fehlbaum tras un incendio en la fábrica en 1981, y primera obra construida de Gehry fuera de Norteamérica.',
+      it: 'Museo per la collezione di design dell\'azienda di mobili Vitra, commissionato da Rolf Fehlbaum dopo un incendio in fabbrica nel 1981, e prima opera costruita da Gehry fuori dal Nordamerica.',
+    },
+    heritage: 'none',
+    currentUse: {
+      en: 'Working design museum on the Vitra Campus, staging temporary exhibitions on furniture, architecture and design.',
+      es: 'Museo de diseño en activo en el Vitra Campus, con exposiciones temporales de mobiliario, arquitectura y diseño.',
+      it: 'Museo del design in attività nel Vitra Campus, con mostre temporanee di arredamento, architettura e design.',
+    },
+    detailRect: { x: 0.22, y: 0.1, w: 0.35, h: 0.4 },
+    image: {
+      commonsFile: 'File:Vitra Design Museum.JPG',
+      photographer: 'Wladyslaw',
+      license: 'CC BY-SA 3.0',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Vitra_Design_Museum.JPG',
+      width: 0,
+      height: 0,
+    },
+    dossier: {
+      en: 'A 1981 fire destroyed several of Vitra\'s production buildings on its Weil am Rhein campus just across the Swiss and French borders, and the company\'s owner, Rolf Fehlbaum, used the rebuilding as an occasion to commission a museum for the furniture collection he had been assembling privately for years — his first call was to Gehry, whose Santa Monica house he had seen in photographs. The museum was Gehry\'s first building outside North America and, unusually for his later work, a masonry building rather than a metal-clad one: white-plastered walls in interlocking cubic and curved volumes, organized (at the recommendation of Gehry\'s then-collaborator, architect Michael Blattner) around a system of golden-rectangle proportions rather than a single grid, so no two rooms share quite the same geometry. A corkscrewing external stair wrapped in zinc-titanium panels connects the galleries on the outside of the building rather than within it. Fehlbaum went on to commission a small architectural campus around it — Zaha Hadid\'s first built work, the Vitra Fire Station, arrived four years later on the same grounds.',
+      es: 'Un incendio en 1981 destruyó varias naves de producción de Vitra en su campus de Weil am Rhein, junto a las fronteras suiza y francesa, y el propietario de la empresa, Rolf Fehlbaum, aprovechó la reconstrucción para encargar un museo para la colección de mobiliario que llevaba años reuniendo en privado: su primera llamada fue a Gehry, cuya casa de Santa Mónica había visto en fotografías. El museo fue el primer edificio de Gehry fuera de Norteamérica y, cosa inusual en su obra posterior, un edificio de fábrica y no de revestimiento metálico: muros enlucidos en blanco en volúmenes cúbicos y curvos entrelazados, organizados (por recomendación del entonces colaborador de Gehry, el arquitecto Michael Blattner) según un sistema de proporciones de rectángulo áureo y no una sola retícula, de modo que ninguna sala comparte del todo la misma geometría. Una escalera exterior en tirabuzón revestida de paneles de cinc-titanio conecta las salas por fuera del edificio y no por dentro. Fehlbaum encargó después un pequeño campus arquitectónico a su alrededor: la primera obra construida de Zaha Hadid, la Vitra Fire Station, llegó cuatro años después en el mismo recinto.',
+      it: 'Un incendio nel 1981 distrusse diversi capannoni di produzione Vitra nel suo campus di Weil am Rhein, appena oltre i confini svizzero e francese, e il proprietario dell\'azienda, Rolf Fehlbaum, colse l\'occasione della ricostruzione per commissionare un museo per la collezione di mobili che da anni raccoglieva privatamente: la sua prima chiamata fu a Gehry, di cui aveva visto in fotografia la casa di Santa Monica. Il museo fu il primo edificio di Gehry fuori dal Nordamerica e, cosa insolita per la sua opera successiva, un edificio in muratura anziché rivestito in metallo: muri intonacati di bianco in volumi cubici e curvi incastrati, organizzati (su raccomandazione dell\'allora collaboratore di Gehry, l\'architetto Michael Blattner) secondo un sistema di proporzioni a rettangolo aureo anziché un\'unica griglia, così che nessuna sala condivide del tutto la stessa geometria. Una scala esterna a cavatappi rivestita in pannelli di zinco-titanio collega le sale dall\'esterno dell\'edificio anziché dall\'interno. Fehlbaum commissionò in seguito un piccolo campus architettonico attorno ad esso: la prima opera costruita di Zaha Hadid, la Vitra Fire Station, arrivò quattro anni dopo nello stesso complesso.',
+    },
+    context: null,
+    sources: [
+      { kind: 'wikidata', url: 'https://www.wikidata.org/wiki/Q700747', title: 'Vitra Design Museum (Q700747)', license: null },
+      { kind: 'wikipedia', url: 'https://en.wikipedia.org/wiki/Vitra_Design_Museum', title: 'Vitra Design Museum', license: 'CC BY-SA 4.0' },
+    ],
+    tier: 'canon',
+  },
+
 ];
