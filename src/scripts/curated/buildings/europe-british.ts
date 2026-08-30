@@ -1249,6 +1249,21 @@ export const EUROPE_BRITISH_BUILDINGS: Building[] = [
       width: 1600,
       height: 1067,
     },
+    // Wave V2-3 batch B5 image pass: kept the existing primary and
+    // detailRect (cropping it out shows the roof cladding meeting the
+    // curtain wall and railing cleanly — still diagnostic) and added one
+    // extraImage showing the whole building alongside the ArcelorMittal
+    // Orbit for scale/context.
+    extraImages: [
+      {
+        commonsFile: 'Orbit Tower - Aquatics Centre.jpg',
+        photographer: 'George Rex',
+        license: 'CC BY-SA 2.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Orbit_Tower_-_Aquatics_Centre.jpg',
+        width: 0,
+        height: 0,
+      },
+    ],
     dossier: {
       en: "Hadid designed the Aquatics Centre in 2004, as part of London's bid for the 2012 Olympics, taking the fluid geometry of moving water as her formal starting point: a single steel roof, engineered with Arup and shaped by parametric modelling, sweeps in one continuous double curve from a low point at the diving pool to full height over the two fifty-metre competition pools, its underside lined with 30,000 sections of Red Louro timber. Ground was broken in July 2008 and Balfour Beatty completed the aluminium-clad, 3,200-tonne roof structure in July 2011, at a final cost of £269 million against an original 2005 estimate of £75 million. For the Games themselves, temporary steel-framed spectator wings, wrapped in white PVC, raised seating to 17,500 and hid much of Hadid's roofline; they were unbolted and removed once the Paralympics ended, and the building reopened to the public in March 2014 with a permanent capacity of 2,800, the wave now visible on all sides for the first time. It remains the sole swimming venue from the 2012 Games still in continuous public and elite use.",
       es: 'Hadid proyectó el Centro Acuático en 2004, dentro de la candidatura de Londres a los Juegos de 2012, con la geometría fluida del agua en movimiento como punto de partida formal: una única cubierta de acero, calculada con Arup y modelada por software paramétrico, describe una sola curva continua, baja junto a la piscina de saltos y de altura completa sobre las dos piscinas de competición de cincuenta metros, con el intradós revestido por 30.000 piezas de madera de louro rojo. Las obras comenzaron en julio de 2008 y Balfour Beatty terminó la cubierta, revestida de aluminio y de 3.200 toneladas, en julio de 2011, con un coste final de 269 millones de libras frente a los 75 millones estimados en 2005. Para los Juegos, unas alas provisionales de acero envueltas en PVC blanco elevaron el aforo a 17.500 localidades y ocultaron buena parte del perfil de Hadid; se desmontaron al concluir los Paralímpicos, y el edificio reabrió al público en marzo de 2014 con un aforo permanente de 2.800, con la ola visible por fin por todos sus lados. Sigue siendo la única sede de natación de 2012 en uso continuo, público y de alto rendimiento.',
