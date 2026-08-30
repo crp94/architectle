@@ -250,6 +250,11 @@ async function main(): Promise<void> {
     try {
       const original = await fetchOriginal(url);
       const { data, info } = await sharp(original)
+        // Apply the EXIF Orientation tag before resizing: several Commons
+        // photos are stored rotated with orientation metadata, and AVIF
+        // output drops EXIF — without this they ship sideways (found by
+        // the B7 curation agent on a New Museum candidate).
+        .rotate()
         .resize(LONG_EDGE_PX, LONG_EDGE_PX, { fit: 'inside', withoutEnlargement: true })
         .avif({ quality: AVIF_QUALITY })
         .toBuffer({ resolveWithObject: true });
